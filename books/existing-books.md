@@ -1,8 +1,8 @@
-# 既存書籍一覧（13冊）
+# 既存書籍一覧（15冊）
 
 ## 📚 書籍カテゴリ別整理
 
-### 🔧 技術基盤（4冊）
+### 🔧 技術基盤（6冊）
 
 #### 1. **linux-infra-textbook**
 📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook)
@@ -56,9 +56,35 @@
 - **前提知識**: Web開発基礎
 - **学習期間**: 4-5週間
 
+#### 5. **cloud-infra-handbook**
+📖 [書籍を読む](https://itdojp.github.io/cloud-infra-handbook/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-handbook)
+- **タイトル**: クラウドインフラ設計・構築ガイド
+- **対象読者**: クラウドインフラエンジニア・アーキテクト
+- **レビュー状況**: 📝 レビュー予定
+- **主な内容**:
+  - クラウドサービス基礎・活用法
+  - インフラ設計パターン・ベストプラクティス
+  - 構築・運用の実践的手法
+- **実務での重要度**: 高
+- **前提知識**: ITインフラ基礎
+- **学習期間**: 6-8週間
+
+#### 6. **infra-software-essentials-book**
+📖 [書籍を読む](https://itdojp.github.io/infra-software-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/infra-software-essentials-book)
+- **タイトル**: ITインフラエンジニアのためのソフトウェア基礎知識
+- **対象読者**: インフラエンジニア・SRE
+- **レビュー状況**: 📝 レビュー予定
+- **主な内容**:
+  - インフラエンジニアに必要なソフトウェア知識
+  - プログラミング基礎・スクリプト作成
+  - 自動化ツール・フレームワーク活用
+- **実務での重要度**: 高
+- **前提知識**: Linuxサーバー運用経験
+- **学習期間**: 5-7週間
+
 ### 🔄 開発・運用プロセス（2冊）
 
-#### 5. **github-workflow-book**
+#### 7. **github-workflow-book**
 📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
 - **タイトル**: GitHub Workflow実践ガイド
 - **対象読者**: 開発チーム全般
@@ -71,7 +97,7 @@
 - **前提知識**: Git基礎
 - **学習期間**: 3-4週間
 
-#### 6. **ai-testing-strategy-book**
+#### 8. **ai-testing-strategy-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 - **タイトル**: AI時代のテスト戦略
 - **対象読者**: QAエンジニア・SRE
@@ -86,7 +112,7 @@
 
 ### 🏗️ 特定技術・応用領域（3冊）
 
-#### 7. **supabase-architecture-patterns-book**
+#### 9. **supabase-architecture-patterns-book**
 📖 [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | 📂 [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
 - **タイトル**: Supabaseアーキテクチャパターン
 - **対象読者**: Supabase利用開発者
@@ -99,7 +125,7 @@
 - **前提知識**: Web開発・データベース基礎
 - **学習期間**: 3-4週間
 
-#### 8. **BioinformaticsGuide-book**
+#### 10. **BioinformaticsGuide-book**
 📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 - **タイトル**: バイオインフォマティクス実践ガイド
 - **対象読者**: バイオ分野エンジニア・研究者
@@ -112,7 +138,7 @@
 - **前提知識**: 生物学基礎・プログラミング
 - **学習期間**: 6-8週間
 
-#### 9. **computational-physicalism-book**
+#### 11. **computational-physicalism-book**
 📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 - **タイトル**: 計算物理学入門
 - **対象読者**: 物理学・エンジニアリング研究者
@@ -127,7 +153,7 @@
 
 ### 💡 ソフトスキル・思考法（3冊）
 
-#### 10. **negotiation-for-engineers**
+#### 12. **negotiation-for-engineers**
 📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers)
 - **タイトル**: エンジニアの交渉力アーキテクチャ
 - **対象読者**: 中堅～シニアエンジニア・管理職
@@ -140,7 +166,7 @@
 - **前提知識**: エンジニア経験3年以上
 - **学習期間**: 4-5週間
 
-#### 11. **LogicalThinking-AI-Era-Guide**
+#### 13. **LogicalThinking-AI-Era-Guide**
 📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 - **タイトル**: AI時代の論理思考ガイド
 - **対象読者**: 全エンジニア・ビジネスパーソン
@@ -153,7 +179,7 @@
 - **前提知識**: なし
 - **学習期間**: 3-4週間
 
-#### 12. **ai-era-engineers-mind-book**
+#### 14. **ai-era-engineers-mind-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 - **タイトル**: AI時代のプロフェッショナルITエンジニアの思考法
 - **対象読者**: 中堅～シニアエンジニア
@@ -168,7 +194,7 @@
 
 ### 📚 教養・歴史（1冊）
 
-#### 13. **cs-visionaries-book**
+#### 15. **cs-visionaries-book**
 📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 - **タイトル**: コンピュータサイエンスの偉人たち
 - **対象読者**: 全エンジニア・学生
@@ -192,6 +218,8 @@
 | github-workflow-book | 初級 | 高 | 0-3年 |
 | podman-book | 中級 | 高 | 1-3年 |
 | practical-auth-book | 中級 | 高 | 2-5年 |
+| cloud-infra-handbook | 中級 | 高 | 2-5年 |
+| infra-software-essentials-book | 中級 | 高 | 1-4年 |
 | ai-testing-strategy-book | 中級 | 中 | 2-5年 |
 | LogicalThinking-AI-Era-Guide | 初級 | 高 | 全レベル |
 | negotiation-for-engineers | 中級 | 高 | 3年以上 |
@@ -205,15 +233,17 @@
 
 #### ✅ カバー済み領域
 - **Linux・インフラ基礎**: linux-infra-textbook、IT-infra-book
+- **クラウドインフラ**: cloud-infra-handbook
+- **ソフトウェア基礎**: infra-software-essentials-book
 - **コンテナ技術**: podman-book
 - **認証・セキュリティ**: practical-auth-book
 - **開発プロセス**: github-workflow-book
 - **テスト戦略**: ai-testing-strategy-book
 - **ソフトスキル**: negotiation-for-engineers、思考法2冊
 
-#### ❌ 不足領域
+#### ❌ 不足領域（計画書籍でカバー予定）
 - **監視・運用自動化**: Prometheus、Grafana、SRE
-- **クラウドアーキテクチャ**: AWS、Azure、GCP設計
+- **エンタープライズクラウド**: 大規模アーキテクチャ設計
 - **災害対策・BCP**: DR、バックアップ戦略
 - **セキュリティインフラ**: ゼロトラスト、SIEM
 - **性能管理**: キャパシティプランニング、ボトルネック分析
@@ -230,8 +260,10 @@
 ### Phase 2: 実践技術（中級者向け）
 1. podman-book
 2. practical-auth-book
-3. LogicalThinking-AI-Era-Guide
-4. ai-testing-strategy-book
+3. cloud-infra-handbook
+4. infra-software-essentials-book
+5. LogicalThinking-AI-Era-Guide
+6. ai-testing-strategy-book
 
 ### Phase 3: 高度スキル（上級者向け）
 1. negotiation-for-engineers
@@ -245,9 +277,10 @@
 ## 📈 学習効果最大化のための工夫
 
 ### 1. 関連書籍の組み合わせ学習
-- **インフラ基礎**: linux-infra-textbook → IT-infra-book
+- **インフラ基礎**: linux-infra-textbook → IT-infra-book → cloud-infra-handbook
+- **技術スキル**: infra-software-essentials-book → podman-book → practical-auth-book
 - **思考力強化**: LogicalThinking-AI-Era-Guide → ai-era-engineers-mind-book
-- **実践スキル**: github-workflow-book → podman-book → practical-auth-book
+- **実践スキル**: github-workflow-book → ai-testing-strategy-book
 
 ### 2. 実践プロジェクトとの組み合わせ
 - 各書籍の学習内容を実際のプロジェクトで適用
@@ -260,4 +293,4 @@
 
 ---
 
-既存13冊により、ITエンジニアの基礎から中級レベルまでの幅広い知識をカバーできています。特にインフラ基礎、開発プロセス、ソフトスキルの分野では充実した内容となっています。
+既存15冊により、ITエンジニアの基礎から中級レベルまでの幅広い知識をカバーできています。特にインフラ基礎、クラウド技術、開発プロセス、ソフトスキルの分野では充実した内容となっています。新たに追加されたクラウドインフラとソフトウェア基礎知識により、現代のインフラエンジニアに求められる知識がより網羅的になりました。
