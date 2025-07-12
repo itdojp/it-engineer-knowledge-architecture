@@ -24,27 +24,48 @@
 ### ✅ 既存書籍（13冊）
 
 #### 🔧 技術基盤
-1. [linux-infra-textbook](https://github.com/itdojp/linux-infra-textbook) - Linuxインフラ基礎
-2. [IT-infra-book](https://github.com/itdojp/IT-infra-book) - ITインフラ全般
-3. [podman-book](https://github.com/itdojp/podman-book) - コンテナ技術
-4. [practical-auth-book](https://github.com/itdojp/practical-auth-book) - 認証・認可実践
+1. **linux-infra-textbook** - Linuxインフラ基礎  
+   📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook)
+
+2. **IT-infra-book** - ITインフラ全般  
+   📖 [書籍を読む](https://itdojp.github.io/IT-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-book)
+
+3. **podman-book** - コンテナ技術  
+   📖 [書籍を読む](https://itdojp.github.io/podman-book/) | 📂 [リポジトリ](https://github.com/itdojp/podman-book)
+
+4. **practical-auth-book** - 認証・認可実践  
+   📖 [書籍を読む](https://itdojp.github.io/practical-auth-book/) | 📂 [リポジトリ](https://github.com/itdojp/practical-auth-book)
 
 #### 🔄 開発・運用プロセス
-5. [github-workflow-book](https://github.com/itdojp/github-workflow-book) - GitHub運用
-6. [ai-testing-strategy-book](https://github.com/itdojp/ai-testing-strategy-book) - AI時代のテスト戦略
+5. **github-workflow-book** - GitHub運用  
+   📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
+
+6. **ai-testing-strategy-book** - AI時代のテスト戦略  
+   📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 
 #### 🏗️ 特定技術・応用領域
-7. [supabase-architecture-patterns-book](https://github.com/itdojp/supabase-architecture-patterns-book) - Supabaseアーキテクチャ
-8. [BioinformaticsGuide-book](https://github.com/itdojp/BioinformaticsGuide-book) - バイオインフォマティクス
-9. [computational-physicalism-book](https://github.com/itdojp/computational-physicalism-book) - 計算物理学
+7. **supabase-architecture-patterns-book** - Supabaseアーキテクチャ  
+   📖 [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | 📂 [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
+
+8. **BioinformaticsGuide-book** - バイオインフォマティクス  
+   📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
+
+9. **computational-physicalism-book** - 計算物理学  
+   📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 
 #### 💡 ソフトスキル・思考法
-10. [negotiation-for-engineers](https://github.com/itdojp/negotiation-for-engineers) - エンジニアの交渉術
-11. [LogicalThinking-AI-Era-Guide](https://github.com/itdojp/LogicalThinking-AI-Era-Guide) - AI時代の論理思考
-12. [ai-era-engineers-mind-book](https://github.com/itdojp/ai-era-engineers-mind-book) - AI時代のエンジニア思考法
+10. **negotiation-for-engineers** - エンジニアの交渉術  
+    📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers)
+
+11. **LogicalThinking-AI-Era-Guide** - AI時代の論理思考  
+    📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
+
+12. **ai-era-engineers-mind-book** - AI時代のエンジニア思考法  
+    📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 
 #### 📚 教養・歴史
-13. [cs-visionaries-book](https://github.com/itdojp/cs-visionaries-book) - コンピュータサイエンス偉人伝
+13. **cs-visionaries-book** - コンピュータサイエンス偉人伝  
+    📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
 ### 📝 計画書籍（7冊）
 
