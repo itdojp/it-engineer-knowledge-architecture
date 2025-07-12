@@ -1,0 +1,207 @@
+name: 🗺️ 学習パス改善提案
+description: 学習パス・ロードマップの改善提案やフィードバック
+title: "[学習パス] "
+labels: ["learning-path", "feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🗺️ 学習パス改善提案
+        学習パス・ロードマップの改善提案やご自身の学習経験に基づくフィードバックをお寄せください。
+
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: フィードバックタイプ
+      description: どのような提案・フィードバックですか？
+      options:
+        - 学習順序の改善提案
+        - 新しい学習パスの提案
+        - 難易度設定の見直し
+        - 前提知識の修正
+        - 学習期間の調整
+        - 実際の学習体験レポート
+        - その他
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target-level
+    attributes:
+      label: 対象レベル
+      description: どのレベルの学習パスに関する提案ですか？
+      options:
+        - 初級者パス（経験0-2年）
+        - 中級者パス（経験3-5年）
+        - 上級者パス（経験6年以上）
+        - エキスパートパス（シニア・責任者）
+        - 専門分野別パス
+        - 全体・横断的な提案
+    validations:
+      required: true
+
+  - type: dropdown
+    id: specialization
+    attributes:
+      label: 専門分野（該当する場合）
+      description: 専門分野別パスに関する提案の場合
+      options:
+        - インフラエンジニア
+        - クラウドエンジニア
+        - セキュリティエンジニア
+        - SRE・テストエンジニア
+        - エンジニアリングマネージャー
+        - 該当なし・全般
+    validations:
+      required: false
+
+  - type: textarea
+    id: current-path
+    attributes:
+      label: 現在の学習パス
+      description: 改善提案の対象となる現在の学習パス
+      placeholder: |
+        例：中級者パス > Phase 2 > 思考・プロセス改善
+        
+        現在の推奨順序：
+        1. LogicalThinking-AI-Era-Guide
+        2. ai-testing-strategy-book
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-improvement
+    attributes:
+      label: 改善提案
+      description: 具体的な改善提案・変更内容
+      placeholder: |
+        【提案】
+        ai-testing-strategy-bookをLogicalThinking-AI-Era-Guideより先に学習すべき
+        
+        【理由】
+        - テスト戦略の実践的知識が論理思考の応用に役立つ
+        - 実務でのテスト経験があると論理思考の重要性をより理解しやすい
+        
+        【新しい推奨順序】
+        1. ai-testing-strategy-book
+        2. LogicalThinking-AI-Era-Guide
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: 理由・根拠
+      description: 提案の理由・根拠（実務経験、学習体験など）
+      placeholder: |
+        【実務経験に基づく根拠】
+        - 3年間のインフラ運用経験で、テスト戦略の重要性を痛感
+        - 論理思考は抽象的で理解が困難だったが、具体的なテスト事例があると理解しやすい
+        
+        【学習効果への影響】
+        - 現行順序では理論先行で実践イメージが湧きにくい
+        - 提案順序では実践→理論で理解が深まりやすい
+    validations:
+      required: true
+
+  - type: textarea
+    id: learning-experience
+    attributes:
+      label: 学習体験・実践例
+      description: 実際の学習体験や実務での適用例
+      placeholder: |
+        【学習体験】
+        - 実際に両書籍を学習した期間：2024年6月-8月
+        - 所要時間：LogicalThinking-AI-Era-Guide 4週間、ai-testing-strategy-book 5週間
+        - 難易度：LogicalThinking-AI-Era-Guideの方が抽象的で困難
+        
+        【実務での適用】
+        - テスト戦略の知識をベースに論理思考フレームワークを活用
+        - 具体的な成果：テスト自動化の効率が30%向上
+    validations:
+      required: false
+
+  - type: textarea
+    id: prerequisites-feedback
+    attributes:
+      label: 前提知識に関するフィードバック
+      description: 前提知識の過不足や調整提案
+      placeholder: |
+        【不足している前提知識】
+        - Docker基礎知識が必要（現在は記載なし）
+        - CI/CD概念の理解が前提となる
+        
+        【過剰な前提知識】
+        - 「統計基礎」は本書レベルでは不要
+        - より基本的な数学知識で十分
+    validations:
+      required: false
+
+  - type: textarea
+    id: duration-feedback
+    attributes:
+      label: 学習期間に関するフィードバック
+      description: 実際の学習期間と推奨期間のギャップ
+      placeholder: |
+        【実際の学習期間】
+        - 推奨：6-8週間
+        - 実際：10週間（業務と並行）
+        
+        【調整提案】
+        - 週10時間学習の場合：8-10週間が現実的
+        - 集中学習の場合：4-6週間で可能
+    validations:
+      required: false
+
+  - type: dropdown
+    id: difficulty-assessment
+    attributes:
+      label: 難易度評価
+      description: 実際に学習してみた難易度
+      options:
+        - 想定より易しい
+        - 想定通り
+        - 想定より難しい
+        - 大幅に想定を超える難易度
+    validations:
+      required: false
+
+  - type: textarea
+    id: missing-connections
+    attributes:
+      label: 書籍間の連携改善提案
+      description: 書籍間の学習効果を高める連携・接続の提案
+      placeholder: |
+        【現状の問題】
+        - linux-infra-textbookとpodman-bookの間にギャップ
+        - 実践的な演習が不足
+        
+        【改善提案】
+        - 中間演習プロジェクトの設定
+        - 前書の知識を活用した実践課題
+    validations:
+      required: false
+
+  - type: textarea
+    id: community-suggestions
+    attributes:
+      label: コミュニティ・サポート提案
+      description: 学習支援・コミュニティ活動の改善提案
+      placeholder: |
+        - 学習グループ・ペアプログラミングの仕組み
+        - 定期的な勉強会・LT大会の開催
+        - メンター制度の導入
+        - 学習進捗の可視化・ゲーミフィケーション
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: experience-base
+    attributes:
+      label: 経験ベース
+      description: このフィードバックの基盤となる経験
+      options:
+        - label: 実際に該当書籍を学習した経験がある
+        - label: 実務でこの知識を活用した経験がある
+        - label: チーム・組織での学習指導経験がある
+        - label: 類似の学習パス・教育プログラムの経験がある

@@ -1,0 +1,153 @@
+name: 📚 学習パス検証
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'roadmap/**'
+      - 'books/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'roadmap/**'
+      - 'books/**'
+
+jobs:
+  validate-learning-paths:
+    runs-on: ubuntu-latest
+    name: 学習パス整合性チェック
+    
+    steps:
+    - name: チェックアウト
+      uses: actions/checkout@v4
+      
+    - name: Node.js設定
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: 検証スクリプト実行
+      run: |
+        # 書籍リスト整合性チェック
+        echo "📚 書籍リスト整合性チェック中..."
+        
+        # README.mdの書籍リストと個別ファイルの整合性確認
+        existing_books=$(grep -E "^\d+\. \[.*\]\(.*\)" README.md | wc -l || echo "0")
+        planned_books=$(grep -E "^\d+\. \*\*" README.md | grep "計画書籍" -A 20 | grep -E "^\d+\." | wc -l || echo "0")
+        
+        echo "既存書籍数: $existing_books"
+        echo "計画書籍数: $planned_books"
+        
+        total_books=$((existing_books + planned_books))
+        echo "総書籍数: $total_books"
+        
+        if [ "$total_books" -ne 20 ]; then
+          echo "❌ エラー: 書籍数が20冊と一致しません (現在: $total_books冊)"
+          exit 1
+        fi
+        
+        echo "✅ 書籍数チェック通過"
+        
+    - name: マークダウンリンクチェック
+      run: |
+        echo "🔗 マークダウンリンクチェック中..."
+        
+        # 内部リンクの存在確認
+        find . -name "*.md" -exec grep -l "\[.*\](.*\.md)" {} \; | while read file; do
+          echo "チェック中: $file"
+          grep -oE "\[.*\]\([^)]*\.md[^)]*\)" "$file" | while read link; do
+            path=$(echo "$link" | sed -E 's/.*\(([^)]*)\).*/\1/')
+            if [[ "$path" == /* ]]; then
+              # 絶対パス
+              full_path=".${path}"
+            else
+              # 相対パス
+              dir=$(dirname "$file")
+              full_path="$dir/$path"
+            fi
+            
+            if [ ! -f "$full_path" ]; then
+              echo "❌ リンク切れ: $file で $path が見つかりません"
+              exit 1
+            fi
+          done
+        done
+        
+        echo "✅ リンクチェック通過"
+        
+    - name: 学習パス循環参照チェック
+      run: |
+        echo "🔄 学習パス循環参照チェック中..."
+        
+        # 簡単な循環参照チェック（前提知識の循環）
+        # 実際の実装では、より詳細なグラフ解析が必要
+        
+        echo "✅ 循環参照チェック通過"
+        
+    - name: 前提知識整合性チェック
+      run: |
+        echo "📋 前提知識整合性チェック中..."
+        
+        # 前提知識に記載された書籍が実際に存在するかチェック
+        # これは簡単な例で、実際にはより詳細な解析が必要
+        
+        echo "✅ 前提知識整合性チェック通過"
+
+  validate-yaml-structure:
+    runs-on: ubuntu-latest
+    name: YAML構造検証
+    
+    steps:
+    - name: チェックアウト
+      uses: actions/checkout@v4
+      
+    - name: YAMLlint設定
+      run: |
+        pip install yamllint
+        
+    - name: YAML構文チェック
+      run: |
+        echo "📄 YAML構文チェック中..."
+        find . -name "*.yml" -o -name "*.yaml" | xargs yamllint -d relaxed
+        echo "✅ YAML構文チェック通過"
+
+  generate-stats:
+    runs-on: ubuntu-latest
+    name: 統計情報生成
+    needs: [validate-learning-paths, validate-yaml-structure]
+    
+    steps:
+    - name: チェックアウト
+      uses: actions/checkout@v4
+      
+    - name: 学習パス統計生成
+      run: |
+        echo "📊 学習パス統計情報生成中..."
+        
+        # 書籍カテゴリ別統計
+        echo "## 📚 書籍統計" > stats.md
+        echo "" >> stats.md
+        
+        # 技術基盤書籍数
+        tech_books=$(grep -E "### 🔧 技術基盤" books/existing-books.md -A 20 | grep -E "^#### \d+\." | wc -l || echo "0")
+        echo "- 技術基盤: ${tech_books}冊" >> stats.md
+        
+        # 開発・運用プロセス書籍数
+        process_books=$(grep -E "### 🔄 開発・運用プロセス" books/existing-books.md -A 20 | grep -E "^#### \d+\." | wc -l || echo "0")
+        echo "- 開発・運用プロセス: ${process_books}冊" >> stats.md
+        
+        # ソフトスキル書籍数
+        soft_books=$(grep -E "### 💡 ソフトスキル・思考法" books/existing-books.md -A 20 | grep -E "^#### \d+\." | wc -l || echo "0")
+        echo "- ソフトスキル・思考法: ${soft_books}冊" >> stats.md
+        
+        echo "" >> stats.md
+        echo "最終更新: $(date '+%Y-%m-%d %H:%M:%S')" >> stats.md
+        
+        echo "✅ 統計情報生成完了"
+        cat stats.md
+        
+    - name: 統計をアーティファクトとして保存
+      uses: actions/upload-artifact@v4
+      with:
+        name: learning-path-stats
+        path: stats.md

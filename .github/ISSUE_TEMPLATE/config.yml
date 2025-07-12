@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 一般的な質問・議論
+    url: https://github.com/itdojp/it-engineer-knowledge-architecture/discussions
+    about: 学習に関する質問、書籍の感想、コミュニティでの議論など
+  - name: 📚 個別書籍の問題報告
+    url: https://github.com/itdojp
+    about: 個別書籍の内容に関する問題は、該当する書籍のリポジトリにて報告してください
+  - name: 📧 プロジェクトへのお問い合わせ
+    url: mailto:knowledge@itdo.jp
+    about: プロジェクト運営、企業連携、執筆協力などのお問い合わせ

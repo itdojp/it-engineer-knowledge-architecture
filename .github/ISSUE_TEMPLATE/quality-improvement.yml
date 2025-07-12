@@ -1,0 +1,229 @@
+name: ⚡ 品質改善提案
+description: 既存書籍やプロジェクト全体の品質改善提案
+title: "[品質改善] "
+labels: ["quality-improvement", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚡ 品質改善提案
+        既存書籍の内容改善、プロジェクト全体の品質向上に関する提案をお寄せください。
+
+  - type: dropdown
+    id: improvement-scope
+    attributes:
+      label: 改善範囲
+      description: どの範囲の改善提案ですか？
+      options:
+        - 特定書籍の内容改善
+        - 複数書籍の統一性改善
+        - 学習体験・UI/UX改善
+        - プロジェクト運営・プロセス改善
+        - 技術的な問題修正
+        - ドキュメント・情報整理
+        - その他
+    validations:
+      required: true
+
+  - type: input
+    id: target-book
+    attributes:
+      label: 対象書籍（特定書籍の場合）
+      description: 改善対象の書籍名
+      placeholder: 例：linux-infra-textbook、ai-testing-strategy-book
+    validations:
+      required: false
+
+  - type: dropdown
+    id: issue-category
+    attributes:
+      label: 問題カテゴリ
+      description: 発見した問題・改善点のカテゴリ
+      options:
+        - 技術的な誤り・不正確性
+        - 内容の古さ・陳腐化
+        - 説明の分かりにくさ
+        - 実践的な内容の不足
+        - 体系性・構造の問題
+        - 難易度設定の問題
+        - 前提知識の設定ミス
+        - 書籍間の重複・矛盾
+        - 表記統一・日本語の問題
+        - アクセシビリティの問題
+        - その他
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 重要度
+      description: この問題・改善提案の重要度
+      options:
+        - 緊急（学習を阻害する重大な問題）
+        - 高（学習効果に大きな影響）
+        - 中（改善により価値向上）
+        - 低（細かな改善・最適化）
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: 問題・改善点の詳細
+      description: 発見した問題や改善すべき点の詳細説明
+      placeholder: |
+        【問題の詳細】
+        - 該当箇所：第3章「コンテナネットワーク設定」の3.2節
+        - 問題内容：記載されているネットワーク設定コマンドが最新のPodman 4.x系で動作しない
+        
+        【具体的な問題】
+        ```bash
+        # 記載されているコマンド（動作しない）
+        podman network create --driver bridge mynetwork
+        
+        # 正しいコマンド
+        podman network create mynetwork
+        ```
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact-analysis
+    attributes:
+      label: 影響範囲・学習への影響
+      description: この問題が学習者や実務に与える影響
+      placeholder: |
+        【学習への影響】
+        - 初学者がコマンドを実行しても動作せず、学習が停止する
+        - エラーメッセージの理解が困難で、挫折につながる可能性
+        
+        【実務への影響】
+        - 古い手法を覚えてしまい、実際の運用で問題が発生
+        - チーム内での設定方法の統一性が損なわれる
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: 改善案・解決策
+      description: 具体的な改善案や解決策の提案
+      placeholder: |
+        【短期的な改善案】
+        1. 該当箇所のコマンドを最新版に修正
+        2. 注釈で旧版との違いを説明
+        3. エラー対処法を追記
+        
+        【長期的な改善案】
+        1. 定期的なバージョン互換性チェック体制の構築
+        2. 読者からのフィードバック収集の仕組み改善
+        3. CI/CDでの自動テスト導入
+        
+        【具体的な修正内容】
+        ```bash
+        # Podman 4.0以降の推奨方法
+        podman network create mynetwork
+        
+        # 注意：Podman 3.x以前では --driver bridgeオプションが必要でした
+        ```
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification-method
+    attributes:
+      label: 検証方法
+      description: 改善案の効果を確認する方法
+      placeholder: |
+        【技術的検証】
+        - Podman 4.x、5.x系での動作確認
+        - 異なるLinuxディストリビューション（Ubuntu、CentOS）での検証
+        - CI環境での自動テスト実行
+        
+        【学習効果検証】
+        - 修正前後での学習者のつまずき率比較
+        - フィードバック・質問の内容変化
+        - 学習完了率の向上測定
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting-evidence
+    attributes:
+      label: 根拠・参考情報
+      description: 改善提案の根拠となる情報や参考資料
+      placeholder: |
+        【公式ドキュメント】
+        - Podman公式ドキュメント：https://docs.podman.io/...
+        - リリースノート：https://github.com/containers/podman/releases/...
+        
+        【実践経験】
+        - 実際に本書の手順を実行した際のエラーログ
+        - 複数の環境での検証結果
+        
+        【コミュニティ情報】
+        - Stack Overflowの関連質問・回答
+        - GitHub Issuesでの類似報告
+    validations:
+      required: false
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: 対応緊急度
+      description: いつまでに対応すべきか
+      options:
+        - 即座（学習阻害の解消）
+        - 1週間以内
+        - 1ヶ月以内
+        - 次回改訂時
+        - 時期は問わない
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-improvements
+    attributes:
+      label: 関連する改善提案
+      description: 同時に対応すべき関連する改善点
+      placeholder: |
+        【関連改善点】
+        1. 同章の他のコマンドも最新版への対応確認
+        2. 環境構築手順の見直し
+        3. トラブルシューティングセクションの充実
+        
+        【波及効果】
+        - 他書籍でも同様の問題がある可能性
+        - 統一的な表記基準の見直しが必要
+    validations:
+      required: false
+
+  - type: textarea
+    id: implementation-support
+    attributes:
+      label: 実装支援の申し出
+      description: この改善の実装に協力できることがあれば記載
+      placeholder: |
+        【協力可能な内容】
+        - 修正内容の技術検証
+        - 複数環境での動作確認
+        - ドキュメントの修正案作成
+        - 他の類似箇所の調査
+        
+        【提供可能なリソース】
+        - 検証環境（Ubuntu 22.04、CentOS 8）
+        - 技術的専門知識（コンテナ技術5年の経験）
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: quality-checklist
+    attributes:
+      label: 品質確認チェックリスト
+      description: 以下の項目を確認してください
+      options:
+        - label: 問題の再現性を確認済み
+        - label: 公式ドキュメント等で事実確認済み
+        - label: 改善案の実現可能性を検討済み
+        - label: 他の書籍・章への影響を考慮済み
