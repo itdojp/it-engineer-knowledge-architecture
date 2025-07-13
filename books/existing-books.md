@@ -1,4 +1,4 @@
-# 既存書籍一覧（15冊）
+# 既存書籍一覧（16冊）
 
 ## 📚 書籍カテゴリ別整理
 
@@ -192,7 +192,7 @@
 - **前提知識**: エンジニア経験3年以上
 - **学習期間**: 5-6週間
 
-### 📚 教養・歴史（1冊）
+### 📚 教養・歴史（2冊）
 
 #### 15. **cs-visionaries-book**
 📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
@@ -206,6 +206,19 @@
 - **実務での重要度**: 低（教養）
 - **前提知識**: なし
 - **学習期間**: 2-3週間
+
+#### 16. **theoretical-computer-science-textbook**
+📖 [書籍を読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/theoretical-computer-science-textbook)
+- **タイトル**: 理論計算機科学教本
+- **対象読者**: 大学生・大学院生・研究者・理論に興味のあるエンジニア
+- **レビュー状況**: 📝 レビュー予定
+- **主な内容**:
+  - 計算理論・計算複雑性理論
+  - オートマトン理論・形式言語
+  - アルゴリズム理論・数学的基礎
+- **実務での重要度**: 低（学術・理論分野）
+- **前提知識**: 数学基礎（離散数学・線形代数）
+- **学習期間**: 10-12週間
 
 ## 📊 書籍マトリクス分析
 
@@ -228,6 +241,7 @@
 | BioinformaticsGuide-book | 上級 | 低 | 専門分野 |
 | computational-physicalism-book | 上級 | 低 | 学術・研究 |
 | cs-visionaries-book | 初級 | 低 | 全レベル |
+| theoretical-computer-science-textbook | 上級 | 低 | 学術・研究 |
 
 ### 技術領域カバレッジ
 
@@ -272,7 +286,8 @@
 ### Phase 4: 専門分野（選択制）
 - supabase-architecture-patterns-book（Supabase利用者）
 - BioinformaticsGuide-book（バイオ分野）
-- computational-physicalism-book（研究・学術分野）
+- computational-physicalism-book（計算物理学・研究分野）
+- theoretical-computer-science-textbook（理論計算機科学・学術分野）
 
 ## 📈 学習効果最大化のための工夫
 
@@ -293,4 +308,4 @@
 
 ---
 
-既存15冊により、ITエンジニアの基礎から中級レベルまでの幅広い知識をカバーできています。特にインフラ基礎、クラウド技術、開発プロセス、ソフトスキルの分野では充実した内容となっています。新たに追加されたクラウドインフラとソフトウェア基礎知識により、現代のインフラエンジニアに求められる知識がより網羅的になりました。
+既存16冊により、ITエンジニアの基礎から上級レベルまでの幅広い知識をカバーできています。特にインフラ基礎、クラウド技術、開発プロセス、ソフトスキルの分野では充実した内容となっています。また、理論計算機科学の追加により、学術的な理論基盤も強化され、より深い理解を求める学習者にも対応できる包括的な体系となりました。
