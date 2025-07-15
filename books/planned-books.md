@@ -7,7 +7,7 @@
 
 **新規追加済み領域（既存書籍に追加）:**
 - **クラウドインフラ基礎**: cloud-infra-handbook
-- **ソフトウェア基礎知識**: infra-software-essentials-book
+- **ソフトウェア基礎知識**: it-infra-software-essentials-book
 
 **引き続き不足している領域（計画書籍でカバー）:**
 

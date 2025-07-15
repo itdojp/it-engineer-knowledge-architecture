@@ -30,20 +30,20 @@
 2. **linux-infra-textbook** - Linuxインフラ基礎  
    📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook)
 
-3. **IT-infra-book** - ITインフラ全般  
+3. **it-infra-software-essentials-book** - ITインフラエンジニアのためのソフトウェア基礎知識  
+   📖 [書籍を読む](https://itdojp.github.io/it-infra-software-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-software-essentials-book)
+
+4. **IT-infra-book** - ITインフラ全般  
    📖 [書籍を読む](https://itdojp.github.io/IT-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-book)
 
-4. **podman-book** - コンテナ技術  
+5. **podman-book** - コンテナ技術  
    📖 [書籍を読む](https://itdojp.github.io/podman-book/) | 📂 [リポジトリ](https://github.com/itdojp/podman-book)
 
-5. **practical-auth-book** - 認証・認可実践  
+6. **practical-auth-book** - 認証・認可実践  
    📖 [書籍を読む](https://itdojp.github.io/practical-auth-book/) | 📂 [リポジトリ](https://github.com/itdojp/practical-auth-book)
 
-6. **cloud-infra-handbook** - クラウドインフラ設計・構築ガイド  
+7. **cloud-infra-handbook** - クラウドインフラ設計・構築ガイド  
    📖 [書籍を読む](https://itdojp.github.io/cloud-infra-handbook/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-handbook)
-
-7. **infra-software-essentials-book** - ITインフラエンジニアのためのソフトウェア基礎知識  
-   📖 [書籍を読む](https://itdojp.github.io/infra-software-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/infra-software-essentials-book)
 
 #### 🔄 開発・運用プロセス
 8. **github-workflow-book** - GitHub運用  

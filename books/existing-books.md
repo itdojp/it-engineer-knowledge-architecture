@@ -31,7 +31,20 @@
 - **前提知識**: なし
 - **学習期間**: 4-6週間
 
-#### 3. **IT-infra-book**
+#### 3. **it-infra-software-essentials-book**
+📖 [書籍を読む](https://itdojp.github.io/it-infra-software-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-software-essentials-book)
+- **タイトル**: ITインフラエンジニアのためのソフトウェア基礎知識
+- **対象読者**: インフラエンジニア・SRE
+- **レビュー状況**: 📝 レビュー予定
+- **主な内容**:
+  - インフラエンジニアに必要なソフトウェア知識
+  - プログラミング基礎・スクリプト作成
+  - 自動化ツール・フレームワーク活用
+- **実務での重要度**: 高
+- **前提知識**: Linuxサーバー運用経験
+- **学習期間**: 5-7週間
+
+#### 4. **IT-infra-book**
 📖 [書籍を読む](https://itdojp.github.io/IT-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-book)
 - **タイトル**: ITインフラ入門
 - **対象読者**: インフラ初心者～中級者
@@ -44,7 +57,7 @@
 - **前提知識**: なし
 - **学習期間**: 6-8週間
 
-#### 4. **podman-book**
+#### 5. **podman-book**
 📖 [書籍を読む](https://itdojp.github.io/podman-book/) | 📂 [リポジトリ](https://github.com/itdojp/podman-book)
 - **タイトル**: Podman実践ガイド
 - **対象読者**: コンテナ技術学習者
@@ -57,7 +70,7 @@
 - **前提知識**: Linux基礎
 - **学習期間**: 4-5週間
 
-#### 5. **practical-auth-book**
+#### 6. **practical-auth-book**
 📖 [書籍を読む](https://itdojp.github.io/practical-auth-book/) | 📂 [リポジトリ](https://github.com/itdojp/practical-auth-book)
 - **タイトル**: 実践的認証・認可システム
 - **対象読者**: セキュリティ・バックエンド開発者
@@ -70,7 +83,7 @@
 - **前提知識**: Web開発基礎
 - **学習期間**: 4-5週間
 
-#### 6. **cloud-infra-handbook**
+#### 7. **cloud-infra-handbook**
 📖 [書籍を読む](https://itdojp.github.io/cloud-infra-handbook/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-handbook)
 - **タイトル**: クラウドインフラ設計・構築ガイド
 - **対象読者**: クラウドインフラエンジニア・アーキテクト
@@ -82,19 +95,6 @@
 - **実務での重要度**: 高
 - **前提知識**: ITインフラ基礎
 - **学習期間**: 6-8週間
-
-#### 7. **infra-software-essentials-book**
-📖 [書籍を読む](https://itdojp.github.io/infra-software-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/infra-software-essentials-book)
-- **タイトル**: ITインフラエンジニアのためのソフトウェア基礎知識
-- **対象読者**: インフラエンジニア・SRE
-- **レビュー状況**: 📝 レビュー予定
-- **主な内容**:
-  - インフラエンジニアに必要なソフトウェア知識
-  - プログラミング基礎・スクリプト作成
-  - 自動化ツール・フレームワーク活用
-- **実務での重要度**: 高
-- **前提知識**: Linuxサーバー運用経験
-- **学習期間**: 5-7週間
 
 ### 🔄 開発・運用プロセス（2冊）
 
@@ -233,7 +233,7 @@
 | podman-book | 中級 | 高 | 1-3年 |
 | practical-auth-book | 中級 | 高 | 2-5年 |
 | cloud-infra-handbook | 中級 | 高 | 2-5年 |
-| infra-software-essentials-book | 中級 | 高 | 1-4年 |
+| it-infra-software-essentials-book | 中級 | 高 | 1-4年 |
 | ai-testing-strategy-book | 中級 | 中 | 2-5年 |
 | LogicalThinking-AI-Era-Guide | 初級 | 高 | 全レベル |
 | negotiation-for-engineers-book | 中級 | 高 | 3年以上 |
@@ -249,7 +249,7 @@
 #### ✅ カバー済み領域
 - **Linux・インフラ基礎**: linux-infra-textbook、IT-infra-book
 - **クラウドインフラ**: cloud-infra-handbook
-- **ソフトウェア基礎**: infra-software-essentials-book
+- **ソフトウェア基礎**: it-infra-software-essentials-book
 - **コンテナ技術**: podman-book
 - **認証・セキュリティ**: practical-auth-book
 - **開発プロセス**: github-workflow-book
@@ -273,10 +273,10 @@
 4. cs-visionaries-book（息抜き・モチベーション向上）
 
 ### Phase 2: 実践技術（中級者向け）
-1. podman-book
-2. practical-auth-book
-3. cloud-infra-handbook
-4. infra-software-essentials-book
+1. it-infra-software-essentials-book
+2. podman-book
+3. practical-auth-book
+4. cloud-infra-handbook
 5. LogicalThinking-AI-Era-Guide
 6. ai-testing-strategy-book
 
@@ -293,8 +293,8 @@
 ## 📈 学習効果最大化のための工夫
 
 ### 1. 関連書籍の組み合わせ学習
-- **インフラ基礎**: linux-infra-textbook → IT-infra-book → cloud-infra-handbook
-- **技術スキル**: infra-software-essentials-book → podman-book → practical-auth-book
+- **インフラ基礎**: linux-infra-textbook → it-infra-software-essentials-book → IT-infra-book → cloud-infra-handbook
+- **技術スキル**: podman-book → practical-auth-book
 - **思考力強化**: LogicalThinking-AI-Era-Guide → ai-era-engineers-mind-book
 - **実践スキル**: github-workflow-book → ai-testing-strategy-book
 
