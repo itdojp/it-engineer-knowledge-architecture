@@ -154,20 +154,7 @@
 
 ### 💡 ソフトスキル・思考法（3冊）
 
-#### 12. **negotiation-for-engineers-book**
-📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
-- **タイトル**: エンジニアの交渉力アーキテクチャ
-- **対象読者**: 中堅～シニアエンジニア・管理職
-- **レビュー状況**: ✅ Issue #1作成済み
-- **主な内容**:
-  - 技術的根拠による説得術
-  - ステークホルダー管理
-  - エンジニア特化の交渉手法
-- **実務での重要度**: 高
-- **前提知識**: エンジニア経験3年以上
-- **学習期間**: 4-5週間
-
-#### 13. **LogicalThinking-AI-Era-Guide**
+#### 12. **LogicalThinking-AI-Era-Guide**
 📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 - **タイトル**: AI時代の論理思考ガイド
 - **対象読者**: 全エンジニア・ビジネスパーソン
@@ -180,7 +167,7 @@
 - **前提知識**: なし
 - **学習期間**: 3-4週間
 
-#### 14. **ai-era-engineers-mind-book**
+#### 13. **ai-era-engineers-mind-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 - **タイトル**: AI時代のプロフェッショナルITエンジニアの思考法
 - **対象読者**: 中堅～シニアエンジニア
@@ -193,11 +180,24 @@
 - **前提知識**: エンジニア経験3年以上
 - **学習期間**: 5-6週間
 
+#### 14. **negotiation-for-engineers-book**
+📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
+- **タイトル**: エンジニアの交渉力アーキテクチャ
+- **対象読者**: 中堅～シニアエンジニア・管理職
+- **レビュー状況**: ✅ Issue #1作成済み
+- **主な内容**:
+  - 技術的根拠による説得術
+  - ステークホルダー管理
+  - エンジニア特化の交渉手法
+- **実務での重要度**: 高
+- **前提知識**: エンジニア経験3年以上
+- **学習期間**: 4-5週間
+
 ### 📚 教養・哲学（2冊）
 
 #### 15. **cs-visionaries-book**
 📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
-- **タイトル**: コンピュータサイエンスの偉人たち
+- **タイトル**: デジタル革命の先駆者たち - コンピュータサイエンス偉人伝
 - **対象読者**: 全エンジニア・学生
 - **レビュー状況**: ✅ Issue #1作成済み
 - **主な内容**:
@@ -236,8 +236,8 @@
 | it-infra-software-essentials-book | 中級 | 高 | 1-4年 |
 | ai-testing-strategy-book | 中級 | 中 | 2-5年 |
 | LogicalThinking-AI-Era-Guide | 初級 | 高 | 全レベル |
-| negotiation-for-engineers-book | 中級 | 高 | 3年以上 |
 | ai-era-engineers-mind-book | 上級 | 高 | 3年以上 |
+| negotiation-for-engineers-book | 中級 | 高 | 3年以上 |
 | supabase-architecture-patterns-book | 中級 | 低 | 2-5年 |
 | BioinformaticsGuide-book | 上級 | 低 | 専門分野 |
 | computational-physicalism-book | 上級 | 低 | 学術・研究 |
@@ -281,8 +281,8 @@
 6. ai-testing-strategy-book
 
 ### Phase 3: 高度スキル（上級者向け）
-1. negotiation-for-engineers-book
-2. ai-era-engineers-mind-book
+1. ai-era-engineers-mind-book
+2. negotiation-for-engineers-book
 
 ### Phase 4: 専門分野（選択制）
 - supabase-architecture-patterns-book（Supabase利用者）
@@ -295,7 +295,7 @@
 ### 1. 関連書籍の組み合わせ学習
 - **インフラ基礎**: linux-infra-textbook → it-infra-software-essentials-book → IT-infra-book → cloud-infra-handbook
 - **技術スキル**: podman-book → practical-auth-book
-- **思考力強化**: LogicalThinking-AI-Era-Guide → ai-era-engineers-mind-book
+- **思考力強化**: LogicalThinking-AI-Era-Guide → ai-era-engineers-mind-book → negotiation-for-engineers-book
 - **実践スキル**: github-workflow-book → ai-testing-strategy-book
 
 ### 2. 実践プロジェクトとの組み合わせ

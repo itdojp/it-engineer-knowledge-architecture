@@ -60,17 +60,17 @@
     📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 
 #### 💡 ソフトスキル・思考法
-12. **negotiation-for-engineers-book** - エンジニアの交渉術  
-    📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
-
-13. **LogicalThinking-AI-Era-Guide** - AI時代の論理思考  
+12. **LogicalThinking-AI-Era-Guide** - AI時代の論理思考  
     📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 
-14. **ai-era-engineers-mind-book** - AI時代のエンジニア思考法  
+13. **ai-era-engineers-mind-book** - AI時代のエンジニア思考法  
     📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 
+14. **negotiation-for-engineers-book** - エンジニアの交渉術  
+    📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
+
 #### 📚 教養・哲学
-15. **cs-visionaries-book** - コンピュータサイエンス偉人伝  
+15. **cs-visionaries-book** - デジタル革命の先駆者たち - コンピュータサイエンス偉人伝  
     📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
 16. **computational-physicalism-book** - 計算物理主義（哲学）  
@@ -118,8 +118,8 @@
    - 『災害対策・事業継続計画（BCP）実装ガイド』（計画）
 
 2. **リーダーシップ**
-   - negotiation-for-engineers-book
    - ai-era-engineers-mind-book
+   - negotiation-for-engineers-book
 
 #### 🏛️ エキスパート（シニア・責任者）
 1. **組織・戦略**
@@ -148,7 +148,7 @@
 **推奨**: cloud-infra-handbook → 災害対策・BCP → クラウドアーキテクチャ
 
 ### 👥 エンジニアリングマネージャー
-**必修**: negotiation-for-engineers-book → ai-era-engineers-mind-book  
+**必修**: LogicalThinking-AI-Era-Guide → ai-era-engineers-mind-book → negotiation-for-engineers-book  
 **推奨**: 全分野の概要習得
 
 ## 📊 進捗管理
