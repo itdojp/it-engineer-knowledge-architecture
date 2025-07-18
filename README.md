@@ -24,22 +24,22 @@
 ### ✅ 既存書籍（17冊）
 
 #### 🔧 技術基盤
-1. **theoretical-computer-science-textbook** - コンピュータサイエンス基礎理論  
+1. **theoretical-computer-science-textbook** - 理論計算機科学教科書  
    📖 [書籍を読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/theoretical-computer-science-textbook)
 
-2. **linux-infra-textbook** - Linuxインフラ基礎  
+2. **linux-infra-textbook** - 実践Linux インフラエンジニア入門 ―コンテナ・クラウド時代の基礎技術―  
    📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook)
 
-3. **it-infra-software-essentials-book** - ITインフラエンジニアのためのソフトウェア基礎知識  
+3. **it-infra-software-essentials-book** - ITインフラエンジニアのためのソフトウェア基礎知識 - YAML, JSON, スクリプト, APIで学ぶ自動化の基本  
    📖 [書籍を読む](https://itdojp.github.io/it-infra-software-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-software-essentials-book)
 
 4. **IT-infra-book** - ITインフラ全般  
    📖 [書籍を読む](https://itdojp.github.io/IT-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-book)
 
-5. **podman-book** - コンテナ技術  
+5. **podman-book** - Podman完全ガイド - コンテナ技術の理論と実践 - エンタープライズ環境でのPodman活用法  
    📖 [書籍を読む](https://itdojp.github.io/podman-book/) | 📂 [リポジトリ](https://github.com/itdojp/podman-book)
 
-6. **practical-auth-book** - 認証・認可実践  
+6. **practical-auth-book** - 実践 認証認可システム設計 - ゼロから学ぶアイデンティティ管理の実装  
    📖 [書籍を読む](https://itdojp.github.io/practical-auth-book/) | 📂 [リポジトリ](https://github.com/itdojp/practical-auth-book)
 
 7. **cloud-infra-handbook** - クラウドインフラ設計・構築ガイド  
@@ -49,34 +49,34 @@
    📖 [書籍を読む](https://itdojp.github.io/it-infra-security-guide-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-security-guide-book)
 
 #### 🔄 開発・運用プロセス
-9. **github-workflow-book** - GitHub運用  
+9. **github-workflow-book** - AI開発のためのGitHubワークフロー実践ガイド  
    📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
 
-10. **ai-testing-strategy-book** - AI時代のテスト戦略  
+10. **ai-testing-strategy-book** - AI主導開発時代のソフトウェアテスト戦略 - 品質保証の新パラダイム  
    📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 
 #### 🏗️ 特定技術・応用領域
 11. **supabase-architecture-patterns-book** - Supabaseアーキテクチャ  
     📖 [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | 📂 [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
 
-12. **BioinformaticsGuide-book** - バイオインフォマティクス  
+12. **BioinformaticsGuide-book** - バイオインフォマティクス実践ガイド - ゲノム医科学のための理論と実装  
     📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 
 #### 💡 ソフトスキル・思考法
-13. **LogicalThinking-AI-Era-Guide** - AI時代の論理思考  
+13. **LogicalThinking-AI-Era-Guide** - AI時代に差がつく論理的思考と表現力  
     📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 
-14. **ai-era-engineers-mind-book** - AI時代のエンジニア思考法  
+14. **ai-era-engineers-mind-book** - AI時代のプロフェッショナルITエンジニアの思考法  
     📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 
-15. **negotiation-for-engineers-book** - エンジニアの交渉術  
+15. **negotiation-for-engineers-book** - エンジニアの交渉力アーキテクチャ  
     📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
 
 #### 📚 教養・哲学
 16. **cs-visionaries-book** - デジタル革命の先駆者たち - コンピュータサイエンス偉人伝  
     📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
-17. **computational-physicalism-book** - 計算物理主義（哲学）  
+17. **computational-physicalism-book** - 計算論的物理主義  
     📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 
 ### 📝 計画書籍（7冊）
