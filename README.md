@@ -9,9 +9,9 @@
 このプロジェクトは、ITエンジニア（特にインフラ系）が実務で必要とする知識を体系化し、段階的な学習ロードマップを提供することを目的としています。
 
 ### 📚 対象範囲
-- **既存書籍**: 16冊（レビュー済み）
+- **既存書籍**: 17冊（レビュー済み）
 - **計画書籍**: 7冊（新規制作予定）
-- **合計**: 23冊による総合的な知識体系
+- **合計**: 24冊による総合的な知識体系
 
 ### 🎓 対象読者
 - 新人～シニアITエンジニア
@@ -21,7 +21,7 @@
 
 ## 📖 書籍一覧
 
-### ✅ 既存書籍（16冊）
+### ✅ 既存書籍（17冊）
 
 #### 🔧 技術基盤
 1. **theoretical-computer-science-textbook** - コンピュータサイエンス基礎理論  
@@ -45,35 +45,38 @@
 7. **cloud-infra-handbook** - クラウドインフラ設計・構築ガイド  
    📖 [書籍を読む](https://itdojp.github.io/cloud-infra-handbook/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-handbook)
 
+8. **it-infra-security-guide-book** - インフラエンジニアのための情報セキュリティ実装ガイド  
+   📖 [書籍を読む](https://itdojp.github.io/it-infra-security-guide-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-security-guide-book)
+
 #### 🔄 開発・運用プロセス
-8. **github-workflow-book** - GitHub運用  
+9. **github-workflow-book** - GitHub運用  
    📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
 
-9. **ai-testing-strategy-book** - AI時代のテスト戦略  
+10. **ai-testing-strategy-book** - AI時代のテスト戦略  
    📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 
 #### 🏗️ 特定技術・応用領域
-10. **supabase-architecture-patterns-book** - Supabaseアーキテクチャ  
+11. **supabase-architecture-patterns-book** - Supabaseアーキテクチャ  
     📖 [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | 📂 [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
 
-11. **BioinformaticsGuide-book** - バイオインフォマティクス  
+12. **BioinformaticsGuide-book** - バイオインフォマティクス  
     📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 
 #### 💡 ソフトスキル・思考法
-12. **LogicalThinking-AI-Era-Guide** - AI時代の論理思考  
+13. **LogicalThinking-AI-Era-Guide** - AI時代の論理思考  
     📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 
-13. **ai-era-engineers-mind-book** - AI時代のエンジニア思考法  
+14. **ai-era-engineers-mind-book** - AI時代のエンジニア思考法  
     📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 
-14. **negotiation-for-engineers-book** - エンジニアの交渉術  
+15. **negotiation-for-engineers-book** - エンジニアの交渉術  
     📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
 
 #### 📚 教養・哲学
-15. **cs-visionaries-book** - デジタル革命の先駆者たち - コンピュータサイエンス偉人伝  
+16. **cs-visionaries-book** - デジタル革命の先駆者たち - コンピュータサイエンス偉人伝  
     📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
-16. **computational-physicalism-book** - 計算物理主義（哲学）  
+17. **computational-physicalism-book** - 計算物理主義（哲学）  
     📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 
 ### 📝 計画書籍（7冊）
@@ -154,7 +157,7 @@
 ## 📊 進捗管理
 
 ### 🏗️ プロジェクト状況
-- ✅ **Phase 1**: 既存書籍レビュー完了（16冊）
+- ✅ **Phase 1**: 既存書籍レビュー完了（17冊）
 - 🔄 **Phase 2**: 知識体系設計・ロードマップ作成（進行中）
 - 📝 **Phase 3**: 計画書籍制作（4冊優先）
 - 🚀 **Phase 4**: コミュニティ形成・フィードバック収集
@@ -163,7 +166,7 @@
 - **2024年Q4**: 優先度高書籍2冊着手
 - **2025年Q1**: 優先度高書籍4冊完成
 - **2025年Q2**: 中優先度書籍着手
-- **2025年Q3**: 全23冊体系完成
+- **2025年Q3**: 全24冊体系完成
 
 ## 🤝 コミュニティ・フィードバック
 
