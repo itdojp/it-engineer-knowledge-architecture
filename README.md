@@ -9,9 +9,9 @@
 このプロジェクトは、ITエンジニア（特にインフラ系）が実務で必要とする知識を体系化し、段階的な学習ロードマップを提供することを目的としています。
 
 ### 📚 対象範囲
-- **既存書籍**: 17冊（レビュー済み）
+- **既存書籍**: 18冊（レビュー済み）
 - **計画書籍**: 7冊（新規制作予定）
-- **合計**: 24冊による総合的な知識体系
+- **合計**: 25冊による総合的な知識体系
 
 ### 🎓 対象読者
 - 新人～シニアITエンジニア
@@ -21,62 +21,65 @@
 
 ## 📖 書籍一覧
 
-### ✅ 既存書籍（17冊）
+### ✅ 既存書籍（18冊）
 
 #### 🔧 技術基盤
-1. **theoretical-computer-science-textbook** - 理論計算機科学教科書  
+1. **理論計算機科学教科書**  
    📖 [書籍を読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/theoretical-computer-science-textbook)
 
-2. **linux-infra-textbook** - 実践Linux インフラエンジニア入門 ―コンテナ・クラウド時代の基礎技術―  
+2. **実践Linux インフラエンジニア入門**  
    📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook)
 
-3. **it-infra-software-essentials-book** - ITインフラエンジニアのためのソフトウェア基礎知識 - YAML, JSON, スクリプト, APIで学ぶ自動化の基本  
+3. **ITインフラエンジニアのためのソフトウェア基礎知識**  
    📖 [書籍を読む](https://itdojp.github.io/it-infra-software-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-software-essentials-book)
 
-4. **IT-infra-book** - ITインフラ全般  
+4. **ITインフラ全般**  
    📖 [書籍を読む](https://itdojp.github.io/IT-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-book)
 
-5. **podman-book** - Podman完全ガイド - コンテナ技術の理論と実践 - エンタープライズ環境でのPodman活用法  
+5. **Podman完全ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/podman-book/) | 📂 [リポジトリ](https://github.com/itdojp/podman-book)
 
-6. **practical-auth-book** - 実践 認証認可システム設計 - ゼロから学ぶアイデンティティ管理の実装  
+6. **実践 認証認可システム設計**  
    📖 [書籍を読む](https://itdojp.github.io/practical-auth-book/) | 📂 [リポジトリ](https://github.com/itdojp/practical-auth-book)
 
-7. **cloud-infra-handbook** - クラウドインフラ設計・構築ガイド  
-   📖 [書籍を読む](https://itdojp.github.io/cloud-infra-handbook/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-handbook)
+7. **クラウドインフラ設計・構築ガイド**  
+   📖 [書籍を読む](https://itdojp.github.io/cloud-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-book)
 
-8. **it-infra-security-guide-book** - インフラエンジニアのための情報セキュリティ実装ガイド  
+8. **インフラエンジニアのための情報セキュリティ実装ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/it-infra-security-guide-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-security-guide-book)
 
 #### 🔄 開発・運用プロセス
-9. **github-workflow-book** - AI開発のためのGitHubワークフロー実践ガイド  
+9. **AI開発のためのGitHubワークフロー実践ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
 
-10. **ai-testing-strategy-book** - AI主導開発時代のソフトウェアテスト戦略 - 品質保証の新パラダイム  
-   📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
+10. **AI主導開発時代のソフトウェアテスト戦略**  
+    📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 
 #### 🏗️ 特定技術・応用領域
-11. **supabase-architecture-patterns-book** - Supabaseアーキテクチャ  
+11. **Supabaseアーキテクチャ**  
     📖 [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | 📂 [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
 
-12. **BioinformaticsGuide-book** - バイオインフォマティクス実践ガイド - ゲノム医科学のための理論と実装  
+12. **バイオインフォマティクス実践ガイド**  
     📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 
 #### 💡 ソフトスキル・思考法
-13. **LogicalThinking-AI-Era-Guide** - AI時代に差がつく論理的思考と表現力  
+13. **AI時代に差がつく論理的思考と表現力**  
     📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 
-14. **ai-era-engineers-mind-book** - AI時代のプロフェッショナルITエンジニアの思考法  
+14. **AI時代のプロフェッショナルITエンジニアの思考法**  
     📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 
-15. **negotiation-for-engineers-book** - エンジニアの交渉力アーキテクチャ  
+15. **エンジニアの交渉力アーキテクチャ**  
     📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
 
+16. **生成AIコミュニケーション技術**  
+    📖 [書籍を読む](https://itdojp.github.io/ai-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-communication-book)
+
 #### 📚 教養・哲学
-16. **cs-visionaries-book** - デジタル革命の先駆者たち - コンピュータサイエンス偉人伝  
+17. **デジタル革命の先駆者たち**  
     📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
-17. **computational-physicalism-book** - 計算論的物理主義  
+18. **計算論的物理主義**  
     📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 
 ### 📝 計画書籍（7冊）
@@ -100,20 +103,20 @@
 
 #### 🌱 初級者（経験0-2年）
 1. **基礎固め**
-   - linux-infra-textbook → IT-infra-book
-   - cs-visionaries-book（教養）
+   - 実践Linux インフラエンジニア入門 → ITインフラ全般
+   - デジタル革命の先駆者たち（教養）
 
 2. **実践スキル**
-   - github-workflow-book → podman-book
+   - AI開発のためのGitHubワークフロー実践ガイド → Podman完全ガイド
 
 #### 🌿 中級者（経験3-5年）
 1. **専門技術**
-   - practical-auth-book
+   - 実践 認証認可システム設計
    - 『インフラ監視・運用自動化実践ガイド』（計画）
 
 2. **思考・プロセス**
-   - LogicalThinking-AI-Era-Guide
-   - ai-testing-strategy-book
+   - AI時代に差がつく論理的思考と表現力
+   - AI主導開発時代のソフトウェアテスト戦略
 
 #### 🌳 上級者（経験6年以上）
 1. **アーキテクチャ・設計**
@@ -121,8 +124,8 @@
    - 『災害対策・事業継続計画（BCP）実装ガイド』（計画）
 
 2. **リーダーシップ**
-   - ai-era-engineers-mind-book
-   - negotiation-for-engineers-book
+   - AI時代のプロフェッショナルITエンジニアの思考法
+   - エンジニアの交渉力アーキテクチャ
 
 #### 🏛️ エキスパート（シニア・責任者）
 1. **組織・戦略**
@@ -135,29 +138,29 @@
 ## 🎯 専門分野別学習パス
 
 ### 🖥️ インフラエンジニア
-**必修**: linux-infra-textbook → IT-infra-book → cloud-infra-handbook → infra-software-essentials-book → 監視・運用自動化 → クラウドアーキテクチャ  
+**必修**: 実践Linux インフラエンジニア入門 → ITインフラ全般 → クラウドインフラ設計・構築ガイド → ITインフラエンジニアのためのソフトウェア基礎知識 → 監視・運用自動化 → クラウドアーキテクチャ  
 **推奨**: 災害対策・BCP → セキュリティインフラ → 性能管理
 
 ### ☁️ クラウドエンジニア
-**必修**: IT-infra-book → cloud-infra-handbook → podman-book → クラウドアーキテクチャ → 監視・運用自動化  
-**推奨**: infra-software-essentials-book → 性能管理 → 次世代インフラ技術
+**必修**: ITインフラ全般 → クラウドインフラ設計・構築ガイド → Podman完全ガイド → クラウドアーキテクチャ → 監視・運用自動化  
+**推奨**: ITインフラエンジニアのためのソフトウェア基礎知識 → 性能管理 → 次世代インフラ技術
 
 ### 🔐 セキュリティエンジニア
-**必修**: practical-auth-book → セキュリティインフラ → コンプライアンス対応  
+**必修**: 実践 認証認可システム設計 → セキュリティインフラ → コンプライアンス対応  
 **推奨**: 監視・運用自動化 → 災害対策・BCP
 
 ### 🧪 SRE・テストエンジニア
-**必修**: infra-software-essentials-book → ai-testing-strategy-book → 監視・運用自動化 → 性能管理  
-**推奨**: cloud-infra-handbook → 災害対策・BCP → クラウドアーキテクチャ
+**必修**: ITインフラエンジニアのためのソフトウェア基礎知識 → AI主導開発時代のソフトウェアテスト戦略 → 監視・運用自動化 → 性能管理  
+**推奨**: クラウドインフラ設計・構築ガイド → 災害対策・BCP → クラウドアーキテクチャ
 
 ### 👥 エンジニアリングマネージャー
-**必修**: LogicalThinking-AI-Era-Guide → ai-era-engineers-mind-book → negotiation-for-engineers-book  
+**必修**: AI時代に差がつく論理的思考と表現力 → AI時代のプロフェッショナルITエンジニアの思考法 → エンジニアの交渉力アーキテクチャ  
 **推奨**: 全分野の概要習得
 
 ## 📊 進捗管理
 
 ### 🏗️ プロジェクト状況
-- ✅ **Phase 1**: 既存書籍レビュー完了（17冊）
+- ✅ **Phase 1**: 既存書籍レビュー完了（18冊）
 - 🔄 **Phase 2**: 知識体系設計・ロードマップ作成（進行中）
 - 📝 **Phase 3**: 計画書籍制作（4冊優先）
 - 🚀 **Phase 4**: コミュニティ形成・フィードバック収集
@@ -166,7 +169,7 @@
 - **2024年Q4**: 優先度高書籍2冊着手
 - **2025年Q1**: 優先度高書籍4冊完成
 - **2025年Q2**: 中優先度書籍着手
-- **2025年Q3**: 全24冊体系完成
+- **2025年Q3**: 全25冊体系完成
 
 ## 🤝 コミュニティ・フィードバック
 
