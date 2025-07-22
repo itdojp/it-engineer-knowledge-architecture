@@ -23,49 +23,66 @@
 
 ### ✅ 既存書籍（19冊）
 
-#### 🔧 技術基盤
-1. **理論計算機科学教科書**  
-   📖 [書籍を読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/theoretical-computer-science-textbook)
+#### 🔧 技術基盤（基礎）
+*対象: 新人〜中級者（経験0-2年）/ ITインフラの土台となる必修知識*
 
-2. **実践Linux インフラエンジニア入門**  
+1. **実践Linux インフラエンジニア入門**  
    📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook)
 
-3. **ITインフラエンジニアのためのソフトウェア基礎知識**  
+2. **ITインフラエンジニアのためのソフトウェア基礎知識**  
    📖 [書籍を読む](https://itdojp.github.io/it-infra-software-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-software-essentials-book)
 
-4. **ITインフラ全般**  
+3. **ITインフラ全般**  
    📖 [書籍を読む](https://itdojp.github.io/IT-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-book)
 
-5. **ITインフラトラブルシューティング実践ガイド**  
+#### 🚀 技術基盤（発展）
+*対象: 中級〜上級者（経験2年以上）/ 高度な設計・運用・問題解決スキル*
+
+4. **ITインフラトラブルシューティング実践ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/IT-infra-troubleshooting-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-troubleshooting-book)
 
-6. **Podman完全ガイド**  
-   📖 [書籍を読む](https://itdojp.github.io/podman-book/) | 📂 [リポジトリ](https://github.com/itdojp/podman-book)
-
-7. **実践 認証認可システム設計**  
-   📖 [書籍を読む](https://itdojp.github.io/practical-auth-book/) | 📂 [リポジトリ](https://github.com/itdojp/practical-auth-book)
-
-8. **クラウドインフラ設計・構築ガイド**  
+5. **クラウドインフラ設計・構築ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/cloud-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-book)
 
-9. **インフラエンジニアのための情報セキュリティ実装ガイド**  
+6. **インフラエンジニアのための情報セキュリティ実装ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/it-infra-security-guide-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-security-guide-book)
 
+#### 💡 応用技術
+*対象: 中級者以上 / 特定技術スタックの実践的活用*
+
+7. **Podman完全ガイド**  
+   📖 [書籍を読む](https://itdojp.github.io/podman-book/) | 📂 [リポジトリ](https://github.com/itdojp/podman-book)
+
+8. **実践 認証認可システム設計**  
+   📖 [書籍を読む](https://itdojp.github.io/practical-auth-book/) | 📂 [リポジトリ](https://github.com/itdojp/practical-auth-book)
+
+9. **Supabaseアーキテクチャ**  
+   📖 [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | 📂 [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
+
+#### 📐 コンピューターサイエンス理論
+*対象: 中級者以上 / 理論的バックグラウンドの深化*
+
+10. **理論計算機科学教科書**  
+    📖 [書籍を読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/theoretical-computer-science-textbook)
+
 #### 🔄 開発・運用プロセス
-10. **AI開発のためのGitHubワークフロー実践ガイド**  
+*対象: 全レベル / 開発効率化・品質向上*
+
+11. **AI開発のためのGitHubワークフロー実践ガイド**  
     📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
 
-11. **AI主導開発時代のソフトウェアテスト戦略**  
+12. **AI主導開発時代のソフトウェアテスト戦略**  
     📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 
-#### 🏗️ 特定技術・応用領域
-12. **Supabaseアーキテクチャ**  
-    📖 [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | 📂 [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
+#### 🏗️ 特定領域・ドメイン知識
+*対象: 専門分野従事者 / 業界特化の専門知識*
 
 13. **バイオインフォマティクス実践ガイド**  
     📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 
 #### 💡 ソフトスキル・思考法
+*対象: 全レベル / キャリア発展・コミュニケーション*
+
 14. **AI時代に差がつく論理的思考と表現力**  
     📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 
@@ -79,6 +96,8 @@
     📖 [書籍を読む](https://itdojp.github.io/ai-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-communication-book)
 
 #### 📚 教養・哲学
+*対象: 全レベル / 技術的教養・視野拡大*
+
 18. **デジタル革命の先駆者たち**  
     📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
@@ -141,24 +160,30 @@
 ## 🎯 専門分野別学習パス
 
 ### 🖥️ インフラエンジニア
-**必修**: 実践Linux インフラエンジニア入門 → ITインフラ全般 → ITインフラトラブルシューティング実践ガイド → クラウドインフラ設計・構築ガイド → ITインフラエンジニアのためのソフトウェア基礎知識 → 監視・運用自動化 → クラウドアーキテクチャ  
-**推奨**: 災害対策・BCP → セキュリティインフラ → 性能管理
+**基礎**: 実践Linux インフラエンジニア入門 → ITインフラエンジニアのためのソフトウェア基礎知識 → ITインフラ全般  
+**発展**: ITインフラトラブルシューティング実践ガイド → クラウドインフラ設計・構築ガイド → インフラエンジニアのための情報セキュリティ実装ガイド  
+**応用技術**: Podman完全ガイド → 実践 認証認可システム設計
 
 ### ☁️ クラウドエンジニア
-**必修**: ITインフラ全般 → クラウドインフラ設計・構築ガイド → Podman完全ガイド → クラウドアーキテクチャ → 監視・運用自動化  
-**推奨**: ITインフラエンジニアのためのソフトウェア基礎知識 → 性能管理 → 次世代インフラ技術
+**基礎**: ITインフラエンジニアのためのソフトウェア基礎知識 → ITインフラ全般  
+**発展**: クラウドインフラ設計・構築ガイド → ITインフラトラブルシューティング実践ガイド  
+**応用技術**: Podman完全ガイド → Supabaseアーキテクチャ
 
 ### 🔐 セキュリティエンジニア
-**必修**: 実践 認証認可システム設計 → セキュリティインフラ → コンプライアンス対応  
-**推奨**: 監視・運用自動化 → 災害対策・BCP
+**基礎**: ITインフラエンジニアのためのソフトウェア基礎知識  
+**発展**: インフラエンジニアのための情報セキュリティ実装ガイド  
+**応用技術**: 実践 認証認可システム設計
 
 ### 🧪 SRE・テストエンジニア
-**必修**: ITインフラエンジニアのためのソフトウェア基礎知識 → ITインフラトラブルシューティング実践ガイド → AI主導開発時代のソフトウェアテスト戦略 → 監視・運用自動化 → 性能管理  
-**推奨**: クラウドインフラ設計・構築ガイド → 災害対策・BCP → クラウドアーキテクチャ
+**基礎**: ITインフラエンジニアのためのソフトウェア基礎知識 → ITインフラ全般  
+**発展**: ITインフラトラブルシューティング実践ガイド → クラウドインフラ設計・構築ガイド  
+**プロセス**: AI主導開発時代のソフトウェアテスト戦略 → AI開発のためのGitHubワークフロー実践ガイド  
+**応用技術**: Podman完全ガイド
 
 ### 👥 エンジニアリングマネージャー
-**必修**: AI時代に差がつく論理的思考と表現力 → AI時代のプロフェッショナルITエンジニアの思考法 → エンジニアの交渉力アーキテクチャ  
-**推奨**: 全分野の概要習得
+**ソフトスキル**: AI時代に差がつく論理的思考と表現力 → AI時代のプロフェッショナルITエンジニアの思考法 → エンジニアの交渉力アーキテクチャ → 生成AIコミュニケーション技術  
+**技術理解**: 基礎分野の概要習得 → 理論計算機科学教科書（理論的背景）  
+**教養**: デジタル革命の先駆者たち → 計算論的物理主義
 
 ## 📊 進捗管理
 
