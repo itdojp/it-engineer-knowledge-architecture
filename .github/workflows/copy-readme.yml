@@ -1,0 +1,22 @@
+name: Sync README to docs/index.md
+
+on:
+  push:
+    branches: [main] # または運用しているブランチ名
+
+jobs:
+  copy-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy README.md to docs/index.md
+        run: |
+          mkdir -p docs
+          cp README.md docs/index.md
+      - name: Commit and push if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: sync README.md to docs/index.md [auto]'
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          branch: ${{ github.ref_name }}
