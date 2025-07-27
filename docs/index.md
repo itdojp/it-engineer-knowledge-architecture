@@ -74,6 +74,10 @@
 12. **AI主導開発時代のソフトウェアテスト戦略**  
     📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 
+13. **形式的手法の基礎と応用**  
+    📖 [書籍を読む](https://itdojp.github.io/formal-methods-book/) | 📂 [リポジトリ](https://github.com/itdojp/formal-methods-book)  
+    *前提知識: 理論計算機科学教科書*
+
 #### 🏗️ 特定領域・ドメイン知識
 *対象: 専門分野従事者 / 業界特化の専門知識*
 
