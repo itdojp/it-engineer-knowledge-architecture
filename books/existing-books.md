@@ -1,4 +1,4 @@
-# 既存書籍一覧（16冊）
+# 既存書籍一覧（17冊）
 
 ## 📚 書籍カテゴリ別整理
 
@@ -96,7 +96,7 @@
 - **前提知識**: ITインフラ基礎
 - **学習期間**: 6-8週間
 
-### 🔄 開発・運用プロセス（2冊）
+### 🔄 開発・運用プロセス（3冊）
 
 #### 8. **github-workflow-book**
 📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
@@ -124,9 +124,23 @@
 - **前提知識**: テスト基礎
 - **学習期間**: 4-5週間
 
+#### 10. **formal-methods-book**
+📖 [書籍を読む](https://itdojp.github.io/formal-methods-book/) | 📂 [リポジトリ](https://github.com/itdojp/formal-methods-book)
+- **タイトル**: 形式的手法の基礎と応用
+- **対象読者**: ソフトウェアエンジニア・研究者・品質保証担当者
+- **レビュー状況**: 📝 レビュー予定
+- **主な内容**:
+  - 形式仕様記述・モデル検査
+  - プログラム検証・定理証明
+  - 高信頼性システム開発手法
+  - 安全クリティカルシステム設計
+- **実務での重要度**: 中（安全クリティカル分野では高）
+- **前提知識**: 理論計算機科学教科書
+- **学習期間**: 8-10週間
+
 ### 🏗️ 特定技術・応用領域（2冊）
 
-#### 10. **supabase-architecture-patterns-book**
+#### 11. **supabase-architecture-patterns-book**
 📖 [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | 📂 [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
 - **タイトル**: Supabaseアーキテクチャパターン
 - **対象読者**: Supabase利用開発者
@@ -139,7 +153,7 @@
 - **前提知識**: Web開発・データベース基礎
 - **学習期間**: 3-4週間
 
-#### 11. **BioinformaticsGuide-book**
+#### 12. **BioinformaticsGuide-book**
 📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 - **タイトル**: バイオインフォマティクス実践ガイド
 - **対象読者**: バイオ分野エンジニア・研究者
@@ -154,7 +168,7 @@
 
 ### 💡 ソフトスキル・思考法（3冊）
 
-#### 12. **LogicalThinking-AI-Era-Guide**
+#### 13. **LogicalThinking-AI-Era-Guide**
 📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 - **タイトル**: AI時代の論理思考ガイド
 - **対象読者**: 全エンジニア・ビジネスパーソン
@@ -167,7 +181,7 @@
 - **前提知識**: なし
 - **学習期間**: 3-4週間
 
-#### 13. **ai-era-engineers-mind-book**
+#### 14. **ai-era-engineers-mind-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 - **タイトル**: AI時代のプロフェッショナルITエンジニアの思考法
 - **対象読者**: 中堅～シニアエンジニア
@@ -180,7 +194,7 @@
 - **前提知識**: エンジニア経験3年以上
 - **学習期間**: 5-6週間
 
-#### 14. **negotiation-for-engineers-book**
+#### 15. **negotiation-for-engineers-book**
 📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
 - **タイトル**: エンジニアの交渉力アーキテクチャ
 - **対象読者**: 中堅～シニアエンジニア・管理職
@@ -195,7 +209,7 @@
 
 ### 📚 教養・哲学（2冊）
 
-#### 15. **cs-visionaries-book**
+#### 16. **cs-visionaries-book**
 📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 - **タイトル**: デジタル革命の先駆者たち - コンピュータサイエンス偉人伝
 - **対象読者**: 全エンジニア・学生
@@ -208,7 +222,7 @@
 - **前提知識**: なし
 - **学習期間**: 2-3週間
 
-#### 16. **computational-physicalism-book**
+#### 17. **computational-physicalism-book**
 📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 - **タイトル**: 計算物理主義（哲学的アプローチ）
 - **対象読者**: 哲学・理論に興味のあるエンジニア・研究者
@@ -234,6 +248,7 @@
 | practical-auth-book | 中級 | 高 | 2-5年 |
 | cloud-infra-handbook | 中級 | 高 | 2-5年 |
 | it-infra-software-essentials-book | 中級 | 高 | 1-4年 |
+| formal-methods-book | 上級 | 中 | 3年以上 |
 | ai-testing-strategy-book | 中級 | 中 | 2-5年 |
 | LogicalThinking-AI-Era-Guide | 初級 | 高 | 全レベル |
 | ai-era-engineers-mind-book | 上級 | 高 | 3年以上 |
@@ -253,7 +268,8 @@
 - **コンテナ技術**: podman-book
 - **認証・セキュリティ**: practical-auth-book
 - **開発プロセス**: github-workflow-book
-- **テスト戦略**: ai-testing-strategy-book
+- **テスト戦略**: ai-testing-strategy-book  
+- **形式的手法**: formal-methods-book
 - **ソフトスキル**: negotiation-for-engineers-book、思考法2冊
 
 #### ❌ 不足領域（計画書籍でカバー予定）
@@ -279,6 +295,7 @@
 4. cloud-infra-handbook
 5. LogicalThinking-AI-Era-Guide
 6. ai-testing-strategy-book
+7. formal-methods-book（理論計算機科学教科書修了後）
 
 ### Phase 3: 高度スキル（上級者向け）
 1. ai-era-engineers-mind-book
@@ -297,6 +314,7 @@
 - **技術スキル**: podman-book → practical-auth-book
 - **思考力強化**: LogicalThinking-AI-Era-Guide → ai-era-engineers-mind-book → negotiation-for-engineers-book
 - **実践スキル**: github-workflow-book → ai-testing-strategy-book
+- **高信頼性開発**: theoretical-computer-science-textbook → formal-methods-book
 
 ### 2. 実践プロジェクトとの組み合わせ
 - 各書籍の学習内容を実際のプロジェクトで適用
@@ -309,4 +327,6 @@
 
 ---
 
-既存16冊により、ITエンジニアの基礎から上級レベルまでの幅広い知識をカバーできています。特にインフラ基礎、クラウド技術、開発プロセス、ソフトスキルの分野では充実した内容となっています。また、理論計算機科学の追加により、学術的な理論基盤も強化され、より深い理解を求める学習者にも対応できる包括的な体系となりました。
+既存17冊により、ITエンジニアの基礎から上級レベルまでの幅広い知識をカバーできています。特にインフラ基礎、クラウド技術、開発プロセス、ソフトスキルの分野では充実した内容となっています。
+
+**最新追加**: 形式的手法の基礎と応用により、高信頼性システム開発の分野が新たにカバーされました。これにより、安全クリティカルシステムや高品質ソフトウェア開発に関心のあるエンジニアにも対応できる、より包括的な体系となりました。理論計算機科学教科書と組み合わせることで、理論から実践まで一貫した学習パスが構築されています。
