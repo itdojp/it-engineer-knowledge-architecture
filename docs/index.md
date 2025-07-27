@@ -9,8 +9,8 @@
 このプロジェクトは、ITエンジニア（特にインフラ系）が実務で必要とする知識を体系化し、段階的な学習ロードマップを提供することを目的としています。
 
 ### 📚 対象範囲
-- **既存書籍**: 19冊（レビュー済み）
-- **計画書籍**: 7冊（新規制作予定）
+- **既存書籍**: 20冊（レビュー済み）
+- **計画書籍**: 6冊（新規制作予定）
 - **合計**: 26冊による総合的な知識体系
 
 ### 🎓 対象読者
@@ -21,7 +21,7 @@
 
 ## 📖 書籍一覧
 
-### ✅ 既存書籍（19冊）
+### ✅ 既存書籍（20冊）
 
 #### 🔧 技術基盤（基礎）
 *対象: 新人〜中級者（経験0-2年）/ ITインフラの土台となる必修知識*
@@ -77,34 +77,34 @@
 #### 🏗️ 特定領域・ドメイン知識
 *対象: 専門分野従事者 / 業界特化の専門知識*
 
-13. **バイオインフォマティクス実践ガイド**  
+14. **バイオインフォマティクス実践ガイド**  
     📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 
 #### 💡 ソフトスキル・思考法
 *対象: 全レベル / キャリア発展・コミュニケーション*
 
-14. **AI時代に差がつく論理的思考と表現力**  
+15. **AI時代に差がつく論理的思考と表現力**  
     📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 
-15. **AI時代のプロフェッショナルITエンジニアの思考法**  
+16. **AI時代のプロフェッショナルITエンジニアの思考法**  
     📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 
-16. **エンジニアの交渉力アーキテクチャ**  
+17. **エンジニアの交渉力アーキテクチャ**  
     📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
 
-17. **生成AIコミュニケーション技術**  
+18. **生成AIコミュニケーション技術**  
     📖 [書籍を読む](https://itdojp.github.io/ai-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-communication-book)
 
 #### 📚 教養・哲学
 *対象: 全レベル / 技術的教養・視野拡大*
 
-18. **デジタル革命の先駆者たち**  
+19. **デジタル革命の先駆者たち**  
     📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
-19. **計算論的物理主義**  
+20. **計算論的物理主義**  
     📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 
-### 📝 計画書籍（7冊）
+### 📝 計画書籍（6冊）
 
 #### 🔴 優先度: 高（必須追加）
 1. **『インフラ監視・運用自動化実践ガイド』** - Prometheus/Grafana、SRE実践
@@ -188,7 +188,7 @@
 ## 📊 進捗管理
 
 ### 🏗️ プロジェクト状況
-- ✅ **Phase 1**: 既存書籍レビュー完了（19冊）
+- ✅ **Phase 1**: 既存書籍レビュー完了（20冊）
 - 🔄 **Phase 2**: 知識体系設計・ロードマップ作成（進行中）
 - 📝 **Phase 3**: 計画書籍制作（4冊優先）
 - 🚀 **Phase 4**: コミュニティ形成・フィードバック収集
