@@ -35,17 +35,17 @@
 3. **ITインフラストラクチャ技術ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/IT-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-book)
 
-4. **ITインフラトラブルシューティング実践ガイド**  
-   📖 [書籍を読む](https://itdojp.github.io/IT-infra-troubleshooting-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-troubleshooting-book)
-
-5. **インフラエンジニアのための情報セキュリティ実装ガイド**  
-   📖 [書籍を読む](https://itdojp.github.io/it-infra-security-guide-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-security-guide-book)
-
 #### 🚀 技術基盤（発展）
 *対象: 中級〜上級者（経験2年以上）/ 高度な設計・運用・問題解決スキル*
 
-6. **クラウドインフラ設計・構築ガイド**  
-   📖 [書籍を読む](https://itdojp.github.io/cloud-infra-handbook/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-handbook)
+4. **ITインフラトラブルシューティング実践ガイド**  
+   📖 [書籍を読む](https://itdojp.github.io/IT-infra-troubleshooting-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-troubleshooting-book)
+
+5. **クラウドインフラ設計・構築ガイド**  
+   📖 [書籍を読む](https://itdojp.github.io/cloud-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-book)
+
+6. **インフラエンジニアのための情報セキュリティ実装ガイド**  
+   📖 [書籍を読む](https://itdojp.github.io/it-infra-security-guide-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-security-guide-book)
 
 #### 💡 応用技術
 *対象: 中級者以上 / 特定技術スタックの実践的活用*
