@@ -9,9 +9,9 @@
 このプロジェクトは、ITエンジニア（特にインフラ系）が実務で必要とする知識を体系化し、段階的な学習ロードマップを提供することを目的としています。
 
 ### 📚 対象範囲
-- **既存書籍**: 20冊（レビュー済み）
+- **既存書籍**: 22冊（レビュー済み）
 - **計画書籍**: 6冊（新規制作予定）
-- **合計**: 26冊による総合的な知識体系
+- **合計**: 28冊による総合的な知識体系
 
 ### 🎓 対象読者
 - 新人～シニアITエンジニア
@@ -21,7 +21,7 @@
 
 ## 📖 書籍一覧
 
-### ✅ 既存書籍（20冊）
+### ✅ 既存書籍（22冊）
 
 #### 🔧 技術基盤（基礎）
 *対象: 新人〜中級者（経験0-2年）/ ITインフラの土台となる必修知識*
@@ -68,14 +68,17 @@
 #### 🔄 開発・運用プロセス
 *対象: 全レベル / 開発効率化・品質向上*
 
-11. **AI開発のためのGitHubワークフロー実践ガイド**  
-    📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
+1. **GitHub初心者ガイド**  
+   📖 [書籍を読む](https://itdojp.github.io/github-guide-for-beginners-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-guide-for-beginners-book)
 
-12. **AI主導開発時代のソフトウェアテスト戦略**  
-    📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
+2. **AI開発のためのGitHubワークフロー実践ガイド**  
+   📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
 
-13. **形式的手法の基礎と応用**  
-    📖 [書籍を読む](https://itdojp.github.io/formal-methods-book/) | 📂 [リポジトリ](https://github.com/itdojp/formal-methods-book)
+3. **AI主導開発時代のソフトウェアテスト戦略**  
+   📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
+
+4. **形式的手法の基礎と応用**  
+   📖 [書籍を読む](https://itdojp.github.io/formal-methods-book/) | 📂 [リポジトリ](https://github.com/itdojp/formal-methods-book)
 
 #### 🏗️ 特定領域・ドメイン知識
 *対象: 専門分野従事者 / 業界特化の専門知識*
@@ -98,13 +101,16 @@
 18. **生成AIコミュニケーション技術**  
     📖 [書籍を読む](https://itdojp.github.io/ai-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-communication-book)
 
+19. **エンジニアのための実践コミュニケーション設計**  
+    📖 [書籍を読む](https://itdojp.github.io/IT-engineer-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-engineer-communication-book)
+
 #### 📚 教養・哲学
 *対象: 全レベル / 技術的教養・視野拡大*
 
-19. **デジタル革命の先駆者たち**  
+20. **デジタル革命の先駆者たち**  
     📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
-20. **計算論的物理主義**  
+21. **計算論的物理主義**  
     📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 
 ### 📝 計画書籍（6冊）
