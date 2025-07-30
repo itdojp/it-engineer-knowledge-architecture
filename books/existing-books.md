@@ -1,4 +1,4 @@
-# 既存書籍一覧（20冊）
+# 既存書籍一覧（22冊）
 
 ## 📚 書籍カテゴリ別整理
 
@@ -124,9 +124,22 @@
 - **前提知識**: ITインフラ基礎
 - **学習期間**: 5-7週間
 
-### 🔄 開発・運用プロセス（3冊）
+### 🔄 開発・運用プロセス（4冊）
 
-#### 10. **github-workflow-book**
+#### 1. **github-guide-for-beginners-book**
+📖 [書籍を読む](https://itdojp.github.io/github-guide-for-beginners-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-guide-for-beginners-book)
+- **タイトル**: GitHub初心者ガイド
+- **対象読者**: Git/GitHub初心者・開発チーム全般
+- **レビュー状況**: 📝 レビュー予定
+- **主な内容**:
+  - Git基礎・GitHub基本操作
+  - リポジトリ管理・ブランチ戦略
+  - プルリクエスト・コードレビュー
+- **実務での重要度**: 高
+- **前提知識**: なし
+- **学習期間**: 2-3週間
+
+#### 2. **github-workflow-book**
 📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
 - **タイトル**: GitHub Workflow実践ガイド
 - **対象読者**: 開発チーム全般
@@ -139,7 +152,7 @@
 - **前提知識**: Git基礎
 - **学習期間**: 3-4週間
 
-#### 11. **ai-testing-strategy-book**
+#### 3. **ai-testing-strategy-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 - **タイトル**: AI時代のテスト戦略
 - **対象読者**: QAエンジニア・SRE
@@ -152,7 +165,7 @@
 - **前提知識**: テスト基礎
 - **学習期間**: 4-5週間
 
-#### 12. **formal-methods-book**
+#### 4. **formal-methods-book**
 📖 [書籍を読む](https://itdojp.github.io/formal-methods-book/) | 📂 [リポジトリ](https://github.com/itdojp/formal-methods-book)
 - **タイトル**: 形式的手法の基礎と応用
 - **対象読者**: ソフトウェアエンジニア・研究者・品質保証担当者
@@ -194,7 +207,7 @@
 - **前提知識**: 生物学基礎・プログラミング
 - **学習期間**: 6-8週間
 
-### 💡 ソフトスキル・思考法（4冊）
+### 💡 ソフトスキル・思考法（5冊）
 
 #### 15. **LogicalThinking-AI-Era-Guide**
 📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
@@ -249,9 +262,23 @@
 - **前提知識**: なし
 - **学習期間**: 3-4週間
 
+#### 21. **IT-engineer-communication-book**
+📖 [書籍を読む](https://itdojp.github.io/IT-engineer-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-engineer-communication-book)
+- **タイトル**: エンジニアのための実践コミュニケーション設計
+- **対象読者**: 全エンジニア・テックリード・エンジニアリングマネージャー
+- **レビュー状況**: ✅ Issue #3対応済み
+- **主な内容**:
+  - エンジニア間コミュニケーション最適化
+  - 技術的不確実性の削減手法
+  - ステークホルダー管理・合意形成
+  - 予防的システム思考・メンタルヘルス対策
+- **実務での重要度**: 高
+- **前提知識**: エンジニア経験1年以上
+- **学習期間**: 4-5週間
+
 ### 📚 教養・哲学（2冊）
 
-#### 18. **cs-visionaries-book**
+#### 22. **cs-visionaries-book**
 📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 - **タイトル**: デジタル革命の先駆者たち - コンピュータサイエンス偉人伝
 - **対象読者**: 全エンジニア・学生
@@ -264,7 +291,7 @@
 - **前提知識**: なし
 - **学習期間**: 2-3週間
 
-#### 19. **computational-physicalism-book**
+#### 23. **computational-physicalism-book**
 📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 - **タイトル**: 計算物理主義（哲学的アプローチ）
 - **対象読者**: 哲学・理論に興味のあるエンジニア・研究者
@@ -369,6 +396,6 @@
 
 ---
 
-既存17冊により、ITエンジニアの基礎から上級レベルまでの幅広い知識をカバーできています。特にインフラ基礎、クラウド技術、開発プロセス、ソフトスキルの分野では充実した内容となっています。
+既存22冊により、ITエンジニアの基礎から上級レベルまでの幅広い知識をカバーできています。特にインフラ基礎、クラウド技術、開発プロセス、ソフトスキルの分野では充実した内容となっています。
 
 **最新追加**: 形式的手法の基礎と応用により、高信頼性システム開発の分野が新たにカバーされました。これにより、安全クリティカルシステムや高品質ソフトウェア開発に関心のあるエンジニアにも対応できる、より包括的な体系となりました。理論計算機科学教科書と組み合わせることで、理論から実践まで一貫した学習パスが構築されています。
