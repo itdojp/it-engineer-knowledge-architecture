@@ -9,9 +9,9 @@
 このプロジェクトは、ITエンジニア（特にインフラ系）が実務で必要とする知識を体系化し、段階的な学習ロードマップを提供することを目的としています。
 
 ### 📚 対象範囲
-- **既存書籍**: 22冊（レビュー済み）
+- **既存書籍**: 24冊（レビュー済み）
 - **計画書籍**: 6冊（新規制作予定）
-- **合計**: 28冊による総合的な知識体系
+- **合計**: 30冊による総合的な知識体系
 
 ### 🎓 対象読者
 - 新人～シニアITエンジニア
@@ -21,96 +21,105 @@
 
 ## 📖 書籍一覧
 
-### ✅ 既存書籍（22冊）
+### ✅ 既存書籍（24冊）
+
+#### 🎓 未経験者向け
+*対象: IT未経験者・初学者 / プログラミングやLinuxの基礎を楽しく学ぶ*
+
+1. **図解でわかるLinux基礎**  
+   📖 [書籍を読む](https://itdojp.github.io/illustrated-linux-basics-book/) | 📂 [リポジトリ](https://github.com/itdojp/illustrated-linux-basics-book)
+
+2. **やさしく学ぶLinux WSL2ではじめる基礎**  
+   📖 [書籍を読む](https://itdojp.github.io/wsl2-linux-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/wsl2-linux-essentials-book)
 
 #### 🔧 技術基盤（基礎）
 *対象: 新人〜中級者（経験0-2年）/ ITインフラの土台となる必修知識*
 
-1. **実践Linux インフラエンジニア入門**  
+3. **実践Linux インフラエンジニア入門**  
    📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook)
 
-2. **ITインフラエンジニアのためのソフトウェア基礎知識**  
+4. **ITインフラエンジニアのためのソフトウェア基礎知識**  
    📖 [書籍を読む](https://itdojp.github.io/it-infra-software-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-software-essentials-book)
 
-3. **ITインフラストラクチャ技術ガイド**  
+5. **ITインフラストラクチャ技術ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/IT-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-book)
 
 #### 🚀 技術基盤（発展）
 *対象: 中級〜上級者（経験2年以上）/ 高度な設計・運用・問題解決スキル*
 
-4. **ITインフラトラブルシューティング実践ガイド**  
+6. **ITインフラトラブルシューティング実践ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/IT-infra-troubleshooting-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-troubleshooting-book)
 
-5. **クラウドインフラ設計・構築ガイド**  
+7. **クラウドインフラ設計・構築ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/cloud-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-book)
 
-6. **インフラエンジニアのための情報セキュリティ実装ガイド**  
+8. **インフラエンジニアのための情報セキュリティ実装ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/it-infra-security-guide-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-security-guide-book)
 
 #### 💡 応用技術
 *対象: 中級者以上 / 特定技術スタックの実践的活用*
 
-7. **Podman完全ガイド**  
+9. **Podman完全ガイド**  
    📖 [書籍を読む](https://itdojp.github.io/podman-book/) | 📂 [リポジトリ](https://github.com/itdojp/podman-book)
 
-8. **実践 認証認可システム設計**  
-   📖 [書籍を読む](https://itdojp.github.io/practical-auth-book/) | 📂 [リポジトリ](https://github.com/itdojp/practical-auth-book)
+10. **実践 認証認可システム設計**  
+    📖 [書籍を読む](https://itdojp.github.io/practical-auth-book/) | 📂 [リポジトリ](https://github.com/itdojp/practical-auth-book)
 
-9. **Supabaseアーキテクチャ**  
-   📖 [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | 📂 [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
+11. **Supabaseアーキテクチャ**  
+    📖 [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | 📂 [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
 
 #### 📐 コンピューターサイエンス理論
 *対象: 中級者以上 / 理論的バックグラウンドの深化*
 
-10. **理論計算機科学教科書**  
+12. **理論計算機科学教科書**  
     📖 [書籍を読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/theoretical-computer-science-textbook)
 
 #### 🔄 開発・運用プロセス
 *対象: 全レベル / 開発効率化・品質向上*
 
-1. **GitHub初心者ガイド**  
-   📖 [書籍を読む](https://itdojp.github.io/github-guide-for-beginners-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-guide-for-beginners-book)
+13. **GitHub初心者ガイド**  
+    📖 [書籍を読む](https://itdojp.github.io/github-guide-for-beginners-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-guide-for-beginners-book)
 
-2. **AI開発のためのGitHubワークフロー実践ガイド**  
-   📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
+14. **AI開発のためのGitHubワークフロー実践ガイド**  
+    📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
 
-3. **AI主導開発時代のソフトウェアテスト戦略**  
-   📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
+15. **AI主導開発時代のソフトウェアテスト戦略**  
+    📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 
-4. **形式的手法の基礎と応用**  
-   📖 [書籍を読む](https://itdojp.github.io/formal-methods-book/) | 📂 [リポジトリ](https://github.com/itdojp/formal-methods-book)
+16. **形式的手法の基礎と応用**  
+    📖 [書籍を読む](https://itdojp.github.io/formal-methods-book/) | 📂 [リポジトリ](https://github.com/itdojp/formal-methods-book)
 
 #### 🏗️ 特定領域・ドメイン知識
 *対象: 専門分野従事者 / 業界特化の専門知識*
 
-14. **バイオインフォマティクス実践ガイド**  
+17. **バイオインフォマティクス実践ガイド**  
     📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 
 #### 💡 ソフトスキル・思考法
 *対象: 全レベル / キャリア発展・コミュニケーション*
 
-15. **AI時代に差がつく論理的思考と表現力**  
+18. **AI時代に差がつく論理的思考と表現力**  
     📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 
-16. **AI時代のプロフェッショナルITエンジニアの思考法**  
+19. **AI時代のプロフェッショナルITエンジニアの思考法**  
     📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 
-17. **エンジニアの交渉力アーキテクチャ**  
+20. **エンジニアの交渉力アーキテクチャ**  
     📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
 
-18. **生成AIコミュニケーション技術**  
+21. **生成AIコミュニケーション技術**  
     📖 [書籍を読む](https://itdojp.github.io/ai-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-communication-book)
 
-19. **エンジニアのための実践コミュニケーション設計**  
+22. **エンジニアのための実践コミュニケーション設計**  
     📖 [書籍を読む](https://itdojp.github.io/IT-engineer-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-engineer-communication-book)
 
 #### 📚 教養・哲学
 *対象: 全レベル / 技術的教養・視野拡大*
 
-20. **デジタル革命の先駆者たち**  
+23. **デジタル革命の先駆者たち**  
     📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
-21. **計算論的物理主義**  
+24. **計算論的物理主義**  
     📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 
 ### 📝 計画書籍（6冊）
@@ -131,6 +140,13 @@
 ## 🗺️ 学習ロードマップ
 
 ### 📈 レベル別学習パス
+
+#### 🌟 未経験者・初学者
+1. **Linux基礎**
+   - 図解でわかるLinux基礎 → やさしく学ぶLinux WSL2ではじめる基礎
+   
+2. **次のステップへ**
+   - 実践Linux インフラエンジニア入門
 
 #### 🌱 初級者（経験0-2年）
 1. **基礎固め**
