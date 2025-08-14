@@ -92,14 +92,26 @@
             font-weight: bold;
         }
         
-        /* Allow manual numbering while preventing automatic counter-reset */
-        ol {
-            list-style-type: decimal !important;
-            counter-reset: none !important;
+        /* Custom continuous counter for all ordered lists */
+        .content {
+            counter-reset: book-counter;
         }
         
-        ol li {
-            counter-increment: none !important;
+        .content ol {
+            list-style: none;
+        }
+        
+        .content ol li {
+            counter-increment: book-counter;
+            position: relative;
+            padding-left: 2em;
+        }
+        
+        .content ol li::before {
+            content: counter(book-counter) ". ";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
         }
         
         /* Responsive design */
