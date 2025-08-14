@@ -49,7 +49,7 @@
 - **学習期間**: 10-12週間
 
 #### 4. **linux-infra-textbook**
-📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook)
+📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook) ([旧版](https://github.com/itdojp/linux-infra-textbook2))
 - **タイトル**: Linuxインフラ教本
 - **対象読者**: Linux初心者～中級者
 - **レビュー状況**: ✅ Issue #2作成済み
