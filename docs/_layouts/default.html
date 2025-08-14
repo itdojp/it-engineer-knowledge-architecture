@@ -92,6 +92,16 @@
             font-weight: bold;
         }
         
+        /* Disable automatic list numbering - use manual numbering from markdown */
+        ol {
+            list-style: none;
+            counter-reset: none;
+        }
+        
+        ol li {
+            counter-increment: none;
+        }
+        
         /* Responsive design */
         @media (max-width: 768px) {
             body {
