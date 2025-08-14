@@ -94,12 +94,21 @@
         
         /* Disable automatic list numbering - use manual numbering from markdown */
         ol {
-            list-style: none;
-            counter-reset: none;
+            list-style: none !important;
+            counter-reset: none !important;
         }
         
         ol li {
-            counter-increment: none;
+            counter-increment: none !important;
+        }
+        
+        /* Ensure numbered items in content use manual numbering only */
+        .content ol {
+            list-style-type: none !important;
+        }
+        
+        .content ol li::before {
+            content: none !important;
         }
         
         /* Responsive design */
