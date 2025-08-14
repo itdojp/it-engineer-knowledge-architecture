@@ -36,7 +36,7 @@
 *対象: 新人〜中級者（経験0-2年）/ ITインフラの土台となる必修知識*
 
 3. **実践Linux インフラエンジニア入門**  
-   📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook)
+   📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook2/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook2) (旧版📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook))
 
 4. **ITインフラエンジニアのためのソフトウェア基礎知識**  
    📖 [書籍を読む](https://itdojp.github.io/it-infra-software-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-software-essentials-book)
