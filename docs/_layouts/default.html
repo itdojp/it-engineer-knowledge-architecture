@@ -92,23 +92,14 @@
             font-weight: bold;
         }
         
-        /* Disable automatic list numbering - use manual numbering from markdown */
+        /* Allow manual numbering while preventing automatic counter-reset */
         ol {
-            list-style: none !important;
+            list-style-type: decimal !important;
             counter-reset: none !important;
         }
         
         ol li {
             counter-increment: none !important;
-        }
-        
-        /* Ensure numbered items in content use manual numbering only */
-        .content ol {
-            list-style-type: none !important;
-        }
-        
-        .content ol li::before {
-            content: none !important;
         }
         
         /* Responsive design */
