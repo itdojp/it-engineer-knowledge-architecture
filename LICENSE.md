@@ -93,7 +93,7 @@ License details: https://github.com/itdojp/it-engineer-knowledge-architecture/bl
 
 **株式会社アイティードゥ（ITDO Inc.）**  
 Email: knowledge@itdo.jp  
-URL: [企業ウェブサイトURL]
+URL: https://itdo.jp
 
 ---
 © 2025 株式会社アイティードゥ (ITDO Inc.)
