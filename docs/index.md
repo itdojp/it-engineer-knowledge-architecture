@@ -244,7 +244,7 @@ ITDO Inc.が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ライ
 ### 💼 商用利用
 法人・営利団体での利用には事前の商用ライセンス契約が必要です。
 
-📋 [詳細なライセンス条件](./LICENSE.md)
+📋 [詳細なライセンス条件](LICENSE.md)
 
 ### 📚 対象書籍一覧
 - 図解でわかるLinux基礎 - https://github.com/itdojp/illustrated-linux-basics-book
