@@ -230,10 +230,51 @@
 **GitHub**: [@itdojp](https://github.com/itdojp)  
 **Contact**: knowledge@itdo.jp
 
-## 📜 ライセンス
+---
 
-このプロジェクト管理リポジトリは [MIT License](LICENSE) の下で公開されています。  
-各書籍のライセンスは個別リポジトリを参照してください。
+## 📄 ライセンス
+
+ITDO Inc.が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ライセンスで提供されています。
+
+### 🔓 自由な利用
+- 教育・研究・個人学習での利用
+- 非営利団体での活用
+- 内容の改変・派生作品の作成
+
+### 💼 商用利用
+法人・営利団体での利用には事前の商用ライセンス契約が必要です。
+
+📋 [詳細なライセンス条件](./LICENSE.md)
+
+### 📚 対象書籍一覧
+- 図解でわかるLinux基礎 - https://github.com/itdojp/illustrated-linux-basics-book
+- やさしく学ぶLinux WSL2ではじめる基礎 - https://github.com/itdojp/wsl2-linux-essentials-book
+- 実践Linux インフラエンジニア入門 - https://github.com/itdojp/linux-infra-textbook2
+- ITインフラエンジニアのためのソフトウェア基礎知識 - https://github.com/itdojp/it-infra-software-essentials-book
+- ITインフラストラクチャ技術ガイド - https://github.com/itdojp/IT-infra-book
+- ITインフラトラブルシューティング実践ガイド - https://github.com/itdojp/IT-infra-troubleshooting-book
+- クラウドインフラ設計・構築ガイド - https://github.com/itdojp/cloud-infra-book
+- インフラエンジニアのための情報セキュリティ実装ガイド - https://github.com/itdojp/it-infra-security-guide-book
+- Podman完全ガイド - https://github.com/itdojp/podman-book
+- 実践 認証認可システム設計 - https://github.com/itdojp/practical-auth-book
+- Supabaseアーキテクチャ - https://github.com/itdojp/supabase-architecture-patterns-book
+- 理論計算機科学教科書 - https://github.com/itdojp/theoretical-computer-science-textbook
+- GitHub初心者ガイド - https://github.com/itdojp/github-guide-for-beginners-book
+- AI開発のためのGitHubワークフロー実践ガイド - https://github.com/itdojp/github-workflow-book
+- AI主導開発時代のソフトウェアテスト戦略 - https://github.com/itdojp/ai-testing-strategy-book
+- 形式的手法の基礎と応用 - https://github.com/itdojp/formal-methods-book
+- バイオインフォマティクス実践ガイド - https://github.com/itdojp/BioinformaticsGuide-book
+- AI時代に差がつく論理的思考と表現力 - https://github.com/itdojp/LogicalThinking-AI-Era-Guide
+- AI時代のプロフェッショナルITエンジニアの思考法 - https://github.com/itdojp/ai-era-engineers-mind-book
+- エンジニアの交渉力アーキテクチャ - https://github.com/itdojp/negotiation-for-engineers-book
+- 生成AIコミュニケーション技術 - https://github.com/itdojp/ai-communication-book
+- エンジニアのための実践コミュニケーション設計 - https://github.com/itdojp/IT-engineer-communication-book
+- デジタル革命の先駆者たち - https://github.com/itdojp/cs-visionaries-book
+- 計算論的物理主義 - https://github.com/itdojp/computational-physicalism-book
+
+**お問い合わせ**  
+株式会社アイティードゥ（ITDO Inc.）  
+Email: [knowledge@itdo.jp](mailto:knowledge@itdo.jp)
 
 ---
 2025/07/23 公開
