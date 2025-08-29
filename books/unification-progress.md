@@ -32,7 +32,7 @@
 | practical-auth-book |  |  |  |  |  |  |  |  |
 | supabase-architecture-patterns-book |  |  |  |  |  |  |  |  |
 | theoretical-computer-science-textbook |  |  |  |  |  |  |  |  |
-| github-workflow-book | ✅ | ✅ |  | ✅ |  |  |  |  |
+| github-workflow-book | ✅ | ✅ | ✅ | ✅ |  |  |  |  |
 | github-guide-for-beginners-book |  |  |  |  |  |  |  |  |
 | formal-methods-book |  |  |  |  |  |  |  |  |
 | BioinformaticsGuide-book |  |  |  |  |  |  |  |  |
