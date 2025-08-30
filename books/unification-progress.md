@@ -22,25 +22,25 @@
 | illustrated-linux-basics-book |  |  |  |  |  |  |  |  |
 | wsl2-linux-essentials-book |  |  |  |  |  |  |  |  |
 | linux-infra-textbook2 |  |  |  |  |  |  |  |  |
-| linux-infra-textbook |  |  |  |  |  |  |  |  |
+| linux-infra-textbook |  |  |  | ✅ |  |  |  |  |
 | it-infra-software-essentials-book |  |  |  | ✅ |  |  |  |  |
-| IT-infra-book |  |  |  |  |  |  |  |  |
-| IT-infra-troubleshooting-book |  |  |  |  |  |  |  |  |
-| cloud-infra-book |  |  |  |  |  |  |  |  |
-| it-infra-security-guide-book |  |  |  |  |  |  |  |  |
+| IT-infra-book |  |  |  | ✅ |  |  |  |  |
+| IT-infra-troubleshooting-book |  |  |  | ✅ |  |  |  |  |
+| cloud-infra-book |  |  |  | ✅ |  |  |  |  |
+| it-infra-security-guide-book |  |  |  | ✅ |  |  |  |  |
 | podman-book | ✅ | ✅ |  | ✅ |  |  |  |  |
-| practical-auth-book |  |  |  |  |  |  |  |  |
-| supabase-architecture-patterns-book |  |  |  |  |  |  |  |  |
-| theoretical-computer-science-textbook |  |  |  |  |  |  |  |  |
+| practical-auth-book |  |  |  | ✅ |  |  |  |  |
+| supabase-architecture-patterns-book |  |  |  | ✅ |  |  |  |  |
+| theoretical-computer-science-textbook |  |  |  | ✅ |  |  |  |  |
 | github-workflow-book | ✅ | ✅ | ✅ | ✅ |  |  |  |  |
-| github-guide-for-beginners-book |  |  |  |  |  |  |  |  |
-| formal-methods-book |  |  |  |  |  |  |  |  |
-| BioinformaticsGuide-book |  |  |  |  |  |  |  |  |
-| IT-engineer-communication-book |  |  |  |  |  |  |  |  |
-| ai-communication-book |  |  |  |  |  |  |  |  |
-| ai-era-engineers-mind-book |  |  |  |  |  |  |  |  |
-| ai-testing-strategy-book |  |  |  |  |  |  |  |  |
-| LogicalThinking-AI-Era-Guide |  |  |  |  |  |  |  |  |
-| negotiation-for-engineers-book |  |  |  |  |  |  |  |  |
-| cs-visionaries-book |  |  |  |  |  |  |  |  |
-| computational-physicalism-book |  |  |  |  |  |  |  |  |
+| github-guide-for-beginners-book |  |  |  | ✅ |  |  |  |  |
+| formal-methods-book |  |  |  | ✅ |  |  |  |  |
+| BioinformaticsGuide-book |  |  |  | ✅ |  |  |  |  |
+| IT-engineer-communication-book |  |  |  | ✅ |  |  |  |  |
+| ai-communication-book |  |  |  | ✅ |  |  |  |  |
+| ai-era-engineers-mind-book |  |  |  | ✅ |  |  |  |  |
+| ai-testing-strategy-book |  |  |  | ✅ |  |  |  |  |
+| LogicalThinking-AI-Era-Guide |  |  |  | ✅ |  |  |  |  |
+| negotiation-for-engineers-book |  |  |  | ✅ |  |  |  |  |
+| cs-visionaries-book |  |  |  | ✅ |  |  |  |  |
+| computational-physicalism-book |  |  |  | ✅ |  |  |  |  |
