@@ -1,0 +1,87 @@
+name: Update Unification Progress
+on:
+  schedule:
+    - cron: '17 3 * * 1'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Update dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - << 'PY'
+          import os, re, json, urllib.request, urllib.parse, base64
+          from datetime import datetime, timezone
+          def gh_api(path):
+              req=urllib.request.Request(f'https://api.github.com{path}', headers={'Authorization': f'Bearer {os.environ.get("GITHUB_TOKEN","" )}', 'Accept':'application/vnd.github+json'})
+              with urllib.request.urlopen(req) as r:
+                  return json.load(r)
+          # Collect repo slugs from issue #21
+          issue=gh_api('/repos/itdojp/it-engineer-knowledge-architecture/issues/21')
+          body=issue.get('body','')
+          slugs=[re.sub(r'^https://github.com/','',ln.split()[2]) for ln in body.splitlines() if ln.strip().startswith('- [ ] https://github.com/')]
+          def find_pr(slug, keyword):
+              prs=gh_api(f'/repos/{slug}/pulls?state=all&per_page=100')
+              for pr in prs:
+                  if keyword in pr.get('title',''):
+                      return pr.get('html_url',''), pr.get('state','').upper()
+              return '', ''
+          def has_nav_data(slug):
+              try:
+                  gh_api(f'/repos/{slug}/contents/docs/_data/navigation.yml')
+                  return 'yes'
+              except Exception:
+                  return 'no'
+          def ci_conclusion(slug):
+              try:
+                  runs=gh_api(f'/repos/{slug}/actions/runs?per_page=20')
+                  for run in runs.get('workflow_runs',[]):
+                      if run.get('name')=='Nav + Pages Link Check':
+                          return run.get('conclusion') or '-'
+                  return '-'
+              except Exception:
+                  return '-'
+          def pages_code(name):
+              try:
+                  with urllib.request.urlopen(f'https://itdojp.github.io/{name}/') as r:
+                      return r.getcode()
+              except Exception:
+                  return 0
+          rows=[]
+          for slug in slugs:
+              name=slug.split('/')[-1]
+              f_url,f_state=find_pr(slug,'Unify format v3: defaults/permalink update')
+              n_url,n_state=find_pr(slug,'Unify bottom navigation (prev/next) with fallback logic')
+              nav=has_nav_data(slug)
+              ci=ci_conclusion(slug)
+              code=pages_code(name)
+              rows.append((name,f_url,f_state,n_url,n_state,nav,ci,code))
+          # Write markdown
+          path='books/unification-progress.md'
+          try:
+              with open(path,'r',encoding='utf-8') as f:
+                  old=f.read()
+          except FileNotFoundError:
+              old=''
+          out=['# 書籍フォーマット統一 進捗ダッシュボード','',f'最終更新: {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ")}','','| 書籍 | format PR | 状態 | nav PR | 状態 | nav-data | CI (Nav+Pages) | Pages base |','|---|---|---|---|---|---|---|---|']
+          for (name,f_url,f_state,n_url,n_state,nav,ci,code) in rows:
+              out.append(f'| {name} | {f_url or "-"} | {f_state or "-"} | {n_url or "-"} | {n_state or "-"} | {nav} | {ci or "-"} | {code} |')
+          new='\n'.join(out)+'\n\n凡例:\n- format PR: `_config.yml` の defaults/permalink 統一\n- nav PR: 下部ナビの共通include適用\n- nav-data: `docs/_data/navigation.yml` の有無\n- CI: Nav + Pages Link Check の最新結論 (success/failure)\n- Pages base: ベースURLのHTTPコード\n'
+          if new!=old:
+              os.makedirs('books', exist_ok=True)
+              with open(path,'w',encoding='utf-8') as f:
+                  f.write(new)
+              os.system('git config user.name itdojp-automation')
+              os.system('git config user.email automation@itdo.jp')
+              os.system('git add books/unification-progress.md')
+              os.system("git commit -m 'chore(dashboard): auto-update unification progress'")
+              os.system('git push')
+          else:
+              print('No changes to dashboard')
+          PY
