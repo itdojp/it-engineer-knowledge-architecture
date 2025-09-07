@@ -36,3 +36,8 @@
 - nav-data:  の有無
 - CI: Nav + Pages Link Check の最新結論 (success/failure)
 - Pages base: ベースURLのHTTPコード
+## 最近クローズした統一関連Issue/PR
+最終更新: 2025-09-07 02:03:01Z
+
+| リポジトリ | 種別 | 番号 | タイトル | クローズ日時 |
+|---|---|---|---|---|
