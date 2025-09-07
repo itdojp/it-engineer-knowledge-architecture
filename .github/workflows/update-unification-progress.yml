@@ -19,9 +19,23 @@ jobs:
           import os, re, json, urllib.request, urllib.parse, base64
           from datetime import datetime, timezone
           def gh_api(path):
-              req=urllib.request.Request(f'https://api.github.com{path}', headers={'Authorization': f'Bearer {os.environ.get("GITHUB_TOKEN","" )}', 'Accept':'application/vnd.github+json'})
-              with urllib.request.urlopen(req) as r:
-                  return json.load(r)
+              import time, urllib.error
+              for attempt in range(5):
+                  try:
+                      req=urllib.request.Request(f'https://api.github.com{path}', headers={'Authorization': f'Bearer {os.environ.get("GITHUB_TOKEN","")}', 'Accept':'application/vnd.github+json'})
+                      with urllib.request.urlopen(req, timeout=30) as r:
+                          return json.load(r)
+                  except urllib.error.HTTPError as e:
+                      if e.code in (403, 404, 429) and attempt < 4:
+                          time.sleep(2*(attempt+1))
+                          continue
+                      raise
+                  except Exception:
+                      if attempt < 4:
+                          time.sleep(2*(attempt+1))
+                          continue
+                      raise
+              raise RuntimeError('github api retries exceeded')
           # Collect repo slugs from issue #21
           issue=gh_api('/repos/itdojp/it-engineer-knowledge-architecture/issues/21')
           body=issue.get('body','')
