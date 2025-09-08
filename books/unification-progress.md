@@ -1,5 +1,7 @@
 # 書籍フォーマット統一 進捗ダッシュボード
 
+最終更新: 2025-09-08 13:28:37Z
+
 最終更新: 2025-09-06 01:42:37Z
 
 | 書籍 | format PR | 状態 | nav PR | 状態 | nav-data | CI (Nav+Pages) | Pages base |
@@ -37,7 +39,11 @@
 - CI: Nav + Pages Link Check の最新結論 (success/failure)
 - Pages base: ベースURLのHTTPコード
 ## 最近クローズした統一関連Issue/PR
-最終更新: 2025-09-07 02:03:01Z
+最終更新: 2025-09-08T12:44:52Z
+
+| リポジトリ | 種別 | 番号 | タイトル | クローズ日時 |
+|---|---|---|---|---|
+| formal-methods-book | PR | 60 | chore(ci): add nav + pages link check workflow | 2025-09-08T12:44:52Z |
 
 | リポジトリ | 種別 | 番号 | タイトル | クローズ日時 |
 |---|---|---|---|---|
