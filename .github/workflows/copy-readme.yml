@@ -9,10 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Copy README.md to docs/index.md
+      - name: Copy README.md to docs/index.md (with Jekyll front matter)
         run: |
           mkdir -p docs
-          cp README.md docs/index.md
+          {
+            echo '---'
+            echo 'layout: default'
+            echo 'title: ITエンジニア知識アーキテクチャ / IT Engineer Knowledge Architecture'
+            echo 'description: 実務で活かせるITエンジニア学習ロードマップ – 技術書による体系的スキル構築'
+            echo '---'
+            echo
+            cat README.md
+          } > docs/index.md
       - name: Commit and push if changed
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
