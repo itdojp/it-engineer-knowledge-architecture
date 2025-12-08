@@ -1,4 +1,4 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
   - name: 💬 一般的な質問・議論
     url: https://github.com/itdojp/it-engineer-knowledge-architecture/discussions
