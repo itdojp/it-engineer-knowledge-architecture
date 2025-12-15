@@ -20,7 +20,7 @@
 - [ ] [formal-methods-book](https://itdojp.github.io/formal-methods-book/) — https://github.com/itdojp/formal-methods-book
 - [ ] [BioinformaticsGuide-book](https://itdojp.github.io/BioinformaticsGuide-book/) — https://github.com/itdojp/BioinformaticsGuide-book
 - [ ] [IT-engineer-communication-book](https://itdojp.github.io/IT-engineer-communication-book/) — https://github.com/itdojp/IT-engineer-communication-book
-- [ ] [ai-communication-book](https://itdojp.github.io/ai-communication-book/) — https://github.com/itdojp/ai-communication-book
+- [x] [ai-communication-book](https://itdojp.github.io/ai-communication-book/) — https://github.com/itdojp/ai-communication-book
 - [ ] [ai-era-engineers-mind-book](https://itdojp.github.io/ai-era-engineers-mind-book/) — https://github.com/itdojp/ai-era-engineers-mind-book
 - [x] [ai-testing-strategy-book](https://itdojp.github.io/ai-testing-strategy-book/) — https://github.com/itdojp/ai-testing-strategy-book
 - [ ] [LogicalThinking-AI-Era-Guide](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) — https://github.com/itdojp/LogicalThinking-AI-Era-Guide
