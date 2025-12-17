@@ -7,9 +7,9 @@
 | 書籍 | Stage2（構成レビュー） | Stage3（表現・スタイル） | 参照 |
 | --- | --- | --- | --- |
 | ai-era-engineers-mind-book | 完了（https://github.com/itdojp/ai-era-engineers-mind-book/pull/61） | 完了（https://github.com/itdojp/ai-era-engineers-mind-book/pull/62） | レビュー文書: `docs/project-management/structure-review-round1.md` |
-| ai-testing-strategy-book | 完了（https://github.com/itdojp/ai-testing-strategy-book/pull/66） | 進行中（直近: https://github.com/itdojp/ai-testing-strategy-book/pull/75） | レビュー文書: `docs/project-management/structure-review-round1.md` |
+| ai-testing-strategy-book | 完了（https://github.com/itdojp/ai-testing-strategy-book/pull/66） | 完了（直近: https://github.com/itdojp/ai-testing-strategy-book/pull/75） | レビュー文書: `docs/project-management/structure-review-round1.md` |
 | ai-communication-book | 完了（https://github.com/itdojp/ai-communication-book/pull/54） | 完了（直近: https://github.com/itdojp/ai-communication-book/pull/57） | レビュー文書: `docs/project-management/structure-review-round1.md` |
-| LogicalThinking-AI-Era-Guide | 完了（https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/52） | 進行中（直近: https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/56） | ナビ整合: https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/51 / レビュー文書: `docs/project-management/structure-review-round1.md` |
+| LogicalThinking-AI-Era-Guide | 完了（https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/52） | 完了（直近: https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/56） | ナビ整合: https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/51 / レビュー文書: `docs/project-management/structure-review-round1.md` |
 
 詳細なPR一覧は https://github.com/itdojp/it-engineer-knowledge-architecture/issues/51 を参照。
 
@@ -34,7 +34,7 @@
 - [x] [ai-communication-book](https://itdojp.github.io/ai-communication-book/) — https://github.com/itdojp/ai-communication-book
 - [x] [ai-era-engineers-mind-book](https://itdojp.github.io/ai-era-engineers-mind-book/) — https://github.com/itdojp/ai-era-engineers-mind-book
 - [x] [ai-testing-strategy-book](https://itdojp.github.io/ai-testing-strategy-book/) — https://github.com/itdojp/ai-testing-strategy-book
-- [ ] [LogicalThinking-AI-Era-Guide](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) — https://github.com/itdojp/LogicalThinking-AI-Era-Guide
+- [x] [LogicalThinking-AI-Era-Guide](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) — https://github.com/itdojp/LogicalThinking-AI-Era-Guide
 - [ ] [negotiation-for-engineers-book](https://itdojp.github.io/negotiation-for-engineers-book/) — https://github.com/itdojp/negotiation-for-engineers-book
 - [ ] [cs-visionaries-book](https://itdojp.github.io/cs-visionaries-book/) — https://github.com/itdojp/cs-visionaries-book
 - [ ] [computational-physicalism-book](https://itdojp.github.io/computational-physicalism-book/) — https://github.com/itdojp/computational-physicalism-book
