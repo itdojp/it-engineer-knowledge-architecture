@@ -7,7 +7,7 @@
 | 書籍 | Stage2（構成レビュー） | Stage3（表現・スタイル） | 参照 |
 | --- | --- | --- | --- |
 | ai-era-engineers-mind-book | 完了（https://github.com/itdojp/ai-era-engineers-mind-book/pull/61） | 完了（https://github.com/itdojp/ai-era-engineers-mind-book/pull/62） | レビュー文書: `docs/project-management/structure-review-round1.md` |
-| ai-testing-strategy-book | 完了（https://github.com/itdojp/ai-testing-strategy-book/pull/66） | 進行中（直近: https://github.com/itdojp/ai-testing-strategy-book/pull/74） | レビュー文書: `docs/project-management/structure-review-round1.md` |
+| ai-testing-strategy-book | 完了（https://github.com/itdojp/ai-testing-strategy-book/pull/66） | 進行中（直近: https://github.com/itdojp/ai-testing-strategy-book/pull/75） | レビュー文書: `docs/project-management/structure-review-round1.md` |
 | ai-communication-book | 完了（https://github.com/itdojp/ai-communication-book/pull/54） | 完了（直近: https://github.com/itdojp/ai-communication-book/pull/57） | レビュー文書: `docs/project-management/structure-review-round1.md` |
 | LogicalThinking-AI-Era-Guide | 完了（https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/52） | 進行中（直近: https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/56） | ナビ整合: https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/51 / レビュー文書: `docs/project-management/structure-review-round1.md` |
 
