@@ -17,8 +17,8 @@
 
 | 書籍 | Stage2（構成レビュー） | Stage3（表現・スタイル） | 参照 |
 | --- | --- | --- | --- |
-| github-workflow-book | 進行中（レビュー: https://github.com/itdojp/github-workflow-book/pull/122 / 構成: https://github.com/itdojp/github-workflow-book/pull/123） | 未着手 | レビュー文書: `docs/project-management/structure-review-round1.md` |
-| github-guide-for-beginners-book | 進行中（レビュー: https://github.com/itdojp/github-guide-for-beginners-book/pull/115 / 構成: https://github.com/itdojp/github-guide-for-beginners-book/pull/116） | 未着手 | レビュー文書: `docs/project-management/structure-review-round1.md` |
+| github-workflow-book | 完了（レビュー: https://github.com/itdojp/github-workflow-book/pull/122 / 構成: https://github.com/itdojp/github-workflow-book/pull/123） | 未着手 | レビュー文書: `docs/project-management/structure-review-round1.md` |
+| github-guide-for-beginners-book | 完了（レビュー: https://github.com/itdojp/github-guide-for-beginners-book/pull/115 / 構成: https://github.com/itdojp/github-guide-for-beginners-book/pull/116） | 未着手 | レビュー文書: `docs/project-management/structure-review-round1.md` |
 
 - [ ] [illustrated-linux-basics-book](https://itdojp.github.io/illustrated-linux-basics-book/) — https://github.com/itdojp/illustrated-linux-basics-book
 - [ ] [wsl2-linux-essentials-book](https://itdojp.github.io/wsl2-linux-essentials-book/) — https://github.com/itdojp/wsl2-linux-essentials-book
