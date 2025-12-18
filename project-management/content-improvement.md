@@ -13,6 +13,13 @@
 
 詳細なPR一覧は https://github.com/itdojp/it-engineer-knowledge-architecture/issues/51 を参照。
 
+## 開発プロセス系クラスタ（Stage2/Stage3）進捗（Issue #58）
+
+| 書籍 | Stage2（構成レビュー） | Stage3（表現・スタイル） | 参照 |
+| --- | --- | --- | --- |
+| github-workflow-book | 進行中（レビュー: https://github.com/itdojp/github-workflow-book/pull/122 / 構成: https://github.com/itdojp/github-workflow-book/pull/123） | 未着手 | レビュー文書: `docs/project-management/structure-review-round1.md` |
+| github-guide-for-beginners-book | 進行中（レビュー: https://github.com/itdojp/github-guide-for-beginners-book/pull/115 / 構成: https://github.com/itdojp/github-guide-for-beginners-book/pull/116） | 未着手 | レビュー文書: `docs/project-management/structure-review-round1.md` |
+
 - [ ] [illustrated-linux-basics-book](https://itdojp.github.io/illustrated-linux-basics-book/) — https://github.com/itdojp/illustrated-linux-basics-book
 - [ ] [wsl2-linux-essentials-book](https://itdojp.github.io/wsl2-linux-essentials-book/) — https://github.com/itdojp/wsl2-linux-essentials-book
 - [ ] [linux-infra-textbook2](https://itdojp.github.io/linux-infra-textbook2/) — https://github.com/itdojp/linux-infra-textbook2
