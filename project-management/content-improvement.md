@@ -17,8 +17,8 @@
 
 | 書籍 | Stage2（構成レビュー） | Stage3（表現・スタイル） | 参照 |
 | --- | --- | --- | --- |
-| github-workflow-book | 完了（レビュー: https://github.com/itdojp/github-workflow-book/pull/122 / 構成: https://github.com/itdojp/github-workflow-book/pull/123） | 進行中（直近: https://github.com/itdojp/github-workflow-book/pull/129 / パイロット: https://github.com/itdojp/github-workflow-book/pull/124） | レビュー文書: `docs/project-management/structure-review-round1.md` |
-| github-guide-for-beginners-book | 完了（レビュー: https://github.com/itdojp/github-guide-for-beginners-book/pull/115 / 構成: https://github.com/itdojp/github-guide-for-beginners-book/pull/116） | 進行中（直近: https://github.com/itdojp/github-guide-for-beginners-book/pull/122 / パイロット: https://github.com/itdojp/github-guide-for-beginners-book/pull/117） | レビュー文書: `docs/project-management/structure-review-round1.md` |
+| github-workflow-book | 完了（レビュー: https://github.com/itdojp/github-workflow-book/pull/122 / 構成: https://github.com/itdojp/github-workflow-book/pull/123） | 完了（直近: https://github.com/itdojp/github-workflow-book/pull/129 / パイロット: https://github.com/itdojp/github-workflow-book/pull/124） | レビュー文書: `docs/project-management/structure-review-round1.md` |
+| github-guide-for-beginners-book | 完了（レビュー: https://github.com/itdojp/github-guide-for-beginners-book/pull/115 / 構成: https://github.com/itdojp/github-guide-for-beginners-book/pull/116） | 完了（直近: https://github.com/itdojp/github-guide-for-beginners-book/pull/122 / パイロット: https://github.com/itdojp/github-guide-for-beginners-book/pull/117） | レビュー文書: `docs/project-management/structure-review-round1.md` |
 
 - [ ] [illustrated-linux-basics-book](https://itdojp.github.io/illustrated-linux-basics-book/) — https://github.com/itdojp/illustrated-linux-basics-book
 - [ ] [wsl2-linux-essentials-book](https://itdojp.github.io/wsl2-linux-essentials-book/) — https://github.com/itdojp/wsl2-linux-essentials-book
@@ -33,8 +33,8 @@
 - [ ] [practical-auth-book](https://itdojp.github.io/practical-auth-book/) — https://github.com/itdojp/practical-auth-book
 - [ ] [supabase-architecture-patterns-book](https://itdojp.github.io/supabase-architecture-patterns-book/) — https://github.com/itdojp/supabase-architecture-patterns-book
 - [ ] [theoretical-computer-science-textbook](https://itdojp.github.io/theoretical-computer-science-textbook/) — https://github.com/itdojp/theoretical-computer-science-textbook
-- [ ] [github-workflow-book](https://itdojp.github.io/github-workflow-book/) — https://github.com/itdojp/github-workflow-book
-- [ ] [github-guide-for-beginners-book](https://itdojp.github.io/github-guide-for-beginners-book/) — https://github.com/itdojp/github-guide-for-beginners-book
+- [x] [github-workflow-book](https://itdojp.github.io/github-workflow-book/) — https://github.com/itdojp/github-workflow-book
+- [x] [github-guide-for-beginners-book](https://itdojp.github.io/github-guide-for-beginners-book/) — https://github.com/itdojp/github-guide-for-beginners-book
 - [ ] [formal-methods-book](https://itdojp.github.io/formal-methods-book/) — https://github.com/itdojp/formal-methods-book
 - [ ] [BioinformaticsGuide-book](https://itdojp.github.io/BioinformaticsGuide-book/) — https://github.com/itdojp/BioinformaticsGuide-book
 - [ ] [IT-engineer-communication-book](https://itdojp.github.io/IT-engineer-communication-book/) — https://github.com/itdojp/IT-engineer-communication-book
