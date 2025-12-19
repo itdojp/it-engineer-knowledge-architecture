@@ -27,6 +27,12 @@
 | illustrated-linux-basics-book | 完了（レビュー: https://github.com/itdojp/illustrated-linux-basics-book/pull/38 / 構成: https://github.com/itdojp/illustrated-linux-basics-book/pull/39） | 完了（直近: https://github.com/itdojp/illustrated-linux-basics-book/pull/42 / 追加: https://github.com/itdojp/illustrated-linux-basics-book/pull/41 / 初回: https://github.com/itdojp/illustrated-linux-basics-book/pull/40） | レビュー文書: `docs/project-management/structure-review-round1.md` |
 | wsl2-linux-essentials-book | 完了（レビュー: https://github.com/itdojp/wsl2-linux-essentials-book/pull/64 / 構成: https://github.com/itdojp/wsl2-linux-essentials-book/pull/65） | 完了（直近: https://github.com/itdojp/wsl2-linux-essentials-book/pull/69 / 追加: https://github.com/itdojp/wsl2-linux-essentials-book/pull/68 / https://github.com/itdojp/wsl2-linux-essentials-book/pull/67 / https://github.com/itdojp/wsl2-linux-essentials-book/pull/66） | レビュー文書: `docs/project-management/structure-review-round1.md` |
 
+## Linux 基礎クラスタ（Stage2/Stage3）進捗（Issue #73）
+
+| 書籍 | Stage2（構成レビュー） | Stage3（表現・スタイル） | 参照 |
+| --- | --- | --- | --- |
+| linux-infra-textbook2 | 完了（レビュー: https://github.com/itdojp/linux-infra-textbook2/pull/47 / 構成: https://github.com/itdojp/linux-infra-textbook2/pull/48） | 未着手 | レビュー文書: `docs/project-management/structure-review-round1.md` |
+
 - [x] [illustrated-linux-basics-book](https://itdojp.github.io/illustrated-linux-basics-book/) — https://github.com/itdojp/illustrated-linux-basics-book
 - [x] [wsl2-linux-essentials-book](https://itdojp.github.io/wsl2-linux-essentials-book/) — https://github.com/itdojp/wsl2-linux-essentials-book
 - [ ] [linux-infra-textbook2](https://itdojp.github.io/linux-infra-textbook2/) — https://github.com/itdojp/linux-infra-textbook2
