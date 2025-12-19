@@ -24,8 +24,8 @@
 
 | 書籍 | Stage2（構成レビュー） | Stage3（表現・スタイル） | 参照 |
 | --- | --- | --- | --- |
-| illustrated-linux-basics-book | 完了（レビュー: https://github.com/itdojp/illustrated-linux-basics-book/pull/38 / 構成: https://github.com/itdojp/illustrated-linux-basics-book/pull/39） | 進行中（直近: https://github.com/itdojp/illustrated-linux-basics-book/pull/40） | レビュー文書: `docs/project-management/structure-review-round1.md` |
-| wsl2-linux-essentials-book | 完了（レビュー: https://github.com/itdojp/wsl2-linux-essentials-book/pull/64 / 構成: https://github.com/itdojp/wsl2-linux-essentials-book/pull/65） | 進行中（直近: https://github.com/itdojp/wsl2-linux-essentials-book/pull/67 / 追加: https://github.com/itdojp/wsl2-linux-essentials-book/pull/66） | レビュー文書: `docs/project-management/structure-review-round1.md` |
+| illustrated-linux-basics-book | 完了（レビュー: https://github.com/itdojp/illustrated-linux-basics-book/pull/38 / 構成: https://github.com/itdojp/illustrated-linux-basics-book/pull/39） | 進行中（直近: https://github.com/itdojp/illustrated-linux-basics-book/pull/42 / 追加: https://github.com/itdojp/illustrated-linux-basics-book/pull/41 / 初回: https://github.com/itdojp/illustrated-linux-basics-book/pull/40） | レビュー文書: `docs/project-management/structure-review-round1.md` |
+| wsl2-linux-essentials-book | 完了（レビュー: https://github.com/itdojp/wsl2-linux-essentials-book/pull/64 / 構成: https://github.com/itdojp/wsl2-linux-essentials-book/pull/65） | 進行中（直近: https://github.com/itdojp/wsl2-linux-essentials-book/pull/69 / 追加: https://github.com/itdojp/wsl2-linux-essentials-book/pull/68 / https://github.com/itdojp/wsl2-linux-essentials-book/pull/67 / https://github.com/itdojp/wsl2-linux-essentials-book/pull/66） | レビュー文書: `docs/project-management/structure-review-round1.md` |
 
 - [ ] [illustrated-linux-basics-book](https://itdojp.github.io/illustrated-linux-basics-book/) — https://github.com/itdojp/illustrated-linux-basics-book
 - [ ] [wsl2-linux-essentials-book](https://itdojp.github.io/wsl2-linux-essentials-book/) — https://github.com/itdojp/wsl2-linux-essentials-book
