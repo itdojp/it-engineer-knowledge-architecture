@@ -20,6 +20,13 @@
 | github-workflow-book | 完了（レビュー: https://github.com/itdojp/github-workflow-book/pull/122 / 構成: https://github.com/itdojp/github-workflow-book/pull/123） | 完了（直近: https://github.com/itdojp/github-workflow-book/pull/130 / パイロット: https://github.com/itdojp/github-workflow-book/pull/124） | レビュー文書: `docs/project-management/structure-review-round1.md` |
 | github-guide-for-beginners-book | 完了（レビュー: https://github.com/itdojp/github-guide-for-beginners-book/pull/115 / 構成: https://github.com/itdojp/github-guide-for-beginners-book/pull/116） | 完了（直近: https://github.com/itdojp/github-guide-for-beginners-book/pull/123 / パイロット: https://github.com/itdojp/github-guide-for-beginners-book/pull/117） | レビュー文書: `docs/project-management/structure-review-round1.md` |
 
+## Linux 基礎クラスタ（Stage2/Stage3）進捗（Issue #67）
+
+| 書籍 | Stage2（構成レビュー） | Stage3（表現・スタイル） | 参照 |
+| --- | --- | --- | --- |
+| illustrated-linux-basics-book | 完了（レビュー: https://github.com/itdojp/illustrated-linux-basics-book/pull/38 / 構成: https://github.com/itdojp/illustrated-linux-basics-book/pull/39） | 未着手 | レビュー文書: `docs/project-management/structure-review-round1.md` |
+| wsl2-linux-essentials-book | 未着手 | 未着手 | - |
+
 - [ ] [illustrated-linux-basics-book](https://itdojp.github.io/illustrated-linux-basics-book/) — https://github.com/itdojp/illustrated-linux-basics-book
 - [ ] [wsl2-linux-essentials-book](https://itdojp.github.io/wsl2-linux-essentials-book/) — https://github.com/itdojp/wsl2-linux-essentials-book
 - [ ] [linux-infra-textbook2](https://itdojp.github.io/linux-infra-textbook2/) — https://github.com/itdojp/linux-infra-textbook2
