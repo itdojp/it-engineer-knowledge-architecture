@@ -102,22 +102,22 @@ jobs:
         
         # 進捗レポートMarkdown生成
         cat > progress_report.md << EOF
-# 📊 IT Engineer Knowledge Architecture 進捗レポート
+        # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: $(date '+%Y年%m月%d日 %H:%M:%S JST')
+        **更新日時**: $(date '+%Y年%m月%d日 %H:%M:%S JST')
 
-## 📈 全体統計
+        ## 📈 全体統計
 
-- **総書籍数**: $total_books冊
-- **アクティブ書籍**: $active_books冊
-- **総Issue数**: $total_issues件
-- **総Star数**: $total_stars個
+        - **総書籍数**: $total_books冊
+        - **アクティブ書籍**: $active_books冊
+        - **総Issue数**: $total_issues件
+        - **総Star数**: $total_stars個
 
-## 📚 書籍別ステータス
+        ## 📚 書籍別ステータス
 
-| 書籍名 | ステータス | 最終更新 | Issues | Stars |
-|--------|------------|----------|--------|-------|
-EOF
+        | 書籍名 | ステータス | 最終更新 | Issues | Stars |
+        |--------|------------|----------|--------|-------|
+        EOF
         
         # 各書籍の情報をテーブルに追加
         jq -r '.books[] | "| \(.name) | \(.status) | \(.last_updated // "N/A") | \(.issues_count) | \(.stars_count) |"' book_status.json >> progress_report.md
@@ -143,12 +143,9 @@ EOF
             echo "📊 進捗レポートに変更はありません"
           else
             git add docs/progress_report.md
-            git commit -m "📊 進捗レポート自動更新
-
-$(date '+%Y-%m-%d %H:%M:%S JST')
-
-🤖 Generated with [GitHub Actions]
-"
+            git commit -m "📊 進捗レポート自動更新" \
+              -m "$(date '+%Y-%m-%d %H:%M:%S JST')" \
+              -m "🤖 Generated with [GitHub Actions]"
             git push
             echo "✅ 進捗レポートを更新しました"
           fi
@@ -169,18 +166,24 @@ $(date '+%Y-%m-%d %H:%M:%S JST')
           
           if [ "$existing_alert" -eq 0 ]; then
             unavailable_books=$(jq -r '.books[] | select(.status == "unavailable") | .name' book_status.json)
+            issue_body_file=$(mktemp)
+            {
+              echo "以下の書籍にアクセスできませんでした:"
+              echo ""
+              echo "$unavailable_books"
+              echo ""
+              echo "**検出日時**: $(date '+%Y-%m-%d %H:%M:%S JST')"
+              echo "**自動生成**: GitHub Actions"
+              echo ""
+              echo "このIssueは自動生成されました。問題が解決されたら手動でクローズしてください。"
+            } > "$issue_body_file"
             
             gh issue create \
               --title "🚨 書籍アクセス異常検出" \
               --label "alert,book-unavailable" \
-              --body "以下の書籍にアクセスできませんでした:
-
-$unavailable_books
-
-**検出日時**: $(date '+%Y-%m-%d %H:%M:%S JST')
-**自動生成**: GitHub Actions
-
-このIssueは自動生成されました。問題が解決されたら手動でクローズしてください。"
+              --body-file "$issue_body_file"
+            
+            rm -f "$issue_body_file"
           fi
         else
           echo "✅ すべての書籍は正常にアクセス可能です"
