@@ -16,7 +16,7 @@
   - ネットワークとコンテナの入門
 - **実務での重要度**: 高（入門として）
 - **前提知識**: なし
-- **学習期間**: 2-3週間
+- **学習期間**: 2〜3週間
 
 #### 2. **wsl2-linux-essentials-book**
 📖 [書籍を読む](https://itdojp.github.io/wsl2-linux-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/wsl2-linux-essentials-book)
@@ -30,7 +30,7 @@
   - シェルスクリプト入門
 - **実務での重要度**: 高（Windows環境での学習に最適）
 - **前提知識**: なし
-- **学習期間**: 2-3週間
+- **学習期間**: 2〜3週間
 
 ### 🔧 技術基盤（9冊）
 
@@ -46,7 +46,7 @@
   - コンピュータサイエンスの理論的バックボーン
 - **実務での重要度**: 中（全体を支える理論基盤）
 - **前提知識**: 数学基礎（離散数学・線形代数）
-- **学習期間**: 10-12週間
+- **学習期間**: 10〜12週間
 
 #### 4. **linux-infra-textbook**
 📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook2/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook2) (旧版📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook))
@@ -59,7 +59,7 @@
   - サーバー構築・運用基礎
 - **実務での重要度**: 高
 - **前提知識**: なし
-- **学習期間**: 4-6週間
+- **学習期間**: 4〜6週間
 
 #### 5. **it-infra-software-essentials-book**
 📖 [書籍を読む](https://itdojp.github.io/it-infra-software-essentials-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-software-essentials-book)
@@ -72,7 +72,7 @@
   - 自動化ツール・フレームワーク活用
 - **実務での重要度**: 高
 - **前提知識**: Linuxサーバー運用経験
-- **学習期間**: 5-7週間
+- **学習期間**: 5〜7週間
 
 #### 6. **IT-infra-book**
 📖 [書籍を読む](https://itdojp.github.io/IT-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-book)
@@ -85,7 +85,7 @@
   - システム設計の考え方
 - **実務での重要度**: 高
 - **前提知識**: なし
-- **学習期間**: 6-8週間
+- **学習期間**: 6〜8週間
 
 #### 7. **podman-book**
 📖 [書籍を読む](https://itdojp.github.io/podman-book/) | 📂 [リポジトリ](https://github.com/itdojp/podman-book)
@@ -98,7 +98,7 @@
   - コンテナオーケストレーション
 - **実務での重要度**: 高
 - **前提知識**: Linux基礎
-- **学習期間**: 4-5週間
+- **学習期間**: 4〜5週間
 
 #### 8. **practical-auth-book**
 📖 [書籍を読む](https://itdojp.github.io/practical-auth-book/) | 📂 [リポジトリ](https://github.com/itdojp/practical-auth-book)
@@ -111,7 +111,7 @@
   - セキュリティベストプラクティス
 - **実務での重要度**: 高
 - **前提知識**: Web開発基礎
-- **学習期間**: 4-5週間
+- **学習期間**: 4〜5週間
 
 #### 9. **cloud-infra-handbook**
 📖 [書籍を読む](https://itdojp.github.io/cloud-infra-handbook/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-handbook)
@@ -124,7 +124,7 @@
   - 構築・運用の実践的手法
 - **実務での重要度**: 高
 - **前提知識**: ITインフラ基礎
-- **学習期間**: 6-8週間
+- **学習期間**: 6〜8週間
 
 #### 10. **IT-infra-troubleshooting-book**
 📖 [書籍を読む](https://itdojp.github.io/IT-infra-troubleshooting-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-infra-troubleshooting-book)
@@ -138,7 +138,7 @@
   - 障害対応プロセスの体系化
 - **実務での重要度**: 高
 - **前提知識**: ITインフラ基礎
-- **学習期間**: 6-8週間
+- **学習期間**: 6〜8週間
 
 #### 11. **it-infra-security-guide-book**
 📖 [書籍を読む](https://itdojp.github.io/it-infra-security-guide-book/) | 📂 [リポジトリ](https://github.com/itdojp/it-infra-security-guide-book)
@@ -152,7 +152,7 @@
   - コンプライアンス要件への対応
 - **実務での重要度**: 高
 - **前提知識**: ITインフラ基礎
-- **学習期間**: 5-7週間
+- **学習期間**: 5〜7週間
 
 ### 🔄 開発・運用プロセス（4冊）
 
@@ -167,7 +167,7 @@
   - プルリクエスト・コードレビュー
 - **実務での重要度**: 高
 - **前提知識**: なし
-- **学習期間**: 2-3週間
+- **学習期間**: 2〜3週間
 
 #### 13. **github-workflow-book**
 📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
@@ -180,7 +180,7 @@
   - チーム開発ワークフロー設計
 - **実務での重要度**: 高
 - **前提知識**: Git基礎
-- **学習期間**: 3-4週間
+- **学習期間**: 3〜4週間
 
 #### 14. **ai-testing-strategy-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
@@ -193,7 +193,7 @@
   - 品質保証プロセス最適化
 - **実務での重要度**: 中
 - **前提知識**: テスト基礎
-- **学習期間**: 4-5週間
+- **学習期間**: 4〜5週間
 
 #### 15. **formal-methods-book**
 📖 [書籍を読む](https://itdojp.github.io/formal-methods-book/) | 📂 [リポジトリ](https://github.com/itdojp/formal-methods-book)
@@ -207,7 +207,7 @@
   - 安全クリティカルシステム設計
 - **実務での重要度**: 中（安全クリティカル分野では高）
 - **前提知識**: 理論計算機科学教科書
-- **学習期間**: 8-10週間
+- **学習期間**: 8〜10週間
 
 ### 🏗️ 特定技術・応用領域（2冊）
 
@@ -222,7 +222,7 @@
   - パフォーマンス最適化
 - **実務での重要度**: 低（特定技術）
 - **前提知識**: Web開発・データベース基礎
-- **学習期間**: 3-4週間
+- **学習期間**: 3〜4週間
 
 #### 17. **BioinformaticsGuide-book**
 📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
@@ -235,7 +235,7 @@
   - 研究ワークフロー設計
 - **実務での重要度**: 低（専門分野）
 - **前提知識**: 生物学基礎・プログラミング
-- **学習期間**: 6-8週間
+- **学習期間**: 6〜8週間
 
 ### 💡 ソフトスキル・思考法（5冊）
 
@@ -250,7 +250,7 @@
   - 問題解決フレームワーク
 - **実務での重要度**: 高
 - **前提知識**: なし
-- **学習期間**: 3-4週間
+- **学習期間**: 3〜4週間
 
 #### 19. **ai-era-engineers-mind-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
@@ -263,7 +263,7 @@
   - ステークホルダーマネジメント
 - **実務での重要度**: 高
 - **前提知識**: エンジニア経験3年以上
-- **学習期間**: 5-6週間
+- **学習期間**: 5〜6週間
 
 #### 20. **negotiation-for-engineers-book**
 📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
@@ -276,7 +276,7 @@
   - エンジニア特化の交渉手法
 - **実務での重要度**: 高
 - **前提知識**: エンジニア経験3年以上
-- **学習期間**: 4-5週間
+- **学習期間**: 4〜5週間
 
 #### 21. **ai-communication-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-communication-book)
@@ -290,7 +290,7 @@
   - 効率的な情報伝達技術
 - **実務での重要度**: 中
 - **前提知識**: なし
-- **学習期間**: 3-4週間
+- **学習期間**: 3〜4週間
 
 #### 22. **IT-engineer-communication-book**
 📖 [書籍を読む](https://itdojp.github.io/IT-engineer-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-engineer-communication-book)
@@ -304,7 +304,7 @@
   - 予防的システム思考・メンタルヘルス対策
 - **実務での重要度**: 高
 - **前提知識**: エンジニア経験1年以上
-- **学習期間**: 4-5週間
+- **学習期間**: 4〜5週間
 
 ### 📚 教養・哲学（2冊）
 
@@ -319,7 +319,7 @@
   - 技術革新の背景・影響
 - **実務での重要度**: 低（教養）
 - **前提知識**: なし
-- **学習期間**: 2-3週間
+- **学習期間**: 2〜3週間
 
 #### 24. **computational-physicalism-book**
 📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
@@ -332,7 +332,7 @@
   - 独自理論による思考フレームワーク
 - **実務での重要度**: 低（教養・哲学）
 - **前提知識**: 哲学・コンピュータサイエンス基礎
-- **学習期間**: 4-6週間
+- **学習期間**: 4〜6週間
 
 ## 📊 書籍マトリクス分析
 
@@ -340,19 +340,19 @@
 
 | 書籍 | 難易度 | 実務重要度 | 対象レベル |
 |------|--------|------------|------------|
-| linux-infra-textbook | 初級 | 高 | 0-2年 |
-| IT-infra-book | 初級 | 高 | 0-2年 |
-| github-workflow-book | 初級 | 高 | 0-3年 |
-| podman-book | 中級 | 高 | 1-3年 |
-| practical-auth-book | 中級 | 高 | 2-5年 |
-| cloud-infra-handbook | 中級 | 高 | 2-5年 |
-| it-infra-software-essentials-book | 中級 | 高 | 1-4年 |
+| linux-infra-textbook | 初級 | 高 | 0〜2年 |
+| IT-infra-book | 初級 | 高 | 0〜2年 |
+| github-workflow-book | 初級 | 高 | 0〜3年 |
+| podman-book | 中級 | 高 | 1〜3年 |
+| practical-auth-book | 中級 | 高 | 2〜5年 |
+| cloud-infra-handbook | 中級 | 高 | 2〜5年 |
+| it-infra-software-essentials-book | 中級 | 高 | 1〜4年 |
 | formal-methods-book | 上級 | 中 | 3年以上 |
-| ai-testing-strategy-book | 中級 | 中 | 2-5年 |
+| ai-testing-strategy-book | 中級 | 中 | 2〜5年 |
 | LogicalThinking-AI-Era-Guide | 初級 | 高 | 全レベル |
 | ai-era-engineers-mind-book | 上級 | 高 | 3年以上 |
 | negotiation-for-engineers-book | 中級 | 高 | 3年以上 |
-| supabase-architecture-patterns-book | 中級 | 低 | 2-5年 |
+| supabase-architecture-patterns-book | 中級 | 低 | 2〜5年 |
 | BioinformaticsGuide-book | 上級 | 低 | 専門分野 |
 | computational-physicalism-book | 上級 | 低 | 学術・研究 |
 | cs-visionaries-book | 初級 | 低 | 全レベル |
