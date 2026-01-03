@@ -1,4 +1,4 @@
-# 既存書籍一覧（24冊）
+# 既存書籍一覧（25冊）
 
 ## 📚 書籍カテゴリ別整理
 
@@ -32,7 +32,7 @@
 - **前提知識**: なし
 - **学習期間**: 2-3週間
 
-### 🔧 技術基盤（9冊）
+### 🔧 技術基盤（10冊）
 
 #### 3. **theoretical-computer-science-textbook**
 📖 [書籍を読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/theoretical-computer-science-textbook)
@@ -154,9 +154,23 @@
 - **前提知識**: ITインフラ基礎
 - **学習期間**: 5-7週間
 
+#### 12. **pentest-learning-book**
+📖 [書籍を読む](https://itdojp.github.io/pentest-learning-book/) | 📂 [リポジトリ](https://github.com/itdojp/pentest-learning-book)
+- **タイトル**: 実務で使えるペネトレーションテスト大全
+- **対象読者**: Web/フルスタックエンジニア、インフラ・クラウドエンジニア、セキュリティ担当者、ペネトレーションテストを学びたい初〜中級エンジニア
+- **レビュー状況**: 📝 公開準備中（GitHub Pages 初回デプロイ未実施）
+- **主な内容**:
+  - 攻撃モデルと基礎理論
+  - Web / API / OAuth・OIDC の診断
+  - モバイル / クラウド / Linux・コンテナの診断
+  - 総合演習、チェックリスト、テンプレート
+- **実務での重要度**: 高（セキュリティ評価・診断）
+- **前提知識**: Linux の基本操作、HTTP の基礎、Web アプリケーション構造の理解
+- **学習期間**: 12週間
+
 ### 🔄 開発・運用プロセス（4冊）
 
-#### 12. **github-guide-for-beginners-book**
+#### 13. **github-guide-for-beginners-book**
 📖 [書籍を読む](https://itdojp.github.io/github-guide-for-beginners-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-guide-for-beginners-book)
 - **タイトル**: GitHub初心者ガイド
 - **対象読者**: Git/GitHub初心者・開発チーム全般
@@ -169,7 +183,7 @@
 - **前提知識**: なし
 - **学習期間**: 2-3週間
 
-#### 13. **github-workflow-book**
+#### 14. **github-workflow-book**
 📖 [書籍を読む](https://itdojp.github.io/github-workflow-book/) | 📂 [リポジトリ](https://github.com/itdojp/github-workflow-book)
 - **タイトル**: GitHub Workflow実践ガイド
 - **対象読者**: 開発チーム全般
@@ -182,7 +196,7 @@
 - **前提知識**: Git基礎
 - **学習期間**: 3-4週間
 
-#### 14. **ai-testing-strategy-book**
+#### 15. **ai-testing-strategy-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 - **タイトル**: AI時代のテスト戦略
 - **対象読者**: QAエンジニア・SRE
@@ -195,7 +209,7 @@
 - **前提知識**: テスト基礎
 - **学習期間**: 4-5週間
 
-#### 15. **formal-methods-book**
+#### 16. **formal-methods-book**
 📖 [書籍を読む](https://itdojp.github.io/formal-methods-book/) | 📂 [リポジトリ](https://github.com/itdojp/formal-methods-book)
 - **タイトル**: 形式的手法の基礎と応用
 - **対象読者**: ソフトウェアエンジニア・研究者・品質保証担当者
@@ -211,7 +225,7 @@
 
 ### 🏗️ 特定技術・応用領域（2冊）
 
-#### 16. **supabase-architecture-patterns-book**
+#### 17. **supabase-architecture-patterns-book**
 📖 [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | 📂 [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
 - **タイトル**: Supabaseアーキテクチャパターン
 - **対象読者**: Supabase利用開発者
@@ -224,7 +238,7 @@
 - **前提知識**: Web開発・データベース基礎
 - **学習期間**: 3-4週間
 
-#### 17. **BioinformaticsGuide-book**
+#### 18. **BioinformaticsGuide-book**
 📖 [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | 📂 [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 - **タイトル**: バイオインフォマティクス実践ガイド
 - **対象読者**: バイオ分野エンジニア・研究者
@@ -239,7 +253,7 @@
 
 ### 💡 ソフトスキル・思考法（5冊）
 
-#### 18. **LogicalThinking-AI-Era-Guide**
+#### 19. **LogicalThinking-AI-Era-Guide**
 📖 [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | 📂 [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 - **タイトル**: AI時代の論理思考ガイド
 - **対象読者**: 全エンジニア・ビジネスパーソン
@@ -252,7 +266,7 @@
 - **前提知識**: なし
 - **学習期間**: 3-4週間
 
-#### 19. **ai-era-engineers-mind-book**
+#### 20. **ai-era-engineers-mind-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 - **タイトル**: AI時代のプロフェッショナルITエンジニアの思考法
 - **対象読者**: 中堅～シニアエンジニア
@@ -265,7 +279,7 @@
 - **前提知識**: エンジニア経験3年以上
 - **学習期間**: 5-6週間
 
-#### 20. **negotiation-for-engineers-book**
+#### 21. **negotiation-for-engineers-book**
 📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
 - **タイトル**: エンジニアの交渉力アーキテクチャ
 - **対象読者**: 中堅～シニアエンジニア・管理職
@@ -278,7 +292,7 @@
 - **前提知識**: エンジニア経験3年以上
 - **学習期間**: 4-5週間
 
-#### 21. **ai-communication-book**
+#### 22. **ai-communication-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-communication-book)
 - **タイトル**: 生成AIコミュニケーション技術
 - **対象読者**: エンジニア・ビジネスパーソン・コミュニケーション担当者
@@ -292,7 +306,7 @@
 - **前提知識**: なし
 - **学習期間**: 3-4週間
 
-#### 22. **IT-engineer-communication-book**
+#### 23. **IT-engineer-communication-book**
 📖 [書籍を読む](https://itdojp.github.io/IT-engineer-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-engineer-communication-book)
 - **タイトル**: エンジニアのための実践コミュニケーション設計
 - **対象読者**: 全エンジニア・テックリード・エンジニアリングマネージャー
@@ -308,7 +322,7 @@
 
 ### 📚 教養・哲学（2冊）
 
-#### 23. **cs-visionaries-book**
+#### 24. **cs-visionaries-book**
 📖 [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | 📂 [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 - **タイトル**: デジタル革命の先駆者たち - コンピュータサイエンス偉人伝
 - **対象読者**: 全エンジニア・学生
@@ -321,7 +335,7 @@
 - **前提知識**: なし
 - **学習期間**: 2-3週間
 
-#### 24. **computational-physicalism-book**
+#### 25. **computational-physicalism-book**
 📖 [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | 📂 [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 - **タイトル**: 計算物理主義（哲学的アプローチ）
 - **対象読者**: 哲学・理論に興味のあるエンジニア・研究者
