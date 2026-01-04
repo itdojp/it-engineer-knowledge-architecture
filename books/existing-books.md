@@ -172,7 +172,7 @@
 📖 [書籍を読む](https://itdojp.github.io/proxmox_book/) | 📂 [リポジトリ](https://github.com/itdojp/proxmox_book)
 - **タイトル**: Proxmox VE 実践ガイド
 - **対象読者**: Proxmox VE を評価・導入しようとしているインフラエンジニア、オンプレミス環境の提案・構築を担当するシステムインテグレータ
-- **レビュー状況**: 📝 公開準備中（リポジトリは private）
+- **レビュー状況**: 📝 公開準備中
 - **主な内容**:
   - Proxmox VE の評価・導入に向けた整理
   - 設計・運用の考え方の体系化
