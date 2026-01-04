@@ -139,7 +139,6 @@ Building Your Tech Career, One Book at a Time
 
 10. Proxmox VE 実践ガイド  
    [書籍を読む](https://itdojp.github.io/proxmox_book/) | [リポジトリ](https://github.com/itdojp/proxmox_book)  
-   （リポジトリは private）
 
 #### 応用技術
 
