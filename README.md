@@ -23,9 +23,9 @@ Building Your Tech Career, One Book at a Time
 
 このプロジェクトは、ITエンジニア（特にインフラ系）が実務で必要とする知識を体系化し、段階的な学習ロードマップを提供することを目的としています。
 
-- 既存書籍: 25冊（レビュー済み）
+- 既存書籍: 26冊（レビュー済み）
 - 計画書籍: 7冊（新規制作予定）
-- 合計: 32冊による総合的な知識体系
+- 合計: 33冊による総合的な知識体系
 
 各書籍は GitHub リポジトリとして管理され、GitHub Pages を通じて無料で閲覧できる形に整備しています（公開準備中の書籍を除く）。  
 ライセンスは Creative Commons BY-NC-SA 4.0（非営利利用は自由、商用利用は別途契約）です。
@@ -88,7 +88,7 @@ Building Your Tech Career, One Book at a Time
 
 ## 書籍一覧
 
-### ✅ 既存書籍（25冊）
+### ✅ 既存書籍（26冊）
 
 #### 未経験者向け
 
@@ -131,76 +131,80 @@ Building Your Tech Career, One Book at a Time
    [書籍を読む](https://itdojp.github.io/pentest-learning-book/) | [リポジトリ](https://github.com/itdojp/pentest-learning-book)  
    （公開準備中: GitHub Pages 初回デプロイ未実施）
 
+10. Proxmox VE 実践ガイド  
+   [書籍を読む](https://itdojp.github.io/proxmox_book/) | [リポジトリ](https://github.com/itdojp/proxmox_book)  
+   （リポジトリは private）
+
 #### 応用技術
 
 対象: 中級者以上 / 特定技術スタックの実践的活用
 
-10. Podman完全ガイド  
+11. Podman完全ガイド  
    [書籍を読む](https://itdojp.github.io/podman-book/) | [リポジトリ](https://github.com/itdojp/podman-book)
 
-11. 実践 認証認可システム設計
+12. 実践 認証認可システム設計
     [書籍を読む](https://itdojp.github.io/practical-auth-book/) | [リポジトリ](https://github.com/itdojp/practical-auth-book)
 
-12. Supabaseアーキテクチャ
+13. Supabaseアーキテクチャ
     [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
 
 #### コンピューターサイエンス理論
 
 対象: 中級者以上 / 理論的バックグラウンドの深化
 
-13. 理論計算機科学教科書
+14. 理論計算機科学教科書
     [書籍を読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | [リポジトリ](https://github.com/itdojp/theoretical-computer-science-textbook)
 
 #### 開発・運用プロセス
 
 対象: 全レベル / 開発効率化・品質向上
 
-14. GitHub初心者ガイド
+15. GitHub初心者ガイド
     [書籍を読む](https://itdojp.github.io/github-guide-for-beginners-book/) | [リポジトリ](https://github.com/itdojp/github-guide-for-beginners-book)
 
-15. AI開発のためのGitHubワークフロー実践ガイド
+16. AI開発のためのGitHubワークフロー実践ガイド
     [書籍を読む](https://itdojp.github.io/github-workflow-book/) | [リポジトリ](https://github.com/itdojp/github-workflow-book)
 
-16. AI主導開発時代のソフトウェアテスト戦略
+17. AI主導開発時代のソフトウェアテスト戦略
     [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 
-17. 形式的手法の基礎と応用
+18. 形式的手法の基礎と応用
     [書籍を読む](https://itdojp.github.io/formal-methods-book/) | [リポジトリ](https://github.com/itdojp/formal-methods-book)
 
 #### 特定領域・ドメイン知識
 
 対象: 専門分野従事者 / 業界特化の専門知識
 
-18. バイオインフォマティクス実践ガイド
+19. バイオインフォマティクス実践ガイド
     [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 
 #### ソフトスキル・思考法
 
 対象: 全レベル / キャリア発展・コミュニケーション
 
-19. AI時代に差がつく論理的思考と表現力
+20. AI時代に差がつく論理的思考と表現力
     [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 
-20. AI時代のプロフェッショナルITエンジニアの思考法
+21. AI時代のプロフェッショナルITエンジニアの思考法
     [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 
-21. エンジニアの交渉力アーキテクチャ
+22. エンジニアの交渉力アーキテクチャ
     [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
 
-22. 生成AIコミュニケーション技術
+23. 生成AIコミュニケーション技術
     [書籍を読む](https://itdojp.github.io/ai-communication-book/) | [リポジトリ](https://github.com/itdojp/ai-communication-book)
 
-23. エンジニアのための実践コミュニケーション設計
+24. エンジニアのための実践コミュニケーション設計
     [書籍を読む](https://itdojp.github.io/IT-engineer-communication-book/) | [リポジトリ](https://github.com/itdojp/IT-engineer-communication-book)
 
 #### 教養・哲学
 
 対象: 全レベル / 技術的教養・視野拡大
 
-24. デジタル革命の先駆者たち
+25. デジタル革命の先駆者たち
     [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
-25. 計算論的物理主義
+26. 計算論的物理主義
     [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 
 ---
@@ -306,19 +310,19 @@ Linux基礎
 
 ### 優先度: 高（必須追加）
 
-26. 『インフラ監視・運用自動化実践ガイド』 – Prometheus/Grafana、SRE実践  
-27. 『エンタープライズクラウドアーキテクチャ設計・運用』 – AWS/Azure/GCP、IaC、FinOps  
-28. 『災害対策・事業継続計画（BCP）実装ガイド』 – DR計画、RTO/RPO設計  
-29. 『実践的セキュリティインフラ構築』 – ゼロトラスト、SIEM/SOC  
+27. 『インフラ監視・運用自動化実践ガイド』 – Prometheus/Grafana、SRE実践  
+28. 『エンタープライズクラウドアーキテクチャ設計・運用』 – AWS/Azure/GCP、IaC、FinOps  
+29. 『災害対策・事業継続計画（BCP）実装ガイド』 – DR計画、RTO/RPO設計  
+30. 『実践的セキュリティインフラ構築』 – ゼロトラスト、SIEM/SOC  
 
 ### 優先度: 中（価値向上）
 
-30. 『インフラ性能管理・キャパシティプランニング』 – 性能テスト、ボトルネック分析  
-31. 『コンプライアンス対応インフラ設計・運用』 – ISO27001、SOX法対応  
+31. 『インフラ性能管理・キャパシティプランニング』 – 性能テスト、ボトルネック分析  
+32. 『コンプライアンス対応インフラ設計・運用』 – ISO27001、SOX法対応  
 
 ### 優先度: 低（将来投資）
 
-32. 『次世代インフラ技術実践ガイド』 – エッジコンピューティング、AI/MLOps  
+33. 『次世代インフラ技術実践ガイド』 – エッジコンピューティング、AI/MLOps  
 
 ---
 
@@ -375,6 +379,7 @@ ITDO Inc. が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ラ�
 - クラウドインフラ設計・構築ガイド – https://github.com/itdojp/cloud-infra-book  
 - インフラエンジニアのための情報セキュリティ実装ガイド – https://github.com/itdojp/it-infra-security-guide-book  
 - 実務で使えるペネトレーションテスト大全 – https://github.com/itdojp/pentest-learning-book  
+- Proxmox VE 実践ガイド – https://github.com/itdojp/proxmox_book  
 - Podman完全ガイド – https://github.com/itdojp/podman-book  
 - 実践 認証認可システム設計 – https://github.com/itdojp/practical-auth-book  
 - Supabaseアーキテクチャ – https://github.com/itdojp/supabase-architecture-patterns-book  
@@ -407,7 +412,7 @@ ITDO Inc. が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ラ�
 
 **IT Engineer Knowledge Architecture** is a curated collection of technical books and learning paths for IT engineers, especially infrastructure engineers.
 
-- 25 books in this series (Japanese; most are free to read online via GitHub Pages)
+- 26 books in this series (Japanese; most are free to read online via GitHub Pages)
 - 7 planned books
 - Coverage from absolute beginners to senior architects and engineering managers
 - Focus on infrastructure, cloud, security, reliability, and AI-era development practices
