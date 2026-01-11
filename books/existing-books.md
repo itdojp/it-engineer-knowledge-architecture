@@ -1,4 +1,4 @@
-# 既存書籍一覧（26冊）
+# 既存書籍一覧（27冊）
 
 ## 📚 書籍カテゴリ別整理
 
@@ -361,6 +361,22 @@
 - **前提知識**: 哲学・コンピュータサイエンス基礎
 - **学習期間**: 4-6週間
 
+### 🌐 Web3・ブロックチェーン（1冊）
+
+#### 27. **ethereum-learning-bootcamp**
+📖 [書籍を読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | 📂 [リポジトリ](https://github.com/itdojp/ethereum-learning-bootcamp)
+- **タイトル**: Ethereum Learning Bootcamp
+- **対象読者**: Web3 / ブロックチェーン / Ethereum を学びたい初学者〜初級エンジニア（要確認）
+- **レビュー状況**: ✅ 公開済み
+- **主な内容**:
+  - Ethereum 基礎（トランザクション、ガス、L1/L2 など）
+  - Solidity 基礎
+  - ローカルテスト、デプロイ、CI
+  - DApp フロントエンド、The Graph、セキュリティ、ガス最適化、統合
+- **実務での重要度**: 中（Web3開発では高）
+- **前提知識**: プログラミング基礎（要確認）
+- **学習期間**: 要確認
+
 ## 📊 書籍マトリクス分析
 
 ### 難易度 × 重要度マトリクス
@@ -393,6 +409,7 @@
 - **ソフトウェア基礎**: it-infra-software-essentials-book
 - **コンテナ技術**: podman-book
 - **認証・セキュリティ**: practical-auth-book
+- **Web3・ブロックチェーン**: ethereum-learning-bootcamp
 - **開発プロセス**: github-workflow-book
 - **テスト戦略**: ai-testing-strategy-book  
 - **形式的手法**: formal-methods-book
@@ -428,6 +445,7 @@
 2. negotiation-for-engineers-book
 
 ### Phase 4: 専門分野（選択制）
+- ethereum-learning-bootcamp（Ethereum / Web3）
 - supabase-architecture-patterns-book（Supabase利用者）
 - BioinformaticsGuide-book（バイオ分野）
 - computational-physicalism-book（計算物理学・研究分野）
@@ -453,6 +471,6 @@
 
 ---
 
-既存22冊により、ITエンジニアの基礎から上級レベルまでの幅広い知識をカバーできています。特にインフラ基礎、クラウド技術、開発プロセス、ソフトスキルの分野では充実した内容となっています。
+既存27冊により、ITエンジニアの基礎から上級レベルまでの幅広い知識をカバーできています。特にインフラ基礎、クラウド技術、開発プロセス、ソフトスキルの分野では充実した内容となっています。
 
 **最新追加**: 形式的手法の基礎と応用により、高信頼性システム開発の分野が新たにカバーされました。これにより、安全クリティカルシステムや高品質ソフトウェア開発に関心のあるエンジニアにも対応できる、より包括的な体系となりました。理論計算機科学教科書と組み合わせることで、理論から実践まで一貫した学習パスが構築されています。

@@ -23,9 +23,9 @@ Building Your Tech Career, One Book at a Time
 
 このプロジェクトは、ITエンジニア（特にインフラ系）が実務で必要とする知識を体系化し、段階的な学習ロードマップを提供することを目的としています。
 
-- 既存書籍: 26冊（レビュー済み）
+- 既存書籍: 27冊（レビュー済み）
 - 計画書籍: 7冊（新規制作予定）
-- 合計: 33冊による総合的な知識体系
+- 合計: 34冊による総合的な知識体系
 
 各書籍は GitHub リポジトリとして管理され、GitHub Pages を通じて無料で閲覧できる形に整備しています（公開準備中の書籍を除く）。  
 ライセンスは Creative Commons BY-NC-SA 4.0（非営利利用は自由、商用利用は別途契約）です。
@@ -88,7 +88,7 @@ Building Your Tech Career, One Book at a Time
 
 ## 書籍一覧
 
-### ✅ 既存書籍（26冊）
+### ✅ 既存書籍（27冊）
 
 #### 未経験者向け
 
@@ -205,6 +205,13 @@ Building Your Tech Career, One Book at a Time
 
 26. 計算論的物理主義
     [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
+
+#### Web3・ブロックチェーン
+
+対象: Web3 / ブロックチェーン / スマートコントラクト開発を学びたい方向け
+
+27. Ethereum学習ブートキャンプ
+    [書籍を読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | [リポジトリ](https://github.com/itdojp/ethereum-learning-bootcamp)
 
 ---
 
