@@ -23,9 +23,9 @@ Building Your Tech Career, One Book at a Time
 
 このプロジェクトは、ITエンジニア（特にインフラ系）が実務で必要とする知識を体系化し、段階的な学習ロードマップを提供することを目的としています。
 
-- 既存書籍: 27冊（レビュー済み）
+- 既存書籍: 28冊（レビュー済み）
 - 計画書籍: 7冊（新規制作予定）
-- 合計: 34冊による総合的な知識体系
+- 合計: 35冊による総合的な知識体系
 
 各書籍は GitHub リポジトリとして管理され、GitHub Pages を通じて無料で閲覧できる形に整備しています（公開準備中の書籍を除く）。  
 ライセンスは Creative Commons BY-NC-SA 4.0（非営利利用は自由、商用利用は別途契約）です。
@@ -88,7 +88,7 @@ Building Your Tech Career, One Book at a Time
 
 ## 書籍一覧
 
-### ✅ 既存書籍（27冊）
+### ✅ 既存書籍（28冊）
 
 #### 未経験者向け
 
@@ -129,7 +129,6 @@ Building Your Tech Career, One Book at a Time
 
 9. 実務で使えるペネトレーションテスト大全  
    [書籍を読む](https://itdojp.github.io/pentest-learning-book/) | [リポジトリ](https://github.com/itdojp/pentest-learning-book)  
-   （公開準備中: GitHub Pages 初回デプロイ未実施）
 
 10. Proxmox VE 実践ガイド  
    [書籍を読む](https://itdojp.github.io/proxmox_book/) | [リポジトリ](https://github.com/itdojp/proxmox_book)  
@@ -170,47 +169,50 @@ Building Your Tech Career, One Book at a Time
 18. 形式的手法の基礎と応用
     [書籍を読む](https://itdojp.github.io/formal-methods-book/) | [リポジトリ](https://github.com/itdojp/formal-methods-book)
 
+19. 要件から始めるソフトウェア設計（小規模TS Webアプリの実践）
+    [書籍を読む](https://itdojp.github.io/small-webapp-software-design-book/) | [リポジトリ](https://github.com/itdojp/small-webapp-software-design-book)
+
 #### 特定領域・ドメイン知識
 
 対象: 専門分野従事者 / 業界特化の専門知識
 
-19. バイオインフォマティクス実践ガイド
+20. バイオインフォマティクス実践ガイド
     [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 
 #### ソフトスキル・思考法
 
 対象: 全レベル / キャリア発展・コミュニケーション
 
-20. AI時代に差がつく論理的思考と表現力
+21. AI時代に差がつく論理的思考と表現力
     [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 
-21. AI時代のプロフェッショナルITエンジニアの思考法
+22. AI時代のプロフェッショナルITエンジニアの思考法
     [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 
-22. エンジニアの交渉力アーキテクチャ
+23. エンジニアの交渉力アーキテクチャ
     [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
 
-23. 生成AIコミュニケーション技術
+24. 生成AIコミュニケーション技術
     [書籍を読む](https://itdojp.github.io/ai-communication-book/) | [リポジトリ](https://github.com/itdojp/ai-communication-book)
 
-24. エンジニアのための実践コミュニケーション設計
+25. エンジニアのための実践コミュニケーション設計
     [書籍を読む](https://itdojp.github.io/IT-engineer-communication-book/) | [リポジトリ](https://github.com/itdojp/IT-engineer-communication-book)
 
 #### 教養・哲学
 
 対象: 全レベル / 技術的教養・視野拡大
 
-25. デジタル革命の先駆者たち
+26. デジタル革命の先駆者たち
     [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
-26. 計算論的物理主義
+27. 計算論的物理主義
     [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 
 #### Web3・ブロックチェーン
 
 対象: Web3 / ブロックチェーン / スマートコントラクト開発を学びたい方向け
 
-27. Ethereum学習ブートキャンプ
+28. Ethereum学習ブートキャンプ
     [書籍を読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | [リポジトリ](https://github.com/itdojp/ethereum-learning-bootcamp)
 
 ---
@@ -394,6 +396,7 @@ ITDO Inc. が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ラ�
 - AI開発のためのGitHubワークフロー実践ガイド – https://github.com/itdojp/github-workflow-book  
 - AI主導開発時代のソフトウェアテスト戦略 – https://github.com/itdojp/ai-testing-strategy-book  
 - 形式的手法の基礎と応用 – https://github.com/itdojp/formal-methods-book  
+- 要件から始めるソフトウェア設計（小規模TS Webアプリの実践） – https://github.com/itdojp/small-webapp-software-design-book  
 - バイオインフォマティクス実践ガイド – https://github.com/itdojp/BioinformaticsGuide-book  
 - AI時代に差がつく論理的思考と表現力 – https://github.com/itdojp/LogicalThinking-AI-Era-Guide  
 - AI時代のプロフェッショナルITエンジニアの思考法 – https://github.com/itdojp/ai-era-engineers-mind-book  
@@ -402,6 +405,7 @@ ITDO Inc. が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ラ�
 - エンジニアのための実践コミュニケーション設計 – https://github.com/itdojp/IT-engineer-communication-book  
 - デジタル革命の先駆者たち – https://github.com/itdojp/cs-visionaries-book  
 - 計算論的物理主義 – https://github.com/itdojp/computational-physicalism-book  
+- Ethereum学習ブートキャンプ – https://github.com/itdojp/ethereum-learning-bootcamp  
 
 お問い合わせ: 株式会社アイティードゥ（ITDO Inc.） / knowledge@itdo.jp  
 
@@ -418,7 +422,7 @@ ITDO Inc. が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ラ�
 
 **IT Engineer Knowledge Architecture** is a curated collection of technical books and learning paths for IT engineers, especially infrastructure engineers.
 
-- 26 books in this series (Japanese; most are free to read online via GitHub Pages)
+- 28 books in this series (Japanese; most are free to read online via GitHub Pages)
 - 7 planned books
 - Coverage from absolute beginners to senior architects and engineering managers
 - Focus on infrastructure, cloud, security, reliability, and AI-era development practices
