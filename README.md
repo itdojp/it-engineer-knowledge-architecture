@@ -139,10 +139,10 @@ Building Your Tech Career, One Book at a Time
 対象: 中級者以上 / 特定技術スタックの実践的活用
 
 10. Proxmox VE 実践ガイド  
-   [書籍を読む](https://itdojp.github.io/proxmox_book/) | [リポジトリ](https://github.com/itdojp/proxmox_book)  
+    [書籍を読む](https://itdojp.github.io/proxmox_book/) | [リポジトリ](https://github.com/itdojp/proxmox_book)  
 
 11. Podman完全ガイド  
-   [書籍を読む](https://itdojp.github.io/podman-book/) | [リポジトリ](https://github.com/itdojp/podman-book)
+    [書籍を読む](https://itdojp.github.io/podman-book/) | [リポジトリ](https://github.com/itdojp/podman-book)
 
 12. 実践 認証認可システム設計  
     [書籍を読む](https://itdojp.github.io/practical-auth-book/) | [リポジトリ](https://github.com/itdojp/practical-auth-book)
