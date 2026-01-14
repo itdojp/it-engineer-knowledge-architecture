@@ -124,95 +124,99 @@ Building Your Tech Career, One Book at a Time
 7. クラウドインフラ設計・構築ガイド  
    [書籍を読む](https://itdojp.github.io/cloud-infra-book/) | [リポジトリ](https://github.com/itdojp/cloud-infra-book)
 
+#### セキュリティ
+
+対象: 中級者以上 / インフラ・アプリケーションのセキュリティ設計・診断
+
 8. インフラエンジニアのための情報セキュリティ実装ガイド  
    [書籍を読む](https://itdojp.github.io/it-infra-security-guide-book/) | [リポジトリ](https://github.com/itdojp/it-infra-security-guide-book)
 
 9. 実務で使えるペネトレーションテスト大全  
    [書籍を読む](https://itdojp.github.io/pentest-learning-book/) | [リポジトリ](https://github.com/itdojp/pentest-learning-book)  
 
-10. Proxmox VE 実践ガイド  
-   [書籍を読む](https://itdojp.github.io/proxmox_book/) | [リポジトリ](https://github.com/itdojp/proxmox_book)  
-
 #### 応用技術
 
 対象: 中級者以上 / 特定技術スタックの実践的活用
 
-11. Podman完全ガイド  
-   [書籍を読む](https://itdojp.github.io/podman-book/) | [リポジトリ](https://github.com/itdojp/podman-book)
+10. Proxmox VE 実践ガイド  
+    [書籍を読む](https://itdojp.github.io/proxmox_book/) | [リポジトリ](https://github.com/itdojp/proxmox_book)  
 
-12. 実践 認証認可システム設計
+11. Podman完全ガイド  
+    [書籍を読む](https://itdojp.github.io/podman-book/) | [リポジトリ](https://github.com/itdojp/podman-book)
+
+12. 実践 認証認可システム設計  
     [書籍を読む](https://itdojp.github.io/practical-auth-book/) | [リポジトリ](https://github.com/itdojp/practical-auth-book)
 
-13. Supabaseアーキテクチャ
+13. Supabaseアーキテクチャ  
     [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
 
 #### コンピューターサイエンス理論
 
 対象: 中級者以上 / 理論的バックグラウンドの深化
 
-14. 理論計算機科学教科書
+14. 理論計算機科学教科書  
     [書籍を読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | [リポジトリ](https://github.com/itdojp/theoretical-computer-science-textbook)
 
 #### 開発・運用プロセス
 
 対象: 全レベル / 開発効率化・品質向上
 
-15. GitHub初心者ガイド
+15. GitHub初心者ガイド  
     [書籍を読む](https://itdojp.github.io/github-guide-for-beginners-book/) | [リポジトリ](https://github.com/itdojp/github-guide-for-beginners-book)
 
-16. AI開発のためのGitHubワークフロー実践ガイド
+16. AI開発のためのGitHubワークフロー実践ガイド  
     [書籍を読む](https://itdojp.github.io/github-workflow-book/) | [リポジトリ](https://github.com/itdojp/github-workflow-book)
 
-17. AI主導開発時代のソフトウェアテスト戦略
+17. AI主導開発時代のソフトウェアテスト戦略  
     [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
 
-18. 形式的手法の基礎と応用
+18. 形式的手法の基礎と応用  
     [書籍を読む](https://itdojp.github.io/formal-methods-book/) | [リポジトリ](https://github.com/itdojp/formal-methods-book)
 
-19. 要件から始めるソフトウェア設計（小規模TS Webアプリの実践）
+19. 要件から始めるソフトウェア設計（小規模TS Webアプリの実践）  
     [書籍を読む](https://itdojp.github.io/small-webapp-software-design-book/) | [リポジトリ](https://github.com/itdojp/small-webapp-software-design-book)
 
 #### 特定領域・ドメイン知識
 
 対象: 専門分野従事者 / 業界特化の専門知識
 
-20. バイオインフォマティクス実践ガイド
+20. バイオインフォマティクス実践ガイド  
     [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
 
 #### ソフトスキル・思考法
 
 対象: 全レベル / キャリア発展・コミュニケーション
 
-21. AI時代に差がつく論理的思考と表現力
+21. AI時代に差がつく論理的思考と表現力  
     [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
 
-22. AI時代のプロフェッショナルITエンジニアの思考法
+22. AI時代のプロフェッショナルITエンジニアの思考法  
     [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 
-23. エンジニアの交渉力アーキテクチャ
+23. エンジニアの交渉力アーキテクチャ  
     [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
 
-24. 生成AIコミュニケーション技術
+24. 生成AIコミュニケーション技術  
     [書籍を読む](https://itdojp.github.io/ai-communication-book/) | [リポジトリ](https://github.com/itdojp/ai-communication-book)
 
-25. エンジニアのための実践コミュニケーション設計
+25. エンジニアのための実践コミュニケーション設計  
     [書籍を読む](https://itdojp.github.io/IT-engineer-communication-book/) | [リポジトリ](https://github.com/itdojp/IT-engineer-communication-book)
 
 #### 教養・哲学
 
 対象: 全レベル / 技術的教養・視野拡大
 
-26. デジタル革命の先駆者たち
+26. デジタル革命の先駆者たち  
     [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
 
-27. 計算論的物理主義
+27. 計算論的物理主義  
     [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
 
 #### Web3・ブロックチェーン
 
 対象: Web3 / ブロックチェーン / スマートコントラクト開発を学びたい方向け
 
-28. Ethereum学習ブートキャンプ
+28. Ethereum学習ブートキャンプ  
     [書籍を読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | [リポジトリ](https://github.com/itdojp/ethereum-learning-bootcamp)
 
 ---
