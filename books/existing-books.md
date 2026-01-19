@@ -305,20 +305,7 @@
 - **前提知識**: エンジニア経験3年以上
 - **学習期間**: 5-6週間
 
-#### 23. **negotiation-for-engineers-book**
-📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
-- **タイトル**: エンジニアの交渉力アーキテクチャ
-- **対象読者**: 中堅～シニアエンジニア・管理職
-- **レビュー状況**: ✅ Issue #1作成済み
-- **主な内容**:
-  - 技術的根拠による説得術
-  - ステークホルダー管理
-  - エンジニア特化の交渉手法
-- **実務での重要度**: 高
-- **前提知識**: エンジニア経験3年以上
-- **学習期間**: 4-5週間
-
-#### 24. **ai-communication-book**
+#### 23. **ai-communication-book**
 📖 [書籍を読む](https://itdojp.github.io/ai-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/ai-communication-book)
 - **タイトル**: 生成AIコミュニケーション技術
 - **対象読者**: エンジニア・ビジネスパーソン・コミュニケーション担当者
@@ -331,6 +318,19 @@
 - **実務での重要度**: 中
 - **前提知識**: なし
 - **学習期間**: 3-4週間
+
+#### 24. **negotiation-for-engineers-book**
+📖 [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | 📂 [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
+- **タイトル**: エンジニアの交渉力アーキテクチャ
+- **対象読者**: 中堅～シニアエンジニア・管理職
+- **レビュー状況**: ✅ Issue #1作成済み
+- **主な内容**:
+  - 技術的根拠による説得術
+  - ステークホルダー管理
+  - エンジニア特化の交渉手法
+- **実務での重要度**: 高
+- **前提知識**: エンジニア経験3年以上
+- **学習期間**: 4-5週間
 
 #### 25. **IT-engineer-communication-book**
 📖 [書籍を読む](https://itdojp.github.io/IT-engineer-communication-book/) | 📂 [リポジトリ](https://github.com/itdojp/IT-engineer-communication-book)
