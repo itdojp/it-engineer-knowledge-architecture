@@ -193,11 +193,11 @@ Building Your Tech Career, One Book at a Time
 22. AI時代のプロフェッショナルITエンジニアの思考法  
     [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
 
-23. エンジニアの交渉力アーキテクチャ  
-    [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
-
-24. 生成AIコミュニケーション技術  
+23. 生成AIコミュニケーション技術  
     [書籍を読む](https://itdojp.github.io/ai-communication-book/) | [リポジトリ](https://github.com/itdojp/ai-communication-book)
+
+24. エンジニアの交渉力アーキテクチャ  
+    [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
 
 25. エンジニアのための実践コミュニケーション設計  
     [書籍を読む](https://itdojp.github.io/IT-engineer-communication-book/) | [リポジトリ](https://github.com/itdojp/IT-engineer-communication-book)
@@ -312,7 +312,7 @@ Linux基礎
 
 ### エンジニアリングマネージャー
 
-- ソフトスキル: AI時代に差がつく論理的思考と表現力 → AI時代のプロフェッショナルITエンジニアの思考法 → エンジニアの交渉力アーキテクチャ → 生成AIコミュニケーション技術  
+- ソフトスキル: AI時代に差がつく論理的思考と表現力 → AI時代のプロフェッショナルITエンジニアの思考法 → 生成AIコミュニケーション技術 → エンジニアの交渉力アーキテクチャ  
 - 技術理解: 基礎分野の概要習得 → 理論計算機科学教科書（理論的背景）  
 - 教養: デジタル革命の先駆者たち → 計算論的物理主義  
 
@@ -404,8 +404,8 @@ ITDO Inc. が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ラ�
 - バイオインフォマティクス実践ガイド – https://github.com/itdojp/BioinformaticsGuide-book  
 - AI時代に差がつく論理的思考と表現力 – https://github.com/itdojp/LogicalThinking-AI-Era-Guide  
 - AI時代のプロフェッショナルITエンジニアの思考法 – https://github.com/itdojp/ai-era-engineers-mind-book  
-- エンジニアの交渉力アーキテクチャ – https://github.com/itdojp/negotiation-for-engineers-book  
 - 生成AIコミュニケーション技術 – https://github.com/itdojp/ai-communication-book  
+- エンジニアの交渉力アーキテクチャ – https://github.com/itdojp/negotiation-for-engineers-book  
 - エンジニアのための実践コミュニケーション設計 – https://github.com/itdojp/IT-engineer-communication-book  
 - デジタル革命の先駆者たち – https://github.com/itdojp/cs-visionaries-book  
 - 計算論的物理主義 – https://github.com/itdojp/computational-physicalism-book  
