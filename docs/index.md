@@ -42,12 +42,12 @@ Building Your Tech Career, One Book at a Time
 
 ## 出版ガイド
 
-- [出版ガイド](./publishing/index.html)
-- [テンプレート（templates/book/）](https://github.com/itdojp/it-engineer-knowledge-architecture/tree/main/templates/book)
+- シリーズ共通ガイド: `docs/publishing/`
+- 書籍テンプレート: `templates/book/`
 
 ## 更新履歴
 
-- [シリーズサイトの更新履歴](./changelog.html)
+- シリーズサイトの更新履歴: `CHANGELOG.md`
 
 ### 想定読者
 
@@ -398,6 +398,7 @@ ITDO Inc. が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ラ�
 （例: 社内研修教材としての利用、社外向け有償研修での利用、商用サービスへの直接組み込みなど）
 
 詳細はリポジトリ内の LICENSE.md を参照してください。
+適用範囲（スコープ）は `LICENSE-SCOPE.md` を参照してください。
 
 ### 対象書籍一覧（リポジトリ）
 
