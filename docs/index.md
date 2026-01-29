@@ -18,6 +18,8 @@ Building Your Tech Career, One Book at a Time
 - [計画書籍](#計画書籍)
 - [コミュニティ・フィードバック](#コミュニティフィードバック)
 - [組織情報](#組織情報)
+- [出版ガイド](#出版ガイド)
+- [更新履歴](#更新履歴)
 - [ライセンス](#ライセンス)
 - [English Overview](#english-overview)
 
@@ -35,6 +37,17 @@ Building Your Tech Career, One Book at a Time
 
 各書籍は GitHub リポジトリとして管理され、GitHub Pages を通じて無料で閲覧できる形に整備しています（公開準備中の書籍を除く）。  
 ライセンスは Creative Commons BY-NC-SA 4.0（非営利利用は自由、商用利用は別途契約）です。
+
+---
+
+## 出版ガイド
+
+- [出版ガイド](./publishing/index.html)
+- [テンプレート（templates/book/）](https://github.com/itdojp/it-engineer-knowledge-architecture/tree/main/templates/book)
+
+## 更新履歴
+
+- [シリーズサイトの更新履歴](./changelog.html)
 
 ### 想定読者
 

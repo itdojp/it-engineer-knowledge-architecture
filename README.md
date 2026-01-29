@@ -12,6 +12,8 @@ Building Your Tech Career, One Book at a Time
 - [計画書籍](#計画書籍)
 - [コミュニティ・フィードバック](#コミュニティフィードバック)
 - [組織情報](#組織情報)
+- [出版ガイド](#出版ガイド)
+- [更新履歴](#更新履歴)
 - [ライセンス](#ライセンス)
 - [English Overview](#english-overview)
 
@@ -29,6 +31,17 @@ Building Your Tech Career, One Book at a Time
 
 各書籍は GitHub リポジトリとして管理され、GitHub Pages を通じて無料で閲覧できる形に整備しています（公開準備中の書籍を除く）。  
 ライセンスは Creative Commons BY-NC-SA 4.0（非営利利用は自由、商用利用は別途契約）です。
+
+---
+
+## 出版ガイド
+
+- シリーズ共通ガイド: `docs/publishing/`
+- 書籍テンプレート: `templates/book/`
+
+## 更新履歴
+
+- シリーズサイトの更新履歴: `CHANGELOG.md`
 
 ### 想定読者
 
@@ -379,6 +392,7 @@ ITDO Inc. が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ラ�
 （例: 社内研修教材としての利用、社外向け有償研修での利用、商用サービスへの直接組み込みなど）
 
 詳細はリポジトリ内の LICENSE.md を参照してください。
+適用範囲（スコープ）は `LICENSE-SCOPE.md` を参照してください。
 
 ### 対象書籍一覧（リポジトリ）
 
