@@ -1,0 +1,15 @@
+# 奥付
+
+書名: {BOOK_TITLE}  
+シリーズ: {SERIES_NAME}（第{VOLUME_NO}巻）  
+著者: {AUTHOR_NAME}  
+編集: {EDITOR_NAME}
+
+発行者: {PUBLISHER_NAME}  
+連絡先: `{CONTACT_EMAIL}`  
+公開URL: `{PUBLIC_URL}`  
+ソースURL: `{REPO_URL}`
+
+初版発行: {FIRST_PUBLICATION_DATE}  
+現行版: {VERSION}（{RELEASE_DATE}）
+
