@@ -1,0 +1,52 @@
+{
+  "title": "サンプル書籍タイトル",
+  "description": "書籍の概要を簡潔に記載する",
+  "author": "著者名",
+  "version": "0.1.0",
+  "language": "ja",
+  "license": "CC BY-NC-SA 4.0",
+  "repository": {
+    "url": "https://github.com/itdojp/your-book-repo",
+    "branch": "main"
+  },
+  "ux": {
+    "profile": "A",
+    "modules": {
+      "quickStart": true,
+      "readingGuide": true,
+      "checklistPack": false,
+      "troubleshootingFlow": false,
+      "conceptMap": true,
+      "figureIndex": false,
+      "legalNotice": false,
+      "glossary": true
+    }
+  },
+  "structure": {
+    "chapters": [
+      {
+        "id": "introduction",
+        "title": "はじめに",
+        "description": "本書の概要",
+        "objectives": [
+          "本書の目的を理解する",
+          "学習の前提を確認する"
+        ]
+      },
+      {
+        "id": "chapter-01",
+        "title": "第1章 サンプル",
+        "description": "基本概念の解説",
+        "objectives": [
+          "基本概念を説明できる"
+        ]
+      }
+    ],
+    "appendices": [
+      {
+        "id": "appendix-a",
+        "title": "付録A: 参考情報"
+      }
+    ]
+  }
+}

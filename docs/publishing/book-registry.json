@@ -1,0 +1,480 @@
+{
+  "schemaVersion": "1.0",
+  "updatedAt": "2026-02-02",
+  "modulesCatalog": [
+    "quickStart",
+    "readingGuide",
+    "checklistPack",
+    "troubleshootingFlow",
+    "conceptMap",
+    "figureIndex",
+    "legalNotice",
+    "glossary"
+  ],
+  "books": {
+    "BioinformaticsGuide-book": {
+      "repo": "itdojp/BioinformaticsGuide-book",
+      "pages": "https://itdojp.github.io/BioinformaticsGuide-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "IT-engineer-communication-book": {
+      "repo": "itdojp/IT-engineer-communication-book",
+      "pages": "https://itdojp.github.io/IT-engineer-communication-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "IT-infra-book": {
+      "repo": "itdojp/IT-infra-book",
+      "pages": "https://itdojp.github.io/IT-infra-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "IT-infra-troubleshooting-book": {
+      "repo": "itdojp/IT-infra-troubleshooting-book",
+      "pages": "https://itdojp.github.io/IT-infra-troubleshooting-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "LogicalThinking-AI-Era-Guide": {
+      "repo": "itdojp/LogicalThinking-AI-Era-Guide",
+      "pages": "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/",
+      "profile": "C",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "ai-communication-book": {
+      "repo": "itdojp/ai-communication-book",
+      "pages": "https://itdojp.github.io/ai-communication-book/",
+      "profile": "A",
+      "modules": {
+        "quickStart": true,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": false,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "ai-era-engineers-mind-book": {
+      "repo": "itdojp/ai-era-engineers-mind-book",
+      "pages": "https://itdojp.github.io/ai-era-engineers-mind-book/",
+      "profile": "C",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "ai-testing-strategy-book": {
+      "repo": "itdojp/ai-testing-strategy-book",
+      "pages": "https://itdojp.github.io/ai-testing-strategy-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "cloud-infra-book": {
+      "repo": "itdojp/cloud-infra-book",
+      "pages": "https://itdojp.github.io/cloud-infra-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "computational-physicalism-book": {
+      "repo": "itdojp/computational-physicalism-book",
+      "pages": "https://itdojp.github.io/computational-physicalism-book/",
+      "profile": "C",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "cs-visionaries-book": {
+      "repo": "itdojp/cs-visionaries-book",
+      "pages": "https://itdojp.github.io/cs-visionaries-book/",
+      "profile": "C",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "ethereum-learning-bootcamp": {
+      "repo": "itdojp/ethereum-learning-bootcamp",
+      "pages": "https://itdojp.github.io/ethereum-learning-bootcamp/",
+      "profile": "A",
+      "modules": {
+        "quickStart": true,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": false,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "formal-methods-book": {
+      "repo": "itdojp/formal-methods-book",
+      "pages": "https://itdojp.github.io/formal-methods-book/",
+      "profile": "C",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "github-guide-for-beginners-book": {
+      "repo": "itdojp/github-guide-for-beginners-book",
+      "pages": "https://itdojp.github.io/github-guide-for-beginners-book/",
+      "profile": "A",
+      "modules": {
+        "quickStart": true,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": false,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "github-workflow-book": {
+      "repo": "itdojp/github-workflow-book",
+      "pages": "https://itdojp.github.io/github-workflow-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "illustrated-linux-basics-book": {
+      "repo": "itdojp/illustrated-linux-basics-book",
+      "pages": "https://itdojp.github.io/illustrated-linux-basics-book/",
+      "profile": "A",
+      "modules": {
+        "quickStart": true,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": false,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "it-infra-security-guide-book": {
+      "repo": "itdojp/it-infra-security-guide-book",
+      "pages": "https://itdojp.github.io/it-infra-security-guide-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "it-infra-software-essentials-book": {
+      "repo": "itdojp/it-infra-software-essentials-book",
+      "pages": "https://itdojp.github.io/it-infra-software-essentials-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "linux-infra-textbook": {
+      "repo": "itdojp/linux-infra-textbook",
+      "pages": "https://itdojp.github.io/linux-infra-textbook/",
+      "profile": "A",
+      "modules": {
+        "quickStart": true,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": false,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "linux-infra-textbook2": {
+      "repo": "itdojp/linux-infra-textbook2",
+      "pages": "https://itdojp.github.io/linux-infra-textbook2/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "negotiation-for-engineers-book": {
+      "repo": "itdojp/negotiation-for-engineers-book",
+      "pages": "https://itdojp.github.io/negotiation-for-engineers-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "pentest-learning-book": {
+      "repo": "itdojp/pentest-learning-book",
+      "pages": "https://itdojp.github.io/pentest-learning-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "podman-book": {
+      "repo": "itdojp/podman-book",
+      "pages": "https://itdojp.github.io/podman-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "practical-auth-book": {
+      "repo": "itdojp/practical-auth-book",
+      "pages": "https://itdojp.github.io/practical-auth-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "proxmox_book": {
+      "repo": "itdojp/proxmox_book",
+      "pages": "https://itdojp.github.io/proxmox_book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "small-webapp-software-design-book": {
+      "repo": "itdojp/small-webapp-software-design-book",
+      "pages": "https://itdojp.github.io/small-webapp-software-design-book/",
+      "profile": "C",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "supabase-architecture-patterns-book": {
+      "repo": "itdojp/supabase-architecture-patterns-book",
+      "pages": "https://itdojp.github.io/supabase-architecture-patterns-book/",
+      "profile": "C",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "theoretical-computer-science-textbook": {
+      "repo": "itdojp/theoretical-computer-science-textbook",
+      "pages": "https://itdojp.github.io/theoretical-computer-science-textbook/",
+      "profile": "C",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "wsl2-linux-essentials-book": {
+      "repo": "itdojp/wsl2-linux-essentials-book",
+      "pages": "https://itdojp.github.io/wsl2-linux-essentials-book/",
+      "profile": "A",
+      "modules": {
+        "quickStart": true,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": false,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    }
+  }
+}
