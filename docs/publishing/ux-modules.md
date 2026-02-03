@@ -20,3 +20,4 @@
 - 追加/変更は `docs/publishing/ux-modules.md` を更新する
 - `ux.modules` に未定義キーが入った場合はエラー（または警告）とする
 - profile の必須 modules は `docs/publishing/ux-profiles.md` を正とする
+- `readingGuide` はトップページ標準スロットであり、modules の ON/OFF に従い表示される

@@ -7,10 +7,10 @@
 - [ ] テーマ切替/検索導線が維持されている
 
 ## トップページ（index）
-- [ ] `overview` / `audience` / `prerequisites` の基本スロットが揃っている
-- [ ] `readingGuide` / `quickStart` は modules に従って表示される
+- [ ] `hero`（タイトル/サブタイトル/学習成果）がある
+- [ ] `readerProfile`（想定読者/前提知識/所要時間）が揃っている
+- [ ] `readingGuide` は modules に従って表示される
 - [ ] 目次（`toc`）が表示される
-- [ ] 参照リンク（`links`）がある
 - [ ] ライセンス表記（`license`）がある
 
 ## 章ページ（chapter）
