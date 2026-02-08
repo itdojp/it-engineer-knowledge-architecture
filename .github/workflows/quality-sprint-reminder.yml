@@ -112,14 +112,16 @@ jobs:
           body = "\n".join(lines) + "\n"
 
           issue_path = f"/repos/{repo_full_name}/issues"
-          payload = {"title": title, "body": body, "labels": ["platform-wide"]}
+          payload = {"title": title, "body": body}
+
+          # Labels may not exist in forks; only include when available.
           try:
-              created = gh_api("POST", issue_path, payload)
+              gh_api("GET", f"/repos/{repo_full_name}/labels/platform-wide")
+              payload["labels"] = ["platform-wide"]
           except urllib.error.HTTPError as e:
-              # Labels may not exist in forks; retry without labels.
-              if e.code == 422:
-                  created = gh_api("POST", issue_path, {"title": title, "body": body})
-              else:
+              if e.code != 404:
                   raise
+
+          created = gh_api("POST", issue_path, payload)
           print("Created:", created.get("html_url"))
           PY
