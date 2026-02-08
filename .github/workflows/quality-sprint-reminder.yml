@@ -1,0 +1,109 @@
+name: Quality Sprint Reminder
+
+on:
+  schedule:
+    # Semi-monthly (approx. bi-weekly) reminder.
+    - cron: '17 3 1,15 * *'
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create quality sprint issue (idempotent)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - << 'PY'
+          import os, json, urllib.request, urllib.parse, urllib.error
+          from datetime import datetime, timezone
+          from pathlib import Path
+          import time
+
+          token = os.environ.get("GITHUB_TOKEN", "")
+          if not token:
+              raise SystemExit("GITHUB_TOKEN is required")
+
+          def gh_api(method: str, path: str, data=None):
+              url = f"https://api.github.com{path}"
+              body = None
+              headers = {
+                  "Authorization": f"Bearer {token}",
+                  "Accept": "application/vnd.github+json",
+                  "User-Agent": "itdojp-automation",
+              }
+              if data is not None:
+                  body = json.dumps(data).encode("utf-8")
+                  headers["Content-Type"] = "application/json"
+
+              for attempt in range(6):
+                  try:
+                      req = urllib.request.Request(url, data=body, headers=headers, method=method)
+                      with urllib.request.urlopen(req, timeout=30) as r:
+                          return json.load(r)
+                  except urllib.error.HTTPError as e:
+                      if e.code in (403, 429) and attempt < 5:
+                          time.sleep(2 * (attempt + 1))
+                          continue
+                      raise
+                  except Exception:
+                      if attempt < 5:
+                          time.sleep(2 * (attempt + 1))
+                          continue
+                      raise
+              raise RuntimeError("github api retries exceeded")
+
+          today = datetime.now(timezone.utc).date().isoformat()
+          title = f"[Quality Sprint] {today}"
+
+          # Idempotency: if an open issue with the same title exists, do nothing.
+          q = f'repo:itdojp/it-engineer-knowledge-architecture is:issue is:open in:title "{title}"'
+          search = gh_api("GET", "/search/issues?q=" + urllib.parse.quote(q, safe=""))
+          if (search.get("total_count") or 0) > 0:
+              url = (search.get("items") or [{}])[0].get("html_url") or "-"
+              print(f"Skip: issue already exists: {url}")
+              raise SystemExit(0)
+
+          registry_path = Path("docs/publishing/book-registry.json")
+          registry = json.loads(registry_path.read_text(encoding="utf-8"))
+          books = registry.get("books") or {}
+          repos = sorted(
+              {meta.get("repo") for meta in books.values() if isinstance(meta, dict) and meta.get("repo")}
+          )
+
+          lines = []
+          lines.append("# 品質スプリント")
+          lines.append("")
+          lines.append("関連: #102")
+          lines.append("")
+          lines.append("## 目的")
+          lines.append("- P2/P3（誤字脱字、表記ゆれ、軽微な構造不整合、外部リンク棚卸し等）を定期的に消化し、品質劣化を抑止する。")
+          lines.append("")
+          lines.append("## 実施ガイド（推奨）")
+          lines.append("- 1回のスプリントで2〜4冊を対象に小粒PRで対応（カテゴリ混在を避ける）。")
+          lines.append("- 根拠が必要な修正（仕様/EOL/非推奨等）は、公式ドキュメント等の参照を併記する。")
+          lines.append("- PRは Book QA を通過し、GitHub Pages で表示確認する。")
+          lines.append("")
+          lines.append("## 全書籍チェックリスト（対象選定・消し込み用）")
+          for repo in repos:
+              name = repo.split("/", 1)[1]
+              pages = f"https://itdojp.github.io/{name}/"
+              lines.append(f"- [ ] {repo}（Pages: {pages}）")
+
+          body = "\n".join(lines) + "\n"
+
+          created = gh_api(
+              "POST",
+              "/repos/itdojp/it-engineer-knowledge-architecture/issues",
+              {"title": title, "body": body, "labels": ["platform-wide"]},
+          )
+          print("Created:", created.get("html_url"))
+          PY
+
