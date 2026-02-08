@@ -31,6 +31,10 @@ jobs:
           if not token:
               raise SystemExit("GITHUB_TOKEN is required")
 
+          repo_full_name = os.environ.get("GITHUB_REPOSITORY")
+          if not repo_full_name:
+              raise SystemExit("GITHUB_REPOSITORY is required")
+
           def gh_api(method: str, path: str, data=None):
               url = f"https://api.github.com{path}"
               body = None
@@ -64,7 +68,7 @@ jobs:
           title = f"[Quality Sprint] {today}"
 
           # Idempotency: if an open issue with the same title exists, do nothing.
-          q = f'repo:itdojp/it-engineer-knowledge-architecture is:issue is:open in:title "{title}"'
+          q = f'repo:{repo_full_name} is:issue is:open in:title "{title}"'
           search = gh_api("GET", "/search/issues?q=" + urllib.parse.quote(q, safe=""))
           if (search.get("total_count") or 0) > 0:
               url = (search.get("items") or [{}])[0].get("html_url") or "-"
@@ -74,9 +78,17 @@ jobs:
           registry_path = Path("docs/publishing/book-registry.json")
           registry = json.loads(registry_path.read_text(encoding="utf-8"))
           books = registry.get("books") or {}
-          repos = sorted(
-              {meta.get("repo") for meta in books.values() if isinstance(meta, dict) and meta.get("repo")}
-          )
+          # Build checklist links from the registry to avoid hard-coding Pages URL format.
+          repo_to_pages = {}
+          for meta in books.values():
+              if not isinstance(meta, dict):
+                  continue
+              repo = meta.get("repo")
+              if not repo:
+                  continue
+              pages = (meta.get("pages") or "").strip()
+              if repo not in repo_to_pages or (not repo_to_pages[repo] and pages):
+                  repo_to_pages[repo] = pages
 
           lines = []
           lines.append("# 品質スプリント")
@@ -92,18 +104,22 @@ jobs:
           lines.append("- PRは Book QA を通過し、GitHub Pages で表示確認する。")
           lines.append("")
           lines.append("## 全書籍チェックリスト（対象選定・消し込み用）")
-          for repo in repos:
+          for repo in sorted(repo_to_pages.keys()):
               name = repo.split("/", 1)[1]
-              pages = f"https://itdojp.github.io/{name}/"
+              pages = repo_to_pages.get(repo) or f"https://itdojp.github.io/{name}/"
               lines.append(f"- [ ] {repo}（Pages: {pages}）")
 
           body = "\n".join(lines) + "\n"
 
-          created = gh_api(
-              "POST",
-              "/repos/itdojp/it-engineer-knowledge-architecture/issues",
-              {"title": title, "body": body, "labels": ["platform-wide"]},
-          )
+          issue_path = f"/repos/{repo_full_name}/issues"
+          payload = {"title": title, "body": body, "labels": ["platform-wide"]}
+          try:
+              created = gh_api("POST", issue_path, payload)
+          except urllib.error.HTTPError as e:
+              # Labels may not exist in forks; retry without labels.
+              if e.code == 422:
+                  created = gh_api("POST", issue_path, {"title": title, "body": body})
+              else:
+                  raise
           print("Created:", created.get("html_url"))
           PY
-
