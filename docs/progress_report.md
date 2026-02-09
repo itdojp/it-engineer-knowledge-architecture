@@ -5,15 +5,15 @@
 ## 📈 全体統計
 
 - **総書籍数**: 13冊
-- **アクティブ書籍**: 12冊
-- **総Issue数**: 4件
+- **アクティブ書籍**: 11冊
+- **総Issue数**: 3件
 - **総Star数**: 0個
 
 ## 📚 書籍別ステータス
 
 | 書籍名 | ステータス | 最終更新 | Issues | Stars |
 |--------|------------|----------|--------|-------|
-| linux-infra-textbook2 | active | 2026-02-09T12:00:53Z | 1 | 0 |
+| linux-infra-textbook | unavailable | N/A | 0 | 0 |
 | IT-infra-book | active | 2026-02-08T08:20:40Z | 1 | 0 |
 | podman-book | active | 2026-02-08T08:24:08Z | 0 | 0 |
 | practical-auth-book | active | 2026-02-08T08:24:20Z | 0 | 0 |
@@ -26,8 +26,6 @@
 | LogicalThinking-AI-Era-Guide | active | 2026-02-08T08:21:01Z | 0 | 0 |
 | ai-era-engineers-mind-book | active | 2026-02-08T08:21:22Z | 0 | 0 |
 | cs-visionaries-book | active | 2026-02-08T08:22:03Z | 1 | 0 |
-
-備考: linux-infra-textbook は linux-infra-textbook2 に置換済みの旧版（アーカイブ）
 
 ## 🎯 今週のハイライト
 
