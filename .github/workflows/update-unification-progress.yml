@@ -40,6 +40,8 @@ jobs:
           issue=gh_api('/repos/itdojp/it-engineer-knowledge-architecture/issues/21')
           body=issue.get('body','')
           slugs=[re.sub(r'^https://github.com/','',ln.split()[2]) for ln in body.splitlines() if ln.strip().startswith('- [ ] https://github.com/')]
+          # linux-infra-textbook は linux-infra-textbook2 に置換済みの旧版（アーカイブ）として統一対象から除外
+          slugs=[s for s in slugs if s!='itdojp/linux-infra-textbook']
           def find_pr(slug, keyword):
               prs=gh_api(f'/repos/{slug}/pulls?state=all&per_page=100')
               for pr in prs:
@@ -86,7 +88,7 @@ jobs:
           out=['# 書籍フォーマット統一 進捗ダッシュボード','',f'最終更新: {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ")}','','| 書籍 | format PR | 状態 | nav PR | 状態 | nav-data | CI (Nav+Pages) | Pages base |','|---|---|---|---|---|---|---|---|']
           for (name,f_url,f_state,n_url,n_state,nav,ci,code) in rows:
               out.append(f'| {name} | {f_url or "-"} | {f_state or "-"} | {n_url or "-"} | {n_state or "-"} | {nav} | {ci or "-"} | {code} |')
-          new='\n'.join(out)+'\n\n凡例:\n- format PR: `_config.yml` の defaults/permalink 統一\n- nav PR: 下部ナビの共通include適用\n- nav-data: `docs/_data/navigation.yml` の有無\n- CI: Nav + Pages Link Check の最新結論 (success/failure)\n- Pages base: ベースURLのHTTPコード\n'
+          new='\n'.join(out)+'\n\n凡例:\n- format PR: `_config.yml` の defaults/permalink 統一\n- nav PR: 下部ナビの共通include適用\n- nav-data: `docs/_data/navigation.yml` の有無\n- CI: Nav + Pages Link Check の最新結論 (success/failure)\n- Pages base: ベースURLのHTTPコード\n\n備考: linux-infra-textbook は linux-infra-textbook2 に置換済みの旧版（統一対象外/アーカイブ）\n'
           if new!=old:
               os.makedirs('books', exist_ok=True)
               with open(path,'w',encoding='utf-8') as f:
