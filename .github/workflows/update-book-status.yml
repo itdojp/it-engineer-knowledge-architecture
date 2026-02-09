@@ -28,7 +28,7 @@ jobs:
 
           # 既存書籍リポジトリの状態を確認
           books=(
-            "linux-infra-textbook"
+            "linux-infra-textbook2"
             "IT-infra-book"
             "podman-book"
             "practical-auth-book"
@@ -37,7 +37,7 @@ jobs:
             "supabase-architecture-patterns-book"
             "BioinformaticsGuide-book"
             "computational-physicalism-book"
-            "negotiation-for-engineers"
+            "negotiation-for-engineers-book"
             "LogicalThinking-AI-Era-Guide"
             "ai-era-engineers-mind-book"
             "cs-visionaries-book"
@@ -122,6 +122,8 @@ jobs:
           # 各書籍の情報をテーブルに追加
           jq -r '.books[] | "| \(.name) | \(.status) | \(.last_updated // "N/A") | \(.issues_count) | \(.stars_count) |"' book_status.json >> progress_report.md
 
+          echo "" >> progress_report.md
+          echo "備考: linux-infra-textbook は linux-infra-textbook2 に置換済みの旧版（アーカイブ）" >> progress_report.md
           echo "" >> progress_report.md
           echo "## 🎯 今週のハイライト" >> progress_report.md
           echo "" >> progress_report.md

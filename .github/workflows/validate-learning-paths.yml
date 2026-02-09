@@ -92,6 +92,16 @@ jobs:
             echo "チェック中: $file"
             grep -oE "\[.*\]\([^)]*\.md[^)]*\)" "$file" | while read link; do
               path=$(echo "$link" | sed -E 's/.*\(([^)]*)\).*/\1/')
+
+              # 外部リンク（http/https）はファイル存在チェックの対象外
+              if [[ "$path" =~ ^https?:// ]]; then
+                continue
+              fi
+
+              # クエリ/アンカーは存在チェック時に除去
+              path="${path%%#*}"
+              path="${path%%\?*}"
+
               if [[ "$path" == /* ]]; then
                 # 絶対パス
                 full_path=".${path}"

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "updatedAt": "2026-02-02",
+  "updatedAt": "2026-02-09",
   "modulesCatalog": [
     "quickStart",
     "readingGuide",
@@ -300,22 +300,6 @@
       },
       "notes": "暫定割当（要確認）"
     },
-    "linux-infra-textbook": {
-      "repo": "itdojp/linux-infra-textbook",
-      "pages": "https://itdojp.github.io/linux-infra-textbook/",
-      "profile": "A",
-      "modules": {
-        "quickStart": true,
-        "readingGuide": true,
-        "checklistPack": false,
-        "troubleshootingFlow": false,
-        "conceptMap": true,
-        "figureIndex": false,
-        "legalNotice": false,
-        "glossary": true
-      },
-      "notes": "暫定割当（要確認）"
-    },
     "linux-infra-textbook2": {
       "repo": "itdojp/linux-infra-textbook2",
       "pages": "https://itdojp.github.io/linux-infra-textbook2/",
@@ -330,7 +314,7 @@
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "linux-infra-textbook を置換（旧版はアーカイブ）"
     },
     "negotiation-for-engineers-book": {
       "repo": "itdojp/negotiation-for-engineers-book",
