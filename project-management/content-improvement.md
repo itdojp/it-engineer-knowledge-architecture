@@ -33,16 +33,11 @@
 | --- | --- | --- | --- |
 | linux-infra-textbook2 | 完了（レビュー: https://github.com/itdojp/linux-infra-textbook2/pull/47 / 構成: https://github.com/itdojp/linux-infra-textbook2/pull/48） | 完了（直近: https://github.com/itdojp/linux-infra-textbook2/pull/63） | レビュー文書: `docs/project-management/structure-review-round1.md` / PR一覧: https://github.com/itdojp/it-engineer-knowledge-architecture/issues/73 |
 
-## Linux 基礎クラスタ（Stage2/Stage3）進捗（Issue #75）
-
-| 書籍 | Stage2（構成レビュー） | Stage3（表現・スタイル） | 参照 |
-| --- | --- | --- | --- |
-| linux-infra-textbook | 未着手 | 未着手 | レビュー文書: `docs/project-management/structure-review-round1.md` |
+- 備考: linux-infra-textbook は linux-infra-textbook2 に置換済み（旧版のため改善対象から除外し、アーカイブ扱い）
 
 - [x] [illustrated-linux-basics-book](https://itdojp.github.io/illustrated-linux-basics-book/) — https://github.com/itdojp/illustrated-linux-basics-book
 - [x] [wsl2-linux-essentials-book](https://itdojp.github.io/wsl2-linux-essentials-book/) — https://github.com/itdojp/wsl2-linux-essentials-book
 - [x] [linux-infra-textbook2](https://itdojp.github.io/linux-infra-textbook2/) — https://github.com/itdojp/linux-infra-textbook2
-- [ ] [linux-infra-textbook](https://itdojp.github.io/linux-infra-textbook/) — https://github.com/itdojp/linux-infra-textbook
 - [ ] [it-infra-software-essentials-book](https://itdojp.github.io/it-infra-software-essentials-book/) — https://github.com/itdojp/it-infra-software-essentials-book
 - [ ] [IT-infra-book](https://itdojp.github.io/IT-infra-book/) — https://github.com/itdojp/IT-infra-book
 - [ ] [IT-infra-troubleshooting-book](https://itdojp.github.io/IT-infra-troubleshooting-book/) — https://github.com/itdojp/IT-infra-troubleshooting-book

@@ -48,8 +48,8 @@
 - **前提知識**: 数学基礎（離散数学・線形代数）
 - **学習期間**: 10-12週間
 
-#### 4. **linux-infra-textbook**
-📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook2/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook2) (旧版📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook))
+#### 4. **linux-infra-textbook2**
+📖 [書籍を読む](https://itdojp.github.io/linux-infra-textbook2/) | 📂 [リポジトリ](https://github.com/itdojp/linux-infra-textbook2)
 - **タイトル**: Linuxインフラ教本
 - **対象読者**: Linux初心者～中級者
 - **レビュー状況**: ✅ Issue #2作成済み
@@ -390,13 +390,17 @@
 - **前提知識**: プログラミング基礎（要確認）
 - **学習期間**: 要確認
 
+## 🗄️ 旧版（アーカイブ）
+
+- linux-infra-textbook（linux-infra-textbook2 に置換済み）: 📖 https://itdojp.github.io/linux-infra-textbook/ / 📂 https://github.com/itdojp/linux-infra-textbook
+
 ## 📊 書籍マトリクス分析
 
 ### 難易度 × 重要度マトリクス
 
 | 書籍 | 難易度 | 実務重要度 | 対象レベル |
 |------|--------|------------|------------|
-| linux-infra-textbook | 初級 | 高 | 0-2年 |
+| linux-infra-textbook2 | 初級 | 高 | 0-2年 |
 | IT-infra-book | 初級 | 高 | 0-2年 |
 | github-workflow-book | 初級 | 高 | 0-3年 |
 | podman-book | 中級 | 高 | 1-3年 |
@@ -417,7 +421,7 @@
 ### 技術領域カバレッジ
 
 #### ✅ カバー済み領域
-- **Linux・インフラ基礎**: linux-infra-textbook、IT-infra-book
+- **Linux・インフラ基礎**: linux-infra-textbook2、IT-infra-book
 - **クラウドインフラ**: cloud-infra-handbook
 - **ソフトウェア基礎**: it-infra-software-essentials-book
 - **コンテナ技術**: podman-book
@@ -439,7 +443,7 @@
 ## 🎯 学習推奨順序
 
 ### Phase 1: 基礎固め（初心者向け）
-1. linux-infra-textbook
+1. linux-infra-textbook2
 2. IT-infra-book
 3. github-workflow-book
 4. cs-visionaries-book（息抜き・モチベーション向上）
@@ -467,7 +471,7 @@
 ## 📈 学習効果最大化のための工夫
 
 ### 1. 関連書籍の組み合わせ学習
-- **インフラ基礎**: linux-infra-textbook → it-infra-software-essentials-book → IT-infra-book → cloud-infra-handbook
+- **インフラ基礎**: linux-infra-textbook2 → it-infra-software-essentials-book → IT-infra-book → cloud-infra-handbook
 - **技術スキル**: podman-book → practical-auth-book
 - **思考力強化**: LogicalThinking-AI-Era-Guide → ai-era-engineers-mind-book → negotiation-for-engineers-book
 - **実践スキル**: github-workflow-book → ai-testing-strategy-book

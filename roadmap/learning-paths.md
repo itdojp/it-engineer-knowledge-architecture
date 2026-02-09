@@ -24,7 +24,7 @@
 #### Phase 1: 基礎知識習得
 **目標**: ITインフラの基本概念とLinux操作の習得
 
-1. **[linux-infra-textbook](https://github.com/itdojp/linux-infra-textbook)**
+1. **[linux-infra-textbook2](https://github.com/itdojp/linux-infra-textbook2)**
    - **期間**: 4-6週間
    - **学習内容**: 
      - Linux基本操作・コマンド
@@ -227,7 +227,7 @@
 ### 🖥️ インフラエンジニア特化パス
 
 #### 必修コア（12冊）
-1. linux-infra-textbook
+1. linux-infra-textbook2
 2. IT-infra-book
 3. podman-book
 4. github-workflow-book
@@ -251,7 +251,7 @@
 
 #### 必修コア（10冊）
 1. IT-infra-book
-2. linux-infra-textbook
+2. linux-infra-textbook2
 3. podman-book
 4. github-workflow-book
 5. 『エンタープライズクラウドアーキテクチャ設計・運用』
@@ -267,7 +267,7 @@
 1. practical-auth-book
 2. 『実践的セキュリティインフラ構築』
 3. 『コンプライアンス対応インフラ設計・運用』
-4. linux-infra-textbook
+4. linux-infra-textbook2
 5. IT-infra-book
 6. 『インフラ監視・運用自動化実践ガイド』
 7. 『災害対策・事業継続計画（BCP）実装ガイド』
@@ -279,7 +279,7 @@
 1. ai-testing-strategy-book
 2. 『インフラ監視・運用自動化実践ガイド』
 3. 『インフラ性能管理・キャパシティプランニング』
-4. linux-infra-textbook
+4. linux-infra-textbook2
 5. podman-book
 6. github-workflow-book
 7. 『災害対策・事業継続計画（BCP）実装ガイド』

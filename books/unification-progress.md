@@ -8,7 +8,6 @@
 | illustrated-linux-basics-book | https://github.com/itdojp/illustrated-linux-basics-book/pull/8 | MERGED | https://github.com/itdojp/illustrated-linux-basics-book/pull/10 | MERGED | yes | - | 200 |
 | wsl2-linux-essentials-book | https://github.com/itdojp/wsl2-linux-essentials-book/pull/9 | MERGED | https://github.com/itdojp/wsl2-linux-essentials-book/pull/11 | MERGED | yes | success | 200 |
 | linux-infra-textbook2 | - | - | https://github.com/itdojp/linux-infra-textbook2/pull/16 | MERGED | yes | failure | 200 |
-| linux-infra-textbook | - | - | https://github.com/itdojp/linux-infra-textbook/pull/45 | MERGED | yes | failure | 200 |
 | it-infra-software-essentials-book | https://github.com/itdojp/it-infra-software-essentials-book/pull/32 | MERGED | https://github.com/itdojp/it-infra-software-essentials-book/pull/30 | MERGED | yes | failure | 200 |
 | IT-infra-book | - | - | https://github.com/itdojp/IT-infra-book/pull/34 | MERGED | yes | failure | 200 |
 | IT-infra-troubleshooting-book | - | - | https://github.com/itdojp/IT-infra-troubleshooting-book/pull/15 | MERGED | no | success | 200 |
@@ -37,6 +36,8 @@
 - nav-data:  の有無
 - CI: Nav + Pages Link Check の最新結論 (success/failure)
 - Pages base: ベースURLのHTTPコード
+
+備考: linux-infra-textbook は linux-infra-textbook2 に置換済みの旧版（統一対象外/アーカイブ）
 ## 最近クローズした統一関連Issue/PR
 最終更新: 2025-09-08T12:44:52Z
 
