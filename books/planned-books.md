@@ -19,6 +19,21 @@
 6. **コンプライアンス対応** - 法規制・監査対応
 7. **次世代技術** - 将来への技術投資
 
+## 🧩 追加検討中（Issue #83）
+
+現時点の「計画書籍（7冊）」とは別枠の **追加候補** です。採否決定後に本ファイルへ正式反映します。
+
+- Kubernetes/クラウドネイティブ運用（候補）
+  - 例: Deployment/Service/Ingress、RBAC、NetworkPolicy、永続ストレージ、スケーリング、アップグレード/バックアップ/障害対応
+- Platform Engineering / GitOps（候補）
+  - 例: Argo CD/Flux 運用設計、テンプレート/カタログ、標準化と例外運用、Platform のSLO/セキュリティ境界
+- 生成AI/LLM基盤のインフラ設計・運用（LLMOps）（候補）
+  - 例: 推論サービング/スケーリング、GPU運用、変更管理（モデル/プロンプト/データ）、セキュリティ要求
+- 既存計画書籍への組み込み候補
+  - 監視・運用自動化: OpenTelemetry/分散トレーシング（SLI/SLOとの接続含む）
+
+詳細: https://github.com/itdojp/it-engineer-knowledge-architecture/issues/83
+
 ## 📚 計画書籍詳細
 
 ### 🔴 優先度: 高（必須追加 - 4冊）
