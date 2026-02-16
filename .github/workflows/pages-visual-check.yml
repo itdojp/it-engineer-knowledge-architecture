@@ -1,0 +1,92 @@
+name: Pages Visual Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      browsers:
+        description: "Browsers (comma-separated): chromium,firefox,webkit"
+        required: false
+        default: "chromium"
+      viewports:
+        description: "Viewports (comma-separated): mobile,tablet,desktop"
+        required: false
+        default: "mobile,desktop"
+      maxPagesPerBook:
+        description: "Pages per book including root"
+        required: false
+        default: "4"
+      concurrency:
+        description: "Concurrent books"
+        required: false
+        default: "3"
+      onlyBooks:
+        description: "Target book keys (comma-separated). Empty = all"
+        required: false
+        default: ""
+      failOnWarnings:
+        description: "Fail the job when warnings exist"
+        required: false
+        default: "false"
+      fullPage:
+        description: "Capture full-page screenshots"
+        required: false
+        default: "false"
+
+jobs:
+  pages-visual-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: tools/pages-visual-check/package-lock.json
+
+      - name: Install dependencies
+        working-directory: tools/pages-visual-check
+        run: npm ci
+
+      - name: Install Playwright browsers
+        working-directory: tools/pages-visual-check
+        run: |
+          set -euo pipefail
+          BROWSERS="${{ inputs.browsers }}"
+          npx playwright install --with-deps ${BROWSERS//,/ }
+
+      - name: Run visual check
+        run: |
+          set -euo pipefail
+          OUT="tmp/pages-visual-check"
+          mkdir -p "$OUT"
+
+          ARGS=(\
+            "--registry" "docs/publishing/book-registry.json" \
+            "--output" "$OUT" \
+            "--browsers" "${{ inputs.browsers }}" \
+            "--viewports" "${{ inputs.viewports }}" \
+            "--maxPagesPerBook" "${{ inputs.maxPagesPerBook }}" \
+            "--concurrency" "${{ inputs.concurrency }}" \
+          )
+
+          if [[ -n "${{ inputs.onlyBooks }}" ]]; then
+            ARGS+=("--onlyBooks" "${{ inputs.onlyBooks }}")
+          fi
+          if [[ "${{ inputs.failOnWarnings }}" == "true" ]]; then
+            ARGS+=("--failOnWarnings")
+          fi
+          if [[ "${{ inputs.fullPage }}" == "true" ]]; then
+            ARGS+=("--fullPage")
+          fi
+
+          node tools/pages-visual-check/run.mjs "${ARGS[@]}"
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-visual-check
+          path: tmp/pages-visual-check
+

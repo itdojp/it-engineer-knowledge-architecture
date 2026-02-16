@@ -1,0 +1,14 @@
+{
+  "name": "pages-visual-check",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node run.mjs --registry ../../docs/publishing/book-registry.json --browsers chromium --viewports mobile,desktop --maxPagesPerBook 4 --concurrency 3",
+    "check:all": "node run.mjs --registry ../../docs/publishing/book-registry.json --browsers chromium,firefox,webkit --viewports mobile,tablet,desktop --maxPagesPerBook 4 --concurrency 2",
+    "install:browsers": "playwright install --with-deps",
+    "install:browsers:chromium": "playwright install --with-deps chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.50.1"
+  }
+}
