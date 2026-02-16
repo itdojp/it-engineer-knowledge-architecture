@@ -17,6 +17,21 @@
 - マネジメントトラック対応
 - 技術トレンドへの適応力強化
 
+## 🧩 検討中の追加パス（Issue #83）
+
+以下は現行の学習パスに対する **追加候補** です（採否未決）。
+
+- Kubernetes/クラウドネイティブ運用
+  - 位置づけ案: Podman（コンテナ基礎）の次段、または中級者パスの専門深化として追加
+- Platform Engineering / GitOps
+  - 位置づけ案: GitHub運用/IaC/CI/CD の次段として、標準化とセルフサービス化を扱う
+- 生成AI/LLM基盤のインフラ設計・運用（LLMOps）
+  - 位置づけ案: エキスパートパスの先端技術（将来投資）として追加
+- 観測性の標準化（OpenTelemetry/分散トレーシング）
+  - 位置づけ案: 「インフラ監視・運用自動化」計画書籍に組み込み、SLI/SLO と接続
+
+詳細: https://github.com/itdojp/it-engineer-knowledge-architecture/issues/83
+
 ## 📚 レベル別詳細学習パス
 
 ### 🌱 初級者パス（経験0-2年）
