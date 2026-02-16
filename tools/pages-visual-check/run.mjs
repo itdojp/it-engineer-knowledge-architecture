@@ -135,7 +135,10 @@ function isLikelyAssetUrl(url) {
 
 function extractInternalPageLinks(html, baseUrl) {
   const links = [];
-  const re = /href\s*=\s*(?:"([^"]+)"|'([^']+)'|([^\s>]+))/gi;
+  // NOTE: `href=""` (empty) is valid HTML. If we require `+` here, it falls
+  // through to the unquoted branch and becomes `""`, which later resolves to
+  // `/%22%22` and causes false failures. Allow empty quoted values and skip.
+  const re = /href\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/gi;
   let match;
   while ((match = re.exec(html)) !== null) {
     const href = match[1] ?? match[2] ?? match[3] ?? '';
