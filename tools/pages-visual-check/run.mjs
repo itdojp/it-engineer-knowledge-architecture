@@ -135,7 +135,10 @@ function isLikelyAssetUrl(url) {
 
 function extractInternalPageLinks(html, baseUrl) {
   const links = [];
-  const re = /href\s*=\s*(?:"([^"]+)"|'([^']+)'|([^\s>]+))/gi;
+  // NOTE: `href=""` (empty) is valid HTML. If we require `+` here, it falls
+  // through to the unquoted branch and becomes `""`, which later resolves to
+  // `/%22%22` and causes false failures. Allow empty quoted values and skip.
+  const re = /href\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/gi;
   let match;
   while ((match = re.exec(html)) !== null) {
     const href = match[1] ?? match[2] ?? match[3] ?? '';
@@ -265,6 +268,7 @@ function classifyIssues({
   requestFailures,
   httpErrors,
   brokenImages,
+  emptyTocLinks,
   horizontalOverflow,
   fontVars,
   prevNext
@@ -318,6 +322,10 @@ function classifyIssues({
 
   for (const img of brokenImages) {
     issues.warn.push(`broken image: ${img.src}`);
+  }
+
+  if (emptyTocLinks?.count > 0) {
+    issues.warn.push(`empty toc links: ${emptyTocLinks.count}`);
   }
 
   if (horizontalOverflow?.overflow) {
@@ -406,6 +414,16 @@ async function checkPage({
         .slice(0, 20)
         .map((img) => ({ src: img.currentSrc || img.src || '', alt: img.alt || '' }));
 
+      const emptyTocAnchors = Array.from(document.querySelectorAll('a.toc-link')).filter(
+        (a) => (a.getAttribute('href') ?? '') === ''
+      );
+      const emptyTocLinks = {
+        count: emptyTocAnchors.length,
+        samples: emptyTocAnchors.slice(0, 10).map((a) => ({
+          text: (a.textContent || '').trim().slice(0, 120)
+        }))
+      };
+
       const docEl = document.documentElement;
       const scrollWidth = docEl.scrollWidth;
       const clientWidth = docEl.clientWidth;
@@ -446,6 +464,7 @@ async function checkPage({
       return {
         fontVars: { fontSans, fontMono },
         brokenImages,
+        emptyTocLinks,
         horizontalOverflow: {
           overflow: overflowPx > 1,
           overflowPx,
@@ -465,6 +484,7 @@ async function checkPage({
       return {
         fontVars: { fontSans: '', fontMono: '' },
         brokenImages: [],
+        emptyTocLinks: { count: 0, samples: [] },
         horizontalOverflow: { overflow: false, overflowPx: 0, scrollWidth: 0, clientWidth: 0, offenders: [] },
         prevNext: { prevHref: null, nextHref: null }
       };
@@ -502,6 +522,7 @@ async function checkPage({
     requestFailures,
     httpErrors,
     brokenImages: evalResult.brokenImages,
+    emptyTocLinks: evalResult.emptyTocLinks,
     horizontalOverflow: evalResult.horizontalOverflow,
     fontVars: evalResult.fontVars,
     prevNext: evalResult.prevNext
@@ -514,6 +535,7 @@ async function checkPage({
     fontVars: evalResult.fontVars,
     prevNext: evalResult.prevNext,
     brokenImages: evalResult.brokenImages,
+    emptyTocLinks: evalResult.emptyTocLinks,
     horizontalOverflow: evalResult.horizontalOverflow,
     consoleErrors,
     pageErrors,
