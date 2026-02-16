@@ -69,6 +69,39 @@ function toList(value) {
     .filter(Boolean);
 }
 
+function parseBooleanArg(value, name) {
+  if (value === undefined || value === null) return false;
+  if (value === true) return true;
+  if (value === false) return false;
+
+  const normalized = String(value).trim().toLowerCase();
+  if (normalized === '') return false;
+
+  if (['true', '1', 'yes', 'y', 'on'].includes(normalized)) return true;
+  if (['false', '0', 'no', 'n', 'off'].includes(normalized)) return false;
+
+  throw new Error(`invalid boolean for --${name}: ${value}`);
+}
+
+function parsePositiveIntArg(value, name, defaultValue, { min = 1, max = Number.MAX_SAFE_INTEGER } = {}) {
+  const raw = value === undefined || value === null ? String(defaultValue) : String(value);
+  const normalized = raw.trim();
+  if (!/^-?\d+$/.test(normalized)) {
+    throw new Error(`invalid integer for --${name}: ${raw}`);
+  }
+  const n = Number.parseInt(normalized, 10);
+  if (!Number.isFinite(n) || n < min || n > max) {
+    throw new Error(`out of range for --${name}: ${n} (allowed: ${min}..${max})`);
+  }
+  return n;
+}
+
+function assertNonEmptyList(list, name) {
+  if (!Array.isArray(list) || list.length === 0) {
+    throw new Error(`no ${name} specified`);
+  }
+}
+
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
 }
@@ -190,9 +223,19 @@ function slugFromUrl(baseUrl, url) {
 }
 
 async function fetchHtml(url) {
-  const res = await fetch(url, { redirect: 'follow' });
-  const text = await res.text();
-  return { status: res.status, text };
+  return fetchHtmlWithTimeout(url, 15_000);
+}
+
+async function fetchHtmlWithTimeout(url, timeoutMs) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, { redirect: 'follow', signal: controller.signal });
+    const text = await res.text();
+    return { status: res.status, text };
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 async function runWithConcurrency(items, limit, worker) {
@@ -202,7 +245,11 @@ async function runWithConcurrency(items, limit, worker) {
     while (true) {
       const i = cursor++;
       if (i >= items.length) break;
-      results[i] = await worker(items[i], i);
+      try {
+        results[i] = await worker(items[i], i);
+      } catch (err) {
+        results[i] = { error: err?.message ? String(err.message) : String(err) };
+      }
     }
   });
   await Promise.all(runners);
@@ -425,19 +472,23 @@ async function checkPage({
 
   let screenshotRelPath = null;
   if (!skipScreenshots) {
-    const ext = screenshotType === 'jpeg' ? 'jpg' : 'png';
-    const pageSlug = slugFromUrl(baseUrl, url);
-    const outDir = path.join(outputDir, 'screenshots', bookKey, browserName, viewportName);
-    ensureDir(outDir);
-    const filename = `${pageSlug}.${ext}`;
-    const outPath = path.join(outDir, filename);
-    await page.screenshot({
-      path: outPath,
-      type: screenshotType,
-      quality: screenshotType === 'jpeg' ? screenshotQuality : undefined,
-      fullPage
-    });
-    screenshotRelPath = path.relative(outputDir, outPath);
+    try {
+      const ext = screenshotType === 'jpeg' ? 'jpg' : 'png';
+      const pageSlug = slugFromUrl(baseUrl, url);
+      const outDir = path.join(outputDir, 'screenshots', bookKey, browserName, viewportName);
+      ensureDir(outDir);
+      const filename = `${pageSlug}.${ext}`;
+      const outPath = path.join(outDir, filename);
+      await page.screenshot({
+        path: outPath,
+        type: screenshotType,
+        quality: screenshotType === 'jpeg' ? screenshotQuality : undefined,
+        fullPage
+      });
+      screenshotRelPath = path.relative(outputDir, outPath);
+    } catch (err) {
+      pageErrors.push(err?.message ? `screenshot error: ${err.message}` : `screenshot error: ${String(err)}`);
+    }
   }
 
   await page.close().catch(() => {});
@@ -478,7 +529,7 @@ async function main() {
   const args = parseArgs(process.argv.slice(2));
   if (args.help) {
     usage();
-    process.exit(0);
+    return 0;
   }
 
   const registryPath = args.registry
@@ -489,76 +540,20 @@ async function main() {
     ? path.resolve(args.output)
     : path.join(SCRIPT_DIR, 'output', nowStamp());
 
-  const browsers = toList(args.browsers ?? 'chromium');
-  const viewports = toList(args.viewports ?? 'mobile,desktop');
-
-  const maxPagesPerBook = Number.parseInt(String(args.maxPagesPerBook ?? '4'), 10);
-  const concurrency = Number.parseInt(String(args.concurrency ?? '3'), 10);
-  const timeoutMs = Number.parseInt(String(args.timeoutMs ?? '45000'), 10);
-  const fullPage = Boolean(args.fullPage);
-  const skipScreenshots = Boolean(args.skipScreenshots);
-  const dryRun = Boolean(args.dryRun);
-  const failOnWarnings = Boolean(args.failOnWarnings);
-  const onlyBooks = new Set(toList(args.onlyBooks));
-
   const screenshotType = 'jpeg';
   const screenshotQuality = 70;
 
-  if (!fs.existsSync(registryPath)) {
-    console.error(`❌ registry not found: ${registryPath}`);
-    process.exit(1);
-  }
-
-  const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
-  const books = registry?.books;
-  if (!books || typeof books !== 'object' || Array.isArray(books)) {
-    console.error('❌ invalid registry: books must be an object');
-    process.exit(1);
-  }
-
-  const bookEntries = Object.entries(books)
-    .map(([key, entry]) => ({ key, entry }))
-    .filter(({ key }) => (onlyBooks.size > 0 ? onlyBooks.has(key) : true));
-
-  if (bookEntries.length === 0) {
-    console.error('❌ no target books (check --onlyBooks)');
-    process.exit(1);
-  }
-
-  const resolvedViewports = {};
-  for (const name of viewports) {
-    if (!DEFAULT_VIEWPORTS[name]) {
-      console.error(`❌ unsupported viewport: ${name} (supported: ${Object.keys(DEFAULT_VIEWPORTS).join(',')})`);
-      process.exit(1);
-    }
-    resolvedViewports[name] = DEFAULT_VIEWPORTS[name];
-  }
-
-  const resolvedBrowsers = [];
-  for (const name of browsers) {
-    if (!SUPPORTED_BROWSER_NAMES.has(name)) {
-      console.error(`❌ unsupported browser: ${name} (supported: ${Array.from(SUPPORTED_BROWSER_NAMES).join(',')})`);
-      process.exit(1);
-    }
-    resolvedBrowsers.push(name);
-  }
-
   ensureDir(outputDir);
+
+  const reportPath = path.join(outputDir, 'report.json');
 
   const report = {
     schemaVersion: '1.0',
     generatedAt: new Date().toISOString(),
     registryPath: path.relative(REPO_ROOT, registryPath),
-    config: {
-      browsers: resolvedBrowsers,
-      viewports: Object.keys(resolvedViewports),
-      maxPagesPerBook,
-      concurrency,
-      timeoutMs,
-      screenshot: { type: screenshotType, quality: screenshotQuality, fullPage, skip: skipScreenshots }
-    },
+    config: {},
     summary: {
-      books: bookEntries.length,
+      books: 0,
       pagesChecked: 0,
       ok: 0,
       warn: 0,
@@ -567,114 +562,239 @@ async function main() {
     books: {}
   };
 
-  // Resolve sample URLs for each book (cheap HTTP fetch).
-  for (const { key, entry } of bookEntries) {
-    const pagesUrl = entry?.pages;
-    if (typeof pagesUrl !== 'string') {
-      report.books[key] = { error: 'missing pages url in registry', pagesSelected: [] };
-      continue;
-    }
-    const baseUrl = normalizeBaseUrl(pagesUrl);
-    let internalLinks = [];
-    let rootStatus = null;
-    try {
-      const { status, text } = await fetchHtml(baseUrl);
-      rootStatus = status;
-      internalLinks = extractInternalPageLinks(text, baseUrl);
-    } catch (err) {
-      report.books[key] = {
-        baseUrl,
-        error: err?.message ? String(err.message) : String(err),
-        rootStatus,
-        pagesSelected: [baseUrl]
-      };
-      continue;
-    }
-    const pagesSelected = selectSamplePages(baseUrl, internalLinks, maxPagesPerBook);
-    report.books[key] = { baseUrl, rootStatus, pagesSelected };
-  }
-
-  if (dryRun) {
-    fs.writeFileSync(path.join(outputDir, 'report.json'), JSON.stringify(report, null, 2));
-    console.log(`✅ dryRun: wrote ${path.join(outputDir, 'report.json')}`);
-    process.exit(0);
-  }
-
   const launched = {};
-  try {
-    const { chromium, firefox, webkit } = await import('playwright');
-    const browserTypes = { chromium, firefox, webkit };
+  let exitCode = 0;
+  let skipScreenshots = false;
+  let dryRun = false;
+  let failOnWarnings = false;
 
-    for (const name of resolvedBrowsers) {
-      launched[name] = await browserTypes[name].launch({ headless: true });
+  const writeReport = () => {
+    try {
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    } catch (err) {
+      console.error(`❌ failed to write report: ${err?.message ? String(err.message) : String(err)}`);
+    }
+  };
+
+  try {
+    const browsersRaw = args.browsers === undefined ? 'chromium' : args.browsers;
+    const viewportsRaw = args.viewports === undefined ? 'mobile,desktop' : args.viewports;
+
+    const browsers = toList(browsersRaw);
+    const viewports = toList(viewportsRaw);
+    assertNonEmptyList(browsers, 'browsers');
+    assertNonEmptyList(viewports, 'viewports');
+
+    const maxPagesPerBook = parsePositiveIntArg(args.maxPagesPerBook, 'maxPagesPerBook', 4, { min: 1, max: 10 });
+    const concurrency = parsePositiveIntArg(args.concurrency, 'concurrency', 3, { min: 1, max: 10 });
+    const timeoutMs = parsePositiveIntArg(args.timeoutMs, 'timeoutMs', 45_000, { min: 1_000, max: 300_000 });
+
+    const fullPage = parseBooleanArg(args.fullPage, 'fullPage');
+    skipScreenshots = parseBooleanArg(args.skipScreenshots, 'skipScreenshots');
+    dryRun = parseBooleanArg(args.dryRun, 'dryRun');
+    failOnWarnings = parseBooleanArg(args.failOnWarnings, 'failOnWarnings');
+    const onlyBooks = new Set(toList(args.onlyBooks));
+
+    if (!fs.existsSync(registryPath)) {
+      throw new Error(`registry not found: ${registryPath}`);
     }
 
-    await runWithConcurrency(bookEntries, concurrency, async ({ key, entry }) => {
-      const book = report.books[key] ?? {};
-      const baseUrl = book.baseUrl;
-      if (!baseUrl) return;
+    const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+    const books = registry?.books;
+    if (!books || typeof books !== 'object' || Array.isArray(books)) {
+      throw new Error('invalid registry: books must be an object');
+    }
 
-      book.results = book.results ?? {};
+    const bookEntries = Object.entries(books)
+      .map(([key, entry]) => ({ key, entry }))
+      .filter(({ key }) => (onlyBooks.size > 0 ? onlyBooks.has(key) : true));
 
-      for (const browserName of resolvedBrowsers) {
-        book.results[browserName] = book.results[browserName] ?? {};
-        for (const [viewportName, viewport] of Object.entries(resolvedViewports)) {
-          const results = [];
-          const context = await launched[browserName].newContext({
-            viewport,
-            deviceScaleFactor: 1,
-            colorScheme: 'light'
-          });
-          for (const url of book.pagesSelected ?? [baseUrl]) {
-            const result = await checkPage({
-              context,
-              browserName,
-              bookKey: key,
-              baseUrl,
-              url,
-              viewportName,
-              viewport,
-              outputDir,
-              screenshotType,
-              screenshotQuality,
-              fullPage,
-              timeoutMs,
-              skipScreenshots
-            });
-            results.push(result);
+    if (bookEntries.length === 0) {
+      throw new Error('no target books (check --onlyBooks)');
+    }
 
-            report.summary.pagesChecked += 1;
-            if (result.status === 'ok') report.summary.ok += 1;
-            else if (result.status === 'warn') report.summary.warn += 1;
-            else report.summary.fail += 1;
-          }
-          await context.close().catch(() => {});
-          book.results[browserName][viewportName] = results;
-        }
+    const resolvedViewports = {};
+    for (const name of viewports) {
+      if (!DEFAULT_VIEWPORTS[name]) {
+        throw new Error(`unsupported viewport: ${name} (supported: ${Object.keys(DEFAULT_VIEWPORTS).join(',')})`);
       }
-    });
+      resolvedViewports[name] = DEFAULT_VIEWPORTS[name];
+    }
+    assertNonEmptyList(Object.keys(resolvedViewports), 'viewports');
+
+    const resolvedBrowsers = [];
+    for (const name of browsers) {
+      if (!SUPPORTED_BROWSER_NAMES.has(name)) {
+        throw new Error(`unsupported browser: ${name} (supported: ${Array.from(SUPPORTED_BROWSER_NAMES).join(',')})`);
+      }
+      resolvedBrowsers.push(name);
+    }
+    assertNonEmptyList(resolvedBrowsers, 'browsers');
+
+    report.summary.books = bookEntries.length;
+    report.config = {
+      browsers: resolvedBrowsers,
+      viewports: Object.keys(resolvedViewports),
+      maxPagesPerBook,
+      concurrency,
+      timeoutMs,
+      screenshot: { type: screenshotType, quality: screenshotQuality, fullPage, skip: skipScreenshots }
+    };
+
+    const fetchTimeoutMs = Math.min(20_000, timeoutMs);
+
+    // Resolve sample URLs for each book (cheap HTTP fetch).
+    for (const { key, entry } of bookEntries) {
+      const pagesUrl = entry?.pages;
+      if (typeof pagesUrl !== 'string') {
+        report.books[key] = { error: 'missing pages url in registry', pagesSelected: [] };
+        continue;
+      }
+      const baseUrl = normalizeBaseUrl(pagesUrl);
+      let internalLinks = [];
+      let rootStatus = null;
+      try {
+        const { status, text } = await fetchHtmlWithTimeout(baseUrl, fetchTimeoutMs);
+        rootStatus = status;
+        internalLinks = extractInternalPageLinks(text, baseUrl);
+      } catch (err) {
+        report.books[key] = {
+          baseUrl,
+          error: err?.message ? String(err.message) : String(err),
+          rootStatus,
+          pagesSelected: [baseUrl]
+        };
+        continue;
+      }
+      const pagesSelected = selectSamplePages(baseUrl, internalLinks, maxPagesPerBook);
+      report.books[key] = { baseUrl, rootStatus, pagesSelected };
+    }
+
+    if (!dryRun) {
+      const { chromium, firefox, webkit } = await import('playwright');
+      const browserTypes = { chromium, firefox, webkit };
+
+      for (const name of resolvedBrowsers) {
+        launched[name] = await browserTypes[name].launch({ headless: true });
+      }
+
+      await runWithConcurrency(bookEntries, concurrency, async ({ key }) => {
+        const book = report.books[key] ?? {};
+        const baseUrl = book.baseUrl;
+        if (!baseUrl) return;
+
+        book.results = book.results ?? {};
+
+        for (const browserName of resolvedBrowsers) {
+          book.results[browserName] = book.results[browserName] ?? {};
+          for (const [viewportName, viewport] of Object.entries(resolvedViewports)) {
+            const results = [];
+            let context;
+            try {
+              context = await launched[browserName].newContext({
+                viewport,
+                deviceScaleFactor: 1,
+                colorScheme: 'light'
+              });
+            } catch (err) {
+              results.push({
+                url: baseUrl,
+                documentStatus: null,
+                viewport: { name: viewportName, ...viewport },
+                fontVars: { fontSans: '', fontMono: '' },
+                prevNext: { prevHref: null, nextHref: null },
+                brokenImages: [],
+                horizontalOverflow: { overflow: false, overflowPx: 0, scrollWidth: 0, clientWidth: 0, offenders: [] },
+                consoleErrors: [],
+                pageErrors: [err?.message ? String(err.message) : String(err)],
+                requestFailures: [],
+                httpErrors: [],
+                screenshot: null,
+                issues: { fail: ['failed to create browser context'], warn: [] },
+                status: 'fail'
+              });
+              report.summary.pagesChecked += 1;
+              report.summary.fail += 1;
+              book.results[browserName][viewportName] = results;
+              continue;
+            }
+
+            for (const url of book.pagesSelected ?? [baseUrl]) {
+              let result;
+              try {
+                result = await checkPage({
+                  context,
+                  browserName,
+                  bookKey: key,
+                  baseUrl,
+                  url,
+                  viewportName,
+                  viewport,
+                  outputDir,
+                  screenshotType,
+                  screenshotQuality,
+                  fullPage,
+                  timeoutMs,
+                  skipScreenshots
+                });
+              } catch (err) {
+                result = {
+                  url,
+                  documentStatus: null,
+                  viewport: { name: viewportName, ...viewport },
+                  fontVars: { fontSans: '', fontMono: '' },
+                  prevNext: { prevHref: null, nextHref: null },
+                  brokenImages: [],
+                  horizontalOverflow: { overflow: false, overflowPx: 0, scrollWidth: 0, clientWidth: 0, offenders: [] },
+                  consoleErrors: [],
+                  pageErrors: [err?.message ? String(err.message) : String(err)],
+                  requestFailures: [],
+                  httpErrors: [],
+                  screenshot: null,
+                  issues: { fail: [`uncaught error: ${err?.message ? String(err.message) : String(err)}`], warn: [] },
+                  status: 'fail'
+                };
+              }
+
+              results.push(result);
+              report.summary.pagesChecked += 1;
+              if (result.status === 'ok') report.summary.ok += 1;
+              else if (result.status === 'warn') report.summary.warn += 1;
+              else report.summary.fail += 1;
+            }
+
+            await context.close().catch(() => {});
+            book.results[browserName][viewportName] = results;
+          }
+        }
+      });
+    }
+
+    const hasFails = report.summary.fail > 0;
+    const hasWarnings = report.summary.warn > 0;
+    exitCode = hasFails || (failOnWarnings && hasWarnings) ? 1 : 0;
+  } catch (err) {
+    exitCode = 1;
+    report.fatalError = err?.message ? String(err.message) : String(err);
   } finally {
     for (const name of Object.keys(launched)) {
       await launched[name].close().catch(() => {});
     }
+    writeReport();
   }
-
-  fs.writeFileSync(path.join(outputDir, 'report.json'), JSON.stringify(report, null, 2));
-
-  const hasFails = report.summary.fail > 0;
-  const hasWarnings = report.summary.warn > 0;
-  const exitCode = hasFails || (failOnWarnings && hasWarnings) ? 1 : 0;
 
   console.log(
     `✅ done: books=${report.summary.books} pages=${report.summary.pagesChecked} ok=${report.summary.ok} warn=${report.summary.warn} fail=${report.summary.fail}`
   );
-  console.log(`report: ${path.join(outputDir, 'report.json')}`);
+  console.log(`report: ${reportPath}`);
   if (!skipScreenshots) console.log(`screenshots: ${path.join(outputDir, 'screenshots')}`);
 
-  process.exit(exitCode);
+  return exitCode;
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+main()
+  .then((code) => process.exit(code))
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });

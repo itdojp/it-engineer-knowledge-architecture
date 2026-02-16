@@ -53,8 +53,39 @@ jobs:
         working-directory: tools/pages-visual-check
         run: |
           set -euo pipefail
-          BROWSERS="${{ inputs.browsers }}"
-          npx playwright install --with-deps ${BROWSERS//,/ }
+          BROWSERS_INPUT="${{ inputs.browsers }}"
+
+          # Allowed values: chromium,firefox,webkit
+          BROWSER_ARGS=()
+          IFS=',' read -ra TOKENS <<< "$BROWSERS_INPUT"
+          for token in "${TOKENS[@]}"; do
+            trimmed="${token//[[:space:]]/}"
+            [[ -n "$trimmed" ]] || continue
+            case "$trimmed" in
+              chromium|firefox|webkit) BROWSER_ARGS+=("$trimmed") ;;
+              *)
+                echo "Error: Invalid browsers input '$BROWSERS_INPUT'. Allowed: chromium,firefox,webkit" >&2
+                exit 1
+                ;;
+            esac
+          done
+
+          if ((${#BROWSER_ARGS[@]} == 0)); then
+            echo "Error: No valid browsers selected from input '$BROWSERS_INPUT'. Allowed: chromium,firefox,webkit" >&2
+            exit 1
+          fi
+
+          # De-duplicate while preserving order.
+          declare -A seen=()
+          UNIQUE_ARGS=()
+          for b in "${BROWSER_ARGS[@]}"; do
+            if [[ -z "${seen[$b]+x}" ]]; then
+              UNIQUE_ARGS+=("$b")
+              seen[$b]=1
+            fi
+          done
+
+          npx playwright install --with-deps "${UNIQUE_ARGS[@]}"
 
       - name: Run visual check
         run: |
@@ -89,4 +120,3 @@ jobs:
         with:
           name: pages-visual-check
           path: tmp/pages-visual-check
-
