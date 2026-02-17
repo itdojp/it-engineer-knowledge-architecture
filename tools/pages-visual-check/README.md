@@ -74,6 +74,7 @@ Artifacts の screenshots は、自動検査で拾えない「体裁/可読性�
 ## 出力
 
 - `report.json`: 集計レポート
+- `index.html`: スクリーンショットを閲覧するためのHTMLレポート（ローカルで開いて利用）
 - `report.json#fontVarDrift`: `--font-sans` / `--font-mono` のユニーク値の集計（ドリフト検知用）
 - `report.json#globalWarnings`: ページ単位ではない警告（例: fontVarDrift）
 - `screenshots/`: `bookKey/browser/viewport/*.jpg`

@@ -130,6 +130,146 @@ function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
 }
 
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function summarizeStatuses(results) {
+  const summary = { ok: 0, warn: 0, fail: 0 };
+  for (const r of results ?? []) {
+    if (r?.status === 'ok') summary.ok += 1;
+    else if (r?.status === 'warn') summary.warn += 1;
+    else if (r?.status === 'fail') summary.fail += 1;
+  }
+  return summary;
+}
+
+function buildHtmlReport(report) {
+  const title = 'Pages Visual Check Report';
+  const generatedAt = escapeHtml(report?.generatedAt ?? '');
+  const fatalError = report?.fatalError ? escapeHtml(report.fatalError) : '';
+
+  const cfg = report?.config ?? {};
+  const cfgJson = escapeHtml(JSON.stringify(cfg, null, 2));
+
+  const summary = report?.summary ?? {};
+  const summaryLine = `books=${summary.books ?? 0} pages=${summary.pagesChecked ?? 0} ok=${summary.ok ?? 0} warn=${
+    summary.warn ?? 0
+  } fail=${summary.fail ?? 0} globalWarn=${summary.globalWarn ?? 0}`;
+
+  const globalWarnings = Array.isArray(report?.globalWarnings) ? report.globalWarnings : [];
+
+  const bookEntries = Object.entries(report?.books ?? {}).sort(([a], [b]) => a.localeCompare(b));
+
+  const sections = bookEntries
+    .map(([bookKey, book]) => {
+      const baseUrl = book?.baseUrl ? escapeHtml(book.baseUrl) : '';
+      const err = book?.error ? escapeHtml(book.error) : '';
+
+      const results = book?.results ?? {};
+      const browserBlocks = Object.entries(results)
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([browserName, byProfile]) => {
+          const profileBlocks = Object.entries(byProfile ?? {})
+            .sort(([a], [b]) => a.localeCompare(b))
+            .map(([profileName, pageResults]) => {
+              const statusSummary = summarizeStatuses(pageResults);
+              const summaryBadge = `${statusSummary.ok} ok / ${statusSummary.warn} warn / ${statusSummary.fail} fail`;
+              const pages = (pageResults ?? [])
+                .map((r) => {
+                  const shot = r?.screenshot ? escapeHtml(r.screenshot) : '';
+                  const pageUrl = escapeHtml(r?.url ?? '');
+                  const status = escapeHtml(r?.status ?? '');
+                  const issues = r?.issues?.fail?.length || r?.issues?.warn?.length ? escapeHtml(JSON.stringify(r.issues)) : '';
+                  const caption = `${status.toUpperCase()}: ${pageUrl}`;
+                  const img = shot
+                    ? `<a class="shot" href="${shot}" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="${shot}" alt="${caption}"></a>`
+                    : `<div class="shot shot-missing">(screenshot skipped)</div>`;
+                  const issuesBlock = issues ? `<pre class="issues">${issues}</pre>` : '';
+                  return `<figure class="page ${status}"><figcaption>${escapeHtml(caption)}</figcaption>${img}${issuesBlock}</figure>`;
+                })
+                .join('\n');
+
+              return `<details class="profile"><summary><span class="mono">${escapeHtml(
+                browserName
+              )}</span> / <span class="mono">${escapeHtml(profileName)}</span> <span class="badge">${escapeHtml(
+                summaryBadge
+              )}</span></summary><div class="grid">${pages}</div></details>`;
+            })
+            .join('\n');
+          return profileBlocks;
+        })
+        .join('\n');
+
+      const header = baseUrl
+        ? `<a href="${baseUrl}" target="_blank" rel="noopener noreferrer">${escapeHtml(bookKey)}</a>`
+        : escapeHtml(bookKey);
+
+      const meta = err
+        ? `<div class="error">error: ${err}</div>`
+        : `<div class="meta"><span class="mono">${escapeHtml(baseUrl)}</span></div>`;
+
+      return `<details class="book"><summary>${header}</summary>${meta}${browserBlocks}</details>`;
+    })
+    .join('\n');
+
+  const globalWarningsHtml =
+    globalWarnings.length > 0
+      ? `<details class="global-warnings" open><summary>Global warnings</summary><pre>${escapeHtml(
+          JSON.stringify(globalWarnings, null, 2)
+        )}</pre></details>`
+      : '';
+
+  const fatalErrorHtml = fatalError
+    ? `<details class="fatal" open><summary>Fatal error</summary><pre>${fatalError}</pre></details>`
+    : '';
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${escapeHtml(title)}</title>
+    <style>
+      :root { color-scheme: light; }
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 16px; }
+      h1 { margin: 0 0 8px; font-size: 20px; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace; }
+      .muted { color: #666; }
+      details { border: 1px solid #eee; border-radius: 8px; padding: 8px 10px; margin: 10px 0; background: #fff; }
+      details > summary { cursor: pointer; font-weight: 600; }
+      .meta { margin: 6px 0 0; font-size: 12px; }
+      .badge { display: inline-block; margin-left: 8px; padding: 1px 8px; font-size: 12px; border: 1px solid #ddd; border-radius: 999px; background: #fafafa; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-top: 10px; }
+      figure { margin: 0; padding: 10px; border: 1px solid #eee; border-radius: 8px; background: #fcfcfc; }
+      figure.ok { border-left: 4px solid #1a7f37; }
+      figure.warn { border-left: 4px solid #bf8700; }
+      figure.fail { border-left: 4px solid #cf222e; }
+      figcaption { font-size: 12px; margin-bottom: 8px; }
+      img { max-width: 100%; height: auto; border: 1px solid #e5e5e5; border-radius: 6px; background: #fff; }
+      .shot-missing { color: #999; padding: 40px 10px; text-align: center; border: 1px dashed #ddd; border-radius: 6px; background: #fff; }
+      pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #f6f8fa; border: 1px solid #eee; border-radius: 8px; padding: 10px; margin: 10px 0 0; }
+      .issues { margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <h1>${escapeHtml(title)}</h1>
+    <div class="muted">generatedAt: <span class="mono">${generatedAt}</span></div>
+    <div class="muted">summary: <span class="mono">${escapeHtml(summaryLine)}</span></div>
+    ${fatalErrorHtml}
+    ${globalWarningsHtml}
+    <details open><summary>Config</summary><pre>${cfgJson}</pre></details>
+    ${sections}
+  </body>
+</html>
+`;
+}
+
 function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -747,6 +887,7 @@ async function main() {
   ensureDir(outputDir);
 
   const reportPath = path.join(outputDir, 'report.json');
+  const htmlReportPath = path.join(outputDir, 'index.html');
 
   const report = {
     schemaVersion: '1.0',
@@ -774,6 +915,7 @@ async function main() {
   const writeReport = () => {
     try {
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+      fs.writeFileSync(htmlReportPath, buildHtmlReport(report), 'utf8');
     } catch (err) {
       console.error(`❌ failed to write report: ${err?.message ? String(err.message) : String(err)}`);
     }
@@ -1056,6 +1198,7 @@ async function main() {
     }
   }
   console.log(`report: ${reportPath}`);
+  console.log(`html report: ${htmlReportPath}`);
   if (!skipScreenshots) console.log(`screenshots: ${path.join(outputDir, 'screenshots')}`);
 
   return exitCode;
