@@ -28,7 +28,8 @@ node run.mjs \
   --browsers chromium,firefox \
   --viewports mobile,tablet,desktop \
   --maxPagesPerBook 4 \
-  --concurrency 2
+  --concurrency 2 \
+  --enforceFontSpec
 ```
 
 ## チェック内容（概要）
@@ -39,9 +40,12 @@ node run.mjs \
 - 画像の broken 判定（warn）
 - 横スクロールの発生（warn）
 - `--font-sans` / `--font-mono` の CSS 変数が存在するか（欠落は fail）
+- `--enforceFontSpec` 指定時は `docs/FONT-SPECIFICATION.md` から期待値を抽出し、ドリフトを fail
 - `rel="prev"` / `rel="next"` の存在（root 以外で両方欠落は warn）
 
 ## 出力
 
 - `report.json`: 集計レポート
+- `report.json#fontVarDrift`: `--font-sans` / `--font-mono` のユニーク値の集計（ドリフト検知用）
+- `report.json#globalWarnings`: ページ単位ではない警告（例: fontVarDrift）
 - `screenshots/`: `bookKey/browser/viewport/*.jpg`

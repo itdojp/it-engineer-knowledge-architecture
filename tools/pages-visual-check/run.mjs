@@ -8,6 +8,8 @@ import { fileURLToPath } from 'node:url';
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(SCRIPT_DIR, '..', '..');
 
+const FONT_SPEC_PATH = path.join(REPO_ROOT, 'docs', 'FONT-SPECIFICATION.md');
+
 const DEFAULT_VIEWPORTS = {
   mobile: { width: 390, height: 844 },
   tablet: { width: 768, height: 1024 },
@@ -15,6 +17,12 @@ const DEFAULT_VIEWPORTS = {
 };
 
 const SUPPORTED_BROWSER_NAMES = new Set(['chromium', 'firefox', 'webkit']);
+
+const FALLBACK_EXPECTED_FONT_VARS = {
+  fontSans:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+  fontMono: '"Monaco", "Menlo", "Ubuntu Mono", "Consolas", "source-code-pro", monospace'
+};
 
 function usage() {
   // Keep CLI help minimal; detailed usage is in README.
@@ -33,6 +41,7 @@ Options:
   --skipScreenshots         do not capture screenshots (default: off)
   --onlyBooks <list>        book keys (default: all)
   --failOnWarnings          treat warnings as failures (default: off)
+  --enforceFontSpec         fail when font vars drift from FONT-SPECIFICATION.md (default: off)
   --dryRun                  only resolve target URLs; do not run Playwright
   --help                    show this help
 `);
@@ -104,6 +113,77 @@ function assertNonEmptyList(list, name) {
 
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function normalizeFontStack(value) {
+  if (!value) return '';
+  return String(value)
+    .trim()
+    .replace(/;\s*$/, '')
+    .replace(/\s+/g, ' ')
+    .replace(/\s*,\s*/g, ', ');
+}
+
+function formatFontStackForMessage(value, maxLen = 160) {
+  const str = String(value ?? '').trim();
+  if (!str) return '';
+  if (str.length <= maxLen) return str;
+  return str.slice(0, maxLen - 3) + '...';
+}
+
+function loadExpectedFontVarsFromSpec(specPath) {
+  if (!fs.existsSync(specPath)) return null;
+  const md = fs.readFileSync(specPath, 'utf8');
+
+  const extract = (varName) => {
+    const re = new RegExp(`${escapeRegExp(varName)}\\s*:\\s*([^;\\n]+);`, 'm');
+    const match = md.match(re);
+    return match?.[1]?.trim() ? match[1].trim() : null;
+  };
+
+  const fontSans = extract('--font-sans');
+  const fontMono = extract('--font-mono');
+  if (!fontSans || !fontMono) return null;
+
+  return { fontSans, fontMono };
+}
+
+function computeFontVarDrift(books) {
+  const sansCounts = new Map();
+  const monoCounts = new Map();
+  let pagesWithFontVars = 0;
+
+  for (const book of Object.values(books ?? {})) {
+    const results = book?.results;
+    if (!results) continue;
+    for (const browserResults of Object.values(results)) {
+      for (const viewportResults of Object.values(browserResults ?? {})) {
+        for (const pageResult of viewportResults ?? []) {
+          const sans = normalizeFontStack(pageResult?.fontVars?.fontSans ?? '');
+          const mono = normalizeFontStack(pageResult?.fontVars?.fontMono ?? '');
+          if (!sans || !mono) continue;
+          pagesWithFontVars += 1;
+          sansCounts.set(sans, (sansCounts.get(sans) ?? 0) + 1);
+          monoCounts.set(mono, (monoCounts.get(mono) ?? 0) + 1);
+        }
+      }
+    }
+  }
+
+  const toList = (counts) =>
+    Array.from(counts.entries())
+      .map(([value, count]) => ({ value, count }))
+      .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
+
+  const uniqueFontSans = toList(sansCounts);
+  const uniqueFontMono = toList(monoCounts);
+  const hasDrift = uniqueFontSans.length > 1 || uniqueFontMono.length > 1;
+
+  return { hasDrift, pagesWithFontVars, uniqueFontSans, uniqueFontMono };
 }
 
 function nowStamp() {
@@ -271,6 +351,9 @@ function classifyIssues({
   emptyTocLinks,
   horizontalOverflow,
   fontVars,
+  expectedFontVars,
+  expectedFontVarsSource,
+  enforceFontSpec,
   prevNext
 }) {
   const issues = { fail: [], warn: [] };
@@ -304,6 +387,26 @@ function classifyIssues({
 
   if (!fontVars || !fontVars.fontSans || !fontVars.fontMono) {
     issues.fail.push('missing CSS font variables (--font-sans/--font-mono)');
+  } else if (enforceFontSpec) {
+    const expectedSans = expectedFontVars?.fontSans ? normalizeFontStack(expectedFontVars.fontSans) : '';
+    const expectedMono = expectedFontVars?.fontMono ? normalizeFontStack(expectedFontVars.fontMono) : '';
+    const actualSans = normalizeFontStack(fontVars.fontSans);
+    const actualMono = normalizeFontStack(fontVars.fontMono);
+    const source = expectedFontVarsSource ? String(expectedFontVarsSource) : 'FONT-SPECIFICATION.md';
+    if (expectedSans && actualSans !== expectedSans) {
+      issues.fail.push(
+        `font spec mismatch (--font-sans, expected from ${source}): expected="${formatFontStackForMessage(
+          expectedSans
+        )}", actual="${formatFontStackForMessage(actualSans)}"`
+      );
+    }
+    if (expectedMono && actualMono !== expectedMono) {
+      issues.fail.push(
+        `font spec mismatch (--font-mono, expected from ${source}): expected="${formatFontStackForMessage(
+          expectedMono
+        )}", actual="${formatFontStackForMessage(actualMono)}"`
+      );
+    }
   }
 
   for (const msg of consoleErrors) {
@@ -357,7 +460,10 @@ async function checkPage({
   screenshotQuality,
   fullPage,
   timeoutMs,
-  skipScreenshots
+  skipScreenshots,
+  expectedFontVars,
+  expectedFontVarsSource,
+  enforceFontSpec
 }) {
   const page = await context.newPage();
   const consoleErrors = [];
@@ -525,6 +631,9 @@ async function checkPage({
     emptyTocLinks: evalResult.emptyTocLinks,
     horizontalOverflow: evalResult.horizontalOverflow,
     fontVars: evalResult.fontVars,
+    expectedFontVars,
+    expectedFontVarsSource,
+    enforceFontSpec,
     prevNext: evalResult.prevNext
   });
 
@@ -579,7 +688,8 @@ async function main() {
       pagesChecked: 0,
       ok: 0,
       warn: 0,
-      fail: 0
+      fail: 0,
+      globalWarn: 0
     },
     books: {}
   };
@@ -589,6 +699,7 @@ async function main() {
   let skipScreenshots = false;
   let dryRun = false;
   let failOnWarnings = false;
+  let enforceFontSpec = false;
 
   const writeReport = () => {
     try {
@@ -615,6 +726,7 @@ async function main() {
     skipScreenshots = parseBooleanArg(args.skipScreenshots, 'skipScreenshots');
     dryRun = parseBooleanArg(args.dryRun, 'dryRun');
     failOnWarnings = parseBooleanArg(args.failOnWarnings, 'failOnWarnings');
+    enforceFontSpec = parseBooleanArg(args.enforceFontSpec, 'enforceFontSpec');
     const onlyBooks = new Set(toList(args.onlyBooks));
 
     if (!fs.existsSync(registryPath)) {
@@ -654,13 +766,24 @@ async function main() {
     assertNonEmptyList(resolvedBrowsers, 'browsers');
 
     report.summary.books = bookEntries.length;
+
+    const expectedFromSpec = loadExpectedFontVarsFromSpec(FONT_SPEC_PATH);
+    const expectedFontVars = expectedFromSpec ?? FALLBACK_EXPECTED_FONT_VARS;
+    const expectedFontVarsSource = expectedFromSpec ? path.relative(REPO_ROOT, FONT_SPEC_PATH) : 'fallback';
+    if (enforceFontSpec && !expectedFromSpec) {
+      throw new Error(`--enforceFontSpec requires ${FONT_SPEC_PATH} to define --font-sans/--font-mono`);
+    }
+
     report.config = {
       browsers: resolvedBrowsers,
       viewports: Object.keys(resolvedViewports),
       maxPagesPerBook,
       concurrency,
       timeoutMs,
-      screenshot: { type: screenshotType, quality: screenshotQuality, fullPage, skip: skipScreenshots }
+      screenshot: { type: screenshotType, quality: screenshotQuality, fullPage, skip: skipScreenshots },
+      enforceFontSpec,
+      expectedFontVarsSource,
+      expectedFontVars
     };
 
     const fetchTimeoutMs = Math.min(20_000, timeoutMs);
@@ -757,7 +880,10 @@ async function main() {
                   screenshotQuality,
                   fullPage,
                   timeoutMs,
-                  skipScreenshots
+                  skipScreenshots,
+                  expectedFontVars,
+                  expectedFontVarsSource,
+                  enforceFontSpec
                 });
               } catch (err) {
                 result = {
@@ -792,8 +918,18 @@ async function main() {
       });
     }
 
+    report.fontVarDrift = dryRun ? null : computeFontVarDrift(report.books);
+    report.globalWarnings = [];
+    if (report.fontVarDrift?.hasDrift) {
+      report.summary.globalWarn += 1;
+      report.globalWarnings.push({
+        type: 'fontVarDrift',
+        message: `fontVar drift detected: uniqueSans=${report.fontVarDrift.uniqueFontSans.length} uniqueMono=${report.fontVarDrift.uniqueFontMono.length} (see report.json#fontVarDrift)`
+      });
+    }
+
     const hasFails = report.summary.fail > 0;
-    const hasWarnings = report.summary.warn > 0;
+    const hasWarnings = report.summary.warn > 0 || report.summary.globalWarn > 0;
     exitCode = hasFails || (failOnWarnings && hasWarnings) ? 1 : 0;
   } catch (err) {
     exitCode = 1;
@@ -806,8 +942,13 @@ async function main() {
   }
 
   console.log(
-    `✅ done: books=${report.summary.books} pages=${report.summary.pagesChecked} ok=${report.summary.ok} warn=${report.summary.warn} fail=${report.summary.fail}`
+    `✅ done: books=${report.summary.books} pages=${report.summary.pagesChecked} ok=${report.summary.ok} warn=${report.summary.warn} fail=${report.summary.fail} globalWarn=${report.summary.globalWarn}`
   );
+  if (Array.isArray(report.globalWarnings) && report.globalWarnings.length > 0) {
+    for (const w of report.globalWarnings) {
+      console.warn(`⚠️ ${w.type}: ${w.message}`);
+    }
+  }
   console.log(`report: ${reportPath}`);
   if (!skipScreenshots) console.log(`screenshots: ${path.join(outputDir, 'screenshots')}`);
 
