@@ -160,6 +160,8 @@ function resolveDeviceProfiles({ deviceTokens, playwrightDevices, selectedBrowse
   if (!Array.isArray(deviceTokens) || deviceTokens.length === 0) return [];
 
   const resolved = [];
+  const seenDeviceNames = new Set();
+  const usedIds = new Map();
   for (const token of deviceTokens) {
     const normalized = normalizeDeviceToken(token);
     const name = DEVICE_PROFILE_ALIASES.get(normalized) ?? String(token).trim();
@@ -167,6 +169,10 @@ function resolveDeviceProfiles({ deviceTokens, playwrightDevices, selectedBrowse
     if (!descriptor) {
       throw new Error(`unsupported device: ${token} (resolved: ${name})`);
     }
+
+    // Avoid accidental duplicate runs (e.g., --devices pixel7,pixel7).
+    if (seenDeviceNames.has(name)) continue;
+    seenDeviceNames.add(name);
 
     const defaultBrowserType = descriptor.defaultBrowserType;
     if (!selectedBrowsers.includes(defaultBrowserType)) {
@@ -176,8 +182,12 @@ function resolveDeviceProfiles({ deviceTokens, playwrightDevices, selectedBrowse
     }
 
     const { defaultBrowserType: _, ...contextOptions } = descriptor;
+    const baseId = `device_${toSafeId(name)}`;
+    const n = (usedIds.get(baseId) ?? 0) + 1;
+    usedIds.set(baseId, n);
+    const id = n === 1 ? baseId : `${baseId}_${n}`;
     resolved.push({
-      id: `device_${toSafeId(name)}`,
+      id,
       name,
       defaultBrowserType,
       contextOptions,

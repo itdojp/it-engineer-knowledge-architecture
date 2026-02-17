@@ -40,6 +40,7 @@ node run.mjs \
 
 ```bash
 node run.mjs \
+  --registry ../../docs/publishing/book-registry.json \
   --output ../../tmp/pages-visual-check-devices \
   --browsers chromium,webkit \
   --devices pixel7,iphone13 \
