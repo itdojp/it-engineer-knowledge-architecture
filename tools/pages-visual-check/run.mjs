@@ -203,6 +203,10 @@ function buildHtmlReport(report) {
                   const hasIssues = (r?.issues?.fail?.length ?? 0) > 0 || (r?.issues?.warn?.length ?? 0) > 0;
                   const issuesJson = hasIssues ? JSON.stringify(r.issues, null, 2) : '';
 
+                  const tocVis = r?.tocActiveSidebarVisibility ?? null;
+                  const tocVisShouldShow = Boolean(tocVis && (tocVis.outOfView === true || tocVis.activeFound === false));
+                  const tocVisJson = tocVisShouldShow ? JSON.stringify(tocVis, null, 2) : '';
+
                   const shotRaw = r?.screenshot ? toUrlPath(r.screenshot) : '';
                   const shot = shotRaw ? escapeHtml(shotRaw) : '';
                   const sidebarShotRaw = r?.screenshotSidebar ? toUrlPath(r.screenshotSidebar) : '';
@@ -226,13 +230,18 @@ function buildHtmlReport(report) {
                       : `<div class="shot shot-missing">(screenshot skipped)</div>`;
 
                   const issuesBlock = hasIssues ? `<pre class="issues">${escapeHtml(issuesJson)}</pre>` : '';
+                  const tocVisBlock = tocVisJson
+                    ? `<details class="toc-vis"><summary>toc active visibility</summary><pre>${escapeHtml(
+                        tocVisJson
+                      )}</pre></details>`
+                    : '';
 
                   const caption =
                     pageUrlRaw && pageUrlAttr
                       ? `<span class="status-pill">${escapeHtml(statusLabel)}</span><a class="page-link" href="${pageUrlAttr}" target="_blank" rel="noopener noreferrer">${pageUrlText}</a>`
                       : `<span class="status-pill">${escapeHtml(statusLabel)}</span>`;
 
-                  return `<figure class="page ${statusClass}"><figcaption>${caption}</figcaption>${img}${issuesBlock}</figure>`;
+                  return `<figure class="page ${statusClass}"><figcaption>${caption}</figcaption>${img}${issuesBlock}${tocVisBlock}</figure>`;
                 })
                 .join('\n');
 
@@ -614,6 +623,7 @@ function classifyIssues({
   brokenImages,
   emptyTocLinks,
   tocActive,
+  tocActiveSidebarVisibility,
   horizontalOverflow,
   fontVars,
   expectedFontVars,
@@ -707,6 +717,12 @@ function classifyIssues({
       const activeCount = tocActive.activeCount ?? 0;
       issues.warn.push(`toc active mismatch: current=${current} activeCount=${activeCount}`);
     }
+  }
+
+  if (tocActiveSidebarVisibility?.activeFound && tocActiveSidebarVisibility.outOfView) {
+    const current = tocActiveSidebarVisibility.currentPath ?? '';
+    const activeText = tocActiveSidebarVisibility.activeText ?? '';
+    issues.warn.push(`toc active not visible in sidebar viewport: current=${current} active="${activeText}"`);
   }
 
   if (horizontalOverflow?.overflow) {
@@ -873,7 +889,7 @@ async function checkPage({
             const id = el.id ? `#${el.id}` : '';
             const cls =
               typeof el.className === 'string' && el.className.trim()
-                ? `.${el.className.trim().split(/\\s+/).slice(0, 2).join('.')}`
+                ? `.${el.className.trim().split(/\s+/).slice(0, 2).join('.')}`
                 : '';
             offenders.push({
               selector: `${tag}${id}${cls}`,
@@ -929,6 +945,7 @@ async function checkPage({
 
   let screenshotRelPath = null;
   let screenshotSidebarRelPath = null;
+  let tocActiveSidebarVisibility = null;
   if (!skipScreenshots) {
     const ext = screenshotType === 'jpeg' ? 'jpg' : 'png';
     const pageSlug = slugFromUrl(baseUrl, url);
@@ -1007,6 +1024,118 @@ async function checkPage({
             throw new Error('sidebar did not open');
           }
 
+          // Measure whether the active TOC item is visible *before* any forced scrolling.
+          // This reflects the UX when a user opens the drawer on mobile.
+          await page.waitForTimeout(50);
+          try {
+            tocActiveSidebarVisibility = await page.evaluate(() => {
+              const normalizePath = (p) =>
+                String(p || '')
+                  .replace(/index\\.html$/, '')
+                  .replace(/\/+$/, '/');
+
+              const currentPath = window.location.pathname;
+              const currentNormalizedPath = normalizePath(currentPath);
+
+              const activeLinks = Array.from(document.querySelectorAll('a.toc-link.active'));
+              const activeMatch =
+                activeLinks.find((a) => {
+                  try {
+                    const pathname = new URL(a.href).pathname;
+                    return normalizePath(pathname) === currentNormalizedPath;
+                  } catch {
+                    return false;
+                  }
+                }) ?? null;
+              const active = activeMatch || activeLinks[0] || null;
+
+              const sidebar = document.getElementById('sidebar');
+
+              const describeEl = (el) => {
+                if (!el || !(el instanceof Element)) return '';
+                const tag = (el.tagName || '').toLowerCase();
+                const id = el.id ? `#${el.id}` : '';
+                const cls =
+                  typeof el.className === 'string' && el.className.trim()
+                    ? `.${el.className.trim().split(/\s+/).slice(0, 2).join('.')}`
+                    : '';
+                return `${tag}${id}${cls}`;
+              };
+
+              if (!active) {
+                return { activeFound: false, currentPath, currentNormalizedPath };
+              }
+
+              const isScrollable = (el) => {
+                if (!el) return false;
+                const style = getComputedStyle(el);
+                const oy = style.overflowY;
+                if (oy !== 'auto' && oy !== 'scroll') return false;
+                return el.scrollHeight > el.clientHeight + 1;
+              };
+
+              let container = null;
+              let cur = active.parentElement;
+              while (cur) {
+                if (sidebar && cur === sidebar) {
+                  container = sidebar;
+                  break;
+                }
+                if (isScrollable(cur)) {
+                  container = cur;
+                  break;
+                }
+                cur = cur.parentElement;
+              }
+              if (!container) container = sidebar || document.documentElement;
+
+              const activeRect = active.getBoundingClientRect();
+              const containerRect = container.getBoundingClientRect();
+
+              const margin = 8;
+              const top = containerRect.top + margin;
+              const bottom = containerRect.bottom - margin;
+              const outOfView = activeRect.bottom < top || activeRect.top > bottom;
+              const fullyVisible = activeRect.top >= top && activeRect.bottom <= bottom;
+
+              let activePathname = '';
+              try {
+                activePathname = new URL(active.href).pathname;
+              } catch {}
+
+              return {
+                activeFound: true,
+                currentPath,
+                currentNormalizedPath,
+                activeHref: (active.getAttribute('href') ?? '').slice(0, 200),
+                activePathname,
+                activeText: (active.textContent || '').trim().slice(0, 120),
+                outOfView,
+                fullyVisible,
+                container: {
+                  selector: describeEl(container),
+                  clientHeight: container.clientHeight,
+                  scrollHeight: container.scrollHeight,
+                  scrollTop: Math.round(container.scrollTop)
+                },
+                containerRect: {
+                  top: Math.round(containerRect.top),
+                  bottom: Math.round(containerRect.bottom),
+                  height: Math.round(containerRect.height)
+                },
+                activeRect: {
+                  top: Math.round(activeRect.top),
+                  bottom: Math.round(activeRect.bottom),
+                  height: Math.round(activeRect.height)
+                }
+              };
+            });
+          } catch (err) {
+            sidebarScreenshotErrors.push(
+              err?.message ? `sidebar toc visibility error: ${err.message}` : `sidebar toc visibility error: ${String(err)}`
+            );
+          }
+
           // Ensure the active TOC item is visible in the screenshot.
           await page
             .evaluate(() => {
@@ -1050,6 +1179,7 @@ async function checkPage({
     brokenImages: evalResult.brokenImages,
     emptyTocLinks: evalResult.emptyTocLinks,
     tocActive: evalResult.tocActive,
+    tocActiveSidebarVisibility,
     horizontalOverflow: evalResult.horizontalOverflow,
     fontVars: evalResult.fontVars,
     expectedFontVars,
@@ -1067,6 +1197,7 @@ async function checkPage({
     brokenImages: evalResult.brokenImages,
     emptyTocLinks: evalResult.emptyTocLinks,
     tocActive: evalResult.tocActive,
+    tocActiveSidebarVisibility,
     horizontalOverflow: evalResult.horizontalOverflow,
     consoleErrors,
     pageErrors,
@@ -1104,7 +1235,7 @@ async function main() {
   const htmlReportPath = path.join(outputDir, 'index.html');
 
   const report = {
-    schemaVersion: '1.1',
+    schemaVersion: '1.2',
     generatedAt: new Date().toISOString(),
     registryPath: path.relative(REPO_ROOT, registryPath),
     config: {},
