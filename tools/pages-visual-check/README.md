@@ -32,6 +32,22 @@ node run.mjs \
   --enforceFontSpec
 ```
 
+### Device emulation（オプション）
+
+`--devices` を指定すると、Playwright の device descriptor を使って実行します（`--viewports` は無視されます）。
+
+例（aliases を使用。Pixel 7=chromium / iPhone 13=webkit のため両方を選択）:
+
+```bash
+node run.mjs \
+  --output ../../tmp/pages-visual-check-devices \
+  --browsers chromium,webkit \
+  --devices pixel7,iphone13 \
+  --maxPagesPerBook 2 \
+  --concurrency 2 \
+  --enforceFontSpec
+```
+
 ## チェック内容（概要）
 
 - ドキュメントの HTTP ステータス（`>=400` を fail）

@@ -24,6 +24,20 @@ const FALLBACK_EXPECTED_FONT_VARS = {
   fontMono: '"Monaco", "Menlo", "Ubuntu Mono", "Consolas", "source-code-pro", monospace'
 };
 
+const DEVICE_PROFILE_ALIASES = new Map([
+  // iOS Safari
+  ['iphone13', 'iPhone 13'],
+  ['iphone13landscape', 'iPhone 13 landscape'],
+  ['iphonese', 'iPhone SE'],
+  ['iphonese3rdgen', 'iPhone SE (3rd gen)'],
+  ['ipadmini', 'iPad Mini'],
+  ['ipadminilandscape', 'iPad Mini landscape'],
+
+  // Android Chrome
+  ['pixel7', 'Pixel 7'],
+  ['pixel7landscape', 'Pixel 7 landscape']
+]);
+
 function usage() {
   // Keep CLI help minimal; detailed usage is in README.
   console.log(`Usage:
@@ -34,6 +48,7 @@ Options:
   --output <dir>            output dir (default: tools/pages-visual-check/output/<timestamp>)
   --browsers <list>         chromium,firefox,webkit (default: chromium)
   --viewports <list>        mobile,tablet,desktop (default: mobile,desktop)
+  --devices <list>          Playwright device names or aliases (default: off; when set, viewports are ignored)
   --maxPagesPerBook <n>     pages per book incl. root (default: 4)
   --concurrency <n>         concurrent books (default: 3)
   --timeoutMs <ms>          navigation timeout (default: 45000)
@@ -126,6 +141,51 @@ function normalizeFontStack(value) {
     .replace(/;\s*$/, '')
     .replace(/\s+/g, ' ')
     .replace(/\s*,\s*/g, ', ');
+}
+
+function normalizeDeviceToken(value) {
+  return String(value).trim().toLowerCase().replace(/[\s_-]+/g, '');
+}
+
+function toSafeId(value) {
+  return String(value)
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '')
+    .slice(0, 80);
+}
+
+function resolveDeviceProfiles({ deviceTokens, playwrightDevices, selectedBrowsers }) {
+  if (!Array.isArray(deviceTokens) || deviceTokens.length === 0) return [];
+
+  const resolved = [];
+  for (const token of deviceTokens) {
+    const normalized = normalizeDeviceToken(token);
+    const name = DEVICE_PROFILE_ALIASES.get(normalized) ?? String(token).trim();
+    const descriptor = playwrightDevices?.[name];
+    if (!descriptor) {
+      throw new Error(`unsupported device: ${token} (resolved: ${name})`);
+    }
+
+    const defaultBrowserType = descriptor.defaultBrowserType;
+    if (!selectedBrowsers.includes(defaultBrowserType)) {
+      throw new Error(
+        `device ${name} requires browser ${defaultBrowserType}, but --browsers=${selectedBrowsers.join(',')} was selected`
+      );
+    }
+
+    const { defaultBrowserType: _, ...contextOptions } = descriptor;
+    resolved.push({
+      id: `device_${toSafeId(name)}`,
+      name,
+      defaultBrowserType,
+      contextOptions,
+      viewport: descriptor.viewport
+    });
+  }
+
+  return resolved;
 }
 
 function formatFontStackForMessage(value, maxLen = 160) {
@@ -712,11 +772,14 @@ async function main() {
   try {
     const browsersRaw = args.browsers === undefined ? 'chromium' : args.browsers;
     const viewportsRaw = args.viewports === undefined ? 'mobile,desktop' : args.viewports;
+    const devicesRaw = args.devices === undefined ? '' : args.devices;
 
     const browsers = toList(browsersRaw);
     const viewports = toList(viewportsRaw);
+    const deviceTokens = toList(devicesRaw);
+    const useDevices = deviceTokens.length > 0;
     assertNonEmptyList(browsers, 'browsers');
-    assertNonEmptyList(viewports, 'viewports');
+    if (!useDevices) assertNonEmptyList(viewports, 'viewports');
 
     const maxPagesPerBook = parsePositiveIntArg(args.maxPagesPerBook, 'maxPagesPerBook', 4, { min: 1, max: 10 });
     const concurrency = parsePositiveIntArg(args.concurrency, 'concurrency', 3, { min: 1, max: 10 });
@@ -748,13 +811,15 @@ async function main() {
     }
 
     const resolvedViewports = {};
-    for (const name of viewports) {
-      if (!DEFAULT_VIEWPORTS[name]) {
-        throw new Error(`unsupported viewport: ${name} (supported: ${Object.keys(DEFAULT_VIEWPORTS).join(',')})`);
+    if (!useDevices) {
+      for (const name of viewports) {
+        if (!DEFAULT_VIEWPORTS[name]) {
+          throw new Error(`unsupported viewport: ${name} (supported: ${Object.keys(DEFAULT_VIEWPORTS).join(',')})`);
+        }
+        resolvedViewports[name] = DEFAULT_VIEWPORTS[name];
       }
-      resolvedViewports[name] = DEFAULT_VIEWPORTS[name];
+      assertNonEmptyList(Object.keys(resolvedViewports), 'viewports');
     }
-    assertNonEmptyList(Object.keys(resolvedViewports), 'viewports');
 
     const resolvedBrowsers = [];
     for (const name of browsers) {
@@ -775,8 +840,10 @@ async function main() {
     }
 
     report.config = {
+      mode: useDevices ? 'devices' : 'viewports',
       browsers: resolvedBrowsers,
-      viewports: Object.keys(resolvedViewports),
+      viewports: useDevices ? [] : Object.keys(resolvedViewports),
+      devices: useDevices ? deviceTokens : [],
       maxPagesPerBook,
       concurrency,
       timeoutMs,
@@ -816,11 +883,29 @@ async function main() {
     }
 
     if (!dryRun) {
-      const { chromium, firefox, webkit } = await import('playwright');
+      const { chromium, firefox, webkit, devices } = await import('playwright');
       const browserTypes = { chromium, firefox, webkit };
 
       for (const name of resolvedBrowsers) {
         launched[name] = await browserTypes[name].launch({ headless: true });
+      }
+
+      const deviceProfiles = useDevices
+        ? resolveDeviceProfiles({ deviceTokens, playwrightDevices: devices, selectedBrowsers: resolvedBrowsers })
+        : [];
+      const profilesByBrowser = {};
+      for (const profile of deviceProfiles) {
+        const key = profile.defaultBrowserType;
+        profilesByBrowser[key] = profilesByBrowser[key] ?? [];
+        profilesByBrowser[key].push(profile);
+      }
+
+      if (useDevices) {
+        report.config.devicesResolved = deviceProfiles.map((p) => ({
+          id: p.id,
+          name: p.name,
+          defaultBrowserType: p.defaultBrowserType
+        }));
       }
 
       await runWithConcurrency(bookEntries, concurrency, async ({ key }) => {
@@ -832,13 +917,24 @@ async function main() {
 
         for (const browserName of resolvedBrowsers) {
           book.results[browserName] = book.results[browserName] ?? {};
-          for (const [viewportName, viewport] of Object.entries(resolvedViewports)) {
+          const profiles = useDevices
+            ? profilesByBrowser[browserName] ?? []
+            : Object.entries(resolvedViewports).map(([name, viewport]) => ({
+                id: name,
+                name,
+                defaultBrowserType: browserName,
+                contextOptions: { viewport, deviceScaleFactor: 1 },
+                viewport
+              }));
+
+          for (const profile of profiles) {
+            const viewportName = profile.id;
+            const viewport = useDevices ? { ...profile.viewport, device: profile.name } : profile.viewport;
             const results = [];
             let context;
             try {
               context = await launched[browserName].newContext({
-                viewport,
-                deviceScaleFactor: 1,
+                ...profile.contextOptions,
                 colorScheme: 'light'
               });
             } catch (err) {
