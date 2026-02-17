@@ -35,6 +35,10 @@ on:
         description: "Capture full-page screenshots"
         required: false
         default: "false"
+      captureSidebar:
+        description: "Capture screenshots with sidebar/drawer opened"
+        required: false
+        default: "false"
 
 jobs:
   pages-visual-check:
@@ -118,6 +122,9 @@ jobs:
           fi
           if [[ "${{ inputs.fullPage }}" == "true" ]]; then
             ARGS+=("--fullPage")
+          fi
+          if [[ "${{ inputs.captureSidebar }}" == "true" ]]; then
+            ARGS+=("--captureSidebar")
           fi
 
           node tools/pages-visual-check/run.mjs "${ARGS[@]}"
