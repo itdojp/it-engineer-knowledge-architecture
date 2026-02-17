@@ -60,6 +60,17 @@ node run.mjs \
 - `--enforceFontSpec` 指定時は `docs/FONT-SPECIFICATION.md` から期待値を抽出し、ドリフトを fail
 - `rel="prev"` / `rel="next"` の存在（root 以外で両方欠落は warn）
 
+## 目視観点（Artifacts screenshots のチェックポイント）
+
+Artifacts の screenshots は、自動検査で拾えない「体裁/可読性」のサンプリング確認に使います。
+
+- 目次（TOC）: 表示/スクロール/現在位置ハイライト
+- 前へ/次へ: 章間遷移の導線が崩れていない
+- 本文: 日本語 + 英数字/記号の混在で可読性が低下していない
+- コード: monospace 適用、折返し/横スクロール、可読性
+- 図表（SVG）: 文字化け/フォント崩れ/レイアウト崩れがない
+- テーブル/長いURL: 横溢れがない（必要時は横スクロール）
+
 ## 出力
 
 - `report.json`: 集計レポート
