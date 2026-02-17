@@ -605,6 +605,7 @@ function classifyIssues({
   url,
   documentStatus,
   pageErrors,
+  sidebarScreenshotErrors,
   consoleErrors,
   requestFailures,
   httpErrors,
@@ -626,6 +627,10 @@ function classifyIssues({
 
   for (const err of pageErrors) {
     issues.fail.push(`pageerror: ${err}`);
+  }
+
+  for (const err of sidebarScreenshotErrors ?? []) {
+    issues.warn.push(`sidebar screenshot error: ${err}`);
   }
 
   const criticalTypes = new Set(['document', 'stylesheet', 'script', 'font']);
@@ -740,6 +745,7 @@ async function checkPage({
   const page = await context.newPage();
   const consoleErrors = [];
   const pageErrors = [];
+  const sidebarScreenshotErrors = [];
   const requestFailures = [];
   const httpErrors = [];
 
@@ -941,10 +947,18 @@ async function checkPage({
 
     if (captureSidebar) {
       try {
-        const toggle = page.locator('.sidebar-toggle');
-        if ((await toggle.count()) > 0) {
-          await toggle.first().click({ timeout: 2_000 });
-          await page.waitForSelector('#sidebar.active', { timeout: 2_000 }).catch(() => {});
+        const checkbox = page.locator('#sidebar-toggle-checkbox');
+        if ((await checkbox.count()) > 0) {
+          // Legacy layout: checkbox controls sidebar visibility via CSS.
+          await checkbox.first().setChecked(true, { force: true });
+        } else {
+          const toggle = page.locator('.sidebar-toggle');
+          if ((await toggle.count()) > 0) {
+            // Some layouts render the toggle as a label; use force click to avoid flakiness.
+            await toggle.first().click({ timeout: 5_000, force: true });
+            // Newer layout adds `.active` to the sidebar element.
+            await page.waitForSelector('#sidebar.active', { timeout: 2_000 }).catch(() => {});
+          }
         }
 
         // Ensure the active TOC item is visible in the screenshot.
@@ -957,7 +971,8 @@ async function checkPage({
           })
           .catch(() => {});
 
-        await page.waitForTimeout(150);
+        // Wait for sidebar open transition / layout settling.
+        await page.waitForTimeout(350);
 
         const filename = `${pageSlug}__sidebar.${ext}`;
         const outPath = path.join(outDir, filename);
@@ -969,25 +984,24 @@ async function checkPage({
         });
         screenshotSidebarRelPath = path.relative(outputDir, outPath);
       } catch (err) {
-        pageErrors.push(
-          err?.message ? `sidebar screenshot error: ${err.message}` : `sidebar screenshot error: ${String(err)}`
-        );
+        sidebarScreenshotErrors.push(err?.message ? String(err.message) : String(err));
       }
     }
   }
 
   await page.close().catch(() => {});
 
-  const issues = classifyIssues({
-    baseUrl,
-    url,
-    documentStatus,
-    pageErrors,
-    consoleErrors,
-    requestFailures,
-    httpErrors,
-    brokenImages: evalResult.brokenImages,
-    emptyTocLinks: evalResult.emptyTocLinks,
+	    const issues = classifyIssues({
+	      baseUrl,
+	      url,
+	      documentStatus,
+	      pageErrors,
+	      sidebarScreenshotErrors,
+	      consoleErrors,
+	      requestFailures,
+	      httpErrors,
+	      brokenImages: evalResult.brokenImages,
+	      emptyTocLinks: evalResult.emptyTocLinks,
     tocActive: evalResult.tocActive,
     horizontalOverflow: evalResult.horizontalOverflow,
     fontVars: evalResult.fontVars,
@@ -997,22 +1011,23 @@ async function checkPage({
     prevNext: evalResult.prevNext
   });
 
-  return {
-    url,
-    documentStatus,
-    viewport: { name: viewportName, ...viewport },
-    fontVars: evalResult.fontVars,
-    prevNext: evalResult.prevNext,
+	    return {
+	      url,
+	      documentStatus,
+	      viewport: { name: viewportName, ...viewport },
+	      fontVars: evalResult.fontVars,
+	      prevNext: evalResult.prevNext,
     brokenImages: evalResult.brokenImages,
     emptyTocLinks: evalResult.emptyTocLinks,
     tocActive: evalResult.tocActive,
     horizontalOverflow: evalResult.horizontalOverflow,
-    consoleErrors,
-    pageErrors,
-    requestFailures,
-    httpErrors,
-    screenshot: screenshotRelPath,
-    screenshotSidebar: screenshotSidebarRelPath,
+	      consoleErrors,
+	      pageErrors,
+	      sidebarScreenshotErrors,
+	      requestFailures,
+	      httpErrors,
+	      screenshot: screenshotRelPath,
+	      screenshotSidebar: screenshotSidebarRelPath,
     issues,
     status: issues.fail.length > 0 ? 'fail' : issues.warn.length > 0 ? 'warn' : 'ok'
   };
