@@ -128,6 +128,13 @@ function normalizeFontStack(value) {
     .replace(/\s*,\s*/g, ', ');
 }
 
+function formatFontStackForMessage(value, maxLen = 160) {
+  const str = String(value ?? '').trim();
+  if (!str) return '';
+  if (str.length <= maxLen) return str;
+  return str.slice(0, maxLen - 3) + '...';
+}
+
 function loadExpectedFontVarsFromSpec(specPath) {
   if (!fs.existsSync(specPath)) return null;
   const md = fs.readFileSync(specPath, 'utf8');
@@ -345,6 +352,7 @@ function classifyIssues({
   horizontalOverflow,
   fontVars,
   expectedFontVars,
+  expectedFontVarsSource,
   enforceFontSpec,
   prevNext
 }) {
@@ -384,11 +392,20 @@ function classifyIssues({
     const expectedMono = expectedFontVars?.fontMono ? normalizeFontStack(expectedFontVars.fontMono) : '';
     const actualSans = normalizeFontStack(fontVars.fontSans);
     const actualMono = normalizeFontStack(fontVars.fontMono);
+    const source = expectedFontVarsSource ? String(expectedFontVarsSource) : 'FONT-SPECIFICATION.md';
     if (expectedSans && actualSans !== expectedSans) {
-      issues.fail.push('font spec mismatch (--font-sans)');
+      issues.fail.push(
+        `font spec mismatch (--font-sans, expected from ${source}): expected="${formatFontStackForMessage(
+          expectedSans
+        )}", actual="${formatFontStackForMessage(actualSans)}"`
+      );
     }
     if (expectedMono && actualMono !== expectedMono) {
-      issues.fail.push('font spec mismatch (--font-mono)');
+      issues.fail.push(
+        `font spec mismatch (--font-mono, expected from ${source}): expected="${formatFontStackForMessage(
+          expectedMono
+        )}", actual="${formatFontStackForMessage(actualMono)}"`
+      );
     }
   }
 
@@ -445,6 +462,7 @@ async function checkPage({
   timeoutMs,
   skipScreenshots,
   expectedFontVars,
+  expectedFontVarsSource,
   enforceFontSpec
 }) {
   const page = await context.newPage();
@@ -614,6 +632,7 @@ async function checkPage({
     horizontalOverflow: evalResult.horizontalOverflow,
     fontVars: evalResult.fontVars,
     expectedFontVars,
+    expectedFontVarsSource,
     enforceFontSpec,
     prevNext: evalResult.prevNext
   });
@@ -669,7 +688,8 @@ async function main() {
       pagesChecked: 0,
       ok: 0,
       warn: 0,
-      fail: 0
+      fail: 0,
+      globalWarn: 0
     },
     books: {}
   };
@@ -862,6 +882,7 @@ async function main() {
                   timeoutMs,
                   skipScreenshots,
                   expectedFontVars,
+                  expectedFontVarsSource,
                   enforceFontSpec
                 });
               } catch (err) {
@@ -898,10 +919,17 @@ async function main() {
     }
 
     report.fontVarDrift = dryRun ? null : computeFontVarDrift(report.books);
-    const hasFontVarDrift = Boolean(report.fontVarDrift?.hasDrift);
+    report.globalWarnings = [];
+    if (report.fontVarDrift?.hasDrift) {
+      report.summary.globalWarn += 1;
+      report.globalWarnings.push({
+        type: 'fontVarDrift',
+        message: `fontVar drift detected: uniqueSans=${report.fontVarDrift.uniqueFontSans.length} uniqueMono=${report.fontVarDrift.uniqueFontMono.length} (see report.json#fontVarDrift)`
+      });
+    }
 
     const hasFails = report.summary.fail > 0;
-    const hasWarnings = report.summary.warn > 0 || hasFontVarDrift;
+    const hasWarnings = report.summary.warn > 0 || report.summary.globalWarn > 0;
     exitCode = hasFails || (failOnWarnings && hasWarnings) ? 1 : 0;
   } catch (err) {
     exitCode = 1;
@@ -914,8 +942,13 @@ async function main() {
   }
 
   console.log(
-    `✅ done: books=${report.summary.books} pages=${report.summary.pagesChecked} ok=${report.summary.ok} warn=${report.summary.warn} fail=${report.summary.fail}`
+    `✅ done: books=${report.summary.books} pages=${report.summary.pagesChecked} ok=${report.summary.ok} warn=${report.summary.warn} fail=${report.summary.fail} globalWarn=${report.summary.globalWarn}`
   );
+  if (Array.isArray(report.globalWarnings) && report.globalWarnings.length > 0) {
+    for (const w of report.globalWarnings) {
+      console.warn(`⚠️ ${w.type}: ${w.message}`);
+    }
+  }
   console.log(`report: ${reportPath}`);
   if (!skipScreenshots) console.log(`screenshots: ${path.join(outputDir, 'screenshots')}`);
 

@@ -47,4 +47,5 @@ node run.mjs \
 
 - `report.json`: 集計レポート
 - `report.json#fontVarDrift`: `--font-sans` / `--font-mono` のユニーク値の集計（ドリフト検知用）
+- `report.json#globalWarnings`: ページ単位ではない警告（例: fontVarDrift）
 - `screenshots/`: `bookKey/browser/viewport/*.jpg`
