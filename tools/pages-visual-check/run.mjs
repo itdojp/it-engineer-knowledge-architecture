@@ -1031,7 +1031,7 @@ async function checkPage({
             tocActiveSidebarVisibility = await page.evaluate(() => {
               const normalizePath = (p) =>
                 String(p || '')
-                  .replace(/index\\.html$/, '')
+                  .replace(/index\.html$/, '')
                   .replace(/\/+$/, '/');
 
               const currentPath = window.location.pathname;
