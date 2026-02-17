@@ -53,6 +53,7 @@ Options:
   --concurrency <n>         concurrent books (default: 3)
   --timeoutMs <ms>          navigation timeout (default: 45000)
   --fullPage                capture full-page screenshots (default: off)
+  --captureSidebar          capture screenshots with sidebar/drawer opened (default: off)
   --skipScreenshots         do not capture screenshots (default: off)
   --onlyBooks <list>        book keys (default: all)
   --failOnWarnings          treat warnings as failures (default: off)
@@ -204,9 +205,25 @@ function buildHtmlReport(report) {
 
                   const shotRaw = r?.screenshot ? toUrlPath(r.screenshot) : '';
                   const shot = shotRaw ? escapeHtml(shotRaw) : '';
-                  const img = shot
-                    ? `<a class="shot" href="${shot}" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="${shot}" alt="${captionEsc}"></a>`
-                    : `<div class="shot shot-missing">(screenshot skipped)</div>`;
+                  const sidebarShotRaw = r?.screenshotSidebar ? toUrlPath(r.screenshotSidebar) : '';
+                  const sidebarShot = sidebarShotRaw ? escapeHtml(sidebarShotRaw) : '';
+
+                  const shotBlocks = [];
+                  if (shot) {
+                    shotBlocks.push(
+                      `<div class="shot-block"><div class="shot-label">page</div><a class="shot" href="${shot}" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="${shot}" alt="${captionEsc} (page)"></a></div>`
+                    );
+                  }
+                  if (sidebarShot) {
+                    shotBlocks.push(
+                      `<div class="shot-block"><div class="shot-label">sidebar</div><a class="shot" href="${sidebarShot}" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="${sidebarShot}" alt="${captionEsc} (sidebar)"></a></div>`
+                    );
+                  }
+
+                  const img =
+                    shotBlocks.length > 0
+                      ? `<div class="shots">${shotBlocks.join('')}</div>`
+                      : `<div class="shot shot-missing">(screenshot skipped)</div>`;
 
                   const issuesBlock = hasIssues ? `<pre class="issues">${escapeHtml(issuesJson)}</pre>` : '';
 
@@ -285,6 +302,8 @@ function buildHtmlReport(report) {
       figure.ok .status-pill { border-color: #1a7f37; color: #1a7f37; }
       figure.warn .status-pill { border-color: #bf8700; color: #bf8700; }
       figure.fail .status-pill { border-color: #cf222e; color: #cf222e; }
+      .shots { display: grid; gap: 8px; }
+      .shot-label { font-size: 11px; color: #57606a; margin-bottom: 4px; }
       img { max-width: 100%; height: auto; border: 1px solid #e5e5e5; border-radius: 6px; background: #fff; }
       .shot-missing { color: #999; padding: 40px 10px; text-align: center; border: 1px dashed #ddd; border-radius: 6px; background: #fff; }
       pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #f6f8fa; border: 1px solid #eee; border-radius: 8px; padding: 10px; margin: 10px 0 0; }
@@ -588,11 +607,13 @@ function classifyIssues({
   url,
   documentStatus,
   pageErrors,
+  sidebarScreenshotErrors,
   consoleErrors,
   requestFailures,
   httpErrors,
   brokenImages,
   emptyTocLinks,
+  tocActive,
   horizontalOverflow,
   fontVars,
   expectedFontVars,
@@ -608,6 +629,10 @@ function classifyIssues({
 
   for (const err of pageErrors) {
     issues.fail.push(`pageerror: ${err}`);
+  }
+
+  for (const err of sidebarScreenshotErrors ?? []) {
+    issues.warn.push(`sidebar screenshot error: ${err}`);
   }
 
   const criticalTypes = new Set(['document', 'stylesheet', 'script', 'font']);
@@ -675,6 +700,15 @@ function classifyIssues({
     issues.warn.push(`empty toc links: ${emptyTocLinks.count}`);
   }
 
+  if (tocActive?.tocLinkCount > 0) {
+    const matches = tocActive.matchesCurrentCount ?? 0;
+    if (matches === 0) {
+      const current = tocActive.currentPath ?? '';
+      const activeCount = tocActive.activeCount ?? 0;
+      issues.warn.push(`toc active mismatch: current=${current} activeCount=${activeCount}`);
+    }
+  }
+
   if (horizontalOverflow?.overflow) {
     const px = horizontalOverflow.overflowPx ?? '?';
     issues.warn.push(`horizontal overflow: +${px}px`);
@@ -704,6 +738,7 @@ async function checkPage({
   screenshotQuality,
   fullPage,
   timeoutMs,
+  captureSidebar,
   skipScreenshots,
   expectedFontVars,
   expectedFontVarsSource,
@@ -712,6 +747,7 @@ async function checkPage({
   const page = await context.newPage();
   const consoleErrors = [];
   const pageErrors = [];
+  const sidebarScreenshotErrors = [];
   const requestFailures = [];
   const httpErrors = [];
 
@@ -774,6 +810,48 @@ async function checkPage({
         }))
       };
 
+      const normalizePath = (p) =>
+        String(p || '')
+          .replace(/index\.html$/, '')
+          .replace(/\/+$/, '/');
+
+      const currentPath = window.location.pathname;
+      const currentNormalizedPath = normalizePath(currentPath);
+
+      const tocLinks = Array.from(document.querySelectorAll('a.toc-link'));
+      const tocLinkCount = tocLinks.length;
+      const activeTocLinks = tocLinks.filter((a) => a.classList.contains('active'));
+      const activeCount = activeTocLinks.length;
+      const matchesCurrentCount = activeTocLinks
+        .filter((a) => {
+          try {
+            const pathname = new URL(a.href).pathname;
+            return normalizePath(pathname) === currentNormalizedPath;
+          } catch {
+            return false;
+          }
+        })
+        .length;
+      const activeSamples = activeTocLinks.slice(0, 5).map((a) => {
+        let pathname = '';
+        try {
+          pathname = new URL(a.href).pathname;
+        } catch {}
+        return {
+          text: (a.textContent || '').trim().slice(0, 120),
+          href: (a.getAttribute('href') ?? '').slice(0, 200),
+          pathname
+        };
+      });
+      const tocActive = {
+        tocLinkCount,
+        activeCount,
+        matchesCurrentCount,
+        currentPath,
+        currentNormalizedPath,
+        activeSamples
+      };
+
       const docEl = document.documentElement;
       const scrollWidth = docEl.scrollWidth;
       const clientWidth = docEl.clientWidth;
@@ -808,13 +886,14 @@ async function checkPage({
         }
       }
 
-      const prev = document.querySelector('a[rel=\"prev\"]');
-      const next = document.querySelector('a[rel=\"next\"]');
+      const prev = document.querySelector('a[rel="prev"]');
+      const next = document.querySelector('a[rel="next"]');
 
       return {
         fontVars: { fontSans, fontMono },
         brokenImages,
         emptyTocLinks,
+        tocActive,
         horizontalOverflow: {
           overflow: overflowPx > 1,
           overflowPx,
@@ -835,29 +914,125 @@ async function checkPage({
         fontVars: { fontSans: '', fontMono: '' },
         brokenImages: [],
         emptyTocLinks: { count: 0, samples: [] },
+        tocActive: {
+          tocLinkCount: 0,
+          activeCount: 0,
+          matchesCurrentCount: 0,
+          currentPath: '',
+          currentNormalizedPath: '',
+          activeSamples: []
+        },
         horizontalOverflow: { overflow: false, overflowPx: 0, scrollWidth: 0, clientWidth: 0, offenders: [] },
         prevNext: { prevHref: null, nextHref: null }
       };
     });
 
   let screenshotRelPath = null;
+  let screenshotSidebarRelPath = null;
   if (!skipScreenshots) {
+    const ext = screenshotType === 'jpeg' ? 'jpg' : 'png';
+    const pageSlug = slugFromUrl(baseUrl, url);
+    const outDir = path.join(outputDir, 'screenshots', bookKey, browserName, viewportName);
+    let outDirReady = true;
     try {
-      const ext = screenshotType === 'jpeg' ? 'jpg' : 'png';
-      const pageSlug = slugFromUrl(baseUrl, url);
-      const outDir = path.join(outputDir, 'screenshots', bookKey, browserName, viewportName);
       ensureDir(outDir);
-      const filename = `${pageSlug}.${ext}`;
-      const outPath = path.join(outDir, filename);
-      await page.screenshot({
-        path: outPath,
-        type: screenshotType,
-        quality: screenshotType === 'jpeg' ? screenshotQuality : undefined,
-        fullPage
-      });
-      screenshotRelPath = path.relative(outputDir, outPath);
     } catch (err) {
-      pageErrors.push(err?.message ? `screenshot error: ${err.message}` : `screenshot error: ${String(err)}`);
+      outDirReady = false;
+      pageErrors.push(err?.message ? `screenshot dir error: ${err.message}` : `screenshot dir error: ${String(err)}`);
+    }
+
+    if (outDirReady) {
+      try {
+        const filename = `${pageSlug}.${ext}`;
+        const outPath = path.join(outDir, filename);
+        await page.screenshot({
+          path: outPath,
+          type: screenshotType,
+          quality: screenshotType === 'jpeg' ? screenshotQuality : undefined,
+          fullPage
+        });
+        screenshotRelPath = path.relative(outputDir, outPath);
+      } catch (err) {
+        pageErrors.push(err?.message ? `screenshot error: ${err.message}` : `screenshot error: ${String(err)}`);
+      }
+
+      if (captureSidebar) {
+        try {
+          const checkbox = page.locator('#sidebar-toggle-checkbox');
+          const hasCheckbox = (await checkbox.count()) > 0;
+          if (hasCheckbox) {
+            // Legacy layout: checkbox controls sidebar visibility via CSS.
+            // Use direct property assignment (setChecked may fail for hidden inputs).
+            await page
+              .evaluate(() => {
+                const cb = document.getElementById('sidebar-toggle-checkbox');
+                if (!cb || !(cb instanceof HTMLInputElement)) return false;
+                cb.checked = true;
+                cb.dispatchEvent(new Event('input', { bubbles: true }));
+                cb.dispatchEvent(new Event('change', { bubbles: true }));
+                return cb.checked;
+              })
+              .catch(() => {});
+          }
+
+          let opened = await page
+            .evaluate(() => {
+              const cb = document.getElementById('sidebar-toggle-checkbox');
+              if (cb && cb instanceof HTMLInputElement && cb.checked) return true;
+              const sidebar = document.getElementById('sidebar');
+              return Boolean(sidebar && sidebar.classList.contains('active'));
+            })
+            .catch(() => false);
+
+          if (!opened) {
+            // Fallback: click the toggle (some layouts use a label linked to the checkbox).
+            const toggle = page.locator('.sidebar-toggle');
+            if ((await toggle.count()) > 0) {
+              await toggle.first().click({ timeout: 5_000, force: true });
+            }
+
+            await page.waitForTimeout(50);
+
+            opened = await page
+              .evaluate(() => {
+                const cb = document.getElementById('sidebar-toggle-checkbox');
+                if (cb && cb instanceof HTMLInputElement && cb.checked) return true;
+                const sidebar = document.getElementById('sidebar');
+                return Boolean(sidebar && sidebar.classList.contains('active'));
+              })
+              .catch(() => false);
+          }
+
+          if (!opened) {
+            throw new Error('sidebar did not open');
+          }
+
+          // Ensure the active TOC item is visible in the screenshot.
+          await page
+            .evaluate(() => {
+              const active = document.querySelector('a.toc-link.active');
+              if (active && typeof active.scrollIntoView === 'function') {
+                active.scrollIntoView({ block: 'center', behavior: 'auto' });
+              }
+            })
+            .catch(() => {});
+
+          // Wait for sidebar open transition / layout settling.
+          await page.waitForTimeout(350);
+
+          const filename = `${pageSlug}__sidebar.${ext}`;
+          const outPath = path.join(outDir, filename);
+          await page.screenshot({
+            path: outPath,
+            type: screenshotType,
+            quality: screenshotType === 'jpeg' ? screenshotQuality : undefined,
+            fullPage
+          });
+          screenshotSidebarRelPath = path.relative(outputDir, outPath);
+        } catch (err) {
+          sidebarScreenshotErrors.push(err?.message ? String(err.message) : String(err));
+        }
+      }
     }
   }
 
@@ -868,11 +1043,13 @@ async function checkPage({
     url,
     documentStatus,
     pageErrors,
+    sidebarScreenshotErrors,
     consoleErrors,
     requestFailures,
     httpErrors,
     brokenImages: evalResult.brokenImages,
     emptyTocLinks: evalResult.emptyTocLinks,
+    tocActive: evalResult.tocActive,
     horizontalOverflow: evalResult.horizontalOverflow,
     fontVars: evalResult.fontVars,
     expectedFontVars,
@@ -889,12 +1066,15 @@ async function checkPage({
     prevNext: evalResult.prevNext,
     brokenImages: evalResult.brokenImages,
     emptyTocLinks: evalResult.emptyTocLinks,
+    tocActive: evalResult.tocActive,
     horizontalOverflow: evalResult.horizontalOverflow,
     consoleErrors,
     pageErrors,
+    sidebarScreenshotErrors,
     requestFailures,
     httpErrors,
     screenshot: screenshotRelPath,
+    screenshotSidebar: screenshotSidebarRelPath,
     issues,
     status: issues.fail.length > 0 ? 'fail' : issues.warn.length > 0 ? 'warn' : 'ok'
   };
@@ -924,7 +1104,7 @@ async function main() {
   const htmlReportPath = path.join(outputDir, 'index.html');
 
   const report = {
-    schemaVersion: '1.0',
+    schemaVersion: '1.1',
     generatedAt: new Date().toISOString(),
     registryPath: path.relative(REPO_ROOT, registryPath),
     config: {},
@@ -942,6 +1122,7 @@ async function main() {
   const launched = {};
   let exitCode = 0;
   let skipScreenshots = false;
+  let captureSidebar = false;
   let dryRun = false;
   let failOnWarnings = false;
   let enforceFontSpec = false;
@@ -972,6 +1153,7 @@ async function main() {
     const timeoutMs = parsePositiveIntArg(args.timeoutMs, 'timeoutMs', 45_000, { min: 1_000, max: 300_000 });
 
     const fullPage = parseBooleanArg(args.fullPage, 'fullPage');
+    captureSidebar = parseBooleanArg(args.captureSidebar, 'captureSidebar');
     skipScreenshots = parseBooleanArg(args.skipScreenshots, 'skipScreenshots');
     dryRun = parseBooleanArg(args.dryRun, 'dryRun');
     failOnWarnings = parseBooleanArg(args.failOnWarnings, 'failOnWarnings');
@@ -1033,7 +1215,7 @@ async function main() {
       maxPagesPerBook,
       concurrency,
       timeoutMs,
-      screenshot: { type: screenshotType, quality: screenshotQuality, fullPage, skip: skipScreenshots },
+      screenshot: { type: screenshotType, quality: screenshotQuality, fullPage, skip: skipScreenshots, captureSidebar },
       enforceFontSpec,
       expectedFontVarsSource,
       expectedFontVars
@@ -1162,6 +1344,7 @@ async function main() {
                   screenshotQuality,
                   fullPage,
                   timeoutMs,
+                  captureSidebar,
                   skipScreenshots,
                   expectedFontVars,
                   expectedFontVarsSource,

@@ -29,6 +29,7 @@ node run.mjs \
   --viewports mobile,tablet,desktop \
   --maxPagesPerBook 4 \
   --concurrency 2 \
+  --captureSidebar \
   --enforceFontSpec
 ```
 
@@ -59,6 +60,7 @@ node run.mjs \
 - `--font-sans` / `--font-mono` の CSS 変数が存在するか（欠落は fail）
 - `--enforceFontSpec` 指定時は `docs/FONT-SPECIFICATION.md` から期待値を抽出し、ドリフトを fail
 - `rel="prev"` / `rel="next"` の存在（root 以外で両方欠落は warn）
+- `.toc-link.active` が現在URLと一致しているか（TOC現在位置ハイライトの整合性。不一致は warn）
 
 ## 目視観点（Artifacts screenshots のチェックポイント）
 
@@ -78,3 +80,4 @@ Artifacts の screenshots は、自動検査で拾えない「体裁/可読性�
 - `report.json#fontVarDrift`: `--font-sans` / `--font-mono` のユニーク値の集計（ドリフト検知用）
 - `report.json#globalWarnings`: ページ単位ではない警告（例: fontVarDrift）
 - `screenshots/`: `bookKey/browser/viewport/*.jpg`
+  - `--captureSidebar` 指定時は `*__sidebar.jpg` を追加出力（Drawer/TOC を開いた状態）
