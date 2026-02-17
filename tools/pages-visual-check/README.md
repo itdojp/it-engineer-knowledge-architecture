@@ -61,6 +61,7 @@ node run.mjs \
 - `--enforceFontSpec` 指定時は `docs/FONT-SPECIFICATION.md` から期待値を抽出し、ドリフトを fail
 - `rel="prev"` / `rel="next"` の存在（root 以外で両方欠落は warn）
 - `.toc-link.active` が現在URLと一致しているか（TOC現在位置ハイライトの整合性。不一致は warn）
+- `--captureSidebar` 指定時、Drawer を開いた直後に `.toc-link.active` が可視領域内にあるか（可視領域外は warn）
 
 ## 目視観点（Artifacts screenshots のチェックポイント）
 
