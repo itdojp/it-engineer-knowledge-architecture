@@ -945,21 +945,56 @@ async function checkPage({
       pageErrors.push(err?.message ? `screenshot error: ${err.message}` : `screenshot error: ${String(err)}`);
     }
 
-    if (captureSidebar) {
-      try {
-        const checkbox = page.locator('#sidebar-toggle-checkbox');
-        if ((await checkbox.count()) > 0) {
-          // Legacy layout: checkbox controls sidebar visibility via CSS.
-          await checkbox.first().setChecked(true, { force: true });
-        } else {
-          const toggle = page.locator('.sidebar-toggle');
-          if ((await toggle.count()) > 0) {
-            // Some layouts render the toggle as a label; use force click to avoid flakiness.
-            await toggle.first().click({ timeout: 5_000, force: true });
-            // Newer layout adds `.active` to the sidebar element.
-            await page.waitForSelector('#sidebar.active', { timeout: 2_000 }).catch(() => {});
-          }
-        }
+	    if (captureSidebar) {
+	      try {
+	        const checkbox = page.locator('#sidebar-toggle-checkbox');
+	        const hasCheckbox = (await checkbox.count()) > 0;
+	        if (hasCheckbox) {
+	          // Legacy layout: checkbox controls sidebar visibility via CSS.
+	          // Use direct property assignment (setChecked may fail for hidden inputs).
+	          await page
+	            .evaluate(() => {
+	              const cb = document.getElementById('sidebar-toggle-checkbox');
+              if (!cb || !(cb instanceof HTMLInputElement)) return false;
+              cb.checked = true;
+              cb.dispatchEvent(new Event('input', { bubbles: true }));
+              cb.dispatchEvent(new Event('change', { bubbles: true }));
+              return cb.checked;
+	            })
+	            .catch(() => {});
+	        }
+
+	        let opened = await page
+	          .evaluate(() => {
+	            const cb = document.getElementById('sidebar-toggle-checkbox');
+	            if (cb && cb instanceof HTMLInputElement && cb.checked) return true;
+	            const sidebar = document.getElementById('sidebar');
+	            return Boolean(sidebar && sidebar.classList.contains('active'));
+	          })
+	          .catch(() => false);
+
+	        if (!opened) {
+	          // Fallback: click the toggle (some layouts use a label linked to the checkbox).
+	          const toggle = page.locator('.sidebar-toggle');
+	          if ((await toggle.count()) > 0) {
+	            await toggle.first().click({ timeout: 5_000, force: true });
+	          }
+
+	          await page.waitForTimeout(50);
+
+	          opened = await page
+	            .evaluate(() => {
+	              const cb = document.getElementById('sidebar-toggle-checkbox');
+	              if (cb && cb instanceof HTMLInputElement && cb.checked) return true;
+	              const sidebar = document.getElementById('sidebar');
+	              return Boolean(sidebar && sidebar.classList.contains('active'));
+	            })
+	            .catch(() => false);
+	        }
+
+	        if (!opened) {
+	          throw new Error('sidebar did not open');
+	        }
 
         // Ensure the active TOC item is visible in the screenshot.
         await page
