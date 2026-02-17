@@ -139,6 +139,11 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;');
 }
 
+function toUrlPath(value) {
+  // Normalize Windows path separators for use in HTML href/src.
+  return String(value ?? '').replaceAll('\\', '/');
+}
+
 function summarizeStatuses(results) {
   const summary = { ok: 0, warn: 0, fail: 0 };
   for (const r of results ?? []) {
@@ -168,8 +173,8 @@ function buildHtmlReport(report) {
 
   const sections = bookEntries
     .map(([bookKey, book]) => {
-      const baseUrl = book?.baseUrl ? escapeHtml(book.baseUrl) : '';
-      const err = book?.error ? escapeHtml(book.error) : '';
+      const baseUrl = book?.baseUrl ?? '';
+      const err = book?.error ?? '';
 
       const results = book?.results ?? {};
       const browserBlocks = Object.entries(results)
@@ -182,16 +187,35 @@ function buildHtmlReport(report) {
               const summaryBadge = `${statusSummary.ok} ok / ${statusSummary.warn} warn / ${statusSummary.fail} fail`;
               const pages = (pageResults ?? [])
                 .map((r) => {
-                  const shot = r?.screenshot ? escapeHtml(r.screenshot) : '';
-                  const pageUrl = escapeHtml(r?.url ?? '');
-                  const status = escapeHtml(r?.status ?? '');
-                  const issues = r?.issues?.fail?.length || r?.issues?.warn?.length ? escapeHtml(JSON.stringify(r.issues)) : '';
-                  const caption = `${status.toUpperCase()}: ${pageUrl}`;
+                  const statusRaw = String(r?.status ?? '');
+                  const statusClass =
+                    statusRaw === 'ok' || statusRaw === 'warn' || statusRaw === 'fail' ? statusRaw : 'unknown';
+                  const statusLabel = statusClass.toUpperCase();
+
+                  const pageUrlRaw = String(r?.url ?? '');
+                  const pageUrlAttr = pageUrlRaw ? escapeHtml(pageUrlRaw) : '';
+                  const pageUrlText = pageUrlRaw ? escapeHtml(pageUrlRaw) : '';
+
+                  const captionText = pageUrlRaw ? `${statusLabel}: ${pageUrlRaw}` : statusLabel;
+                  const captionEsc = escapeHtml(captionText);
+
+                  const hasIssues = (r?.issues?.fail?.length ?? 0) > 0 || (r?.issues?.warn?.length ?? 0) > 0;
+                  const issuesJson = hasIssues ? JSON.stringify(r.issues, null, 2) : '';
+
+                  const shotRaw = r?.screenshot ? toUrlPath(r.screenshot) : '';
+                  const shot = shotRaw ? escapeHtml(shotRaw) : '';
                   const img = shot
-                    ? `<a class="shot" href="${shot}" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="${shot}" alt="${caption}"></a>`
+                    ? `<a class="shot" href="${shot}" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="${shot}" alt="${captionEsc}"></a>`
                     : `<div class="shot shot-missing">(screenshot skipped)</div>`;
-                  const issuesBlock = issues ? `<pre class="issues">${issues}</pre>` : '';
-                  return `<figure class="page ${status}"><figcaption>${escapeHtml(caption)}</figcaption>${img}${issuesBlock}</figure>`;
+
+                  const issuesBlock = hasIssues ? `<pre class="issues">${escapeHtml(issuesJson)}</pre>` : '';
+
+                  const caption =
+                    pageUrlRaw && pageUrlAttr
+                      ? `<span class="status-pill">${escapeHtml(statusLabel)}</span><a class="page-link" href="${pageUrlAttr}" target="_blank" rel="noopener noreferrer">${pageUrlText}</a>`
+                      : `<span class="status-pill">${escapeHtml(statusLabel)}</span>`;
+
+                  return `<figure class="page ${statusClass}"><figcaption>${caption}</figcaption>${img}${issuesBlock}</figure>`;
                 })
                 .join('\n');
 
@@ -206,13 +230,17 @@ function buildHtmlReport(report) {
         })
         .join('\n');
 
-      const header = baseUrl
-        ? `<a href="${baseUrl}" target="_blank" rel="noopener noreferrer">${escapeHtml(bookKey)}</a>`
+      const baseUrlAttr = baseUrl ? escapeHtml(baseUrl) : '';
+
+      const header = baseUrlAttr
+        ? `<a href="${baseUrlAttr}" target="_blank" rel="noopener noreferrer">${escapeHtml(bookKey)}</a>`
         : escapeHtml(bookKey);
 
       const meta = err
-        ? `<div class="error">error: ${err}</div>`
-        : `<div class="meta"><span class="mono">${escapeHtml(baseUrl)}</span></div>`;
+        ? `<div class="error">error: ${escapeHtml(err)}</div>`
+        : baseUrlAttr
+          ? `<div class="meta"><span class="mono">${baseUrlAttr}</span></div>`
+          : '';
 
       return `<details class="book"><summary>${header}</summary>${meta}${browserBlocks}</details>`;
     })
@@ -251,6 +279,12 @@ function buildHtmlReport(report) {
       figure.warn { border-left: 4px solid #bf8700; }
       figure.fail { border-left: 4px solid #cf222e; }
       figcaption { font-size: 12px; margin-bottom: 8px; }
+      a { color: #0969da; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .status-pill { display: inline-block; margin-right: 6px; padding: 1px 8px; font-weight: 700; border: 1px solid #ddd; border-radius: 999px; background: #fff; }
+      figure.ok .status-pill { border-color: #1a7f37; color: #1a7f37; }
+      figure.warn .status-pill { border-color: #bf8700; color: #bf8700; }
+      figure.fail .status-pill { border-color: #cf222e; color: #cf222e; }
       img { max-width: 100%; height: auto; border: 1px solid #e5e5e5; border-radius: 6px; background: #fff; }
       .shot-missing { color: #999; padding: 40px 10px; text-align: center; border: 1px dashed #ddd; border-radius: 6px; background: #fff; }
       pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #f6f8fa; border: 1px solid #eee; border-radius: 8px; padding: 10px; margin: 10px 0 0; }
