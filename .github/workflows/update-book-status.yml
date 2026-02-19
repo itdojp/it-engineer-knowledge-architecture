@@ -15,12 +15,19 @@ jobs:
   update-book-status:
     runs-on: ubuntu-latest
     name: 書籍ステータス自動更新
+    env:
+      TZ: Asia/Tokyo
 
     steps:
       - name: チェックアウト
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
       - name: 進捗レポート生成（book-registry起点）
         env:
