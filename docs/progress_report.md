@@ -1,22 +1,22 @@
 # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: 2026年02月19日 08:18:49 JST
+**更新日時**: 2026年02月19日 09:27:40 JST
 
 ## 📈 全体統計
 
 - **総書籍数**: 28冊
-- **アクティブ書籍**: 28冊
+- **アクティブ書籍**: 27冊
 - **アーカイブ書籍**: 0冊
-- **利用不可**: 0冊
+- **利用不可**: 1冊
 - **総Open Issue数**: 9件
-- **総Open PR数**: 0件
+- **総Open PR数**: 1件
 - **総Star数**: 1個
 
 ## 📚 書籍別ステータス
 
 | 書籍名 | Pages | Repo | ステータス | 最終更新 | Open Issues | Open PRs | Stars |
 |---|---|---|---|---|---:|---:|---:|
-| BioinformaticsGuide-book | [読む](https://itdojp.github.io/BioinformaticsGuide-book/) | [GitHub](https://github.com/itdojp/BioinformaticsGuide-book) | active | 2026-02-18T13:45:45Z | 0 | 0 | 0 |
+| BioinformaticsGuide-book | [読む](https://itdojp.github.io/BioinformaticsGuide-book/) | [GitHub](https://github.com/itdojp/BioinformaticsGuide-book) | unavailable | N/A | 0 | 0 | 0 |
 | IT-engineer-communication-book | [読む](https://itdojp.github.io/IT-engineer-communication-book/) | [GitHub](https://github.com/itdojp/IT-engineer-communication-book) | active | 2026-02-17T05:54:52Z | 0 | 0 | 0 |
 | IT-infra-book | [読む](https://itdojp.github.io/IT-infra-book/) | [GitHub](https://github.com/itdojp/IT-infra-book) | active | 2026-02-17T05:54:57Z | 1 | 0 | 0 |
 | IT-infra-troubleshooting-book | [読む](https://itdojp.github.io/IT-infra-troubleshooting-book/) | [GitHub](https://github.com/itdojp/IT-infra-troubleshooting-book) | active | 2026-02-17T05:55:02Z | 0 | 0 | 0 |
@@ -28,7 +28,7 @@
 | computational-physicalism-book | [読む](https://itdojp.github.io/computational-physicalism-book/) | [GitHub](https://github.com/itdojp/computational-physicalism-book) | active | 2026-02-17T05:55:33Z | 1 | 0 | 0 |
 | cs-visionaries-book | [読む](https://itdojp.github.io/cs-visionaries-book/) | [GitHub](https://github.com/itdojp/cs-visionaries-book) | active | 2026-02-17T05:55:38Z | 1 | 0 | 0 |
 | ethereum-learning-bootcamp | [読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | [GitHub](https://github.com/itdojp/ethereum-learning-bootcamp) | active | 2026-02-18T16:07:34Z | 0 | 0 | 0 |
-| formal-methods-book | [読む](https://itdojp.github.io/formal-methods-book/) | [GitHub](https://github.com/itdojp/formal-methods-book) | active | 2026-02-18T23:13:02Z | 1 | 0 | 1 |
+| formal-methods-book | [読む](https://itdojp.github.io/formal-methods-book/) | [GitHub](https://github.com/itdojp/formal-methods-book) | active | 2026-02-18T23:13:02Z | 1 | 1 | 1 |
 | github-guide-for-beginners-book | [読む](https://itdojp.github.io/github-guide-for-beginners-book/) | [GitHub](https://github.com/itdojp/github-guide-for-beginners-book) | active | 2026-02-17T05:55:53Z | 0 | 0 | 0 |
 | github-workflow-book | [読む](https://itdojp.github.io/github-workflow-book/) | [GitHub](https://github.com/itdojp/github-workflow-book) | active | 2026-02-17T05:55:59Z | 0 | 0 | 0 |
 | illustrated-linux-basics-book | [読む](https://itdojp.github.io/illustrated-linux-basics-book/) | [GitHub](https://github.com/itdojp/illustrated-linux-basics-book) | active | 2026-02-17T05:56:03Z | 0 | 0 | 0 |
@@ -42,7 +42,7 @@
 | proxmox_book | [読む](https://itdojp.github.io/proxmox_book/) | [GitHub](https://github.com/itdojp/proxmox_book) | active | 2026-02-17T05:56:44Z | 2 | 0 | 0 |
 | small-webapp-software-design-book | [読む](https://itdojp.github.io/small-webapp-software-design-book/) | [GitHub](https://github.com/itdojp/small-webapp-software-design-book) | active | 2026-02-18T16:06:16Z | 0 | 0 | 0 |
 | supabase-architecture-patterns-book | [読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | [GitHub](https://github.com/itdojp/supabase-architecture-patterns-book) | active | 2026-02-17T05:56:49Z | 0 | 0 | 0 |
-| theoretical-computer-science-textbook | [読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | [GitHub](https://github.com/itdojp/theoretical-computer-science-textbook) | active | 2026-02-18T18:52:35Z | 1 | 0 | 0 |
+| theoretical-computer-science-textbook | [読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | [GitHub](https://github.com/itdojp/theoretical-computer-science-textbook) | active | 2026-02-19T00:12:48Z | 1 | 0 | 0 |
 | wsl2-linux-essentials-book | [読む](https://itdojp.github.io/wsl2-linux-essentials-book/) | [GitHub](https://github.com/itdojp/wsl2-linux-essentials-book) | active | 2026-02-17T05:57:01Z | 0 | 0 | 0 |
 
 備考: `linux-infra-textbook` は `linux-infra-textbook2` に置換済みの旧版（アーカイブ）
