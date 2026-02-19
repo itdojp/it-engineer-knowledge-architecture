@@ -794,6 +794,7 @@ async function checkPage({
 
   let documentStatus = null;
   let navigationAttempts = 0;
+  const maxNavigationAttempts = 3;
   const isTransientStatus = (status) => status === 429 || (status >= 500 && status <= 599);
   const criticalTypes = new Set(['document', 'stylesheet', 'script', 'font']);
   const hasTransientCriticalSameOriginHttpError = () =>
@@ -803,7 +804,7 @@ async function checkPage({
 
   // GitHub Pages can intermittently return 5xx even for healthy sites.
   // Retry a few times to reduce false negatives in visual checks.
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  for (let attempt = 1; attempt <= maxNavigationAttempts; attempt++) {
     navigationAttempts = attempt;
 
     // Clear per-page signals so we only report the final attempt.
@@ -822,12 +823,13 @@ async function checkPage({
         // Some pages keep small background requests; do not fail here.
       }
     } catch (err) {
-      pageErrors.push(err?.message ? String(err.message) : String(err));
+      const message = err?.message ? String(err.message) : String(err);
+      pageErrors.push(`navigation error: ${message}`);
     }
 
     const transientDoc = typeof documentStatus === 'number' && isTransientStatus(documentStatus);
     const transientCriticalAsset = hasTransientCriticalSameOriginHttpError();
-    const shouldRetry = (transientDoc || transientCriticalAsset) && attempt < 3;
+    const shouldRetry = (transientDoc || transientCriticalAsset) && attempt < maxNavigationAttempts;
     if (shouldRetry) {
       // Minimal exponential backoff: 1s, 2s
       await page.waitForTimeout(1000 * attempt);
