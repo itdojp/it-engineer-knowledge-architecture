@@ -28,6 +28,22 @@
       },
       "notes": "暫定割当（要確認）"
     },
+    "GitHub-AgentOps-book": {
+      "repo": "itdojp/GitHub-AgentOps-book",
+      "pages": "https://itdojp.github.io/GitHub-AgentOps-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
     "IT-engineer-communication-book": {
       "repo": "itdojp/IT-engineer-communication-book",
       "pages": "https://itdojp.github.io/IT-engineer-communication-book/",
@@ -137,6 +153,22 @@
         "figureIndex": true,
         "legalNotice": false,
         "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "categorical-software-design-book": {
+      "repo": "itdojp/categorical-software-design-book",
+      "pages": "https://itdojp.github.io/categorical-software-design-book/",
+      "profile": "C",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": true
       },
       "notes": "暫定割当（要確認）"
     },
