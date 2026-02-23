@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "updatedAt": "2026-02-09",
+  "updatedAt": "2026-02-23",
   "modulesCatalog": [
     "quickStart",
     "readingGuide",
@@ -299,6 +299,22 @@
         "glossary": false
       },
       "notes": "暫定割当（要確認）"
+    },
+    "kubernetes-proxmox-to-cloud-book": {
+      "repo": "itdojp/kubernetes-proxmox-to-cloud-book",
+      "pages": "https://itdojp.github.io/kubernetes-proxmox-to-cloud-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": true,
+        "readingGuide": true,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "初期登録"
     },
     "linux-infra-textbook2": {
       "repo": "itdojp/linux-infra-textbook2",
