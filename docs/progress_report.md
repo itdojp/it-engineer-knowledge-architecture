@@ -1,6 +1,6 @@
 # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: 2026年02月22日 09:26:16 JST
+**更新日時**: 2026年02月23日 09:26:46 JST
 
 ## 📈 全体統計
 
@@ -8,7 +8,7 @@
 - **アクティブ書籍**: 27冊
 - **アーカイブ書籍**: 0冊
 - **利用不可**: 1冊
-- **総Open Issue数**: 15件
+- **総Open Issue数**: 13件
 - **総Open PR数**: 0件
 - **総Star数**: 1個
 
@@ -29,15 +29,15 @@
 | cs-visionaries-book | [読む](https://itdojp.github.io/cs-visionaries-book/) | [GitHub](https://github.com/itdojp/cs-visionaries-book) | active | 2026-02-17T05:55:38Z | 1 | 0 | 0 |
 | ethereum-learning-bootcamp | [読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | [GitHub](https://github.com/itdojp/ethereum-learning-bootcamp) | active | 2026-02-18T16:07:34Z | 0 | 0 | 0 |
 | formal-methods-book | [読む](https://itdojp.github.io/formal-methods-book/) | [GitHub](https://github.com/itdojp/formal-methods-book) | active | 2026-02-21T04:34:40Z | 0 | 0 | 1 |
-| github-guide-for-beginners-book | [読む](https://itdojp.github.io/github-guide-for-beginners-book/) | [GitHub](https://github.com/itdojp/github-guide-for-beginners-book) | active | 2026-02-21T20:38:36Z | 1 | 0 | 0 |
-| github-workflow-book | [読む](https://itdojp.github.io/github-workflow-book/) | [GitHub](https://github.com/itdojp/github-workflow-book) | active | 2026-02-21T08:25:09Z | 0 | 0 | 0 |
+| github-guide-for-beginners-book | [読む](https://itdojp.github.io/github-guide-for-beginners-book/) | [GitHub](https://github.com/itdojp/github-guide-for-beginners-book) | active | 2026-02-22T01:42:53Z | 0 | 0 | 0 |
+| github-workflow-book | [読む](https://itdojp.github.io/github-workflow-book/) | [GitHub](https://github.com/itdojp/github-workflow-book) | active | 2026-02-22T04:32:15Z | 0 | 0 | 0 |
 | illustrated-linux-basics-book | [読む](https://itdojp.github.io/illustrated-linux-basics-book/) | [GitHub](https://github.com/itdojp/illustrated-linux-basics-book) | active | 2026-02-19T20:21:47Z | 1 | 0 | 0 |
 | it-infra-security-guide-book | [読む](https://itdojp.github.io/it-infra-security-guide-book/) | [GitHub](https://github.com/itdojp/it-infra-security-guide-book) | active | 2026-02-17T05:56:09Z | 0 | 0 | 0 |
-| it-infra-software-essentials-book | [読む](https://itdojp.github.io/it-infra-software-essentials-book/) | [GitHub](https://github.com/itdojp/it-infra-software-essentials-book) | active | 2026-02-19T20:55:46Z | 2 | 0 | 0 |
+| it-infra-software-essentials-book | [読む](https://itdojp.github.io/it-infra-software-essentials-book/) | [GitHub](https://github.com/itdojp/it-infra-software-essentials-book) | active | 2026-02-22T05:08:41Z | 1 | 0 | 0 |
 | linux-infra-textbook2 | [読む](https://itdojp.github.io/linux-infra-textbook2/) | [GitHub](https://github.com/itdojp/linux-infra-textbook2) | active | 2026-02-19T20:21:38Z | 2 | 0 | 0 |
 | negotiation-for-engineers-book | [読む](https://itdojp.github.io/negotiation-for-engineers-book/) | [GitHub](https://github.com/itdojp/negotiation-for-engineers-book) | active | 2026-02-17T05:56:23Z | 0 | 0 | 0 |
 | pentest-learning-book | [読む](https://itdojp.github.io/pentest-learning-book/) | [GitHub](https://github.com/itdojp/pentest-learning-book) | active | 2026-02-17T05:56:28Z | 0 | 0 | 0 |
-| podman-book | [読む](https://itdojp.github.io/podman-book/) | [GitHub](https://github.com/itdojp/podman-book) | active | 2026-02-17T05:57:06Z | 0 | 0 | 0 |
+| podman-book | [読む](https://itdojp.github.io/podman-book/) | [GitHub](https://github.com/itdojp/podman-book) | active | 2026-02-22T23:47:25Z | 0 | 0 | 0 |
 | practical-auth-book | [読む](https://itdojp.github.io/practical-auth-book/) | [GitHub](https://github.com/itdojp/practical-auth-book) | active | 2026-02-17T05:56:33Z | 0 | 0 | 0 |
 | proxmox_book | [読む](https://itdojp.github.io/proxmox_book/) | [GitHub](https://github.com/itdojp/proxmox_book) | active | 2026-02-17T05:56:44Z | 2 | 0 | 0 |
 | small-webapp-software-design-book | [読む](https://itdojp.github.io/small-webapp-software-design-book/) | [GitHub](https://github.com/itdojp/small-webapp-software-design-book) | active | 2026-02-18T16:06:16Z | 0 | 0 | 0 |
