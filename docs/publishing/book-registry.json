@@ -220,6 +220,22 @@
       },
       "notes": "暫定割当（要確認）"
     },
+    "engineering-documentation-book": {
+      "repo": "itdojp/engineering-documentation-book",
+      "pages": "https://itdojp.github.io/engineering-documentation-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
     "ethereum-learning-bootcamp": {
       "repo": "itdojp/ethereum-learning-bootcamp",
       "pages": "https://itdojp.github.io/ethereum-learning-bootcamp/",
@@ -233,6 +249,22 @@
         "figureIndex": false,
         "legalNotice": false,
         "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "evidence-based-engineering-book": {
+      "repo": "itdojp/evidence-based-engineering-book",
+      "pages": "https://itdojp.github.io/evidence-based-engineering-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
       },
       "notes": "暫定割当（要確認）"
     },
@@ -300,6 +332,38 @@
       },
       "notes": "暫定割当（要確認）"
     },
+    "incident-response-basics-book": {
+      "repo": "itdojp/incident-response-basics-book",
+      "pages": "https://itdojp.github.io/incident-response-basics-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "issue-driven-work-book": {
+      "repo": "itdojp/issue-driven-work-book",
+      "pages": "https://itdojp.github.io/issue-driven-work-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
     "it-infra-security-guide-book": {
       "repo": "itdojp/it-infra-security-guide-book",
       "pages": "https://itdojp.github.io/it-infra-security-guide-book/",
@@ -331,6 +395,38 @@
         "glossary": false
       },
       "notes": "暫定割当（要確認）"
+    },
+    "kubernetes-basics-book": {
+      "repo": "itdojp/kubernetes-basics-book",
+      "pages": "https://itdojp.github.io/kubernetes-basics-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "初期登録"
+    },
+    "kubernetes-cluster-ops-book": {
+      "repo": "itdojp/kubernetes-cluster-ops-book",
+      "pages": "https://itdojp.github.io/kubernetes-cluster-ops-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "初期登録"
     },
     "kubernetes-proxmox-to-cloud-book": {
       "repo": "itdojp/kubernetes-proxmox-to-cloud-book",
@@ -444,6 +540,22 @@
       },
       "notes": "暫定割当（要確認）"
     },
+    "security-privacy-literacy-book": {
+      "repo": "itdojp/security-privacy-literacy-book",
+      "pages": "https://itdojp.github.io/security-privacy-literacy-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
     "small-webapp-software-design-book": {
       "repo": "itdojp/small-webapp-software-design-book",
       "pages": "https://itdojp.github.io/small-webapp-software-design-book/",
@@ -489,118 +601,6 @@
         "figureIndex": true,
         "legalNotice": false,
         "glossary": true
-      },
-      "notes": "暫定割当（要確認）"
-    },
-    "engineering-documentation-book": {
-      "repo": "itdojp/engineering-documentation-book",
-      "pages": "https://itdojp.github.io/engineering-documentation-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
-      },
-      "notes": "暫定割当（要確認）"
-    },
-    "evidence-based-engineering-book": {
-      "repo": "itdojp/evidence-based-engineering-book",
-      "pages": "https://itdojp.github.io/evidence-based-engineering-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
-      },
-      "notes": "暫定割当（要確認）"
-    },
-    "incident-response-basics-book": {
-      "repo": "itdojp/incident-response-basics-book",
-      "pages": "https://itdojp.github.io/incident-response-basics-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
-      },
-      "notes": "暫定割当（要確認）"
-    },
-    "issue-driven-work-book": {
-      "repo": "itdojp/issue-driven-work-book",
-      "pages": "https://itdojp.github.io/issue-driven-work-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
-      },
-      "notes": "暫定割当（要確認）"
-    },
-    "kubernetes-basics-book": {
-      "repo": "itdojp/kubernetes-basics-book",
-      "pages": "https://itdojp.github.io/kubernetes-basics-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
-      },
-      "notes": "初期登録"
-    },
-    "kubernetes-cluster-ops-book": {
-      "repo": "itdojp/kubernetes-cluster-ops-book",
-      "pages": "https://itdojp.github.io/kubernetes-cluster-ops-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
-      },
-      "notes": "初期登録"
-    },
-    "security-privacy-literacy-book": {
-      "repo": "itdojp/security-privacy-literacy-book",
-      "pages": "https://itdojp.github.io/security-privacy-literacy-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
       },
       "notes": "暫定割当（要確認）"
     },

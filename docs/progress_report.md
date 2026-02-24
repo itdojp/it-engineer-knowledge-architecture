@@ -1,6 +1,6 @@
 # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: 2026年02月24日 09:19:59 JST
+**更新日時**: 2026年02月24日 14:00:21 JST
 
 ## 📈 全体統計
 
@@ -8,7 +8,7 @@
 - **アクティブ書籍**: 38冊
 - **アーカイブ書籍**: 0冊
 - **利用不可**: 0冊
-- **総Open Issue数**: 13件
+- **総Open Issue数**: 15件
 - **総Open PR数**: 0件
 - **総Star数**: 1個
 
@@ -40,8 +40,8 @@
 | issue-driven-work-book | [読む](https://itdojp.github.io/issue-driven-work-book/) | [GitHub](https://github.com/itdojp/issue-driven-work-book) | active | 2026-02-23T21:12:05Z | 0 | 0 | 0 |
 | it-infra-security-guide-book | [読む](https://itdojp.github.io/it-infra-security-guide-book/) | [GitHub](https://github.com/itdojp/it-infra-security-guide-book) | active | 2026-02-17T05:56:09Z | 0 | 0 | 0 |
 | it-infra-software-essentials-book | [読む](https://itdojp.github.io/it-infra-software-essentials-book/) | [GitHub](https://github.com/itdojp/it-infra-software-essentials-book) | active | 2026-02-22T05:08:41Z | 1 | 0 | 0 |
-| kubernetes-basics-book | [読む](https://itdojp.github.io/kubernetes-basics-book/) | [GitHub](https://github.com/itdojp/kubernetes-basics-book) | active | 2026-02-23T22:33:32Z | 0 | 0 | 0 |
-| kubernetes-cluster-ops-book | [読む](https://itdojp.github.io/kubernetes-cluster-ops-book/) | [GitHub](https://github.com/itdojp/kubernetes-cluster-ops-book) | active | 2026-02-23T22:13:17Z | 0 | 0 | 0 |
+| kubernetes-basics-book | [読む](https://itdojp.github.io/kubernetes-basics-book/) | [GitHub](https://github.com/itdojp/kubernetes-basics-book) | active | 2026-02-23T22:33:32Z | 1 | 0 | 0 |
+| kubernetes-cluster-ops-book | [読む](https://itdojp.github.io/kubernetes-cluster-ops-book/) | [GitHub](https://github.com/itdojp/kubernetes-cluster-ops-book) | active | 2026-02-23T22:13:17Z | 1 | 0 | 0 |
 | kubernetes-proxmox-to-cloud-book | [読む](https://itdojp.github.io/kubernetes-proxmox-to-cloud-book/) | [GitHub](https://github.com/itdojp/kubernetes-proxmox-to-cloud-book) | active | 2026-02-23T21:06:52Z | 0 | 0 | 0 |
 | linux-infra-textbook2 | [読む](https://itdojp.github.io/linux-infra-textbook2/) | [GitHub](https://github.com/itdojp/linux-infra-textbook2) | active | 2026-02-19T20:21:38Z | 2 | 0 | 0 |
 | negotiation-for-engineers-book | [読む](https://itdojp.github.io/negotiation-for-engineers-book/) | [GitHub](https://github.com/itdojp/negotiation-for-engineers-book) | active | 2026-02-17T05:56:23Z | 0 | 0 | 0 |
