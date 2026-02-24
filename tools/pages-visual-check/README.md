@@ -13,7 +13,7 @@ cd tools/pages-visual-check
 npm ci
 npx playwright install --with-deps chromium
 
-# 既定: 28冊 x (root + 代表3ページ) x (mobile+desktop) x chromium
+# 既定: 38冊 x (root + 代表3ページ) x (mobile+desktop) x chromium
 npm run check
 ```
 

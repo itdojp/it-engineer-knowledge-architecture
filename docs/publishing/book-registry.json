@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "updatedAt": "2026-02-23",
+  "updatedAt": "2026-02-24",
   "modulesCatalog": [
     "quickStart",
     "readingGuide",
@@ -489,6 +489,118 @@
         "figureIndex": true,
         "legalNotice": false,
         "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "engineering-documentation-book": {
+      "repo": "itdojp/engineering-documentation-book",
+      "pages": "https://itdojp.github.io/engineering-documentation-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "evidence-based-engineering-book": {
+      "repo": "itdojp/evidence-based-engineering-book",
+      "pages": "https://itdojp.github.io/evidence-based-engineering-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "incident-response-basics-book": {
+      "repo": "itdojp/incident-response-basics-book",
+      "pages": "https://itdojp.github.io/incident-response-basics-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "issue-driven-work-book": {
+      "repo": "itdojp/issue-driven-work-book",
+      "pages": "https://itdojp.github.io/issue-driven-work-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "kubernetes-basics-book": {
+      "repo": "itdojp/kubernetes-basics-book",
+      "pages": "https://itdojp.github.io/kubernetes-basics-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "初期登録"
+    },
+    "kubernetes-cluster-ops-book": {
+      "repo": "itdojp/kubernetes-cluster-ops-book",
+      "pages": "https://itdojp.github.io/kubernetes-cluster-ops-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "初期登録"
+    },
+    "security-privacy-literacy-book": {
+      "repo": "itdojp/security-privacy-literacy-book",
+      "pages": "https://itdojp.github.io/security-privacy-literacy-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
       },
       "notes": "暫定割当（要確認）"
     },
