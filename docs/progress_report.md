@@ -1,6 +1,6 @@
 # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: 2026年03月03日 09:26:37 JST
+**更新日時**: 2026年03月04日 09:25:32 JST
 
 ## 📈 全体統計
 
@@ -28,7 +28,7 @@
 | categorical-software-design-book | [読む](https://itdojp.github.io/categorical-software-design-book/) | [GitHub](https://github.com/itdojp/categorical-software-design-book) | active | 2026-03-02T00:27:39Z | 0 | 0 | 0 |
 | cloud-infra-book | [読む](https://itdojp.github.io/cloud-infra-book/) | [GitHub](https://github.com/itdojp/cloud-infra-book) | active | 2026-03-02T08:01:44Z | 0 | 0 | 0 |
 | computational-physicalism-book | [読む](https://itdojp.github.io/computational-physicalism-book/) | [GitHub](https://github.com/itdojp/computational-physicalism-book) | active | 2026-03-02T08:38:16Z | 0 | 0 | 0 |
-| cs-visionaries-book | [読む](https://itdojp.github.io/cs-visionaries-book/) | [GitHub](https://github.com/itdojp/cs-visionaries-book) | active | 2026-03-02T21:31:45Z | 1 | 0 | 0 |
+| cs-visionaries-book | [読む](https://itdojp.github.io/cs-visionaries-book/) | [GitHub](https://github.com/itdojp/cs-visionaries-book) | active | 2026-03-03T06:36:54Z | 1 | 0 | 0 |
 | engineering-documentation-book | [読む](https://itdojp.github.io/engineering-documentation-book/) | [GitHub](https://github.com/itdojp/engineering-documentation-book) | active | 2026-03-02T02:34:33Z | 0 | 0 | 0 |
 | ethereum-learning-bootcamp | [読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | [GitHub](https://github.com/itdojp/ethereum-learning-bootcamp) | active | 2026-03-01T20:47:57Z | 0 | 0 | 0 |
 | evidence-based-engineering-book | [読む](https://itdojp.github.io/evidence-based-engineering-book/) | [GitHub](https://github.com/itdojp/evidence-based-engineering-book) | active | 2026-03-02T08:14:54Z | 0 | 0 | 0 |
