@@ -11,6 +11,8 @@ description: 実務で活かせるITエンジニア学習ロードマップ – 
 
 Building Your Tech Career, One Book at a Time
 
+[日本語]({{ '/' | relative_url }}) | [English]({{ '/en/' | relative_url }})
+
 - [日本語概要](#日本語概要)
 - [書籍一覧](#書籍一覧)
 - [学習ロードマップ](#学習ロードマップ)
@@ -21,7 +23,7 @@ Building Your Tech Career, One Book at a Time
 - [出版ガイド](#出版ガイド)
 - [更新履歴](#更新履歴)
 - [ライセンス](#ライセンス)
-- [English Overview](#english-overview)
+- [English Catalog]({{ '/en/' | relative_url }})
 
 ---
 
@@ -488,56 +490,25 @@ ITDO Inc. が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ラ�
 
 ---
 
-## English Overview
+## English Catalog
 
-### What is this project?
+A dedicated English catalog is available here:
 
-**IT Engineer Knowledge Architecture** is a curated collection of technical books and learning paths for IT engineers, especially infrastructure engineers.
+- [English Catalog]({{ '/en/' | relative_url }})
 
-- 38 books in this series (Japanese; most are free to read online via GitHub Pages)
-- 7 planned books
-- Coverage from absolute beginners to senior architects and engineering managers
-- Focus on infrastructure, cloud, security, reliability, and AI-era development practices
+Use the Japanese top page for the main roadmap and Japanese updates:
 
-All books are written and maintained by **ITDO Inc.**, an infrastructure-focused systems integrator based in Japan.
+- [日本語トップページ]({{ '/' | relative_url }})
 
-### Intended audience
+The English page provides:
 
-- Infrastructure / cloud / security engineers
-- SRE and test engineers
-- Software engineers who want solid infrastructure fundamentals
-- Engineering managers and technical leaders
+- the full published lineup in English catalog form
+- English summaries for Japanese-only books
+- language availability labels (`JA only` / `EN available` / `Planned`)
+- direct links to each book page and repository
 
-At the moment, all books are written in Japanese, but the structure and roadmaps can be used as a reference for designing training programs in any language.
-
-### How companies can use this
-
-Typical use cases for companies and organizations:
-
-- As an internal training curriculum for junior to mid-level engineers
-- As a reference roadmap for cloud / security / SRE skill development
-- As a common “textbook set” for joint projects with ITDO Inc.
-- As core material for university / vocational school courses in collaboration with ITDO
-
-If you are interested in using these materials for **corporate training** or **commercial services**, please contact:
+For commercial licensing or training inquiries:
 
 - knowledge@itdo.jp
-
-### License and commercial use
-
-All books in this project are licensed under **Creative Commons BY-NC-SA 4.0**:
-
-- Free for personal learning, education, and research
-- Non-commercial organizations can adapt and share under the same license
-- **Commercial use requires a separate license agreement with ITDO Inc.**
-
-For details, see `LICENSE.md` in this repository.
-
-### About ITDO Inc.
-
-- Name: ITDO Inc. (株式会社アイティードゥ)  
-- Focus: IT infrastructure design / build / operations, cloud, identity & access management, automation, and security  
-- GitHub: https://github.com/itdojp  
-- Contact for this project: knowledge@itdo.jp  
 
 ---

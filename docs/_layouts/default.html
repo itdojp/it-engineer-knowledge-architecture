@@ -119,13 +119,25 @@
             body {
                 padding: 10px;
             }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+            }
+
+            th, td {
+                min-width: 10rem;
+                white-space: normal;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>{{ site.title | default: "IT Engineer Knowledge Architecture" }}</h1>
-        <p>{{ site.description | default: "実務で活かせるITエンジニア学習ロードマップ" }}</p>
+        <h1>{{ page.header_title | default: site.title | default: "IT Engineer Knowledge Architecture" }}</h1>
+        <p>{{ page.header_description | default: page.description | default: site.description | default: "実務で活かせるITエンジニア学習ロードマップ" }}</p>
     </div>
     
     <main class="content">
