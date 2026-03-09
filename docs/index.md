@@ -207,6 +207,8 @@ Building Your Tech Career, One Book at a Time
 
 23. 圏論によるAIエージェント時代の合成的ソフトウェア設計  
     [書籍を読む](https://itdojp.github.io/categorical-software-design-book/) | [リポジトリ](https://github.com/itdojp/categorical-software-design-book)
+    関連する独立書籍（英語）: [Compositional Software Design for Agentic Systems](https://itdojp.github.io/composable-software-design-book/) | [リポジトリ](https://github.com/itdojp/composable-software-design-book)
+    ※ `categorical-software-design-book` と `composable-software-design-book` は、旧版/新版や単純翻訳ではなく、主言語・構成方針の異なる関連書です
 
 #### 開発・運用プロセス
 
