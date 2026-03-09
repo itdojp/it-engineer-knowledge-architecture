@@ -28,7 +28,7 @@ The Japanese top page remains the primary landing page for Japanese readers, whi
 - `EN available`: a separate English edition exists for that book.
 - `Planned`: the title is planned but not yet published.
 - Unless an official English title is already established, this catalog keeps the canonical Japanese title and provides an English summary instead.
-- As of 2026-03-09, published titles in this lineup are cataloged as `JA only` unless explicitly marked otherwise.
+- Published titles in this lineup are cataloged as `JA only` unless explicitly marked otherwise.
 
 ## Book catalog
 
