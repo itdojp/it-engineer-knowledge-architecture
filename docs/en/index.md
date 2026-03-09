@@ -29,6 +29,7 @@ The Japanese top page remains the primary landing page for Japanese readers, whi
 - `Planned`: the title is planned but not yet published.
 - Unless an official English title is already established, this catalog keeps the canonical Japanese title and provides an English summary instead.
 - Published titles in this lineup are cataloged as `JA only` unless explicitly marked otherwise.
+- Some entries may link to related independent books outside the counted 38-book lineup when that relationship helps avoid reader confusion.
 
 ## Book catalog
 
@@ -102,7 +103,7 @@ Audience: intermediate and above; engineers who want deeper theoretical foundati
 | Canonical title | Availability | Audience | Short English summary | Links |
 | --- | --- | --- | --- | --- |
 | 理論計算機科学教科書 | `JA only` | Intermediate+ | Builds a foundation in algorithms, automata, computability, and complexity theory. | [Read](https://itdojp.github.io/theoretical-computer-science-textbook/) / [Repository](https://github.com/itdojp/theoretical-computer-science-textbook) |
-| 圏論によるAIエージェント時代の合成的ソフトウェア設計 | `JA only` | Intermediate+ | Applies category-theoretic ideas to compositional software design in the AI agent era. | [Read](https://itdojp.github.io/categorical-software-design-book/) / [Repository](https://github.com/itdojp/categorical-software-design-book) |
+| 圏論によるAIエージェント時代の合成的ソフトウェア設計 | `JA only` | Intermediate+ | Japanese book focused on category-theoretic design for the AI agent era. It has a related but independent English book, *Compositional Software Design for Agentic Systems*, with a different primary language and composition policy. | [Read](https://itdojp.github.io/categorical-software-design-book/) / [Repository](https://github.com/itdojp/categorical-software-design-book) / [Related English book](https://itdojp.github.io/composable-software-design-book/) |
 
 ### Development & Delivery Process
 
