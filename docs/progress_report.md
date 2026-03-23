@@ -1,6 +1,6 @@
 # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: 2026年03月22日 09:27:49 JST
+**更新日時**: 2026年03月23日 09:29:38 JST
 
 ## 📈 全体統計
 
@@ -8,8 +8,8 @@
 - **アクティブ書籍**: 37冊
 - **アーカイブ書籍**: 0冊
 - **利用不可**: 1冊
-- **総Open Issue数**: 7件
-- **総Open PR数**: 1件
+- **総Open Issue数**: 6件
+- **総Open PR数**: 0件
 - **総Star数**: 1個
 
 ## 📚 書籍別ステータス
@@ -30,7 +30,7 @@
 | computational-physicalism-book | [読む](https://itdojp.github.io/computational-physicalism-book/) | [GitHub](https://github.com/itdojp/computational-physicalism-book) | active | 2026-03-18T01:03:55Z | 0 | 0 | 0 |
 | cs-visionaries-book | [読む](https://itdojp.github.io/cs-visionaries-book/) | [GitHub](https://github.com/itdojp/cs-visionaries-book) | active | 2026-03-18T01:03:51Z | 0 | 0 | 0 |
 | engineering-documentation-book | [読む](https://itdojp.github.io/engineering-documentation-book/) | [GitHub](https://github.com/itdojp/engineering-documentation-book) | active | 2026-03-18T00:57:48Z | 0 | 0 | 0 |
-| ethereum-learning-bootcamp | [読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | [GitHub](https://github.com/itdojp/ethereum-learning-bootcamp) | active | 2026-03-18T01:04:00Z | 1 | 1 | 0 |
+| ethereum-learning-bootcamp | [読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | [GitHub](https://github.com/itdojp/ethereum-learning-bootcamp) | active | 2026-03-23T00:01:21Z | 0 | 0 | 0 |
 | evidence-based-engineering-book | [読む](https://itdojp.github.io/evidence-based-engineering-book/) | [GitHub](https://github.com/itdojp/evidence-based-engineering-book) | active | 2026-03-18T00:57:31Z | 0 | 0 | 0 |
 | formal-methods-book | [読む](https://itdojp.github.io/formal-methods-book/) | [GitHub](https://github.com/itdojp/formal-methods-book) | active | 2026-03-21T00:44:25Z | 0 | 0 | 1 |
 | github-guide-for-beginners-book | [読む](https://itdojp.github.io/github-guide-for-beginners-book/) | [GitHub](https://github.com/itdojp/github-guide-for-beginners-book) | active | 2026-03-18T01:03:02Z | 0 | 0 | 0 |
