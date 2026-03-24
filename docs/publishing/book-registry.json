@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "updatedAt": "2026-02-24",
+  "updatedAt": "2026-03-24",
   "modulesCatalog": [
     "quickStart",
     "readingGuide",
@@ -107,6 +107,22 @@
         "glossary": true
       },
       "notes": "暫定割当（要確認）"
+    },
+    "ai-agent-engineering-book": {
+      "repo": "itdojp/ai-agent-engineering-book",
+      "pages": "https://itdojp.github.io/ai-agent-engineering-book/",
+      "profile": "A",
+      "modules": {
+        "quickStart": true,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": false,
+        "figureIndex": false,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）/ 英語版あり"
     },
     "ai-communication-book": {
       "repo": "itdojp/ai-communication-book",

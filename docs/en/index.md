@@ -17,7 +17,8 @@ header_description: English catalog for the ITDO technical book lineup.
 **IT Engineer Knowledge Architecture** is the public catalog for ITDO's technical book lineup.
 The Japanese top page remains the primary landing page for Japanese readers, while this `/en/` page provides an English-language catalog view of the full lineup.
 
-- Published books: 38
+- Published books in the counted lineup: 39
+- Related independent English books highlighted here: 1
 - Planned books: 7
 - Main coverage: infrastructure, cloud, security, software delivery, theory, and adjacent domains
 - Main audience: learners from absolute beginner to senior architect / engineering manager
@@ -26,10 +27,11 @@ The Japanese top page remains the primary landing page for Japanese readers, whi
 
 - `JA only`: the book itself is currently available in Japanese only.
 - `EN available`: a separate English edition exists for that book.
+- `Independent EN book`: a separately published English-language book related to this catalog, but not counted in the 39-book Japanese lineup.
 - `Planned`: the title is planned but not yet published.
 - Unless an official English title is already established, this catalog keeps the canonical Japanese title and provides an English summary instead.
 - Published titles in this lineup are cataloged as `JA only` unless explicitly marked otherwise.
-- Some entries may link to related independent books outside the counted 38-book lineup when that relationship helps avoid reader confusion.
+- Some entries may link to related independent books outside the counted 39-book lineup when that relationship helps avoid reader confusion.
 
 ## Book catalog
 
@@ -103,7 +105,8 @@ Audience: intermediate and above; engineers who want deeper theoretical foundati
 | Canonical title | Availability | Audience | Short English summary | Links |
 | --- | --- | --- | --- | --- |
 | 理論計算機科学教科書 | `JA only` | Intermediate+ | Builds a foundation in algorithms, automata, computability, and complexity theory. | [Read](https://itdojp.github.io/theoretical-computer-science-textbook/) / [Repository](https://github.com/itdojp/theoretical-computer-science-textbook) |
-| 圏論によるAIエージェント時代の合成的ソフトウェア設計 | `JA only` | Intermediate+ | Japanese book focused on category-theoretic design for the AI agent era. It has a related but independent English book, *Compositional Software Design for Agentic Systems*, with a different primary language and composition policy. | [Read](https://itdojp.github.io/categorical-software-design-book/) / [Repository](https://github.com/itdojp/categorical-software-design-book) / [Related English book](https://itdojp.github.io/composable-software-design-book/) |
+| Compositional Software Design for Agentic Systems | `Independent EN book` | Intermediate+ | English book focused on compositional software design for agentic systems, with its own scope, manuscript structure, and publication policy. | [Read](https://itdojp.github.io/composable-software-design-book/) / [Repository](https://github.com/itdojp/composable-software-design-book) / [Related Japanese book](https://itdojp.github.io/categorical-software-design-book/) |
+| 圏論によるAIエージェント時代の合成的ソフトウェア設計 | `JA only` | Intermediate+ | Japanese book focused on category-theoretic design for the AI agent era. It stands alongside the separate English book *Compositional Software Design for Agentic Systems* rather than serving as an older edition or a direct translation. | [Read](https://itdojp.github.io/categorical-software-design-book/) / [Repository](https://github.com/itdojp/categorical-software-design-book) / [Related English book](https://itdojp.github.io/composable-software-design-book/) |
 
 ### Development & Delivery Process
 
@@ -114,6 +117,7 @@ Audience: all levels; productivity, quality, collaboration, and modern developme
 | GitHub初心者ガイド | `JA only` | All levels | Introduces GitHub basics for repositories, branching, pull requests, and team collaboration. | [Read](https://itdojp.github.io/github-guide-for-beginners-book/) / [Repository](https://github.com/itdojp/github-guide-for-beginners-book) |
 | AI開発のためのGitHubワークフロー実践ガイド | `JA only` | All levels | Shows how to use GitHub workflows, automation, and AI-assisted review in modern software delivery. | [Read](https://itdojp.github.io/github-workflow-book/) / [Repository](https://github.com/itdojp/github-workflow-book) |
 | GitHub AgentOps 実践ガイド | `JA only` | All levels | Organizes GitHub-centered AgentOps practices for prompts, reviews, governance, and operational control of AI agents. | [Read](https://itdojp.github.io/GitHub-AgentOps-book/) / [Repository](https://github.com/itdojp/GitHub-AgentOps-book) |
+| AI Agent Engineering in Practice: Prompt / Context / Harness Engineering | `EN available` | All levels | Covers prompt contracts, context engineering, and harness design so AI agents can read repos, make changes, verify results, and complete work safely. | [JA](https://itdojp.github.io/ai-agent-engineering-book/) / [EN](https://itdojp.github.io/ai-agent-engineering-book/en/) / [Repository](https://github.com/itdojp/ai-agent-engineering-book) |
 | AI主導開発時代のソフトウェアテスト戦略 | `JA only` | All levels | Designs test strategy for AI-assisted and AI-based development with risk-based coverage and fast feedback loops. | [Read](https://itdojp.github.io/ai-testing-strategy-book/) / [Repository](https://github.com/itdojp/ai-testing-strategy-book) |
 | 形式的手法の基礎と応用 | `JA only` | All levels | Introduces formal methods from specification to model checking and proof-oriented reasoning. | [Read](https://itdojp.github.io/formal-methods-book/) / [Repository](https://github.com/itdojp/formal-methods-book) |
 | 要件から始めるソフトウェア設計（小規模TS Webアプリの実践） | `JA only` | All levels | Starts software design from requirements and turns a small TypeScript web app into a coherent, reviewable structure. | [Read](https://itdojp.github.io/small-webapp-software-design-book/) / [Repository](https://github.com/itdojp/small-webapp-software-design-book) |
