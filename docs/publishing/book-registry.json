@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "updatedAt": "2026-03-24",
+  "updatedAt": "2026-03-28",
   "modulesCatalog": [
     "quickStart",
     "readingGuide",
@@ -177,16 +177,16 @@
       "pages": "https://itdojp.github.io/categorical-software-design-book/",
       "profile": "C",
       "modules": {
-        "quickStart": false,
+        "quickStart": true,
         "readingGuide": true,
         "checklistPack": false,
-        "troubleshootingFlow": false,
+        "troubleshootingFlow": true,
         "conceptMap": true,
         "figureIndex": true,
-        "legalNotice": false,
+        "legalNotice": true,
         "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "Profile C の暫定割当。付録Dは図版・レビュー前の最小確認項目・症状別再参照の入口として扱う。raw サンプルは本文より先に更新される場合があるため要確認。"
     },
     "cloud-infra-book": {
       "repo": "itdojp/cloud-infra-book",
@@ -223,18 +223,18 @@
     "cs-visionaries-book": {
       "repo": "itdojp/cs-visionaries-book",
       "pages": "https://itdojp.github.io/cs-visionaries-book/",
-      "profile": "C",
+      "profile": "A",
       "modules": {
-        "quickStart": false,
+        "quickStart": true,
         "readingGuide": true,
         "checklistPack": false,
         "troubleshootingFlow": false,
-        "conceptMap": true,
-        "figureIndex": true,
-        "legalNotice": false,
+        "conceptMap": false,
+        "figureIndex": false,
+        "legalNotice": true,
         "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "人物史中心の導入書として暫定 Profile A。reader-facing な正本はトップページの目次を基準とし、付録C/付録Dは補助資料として扱う。AI 関連の主導入は第10章で、技術史の深掘りは付録Cと関連人物章を併用する。"
     },
     "engineering-documentation-book": {
       "repo": "itdojp/engineering-documentation-book",
