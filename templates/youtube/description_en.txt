@@ -1,0 +1,25 @@
+{hook_en}
+
+In this video, we explore the core methodology of "{title_en}" by ITDO Inc.—an essential part of our IT Engineer Knowledge Architecture.
+
+【What you will learn】
+✅ The core concept and overview of the book
+✅ Key challenges it addresses and our proposed solutions
+✅ Practical application in real-world engineering projects
+✅ Its position within the broader learning roadmap
+
+Target Audience: {level_en}
+Category: {category_en}
+
+Dive into the full book for detailed architectures and practical examples!
+
+📖 Read the book: 
+{url}
+
+📦 GitHub Repository:
+{repo}
+
+📋 Playlist "IT Engineer Knowledge Architecture (English)":
+https://www.youtube.com/playlist?list=PL552rhBTgVr0CnIkGC62K15beBptI_ms3
+
+#ITEngineer #ITDO #{category_tag} #TechBook #{id_tag}

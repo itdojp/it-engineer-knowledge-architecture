@@ -1,0 +1,429 @@
+- id: illustrated-linux-basics-book
+  title_ja: 図解でわかるLinux基礎
+  title_en: ''
+  category: 未経験者向け
+  level: IT未経験者・初学者
+  url: https://itdojp.github.io/illustrated-linux-basics-book/
+  repo: https://github.com/itdojp/illustrated-linux-basics-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: wsl2-linux-essentials-book
+  title_ja: やさしく学ぶLinux WSL2ではじめる基礎
+  title_en: ''
+  category: 未経験者向け
+  level: IT未経験者・初学者
+  url: https://itdojp.github.io/wsl2-linux-essentials-book/
+  repo: https://github.com/itdojp/wsl2-linux-essentials-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: evidence-based-engineering-book
+  title_ja: 根拠で進める開発仕事術：検索戦略・検証・引用の実務
+  title_en: ''
+  category: 基礎リテラシー（Professional Foundations）
+  level: 全レベル
+  url: https://itdojp.github.io/evidence-based-engineering-book/
+  repo: https://github.com/itdojp/evidence-based-engineering-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: issue-driven-work-book
+  title_ja: チケット駆動の仕事術：良いIssueとPRで回すタスク管理・報告・合意形成
+  title_en: ''
+  category: 基礎リテラシー（Professional Foundations）
+  level: 全レベル
+  url: https://itdojp.github.io/issue-driven-work-book/
+  repo: https://github.com/itdojp/issue-driven-work-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: engineering-documentation-book
+  title_ja: エンジニアリングドキュメント実践ガイド：README・手順書・Runbook・ADR・ポストモーテム
+  title_en: ''
+  category: 基礎リテラシー（Professional Foundations）
+  level: 全レベル
+  url: https://itdojp.github.io/engineering-documentation-book/
+  repo: https://github.com/itdojp/engineering-documentation-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: security-privacy-literacy-book
+  title_ja: セキュリティ＆プライバシー基礎リテラシー：秘密情報・権限・データ取り扱い
+  title_en: ''
+  category: 基礎リテラシー（Professional Foundations）
+  level: 全レベル
+  url: https://itdojp.github.io/security-privacy-literacy-book/
+  repo: https://github.com/itdojp/security-privacy-literacy-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: incident-response-basics-book
+  title_ja: インシデント対応 基礎：切り分け・状況共有・復旧・ポストモーテムの型
+  title_en: ''
+  category: 基礎リテラシー（Professional Foundations）
+  level: 全レベル
+  url: https://itdojp.github.io/incident-response-basics-book/
+  repo: https://github.com/itdojp/incident-response-basics-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: linux-infra-textbook2
+  title_ja: 実践Linux インフラエンジニア入門
+  title_en: ''
+  category: 技術基盤（基礎）
+  level: 新人〜中級者（経験0–2年）
+  url: https://itdojp.github.io/linux-infra-textbook2/
+  repo: https://github.com/itdojp/linux-infra-textbook2
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: it-infra-software-essentials-book
+  title_ja: ITインフラエンジニアのためのソフトウェア基礎知識
+  title_en: ''
+  category: 技術基盤（基礎）
+  level: 新人〜中級者（経験0–2年）
+  url: https://itdojp.github.io/it-infra-software-essentials-book/
+  repo: https://github.com/itdojp/it-infra-software-essentials-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: IT-infra-book
+  title_ja: ITインフラストラクチャ技術ガイド
+  title_en: ''
+  category: 技術基盤（基礎）
+  level: 新人〜中級者（経験0–2年）
+  url: https://itdojp.github.io/IT-infra-book/
+  repo: https://github.com/itdojp/IT-infra-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: IT-infra-troubleshooting-book
+  title_ja: ITインフラトラブルシューティング実践ガイド
+  title_en: ''
+  category: 技術基盤（発展）
+  level: 中級〜上級者（経験2年以上）
+  url: https://itdojp.github.io/IT-infra-troubleshooting-book/
+  repo: https://github.com/itdojp/IT-infra-troubleshooting-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: cloud-infra-book
+  title_ja: クラウドインフラ設計・構築ガイド
+  title_en: ''
+  category: 技術基盤（発展）
+  level: 中級〜上級者（経験2年以上）
+  url: https://itdojp.github.io/cloud-infra-book/
+  repo: https://github.com/itdojp/cloud-infra-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: it-infra-security-guide-book
+  title_ja: インフラエンジニアのための情報セキュリティ実装ガイド
+  title_en: ''
+  category: セキュリティ
+  level: 中級者以上
+  url: https://itdojp.github.io/it-infra-security-guide-book/
+  repo: https://github.com/itdojp/it-infra-security-guide-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: pentest-learning-book
+  title_ja: 実務で使えるペネトレーションテスト大全
+  title_en: ''
+  category: セキュリティ
+  level: 中級者以上
+  url: https://itdojp.github.io/pentest-learning-book/
+  repo: https://github.com/itdojp/pentest-learning-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: proxmox_book
+  title_ja: Proxmox VE 実践ガイド
+  title_en: ''
+  category: 応用技術
+  level: 中級者以上
+  url: https://itdojp.github.io/proxmox_book/
+  repo: https://github.com/itdojp/proxmox_book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: kubernetes-basics-book
+  title_ja: Kubernetes入門：PodからIngressまで（基礎と実践）
+  title_en: ''
+  category: 応用技術
+  level: 中級者以上
+  url: https://itdojp.github.io/kubernetes-basics-book/
+  repo: https://github.com/itdojp/kubernetes-basics-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: kubernetes-cluster-ops-book
+  title_ja: Kubernetesクラスタ設計・運用実践ガイド
+  title_en: ''
+  category: 応用技術
+  level: 中級者以上
+  url: https://itdojp.github.io/kubernetes-cluster-ops-book/
+  repo: https://github.com/itdojp/kubernetes-cluster-ops-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: kubernetes-proxmox-to-cloud-book
+  title_ja: 'Kubernetes: Proxmox検証からクラウド本番へ'
+  title_en: ''
+  category: 応用技術
+  level: 中級者以上
+  url: https://itdojp.github.io/kubernetes-proxmox-to-cloud-book/
+  repo: https://github.com/itdojp/kubernetes-proxmox-to-cloud-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: podman-book
+  title_ja: Podman完全ガイド
+  title_en: ''
+  category: 応用技術
+  level: 中級者以上
+  url: https://itdojp.github.io/podman-book/
+  repo: https://github.com/itdojp/podman-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: practical-auth-book
+  title_ja: 実践 認証認可システム設計
+  title_en: ''
+  category: 応用技術
+  level: 中級者以上
+  url: https://itdojp.github.io/practical-auth-book/
+  repo: https://github.com/itdojp/practical-auth-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: supabase-architecture-patterns-book
+  title_ja: Supabaseアーキテクチャ
+  title_en: ''
+  category: 応用技術
+  level: 中級者以上
+  url: https://itdojp.github.io/supabase-architecture-patterns-book/
+  repo: https://github.com/itdojp/supabase-architecture-patterns-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: theoretical-computer-science-textbook
+  title_ja: 理論計算機科学教科書
+  title_en: ''
+  category: コンピューターサイエンス理論
+  level: 中級者以上
+  url: https://itdojp.github.io/theoretical-computer-science-textbook/
+  repo: https://github.com/itdojp/theoretical-computer-science-textbook
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: categorical-software-design-book
+  title_ja: 圏論によるAIエージェント時代の合成的ソフトウェア設計
+  title_en: ''
+  category: コンピューターサイエンス理論
+  level: 中級者以上
+  url: https://itdojp.github.io/categorical-software-design-book/
+  repo: https://github.com/itdojp/categorical-software-design-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: github-guide-for-beginners-book
+  title_ja: GitHub初心者ガイド
+  title_en: ''
+  category: 開発・運用プロセス
+  level: 全レベル
+  url: https://itdojp.github.io/github-guide-for-beginners-book/
+  repo: https://github.com/itdojp/github-guide-for-beginners-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: github-workflow-book
+  title_ja: AI開発のためのGitHubワークフロー実践ガイド
+  title_en: ''
+  category: 開発・運用プロセス
+  level: 全レベル
+  url: https://itdojp.github.io/github-workflow-book/
+  repo: https://github.com/itdojp/github-workflow-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: GitHub-AgentOps-book
+  title_ja: GitHub AgentOps 実践ガイド
+  title_en: ''
+  category: 開発・運用プロセス
+  level: 全レベル
+  url: https://itdojp.github.io/GitHub-AgentOps-book/
+  repo: https://github.com/itdojp/GitHub-AgentOps-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: ai-agent-engineering-book
+  title_ja: 'AIエージェント実践: Prompt / Context / Harness Engineering'
+  title_en: AI Agent Engineering in Practice
+  category: 開発・運用プロセス
+  level: 全レベル
+  url: https://itdojp.github.io/ai-agent-engineering-book/
+  repo: https://github.com/itdojp/ai-agent-engineering-book
+  youtube_id_ja: ''
+  youtube_id_en: TKVt19FsT3w
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: ai-testing-strategy-book
+  title_ja: AI主導開発時代のソフトウェアテスト戦略
+  title_en: ''
+  category: 開発・運用プロセス
+  level: 全レベル
+  url: https://itdojp.github.io/ai-testing-strategy-book/
+  repo: https://github.com/itdojp/ai-testing-strategy-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: formal-methods-book
+  title_ja: 形式的手法の基礎と応用
+  title_en: Formal Methods Foundation and Application
+  category: 開発・運用プロセス
+  level: 全レベル
+  url: https://itdojp.github.io/formal-methods-book/
+  repo: https://github.com/itdojp/formal-methods-book
+  youtube_id_ja: ZP7G_pvzvN0
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: small-webapp-software-design-book
+  title_ja: 要件から始めるソフトウェア設計（小規模TS Webアプリの実践）
+  title_en: ''
+  category: 開発・運用プロセス
+  level: 全レベル
+  url: https://itdojp.github.io/small-webapp-software-design-book/
+  repo: https://github.com/itdojp/small-webapp-software-design-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: BioinformaticsGuide-book
+  title_ja: バイオインフォマティクス実践ガイド
+  title_en: ''
+  category: 特定領域・ドメイン知識
+  level: 専門分野従事者
+  url: https://itdojp.github.io/BioinformaticsGuide-book/
+  repo: https://github.com/itdojp/BioinformaticsGuide-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: LogicalThinking-AI-Era-Guide
+  title_ja: AI時代に差がつく論理的思考と表現力
+  title_en: ''
+  category: ソフトスキル・思考法
+  level: 全レベル
+  url: https://itdojp.github.io/LogicalThinking-AI-Era-Guide/
+  repo: https://github.com/itdojp/LogicalThinking-AI-Era-Guide
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: ai-era-engineers-mind-book
+  title_ja: AI時代のプロフェッショナルITエンジニアの思考法
+  title_en: ''
+  category: ソフトスキル・思考法
+  level: 全レベル
+  url: https://itdojp.github.io/ai-era-engineers-mind-book/
+  repo: https://github.com/itdojp/ai-era-engineers-mind-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: ai-communication-book
+  title_ja: 生成AIコミュニケーション技術
+  title_en: ''
+  category: ソフトスキル・思考法
+  level: 全レベル
+  url: https://itdojp.github.io/ai-communication-book/
+  repo: https://github.com/itdojp/ai-communication-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: negotiation-for-engineers-book
+  title_ja: エンジニアの交渉力アーキテクチャ
+  title_en: ''
+  category: ソフトスキル・思考法
+  level: 全レベル
+  url: https://itdojp.github.io/negotiation-for-engineers-book/
+  repo: https://github.com/itdojp/negotiation-for-engineers-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: IT-engineer-communication-book
+  title_ja: エンジニアのための実践コミュニケーション設計
+  title_en: ''
+  category: ソフトスキル・思考法
+  level: 全レベル
+  url: https://itdojp.github.io/IT-engineer-communication-book/
+  repo: https://github.com/itdojp/IT-engineer-communication-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: cs-visionaries-book
+  title_ja: デジタル革命の先駆者たち
+  title_en: ''
+  category: 教養・哲学
+  level: 全レベル
+  url: https://itdojp.github.io/cs-visionaries-book/
+  repo: https://github.com/itdojp/cs-visionaries-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: computational-physicalism-book
+  title_ja: 計算論的物理主義
+  title_en: ''
+  category: 教養・哲学
+  level: 全レベル
+  url: https://itdojp.github.io/computational-physicalism-book/
+  repo: https://github.com/itdojp/computational-physicalism-book
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
+- id: ethereum-learning-bootcamp
+  title_ja: Ethereum学習ブートキャンプ
+  title_en: ''
+  category: Web3・ブロックチェーン
+  level: Web3
+  url: https://itdojp.github.io/ethereum-learning-bootcamp/
+  repo: https://github.com/itdojp/ethereum-learning-bootcamp
+  youtube_id_ja: ''
+  youtube_id_en: ''
+  hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
+  hook_en: Are you struggling with ...?
