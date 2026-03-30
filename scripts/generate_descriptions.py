@@ -1,5 +1,6 @@
 import yaml
 import os
+import re
 
 BOOKS_YAML = 'books/youtube/books.yaml'
 TEMPLATE_JA = 'templates/youtube/description_ja.txt'
@@ -13,28 +14,39 @@ def sanitize_tag(text):
     text = text.replace('（', '').replace('）', '').replace('・', '')
     return ''.join([c for c in text if c.isalnum()])
 
-def mapping_en(ja_text):
+def mapping_en(text):
+    if not text: return ""
+    # カッコ書き（注釈）を削除してマッピングキーを正規化する
+    key = re.sub(r'（.*?）|\(.*?\)', '', text).strip()
+    
     mapping = {
-        "未経験者向け": "Beginners",
+        "技術基盤": "Professional Foundations",
         "基礎リテラシー": "Professional Foundations",
-        "技術基盤基礎": "Basic Infrastructure",
-        "技術基盤発展": "Advanced Infrastructure",
         "セキュリティ": "Security",
         "応用技術": "Applied Technologies",
+        "特定技術・応用領域": "Applied Technologies",
         "コンピューターサイエンス理論": "Computer Science Theory",
         "開発運用プロセス": "Development & Operation",
+        "開発・運用プロセス": "Development & Operation",
         "特定領域ドメイン知識": "Domain Specific Knowledge",
+        "特定領域・ドメイン知識": "Domain Specific Knowledge",
         "ソフトスキル思考法": "Soft Skills & Mindset",
+        "ソフトスキル・思考法": "Soft Skills & Mindset",
         "教養哲学": "Liberal Arts & Philosophy",
+        "教養・哲学": "Liberal Arts & Philosophy",
+        "Web3・ブロックチェーン": "Web3 & Blockchain",
+        
+        "全レベル": "All Levels",
+        "未経験者": "Beginner",
+        "初学者": "Beginner",
+        "IT未経験者・初学者": "Beginner",
         "新人〜中級者": "Junior - Mid",
         "中級〜上級者": "Mid - Senior",
         "中級者以上": "Mid - Senior",
-        "全レベル": "All Levels",
-        "IT未経験者初学者": "IT Beginners",
         "専門分野従事者": "Domain Experts"
     }
-    sanitized_ja = ja_text.replace('（', '').replace('）', '').replace('・', ' ').replace(' ', '')
-    return mapping.get(sanitized_ja, ja_text)
+    # マッピング先があればそれを返し、なければ元のテキスト（正規化済またはそのまま）を英語として返す
+    return mapping.get(key, key) or text
 
 def generate():
     with open(BOOKS_YAML, 'r', encoding='utf-8') as f:
@@ -60,15 +72,18 @@ def generate():
     for book in books:
         if not book.get('id'): continue
         
+        cat_ja = book.get('category', '')
+        level_ja = book.get('level', '')
+        
         # tags
-        category_tag = sanitize_tag(book.get('category', ''))
+        category_tag = sanitize_tag(cat_ja)
         id_tag = book.get('id').replace('-', '')
 
         data_ja = {
             "{hook_ja}": book.get('hook_ja', ''),
             "{title_ja}": book.get('title_ja', ''),
-            "{level}": book.get('level', ''),
-            "{category}": book.get('category', ''),
+            "{level}": level_ja,
+            "{category}": cat_ja,
             "{url}": book.get('url', ''),
             "{repo}": book.get('repo', ''),
             "#{category_tag}": "#" + category_tag if category_tag else "",
@@ -77,12 +92,12 @@ def generate():
         
         data_en = {
             "{hook_en}": book.get('hook_en', ''),
-            "{title_en}": book.get('title_en', book.get('id')),
-            "{level_en}": mapping_en(book.get('level', '')),
-            "{category_en}": mapping_en(book.get('category', '')),
+            "{title_en}": book.get('title_en') or book.get('id') or book.get('title_ja', ''),
+            "{level_en}": mapping_en(level_ja),
+            "{category_en}": mapping_en(cat_ja),
             "{url}": book.get('url', ''),
             "{repo}": book.get('repo', ''),
-            "#{category_tag}": "#" + sanitize_tag(mapping_en(book.get('category', ''))) if category_tag else "",
+            "#{category_tag}": "#" + sanitize_tag(mapping_en(cat_ja)) if category_tag else "",
             "#{id_tag}": "#" + id_tag
         }
 

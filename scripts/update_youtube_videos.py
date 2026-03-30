@@ -24,6 +24,9 @@ def get_authenticated_service():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
+            if os.environ.get('GITHUB_ACTIONS') == 'true':
+                print("❌ YOUTUBE_TOKEN_JSONが正しく設定されていないため、GitHub Actionsでは認証を完了できません。")
+                exit(1)
             # client_secrets.json を使ってブラウザで初回認証を行う
             flow = InstalledAppFlow.from_client_secrets_file('client_secrets.json', SCOPES)
             creds = flow.run_local_server(port=0)
@@ -33,8 +36,8 @@ def get_authenticated_service():
 
     return build('youtube', 'v3', credentials=creds)
 
-def update_video(youtube, video_id, title, description, category_id="27"): 
-    # category_id "27" は「教育（Education）」
+def update_video(youtube, video_id, title, description, category_id=None): 
+    # category_id = None: 既存のカテゴリを維持する
     try:
         # まず現在の動画情報を取得する
         request = youtube.videos().list(
