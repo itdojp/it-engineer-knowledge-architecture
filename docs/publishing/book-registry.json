@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "updatedAt": "2026-03-28",
+  "updatedAt": "2026-03-24",
   "modulesCatalog": [
     "quickStart",
     "readingGuide",
@@ -19,14 +19,14 @@
       "modules": {
         "quickStart": false,
         "readingGuide": false,
-        "checklistPack": true,
+      "checklistPack": false,
         "troubleshootingFlow": true,
         "conceptMap": false,
         "figureIndex": true,
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "暫定割当（要確認）"
+    "notes": "Profile C の暫定割当。付録Dは figureIndex / 症状別導線 / 最小確認項目の入口として扱う（要継続確認）"
     },
     "GitHub-AgentOps-book": {
       "repo": "itdojp/GitHub-AgentOps-book",
@@ -176,17 +176,17 @@
       "repo": "itdojp/categorical-software-design-book",
       "pages": "https://itdojp.github.io/categorical-software-design-book/",
       "profile": "C",
-      "modules": {
-        "quickStart": true,
-        "readingGuide": true,
-        "checklistPack": false,
-        "troubleshootingFlow": true,
-        "conceptMap": true,
-        "figureIndex": true,
-        "legalNotice": true,
-        "glossary": true
-      },
-      "notes": "Profile C の暫定割当。付録Dは図版・レビュー前の最小確認項目・症状別再参照の入口として扱う。raw サンプルは本文より先に更新される場合があるため要確認。"
+    "modules": {
+      "quickStart": true,
+      "readingGuide": true,
+      "checklistPack": false,
+      "troubleshootingFlow": true,
+      "conceptMap": true,
+      "figureIndex": true,
+      "legalNotice": true,
+      "glossary": true
+    },
+    "notes": "Profile C の暫定割当。付録Dは図版・レビュー前の最小確認項目・症状別再参照の入口として扱う。raw サンプルは本文より先に更新される場合があるため要確認。"
     },
     "cloud-infra-book": {
       "repo": "itdojp/cloud-infra-book",
