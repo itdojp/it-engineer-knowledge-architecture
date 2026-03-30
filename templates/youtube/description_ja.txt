@@ -1,0 +1,24 @@
+株式会社アイティードゥ（ITDO）が公開している技術書「{title_ja}」の紹介動画です。
+{hook_ja}
+
+【本動画の主な内容】
+・本書の基本コンセプトと全体像
+・取り扱う技術課題とアプローチ
+・実務プロジェクトや組織での活用イメージ
+・学習ロードマップにおける位置づけ
+
+対象レベル: {level}
+カテゴリ: {category}
+
+詳細な解説事項や実践コードについては、書籍本編（Web公開版）をご参照ください。
+
+📖 書籍を読む（Web公開版）: 
+{url}
+
+📦 GitHubリポジトリ:
+{repo}
+
+📋 プレイリスト「ITエンジニア知識アーキテクチャ」:
+https://www.youtube.com/playlist?list=PL552rhBTgVr0GBLTMnOgebOJmBwn_dN-v
+
+#ITエンジニア #ITDO #{category_tag} #技術書 #{id_tag}

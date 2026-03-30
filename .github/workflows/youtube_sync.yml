@@ -1,0 +1,38 @@
+name: Sync YouTube Descriptions
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'books/youtube/books.yaml'
+      - 'templates/youtube/description_*.txt'
+      - 'scripts/generate_descriptions.py'
+      - 'scripts/update_youtube_videos.py'
+  # GitHubの画面から手動実行もできるようにする
+  workflow_dispatch:
+
+jobs:
+  sync_youtube:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml google-api-python-client google-auth-httplib2 google-auth-oauthlib
+
+      - name: 1. Generate description texts
+        run: python scripts/generate_descriptions.py
+
+      - name: 2. Update YouTube Videos via API
+        env:
+          # GitHub Secrets から YouTube の認証情報を読み込む
+          YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+        run: python scripts/update_youtube_videos.py

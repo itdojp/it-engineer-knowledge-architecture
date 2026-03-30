@@ -1,3 +1,9 @@
 # Temporary working files (do not commit)
 tmp/
+.classpath
+.project
+.settings/
+.vscode/
 
+# Build and Data Output
+output/
