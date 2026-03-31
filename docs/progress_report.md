@@ -1,6 +1,6 @@
 # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: 2026年03月30日 09:31:06 JST
+**更新日時**: 2026年03月31日 09:29:41 JST
 
 ## 📈 全体統計
 
@@ -9,7 +9,7 @@
 - **アーカイブ書籍**: 0冊
 - **利用不可**: 1冊
 - **総Open Issue数**: 8件
-- **総Open PR数**: 32件
+- **総Open PR数**: 17件
 - **総Star数**: 1個
 
 ## 📚 書籍別ステータス
@@ -28,8 +28,8 @@
 | ai-testing-strategy-book | [読む](https://itdojp.github.io/ai-testing-strategy-book/) | [GitHub](https://github.com/itdojp/ai-testing-strategy-book) | active | 2026-03-28T01:52:51Z | 0 | 0 | 0 |
 | categorical-software-design-book | [読む](https://itdojp.github.io/categorical-software-design-book/) | [GitHub](https://github.com/itdojp/categorical-software-design-book) | active | 2026-03-28T01:50:26Z | 0 | 0 | 0 |
 | cloud-infra-book | [読む](https://itdojp.github.io/cloud-infra-book/) | [GitHub](https://github.com/itdojp/cloud-infra-book) | active | 2026-03-28T01:52:43Z | 0 | 0 | 0 |
-| computational-physicalism-book | [読む](https://itdojp.github.io/computational-physicalism-book/) | [GitHub](https://github.com/itdojp/computational-physicalism-book) | active | 2026-03-28T23:30:13Z | 0 | 5 | 0 |
-| cs-visionaries-book | [読む](https://itdojp.github.io/cs-visionaries-book/) | [GitHub](https://github.com/itdojp/cs-visionaries-book) | active | 2026-03-28T05:42:01Z | 0 | 20 | 0 |
+| computational-physicalism-book | [読む](https://itdojp.github.io/computational-physicalism-book/) | [GitHub](https://github.com/itdojp/computational-physicalism-book) | active | 2026-03-30T20:05:23Z | 0 | 1 | 0 |
+| cs-visionaries-book | [読む](https://itdojp.github.io/cs-visionaries-book/) | [GitHub](https://github.com/itdojp/cs-visionaries-book) | active | 2026-03-30T22:00:17Z | 0 | 16 | 0 |
 | engineering-documentation-book | [読む](https://itdojp.github.io/engineering-documentation-book/) | [GitHub](https://github.com/itdojp/engineering-documentation-book) | active | 2026-03-28T05:40:18Z | 0 | 0 | 0 |
 | ethereum-learning-bootcamp | [読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | [GitHub](https://github.com/itdojp/ethereum-learning-bootcamp) | active | 2026-03-28T01:53:05Z | 0 | 0 | 0 |
 | evidence-based-engineering-book | [読む](https://itdojp.github.io/evidence-based-engineering-book/) | [GitHub](https://github.com/itdojp/evidence-based-engineering-book) | active | 2026-03-28T05:41:44Z | 0 | 0 | 0 |
@@ -40,17 +40,17 @@
 | incident-response-basics-book | [読む](https://itdojp.github.io/incident-response-basics-book/) | [GitHub](https://github.com/itdojp/incident-response-basics-book) | active | 2026-03-28T05:40:28Z | 0 | 0 | 0 |
 | issue-driven-work-book | [読む](https://itdojp.github.io/issue-driven-work-book/) | [GitHub](https://github.com/itdojp/issue-driven-work-book) | active | 2026-03-28T05:40:24Z | 0 | 0 | 0 |
 | it-infra-security-guide-book | [読む](https://itdojp.github.io/it-infra-security-guide-book/) | [GitHub](https://github.com/itdojp/it-infra-security-guide-book) | active | 2026-03-28T05:40:06Z | 0 | 0 | 0 |
-| it-infra-software-essentials-book | [読む](https://itdojp.github.io/it-infra-software-essentials-book/) | [GitHub](https://github.com/itdojp/it-infra-software-essentials-book) | active | 2026-03-28T05:40:37Z | 0 | 1 | 0 |
-| kubernetes-basics-book | [読む](https://itdojp.github.io/kubernetes-basics-book/) | [GitHub](https://github.com/itdojp/kubernetes-basics-book) | active | 2026-03-25T04:21:44Z | 2 | 2 | 0 |
+| it-infra-software-essentials-book | [読む](https://itdojp.github.io/it-infra-software-essentials-book/) | [GitHub](https://github.com/itdojp/it-infra-software-essentials-book) | active | 2026-03-30T20:12:30Z | 0 | 0 | 0 |
+| kubernetes-basics-book | [読む](https://itdojp.github.io/kubernetes-basics-book/) | [GitHub](https://github.com/itdojp/kubernetes-basics-book) | active | 2026-03-30T20:12:45Z | 2 | 0 | 0 |
 | kubernetes-cluster-ops-book | [読む](https://itdojp.github.io/kubernetes-cluster-ops-book/) | [GitHub](https://github.com/itdojp/kubernetes-cluster-ops-book) | active | 2026-03-28T05:42:05Z | 1 | 0 | 0 |
-| kubernetes-proxmox-to-cloud-book | [読む](https://itdojp.github.io/kubernetes-proxmox-to-cloud-book/) | [GitHub](https://github.com/itdojp/kubernetes-proxmox-to-cloud-book) | active | 2026-03-28T05:40:41Z | 1 | 1 | 0 |
+| kubernetes-proxmox-to-cloud-book | [読む](https://itdojp.github.io/kubernetes-proxmox-to-cloud-book/) | [GitHub](https://github.com/itdojp/kubernetes-proxmox-to-cloud-book) | active | 2026-03-30T19:42:23Z | 1 | 0 | 0 |
 | linux-infra-textbook2 | [読む](https://itdojp.github.io/linux-infra-textbook2/) | [GitHub](https://github.com/itdojp/linux-infra-textbook2) | active | 2026-03-28T01:50:19Z | 0 | 0 | 0 |
 | negotiation-for-engineers-book | [読む](https://itdojp.github.io/negotiation-for-engineers-book/) | [GitHub](https://github.com/itdojp/negotiation-for-engineers-book) | active | 2026-03-28T23:29:22Z | 0 | 0 | 0 |
-| pentest-learning-book | [読む](https://itdojp.github.io/pentest-learning-book/) | [GitHub](https://github.com/itdojp/pentest-learning-book) | active | 2026-03-28T23:29:42Z | 0 | 1 | 0 |
-| podman-book | [読む](https://itdojp.github.io/podman-book/) | [GitHub](https://github.com/itdojp/podman-book) | active | 2026-03-28T05:40:12Z | 1 | 1 | 0 |
+| pentest-learning-book | [読む](https://itdojp.github.io/pentest-learning-book/) | [GitHub](https://github.com/itdojp/pentest-learning-book) | active | 2026-03-30T19:42:38Z | 0 | 0 | 0 |
+| podman-book | [読む](https://itdojp.github.io/podman-book/) | [GitHub](https://github.com/itdojp/podman-book) | active | 2026-03-30T19:44:16Z | 1 | 0 | 0 |
 | practical-auth-book | [読む](https://itdojp.github.io/practical-auth-book/) | [GitHub](https://github.com/itdojp/practical-auth-book) | active | 2026-03-28T23:30:36Z | 1 | 0 | 0 |
 | proxmox_book | [読む](https://itdojp.github.io/proxmox_book/) | [GitHub](https://github.com/itdojp/proxmox_book) | active | 2026-03-28T23:29:32Z | 2 | 0 | 0 |
-| security-privacy-literacy-book | [読む](https://itdojp.github.io/security-privacy-literacy-book/) | [GitHub](https://github.com/itdojp/security-privacy-literacy-book) | active | 2026-03-28T05:40:49Z | 0 | 1 | 0 |
+| security-privacy-literacy-book | [読む](https://itdojp.github.io/security-privacy-literacy-book/) | [GitHub](https://github.com/itdojp/security-privacy-literacy-book) | active | 2026-03-30T20:12:23Z | 0 | 0 | 0 |
 | small-webapp-software-design-book | [読む](https://itdojp.github.io/small-webapp-software-design-book/) | [GitHub](https://github.com/itdojp/small-webapp-software-design-book) | active | 2026-03-28T05:40:58Z | 0 | 0 | 0 |
 | supabase-architecture-patterns-book | [読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | [GitHub](https://github.com/itdojp/supabase-architecture-patterns-book) | active | 2026-03-28T01:51:14Z | 0 | 0 | 0 |
 | theoretical-computer-science-textbook | [読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | [GitHub](https://github.com/itdojp/theoretical-computer-science-textbook) | active | 2026-03-28T05:41:22Z | 0 | 0 | 0 |
