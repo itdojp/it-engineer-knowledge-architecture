@@ -14,6 +14,7 @@ description: 書籍シリーズの体裁・構成・運用の標準
 - [版番号/更新履歴の運用](./versioning.md)
 - [運用プレイブック（book-formatter更新の横展開）](./operations-playbook.md)
 - [品質スプリント運用](./quality-sprint.md)
+- [新規書籍クイックスタート](./new-book-quickstart.md)
 
 ## UX とレビューの関連資料
 
