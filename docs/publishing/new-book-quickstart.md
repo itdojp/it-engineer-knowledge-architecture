@@ -17,9 +17,9 @@ description: 新規書籍を立ち上げる際の最短手順
 
 ## 参照先
 
-- [各巻の標準構成](./book-structure.md)
-- [UX プロファイル一覧](./ux-profiles.md)
-- [UX モジュール一覧](./ux-modules.md)
-- [著作権・ライセンス表示ガイドライン](./license-guideline.md)
-- [版番号/更新履歴の運用](./versioning.md)
-- [公開前レビュー・チェックリスト](./review-checklist.md)
+- [各巻の標準構成](./book-structure.html)
+- [UX プロファイル一覧](./ux-profiles.html)
+- [UX モジュール一覧](./ux-modules.html)
+- [著作権・ライセンス表示ガイドライン](./license-guideline.html)
+- [版番号/更新履歴の運用](./versioning.html)
+- [公開前レビュー・チェックリスト](./review-checklist.html)
