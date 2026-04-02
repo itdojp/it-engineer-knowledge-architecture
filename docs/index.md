@@ -45,7 +45,6 @@ Building Your Tech Career, One Book at a Time
 ## 出版ガイド
 
 - [シリーズ共通ガイド](docs/publishing/index.md)
-- [新規書籍クイックスタート](docs/publishing/new-book-quickstart.html)
 - [公開前レビュー・チェックリスト](docs/publishing/review-checklist.md)
 - 書籍テンプレート: `templates/book/`
 
