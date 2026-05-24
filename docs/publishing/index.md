@@ -22,3 +22,5 @@ description: 書籍シリーズの体裁・構成・運用の標準
 - [UX モジュール一覧](./ux-modules.md)
 - [UX プロファイル一覧](./ux-profiles.md)
 - [公開前レビュー・チェックリスト](./review-checklist.md)
+- [既存書籍レビュー完了サマリ（2026年）](./content-review-summary-2026.html)
+- [follow-up Issue 優先順位](./follow-up-priorities.html)
