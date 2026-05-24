@@ -13,6 +13,7 @@ description: 書籍シリーズの体裁・構成・運用の標準
 - [著作権・ライセンス表示ガイドライン](./license-guideline.md)
 - [版番号/更新履歴の運用](./versioning.md)
 - [運用プレイブック（book-formatter更新の横展開）](./operations-playbook.md)
+- [運用ダッシュボード](./operations-dashboard.html)
 - [品質スプリント運用](./quality-sprint.md)
 - [フォント可読性 E2E 確認ログ（2026-05-24）](./font-readability-check-2026-05-24.html)
 - [新規書籍クイックスタート](./new-book-quickstart.md)
