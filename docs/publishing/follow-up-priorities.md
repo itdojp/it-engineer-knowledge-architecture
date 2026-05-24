@@ -11,9 +11,9 @@ description: 既存書籍レビュー後に残った横断・書籍別 follow-up
 - 確認日: 2026-05-24（Asia/Tokyo）
 - 確認元: `docs/publishing/book-registry.json` 掲載 39 書籍リポジトリと `itdojp/it-engineer-knowledge-architecture`
 - 確認方法: GitHub API で open Issue を取得し、PR を除外
-- 観測結果: 40 リポジトリ中 11 リポジトリに open Issue、合計 26 件
+- 観測結果: 40 リポジトリ中 10 リポジトリに open Issue、合計 19 件
 
-このページは運用判断用のスナップショットです。最新状態は各 Issue の GitHub 画面を正とします。
+このページは運用判断用のスナップショットです。最新状態は各 Issue の GitHub 画面を正とします。横断リポジトリ単体の最新棚卸しは [運用ダッシュボード](./operations-dashboard.html) を参照してください。
 
 記法ルール: 単独の `#番号` は `itdojp/it-engineer-knowledge-architecture` の Issue を示し、`repo#番号` は各書籍リポジトリの Issue を示します（例: `#133` と `practical-auth-book#133` は別 Issue）。
 
@@ -36,12 +36,8 @@ description: 既存書籍レビュー後に残った横断・書籍別 follow-up
 
 | 順位 | Issue | 理由 | 推奨アクション |
 | --- | --- | --- | --- |
-| 1 | [#133: categorical / composable 関係整理](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/133) | 公開カタログ、英語カタログ、関連書籍の説明に直結する | README、英語カタログ、公開カタログ上の関係説明を再確認し、必要なら小粒 PR で完了させる |
-| 2 | [#83: AI時代のITインフラ不足領域](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/83) | 計画書籍 7 冊と今後の学習パスに影響する | Kubernetes / Platform Engineering / LLMOps / OpenTelemetry の採否判断を行い、計画書籍と学習パスへ反映する |
-| 3 | [#137: GitHub Actions Node 20 廃止予告対応](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/137) | 管理下書籍の CI 継続性に影響する | 未対応 repo の再棚卸し、対応済みチェック、必要なら横断 PR を分割して進める |
-| 4 | AI / ソフトスキル系の全面リライト Issue | `GitHub-AgentOps-book#37`、`LogicalThinking-AI-Era-Guide#126`、`ai-era-engineers-mind-book#127`、`ai-communication-book#131` は内容品質の上限を決める | 1冊ずつ設計 Issue を確定し、章構成単位の PR に分解する |
-| 5 | `ai-agent-engineering-book` の判断系 Issue | [#227](https://github.com/itdojp/ai-agent-engineering-book/issues/227)、[#228](https://github.com/itdojp/ai-agent-engineering-book/issues/228)、[#229](https://github.com/itdojp/ai-agent-engineering-book/issues/229) は agent 運用境界と証跡厳格性に関わる | 用語・境界条件を決め、日英 backmatter / sample harness docs の整合 PR に分ける |
-| 6 | [practical-auth-book#133](https://github.com/itdojp/practical-auth-book/issues/133) | 認証認可書籍の runnable minimum と公開 TOC 導線に影響する | 環境構築導線と最小実行例を、セキュリティ誤用を避ける表現で復旧する |
+| 1 | AI / ソフトスキル系の全面リライト Issue | `LogicalThinking-AI-Era-Guide#126`、`ai-era-engineers-mind-book#127`、`ai-communication-book#131` は内容品質の上限を決める | 1冊ずつ設計 Issue を確定し、章構成単位の PR に分解する |
+| 2 | `ai-agent-engineering-book` の判断系 Issue | [#227](https://github.com/itdojp/ai-agent-engineering-book/issues/227)、[#228](https://github.com/itdojp/ai-agent-engineering-book/issues/228)、[#229](https://github.com/itdojp/ai-agent-engineering-book/issues/229) は agent 運用境界と証跡厳格性に関わる | 用語・境界条件を決め、日英 backmatter / sample harness docs の整合 PR に分ける |
 
 ### P2: 品質スプリントで処理する候補
 
@@ -49,15 +45,14 @@ description: 既存書籍レビュー後に残った横断・書籍別 follow-up
 | --- | --- | --- |
 | Kubernetes / コンテナ UX | [kubernetes-basics-book#22](https://github.com/itdojp/kubernetes-basics-book/issues/22)、[#13](https://github.com/itdojp/kubernetes-basics-book/issues/13)、[kubernetes-cluster-ops-book#16](https://github.com/itdojp/kubernetes-cluster-ops-book/issues/16)、[kubernetes-proxmox-to-cloud-book#20](https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/issues/20)、[podman-book#189](https://github.com/itdojp/podman-book/issues/189) | 章導線、共通コア、スクリーンショット差し込みを、書籍ごとに小粒 PR 化する |
 | Proxmox 図表・スクリーンショット | [proxmox_book#25](https://github.com/itdojp/proxmox_book/issues/25)、[#2](https://github.com/itdojp/proxmox_book/issues/2) | Proxmox VE の対象バージョンと取得手順を固定してから、図表追加 PR に進む |
-| 実機目視 / 可読性 | [it-engineer-knowledge-architecture#117](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/117) | [フォント可読性 E2E 確認ログ（2026-05-24）](./font-readability-check-2026-05-24.html) で 39冊 / 312ページの `warn=0` / `fail=0` を確認済み。残件は iOS Safari、Android Chrome、Windows Edge/Chrome の実機目視結果を記録すること |
-| Professional Foundations 整理 | [it-engineer-knowledge-architecture#126](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/126) | カテゴリ導線、書籍企画対応表、相互リンク方針、横断テンプレートを `professional-foundations/` と `templates/professional-foundations/` に集約し、完了判断へ進める |
+| 実機目視 / 可読性 | [it-engineer-knowledge-architecture#117](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/117) | [フォント可読性 E2E 確認ログ（2026-05-24）](./font-readability-check-2026-05-24.html) で 39冊 / 312ページの `warn=0` / `fail=0` を確認済み。Issue は close 済みのため、実機観測を追加する場合は新規 Issue または再オープンで扱う |
 
 ### P3: 整理・クローズ判断
 
 | Issue | 推奨アクション |
 | --- | --- |
-| [#136](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/136)、[#145](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/145)、[#150](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/150)、[#151](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/151)、[#152](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/152) | 古い Quality Sprint Issue は、未着手対象を次回スプリントへ移すか、記録としてクローズする |
-| [#111: 運用ダッシュボード](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/111) | この優先順位表を参照先に追加し、Issue本文の open Issue 一覧が古くなった場合は更新する |
+| [#136](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/136)、[#145](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/145)、[#150](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/150)、[#151](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/151)、[#152](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/152) | [運用ダッシュボード](./operations-dashboard.html) の current snapshot を基準に、旧 Quality Sprint Issue を次回スプリントへ移すか、記録としてクローズする |
+| [#111: 運用ダッシュボード](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/111) | 公開ダッシュボードを参照先に追加し、以後は open Issue 棚卸しをこのページへ集約する |
 
 ## 運用ルール
 

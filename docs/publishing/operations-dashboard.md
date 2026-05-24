@@ -1,0 +1,63 @@
+---
+layout: default
+title: 運用ダッシュボード
+description: 全書籍・横断課題の現行Issue棚卸しと次アクション
+---
+
+# 運用ダッシュボード
+
+## スナップショット
+
+- 確認日: 2026-05-24（Asia/Tokyo）
+- 対象: `itdojp/it-engineer-knowledge-architecture` の open Issue
+- 確認方法: GitHub Issue API / `gh issue list` で open Issue を取得し、PR は除外
+- 観測結果: open Issue は 6 件。内訳は運用ダッシュボード（#111）1 件、Quality Sprint 5 件
+
+このページは、横断リポジトリの Issue 運用を判断するための公開スナップショットです。
+最新の状態は GitHub の Issue 画面を正とします。
+
+## 運用原則
+
+| 区分 | 管理場所 | 判断基準 |
+| --- | --- | --- |
+| 横断方針・全書籍ロールアウト | `itdojp/it-engineer-knowledge-architecture` | 複数書籍の公開カタログ、共通テンプレート、Book QA、品質スプリント運用に影響する |
+| 書籍単体の本文・章導線・CI | 各書籍リポジトリ | 影響範囲が 1 書籍に閉じる。必要な修正 PR も当該書籍で完結する |
+| 進捗ログ・定期棚卸し | 原則として最新の管理 Issue に集約 | 旧スプリント Issue は、次回へ繰り越すか、参照リンクを残してクローズする |
+
+## 現在の open Issue
+
+| Issue | ラベル | 現状 | 次アクション |
+| --- | --- | --- | --- |
+| [#111: 運用ダッシュボード（全書籍/横断課題の集約）](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/111) | `documentation` | Issue 本文の open Issue 一覧が 2026-02 時点の内容で止まっている | 本ページを最新の公開ダッシュボードとして紐づけ、Issue 本文またはコメントで現行状態を同期する |
+| [#136: Quality Sprint 2026-03-15](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/136) | `platform-wide` | 旧スプリント。現在の open backlog と重複する全書籍チェックリストが残っている | 未着手項目を最新スプリントまたは個別 Issue へ移すか、記録としてクローズする |
+| [#145: Quality Sprint 2026-04-01](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/145) | `platform-wide` | 旧スプリント。現在の open backlog と重複する全書籍チェックリストが残っている | #136 と同じ基準で、繰り越しまたはクローズを判断する |
+| [#150: Quality Sprint 2026-04-15](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/150) | `platform-wide` | 旧スプリント。現在の open backlog と重複する全書籍チェックリストが残っている | #136 と同じ基準で、繰り越しまたはクローズを判断する |
+| [#151: Quality Sprint 2026-05-01](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/151) | `platform-wide` | 旧スプリント。現在の open backlog と重複する全書籍チェックリストが残っている | #152 に統合するか、次回スプリントへ再起票する対象だけを残してクローズする |
+| [#152: Quality Sprint 2026-05-15](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/152) | `platform-wide` | 現時点で最も新しい Quality Sprint Issue | 次に実施する 2〜4 冊を選定し、1 PR = 1 書籍または 1 テーマで進める |
+
+## 直近で完了した横断課題
+
+| Issue | 完了内容 | 運用上の扱い |
+| --- | --- | --- |
+| [#153: 既存書籍群の内容レビュー・改善ロードマップ](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/153) | 39 冊の既存書籍レビュー、各書籍 PR、Copilot review、CI、公開確認まで完了 | 成果サマリは [既存書籍レビュー完了サマリ](./content-review-summary-2026.html) を参照する |
+| [#83: AI時代のITインフラ不足領域](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/83) | 不足領域の採否判断とカタログ反映方針を整理済み | 追加企画が必要な場合は新規 Issue として起票する |
+| [#126: Professional Foundations カテゴリ新設](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/126) | 基礎リテラシー領域のカテゴリとテンプレートを整理済み | 継続的な導線調整は公開カタログ更新 PR に含める |
+| [#133: categorical / composable 関係整理](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/133) | 公開カタログと英語カタログ上の関係説明を整理済み | 今後は対象書籍側の変更が入った場合にカタログ差分として扱う |
+| [#137: GitHub Actions Node 20 廃止予告対応](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/137) | 管理下書籍リポジトリの Node 20 廃止予告対応を完了 | 新たな Actions ランタイム移行は別 Issue で扱う |
+| [#117: フォント統一フォローアップ](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/117) | Pages Visual Check で 39 冊 / 312 ページの `warn=0` / `fail=0` を確認し、Issue は完了扱いで close | Issue 本文には実機チェックリストの未完了表記が残るため、実機観測を追加で行う場合は新規 Issue または再オープンで扱う |
+
+## #111 棚卸しチェックリストへの対応状況
+
+| チェック項目 | 現状 | 判定 |
+| --- | --- | --- |
+| 本リポジトリの open Issue にラベルが付与されている | #111 は `documentation`、#136 / #145 / #150 / #151 / #152 は `platform-wide` | 完了 |
+| 各 Issue に「次アクション」が明記されている | 本ページの「現在の open Issue」に次アクションを明記 | 完了 |
+| 書籍単体の話題が本リポジトリに残っていない | 現在の open Issue は運用ダッシュボードと Quality Sprint のみ | 完了 |
+| 進捗ログ型 Issue は、収束したらクローズ | Quality Sprint Issue が 5 件残り、うち 4 件は旧スプリント | 継続 |
+
+## 次に実施する順序
+
+1. #111 に本ページの公開 URL と今回の棚卸し結果を記録する。
+2. #136 / #145 / #150 / #151 の旧 Quality Sprint Issue を、#152 または次回スプリントへ繰り越すか判断する。
+3. #152 で次に扱う 2〜4 冊を選定し、書籍ごとまたはテーマごとの小粒 PR に分解する。
+4. 各 PR は Copilot review、レビュー本文・inline comment・suggestion の全件確認、CI green、merge 後の公開確認を完了条件にする。
