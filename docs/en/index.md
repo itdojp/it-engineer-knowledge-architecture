@@ -33,6 +33,22 @@ The Japanese top page remains the primary landing page for Japanese readers, whi
 - Published titles in this lineup are cataloged as `JA only` unless explicitly marked otherwise.
 - Some entries may link to related independent books outside the counted 39-book lineup when that relationship helps avoid reader confusion.
 
+## Post-review catalog status
+
+As of 2026-05-24 (Asia/Tokyo), the 39 published books in the counted lineup have completed the cross-book review roadmap tracked in [Issue #153](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/153). The review process used book-level issues and pull requests, GitHub Copilot review, CI verification, merge confirmation, and GitHub Pages smoke checks.
+
+For operational follow-up, see the Japanese publishing notes:
+
+- [2026 existing-book review summary](../publishing/content-review-summary-2026.md)
+- [follow-up issue priorities](../publishing/follow-up-priorities.md)
+
+Recommended reading flow after the review:
+
+1. Start with Professional Foundations for evidence-based work, issue discipline, documentation, security basics, and incident response.
+2. Move into infrastructure, cloud, containers, authentication, and security according to role.
+3. Add GitHub / AI delivery practices when work needs AI agents, tests, formal checks, and reviewable artifacts.
+4. Close the loop with soft skills: logical thinking, professional judgment, AI communication, negotiation, and engineer-to-engineer communication.
+
 ## Book catalog
 
 ### Beginner Track
