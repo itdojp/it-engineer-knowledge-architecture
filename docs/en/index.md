@@ -39,8 +39,8 @@ As of 2026-05-24 (Asia/Tokyo), the 39 published books in the counted lineup have
 
 For operational follow-up, see the Japanese publishing notes:
 
-- [2026 existing-book review summary](../publishing/content-review-summary-2026.md)
-- [follow-up issue priorities](../publishing/follow-up-priorities.md)
+- [2026 existing-book review summary]({{ '/' | relative_url }}publishing/content-review-summary-2026.html)
+- [follow-up issue priorities]({{ '/' | relative_url }}publishing/follow-up-priorities.html)
 
 Recommended reading flow after the review:
 
