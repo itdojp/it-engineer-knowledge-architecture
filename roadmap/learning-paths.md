@@ -17,18 +17,22 @@
 - マネジメントトラック対応
 - 技術トレンドへの適応力強化
 
-## 🧩 検討中の追加パス（Issue #83）
+## 🧩 Issue #83 採否決定済みの追加領域
 
-以下は現行の学習パスに対する **追加候補** です（採否未決）。
+Issue #83 の不足領域は、既存39冊と計画7冊の範囲で学習パスへ正式反映します。
+追加の計画書籍は増やさず、以下の位置づけで扱います。
 
-- Kubernetes/クラウドネイティブ運用
-  - 位置づけ案: Podman（コンテナ基礎）の次段、または中級者パスの専門深化として追加
+- Kubernetes / クラウドネイティブ運用
+  - Podman（コンテナ基礎）の次段として、既存の Kubernetes 3冊へ接続する
+  - 入門 → クラスタ運用 → Proxmox検証からクラウド本番、の順序で扱う
 - Platform Engineering / GitOps
-  - 位置づけ案: GitHub運用/IaC/CI/CD の次段として、標準化とセルフサービス化を扱う
+  - GitHub運用、IaC、CI/CD の次段として、標準化・セルフサービス化・Platform SLO を扱う
+  - 『エンタープライズクラウドアーキテクチャ設計・運用』へ組み込む
 - 生成AI/LLM基盤のインフラ設計・運用（LLMOps）
-  - 位置づけ案: エキスパートパスの先端技術（将来投資）として追加
-- 観測性の標準化（OpenTelemetry/分散トレーシング）
-  - 位置づけ案: 「インフラ監視・運用自動化」計画書籍に組み込み、SLI/SLO と接続
+  - エキスパートパスの先端技術として、推論基盤、RAG、GPU運用、変更管理を扱う
+  - 『次世代インフラ技術実践ガイド』へ組み込む
+- 観測性の標準化（OpenTelemetry / 分散トレーシング）
+  - 「インフラ監視・運用自動化」計画書籍に組み込み、メトリクス・ログ・トレースと SLI/SLO を接続する
 
 詳細: https://github.com/itdojp/it-engineer-knowledge-architecture/issues/83
 
@@ -112,6 +116,8 @@
    - **期間**: 6-8週間
    - **学習内容**:
      - Prometheus/Grafanaによる監視
+     - OpenTelemetry によるメトリクス・ログ・トレース標準化
+     - 分散トレーシングと SLI/SLO の接続
      - ログ管理・分析
      - SREプラクティス
    - **実践項目**:
@@ -175,8 +181,10 @@
      - 大規模クラウドアーキテクチャ設計
      - マルチクラウド戦略
      - Infrastructure as Code
+     - Platform Engineering / GitOps による標準化とセルフサービス化
    - **実践項目**:
      - エンタープライズシステム設計
+     - ゴールデンパス、テンプレート、サービスカタログ設計
      - コスト最適化提案
 
 2. **『災害対策・事業継続計画（BCP）実装ガイド』（計画書籍）**
@@ -232,7 +240,8 @@
    - **期間**: 6-8週間
    - **学習内容**:
      - エッジコンピューティング
-     - AI/MLOps実践
+     - AI/MLOps・LLMOps実践
+     - 推論基盤、RAG、GPU運用、モデル/プロンプト/データ変更管理
      - 新技術評価・導入戦略
 
 **エキスパートパス総期間**: 20-26週間（約5-6ヶ月）
@@ -241,22 +250,25 @@
 
 ### 🖥️ インフラエンジニア特化パス
 
-#### 必修コア（12冊）
+#### 必修コア（14冊）
 1. linux-infra-textbook2
 2. IT-infra-book
 3. podman-book
-4. github-workflow-book
-5. practical-auth-book
-6. 『インフラ監視・運用自動化実践ガイド』
-7. 『エンタープライズクラウドアーキテクチャ設計・運用』
-8. 『災害対策・事業継続計画（BCP）実装ガイド』
-9. 『実践的セキュリティインフラ構築』
-10. 『インフラ性能管理・キャパシティプランニング』
-11. negotiation-for-engineers
-12. ai-era-engineers-mind-book
+4. kubernetes-basics-book
+5. kubernetes-cluster-ops-book
+6. github-workflow-book
+7. practical-auth-book
+8. 『インフラ監視・運用自動化実践ガイド』
+9. 『エンタープライズクラウドアーキテクチャ設計・運用』
+10. 『災害対策・事業継続計画（BCP）実装ガイド』
+11. 『実践的セキュリティインフラ構築』
+12. 『インフラ性能管理・キャパシティプランニング』
+13. negotiation-for-engineers
+14. ai-era-engineers-mind-book
 
-#### 推奨追加（5冊）
+#### 推奨追加（6冊）
 - ai-testing-strategy-book
+- kubernetes-proxmox-to-cloud-book
 - LogicalThinking-AI-Era-Guide
 - 『コンプライアンス対応インフラ設計・運用』
 - 『次世代インフラ技術実践ガイド』
@@ -264,17 +276,19 @@
 
 ### ☁️ クラウドエンジニア特化パス
 
-#### 必修コア（10冊）
+#### 必修コア（12冊）
 1. IT-infra-book
 2. linux-infra-textbook2
 3. podman-book
-4. github-workflow-book
-5. 『エンタープライズクラウドアーキテクチャ設計・運用』
-6. 『インフラ監視・運用自動化実践ガイド』
-7. 『インフラ性能管理・キャパシティプランニング』
-8. practical-auth-book
-9. 『次世代インフラ技術実践ガイド』
-10. ai-era-engineers-mind-book
+4. kubernetes-basics-book
+5. kubernetes-proxmox-to-cloud-book
+6. github-workflow-book
+7. 『エンタープライズクラウドアーキテクチャ設計・運用』
+8. 『インフラ監視・運用自動化実践ガイド』
+9. 『インフラ性能管理・キャパシティプランニング』
+10. practical-auth-book
+11. 『次世代インフラ技術実践ガイド』
+12. ai-era-engineers-mind-book
 
 ### 🔐 セキュリティエンジニア特化パス
 
@@ -290,16 +304,17 @@
 
 ### 🧪 SRE・テストエンジニア特化パス
 
-#### 必修コア（9冊）
+#### 必修コア（10冊）
 1. ai-testing-strategy-book
 2. 『インフラ監視・運用自動化実践ガイド』
 3. 『インフラ性能管理・キャパシティプランニング』
 4. linux-infra-textbook2
 5. podman-book
-6. github-workflow-book
-7. 『災害対策・事業継続計画（BCP）実装ガイド』
-8. 『エンタープライズクラウドアーキテクチャ設計・運用』
-9. LogicalThinking-AI-Era-Guide
+6. kubernetes-cluster-ops-book
+7. github-workflow-book
+8. 『災害対策・事業継続計画（BCP）実装ガイド』
+9. 『エンタープライズクラウドアーキテクチャ設計・運用』
+10. LogicalThinking-AI-Era-Guide
 
 ### 👥 エンジニアリングマネージャー特化パス
 
