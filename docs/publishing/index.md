@@ -15,6 +15,7 @@ description: 書籍シリーズの体裁・構成・運用の標準
 - [運用プレイブック（book-formatter更新の横展開）](./operations-playbook.md)
 - [品質スプリント運用](./quality-sprint.md)
 - [新規書籍クイックスタート](./new-book-quickstart.md)
+- [Professional Foundations（基礎リテラシー）実装ガイド](../professional-foundations/)
 
 ## UX とレビューの関連資料
 

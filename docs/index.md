@@ -16,6 +16,7 @@ Building Your Tech Career, One Book at a Time
 - [日本語概要](#日本語概要)
 - [書籍一覧](#書籍一覧)
 - [学習ロードマップ](#学習ロードマップ)
+- [Professional Foundations（基礎リテラシー）](#professional-foundations基礎リテラシー)
 - [専門分野別学習パス](#専門分野別学習パス)
 - [計画書籍](#計画書籍)
 - [コミュニティ・フィードバック](#コミュニティフィードバック)
@@ -46,7 +47,9 @@ Building Your Tech Career, One Book at a Time
 
 - [シリーズ共通ガイド]({{ '/' | relative_url }}publishing/)
 - [公開前レビュー・チェックリスト]({{ '/' | relative_url }}publishing/review-checklist.html)
+- [Professional Foundations 実装ガイド]({{ '/' | relative_url }}professional-foundations/)
 - 書籍テンプレート: `templates/book/`
+- 基礎リテラシー横断テンプレート: `templates/professional-foundations/`
 
 ## 更新履歴
 
@@ -75,7 +78,7 @@ Building Your Tech Career, One Book at a Time
 - **AI時代の開発運用を接続する**: GitHub ワークフロー、AgentOps、AIエージェント、AIテスト戦略、形式的手法を、レビュー可能な成果物単位で扱う。
 - **意思決定と対人スキルで閉じる**: 論理的思考、AI時代のマインド、生成AIコミュニケーション、交渉、実務コミュニケーションを、責任境界と記録の観点で使い分ける。
 
-レビュー結果の横断サマリは [既存書籍レビュー完了サマリ]({{ '/' | relative_url }}publishing/content-review-summary-2026.html)、残 follow-up の優先順位は [follow-up Issue 優先順位]({{ '/' | relative_url }}publishing/follow-up-priorities.html) に記録しています。
+レビュー結果の横断サマリは [既存書籍レビュー完了サマリ]({{ '/' | relative_url }}publishing/content-review-summary-2026.html)、残 follow-up の優先順位は [follow-up Issue 優先順位]({{ '/' | relative_url }}publishing/follow-up-priorities.html) に記録しています。Professional Foundations の導入順、書籍企画、横断テンプレートは [Professional Foundations 実装ガイド]({{ '/' | relative_url }}professional-foundations/) に集約しています。
 
 ---
 
@@ -136,6 +139,8 @@ Building Your Tech Career, One Book at a Time
 #### 基礎リテラシー（Professional Foundations）
 
 対象: 全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎
+
+導入順、書籍企画、README / Issue / PR / ADR / 障害報告などの横断テンプレートは [Professional Foundations 実装ガイド]({{ '/' | relative_url }}professional-foundations/) を参照してください。
 
 3. 根拠で進める開発仕事術：検索戦略・検証・引用の実務  
    [書籍を読む](https://itdojp.github.io/evidence-based-engineering-book/) | [リポジトリ](https://github.com/itdojp/evidence-based-engineering-book)
@@ -359,6 +364,19 @@ Linux基礎
 先端技術
 
 - 『次世代インフラ技術実践ガイド』（計画: AI/MLOps・LLMOps を含む）
+
+---
+
+## Professional Foundations（基礎リテラシー）
+
+Professional Foundations は、技術基盤へ進む前に「仕事の成果物」をレビュー可能にするための基礎カテゴリです。
+調査、Issue / PR、README / 手順書 / Runbook / ADR、セキュリティ確認、インシデント報告を、GitHub 上で再利用可能な型として扱います。
+
+- 導入ガイド: [Professional Foundations 実装ガイド]({{ '/' | relative_url }}professional-foundations/)
+- 横断テンプレート: `templates/professional-foundations/`
+- GitHub初心者ガイドとの関係: GitHubガイドは操作の入口、本カテゴリは成果物の品質・完了判定・運用標準を担当します。
+
+推奨順は「根拠で進める開発仕事術 → チケット駆動の仕事術 → エンジニアリングドキュメント実践ガイド → セキュリティ＆プライバシー基礎リテラシー → インシデント対応 基礎」です。
 
 ---
 
