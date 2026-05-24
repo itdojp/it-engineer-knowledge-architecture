@@ -183,8 +183,8 @@ The following titles are already on the roadmap but are not published yet.
 
 | Canonical title | Availability | Category | Audience | Short English summary | Links |
 | --- | --- | --- | --- | --- | --- |
-| インフラ監視・運用自動化実践ガイド | `Planned` | Advanced Infrastructure Practice | Intermediate+ | Planned guide to observability, monitoring, and operations automation with tools such as Prometheus and Grafana. | — |
-| エンタープライズクラウドアーキテクチャ設計・運用 | `Planned` | Applied Technologies | Intermediate+ | Planned enterprise cloud architecture title covering AWS, Azure, GCP, IaC, and FinOps. | — |
+| インフラ監視・運用自動化実践ガイド | `Planned` | Advanced Infrastructure Practice | Intermediate+ | Planned guide to observability, monitoring, OpenTelemetry-based metrics/logs/traces, and operations automation. | — |
+| エンタープライズクラウドアーキテクチャ設計・運用 | `Planned` | Applied Technologies | Intermediate+ | Planned enterprise cloud architecture title covering AWS, Azure, GCP, IaC, Platform Engineering / GitOps, and FinOps. | — |
 | 災害対策・事業継続計画（BCP）実装ガイド | `Planned` | Advanced Infrastructure Practice | Intermediate+ | Planned practical guide to disaster recovery and business continuity planning, including RTO/RPO design. | — |
 | 実践的セキュリティインフラ構築 | `Planned` | Security | Intermediate+ | Planned security infrastructure book focused on zero trust, SIEM, and SOC-oriented operations. | — |
 
@@ -199,7 +199,7 @@ The following titles are already on the roadmap but are not published yet.
 
 | Canonical title | Availability | Category | Audience | Short English summary | Links |
 | --- | --- | --- | --- | --- | --- |
-| 次世代インフラ技術実践ガイド | `Planned` | Applied Technologies | Advanced | Planned survey of edge computing, AI/MLOps, and other next-generation infrastructure patterns. | — |
+| 次世代インフラ技術実践ガイド | `Planned` | Applied Technologies | Advanced | Planned survey of edge computing, AI/MLOps, LLMOps, and other next-generation infrastructure patterns. | — |
 
 ## License / commercial use
 

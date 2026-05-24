@@ -19,18 +19,17 @@
 6. **コンプライアンス対応** - 法規制・監査対応
 7. **次世代技術** - 将来への技術投資
 
-## 🧩 追加検討中（Issue #83）
+## 🧩 Issue #83 採否決定（2026-05-24）
 
-現時点の「計画書籍（7冊）」とは別枠の **追加候補** です。採否決定後に本ファイルへ正式反映します。
+Issue #83 の不足領域は、計画書籍を増やさず **既存39冊 + 計画7冊** の範囲で扱います。
+Kubernetes は既存書籍群でカバーし、Platform Engineering / GitOps、LLMOps、OpenTelemetry は下表の計画書籍へ組み込みます。
 
-- Kubernetes/クラウドネイティブ運用（候補）
-  - 例: Deployment/Service/Ingress、RBAC、NetworkPolicy、永続ストレージ、スケーリング、アップグレード/バックアップ/障害対応
-- Platform Engineering / GitOps（候補）
-  - 例: Argo CD/Flux 運用設計、テンプレート/カタログ、標準化と例外運用、Platform のSLO/セキュリティ境界
-- 生成AI/LLM基盤のインフラ設計・運用（LLMOps）（候補）
-  - 例: 推論サービング/スケーリング、GPU運用、変更管理（モデル/プロンプト/データ）、セキュリティ要求
-- 既存計画書籍への組み込み候補
-  - 監視・運用自動化: OpenTelemetry/分散トレーシング（SLI/SLOとの接続含む）
+| 領域 | 採否 | 反映先 |
+| --- | --- | --- |
+| Kubernetes / クラウドネイティブ運用 | 新規計画書籍は追加しない。既存の Kubernetes 3冊を正式な学習導線として扱う。 | `kubernetes-basics-book`、`kubernetes-cluster-ops-book`、`kubernetes-proxmox-to-cloud-book` |
+| Platform Engineering / GitOps | 独立書籍化は見送り、エンタープライズクラウド設計の運用章へ統合する。 | 『エンタープライズクラウドアーキテクチャ設計・運用』 |
+| 生成AI/LLM基盤のインフラ設計・運用（LLMOps） | 独立書籍化は見送り、次世代技術の AI/MLOps 章を LLMOps まで拡張する。 | 『次世代インフラ技術実践ガイド』 |
+| 観測性の標準化（OpenTelemetry / 分散トレーシング） | 独立書籍化は見送り、監視・運用自動化の観測性設計へ統合する。 | 『インフラ監視・運用自動化実践ガイド』 |
 
 詳細: https://github.com/itdojp/it-engineer-knowledge-architecture/issues/83
 
@@ -49,6 +48,8 @@
 **📖 主な内容**
 1. **監視システム設計・構築**
    - Prometheus/Grafana/AlertManagerによる統合監視
+   - OpenTelemetry によるメトリクス・ログ・トレースの標準化
+   - 分散トレーシングと SLI/SLO 設計の接続
    - メトリクス設計・収集戦略
    - ダッシュボード設計・可視化手法
 
@@ -101,12 +102,18 @@
    - GitOps によるインフラ管理
    - CI/CDパイプライン設計
 
-4. **コスト最適化・FinOps**
+4. **Platform Engineering / GitOps**
+   - Internal Developer Platform（IDP）の責務境界
+   - ゴールデンパス、テンプレート、サービスカタログ設計
+   - Argo CD / Flux などを使う GitOps 運用モデル
+   - 標準化と例外運用、Platform SLO、セキュリティ境界
+
+5. **コスト最適化・FinOps**
    - クラウドコスト可視化・分析
    - リソース最適化戦略
    - 予算管理・アラート設計
 
-5. **移行戦略・モダナイゼーション**
+6. **移行戦略・モダナイゼーション**
    - レガシーシステム移行戦略
    - 段階的移行計画
    - リスク管理・ロールバック戦略
@@ -311,6 +318,9 @@
    - MLパイプライン構築（MLflow、Kubeflow）
    - モデル管理・バージョニング
    - A/Bテスト・モデル監視
+   - LLM 推論サービング、RAG / ベクトル検索基盤、GPU/アクセラレータ運用
+   - モデル・プロンプト・データ変更のリリース管理とロールバック
+   - 生成AI基盤のセキュリティ要求（データ漏えい対策、プロンプトインジェクション対策を要件として扱う）
 
 3. **サーバーレス大規模運用**
    - Functions as a Service（FaaS）設計
