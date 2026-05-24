@@ -15,6 +15,8 @@ description: 既存書籍レビュー後に残った横断・書籍別 follow-up
 
 このページは運用判断用のスナップショットです。最新状態は各 Issue の GitHub 画面を正とします。
 
+記法ルール: 単独の `#番号` は `itdojp/it-engineer-knowledge-architecture` の Issue を示し、`repo#番号` は各書籍リポジトリの Issue を示します（例: `#133` と `practical-auth-book#133` は別 Issue）。
+
 ## 優先度の定義
 
 | 優先度 | 判断基準 | 期待する扱い |
