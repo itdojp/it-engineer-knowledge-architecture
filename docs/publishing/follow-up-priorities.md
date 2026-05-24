@@ -49,7 +49,7 @@ description: 既存書籍レビュー後に残った横断・書籍別 follow-up
 | --- | --- | --- |
 | Kubernetes / コンテナ UX | [kubernetes-basics-book#22](https://github.com/itdojp/kubernetes-basics-book/issues/22)、[#13](https://github.com/itdojp/kubernetes-basics-book/issues/13)、[kubernetes-cluster-ops-book#16](https://github.com/itdojp/kubernetes-cluster-ops-book/issues/16)、[kubernetes-proxmox-to-cloud-book#20](https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/issues/20)、[podman-book#189](https://github.com/itdojp/podman-book/issues/189) | 章導線、共通コア、スクリーンショット差し込みを、書籍ごとに小粒 PR 化する |
 | Proxmox 図表・スクリーンショット | [proxmox_book#25](https://github.com/itdojp/proxmox_book/issues/25)、[#2](https://github.com/itdojp/proxmox_book/issues/2) | Proxmox VE の対象バージョンと取得手順を固定してから、図表追加 PR に進む |
-| 実機目視 / 可読性 | [it-engineer-knowledge-architecture#117](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/117) | Pages Visual Check の artifact を使い、iOS Safari / Android Chrome / Windows ブラウザの観点を記録する |
+| 実機目視 / 可読性 | [it-engineer-knowledge-architecture#117](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/117) | [フォント可読性 E2E 確認ログ（2026-05-24）](./font-readability-check-2026-05-24.html) を基準に、`fail=0` の維持と残 `warn=16`（4リポジトリ）の実機確認・書籍別PR化を進める |
 | Professional Foundations 整理 | [it-engineer-knowledge-architecture#126](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/126) | カテゴリ導線、書籍企画対応表、相互リンク方針、横断テンプレートを `professional-foundations/` と `templates/professional-foundations/` に集約し、完了判断へ進める |
 
 ### P3: 整理・クローズ判断

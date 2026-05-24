@@ -1008,6 +1008,13 @@ async function checkPage({
 
       if (captureSidebar) {
         try {
+          const isSidebarOpenInPage = () => {
+            const cb = document.getElementById('sidebar-toggle-checkbox');
+            if (cb && cb instanceof HTMLInputElement && cb.checked) return true;
+            const sidebar = document.getElementById('sidebar');
+            return Boolean(sidebar && (sidebar.classList.contains('active') || sidebar.classList.contains('is-open')));
+          };
+
           const checkbox = page.locator('#sidebar-toggle-checkbox');
           const hasCheckbox = (await checkbox.count()) > 0;
           if (hasCheckbox) {
@@ -1026,13 +1033,32 @@ async function checkPage({
           }
 
           let opened = await page
-            .evaluate(() => {
-              const cb = document.getElementById('sidebar-toggle-checkbox');
-              if (cb && cb instanceof HTMLInputElement && cb.checked) return true;
-              const sidebar = document.getElementById('sidebar');
-              return Boolean(sidebar && sidebar.classList.contains('active'));
-            })
+            .evaluate(isSidebarOpenInPage)
             .catch(() => false);
+
+          if (!opened) {
+            // Some generated book layouts expose a public SidebarManager API instead of
+            // a checkbox or `.active` class. Prefer the API so the captured state matches
+            // a user-opened drawer while avoiding brittle click/overlay timing.
+            const managerOpenRequested = await page
+              .evaluate(() => {
+                const manager = window.sidebarManager;
+                if (manager && typeof manager.open === 'function') {
+                  manager.open();
+                  return true;
+                }
+                return false;
+              })
+              .catch(() => false);
+
+            if (managerOpenRequested) {
+              await page.waitForTimeout(50);
+            }
+
+            opened = await page
+              .evaluate(isSidebarOpenInPage)
+              .catch(() => false);
+          }
 
           if (!opened) {
             // Fallback: click the toggle (some layouts use a label linked to the checkbox).
@@ -1044,12 +1070,7 @@ async function checkPage({
             await page.waitForTimeout(50);
 
             opened = await page
-              .evaluate(() => {
-                const cb = document.getElementById('sidebar-toggle-checkbox');
-                if (cb && cb instanceof HTMLInputElement && cb.checked) return true;
-                const sidebar = document.getElementById('sidebar');
-                return Boolean(sidebar && sidebar.classList.contains('active'));
-              })
+              .evaluate(isSidebarOpenInPage)
               .catch(() => false);
           }
 
