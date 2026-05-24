@@ -11,7 +11,7 @@ description: 既存書籍レビュー後に残った横断・書籍別 follow-up
 - 確認日: 2026-05-24（Asia/Tokyo）
 - 確認元: `docs/publishing/book-registry.json` 掲載 39 書籍リポジトリと `itdojp/it-engineer-knowledge-architecture`
 - 確認方法: GitHub API で open Issue を取得し、PR を除外
-- 観測結果: 40 リポジトリ中 10 リポジトリに open Issue、合計 19 件
+- 観測結果: 旧 Quality Sprint 整理と #111 完了処理後、40 リポジトリ中 10 リポジトリに open Issue、合計 14 件
 
 このページは運用判断用のスナップショットです。最新状態は各 Issue の GitHub 画面を正とします。横断リポジトリ単体の最新棚卸しは [運用ダッシュボード](./operations-dashboard.html) を参照してください。
 
@@ -46,13 +46,11 @@ description: 既存書籍レビュー後に残った横断・書籍別 follow-up
 | Kubernetes / コンテナ UX | [kubernetes-basics-book#22](https://github.com/itdojp/kubernetes-basics-book/issues/22)、[#13](https://github.com/itdojp/kubernetes-basics-book/issues/13)、[kubernetes-cluster-ops-book#16](https://github.com/itdojp/kubernetes-cluster-ops-book/issues/16)、[kubernetes-proxmox-to-cloud-book#20](https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/issues/20)、[podman-book#189](https://github.com/itdojp/podman-book/issues/189) | 章導線、共通コア、スクリーンショット差し込みを、書籍ごとに小粒 PR 化する |
 | Proxmox 図表・スクリーンショット | [proxmox_book#25](https://github.com/itdojp/proxmox_book/issues/25)、[#2](https://github.com/itdojp/proxmox_book/issues/2) | Proxmox VE の対象バージョンと取得手順を固定してから、図表追加 PR に進む |
 | 実機目視 / 可読性 | [it-engineer-knowledge-architecture#117](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/117) | [フォント可読性 E2E 確認ログ（2026-05-24）](./font-readability-check-2026-05-24.html) で 39冊 / 312ページの `warn=0` / `fail=0` を確認済み。Issue は close 済みのため、実機観測を追加する場合は新規 Issue または再オープンで扱う |
+| Active Quality Sprint | [#152](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/152) | active な Quality Sprint として、次に扱う 2〜4 冊を選定する。旧スプリント #136 / #145 / #150 / #151 と運用ダッシュボード #111 は整理済み |
 
 ### P3: 整理・クローズ判断
 
-| Issue | 推奨アクション |
-| --- | --- |
-| [#136](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/136)、[#145](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/145)、[#150](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/150)、[#151](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/151)、[#152](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/152) | [運用ダッシュボード](./operations-dashboard.html) の current snapshot を基準に、旧 Quality Sprint Issue を次回スプリントへ移すか、記録としてクローズする |
-| [#111: 運用ダッシュボード](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/111) | 公開ダッシュボードを参照先に追加し、以後は open Issue 棚卸しをこのページへ集約する |
+現時点で、横断リポジトリ側の P3 整理対象は残っていません。旧 Quality Sprint Issue（#136 / #145 / #150 / #151）と運用ダッシュボード #111 は整理済みです。
 
 ## 運用ルール
 
