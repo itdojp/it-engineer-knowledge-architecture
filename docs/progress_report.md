@@ -1,6 +1,6 @@
 # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: 2026年06月05日 09:50:20 JST
+**更新日時**: 2026年06月06日 09:47:37 JST
 
 ## 📈 全体統計
 
@@ -33,7 +33,7 @@
 | engineering-documentation-book | [読む](https://itdojp.github.io/engineering-documentation-book/) | [GitHub](https://github.com/itdojp/engineering-documentation-book) | active | 2026-06-04T08:28:31Z | 0 | 0 | 0 |
 | ethereum-learning-bootcamp | [読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | [GitHub](https://github.com/itdojp/ethereum-learning-bootcamp) | active | 2026-06-04T08:51:31Z | 0 | 0 | 0 |
 | evidence-based-engineering-book | [読む](https://itdojp.github.io/evidence-based-engineering-book/) | [GitHub](https://github.com/itdojp/evidence-based-engineering-book) | active | 2026-06-04T09:04:05Z | 0 | 0 | 0 |
-| formal-methods-book | [読む](https://itdojp.github.io/formal-methods-book/) | [GitHub](https://github.com/itdojp/formal-methods-book) | active | 2026-06-04T09:38:53Z | 0 | 0 | 1 |
+| formal-methods-book | [読む](https://itdojp.github.io/formal-methods-book/) | [GitHub](https://github.com/itdojp/formal-methods-book) | active | 2026-06-06T00:32:19Z | 0 | 0 | 1 |
 | github-guide-for-beginners-book | [読む](https://itdojp.github.io/github-guide-for-beginners-book/) | [GitHub](https://github.com/itdojp/github-guide-for-beginners-book) | active | 2026-06-04T09:56:38Z | 0 | 0 | 0 |
 | github-workflow-book | [読む](https://itdojp.github.io/github-workflow-book/) | [GitHub](https://github.com/itdojp/github-workflow-book) | active | 2026-06-04T10:15:18Z | 0 | 0 | 0 |
 | illustrated-linux-basics-book | [読む](https://itdojp.github.io/illustrated-linux-basics-book/) | [GitHub](https://github.com/itdojp/illustrated-linux-basics-book) | active | 2026-06-04T10:32:02Z | 0 | 0 | 0 |
