@@ -1,6 +1,6 @@
 # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: 2026年06月06日 09:47:37 JST
+**更新日時**: 2026年06月07日 09:51:16 JST
 
 ## 📈 全体統計
 
@@ -26,7 +26,7 @@
 | ai-communication-book | [読む](https://itdojp.github.io/ai-communication-book/) | [GitHub](https://github.com/itdojp/ai-communication-book) | active | 2026-06-04T06:08:32Z | 1 | 0 | 0 |
 | ai-era-engineers-mind-book | [読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | [GitHub](https://github.com/itdojp/ai-era-engineers-mind-book) | active | 2026-06-04T06:24:07Z | 0 | 0 | 0 |
 | ai-testing-strategy-book | [読む](https://itdojp.github.io/ai-testing-strategy-book/) | [GitHub](https://github.com/itdojp/ai-testing-strategy-book) | active | 2026-06-04T06:36:47Z | 0 | 0 | 0 |
-| categorical-software-design-book | [読む](https://itdojp.github.io/categorical-software-design-book/) | [GitHub](https://github.com/itdojp/categorical-software-design-book) | active | 2026-06-04T07:06:58Z | 0 | 0 | 0 |
+| categorical-software-design-book | [読む](https://itdojp.github.io/categorical-software-design-book/) | [GitHub](https://github.com/itdojp/categorical-software-design-book) | active | 2026-06-06T10:59:17Z | 0 | 0 | 0 |
 | cloud-infra-book | [読む](https://itdojp.github.io/cloud-infra-book/) | [GitHub](https://github.com/itdojp/cloud-infra-book) | active | 2026-06-04T07:28:01Z | 0 | 0 | 0 |
 | computational-physicalism-book | [読む](https://itdojp.github.io/computational-physicalism-book/) | [GitHub](https://github.com/itdojp/computational-physicalism-book) | active | 2026-06-04T07:58:05Z | 0 | 0 | 0 |
 | cs-visionaries-book | [読む](https://itdojp.github.io/cs-visionaries-book/) | [GitHub](https://github.com/itdojp/cs-visionaries-book) | active | 2026-06-04T08:15:52Z | 0 | 0 | 0 |
