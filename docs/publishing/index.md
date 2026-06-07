@@ -16,6 +16,7 @@ description: 書籍シリーズの体裁・構成・運用の標準
 - [運用ダッシュボード](./operations-dashboard.html)
 - [品質スプリント運用](./quality-sprint.md)
 - [フォント可読性 E2E 確認ログ（2026-05-24）](./font-readability-check-2026-05-24.html)
+- [Sidebar TOC overlap 調査ログ（2026-06-07）](./sidebar-overlap-investigation-2026-06-07.html)
 - [新規書籍クイックスタート](./new-book-quickstart.md)
 - [Professional Foundations（基礎リテラシー）実装ガイド](../professional-foundations/)
 

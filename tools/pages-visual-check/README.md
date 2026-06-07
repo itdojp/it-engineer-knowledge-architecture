@@ -26,7 +26,7 @@ node run.mjs \
   --registry ../../docs/publishing/book-registry.json \
   --output ../../tmp/pages-visual-check \
   --browsers chromium,firefox \
-  --viewports mobile,tablet,desktop \
+  --viewports phone480,tablet,tablet820,laptop1024,desktop \
   --maxPagesPerBook 4 \
   --concurrency 2 \
   --captureSidebar \
@@ -62,6 +62,7 @@ node run.mjs \
 - `rel="prev"` / `rel="next"` の存在（root 以外で両方欠落は warn）
 - `.toc-link.active` が現在URLと一致しているか（TOC現在位置ハイライトの整合性。不一致は warn）
 - `--captureSidebar` 指定時、Drawer を開いた直後に `.toc-link.active` が可視領域内にあるか（可視領域外は warn）
+- `#sidebar` / `.book-sidebar` と `main` / `.book-main` などの本文領域が通常表示時に重なっていないか（重なりは fail）
 
 ## 目視観点（Artifacts screenshots のチェックポイント）
 

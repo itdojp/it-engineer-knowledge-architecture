@@ -12,7 +12,10 @@ const FONT_SPEC_PATH = path.join(REPO_ROOT, 'docs', 'FONT-SPECIFICATION.md');
 
 const DEFAULT_VIEWPORTS = {
   mobile: { width: 390, height: 844 },
+  phone480: { width: 480, height: 900 },
   tablet: { width: 768, height: 1024 },
+  tablet820: { width: 820, height: 1180 },
+  laptop1024: { width: 1024, height: 768 },
   desktop: { width: 1280, height: 720 }
 };
 
@@ -47,7 +50,7 @@ Options:
   --registry <path>         book-registry.json (default: repo docs/publishing/book-registry.json)
   --output <dir>            output dir (default: tools/pages-visual-check/output/<timestamp>)
   --browsers <list>         chromium,firefox,webkit (default: chromium)
-  --viewports <list>        mobile,tablet,desktop (default: mobile,desktop)
+  --viewports <list>        mobile,phone480,tablet,tablet820,laptop1024,desktop (default: mobile,desktop)
   --devices <list>          Playwright device names or aliases (default: off; when set, viewports are ignored)
   --maxPagesPerBook <n>     pages per book incl. root (default: 4)
   --concurrency <n>         concurrent books (default: 3)
@@ -624,6 +627,7 @@ function classifyIssues({
   emptyTocLinks,
   tocActive,
   tocActiveSidebarVisibility,
+  sidebarContentOverlap,
   horizontalOverflow,
   fontVars,
   expectedFontVars,
@@ -723,6 +727,14 @@ function classifyIssues({
     const current = tocActiveSidebarVisibility.currentPath ?? '';
     const activeText = tocActiveSidebarVisibility.activeText ?? '';
     issues.warn.push(`toc active not visible in sidebar viewport: current=${current} active="${activeText}"`);
+  }
+
+  if (sidebarContentOverlap?.overlap) {
+    const x = sidebarContentOverlap.xOverlap ?? '?';
+    const y = sidebarContentOverlap.yOverlap ?? '?';
+    const sidebar = sidebarContentOverlap.sidebar?.selector ?? 'sidebar';
+    const content = sidebarContentOverlap.content?.selector ?? 'content';
+    issues.fail.push(`sidebar/content overlap: ${sidebar} covers ${content} (${x}px x ${y}px)`);
   }
 
   if (horizontalOverflow?.overflow) {
@@ -901,6 +913,126 @@ async function checkPage({
         activeSamples
       };
 
+      const describeElement = (el, fallbackSelector) => {
+        if (!el || !(el instanceof Element)) return null;
+        const tag = (el.tagName || '').toLowerCase();
+        const id = el.id ? `#${el.id}` : '';
+        const cls =
+          typeof el.className === 'string' && el.className.trim()
+            ? `.${el.className.trim().split(/\s+/).slice(0, 3).join('.')}`
+            : '';
+        const rect = el.getBoundingClientRect();
+        const style = getComputedStyle(el);
+        return {
+          selector: `${tag}${id}${cls}` || fallbackSelector,
+          rect: {
+            left: Math.round(rect.left),
+            top: Math.round(rect.top),
+            right: Math.round(rect.right),
+            bottom: Math.round(rect.bottom),
+            width: Math.round(rect.width),
+            height: Math.round(rect.height)
+          },
+          position: style.position,
+          display: style.display,
+          visibility: style.visibility,
+          opacity: style.opacity,
+          transform: style.transform
+        };
+      };
+
+      const firstVisible = (selectors) => {
+        for (const selector of selectors) {
+          for (const el of document.querySelectorAll(selector)) {
+            const style = getComputedStyle(el);
+            const rect = el.getBoundingClientRect();
+            if (
+              rect.width > 1 &&
+              rect.height > 1 &&
+              style.display !== 'none' &&
+              style.visibility !== 'hidden' &&
+              Number(style.opacity || '1') > 0
+            ) {
+              return { element: el, selector };
+            }
+          }
+        }
+        return null;
+      };
+
+      const sidebarCandidate = firstVisible(['#sidebar', '.book-sidebar', '.sidebar', 'nav.sidebar']);
+      const contentCandidate = firstVisible([
+        'article',
+        '.page-content',
+        '.book-content',
+        'main',
+        '#main',
+        '.book-main',
+        '.content'
+      ]);
+      let sidebarContentOverlap = { overlap: false, area: 0, xOverlap: 0, yOverlap: 0 };
+      if (sidebarCandidate?.element && contentCandidate?.element) {
+        const sidebar = sidebarCandidate.element;
+        const content = contentCandidate.element;
+        const sidebarRect = sidebar.getBoundingClientRect();
+        const contentRect = content.getBoundingClientRect();
+        const overlapLeft = Math.max(sidebarRect.left, contentRect.left);
+        const overlapTop = Math.max(sidebarRect.top, contentRect.top);
+        const overlapRight = Math.min(sidebarRect.right, contentRect.right);
+        const overlapBottom = Math.min(sidebarRect.bottom, contentRect.bottom);
+        const xOverlap = Math.max(0, overlapRight - overlapLeft);
+        const yOverlap = Math.max(0, overlapBottom - overlapTop);
+        const area = xOverlap * yOverlap;
+        const sidebarStyle = getComputedStyle(sidebar);
+        const contentStyle = getComputedStyle(content);
+        const sidebarIsOverlayLike =
+          sidebarStyle.position === 'fixed' ||
+          sidebarStyle.position === 'absolute' ||
+          sidebarStyle.position === 'sticky';
+        const elementsAreSeparate = !sidebar.contains(content) && !content.contains(sidebar);
+
+        const viewportWidth = document.documentElement.clientWidth || window.innerWidth || 0;
+        const viewportHeight = document.documentElement.clientHeight || window.innerHeight || 0;
+        const samplePoints = [
+          [overlapLeft + xOverlap / 2, overlapTop + yOverlap / 2],
+          [
+            overlapLeft + Math.min(16, Math.max(1, xOverlap - 1)),
+            overlapTop + Math.min(16, Math.max(1, yOverlap - 1))
+          ],
+          [
+            overlapRight - Math.min(16, Math.max(1, xOverlap - 1)),
+            overlapBottom - Math.min(16, Math.max(1, yOverlap - 1))
+          ]
+        ].filter(([x, y]) => x >= 0 && y >= 0 && x < viewportWidth && y < viewportHeight);
+
+        const topSamples = samplePoints.map(([x, y]) => {
+          const topEl = document.elementFromPoint(x, y);
+          return {
+            x: Math.round(x),
+            y: Math.round(y),
+            top: describeElement(topEl, ''),
+            sidebarOnTop: Boolean(topEl && (topEl === sidebar || sidebar.contains(topEl))),
+            contentOnTop: Boolean(topEl && (topEl === content || content.contains(topEl)))
+          };
+        });
+        const sidebarCoversContent = topSamples.some((sample) => sample.sidebarOnTop && !sample.contentOnTop);
+
+        sidebarContentOverlap = {
+          overlap: sidebarIsOverlayLike && elementsAreSeparate && area > 1 && sidebarCoversContent,
+          area: Math.round(area),
+          xOverlap: Math.round(xOverlap),
+          yOverlap: Math.round(yOverlap),
+          sidebar: describeElement(sidebar, sidebarCandidate.selector),
+          content: describeElement(content, contentCandidate.selector),
+          sidebarZIndex: sidebarStyle.zIndex,
+          contentZIndex: contentStyle.zIndex,
+          sidebarIsOverlayLike,
+          elementsAreSeparate,
+          sidebarCoversContent,
+          topSamples
+        };
+      }
+
       const docEl = document.documentElement;
       const scrollWidth = docEl.scrollWidth;
       const clientWidth = docEl.clientWidth;
@@ -943,6 +1075,7 @@ async function checkPage({
         brokenImages,
         emptyTocLinks,
         tocActive,
+        sidebarContentOverlap,
         horizontalOverflow: {
           overflow: overflowPx > 1,
           overflowPx,
@@ -971,6 +1104,7 @@ async function checkPage({
           currentNormalizedPath: '',
           activeSamples: []
         },
+        sidebarContentOverlap: { overlap: false, area: 0, xOverlap: 0, yOverlap: 0 },
         horizontalOverflow: { overflow: false, overflowPx: 0, scrollWidth: 0, clientWidth: 0, offenders: [] },
         prevNext: { prevHref: null, nextHref: null }
       };
@@ -1234,6 +1368,7 @@ async function checkPage({
     emptyTocLinks: evalResult.emptyTocLinks,
     tocActive: evalResult.tocActive,
     tocActiveSidebarVisibility,
+    sidebarContentOverlap: evalResult.sidebarContentOverlap,
     horizontalOverflow: evalResult.horizontalOverflow,
     fontVars: evalResult.fontVars,
     expectedFontVars,
@@ -1253,6 +1388,7 @@ async function checkPage({
     emptyTocLinks: evalResult.emptyTocLinks,
     tocActive: evalResult.tocActive,
     tocActiveSidebarVisibility,
+    sidebarContentOverlap: evalResult.sidebarContentOverlap,
     horizontalOverflow: evalResult.horizontalOverflow,
     consoleErrors,
     pageErrors,
