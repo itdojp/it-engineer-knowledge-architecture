@@ -1,3 +1,9 @@
+---
+layout: default
+title: Sidebar TOC overlap investigation (2026-06-07)
+description: Issue #168 の sidebar TOC overlap 再現・原因・検証ログ
+---
+
 # Sidebar TOC overlap investigation (2026-06-07)
 
 ## Scope

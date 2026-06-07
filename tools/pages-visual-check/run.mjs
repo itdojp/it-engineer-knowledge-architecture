@@ -972,33 +972,64 @@ async function checkPage({
       ]);
       let sidebarContentOverlap = { overlap: false, area: 0, xOverlap: 0, yOverlap: 0 };
       if (sidebarCandidate?.element && contentCandidate?.element) {
-        const sidebarRect = sidebarCandidate.element.getBoundingClientRect();
-        const contentRect = contentCandidate.element.getBoundingClientRect();
-        const xOverlap = Math.max(
-          0,
-          Math.min(sidebarRect.right, contentRect.right) - Math.max(sidebarRect.left, contentRect.left)
-        );
-        const yOverlap = Math.max(
-          0,
-          Math.min(sidebarRect.bottom, contentRect.bottom) - Math.max(sidebarRect.top, contentRect.top)
-        );
+        const sidebar = sidebarCandidate.element;
+        const content = contentCandidate.element;
+        const sidebarRect = sidebar.getBoundingClientRect();
+        const contentRect = content.getBoundingClientRect();
+        const overlapLeft = Math.max(sidebarRect.left, contentRect.left);
+        const overlapTop = Math.max(sidebarRect.top, contentRect.top);
+        const overlapRight = Math.min(sidebarRect.right, contentRect.right);
+        const overlapBottom = Math.min(sidebarRect.bottom, contentRect.bottom);
+        const xOverlap = Math.max(0, overlapRight - overlapLeft);
+        const yOverlap = Math.max(0, overlapBottom - overlapTop);
         const area = xOverlap * yOverlap;
-        const sidebarStyle = getComputedStyle(sidebarCandidate.element);
-        const contentStyle = getComputedStyle(contentCandidate.element);
+        const sidebarStyle = getComputedStyle(sidebar);
+        const contentStyle = getComputedStyle(content);
         const sidebarIsOverlayLike =
           sidebarStyle.position === 'fixed' ||
           sidebarStyle.position === 'absolute' ||
           sidebarStyle.position === 'sticky';
-        const contentIsNotInsideSidebar = !sidebarCandidate.element.contains(contentCandidate.element);
+        const elementsAreSeparate = !sidebar.contains(content) && !content.contains(sidebar);
+
+        const viewportWidth = document.documentElement.clientWidth || window.innerWidth || 0;
+        const viewportHeight = document.documentElement.clientHeight || window.innerHeight || 0;
+        const samplePoints = [
+          [overlapLeft + xOverlap / 2, overlapTop + yOverlap / 2],
+          [
+            overlapLeft + Math.min(16, Math.max(1, xOverlap - 1)),
+            overlapTop + Math.min(16, Math.max(1, yOverlap - 1))
+          ],
+          [
+            overlapRight - Math.min(16, Math.max(1, xOverlap - 1)),
+            overlapBottom - Math.min(16, Math.max(1, yOverlap - 1))
+          ]
+        ].filter(([x, y]) => x >= 0 && y >= 0 && x < viewportWidth && y < viewportHeight);
+
+        const topSamples = samplePoints.map(([x, y]) => {
+          const topEl = document.elementFromPoint(x, y);
+          return {
+            x: Math.round(x),
+            y: Math.round(y),
+            top: describeElement(topEl, ''),
+            sidebarOnTop: Boolean(topEl && (topEl === sidebar || sidebar.contains(topEl))),
+            contentOnTop: Boolean(topEl && (topEl === content || content.contains(topEl)))
+          };
+        });
+        const sidebarCoversContent = topSamples.some((sample) => sample.sidebarOnTop && !sample.contentOnTop);
+
         sidebarContentOverlap = {
-          overlap: sidebarIsOverlayLike && contentIsNotInsideSidebar && area > 1,
+          overlap: sidebarIsOverlayLike && elementsAreSeparate && area > 1 && sidebarCoversContent,
           area: Math.round(area),
           xOverlap: Math.round(xOverlap),
           yOverlap: Math.round(yOverlap),
-          sidebar: describeElement(sidebarCandidate.element, sidebarCandidate.selector),
-          content: describeElement(contentCandidate.element, contentCandidate.selector),
+          sidebar: describeElement(sidebar, sidebarCandidate.selector),
+          content: describeElement(content, contentCandidate.selector),
           sidebarZIndex: sidebarStyle.zIndex,
-          contentZIndex: contentStyle.zIndex
+          contentZIndex: contentStyle.zIndex,
+          sidebarIsOverlayLike,
+          elementsAreSeparate,
+          sidebarCoversContent,
+          topSamples
         };
       }
 
