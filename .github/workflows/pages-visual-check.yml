@@ -8,7 +8,7 @@ on:
         required: false
         default: "chromium"
       viewports:
-        description: "Viewports (comma-separated): mobile,tablet,desktop"
+        description: "Viewports (comma-separated): mobile,phone480,tablet,tablet820,laptop1024,desktop"
         required: false
         default: "mobile,desktop"
       devices:
