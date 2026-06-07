@@ -961,7 +961,15 @@ async function checkPage({
       };
 
       const sidebarCandidate = firstVisible(['#sidebar', '.book-sidebar', '.sidebar', 'nav.sidebar']);
-      const contentCandidate = firstVisible(['article', '.page-content', '.book-content', 'main', '#main', '.book-main', '.content']);
+      const contentCandidate = firstVisible([
+        'article',
+        '.page-content',
+        '.book-content',
+        'main',
+        '#main',
+        '.book-main',
+        '.content'
+      ]);
       let sidebarContentOverlap = { overlap: false, area: 0, xOverlap: 0, yOverlap: 0 };
       if (sidebarCandidate?.element && contentCandidate?.element) {
         const sidebarRect = sidebarCandidate.element.getBoundingClientRect();
