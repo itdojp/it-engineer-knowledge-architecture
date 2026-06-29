@@ -1,6 +1,6 @@
 # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: 2026年06月28日 09:49:00 JST
+**更新日時**: 2026年06月29日 09:50:19 JST
 
 ## 📈 全体統計
 
@@ -23,7 +23,7 @@
 | IT-infra-troubleshooting-book | [読む](https://itdojp.github.io/IT-infra-troubleshooting-book/) | [GitHub](https://github.com/itdojp/IT-infra-troubleshooting-book) | active | 2026-06-26T23:26:37Z | 0 | 0 | 0 |
 | LogicalThinking-AI-Era-Guide | [読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | [GitHub](https://github.com/itdojp/LogicalThinking-AI-Era-Guide) | active | 2026-06-26T23:45:08Z | 0 | 0 | 0 |
 | ai-agent-engineering-book | [読む](https://itdojp.github.io/ai-agent-engineering-book/) | [GitHub](https://github.com/itdojp/ai-agent-engineering-book) | active | 2026-06-27T05:17:36Z | 0 | 0 | 0 |
-| ai-communication-book | [読む](https://itdojp.github.io/ai-communication-book/) | [GitHub](https://github.com/itdojp/ai-communication-book) | active | 2026-06-27T07:30:29Z | 1 | 0 | 0 |
+| ai-communication-book | [読む](https://itdojp.github.io/ai-communication-book/) | [GitHub](https://github.com/itdojp/ai-communication-book) | active | 2026-06-28T04:03:12Z | 1 | 0 | 0 |
 | ai-era-engineers-mind-book | [読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | [GitHub](https://github.com/itdojp/ai-era-engineers-mind-book) | active | 2026-06-27T03:13:49Z | 0 | 0 | 0 |
 | ai-testing-strategy-book | [読む](https://itdojp.github.io/ai-testing-strategy-book/) | [GitHub](https://github.com/itdojp/ai-testing-strategy-book) | active | 2026-06-27T00:00:57Z | 0 | 0 | 0 |
 | categorical-software-design-book | [読む](https://itdojp.github.io/categorical-software-design-book/) | [GitHub](https://github.com/itdojp/categorical-software-design-book) | active | 2026-06-27T05:39:19Z | 0 | 0 | 0 |
