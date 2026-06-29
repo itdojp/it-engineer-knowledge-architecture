@@ -17,7 +17,7 @@ header_description: English catalog for the ITDO technical book lineup.
 **IT Engineer Knowledge Architecture** is the public catalog for ITDO's technical book lineup.
 The Japanese top page remains the primary landing page for Japanese readers, while this `/en/` page provides an English-language catalog view of the full lineup.
 
-- Published books in the counted lineup: 39
+- Published books in the counted lineup: 40
 - Related independent English books highlighted here: 1
 - Planned books: 7
 - Main coverage: infrastructure, cloud, security, software delivery, theory, and adjacent domains
@@ -27,15 +27,15 @@ The Japanese top page remains the primary landing page for Japanese readers, whi
 
 - `JA only`: the book itself is currently available in Japanese only.
 - `EN available`: a separate English edition exists for that book.
-- `Independent EN book`: a separately published English-language book related to this catalog, but not counted in the 39-book Japanese lineup.
+- `Independent EN book`: a separately published English-language book related to this catalog, but not counted in the 40-book Japanese lineup.
 - `Planned`: the title is planned but not yet published.
 - Unless an official English title is already established, this catalog keeps the canonical Japanese title and provides an English summary instead.
 - Published titles in this lineup are cataloged as `JA only` unless explicitly marked otherwise.
-- Some entries may link to related independent books outside the counted 39-book lineup when that relationship helps avoid reader confusion.
+- Some entries may link to related independent books outside the counted 40-book lineup when that relationship helps avoid reader confusion.
 
 ## Post-review catalog status
 
-As of 2026-05-24 (Asia/Tokyo), the 39 published books in the counted lineup have completed the cross-book review roadmap tracked in [Issue #153](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/153). The review process used book-level issues and pull requests, GitHub Copilot review, CI verification, merge confirmation, and GitHub Pages smoke checks.
+As of 2026-06-29 (Asia/Tokyo), the counted lineup contains 40 published books. The original 39 books covered by the 2026-05-24 cross-book review roadmap have completed the review process tracked in [Issue #153](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/153), and the theoretical computer science prerequisites bridge book was added after publication QA and GitHub Pages verification.
 
 For operational follow-up, see the Japanese publishing notes:
 
@@ -120,6 +120,7 @@ Audience: intermediate and above; engineers who want deeper theoretical foundati
 
 | Canonical title | Availability | Audience | Short English summary | Links |
 | --- | --- | --- | --- | --- |
+| Mathematics, Proofs, and Algorithms for Reading Theoretical Computer Science | `JA only` | Intermediate+ | A Japanese bridge textbook for readers who need prerequisites before studying theoretical computer science: sets, logic, proofs, asymptotic notation, graphs, counting, data structures, formal languages, probability, number theory, linear algebra, and concurrency models. | [Read](https://itdojp.github.io/theoretical-computer-science-prerequisites-book/) / [Repository](https://github.com/itdojp/theoretical-computer-science-prerequisites-book) |
 | 理論計算機科学教科書 | `JA only` | Intermediate+ | Builds a foundation in algorithms, automata, computability, and complexity theory. | [Read](https://itdojp.github.io/theoretical-computer-science-textbook/) / [Repository](https://github.com/itdojp/theoretical-computer-science-textbook) |
 | Compositional Software Design for Agentic Systems | `Independent EN book` | Intermediate+ | English book focused on compositional software design for agentic systems, with its own scope, manuscript structure, and publication policy. | [Read](https://itdojp.github.io/composable-software-design-book/) / [Repository](https://github.com/itdojp/composable-software-design-book) / [Related Japanese book](https://itdojp.github.io/categorical-software-design-book/) |
 | 圏論によるAIエージェント時代の合成的ソフトウェア設計 | `JA only` | Intermediate+ | Japanese book focused on category-theoretic design for the AI agent era. It stands alongside the separate English book *Compositional Software Design for Agentic Systems* rather than serving as an older edition or a direct translation. | [Read](https://itdojp.github.io/categorical-software-design-book/) / [Repository](https://github.com/itdojp/categorical-software-design-book) / [Related English book](https://itdojp.github.io/composable-software-design-book/) |
