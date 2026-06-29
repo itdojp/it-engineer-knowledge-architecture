@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "updatedAt": "2026-03-28",
+  "updatedAt": "2026-06-29",
   "modulesCatalog": [
     "quickStart",
     "readingGuide",
@@ -603,6 +603,22 @@
         "glossary": true
       },
       "notes": "暫定割当（要確認）"
+    },
+    "theoretical-computer-science-prerequisites-book": {
+      "repo": "itdojp/theoretical-computer-science-prerequisites-book",
+      "pages": "https://itdojp.github.io/theoretical-computer-science-prerequisites-book/",
+      "profile": "C",
+      "modules": {
+        "quickStart": true,
+        "readingGuide": true,
+        "checklistPack": true,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": true,
+        "glossary": true
+      },
+      "notes": "理論計算機科学教科書の前提補強ブリッジ教材"
     },
     "theoretical-computer-science-textbook": {
       "repo": "itdojp/theoretical-computer-science-textbook",

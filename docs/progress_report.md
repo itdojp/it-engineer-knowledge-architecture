@@ -1,13 +1,13 @@
 # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: 2026年06月29日 09:50:19 JST
+**更新日時**: 2026年06月29日 18:37:41 JST
 
 ## 📈 全体統計
 
-- **総書籍数**: 39冊
-- **アクティブ書籍**: 38冊
+- **総書籍数**: 40冊
+- **アクティブ書籍**: 40冊
 - **アーカイブ書籍**: 0冊
-- **利用不可**: 1冊
+- **利用不可**: 0冊
 - **総Open Issue数**: 6件
 - **総Open PR数**: 0件
 - **総Star数**: 1個
@@ -16,7 +16,7 @@
 
 | 書籍名 | Pages | Repo | ステータス | 最終更新 | Open Issues | Open PRs | Stars |
 |---|---|---|---|---|---:|---:|---:|
-| BioinformaticsGuide-book | [読む](https://itdojp.github.io/BioinformaticsGuide-book/) | [GitHub](https://github.com/itdojp/BioinformaticsGuide-book) | unavailable | N/A | 0 | 0 | 0 |
+| BioinformaticsGuide-book | [読む](https://itdojp.github.io/BioinformaticsGuide-book/) | [GitHub](https://github.com/itdojp/BioinformaticsGuide-book) | active | 2026-06-27T05:17:33Z | 0 | 0 | 0 |
 | GitHub-AgentOps-book | [読む](https://itdojp.github.io/GitHub-AgentOps-book/) | [GitHub](https://github.com/itdojp/GitHub-AgentOps-book) | active | 2026-06-26T23:08:47Z | 0 | 0 | 0 |
 | IT-engineer-communication-book | [読む](https://itdojp.github.io/IT-engineer-communication-book/) | [GitHub](https://github.com/itdojp/IT-engineer-communication-book) | active | 2026-06-26T23:08:47Z | 0 | 0 | 0 |
 | IT-infra-book | [読む](https://itdojp.github.io/IT-infra-book/) | [GitHub](https://github.com/itdojp/IT-infra-book) | active | 2026-06-26T23:45:08Z | 0 | 0 | 0 |
@@ -53,6 +53,7 @@
 | security-privacy-literacy-book | [読む](https://itdojp.github.io/security-privacy-literacy-book/) | [GitHub](https://github.com/itdojp/security-privacy-literacy-book) | active | 2026-06-27T04:44:51Z | 0 | 0 | 0 |
 | small-webapp-software-design-book | [読む](https://itdojp.github.io/small-webapp-software-design-book/) | [GitHub](https://github.com/itdojp/small-webapp-software-design-book) | active | 2026-06-27T01:45:56Z | 0 | 0 | 0 |
 | supabase-architecture-patterns-book | [読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | [GitHub](https://github.com/itdojp/supabase-architecture-patterns-book) | active | 2026-06-27T02:23:09Z | 0 | 0 | 0 |
+| theoretical-computer-science-prerequisites-book | [読む](https://itdojp.github.io/theoretical-computer-science-prerequisites-book/) | [GitHub](https://github.com/itdojp/theoretical-computer-science-prerequisites-book) | active | 2026-06-29T09:29:45Z | 0 | 0 | 0 |
 | theoretical-computer-science-textbook | [読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | [GitHub](https://github.com/itdojp/theoretical-computer-science-textbook) | active | 2026-06-27T03:50:32Z | 0 | 0 | 0 |
 | wsl2-linux-essentials-book | [読む](https://itdojp.github.io/wsl2-linux-essentials-book/) | [GitHub](https://github.com/itdojp/wsl2-linux-essentials-book) | active | 2026-06-27T02:23:12Z | 0 | 0 | 0 |
 
