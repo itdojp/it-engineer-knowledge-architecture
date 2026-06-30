@@ -17,7 +17,7 @@ header_description: English catalog for the ITDO technical book lineup.
 **IT Engineer Knowledge Architecture** is the public catalog for ITDO's technical book lineup.
 The Japanese top page remains the primary landing page for Japanese readers, while this `/en/` page provides an English-language catalog view of the full lineup.
 
-- Published books in the counted lineup: 40
+- Published books in the counted lineup: 41
 - Related independent English books highlighted here: 1
 - Planned books: 7
 - Main coverage: infrastructure, cloud, security, software delivery, theory, and adjacent domains
@@ -27,15 +27,15 @@ The Japanese top page remains the primary landing page for Japanese readers, whi
 
 - `JA only`: the book itself is currently available in Japanese only.
 - `EN available`: a separate English edition exists for that book.
-- `Independent EN book`: a separately published English-language book related to this catalog, but not counted in the 40-book Japanese lineup.
+- `Independent EN book`: a separately published English-language book related to this catalog, but not counted in the 41-book Japanese lineup.
 - `Planned`: the title is planned but not yet published.
 - Unless an official English title is already established, this catalog keeps the canonical Japanese title and provides an English summary instead.
 - Published titles in this lineup are cataloged as `JA only` unless explicitly marked otherwise.
-- Some entries may link to related independent books outside the counted 40-book lineup when that relationship helps avoid reader confusion.
+- Some entries may link to related independent books outside the counted 41-book lineup when that relationship helps avoid reader confusion.
 
 ## Post-review catalog status
 
-As of 2026-06-29 (Asia/Tokyo), the counted lineup contains 40 published books. The original 39 books covered by the 2026-05-24 cross-book review roadmap have completed the review process tracked in [Issue #153](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/153), and the theoretical computer science prerequisites bridge book was added after publication QA and GitHub Pages verification.
+As of 2026-06-30 (Asia/Tokyo), the counted lineup contains 41 published books. The original 39 books covered by the 2026-05-24 cross-book review roadmap have completed the review process tracked in [Issue #153](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/153). The theoretical computer science prerequisites bridge book and the AI agent collaboration book were added after publication QA and GitHub Pages verification.
 
 For operational follow-up, see the Japanese publishing notes:
 
@@ -134,6 +134,7 @@ Audience: all levels; productivity, quality, collaboration, and modern developme
 | GitHub初心者ガイド | `JA only` | All levels | Introduces GitHub basics for repositories, branching, pull requests, and team collaboration. | [Read](https://itdojp.github.io/github-guide-for-beginners-book/) / [Repository](https://github.com/itdojp/github-guide-for-beginners-book) |
 | AI開発のためのGitHubワークフロー実践ガイド | `JA only` | All levels | Shows how to use GitHub workflows, automation, and AI-assisted review in modern software delivery. | [Read](https://itdojp.github.io/github-workflow-book/) / [Repository](https://github.com/itdojp/github-workflow-book) |
 | GitHub AgentOps 実践ガイド | `JA only` | All levels | Organizes GitHub-centered AgentOps practices for prompts, reviews, governance, and operational control of AI agents. | [Read](https://itdojp.github.io/GitHub-AgentOps-book/) / [Repository](https://github.com/itdojp/GitHub-AgentOps-book) |
+| AIエージェント協働の仕事術 | `JA only` | All levels | Provides a practical framework for turning AI agents into work outcomes through request contracts, context packs, delegation, review, permissions, human judgment, and organizational rollout. | [Read](https://itdojp.github.io/ai-agent-collaboration-book/) / [Repository](https://github.com/itdojp/ai-agent-collaboration-book) |
 | AI Agent Engineering in Practice: Prompt / Context / Harness Engineering | `EN available` | All levels | Covers prompt contracts, context engineering, and harness design so AI agents can read repos, make changes, verify results, and complete work safely. | [JA](https://itdojp.github.io/ai-agent-engineering-book/) / [EN](https://itdojp.github.io/ai-agent-engineering-book/en/) / [Repository](https://github.com/itdojp/ai-agent-engineering-book) |
 | AI主導開発時代のソフトウェアテスト戦略 | `JA only` | All levels | Designs test strategy for AI-assisted and AI-based development with risk-based coverage and fast feedback loops. | [Read](https://itdojp.github.io/ai-testing-strategy-book/) / [Repository](https://github.com/itdojp/ai-testing-strategy-book) |
 | 形式的手法の基礎と応用 | `JA only` | All levels | Introduces formal methods from specification to model checking and proof-oriented reasoning. | [Read](https://itdojp.github.io/formal-methods-book/) / [Repository](https://github.com/itdojp/formal-methods-book) |

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "updatedAt": "2026-06-29",
+  "updatedAt": "2026-06-30",
   "modulesCatalog": [
     "quickStart",
     "readingGuide",
@@ -107,6 +107,22 @@
         "glossary": true
       },
       "notes": "暫定割当（要確認）"
+    },
+    "ai-agent-collaboration-book": {
+      "repo": "itdojp/ai-agent-collaboration-book",
+      "pages": "https://itdojp.github.io/ai-agent-collaboration-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": true,
+        "readingGuide": true,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": true,
+        "glossary": true
+      },
+      "notes": "AIエージェントを業務成果へ接続する依頼・文脈・委任・検証・権限・判断・組織展開の横断書籍"
     },
     "ai-agent-engineering-book": {
       "repo": "itdojp/ai-agent-engineering-book",
