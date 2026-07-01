@@ -1,14 +1,14 @@
 # 📊 IT Engineer Knowledge Architecture 進捗レポート
 
-**更新日時**: 2026年06月30日 14:50:36 JST
+**更新日時**: 2026年07月01日 09:50:25 JST
 
 ## 📈 全体統計
 
 - **総書籍数**: 41冊
-- **アクティブ書籍**: 41冊
+- **アクティブ書籍**: 40冊
 - **アーカイブ書籍**: 0冊
-- **利用不可**: 0冊
-- **総Open Issue数**: 6件
+- **利用不可**: 1冊
+- **総Open Issue数**: 8件
 - **総Open PR数**: 0件
 - **総Star数**: 1個
 
@@ -16,13 +16,13 @@
 
 | 書籍名 | Pages | Repo | ステータス | 最終更新 | Open Issues | Open PRs | Stars |
 |---|---|---|---|---|---:|---:|---:|
-| BioinformaticsGuide-book | [読む](https://itdojp.github.io/BioinformaticsGuide-book/) | [GitHub](https://github.com/itdojp/BioinformaticsGuide-book) | active | 2026-06-27T05:17:33Z | 0 | 0 | 0 |
+| BioinformaticsGuide-book | [読む](https://itdojp.github.io/BioinformaticsGuide-book/) | [GitHub](https://github.com/itdojp/BioinformaticsGuide-book) | unavailable | N/A | 0 | 0 | 0 |
 | GitHub-AgentOps-book | [読む](https://itdojp.github.io/GitHub-AgentOps-book/) | [GitHub](https://github.com/itdojp/GitHub-AgentOps-book) | active | 2026-06-26T23:08:47Z | 0 | 0 | 0 |
 | IT-engineer-communication-book | [読む](https://itdojp.github.io/IT-engineer-communication-book/) | [GitHub](https://github.com/itdojp/IT-engineer-communication-book) | active | 2026-06-26T23:08:47Z | 0 | 0 | 0 |
 | IT-infra-book | [読む](https://itdojp.github.io/IT-infra-book/) | [GitHub](https://github.com/itdojp/IT-infra-book) | active | 2026-06-26T23:45:08Z | 0 | 0 | 0 |
 | IT-infra-troubleshooting-book | [読む](https://itdojp.github.io/IT-infra-troubleshooting-book/) | [GitHub](https://github.com/itdojp/IT-infra-troubleshooting-book) | active | 2026-06-26T23:26:37Z | 0 | 0 | 0 |
 | LogicalThinking-AI-Era-Guide | [読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | [GitHub](https://github.com/itdojp/LogicalThinking-AI-Era-Guide) | active | 2026-06-26T23:45:08Z | 0 | 0 | 0 |
-| ai-agent-collaboration-book | [読む](https://itdojp.github.io/ai-agent-collaboration-book/) | [GitHub](https://github.com/itdojp/ai-agent-collaboration-book) | active | 2026-06-30T05:43:30Z | 0 | 0 | 0 |
+| ai-agent-collaboration-book | [読む](https://itdojp.github.io/ai-agent-collaboration-book/) | [GitHub](https://github.com/itdojp/ai-agent-collaboration-book) | active | 2026-06-30T23:57:01Z | 2 | 0 | 0 |
 | ai-agent-engineering-book | [読む](https://itdojp.github.io/ai-agent-engineering-book/) | [GitHub](https://github.com/itdojp/ai-agent-engineering-book) | active | 2026-06-27T05:17:36Z | 0 | 0 | 0 |
 | ai-communication-book | [読む](https://itdojp.github.io/ai-communication-book/) | [GitHub](https://github.com/itdojp/ai-communication-book) | active | 2026-06-28T04:03:12Z | 1 | 0 | 0 |
 | ai-era-engineers-mind-book | [読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | [GitHub](https://github.com/itdojp/ai-era-engineers-mind-book) | active | 2026-06-27T03:13:49Z | 0 | 0 | 0 |
