@@ -44,6 +44,22 @@ function formatJst(date) {
   return `${y}年${m}月${d}日 ${hh}:${mm}:${ss} JST`;
 }
 
+function firstSentence(text) {
+  const normalized = String(text || "").trim();
+  if (!normalized) {
+    return "";
+  }
+  const japanesePeriod = normalized.indexOf("。");
+  if (japanesePeriod >= 0) {
+    return normalized.slice(0, japanesePeriod + 1);
+  }
+  const englishPeriod = normalized.indexOf(". ");
+  if (englishPeriod >= 0) {
+    return normalized.slice(0, englishPeriod + 1);
+  }
+  return normalized;
+}
+
 function githubGraphql({ token, query }) {
   const payload = JSON.stringify({ query });
 
@@ -196,26 +212,45 @@ async function main() {
   const entries = Object.keys(books)
     .sort()
     .map((bookName) => {
-      const repo = books[bookName]?.repo;
-      const pages = books[bookName]?.pages;
+      const entry = books[bookName] || {};
+      const repo = entry.repo;
+      const pages = entry.pages;
+      const repoVisibility = entry.repoVisibility || "public";
       if (!repo || typeof repo !== "string") {
         fail(`${bookName}: repo が不正です`);
       }
       if (!pages || typeof pages !== "string") {
         fail(`${bookName}: pages が不正です`);
       }
+      if (!["public", "private"].includes(repoVisibility)) {
+        fail(`${bookName}: repoVisibility が不正です (${repoVisibility})`);
+      }
       const [owner, name] = repo.split("/");
       if (!owner || !name) {
         fail(`${bookName}: repo の形式が不正です (${repo})`);
       }
-      return { bookName, owner, name, repo, pages };
+      return {
+        bookName,
+        owner,
+        name,
+        repo,
+        pages,
+        repoVisibility,
+        pagesPublicationScope: entry.pagesPublicationScope || null,
+        accessNote: entry.accessNote || null,
+        isPrivateManaged: repoVisibility === "private",
+      };
     });
 
   // Fetch repository metadata in GraphQL batches to reduce API calls.
+  // Intentionally private management repositories are skipped: the catalog
+  // workflow token cannot read them, and they should not be treated as broken
+  // public repositories.
   const batchSize = 20;
   const repoInfoByFullName = new Map();
-  for (let i = 0; i < entries.length; i += batchSize) {
-    const batch = entries.slice(i, i + batchSize);
+  const queryEntries = entries.filter((e) => !e.isPrivateManaged);
+  for (let i = 0; i < queryEntries.length; i += batchSize) {
+    const batch = queryEntries.slice(i, i + batchSize);
     const query = buildRepoBatchQuery(batch);
     const res = await githubGraphqlWithRetry({ token, query });
     const data = res?.json?.data || {};
@@ -229,6 +264,19 @@ async function main() {
 
   const rows = entries.map((e) => {
     const fullName = `${e.owner}/${e.name}`;
+
+    if (e.isPrivateManaged) {
+      return {
+        ...e,
+        status: "private",
+        updatedAt: null,
+        openIssues: 0,
+        openPRs: 0,
+        stars: 0,
+        isArchived: false,
+      };
+    }
+
     const repoData = repoInfoByFullName.get(fullName) || null;
 
     if (!repoData) {
@@ -258,6 +306,7 @@ async function main() {
   const totalBooks = rows.length;
   const activeBooks = rows.filter((r) => r.status === "active").length;
   const archivedBooks = rows.filter((r) => r.status === "archived").length;
+  const privateBooks = rows.filter((r) => r.status === "private").length;
   const unavailableBooks = rows.filter((r) => r.status === "unavailable").length;
   const totalOpenIssues = rows.reduce((acc, r) => acc + (r.openIssues || 0), 0);
   const totalOpenPRs = rows.reduce((acc, r) => acc + (r.openPRs || 0), 0);
@@ -276,6 +325,7 @@ async function main() {
   md.push(`- **総書籍数**: ${totalBooks}冊`);
   md.push(`- **アクティブ書籍**: ${activeBooks}冊`);
   md.push(`- **アーカイブ書籍**: ${archivedBooks}冊`);
+  md.push(`- **Private管理書籍**: ${privateBooks}冊`);
   md.push(`- **利用不可**: ${unavailableBooks}冊`);
   md.push(`- **総Open Issue数**: ${totalOpenIssues}件`);
   md.push(`- **総Open PR数**: ${totalOpenPRs}件`);
@@ -289,8 +339,15 @@ async function main() {
   md.push("|---|---|---|---|---|---:|---:|---:|");
 
   for (const r of rows) {
-    const pagesLink = `[読む](${r.pages})`;
-    const repoLink = `[GitHub](https://github.com/${r.repo})`;
+    const pagesLabel =
+      r.pagesPublicationScope === "free-preview-aligned-with-zenn-free-scope"
+        ? "読む（無料公開範囲）"
+        : "読む";
+    const pagesLink = `[${pagesLabel}](${r.pages})`;
+    const repoLink =
+      r.status === "private"
+        ? firstSentence(r.accessNote) || "Private"
+        : `[GitHub](https://github.com/${r.repo})`;
     md.push(
       `| ${r.bookName} | ${pagesLink} | ${repoLink} | ${r.status} | ${
         r.updatedAt || "N/A"
@@ -318,6 +375,7 @@ async function main() {
         totalBooks,
         activeBooks,
         archivedBooks,
+        privateBooks,
         unavailableBooks,
         totalOpenIssues,
         totalOpenPRs,
@@ -325,7 +383,10 @@ async function main() {
         books: rows.map((r) => ({
           name: r.bookName,
           repo: r.repo,
+          repoVisibility: r.repoVisibility,
           pages: r.pages,
+          pagesPublicationScope: r.pagesPublicationScope,
+          accessNote: r.accessNote,
           status: r.status,
           updatedAt: r.updatedAt,
           openIssues: r.openIssues,
