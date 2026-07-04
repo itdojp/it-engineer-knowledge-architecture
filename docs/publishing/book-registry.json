@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "updatedAt": "2026-06-30",
+  "updatedAt": "2026-07-04",
   "modulesCatalog": [
     "quickStart",
     "readingGuide",
@@ -122,7 +122,11 @@
         "legalNotice": true,
         "glossary": true
       },
-      "notes": "AIエージェントを業務成果へ接続する依頼・文脈・委任・検証・権限・判断・組織展開の横断書籍"
+      "notes": "AIエージェントを業務成果へ接続する依頼・文脈・委任・検証・権限・判断・組織展開の横断書籍。無料公開範囲と有料版を分けて運用する。",
+      "repoVisibility": "private",
+      "publicationModel": "free-preview-and-paid-edition",
+      "pagesPublicationScope": "free-preview-aligned-with-zenn-free-scope",
+      "accessNote": "有料部分を含むため管理リポジトリは Private。GitHub Pages は Zenn 等で無料公開する範囲に準じた試読範囲のみを公開する方針。"
     },
     "ai-agent-engineering-book": {
       "repo": "itdojp/ai-agent-engineering-book",
