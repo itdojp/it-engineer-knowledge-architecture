@@ -22,7 +22,7 @@
 | IT-infra-book | [読む](https://itdojp.github.io/IT-infra-book/) | [GitHub](https://github.com/itdojp/IT-infra-book) | active | 2026-06-26T23:45:08Z | 0 | 0 | 0 |
 | IT-infra-troubleshooting-book | [読む](https://itdojp.github.io/IT-infra-troubleshooting-book/) | [GitHub](https://github.com/itdojp/IT-infra-troubleshooting-book) | active | 2026-06-26T23:26:37Z | 0 | 0 | 0 |
 | LogicalThinking-AI-Era-Guide | [読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | [GitHub](https://github.com/itdojp/LogicalThinking-AI-Era-Guide) | active | 2026-06-26T23:45:08Z | 0 | 0 | 0 |
-| ai-agent-collaboration-book | [読む](https://itdojp.github.io/ai-agent-collaboration-book/) | [GitHub](https://github.com/itdojp/ai-agent-collaboration-book) | active | 2026-07-01T01:47:02Z | 0 | 0 | 0 |
+| ai-agent-collaboration-book | [読む（公開版）](https://itdojp.github.io/ai-agent-collaboration-book/) | Private（有料部分を含むため非公開） | active / private repo | 2026-07-01T01:47:02Z | 0 | 0 | 0 |
 | ai-agent-engineering-book | [読む](https://itdojp.github.io/ai-agent-engineering-book/) | [GitHub](https://github.com/itdojp/ai-agent-engineering-book) | active | 2026-06-27T05:17:36Z | 0 | 0 | 0 |
 | ai-communication-book | [読む](https://itdojp.github.io/ai-communication-book/) | [GitHub](https://github.com/itdojp/ai-communication-book) | active | 2026-06-28T04:03:12Z | 1 | 0 | 0 |
 | ai-era-engineers-mind-book | [読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | [GitHub](https://github.com/itdojp/ai-era-engineers-mind-book) | active | 2026-06-27T03:13:49Z | 0 | 0 | 0 |
