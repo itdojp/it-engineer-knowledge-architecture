@@ -13,9 +13,17 @@ Building Your Tech Career, One Book at a Time
 
 [日本語]({{ '/' | relative_url }}) | [English]({{ '/en/' | relative_url }})
 
+主要入口:
+
+- [書籍一覧]({{ '/' | relative_url }}books/) — 正本カタログから生成した全書籍カード
+- [学習パス]({{ '/' | relative_url }}paths/) — 正本カタログの bookIds / nextPathIds から生成した読書順
+- [出版ガイド]({{ '/' | relative_url }}publishing/) — 書籍制作・レビュー・公開運用の手引き
+
 - [日本語概要](#日本語概要)
 - [書籍一覧](#書籍一覧)
+- [正本カタログページ]({{ '/' | relative_url }}books/)
 - [学習ロードマップ](#学習ロードマップ)
+- [正本学習パスページ]({{ '/' | relative_url }}paths/)
 - [Professional Foundations（基礎リテラシー）](#professional-foundations基礎リテラシー)
 - [専門分野別学習パス](#専門分野別学習パス)
 - [計画書籍](#計画書籍)

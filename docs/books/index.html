@@ -1,0 +1,136 @@
+---
+layout: default
+title: 書籍一覧 | IT Engineer Knowledge Architecture
+description: IT Engineer Knowledge Architecture の全書籍カタログ。公開済み、計画中、関連する独立英語書籍を正本データから表示します。
+permalink: /books/
+---
+{% assign catalog = site.data.catalog %}
+{% assign books = catalog.books | sort: 'displayOrder' %}
+{% assign categories = books | map: 'category' | uniq | sort %}
+{% assign main_count = 0 %}
+{% assign planned_count = 0 %}
+{% assign related_count = 0 %}
+{% for book in books %}
+  {% if book.countingGroup == 'main-lineup' and book.countedInMainLineup %}{% assign main_count = main_count | plus: 1 %}{% endif %}
+  {% if book.countingGroup == 'planned' %}{% assign planned_count = planned_count | plus: 1 %}{% endif %}
+  {% if book.countingGroup == 'related-independent' %}{% assign related_count = related_count | plus: 1 %}{% endif %}
+{% endfor %}
+
+<h1>書籍一覧</h1>
+
+<p>このページは <code>docs/_data/catalog.json</code> を正本として生成する全書籍カタログです。JavaScript が無効な環境でも全件を閲覧できます。</p>
+
+<nav aria-label="このページ内の移動" class="notice-box">
+  <a href="#catalog-cards">カタログカードへ移動</a> |
+  <a href="{{ '/paths/' | relative_url }}">学習パスを見る</a> |
+  <a href="{{ '/' | relative_url }}">ホームへ戻る</a>
+</nav>
+
+<section class="catalog-summary" aria-label="カタログ集計">
+  <div class="summary-metric"><strong>{{ main_count }}</strong>メインライン公開書籍</div>
+  <div class="summary-metric"><strong>{{ planned_count }}</strong>計画書籍</div>
+  <div class="summary-metric"><strong>{{ related_count }}</strong>関連する独立英語書籍</div>
+  <div class="summary-metric"><strong>{{ books | size }}</strong>総レコード</div>
+</section>
+
+<section class="filter-panel" aria-label="書籍一覧の絞り込み">
+  <label>
+    キーワード
+    <input id="book-filter-keyword" type="search" placeholder="例: Kubernetes, AI, セキュリティ" autocomplete="off">
+  </label>
+  <label>
+    カテゴリ
+    <select id="book-filter-category">
+      <option value="">すべて</option>
+      {% for category in categories %}<option value="{{ category | escape }}">{{ category }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>
+    公開状態
+    <select id="book-filter-status">
+      <option value="">すべて</option>
+      <option value="published">公開済み</option>
+      <option value="planned">計画中</option>
+    </select>
+  </label>
+  <label>
+    公開範囲
+    <select id="book-filter-scope">
+      <option value="">すべて</option>
+      <option value="full-public">完全公開</option>
+      <option value="free-preview">無料公開範囲</option>
+      <option value="planned">計画段階</option>
+    </select>
+  </label>
+</section>
+
+<p id="book-filter-result" aria-live="polite">全 {{ books | size }} 件を表示しています。</p>
+
+<section id="catalog-cards" class="book-grid" aria-label="書籍カタログカード">
+{% for book in books %}
+  {% assign summary = book.summary.ja %}
+  {% if summary == '' %}{% assign summary = book.summary.en %}{% endif %}
+  {% assign tags_text = book.tags | join: ' ' %}
+  {% assign search_text = book.id | append: ' ' | append: book.title.ja | append: ' ' | append: book.title.en | append: ' ' | append: summary | append: ' ' | append: tags_text %}
+  <article class="book-card" data-book-card data-category="{{ book.category | escape }}" data-status="{{ book.status | escape }}" data-scope="{{ book.publicationScope | escape }}" data-search="{{ search_text | downcase | escape }}">
+    <h2 id="{{ book.id }}">{{ book.displayOrder }}. {{ book.title.ja }}</h2>
+    {% if book.title.en != book.title.ja %}<p><strong>English:</strong> {{ book.title.en }}</p>{% endif %}
+    <p>{{ summary }}</p>
+    <ul class="badge-list" aria-label="属性">
+      <li class="badge">{{ book.status }}</li>
+      <li class="badge">{{ book.countingGroup }}</li>
+      <li class="badge">{{ book.publicationScope }}</li>
+      <li class="badge">{{ book.repoVisibility }}</li>
+      {% for level in book.levels %}<li class="badge">{{ level }}</li>{% endfor %}
+      {% for language in book.languages %}<li class="badge">{{ language }}</li>{% endfor %}
+    </ul>
+    {% if book.audiences and book.audiences.size > 0 %}<p><strong>対象:</strong> {{ book.audiences | join: ' / ' }}</p>{% endif %}
+    {% if book.prerequisites and book.prerequisites.size > 0 %}
+      <p><strong>前提:</strong>
+      {% for prerequisite in book.prerequisites %}<a href="#{{ prerequisite }}">{{ prerequisite }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
+      </p>
+    {% endif %}
+    <div class="card-actions">
+      {% if book.pagesUrl %}<a href="{{ book.pagesUrl }}">読む</a>{% endif %}
+      {% if book.repo and book.repoVisibility == 'public' %}<a class="secondary" href="https://github.com/{{ book.repo }}">リポジトリ</a>{% endif %}
+    </div>
+    {% if book.repoVisibility == 'private' %}<p><small>リポジトリ: Private（有料部分を含むため非公開）。Pages は無料公開範囲のみです。</small></p>{% endif %}
+    {% if book.status == 'planned' %}<p><small>計画書籍です。リポジトリとPagesは未公開または未作成です。</small></p>{% endif %}
+    {% if book.notes and book.notes.size > 0 %}<details><summary>移行メモ</summary><ul>{% for note in book.notes %}<li>{{ note }}</li>{% endfor %}</ul></details>{% endif %}
+  </article>
+{% endfor %}
+</section>
+
+<script>
+(function () {
+  const cards = Array.from(document.querySelectorAll('[data-book-card]'));
+  const keyword = document.getElementById('book-filter-keyword');
+  const category = document.getElementById('book-filter-category');
+  const status = document.getElementById('book-filter-status');
+  const scope = document.getElementById('book-filter-scope');
+  const result = document.getElementById('book-filter-result');
+  if (!cards.length || !keyword || !category || !status || !scope || !result) return;
+
+  function applyFilters() {
+    const q = keyword.value.trim().toLowerCase();
+    const categoryValue = category.value;
+    const statusValue = status.value;
+    const scopeValue = scope.value;
+    let visible = 0;
+    for (const card of cards) {
+      const matched = (!q || card.dataset.search.includes(q)) &&
+        (!categoryValue || card.dataset.category === categoryValue) &&
+        (!statusValue || card.dataset.status === statusValue) &&
+        (!scopeValue || card.dataset.scope === scopeValue);
+      card.hidden = !matched;
+      if (matched) visible += 1;
+    }
+    result.textContent = visible + ' / ' + cards.length + ' 件を表示しています。';
+  }
+
+  for (const control of [keyword, category, status, scope]) {
+    control.addEventListener('input', applyFilters);
+    control.addEventListener('change', applyFilters);
+  }
+}());
+</script>
