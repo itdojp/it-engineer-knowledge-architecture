@@ -10,6 +10,12 @@ header_description: English catalog for the ITDO technical book lineup.
 
 [日本語]({{ '/' | relative_url }}) | **English**
 
+Primary entry points:
+
+- [Book catalog]({{ '/books/' | relative_url }}) — generated from the canonical catalog data
+- [Learning paths]({{ '/paths/' | relative_url }}) — generated from catalog book IDs and next-path IDs
+- [Publishing guide]({{ '/publishing/' | relative_url }}) — maintainer-facing publishing operations
+
 # English Catalog
 
 ## Project overview

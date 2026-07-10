@@ -1,0 +1,58 @@
+---
+layout: default
+title: 学習パス | IT Engineer Knowledge Architecture
+description: IT Engineer Knowledge Architecture の学習パス。正本カタログの bookIds と nextPathIds から生成します。
+permalink: /paths/
+---
+{% assign catalog = site.data.catalog %}
+{% assign books = catalog.books | sort: 'displayOrder' %}
+{% assign learning_paths = catalog.learningPaths %}
+
+<h1>学習パス</h1>
+
+<p>このページは <code>docs/_data/catalog.json</code> の <code>learningPaths</code> を正本として生成しています。各パスは catalog ID で書籍を参照するため、前提関係や次に進むパスを機械的に検証できます。</p>
+
+<nav aria-label="このページ内の移動" class="notice-box">
+  <a href="{{ '/books/' | relative_url }}">書籍一覧を見る</a> |
+  <a href="{{ '/' | relative_url }}">ホームへ戻る</a>
+</nav>
+
+<section class="catalog-summary" aria-label="学習パス集計">
+  <div class="summary-metric"><strong>{{ learning_paths | size }}</strong>学習パス</div>
+  <div class="summary-metric"><strong>{{ books | size }}</strong>catalog内書籍レコード</div>
+</section>
+
+<section class="path-grid" aria-label="学習パス一覧">
+{% for learning_path in learning_paths %}
+  <article id="{{ learning_path.id }}" class="path-card">
+    <h2>{{ learning_path.title.ja }}</h2>
+    {% if learning_path.title.en != learning_path.title.ja %}<p><strong>English:</strong> {{ learning_path.title.en }}</p>{% endif %}
+    <p>{{ learning_path.description.ja }}</p>
+
+    <h3>読む書籍</h3>
+    <ol class="book-sequence">
+      {% for book_id in learning_path.bookIds %}
+        {% for book in books %}
+          {% if book.id == book_id %}
+            <li>
+              {% if book.pagesUrl %}<a href="{{ book.pagesUrl }}">{{ book.title.ja }}</a>{% else %}{{ book.title.ja }}{% endif %}
+              <small>（<a href="{{ '/books/' | relative_url }}#{{ book.id }}">catalog</a> / {{ book.id }}）</small>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </ol>
+
+    {% if learning_path.nextPathIds and learning_path.nextPathIds.size > 0 %}
+      <h3>次に進むパス</h3>
+      <ul>
+        {% for next_id in learning_path.nextPathIds %}
+          {% for next_path in learning_paths %}
+            {% if next_path.id == next_id %}<li><a href="#{{ next_path.id }}">{{ next_path.title.ja }}</a></li>{% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </article>
+{% endfor %}
+</section>

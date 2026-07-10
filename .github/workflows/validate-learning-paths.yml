@@ -6,6 +6,14 @@ on:
     paths:
       - 'roadmap/**'
       - 'books/**'
+      - 'README.md'
+      - 'docs/index.md'
+      - 'docs/en/**'
+      - 'docs/_layouts/**'
+      - 'docs/books/**'
+      - 'docs/paths/**'
+      - 'docs/404.html'
+      - '.github/workflows/validate-learning-paths.yml'
       - 'docs/_data/**'
       - 'docs/publishing/book-registry.json'
       - 'schemas/**'
@@ -18,6 +26,14 @@ on:
     paths:
       - 'roadmap/**'
       - 'books/**'
+      - 'README.md'
+      - 'docs/index.md'
+      - 'docs/en/**'
+      - 'docs/_layouts/**'
+      - 'docs/books/**'
+      - 'docs/paths/**'
+      - 'docs/404.html'
+      - '.github/workflows/validate-learning-paths.yml'
       - 'docs/_data/**'
       - 'docs/publishing/book-registry.json'
       - 'schemas/**'
@@ -82,6 +98,46 @@ jobs:
           done
 
           echo "✅ リンクチェック通過"
+
+  build-site:
+    runs-on: ubuntu-latest
+    name: Jekyllサイト生成チェック
+
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+
+      - name: Ruby設定
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Jekyllインストール
+        run: gem install jekyll -v 4.4.1
+
+      - name: Jekyll build
+        run: jekyll build --source docs --destination .site
+
+      - name: 主要ページ構造チェック
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path('.site')
+          checks = {
+              'index.html': ['<main id="main-content"', '本文へスキップ', '/books/', '/paths/'],
+              'books/index.html': ['書籍一覧', 'data-book-card', '全 49 件', 'ai-agent-collaboration-book'],
+              'paths/index.html': ['学習パス', 'beginner-linux', 'book-sequence'],
+              '404.html': ['ページが見つかりません', '/books/', '/paths/'],
+              'en/index.html': ['English Catalog', '<html lang="en"'],
+          }
+          for rel, markers in checks.items():
+              text = (root / rel).read_text(encoding='utf-8')
+              h1_count = text.lower().count('<h1')
+              missing = [marker for marker in markers if marker not in text]
+              if h1_count != 1 or missing:
+                  raise SystemExit(f'{rel}: h1_count={h1_count}, missing={missing}')
+          print('site structure OK')
+          PY
 
   validate-yaml-structure:
     runs-on: ubuntu-latest
