@@ -1,0 +1,14 @@
+{
+  "name": "it-engineer-knowledge-architecture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Catalog and publishing governance for the IT Engineer Knowledge Architecture book lineup",
+  "scripts": {
+    "generate": "node scripts/generate-catalog-derived.mjs",
+    "check:generated": "node scripts/generate-catalog-derived.mjs --check",
+    "validate:catalog": "node scripts/validate-catalog.mjs",
+    "validate:learning-graph": "node scripts/validate-learning-graph.mjs",
+    "test:fixtures": "node scripts/test-catalog-fixtures.mjs",
+    "verify": "npm run validate:catalog && npm run validate:learning-graph && npm run check:generated && npm run test:fixtures"
+  }
+}

@@ -1,0 +1,3540 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-10",
+  "sourcePolicy": {
+    "canonical": "docs/_data/catalog.json",
+    "derivedFiles": [
+      "docs/publishing/book-registry.json"
+    ],
+    "externalDynamicFields": [
+      "stars",
+      "openIssues",
+      "updatedAtFromGitHub",
+      "openPRs",
+      "repoAvailabilityStatus"
+    ],
+    "notes": "GitHub APIから取得するStar数、Open Issue数、リポジトリ更新日時は正本へ保存しない。"
+  },
+  "expectedCounts": {
+    "mainLineup": 41,
+    "planned": 7,
+    "relatedIndependent": 1
+  },
+  "moduleCatalog": [
+    "quickStart",
+    "readingGuide",
+    "checklistPack",
+    "troubleshootingFlow",
+    "conceptMap",
+    "figureIndex",
+    "legalNotice",
+    "glossary"
+  ],
+  "books": [
+    {
+      "id": "illustrated-linux-basics-book",
+      "displayOrder": 1,
+      "title": {
+        "ja": "図解でわかるLinux基礎",
+        "en": "図解でわかるLinux基礎"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/illustrated-linux-basics-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/illustrated-linux-basics-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "beginner-track",
+      "subcategory": "未経験者向け",
+      "tags": [
+        "beginner-track"
+      ],
+      "levels": [
+        "beginner"
+      ],
+      "roles": [
+        "beginner"
+      ],
+      "audiences": [
+        "IT未経験者・初学者 / プログラミングやLinuxの基礎を楽しく学ぶ"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "A visual introduction to Linux basics, core commands, filesystems, networking, and containers."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "A",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": false,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "wsl2-linux-essentials-book",
+      "displayOrder": 2,
+      "title": {
+        "ja": "やさしく学ぶLinux WSL2ではじめる基礎",
+        "en": "やさしく学ぶLinux WSL2ではじめる基礎"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/wsl2-linux-essentials-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/wsl2-linux-essentials-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "beginner-track",
+      "subcategory": "未経験者向け",
+      "tags": [
+        "beginner-track"
+      ],
+      "levels": [
+        "beginner"
+      ],
+      "roles": [
+        "beginner"
+      ],
+      "audiences": [
+        "IT未経験者・初学者 / プログラミングやLinuxの基礎を楽しく学ぶ"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Uses WSL2 on Windows as a safe learning environment for Linux setup, shell usage, processes, networking, and scripting."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "A",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": false,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "evidence-based-engineering-book",
+      "displayOrder": 3,
+      "title": {
+        "ja": "根拠で進める開発仕事術：検索戦略・検証・引用の実務",
+        "en": "根拠で進める開発仕事術：検索戦略・検証・引用の実務"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/evidence-based-engineering-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/evidence-based-engineering-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "professional-foundations",
+      "subcategory": "基礎リテラシー（Professional Foundations）",
+      "tags": [
+        "professional-foundations"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers"
+      ],
+      "audiences": [
+        "全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Explains how to search, verify, quote, and document evidence so engineering decisions stay defensible."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "issue-driven-work-book",
+      "displayOrder": 4,
+      "title": {
+        "ja": "チケット駆動の仕事術：良いIssueとPRで回すタスク管理・報告・合意形成",
+        "en": "チケット駆動の仕事術：良いIssueとPRで回すタスク管理・報告・合意形成"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/issue-driven-work-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/issue-driven-work-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "professional-foundations",
+      "subcategory": "基礎リテラシー（Professional Foundations）",
+      "tags": [
+        "professional-foundations"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers"
+      ],
+      "audiences": [
+        "全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Shows how to manage work with high-quality issues and pull requests for tracking, reporting, and consensus building."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "engineering-documentation-book",
+      "displayOrder": 5,
+      "title": {
+        "ja": "エンジニアリングドキュメント実践ガイド：README・手順書・Runbook・ADR・ポストモーテム",
+        "en": "エンジニアリングドキュメント実践ガイド：README・手順書・Runbook・ADR・ポストモーテム"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/engineering-documentation-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/engineering-documentation-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "professional-foundations",
+      "subcategory": "基礎リテラシー（Professional Foundations）",
+      "tags": [
+        "professional-foundations"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers"
+      ],
+      "audiences": [
+        "全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Covers practical engineering documents such as READMEs, procedures, runbooks, ADRs, and postmortems."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "security-privacy-literacy-book",
+      "displayOrder": 6,
+      "title": {
+        "ja": "セキュリティ＆プライバシー基礎リテラシー：秘密情報・権限・データ取り扱い",
+        "en": "セキュリティ＆プライバシー基礎リテラシー：秘密情報・権限・データ取り扱い"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/security-privacy-literacy-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/security-privacy-literacy-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "professional-foundations",
+      "subcategory": "基礎リテラシー（Professional Foundations）",
+      "tags": [
+        "professional-foundations"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers"
+      ],
+      "audiences": [
+        "全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Introduces everyday security and privacy practice around secrets, permissions, and responsible data handling."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "incident-response-basics-book",
+      "displayOrder": 7,
+      "title": {
+        "ja": "インシデント対応 基礎：切り分け・状況共有・復旧・ポストモーテムの型",
+        "en": "インシデント対応 基礎：切り分け・状況共有・復旧・ポストモーテムの型"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/incident-response-basics-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/incident-response-basics-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "professional-foundations",
+      "subcategory": "基礎リテラシー（Professional Foundations）",
+      "tags": [
+        "professional-foundations"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers"
+      ],
+      "audiences": [
+        "全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Provides a reusable incident response pattern from initial triage through communication, recovery, and postmortem review."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "linux-infra-textbook2",
+      "displayOrder": 8,
+      "title": {
+        "ja": "実践Linux インフラエンジニア入門",
+        "en": "実践Linux インフラエンジニア入門"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/linux-infra-textbook2",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/linux-infra-textbook2/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "core-infra-foundations",
+      "subcategory": "技術基盤（基礎）",
+      "tags": [
+        "core-infra-foundations"
+      ],
+      "levels": [
+        "junior",
+        "intermediate"
+      ],
+      "roles": [
+        "infrastructure-engineer"
+      ],
+      "audiences": [
+        "新人〜中級者（経験0–2年）/ ITインフラの土台となる必修知識"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Builds Linux infrastructure fundamentals for modern operations, including systems, networking, process management, and security basics."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "linux-infra-textbook を置換（旧版はアーカイブ）",
+        "日本語個別概要はREADME公開カタログ上で未記載。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "it-infra-software-essentials-book",
+      "displayOrder": 9,
+      "title": {
+        "ja": "ITインフラエンジニアのためのソフトウェア基礎知識",
+        "en": "ITインフラエンジニアのためのソフトウェア基礎知識"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/it-infra-software-essentials-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/it-infra-software-essentials-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "core-infra-foundations",
+      "subcategory": "技術基盤（基礎）",
+      "tags": [
+        "core-infra-foundations"
+      ],
+      "levels": [
+        "junior",
+        "intermediate"
+      ],
+      "roles": [
+        "infrastructure-engineer"
+      ],
+      "audiences": [
+        "新人〜中級者（経験0–2年）/ ITインフラの土台となる必修知識"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Explains the software concepts infrastructure engineers need for packages, code reading, APIs, databases, and runtime behavior."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "IT-infra-book",
+      "displayOrder": 10,
+      "title": {
+        "ja": "ITインフラストラクチャ技術ガイド",
+        "en": "ITインフラストラクチャ技術ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/IT-infra-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/IT-infra-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "core-infra-foundations",
+      "subcategory": "技術基盤（基礎）",
+      "tags": [
+        "core-infra-foundations"
+      ],
+      "levels": [
+        "junior",
+        "intermediate"
+      ],
+      "roles": [
+        "infrastructure-engineer"
+      ],
+      "audiences": [
+        "新人〜中級者（経験0–2年）/ ITインフラの土台となる必修知識"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Organizes the design principles behind protocols, networks, operating systems, and storage for infrastructure engineers."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "IT-infra-troubleshooting-book",
+      "displayOrder": 11,
+      "title": {
+        "ja": "ITインフラトラブルシューティング実践ガイド",
+        "en": "ITインフラトラブルシューティング実践ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/IT-infra-troubleshooting-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/IT-infra-troubleshooting-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "advanced-infra-practice",
+      "subcategory": "技術基盤（発展）",
+      "tags": [
+        "advanced-infra-practice"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "sre"
+      ],
+      "audiences": [
+        "中級〜上級者（経験2年以上）/ 高度な設計・運用・問題解決スキル"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Teaches systematic troubleshooting through hypothesis building, observation, isolation, verification, and recovery."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "cloud-infra-book",
+      "displayOrder": 12,
+      "title": {
+        "ja": "クラウドインフラ設計・構築ガイド",
+        "en": "クラウドインフラ設計・構築ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/cloud-infra-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/cloud-infra-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "advanced-infra-practice",
+      "subcategory": "技術基盤（発展）",
+      "tags": [
+        "advanced-infra-practice"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "sre"
+      ],
+      "audiences": [
+        "中級〜上級者（経験2年以上）/ 高度な設計・運用・問題解決スキル"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Focuses on designing and building cloud infrastructure with sound choices for compute, storage, networking, and operations."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "it-infra-security-guide-book",
+      "displayOrder": 13,
+      "title": {
+        "ja": "インフラエンジニアのための情報セキュリティ実装ガイド",
+        "en": "インフラエンジニアのための情報セキュリティ実装ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/it-infra-security-guide-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/it-infra-security-guide-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "security",
+      "subcategory": "セキュリティ",
+      "tags": [
+        "security"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "security-engineer",
+        "infrastructure-engineer"
+      ],
+      "audiences": [
+        "中級者以上 / インフラ・アプリケーションのセキュリティ設計・診断"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Covers practical security controls for infrastructure, including identity, hardening, monitoring, and incident readiness."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "pentest-learning-book",
+      "displayOrder": 14,
+      "title": {
+        "ja": "実務で使えるペネトレーションテスト大全",
+        "en": "実務で使えるペネトレーションテスト大全"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/pentest-learning-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/pentest-learning-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "security",
+      "subcategory": "セキュリティ",
+      "tags": [
+        "security"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "security-engineer",
+        "infrastructure-engineer"
+      ],
+      "audiences": [
+        "中級者以上 / インフラ・アプリケーションのセキュリティ設計・診断"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Introduces penetration testing workflows, tooling, and reporting for real-world security assessments."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "proxmox_book",
+      "displayOrder": 15,
+      "title": {
+        "ja": "Proxmox VE 実践ガイド",
+        "en": "Proxmox VE 実践ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/proxmox_book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/proxmox_book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "applied-technologies",
+      "subcategory": "応用技術",
+      "tags": [
+        "applied-technologies"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "backend-engineer"
+      ],
+      "audiences": [
+        "中級者以上 / 特定技術スタックの実践的活用"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Explains how to build and operate virtualization environments with Proxmox VE in practical scenarios."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "kubernetes-basics-book",
+      "displayOrder": 16,
+      "title": {
+        "ja": "Kubernetes入門：PodからIngressまで（基礎と実践）",
+        "en": "Kubernetes入門：PodからIngressまで（基礎と実践）"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/kubernetes-basics-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/kubernetes-basics-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "applied-technologies",
+      "subcategory": "応用技術",
+      "tags": [
+        "applied-technologies"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "backend-engineer"
+      ],
+      "audiences": [
+        "中級者以上 / 特定技術スタックの実践的活用"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Introduces Kubernetes from core objects to service exposure, with hands-on operational basics."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "初期登録",
+        "日本語個別概要はREADME公開カタログ上で未記載。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "kubernetes-cluster-ops-book",
+      "displayOrder": 17,
+      "title": {
+        "ja": "Kubernetesクラスタ設計・運用実践ガイド",
+        "en": "Kubernetesクラスタ設計・運用実践ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/kubernetes-cluster-ops-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/kubernetes-cluster-ops-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "applied-technologies",
+      "subcategory": "応用技術",
+      "tags": [
+        "applied-technologies"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "backend-engineer"
+      ],
+      "audiences": [
+        "中級者以上 / 特定技術スタックの実践的活用"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Covers Kubernetes cluster design and day-2 operations with reliability, lifecycle, and security concerns in mind."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "初期登録",
+        "日本語個別概要はREADME公開カタログ上で未記載。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "kubernetes-proxmox-to-cloud-book",
+      "displayOrder": 18,
+      "title": {
+        "ja": "Kubernetes: Proxmox検証からクラウド本番へ",
+        "en": "Kubernetes: Proxmox検証からクラウド本番へ"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/kubernetes-proxmox-to-cloud-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/kubernetes-proxmox-to-cloud-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "applied-technologies",
+      "subcategory": "応用技術",
+      "tags": [
+        "applied-technologies"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "backend-engineer"
+      ],
+      "audiences": [
+        "中級者以上 / 特定技術スタックの実践的活用"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Bridges local Proxmox-based Kubernetes experiments to cloud production architecture and operations."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "初期登録",
+        "日本語個別概要はREADME公開カタログ上で未記載。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "podman-book",
+      "displayOrder": 19,
+      "title": {
+        "ja": "Podman完全ガイド",
+        "en": "Podman完全ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/podman-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/podman-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "applied-technologies",
+      "subcategory": "応用技術",
+      "tags": [
+        "applied-technologies"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "backend-engineer"
+      ],
+      "audiences": [
+        "中級者以上 / 特定技術スタックの実践的活用"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Explains Podman-based container workflows, including images, storage, networking, pods, and rootless operation."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "practical-auth-book",
+      "displayOrder": 20,
+      "title": {
+        "ja": "実践 認証認可システム設計",
+        "en": "実践 認証認可システム設計"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/practical-auth-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/practical-auth-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "applied-technologies",
+      "subcategory": "応用技術",
+      "tags": [
+        "applied-technologies"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "backend-engineer"
+      ],
+      "audiences": [
+        "中級者以上 / 特定技術スタックの実践的活用"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Designs authentication and authorization systems from sessions and tokens to OAuth 2.0, OIDC, and federated identity."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "supabase-architecture-patterns-book",
+      "displayOrder": 21,
+      "title": {
+        "ja": "Supabaseアーキテクチャ",
+        "en": "Supabaseアーキテクチャ"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/supabase-architecture-patterns-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/supabase-architecture-patterns-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "applied-technologies",
+      "subcategory": "応用技術",
+      "tags": [
+        "applied-technologies"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "backend-engineer"
+      ],
+      "audiences": [
+        "中級者以上 / 特定技術スタックの実践的活用"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Uses Supabase as a practical application platform covering auth, data, edge functions, and operations."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "C",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "theoretical-computer-science-prerequisites-book",
+      "displayOrder": 22,
+      "title": {
+        "ja": "理論計算機科学を読むための数学・証明・アルゴリズム基礎",
+        "en": "Mathematics, Proofs, and Algorithms for Reading Theoretical Computer Science"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/theoretical-computer-science-prerequisites-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/theoretical-computer-science-prerequisites-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "computer-science-theory",
+      "subcategory": "コンピューターサイエンス理論",
+      "tags": [
+        "computer-science-theory"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "software-engineer",
+        "architect"
+      ],
+      "audiences": [
+        "中級者以上 / 理論的バックグラウンドの深化"
+      ],
+      "summary": {
+        "ja": "集合・論理・関数・関係・証明技法・漸近記法・擬似コード・グラフ・組合せ・データ構造・形式言語・確率・数論・線形代数・並行モデルを、理論計算機科学教科書に進むための前提として整理するブリッジ教材。",
+        "en": "A Japanese bridge textbook for readers who need prerequisites before studying theoretical computer science: sets, logic, proofs, asymptotic notation, graphs, counting, data structures, formal languages, probability, number theory, linear algebra, and concurrency models."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "C",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": true,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": true,
+          "legalNotice": true,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "理論計算機科学教科書の前提補強ブリッジ教材"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "theoretical-computer-science-textbook",
+      "displayOrder": 23,
+      "title": {
+        "ja": "理論計算機科学教科書",
+        "en": "理論計算機科学教科書"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/theoretical-computer-science-textbook",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/theoretical-computer-science-textbook/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "computer-science-theory",
+      "subcategory": "コンピューターサイエンス理論",
+      "tags": [
+        "computer-science-theory"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "software-engineer",
+        "architect"
+      ],
+      "audiences": [
+        "中級者以上 / 理論的バックグラウンドの深化"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Builds a foundation in algorithms, automata, computability, and complexity theory."
+      },
+      "prerequisites": [
+        "theoretical-computer-science-prerequisites-book"
+      ],
+      "estimatedWeeks": null,
+      "recommendedAfter": [
+        "theoretical-computer-science-prerequisites-book"
+      ],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "C",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "categorical-software-design-book",
+      "displayOrder": 24,
+      "title": {
+        "ja": "圏論によるAIエージェント時代の合成的ソフトウェア設計",
+        "en": "圏論によるAIエージェント時代の合成的ソフトウェア設計"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/categorical-software-design-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/categorical-software-design-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "computer-science-theory",
+      "subcategory": "コンピューターサイエンス理論",
+      "tags": [
+        "computer-science-theory"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "software-engineer",
+        "architect"
+      ],
+      "audiences": [
+        "中級者以上 / 理論的バックグラウンドの深化"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Japanese book focused on category-theoretic design for the AI agent era. It stands alongside the separate English book *Compositional Software Design for Agentic Systems* rather than serving as an older edition or a direct translation."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [
+        "composable-software-design-book"
+      ],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "C",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": true,
+          "conceptMap": true,
+          "figureIndex": true,
+          "legalNotice": true,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "Profile C の暫定割当。付録Dは図版・レビュー前の最小確認項目・症状別再参照の入口として扱う。raw サンプルは本文より先に更新される場合があるため要確認。",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+        "独立英語書籍 composable-software-design-book と関連。単純翻訳・旧新版関係ではない。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "github-guide-for-beginners-book",
+      "displayOrder": 25,
+      "title": {
+        "ja": "GitHub初心者ガイド",
+        "en": "GitHub初心者ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/github-guide-for-beginners-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/github-guide-for-beginners-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "development-delivery",
+      "subcategory": "開発・運用プロセス",
+      "tags": [
+        "development-delivery"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "software-engineer",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / 開発効率化・品質向上"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Introduces GitHub basics for repositories, branching, pull requests, and team collaboration."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "A",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": false,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "github-workflow-book",
+      "displayOrder": 26,
+      "title": {
+        "ja": "AI開発のためのGitHubワークフロー実践ガイド",
+        "en": "AI開発のためのGitHubワークフロー実践ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/github-workflow-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/github-workflow-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "development-delivery",
+      "subcategory": "開発・運用プロセス",
+      "tags": [
+        "development-delivery"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "software-engineer",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / 開発効率化・品質向上"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Shows how to use GitHub workflows, automation, and AI-assisted review in modern software delivery."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "GitHub-AgentOps-book",
+      "displayOrder": 27,
+      "title": {
+        "ja": "GitHub AgentOps 実践ガイド",
+        "en": "GitHub AgentOps 実践ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/GitHub-AgentOps-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/GitHub-AgentOps-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "development-delivery",
+      "subcategory": "開発・運用プロセス",
+      "tags": [
+        "development-delivery"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "software-engineer",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / 開発効率化・品質向上"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Organizes GitHub-centered AgentOps practices for prompts, reviews, governance, and operational control of AI agents."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "ai-agent-collaboration-book",
+      "displayOrder": 28,
+      "title": {
+        "ja": "AIエージェント協働の仕事術",
+        "en": "AIエージェント協働の仕事術"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/ai-agent-collaboration-book",
+      "repoVisibility": "private",
+      "pagesUrl": "https://itdojp.github.io/ai-agent-collaboration-book/",
+      "publicationScope": "free-preview",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "development-delivery",
+      "subcategory": "開発・運用プロセス",
+      "tags": [
+        "development-delivery"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "software-engineer",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / 開発効率化・品質向上"
+      ],
+      "summary": {
+        "ja": "AIエージェントを業務成果へ接続するための依頼、コンテキスト、委任、レビュー、権限、判断、組織展開の実践フレームワーク。GitHub Pages は Zenn 等で無料公開する範囲に準じた試読範囲を公開する方針です。",
+        "en": "Provides a practical framework for turning AI agents into work outcomes through request contracts, context packs, delegation, review, permissions, human judgment, and organizational rollout. GitHub Pages is intended to publish only the free-preview scope aligned with the Zenn free-publication boundary."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": true,
+          "figureIndex": true,
+          "legalNotice": true,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "AIエージェントを業務成果へ接続する依頼・文脈・委任・検証・権限・判断・組織展開の横断書籍。無料公開範囲と有料版を分けて運用する。",
+        "有料部分を含むPrivate管理書籍。Pagesは無料公開範囲のみ。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "ai-agent-engineering-book",
+      "displayOrder": 29,
+      "title": {
+        "ja": "AIエージェント実践: Prompt / Context / Harness Engineering",
+        "en": "AI Agent Engineering in Practice: Prompt / Context / Harness Engineering"
+      },
+      "officialEnglishTitle": "AI Agent Engineering in Practice: Prompt / Context / Harness Engineering",
+      "status": "published",
+      "repo": "itdojp/ai-agent-engineering-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/ai-agent-engineering-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "development-delivery",
+      "subcategory": "開発・運用プロセス",
+      "tags": [
+        "development-delivery"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "software-engineer",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / 開発効率化・品質向上"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Covers prompt contracts, context engineering, and harness design so AI agents can read repos, make changes, verify results, and complete work safely."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "A",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": false,
+          "figureIndex": false,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）/ 英語版あり",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+        "同一書籍内に英語版ページあり。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "ai-testing-strategy-book",
+      "displayOrder": 30,
+      "title": {
+        "ja": "AI主導開発時代のソフトウェアテスト戦略",
+        "en": "AI主導開発時代のソフトウェアテスト戦略"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/ai-testing-strategy-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/ai-testing-strategy-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "development-delivery",
+      "subcategory": "開発・運用プロセス",
+      "tags": [
+        "development-delivery"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "software-engineer",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / 開発効率化・品質向上"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Designs test strategy for AI-assisted and AI-based development with risk-based coverage and fast feedback loops."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "formal-methods-book",
+      "displayOrder": 31,
+      "title": {
+        "ja": "形式的手法の基礎と応用",
+        "en": "形式的手法の基礎と応用"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/formal-methods-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/formal-methods-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "development-delivery",
+      "subcategory": "開発・運用プロセス",
+      "tags": [
+        "development-delivery"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "software-engineer",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / 開発効率化・品質向上"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Introduces formal methods from specification to model checking and proof-oriented reasoning."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "C",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "small-webapp-software-design-book",
+      "displayOrder": 32,
+      "title": {
+        "ja": "要件から始めるソフトウェア設計（小規模TS Webアプリの実践）",
+        "en": "要件から始めるソフトウェア設計（小規模TS Webアプリの実践）"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/small-webapp-software-design-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/small-webapp-software-design-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "development-delivery",
+      "subcategory": "開発・運用プロセス",
+      "tags": [
+        "development-delivery"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "software-engineer",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / 開発効率化・品質向上"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Starts software design from requirements and turns a small TypeScript web app into a coherent, reviewable structure."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "C",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "BioinformaticsGuide-book",
+      "displayOrder": 33,
+      "title": {
+        "ja": "バイオインフォマティクス実践ガイド",
+        "en": "バイオインフォマティクス実践ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/BioinformaticsGuide-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/BioinformaticsGuide-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "domain-specific",
+      "subcategory": "特定領域・ドメイン知識",
+      "tags": [
+        "domain-specific"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "domain-engineer"
+      ],
+      "audiences": [
+        "専門分野従事者 / 業界特化の専門知識"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Bridges IT engineering and bioinformatics through workflows, data handling, and practical case studies."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "LogicalThinking-AI-Era-Guide",
+      "displayOrder": 34,
+      "title": {
+        "ja": "AI時代に差がつく論理的思考と表現力",
+        "en": "AI時代に差がつく論理的思考と表現力"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/LogicalThinking-AI-Era-Guide",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "soft-skills-thinking",
+      "subcategory": "ソフトスキル・思考法",
+      "tags": [
+        "soft-skills-thinking"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / キャリア発展・コミュニケーション"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Improves logic, structure, and expression for clearer thinking and communication in the AI era."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "C",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "ai-era-engineers-mind-book",
+      "displayOrder": 35,
+      "title": {
+        "ja": "AI時代のプロフェッショナルITエンジニアの思考法",
+        "en": "AI時代のプロフェッショナルITエンジニアの思考法"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/ai-era-engineers-mind-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/ai-era-engineers-mind-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "soft-skills-thinking",
+      "subcategory": "ソフトスキル・思考法",
+      "tags": [
+        "soft-skills-thinking"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / キャリア発展・コミュニケーション"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Focuses on professional judgment, habits, and decision-making for IT engineers working in the AI era."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "C",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "ai-communication-book",
+      "displayOrder": 36,
+      "title": {
+        "ja": "生成AIコミュニケーション技術",
+        "en": "生成AIコミュニケーション技術"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/ai-communication-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/ai-communication-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "soft-skills-thinking",
+      "subcategory": "ソフトスキル・思考法",
+      "tags": [
+        "soft-skills-thinking"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / キャリア発展・コミュニケーション"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Explains how to communicate effectively with generative AI through prompts, context control, and collaborative patterns."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "A",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": false,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "negotiation-for-engineers-book",
+      "displayOrder": 37,
+      "title": {
+        "ja": "エンジニアの交渉力アーキテクチャ",
+        "en": "エンジニアの交渉力アーキテクチャ"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/negotiation-for-engineers-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/negotiation-for-engineers-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "soft-skills-thinking",
+      "subcategory": "ソフトスキル・思考法",
+      "tags": [
+        "soft-skills-thinking"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / キャリア発展・コミュニケーション"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Treats negotiation as an engineering skill built from structure, trade-offs, and shared understanding."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "IT-engineer-communication-book",
+      "displayOrder": 38,
+      "title": {
+        "ja": "エンジニアのための実践コミュニケーション設計",
+        "en": "エンジニアのための実践コミュニケーション設計"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/IT-engineer-communication-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/IT-engineer-communication-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "soft-skills-thinking",
+      "subcategory": "ソフトスキル・思考法",
+      "tags": [
+        "soft-skills-thinking"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers",
+        "engineering-manager"
+      ],
+      "audiences": [
+        "全レベル / キャリア発展・コミュニケーション"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Designs practical communication for engineers across teams, stakeholders, and delivery work."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "B",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": false,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": false
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "cs-visionaries-book",
+      "displayOrder": 39,
+      "title": {
+        "ja": "デジタル革命の先駆者たち",
+        "en": "デジタル革命の先駆者たち"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/cs-visionaries-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/cs-visionaries-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "liberal-arts-philosophy",
+      "subcategory": "教養・哲学",
+      "tags": [
+        "liberal-arts-philosophy"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers"
+      ],
+      "audiences": [
+        "全レベル / 技術的教養・視野拡大"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Introduces key people and ideas that shaped the digital revolution and modern computing culture."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "A",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": false,
+          "figureIndex": false,
+          "legalNotice": true,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "人物史中心の導入書として暫定 Profile A。reader-facing な正本はトップページの目次を基準とし、付録C/付録Dは補助資料として扱う。AI 関連の主導入は第10章で、技術史の深掘りは付録Cと関連人物章を併用する。",
+        "日本語個別概要はREADME公開カタログ上で未記載。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "computational-physicalism-book",
+      "displayOrder": 40,
+      "title": {
+        "ja": "計算論的物理主義",
+        "en": "計算論的物理主義"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/computational-physicalism-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/computational-physicalism-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "liberal-arts-philosophy",
+      "subcategory": "教養・哲学",
+      "tags": [
+        "liberal-arts-philosophy"
+      ],
+      "levels": [
+        "all-levels"
+      ],
+      "roles": [
+        "all-engineers"
+      ],
+      "audiences": [
+        "全レベル / 技術的教養・視野拡大"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Explores computational physicalism and its implications for mind, intelligence, and engineered systems."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "C",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "ethereum-learning-bootcamp",
+      "displayOrder": 41,
+      "title": {
+        "ja": "Ethereum学習ブートキャンプ",
+        "en": "Ethereum学習ブートキャンプ"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/ethereum-learning-bootcamp",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/ethereum-learning-bootcamp/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "web3-blockchain",
+      "subcategory": "Web3・ブロックチェーン",
+      "tags": [
+        "web3-blockchain"
+      ],
+      "levels": [
+        "intermediate"
+      ],
+      "roles": [
+        "web3-engineer",
+        "software-engineer"
+      ],
+      "audiences": [
+        "Web3 / ブロックチェーン / スマートコントラクト開発を学びたい方向け"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Introduces Ethereum fundamentals, smart contracts, tooling, and hands-on exercises."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "A",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": false,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "composable-software-design-book",
+      "displayOrder": 42,
+      "title": {
+        "ja": "Compositional Software Design for Agentic Systems",
+        "en": "Compositional Software Design for Agentic Systems"
+      },
+      "officialEnglishTitle": "Compositional Software Design for Agentic Systems",
+      "status": "published",
+      "repo": "itdojp/composable-software-design-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/composable-software-design-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "related-independent",
+      "countedInMainLineup": false,
+      "category": "computer-science-theory",
+      "subcategory": "Computer Science & Theory / Independent English book",
+      "tags": [
+        "computer-science-theory",
+        "english",
+        "related-independent"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "software-engineer",
+        "architect"
+      ],
+      "audiences": [
+        "Intermediate+"
+      ],
+      "summary": {
+        "ja": "独立した英語書籍。日本語書籍 categorical-software-design-book の単純翻訳ではなく、関連書として扱う。",
+        "en": "English book focused on compositional software design for agentic systems, with its own scope, manuscript structure, and publication policy."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "en"
+      ],
+      "relatedEditions": [
+        "categorical-software-design-book"
+      ],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": 133,
+      "ux": {
+        "profile": null,
+        "modules": {}
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "関連する独立英語書籍。41冊の日本語メインライン冊数には含めない。",
+        "UX profile/modules は未割当。"
+      ],
+      "sourceRefs": [
+        "docs/en/index.md",
+        "README.md"
+      ]
+    },
+    {
+      "id": "infrastructure-monitoring-automation-guide",
+      "displayOrder": 1001,
+      "title": {
+        "ja": "インフラ監視・運用自動化実践ガイド",
+        "en": "インフラ監視・運用自動化実践ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "planned",
+      "repo": "itdojp/infrastructure-monitoring-automation-guide",
+      "repoVisibility": "not-created",
+      "pagesUrl": null,
+      "publicationScope": "planned",
+      "countingGroup": "planned",
+      "countedInMainLineup": false,
+      "category": "advanced-infra-practice",
+      "subcategory": "🔴 優先度: 高（必須追加 - 4冊）",
+      "tags": [
+        "planned",
+        "high",
+        "advanced-infra-practice"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "sre"
+      ],
+      "audiences": [
+        "中堅インフラエンジニア（経験3-8年）、SRE"
+      ],
+      "summary": {
+        "ja": "計画書籍。詳細は books/planned-books.md を参照。",
+        "en": ""
+      },
+      "prerequisites": [],
+      "estimatedWeeks": "6-8週間",
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "not-started",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": null,
+        "modules": {}
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "移行元の前提知識表記: Linux基礎、ネットワーク基礎"
+      ],
+      "sourceRefs": [
+        "books/planned-books.md",
+        "docs/en/index.md"
+      ]
+    },
+    {
+      "id": "enterprise-cloud-architecture-guide",
+      "displayOrder": 1002,
+      "title": {
+        "ja": "エンタープライズクラウドアーキテクチャ設計・運用",
+        "en": "エンタープライズクラウドアーキテクチャ設計・運用"
+      },
+      "officialEnglishTitle": null,
+      "status": "planned",
+      "repo": "itdojp/enterprise-cloud-architecture-guide",
+      "repoVisibility": "not-created",
+      "pagesUrl": null,
+      "publicationScope": "planned",
+      "countingGroup": "planned",
+      "countedInMainLineup": false,
+      "category": "applied-technologies",
+      "subcategory": "🔴 優先度: 高（必須追加 - 4冊）",
+      "tags": [
+        "planned",
+        "high",
+        "applied-technologies"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "sre"
+      ],
+      "audiences": [
+        "クラウドアーキテクト、シニアインフラエンジニア（経験6年以上）"
+      ],
+      "summary": {
+        "ja": "計画書籍。詳細は books/planned-books.md を参照。",
+        "en": ""
+      },
+      "prerequisites": [],
+      "estimatedWeeks": "8-10週間",
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "not-started",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": null,
+        "modules": {}
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "移行元の前提知識表記: cloud-infra-handbook、ネットワーク、セキュリティ基礎"
+      ],
+      "sourceRefs": [
+        "books/planned-books.md",
+        "docs/en/index.md"
+      ]
+    },
+    {
+      "id": "disaster-recovery-bcp-guide",
+      "displayOrder": 1003,
+      "title": {
+        "ja": "災害対策・事業継続計画（BCP）実装ガイド",
+        "en": "災害対策・事業継続計画（BCP）実装ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "planned",
+      "repo": "itdojp/disaster-recovery-bcp-guide",
+      "repoVisibility": "not-created",
+      "pagesUrl": null,
+      "publicationScope": "planned",
+      "countingGroup": "planned",
+      "countedInMainLineup": false,
+      "category": "advanced-infra-practice",
+      "subcategory": "🔴 優先度: 高（必須追加 - 4冊）",
+      "tags": [
+        "planned",
+        "high",
+        "advanced-infra-practice"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "sre"
+      ],
+      "audiences": [
+        "インフラ責任者、BCP担当者、上級エンジニア"
+      ],
+      "summary": {
+        "ja": "計画書籍。詳細は books/planned-books.md を参照。",
+        "en": ""
+      },
+      "prerequisites": [],
+      "estimatedWeeks": "6-8週間",
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "not-started",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": null,
+        "modules": {}
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "移行元の前提知識表記: インフラ全般、プロジェクト管理基礎"
+      ],
+      "sourceRefs": [
+        "books/planned-books.md",
+        "docs/en/index.md"
+      ]
+    },
+    {
+      "id": "practical-security-infrastructure-guide",
+      "displayOrder": 1004,
+      "title": {
+        "ja": "実践的セキュリティインフラ構築",
+        "en": "実践的セキュリティインフラ構築"
+      },
+      "officialEnglishTitle": null,
+      "status": "planned",
+      "repo": "itdojp/practical-security-infrastructure-guide",
+      "repoVisibility": "not-created",
+      "pagesUrl": null,
+      "publicationScope": "planned",
+      "countingGroup": "planned",
+      "countedInMainLineup": false,
+      "category": "security",
+      "subcategory": "🔴 優先度: 高（必須追加 - 4冊）",
+      "tags": [
+        "planned",
+        "high",
+        "security"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "security-engineer",
+        "infrastructure-engineer"
+      ],
+      "audiences": [
+        "セキュリティエンジニア、インフラエンジニア"
+      ],
+      "summary": {
+        "ja": "計画書籍。詳細は books/planned-books.md を参照。",
+        "en": ""
+      },
+      "prerequisites": [],
+      "estimatedWeeks": "8-10週間",
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "not-started",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": null,
+        "modules": {}
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "移行元の前提知識表記: ネットワーク、認証・認可基礎"
+      ],
+      "sourceRefs": [
+        "books/planned-books.md",
+        "docs/en/index.md"
+      ]
+    },
+    {
+      "id": "infrastructure-performance-capacity-planning",
+      "displayOrder": 1005,
+      "title": {
+        "ja": "インフラ性能管理・キャパシティプランニング",
+        "en": "インフラ性能管理・キャパシティプランニング"
+      },
+      "officialEnglishTitle": null,
+      "status": "planned",
+      "repo": "itdojp/infrastructure-performance-capacity-planning",
+      "repoVisibility": "not-created",
+      "pagesUrl": null,
+      "publicationScope": "planned",
+      "countingGroup": "planned",
+      "countedInMainLineup": false,
+      "category": "advanced-infra-practice",
+      "subcategory": "🟡 優先度: 中（価値向上 - 2冊）",
+      "tags": [
+        "planned",
+        "medium",
+        "advanced-infra-practice"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "sre"
+      ],
+      "audiences": [
+        "パフォーマンスエンジニア、SRE、上級インフラエンジニア"
+      ],
+      "summary": {
+        "ja": "計画書籍。詳細は books/planned-books.md を参照。",
+        "en": ""
+      },
+      "prerequisites": [],
+      "estimatedWeeks": "6-7週間",
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "not-started",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": null,
+        "modules": {}
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "移行元の前提知識表記: インフラ基礎、統計基礎"
+      ],
+      "sourceRefs": [
+        "books/planned-books.md",
+        "docs/en/index.md"
+      ]
+    },
+    {
+      "id": "compliance-infrastructure-guide",
+      "displayOrder": 1006,
+      "title": {
+        "ja": "コンプライアンス対応インフラ設計・運用",
+        "en": "コンプライアンス対応インフラ設計・運用"
+      },
+      "officialEnglishTitle": null,
+      "status": "planned",
+      "repo": "itdojp/compliance-infrastructure-guide",
+      "repoVisibility": "not-created",
+      "pagesUrl": null,
+      "publicationScope": "planned",
+      "countingGroup": "planned",
+      "countedInMainLineup": false,
+      "category": "security-governance",
+      "subcategory": "🟡 優先度: 中（価値向上 - 2冊）",
+      "tags": [
+        "planned",
+        "medium",
+        "security-governance"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "sre"
+      ],
+      "audiences": [
+        "企業インフラ責任者、監査対応担当者、コンプライアンス担当"
+      ],
+      "summary": {
+        "ja": "計画書籍。詳細は books/planned-books.md を参照。",
+        "en": ""
+      },
+      "prerequisites": [],
+      "estimatedWeeks": "5-7週間",
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "not-started",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": null,
+        "modules": {}
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "移行元の前提知識表記: セキュリティ基礎、法務基礎知識"
+      ],
+      "sourceRefs": [
+        "books/planned-books.md",
+        "docs/en/index.md"
+      ]
+    },
+    {
+      "id": "next-generation-infrastructure-guide",
+      "displayOrder": 1007,
+      "title": {
+        "ja": "次世代インフラ技術実践ガイド",
+        "en": "次世代インフラ技術実践ガイド"
+      },
+      "officialEnglishTitle": null,
+      "status": "planned",
+      "repo": "itdojp/next-generation-infrastructure-guide",
+      "repoVisibility": "not-created",
+      "pagesUrl": null,
+      "publicationScope": "planned",
+      "countingGroup": "planned",
+      "countedInMainLineup": false,
+      "category": "applied-technologies",
+      "subcategory": "🟢 優先度: 低（将来投資 - 1冊）",
+      "tags": [
+        "planned",
+        "low",
+        "applied-technologies"
+      ],
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "roles": [
+        "infrastructure-engineer",
+        "sre"
+      ],
+      "audiences": [
+        "技術先端を追求するエンジニア、CTO、技術責任者"
+      ],
+      "summary": {
+        "ja": "計画書籍。詳細は books/planned-books.md を参照。",
+        "en": ""
+      },
+      "prerequisites": [],
+      "estimatedWeeks": "8-10週間",
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "not-started",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": null,
+        "modules": {}
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "移行元の前提知識表記: インフラ全般、AI/ML基礎"
+      ],
+      "sourceRefs": [
+        "books/planned-books.md",
+        "docs/en/index.md"
+      ]
+    }
+  ],
+  "learningPaths": [
+    {
+      "id": "beginner-linux",
+      "title": {
+        "ja": "IT未経験・Linux初学者",
+        "en": "Beginner Linux"
+      },
+      "description": {
+        "ja": "Linuxと基礎リテラシーから始める導入パス。",
+        "en": "Entry path for Linux and professional foundations."
+      },
+      "bookIds": [
+        "illustrated-linux-basics-book",
+        "wsl2-linux-essentials-book",
+        "evidence-based-engineering-book",
+        "issue-driven-work-book"
+      ],
+      "nextPathIds": [
+        "core-infrastructure"
+      ]
+    },
+    {
+      "id": "core-infrastructure",
+      "title": {
+        "ja": "インフラ基礎",
+        "en": "Core Infrastructure"
+      },
+      "description": {
+        "ja": "インフラ基礎から運用・クラウドへ進むパス。",
+        "en": "Core infrastructure path."
+      },
+      "bookIds": [
+        "linux-infra-textbook2",
+        "it-infra-software-essentials-book",
+        "IT-infra-book",
+        "IT-infra-troubleshooting-book",
+        "cloud-infra-book"
+      ],
+      "nextPathIds": [
+        "cloud-container",
+        "security"
+      ]
+    },
+    {
+      "id": "cloud-container",
+      "title": {
+        "ja": "クラウド／コンテナ",
+        "en": "Cloud and Containers"
+      },
+      "description": {
+        "ja": "クラウド、Kubernetes、コンテナの応用パス。",
+        "en": "Cloud, Kubernetes, and container path."
+      },
+      "bookIds": [
+        "cloud-infra-book",
+        "kubernetes-basics-book",
+        "kubernetes-cluster-ops-book",
+        "kubernetes-proxmox-to-cloud-book",
+        "podman-book"
+      ],
+      "nextPathIds": []
+    },
+    {
+      "id": "security",
+      "title": {
+        "ja": "セキュリティ／認証認可",
+        "en": "Security and Identity"
+      },
+      "description": {
+        "ja": "セキュリティ基礎、認証認可、ペネトレーションテストへ進むパス。",
+        "en": "Security and identity path."
+      },
+      "bookIds": [
+        "security-privacy-literacy-book",
+        "it-infra-security-guide-book",
+        "practical-auth-book",
+        "pentest-learning-book",
+        "incident-response-basics-book"
+      ],
+      "nextPathIds": []
+    },
+    {
+      "id": "ai-agentops",
+      "title": {
+        "ja": "AI支援開発／AgentOps",
+        "en": "AI-assisted Development and AgentOps"
+      },
+      "description": {
+        "ja": "AI時代の開発・運用・協働に進むパス。",
+        "en": "AI-assisted development and AgentOps path."
+      },
+      "bookIds": [
+        "ai-agent-engineering-book",
+        "GitHub-AgentOps-book",
+        "ai-agent-collaboration-book",
+        "ai-testing-strategy-book",
+        "github-workflow-book"
+      ],
+      "nextPathIds": []
+    },
+    {
+      "id": "theoretical-cs",
+      "title": {
+        "ja": "理論計算機科学",
+        "en": "Theoretical Computer Science"
+      },
+      "description": {
+        "ja": "理論計算機科学と合成的設計へ進むパス。",
+        "en": "Theoretical CS and compositional design path."
+      },
+      "bookIds": [
+        "theoretical-computer-science-prerequisites-book",
+        "theoretical-computer-science-textbook",
+        "categorical-software-design-book",
+        "composable-software-design-book"
+      ],
+      "nextPathIds": []
+    },
+    {
+      "id": "engineering-management",
+      "title": {
+        "ja": "エンジニアリングマネージャー／対人スキル",
+        "en": "Engineering Management and Communication"
+      },
+      "description": {
+        "ja": "コミュニケーション、交渉、思考法を扱うパス。",
+        "en": "Communication, negotiation, and thinking path."
+      },
+      "bookIds": [
+        "IT-engineer-communication-book",
+        "negotiation-for-engineers-book",
+        "ai-communication-book",
+        "LogicalThinking-AI-Era-Guide",
+        "ai-era-engineers-mind-book"
+      ],
+      "nextPathIds": []
+    }
+  ]
+}

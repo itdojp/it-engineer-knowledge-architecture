@@ -1,6 +1,7 @@
 {
-  "schemaVersion": "1.0",
-  "updatedAt": "2026-07-04",
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-10",
+  "generatedFrom": "docs/_data/catalog.json",
   "modulesCatalog": [
     "quickStart",
     "readingGuide",
@@ -12,102 +13,6 @@
     "glossary"
   ],
   "books": {
-    "BioinformaticsGuide-book": {
-      "repo": "itdojp/BioinformaticsGuide-book",
-      "pages": "https://itdojp.github.io/BioinformaticsGuide-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
-      },
-      "notes": "暫定割当（要確認）"
-    },
-    "GitHub-AgentOps-book": {
-      "repo": "itdojp/GitHub-AgentOps-book",
-      "pages": "https://itdojp.github.io/GitHub-AgentOps-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
-      },
-      "notes": "暫定割当（要確認）"
-    },
-    "IT-engineer-communication-book": {
-      "repo": "itdojp/IT-engineer-communication-book",
-      "pages": "https://itdojp.github.io/IT-engineer-communication-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
-      },
-      "notes": "暫定割当（要確認）"
-    },
-    "IT-infra-book": {
-      "repo": "itdojp/IT-infra-book",
-      "pages": "https://itdojp.github.io/IT-infra-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
-      },
-      "notes": "暫定割当（要確認）"
-    },
-    "IT-infra-troubleshooting-book": {
-      "repo": "itdojp/IT-infra-troubleshooting-book",
-      "pages": "https://itdojp.github.io/IT-infra-troubleshooting-book/",
-      "profile": "B",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": false,
-        "checklistPack": true,
-        "troubleshootingFlow": true,
-        "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
-      },
-      "notes": "暫定割当（要確認）"
-    },
-    "LogicalThinking-AI-Era-Guide": {
-      "repo": "itdojp/LogicalThinking-AI-Era-Guide",
-      "pages": "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/",
-      "profile": "C",
-      "modules": {
-        "quickStart": false,
-        "readingGuide": true,
-        "checklistPack": false,
-        "troubleshootingFlow": false,
-        "conceptMap": true,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": true
-      },
-      "notes": "暫定割当（要確認）"
-    },
     "ai-agent-collaboration-book": {
       "repo": "itdojp/ai-agent-collaboration-book",
       "pages": "https://itdojp.github.io/ai-agent-collaboration-book/",
@@ -122,11 +27,11 @@
         "legalNotice": true,
         "glossary": true
       },
-      "notes": "AIエージェントを業務成果へ接続する依頼・文脈・委任・検証・権限・判断・組織展開の横断書籍。無料公開範囲と有料版を分けて運用する。",
+      "notes": "AIエージェントを業務成果へ接続する依頼・文脈・委任・検証・権限・判断・組織展開の横断書籍。無料公開範囲と有料版を分けて運用する。 / 有料部分を含むPrivate管理書籍。Pagesは無料公開範囲のみ。",
       "repoVisibility": "private",
       "publicationModel": "free-preview-and-paid-edition",
       "pagesPublicationScope": "free-preview-aligned-with-zenn-free-scope",
-      "accessNote": "有料部分を含むため管理リポジトリは Private。GitHub Pages は Zenn 等で無料公開する範囲に準じた試読範囲のみを公開する方針。"
+      "accessNote": "有料部分を含むPrivate管理書籍。Pagesは無料公開範囲のみ。"
     },
     "ai-agent-engineering-book": {
       "repo": "itdojp/ai-agent-engineering-book",
@@ -142,7 +47,7 @@
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "暫定割当（要確認）/ 英語版あり"
+      "notes": "暫定割当（要確認）/ 英語版あり / 同一書籍内に英語版ページあり。"
     },
     "ai-communication-book": {
       "repo": "itdojp/ai-communication-book",
@@ -192,6 +97,22 @@
       },
       "notes": "暫定割当（要確認）"
     },
+    "BioinformaticsGuide-book": {
+      "repo": "itdojp/BioinformaticsGuide-book",
+      "pages": "https://itdojp.github.io/BioinformaticsGuide-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
     "categorical-software-design-book": {
       "repo": "itdojp/categorical-software-design-book",
       "pages": "https://itdojp.github.io/categorical-software-design-book/",
@@ -206,7 +127,7 @@
         "legalNotice": true,
         "glossary": true
       },
-      "notes": "Profile C の暫定割当。付録Dは図版・レビュー前の最小確認項目・症状別再参照の入口として扱う。raw サンプルは本文より先に更新される場合があるため要確認。"
+      "notes": "Profile C の暫定割当。付録Dは図版・レビュー前の最小確認項目・症状別再参照の入口として扱う。raw サンプルは本文より先に更新される場合があるため要確認。 / 独立英語書籍 composable-software-design-book と関連。単純翻訳・旧新版関係ではない。"
     },
     "cloud-infra-book": {
       "repo": "itdojp/cloud-infra-book",
@@ -320,6 +241,22 @@
       },
       "notes": "暫定割当（要確認）"
     },
+    "GitHub-AgentOps-book": {
+      "repo": "itdojp/GitHub-AgentOps-book",
+      "pages": "https://itdojp.github.io/GitHub-AgentOps-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
     "github-guide-for-beginners-book": {
       "repo": "itdojp/github-guide-for-beginners-book",
       "pages": "https://itdojp.github.io/github-guide-for-beginners-book/",
@@ -400,6 +337,38 @@
       },
       "notes": "暫定割当（要確認）"
     },
+    "IT-engineer-communication-book": {
+      "repo": "itdojp/IT-engineer-communication-book",
+      "pages": "https://itdojp.github.io/IT-engineer-communication-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "IT-infra-book": {
+      "repo": "itdojp/IT-infra-book",
+      "pages": "https://itdojp.github.io/IT-infra-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
     "it-infra-security-guide-book": {
       "repo": "itdojp/it-infra-security-guide-book",
       "pages": "https://itdojp.github.io/it-infra-security-guide-book/",
@@ -419,6 +388,22 @@
     "it-infra-software-essentials-book": {
       "repo": "itdojp/it-infra-software-essentials-book",
       "pages": "https://itdojp.github.io/it-infra-software-essentials-book/",
+      "profile": "B",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": false,
+        "checklistPack": true,
+        "troubleshootingFlow": true,
+        "conceptMap": false,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": false
+      },
+      "notes": "暫定割当（要確認）"
+    },
+    "IT-infra-troubleshooting-book": {
+      "repo": "itdojp/IT-infra-troubleshooting-book",
+      "pages": "https://itdojp.github.io/IT-infra-troubleshooting-book/",
       "profile": "B",
       "modules": {
         "quickStart": false,
@@ -495,6 +480,22 @@
         "glossary": false
       },
       "notes": "linux-infra-textbook を置換（旧版はアーカイブ）"
+    },
+    "LogicalThinking-AI-Era-Guide": {
+      "repo": "itdojp/LogicalThinking-AI-Era-Guide",
+      "pages": "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/",
+      "profile": "C",
+      "modules": {
+        "quickStart": false,
+        "readingGuide": true,
+        "checklistPack": false,
+        "troubleshootingFlow": false,
+        "conceptMap": true,
+        "figureIndex": true,
+        "legalNotice": false,
+        "glossary": true
+      },
+      "notes": "暫定割当（要確認）"
     },
     "negotiation-for-engineers-book": {
       "repo": "itdojp/negotiation-for-engineers-book",
