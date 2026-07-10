@@ -4,53 +4,45 @@ on:
   schedule:
     # 毎日午前9時（JST）に実行
     - cron: '0 0 * * *'
-  workflow_dispatch:
-    # 手動実行も可能
+  workflow_dispatch: {}
 
 permissions:
-  contents: write
+  contents: read
   issues: write
+  actions: write
 
 jobs:
   update-book-status:
     runs-on: ubuntu-latest
-    name: 書籍ステータス自動更新
+    name: 書籍ステータス確認
     env:
       TZ: Asia/Tokyo
 
     steps:
       - name: チェックアウト
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: 進捗レポート生成（book-registry起点）
+      - name: npm依存関係確認
+        run: npm ci
+
+      - name: 進捗レポート生成（artifact用）
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node scripts/generate-progress-report.js
 
-      - name: 変更があれば自動コミット
-        run: |
-          # 進捗レポートのコミット
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-
-          if git diff --quiet docs/progress_report.md; then
-            echo "📊 進捗レポートに変更はありません"
-          else
-            git add docs/progress_report.md
-            git commit -m "📊 進捗レポート自動更新" \
-              -m "$(date '+%Y-%m-%d %H:%M:%S JST')" \
-              -m "🤖 Generated with [GitHub Actions]"
-            git push
-            echo "✅ 進捗レポートを更新しました"
-          fi
+      - name: 進捗レポートをartifact保存
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-status-report
+          path: |
+            docs/progress_report.md
+            tmp/book_status.json
 
       - name: GitHub CLI設定
         run: |
@@ -58,27 +50,26 @@ jobs:
 
       - name: アラート通知（問題がある場合）
         run: |
+          set -euo pipefail
           echo "🚨 アラートチェック中..."
 
-          # アクセスできない書籍があるかチェック
           unavailable_count=$(jq '.books | map(select(.status == "unavailable")) | length' tmp/book_status.json)
 
           if [ "$unavailable_count" -gt 0 ]; then
             echo "⚠️ $unavailable_count 冊の書籍にアクセスできません"
 
-            # Issue作成（重複チェック付き）
             existing_alert=$(gh issue list --label "alert,book-unavailable" --state open --json number --jq length)
 
             if [ "$existing_alert" -eq 0 ]; then
               unavailable_books=$(jq -r '.books[] | select(.status == "unavailable") | .name' tmp/book_status.json)
-              issue_body_file=$(mktemp)
+              issue_body_file="tmp/book-unavailable-issue.md"
               {
                 echo "以下の書籍にアクセスできませんでした:"
                 echo ""
                 echo "$unavailable_books"
                 echo ""
                 echo "**検出日時**: $(date '+%Y-%m-%d %H:%M:%S JST')"
-                echo "**自動生成**: GitHub Actions"
+                echo "**確認結果artifact**: book-status-report"
                 echo ""
                 echo "このIssueは自動生成されました。問題が解決されたら手動でクローズしてください。"
               } > "$issue_body_file"
@@ -87,8 +78,6 @@ jobs:
                 --title "🚨 書籍アクセス異常検出" \
                 --label "alert,book-unavailable" \
                 --body-file "$issue_body_file"
-
-              rm -f "$issue_body_file"
             fi
           else
             echo "✅ すべての書籍は正常にアクセス可能です"

@@ -2,579 +2,65 @@
 layout: default
 title: ITエンジニア知識アーキテクチャ / IT Engineer Knowledge Architecture
 description: 実務で活かせるITエンジニア学習ロードマップ – 技術書による体系的スキル構築
+permalink: /
 ---
-
-# ITエンジニア知識アーキテクチャ / IT Engineer Knowledge Architecture
-
-実務で活かせるITエンジニア学習ロードマップ  
-– 技術書による体系的スキル構築
-
-Building Your Tech Career, One Book at a Time
-
-[日本語]({{ '/' | relative_url }}) | [English]({{ '/en/' | relative_url }})
-
-主要入口:
-
-- [書籍一覧]({{ '/' | relative_url }}books/) — 正本カタログから生成した全書籍カード
-- [学習パス]({{ '/' | relative_url }}paths/) — 正本カタログの bookIds / nextPathIds から生成した読書順
-- [出版ガイド]({{ '/' | relative_url }}publishing/) — 書籍制作・レビュー・公開運用の手引き
-
-- [日本語概要](#日本語概要)
-- [書籍一覧](#書籍一覧)
-- [正本カタログページ]({{ '/' | relative_url }}books/)
-- [学習ロードマップ](#学習ロードマップ)
-- [正本学習パスページ]({{ '/' | relative_url }}paths/)
-- [Professional Foundations（基礎リテラシー）](#professional-foundations基礎リテラシー)
-- [専門分野別学習パス](#専門分野別学習パス)
-- [計画書籍](#計画書籍)
-- [コミュニティ・フィードバック](#コミュニティフィードバック)
-- [組織情報](#組織情報)
-- [出版ガイド](#出版ガイド)
-- [更新履歴](#更新履歴)
-- [ライセンス](#ライセンス)
-- [English Catalog]({{ '/en/' | relative_url }})
-
----
-
-## 日本語概要
-
-### プロジェクト概要
-
-このプロジェクトは、ITエンジニア（特にインフラ系）が実務で必要とする知識を体系化し、段階的な学習ロードマップを提供することを目的としています。
-
-- 既存書籍: 41冊（レビュー済み）
-- 計画書籍: 7冊（新規制作予定）
-- 合計: 48冊による総合的な知識体系
-
-各書籍は GitHub リポジトリとして管理され、原則として GitHub Pages を通じて無料で閲覧できる形に整備しています（公開準備中の書籍を除く）。有料版を含む書籍は、GitHub Pages では Zenn 等で無料公開する範囲に準じた試読範囲のみを公開する方針とし、原稿管理リポジトリを Private とする場合があります。
-ライセンスは Creative Commons BY-NC-SA 4.0（非営利利用は自由、商用利用は別途契約）です。
-
----
-
-## 出版ガイド
-
-- [シリーズ共通ガイド]({{ '/' | relative_url }}publishing/)
-- [公開前レビュー・チェックリスト]({{ '/' | relative_url }}publishing/review-checklist.html)
-- [Professional Foundations 実装ガイド]({{ '/' | relative_url }}professional-foundations/)
-- 書籍テンプレート: `templates/book/`
-- 基礎リテラシー横断テンプレート: `templates/professional-foundations/`
-
-## 更新履歴
-
-- シリーズサイトの更新履歴: `CHANGELOG.md`
-
-### 想定読者
-
-- 新人〜シニアITエンジニア
-- インフラエンジニア、SRE、DevOpsエンジニア
-- セキュリティエンジニア、クラウドエンジニア
-- エンジニアリングマネージャー、技術組織のリーダー
-
-### 主な特徴
-
-- 「インフラ／クラウド／セキュリティ／AI時代の開発プロセス」にフォーカス
-- 未経験〜エキスパートまでをカバーするレベル別・専門分野別パス
-- 多くの書籍をオンラインで無料公開し、有料版を含む書籍は無料公開範囲と管理リポジトリの公開状態を明示
-- ITDO Inc. の社内研修・インターン・外部向け研修と連動した内容
-
-### レビュー完了後の読み方（2026-05、2026-06更新）
-
-既存39冊は、[既存書籍レビュー・改善ロードマップ #153](https://github.com/itdojp/it-engineer-knowledge-architecture/issues/153) に基づく横断レビューを完了しています。2026-06-29 に「理論計算機科学を読むための数学・証明・アルゴリズム基礎」を追加し、2026-06-30 に「AIエージェント協働の仕事術」を追加したため、既存書籍は41冊になりました。公開カタログでは、次の順序で読むと書籍間の役割が分かりやすくなります。
-
-- **仕事の型を先に揃える**: 根拠で進める開発仕事術 → チケット駆動の仕事術 → エンジニアリングドキュメント実践ガイド → インシデント対応 基礎。
-- **技術基盤へ進む**: Linux / WSL2 入門の後、ITインフラ、クラウド、コンテナ、認証認可、セキュリティへ進む。カテゴリタグは「基礎リテラシー」「技術基盤」「開発・運用プロセス」「ソフトスキル・思考法」を入口に確認する。
-- **AI時代の開発運用を接続する**: GitHub ワークフロー、AIエージェント協働、AgentOps、AIエージェント実践、AIテスト戦略、形式的手法を、レビュー可能な成果物単位で扱う。
-- **意思決定と対人スキルで閉じる**: 論理的思考、AI時代のマインド、生成AIコミュニケーション、交渉、実務コミュニケーションを、責任境界と記録の観点で使い分ける。
-
-レビュー結果の横断サマリは [既存書籍レビュー完了サマリ]({{ '/' | relative_url }}publishing/content-review-summary-2026.html)、残 follow-up の優先順位は [follow-up Issue 優先順位]({{ '/' | relative_url }}publishing/follow-up-priorities.html) に記録しています。Professional Foundations の導入順、書籍企画、横断テンプレートは [Professional Foundations 実装ガイド]({{ '/' | relative_url }}professional-foundations/) に集約しています。
-
----
-
-## 企業・組織での利用イメージ
-
-### 1. 社内育成・研修カリキュラムとして利用
-
-- 新人研修  
-  - Linux基礎、ITインフラ基礎、GitHub入門などを組み合わせた「最初の3ヶ月カリキュラム」
-- 若手〜中堅育成  
-  - クラウドインフラ、トラブルシューティング、情報セキュリティなどを体系的に学ぶロードマップ
-- マネージャー育成  
-  - 思考法・コミュニケーション・交渉・教養系の書籍で「技術が分かるマネージャー」を育成
-
-### 2. 実務プロジェクトと紐づけた教育
-
-- コンテナ化・モダナイズ案件  
-  - 『Podman完全ガイド』を元に、実案件の設計・構築を進める
-- ID管理・認証基盤案件  
-  - 『実践 認証認可システム設計』『インフラエンジニアのための情報セキュリティ実装ガイド』をベースに要件定義〜構築までを整理
-- クラウドインフラ設計案件  
-  - 『クラウドインフラ設計・構築ガイド』と IaC ツールを組み合わせて標準パターンを整備
-
-### 3. 外部研修・共同開発との連携
-
-- 大学・専門学校・自治体との連携講座の教材として利用
-- 他社との共同プロジェクトで「共通の教科書」として採用し、共通言語を作る
-- 技術書典・勉強会・オンラインイベントと連動した学習プログラム
-
-> 企業・教育機関での体系的な利用、商用利用に関する相談は  
-> **knowledge@itdo.jp** までお問い合わせください。
-
----
-
-## 個人エンジニア向けの利用イメージ
-
-- 未経験からインフラエンジニアを目指すロードマップとして
-- 自社に体系的な教育制度が無い場合の「自己学習カリキュラム」として
-- クラウド・セキュリティ・SREなど専門分野へステップアップするためのガイドとして
-- 「AI時代の開発プロセス」「形式的手法」など、現場では学びづらい領域のキャッチアップとして
-
----
-
-## 書籍一覧
-
-### ✅ 既存書籍（41冊）
-
-#### 未経験者向け
-
-対象: IT未経験者・初学者 / プログラミングやLinuxの基礎を楽しく学ぶ
-
-1. 図解でわかるLinux基礎
-   [書籍を読む](https://itdojp.github.io/illustrated-linux-basics-book/) | [リポジトリ](https://github.com/itdojp/illustrated-linux-basics-book)
-
-2. やさしく学ぶLinux WSL2ではじめる基礎
-   [書籍を読む](https://itdojp.github.io/wsl2-linux-essentials-book/) | [リポジトリ](https://github.com/itdojp/wsl2-linux-essentials-book)
-
-#### 基礎リテラシー（Professional Foundations）
-
-対象: 全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎
-
-導入順、書籍企画、README / Issue / PR / ADR / 障害報告などの横断テンプレートは [Professional Foundations 実装ガイド]({{ '/' | relative_url }}professional-foundations/) を参照してください。
-
-3. 根拠で進める開発仕事術：検索戦略・検証・引用の実務
-   [書籍を読む](https://itdojp.github.io/evidence-based-engineering-book/) | [リポジトリ](https://github.com/itdojp/evidence-based-engineering-book)
-
-4. チケット駆動の仕事術：良いIssueとPRで回すタスク管理・報告・合意形成
-   [書籍を読む](https://itdojp.github.io/issue-driven-work-book/) | [リポジトリ](https://github.com/itdojp/issue-driven-work-book)
-
-5. エンジニアリングドキュメント実践ガイド：README・手順書・Runbook・ADR・ポストモーテム
-   [書籍を読む](https://itdojp.github.io/engineering-documentation-book/) | [リポジトリ](https://github.com/itdojp/engineering-documentation-book)
-
-6. セキュリティ＆プライバシー基礎リテラシー：秘密情報・権限・データ取り扱い
-   [書籍を読む](https://itdojp.github.io/security-privacy-literacy-book/) | [リポジトリ](https://github.com/itdojp/security-privacy-literacy-book)
-
-7. インシデント対応 基礎：切り分け・状況共有・復旧・ポストモーテムの型
-   [書籍を読む](https://itdojp.github.io/incident-response-basics-book/) | [リポジトリ](https://github.com/itdojp/incident-response-basics-book)
-
-#### 技術基盤（基礎）
-
-対象: 新人〜中級者（経験0–2年）/ ITインフラの土台となる必修知識
-
-8. 実践Linux インフラエンジニア入門
-   [書籍を読む](https://itdojp.github.io/linux-infra-textbook2/) | [リポジトリ](https://github.com/itdojp/linux-infra-textbook2)  
-
-9. ITインフラエンジニアのためのソフトウェア基礎知識
-   [書籍を読む](https://itdojp.github.io/it-infra-software-essentials-book/) | [リポジトリ](https://github.com/itdojp/it-infra-software-essentials-book)
-
-10. ITインフラストラクチャ技術ガイド
-   [書籍を読む](https://itdojp.github.io/IT-infra-book/) | [リポジトリ](https://github.com/itdojp/IT-infra-book)
-
-#### 技術基盤（発展）
-
-対象: 中級〜上級者（経験2年以上）/ 高度な設計・運用・問題解決スキル
-
-11. ITインフラトラブルシューティング実践ガイド
-   [書籍を読む](https://itdojp.github.io/IT-infra-troubleshooting-book/) | [リポジトリ](https://github.com/itdojp/IT-infra-troubleshooting-book)
-
-12. クラウドインフラ設計・構築ガイド
-   [書籍を読む](https://itdojp.github.io/cloud-infra-book/) | [リポジトリ](https://github.com/itdojp/cloud-infra-book)
-
-#### セキュリティ
-
-対象: 中級者以上 / インフラ・アプリケーションのセキュリティ設計・診断
-
-13. インフラエンジニアのための情報セキュリティ実装ガイド
-   [書籍を読む](https://itdojp.github.io/it-infra-security-guide-book/) | [リポジトリ](https://github.com/itdojp/it-infra-security-guide-book)
-
-14. 実務で使えるペネトレーションテスト大全
-   [書籍を読む](https://itdojp.github.io/pentest-learning-book/) | [リポジトリ](https://github.com/itdojp/pentest-learning-book)  
-
-#### 応用技術
-
-対象: 中級者以上 / 特定技術スタックの実践的活用
-
-15. Proxmox VE 実践ガイド
-    [書籍を読む](https://itdojp.github.io/proxmox_book/) | [リポジトリ](https://github.com/itdojp/proxmox_book)  
-
-16. Kubernetes入門：PodからIngressまで（基礎と実践）
-    [書籍を読む](https://itdojp.github.io/kubernetes-basics-book/) | [リポジトリ](https://github.com/itdojp/kubernetes-basics-book)
-
-17. Kubernetesクラスタ設計・運用実践ガイド
-    [書籍を読む](https://itdojp.github.io/kubernetes-cluster-ops-book/) | [リポジトリ](https://github.com/itdojp/kubernetes-cluster-ops-book)
-
-18. Kubernetes: Proxmox検証からクラウド本番へ
-    [書籍を読む](https://itdojp.github.io/kubernetes-proxmox-to-cloud-book/) | [リポジトリ](https://github.com/itdojp/kubernetes-proxmox-to-cloud-book)
-
-19. Podman完全ガイド
-    [書籍を読む](https://itdojp.github.io/podman-book/) | [リポジトリ](https://github.com/itdojp/podman-book)
-
-20. 実践 認証認可システム設計
-    [書籍を読む](https://itdojp.github.io/practical-auth-book/) | [リポジトリ](https://github.com/itdojp/practical-auth-book)
-
-21. Supabaseアーキテクチャ
-    [書籍を読む](https://itdojp.github.io/supabase-architecture-patterns-book/) | [リポジトリ](https://github.com/itdojp/supabase-architecture-patterns-book)
-
-#### コンピューターサイエンス理論
-
-対象: 中級者以上 / 理論的バックグラウンドの深化
-
-22. 理論計算機科学を読むための数学・証明・アルゴリズム基礎
-    [書籍を読む](https://itdojp.github.io/theoretical-computer-science-prerequisites-book/) | [リポジトリ](https://github.com/itdojp/theoretical-computer-science-prerequisites-book)
-    集合・論理・関数・関係・証明技法・漸近記法・擬似コード・グラフ・組合せ・データ構造・形式言語・確率・数論・線形代数・並行モデルを、理論計算機科学教科書に進むための前提として整理するブリッジ教材。
-
-23. 理論計算機科学教科書
-    [書籍を読む](https://itdojp.github.io/theoretical-computer-science-textbook/) | [リポジトリ](https://github.com/itdojp/theoretical-computer-science-textbook)
-
-24. 圏論によるAIエージェント時代の合成的ソフトウェア設計
-    [書籍を読む](https://itdojp.github.io/categorical-software-design-book/) | [リポジトリ](https://github.com/itdojp/categorical-software-design-book)
-    関連する独立書籍（英語）: [Compositional Software Design for Agentic Systems](https://itdojp.github.io/composable-software-design-book/) | [リポジトリ](https://github.com/itdojp/composable-software-design-book)
-    ※ `categorical-software-design-book` と `composable-software-design-book` は、旧版/新版や単純翻訳ではなく、主言語・構成方針の異なる関連書です
-
-#### 開発・運用プロセス
-
-対象: 全レベル / 開発効率化・品質向上
-
-25. GitHub初心者ガイド
-    [書籍を読む](https://itdojp.github.io/github-guide-for-beginners-book/) | [リポジトリ](https://github.com/itdojp/github-guide-for-beginners-book)
-
-26. AI開発のためのGitHubワークフロー実践ガイド
-    [書籍を読む](https://itdojp.github.io/github-workflow-book/) | [リポジトリ](https://github.com/itdojp/github-workflow-book)
-
-27. GitHub AgentOps 実践ガイド
-    [書籍を読む](https://itdojp.github.io/GitHub-AgentOps-book/) | [リポジトリ](https://github.com/itdojp/GitHub-AgentOps-book)
-
-28. AIエージェント協働の仕事術
-    [書籍を読む](https://itdojp.github.io/ai-agent-collaboration-book/) | リポジトリ: Private（有料部分を含むため非公開）
-    AIエージェントを業務成果へ接続するための依頼、コンテキスト、委任、レビュー、権限、判断、組織展開の実践フレームワーク。GitHub Pages は Zenn 等で無料公開する範囲に準じた試読範囲を公開する方針です。
-
-29. AIエージェント実践: Prompt / Context / Harness Engineering
-    [書籍を読む](https://itdojp.github.io/ai-agent-engineering-book/) | [英語版](https://itdojp.github.io/ai-agent-engineering-book/en/) | [リポジトリ](https://github.com/itdojp/ai-agent-engineering-book)
-
-30. AI主導開発時代のソフトウェアテスト戦略
-    [書籍を読む](https://itdojp.github.io/ai-testing-strategy-book/) | [リポジトリ](https://github.com/itdojp/ai-testing-strategy-book)
-
-31. 形式的手法の基礎と応用
-    [書籍を読む](https://itdojp.github.io/formal-methods-book/) | [リポジトリ](https://github.com/itdojp/formal-methods-book)
-
-32. 要件から始めるソフトウェア設計（小規模TS Webアプリの実践）
-    [書籍を読む](https://itdojp.github.io/small-webapp-software-design-book/) | [リポジトリ](https://github.com/itdojp/small-webapp-software-design-book)
-
-#### 特定領域・ドメイン知識
-
-対象: 専門分野従事者 / 業界特化の専門知識
-
-33. バイオインフォマティクス実践ガイド
-    [書籍を読む](https://itdojp.github.io/BioinformaticsGuide-book/) | [リポジトリ](https://github.com/itdojp/BioinformaticsGuide-book)
-
-#### ソフトスキル・思考法
-
-対象: 全レベル / キャリア発展・コミュニケーション
-
-34. AI時代に差がつく論理的思考と表現力
-    [書籍を読む](https://itdojp.github.io/LogicalThinking-AI-Era-Guide/) | [リポジトリ](https://github.com/itdojp/LogicalThinking-AI-Era-Guide)
-
-35. AI時代のプロフェッショナルITエンジニアの思考法
-    [書籍を読む](https://itdojp.github.io/ai-era-engineers-mind-book/) | [リポジトリ](https://github.com/itdojp/ai-era-engineers-mind-book)
-
-36. 生成AIコミュニケーション技術
-    [書籍を読む](https://itdojp.github.io/ai-communication-book/) | [リポジトリ](https://github.com/itdojp/ai-communication-book)
-
-37. エンジニアの交渉力アーキテクチャ
-    [書籍を読む](https://itdojp.github.io/negotiation-for-engineers-book/) | [リポジトリ](https://github.com/itdojp/negotiation-for-engineers-book)
-
-38. エンジニアのための実践コミュニケーション設計
-    [書籍を読む](https://itdojp.github.io/IT-engineer-communication-book/) | [リポジトリ](https://github.com/itdojp/IT-engineer-communication-book)
-
-#### 教養・哲学
-
-対象: 全レベル / 技術的教養・視野拡大
-
-39. デジタル革命の先駆者たち
-    [書籍を読む](https://itdojp.github.io/cs-visionaries-book/) | [リポジトリ](https://github.com/itdojp/cs-visionaries-book)
-
-40. 計算論的物理主義
-    [書籍を読む](https://itdojp.github.io/computational-physicalism-book/) | [リポジトリ](https://github.com/itdojp/computational-physicalism-book)
-
-#### Web3・ブロックチェーン
-
-対象: Web3 / ブロックチェーン / スマートコントラクト開発を学びたい方向け
-
-41. Ethereum学習ブートキャンプ
-    [書籍を読む](https://itdojp.github.io/ethereum-learning-bootcamp/) | [リポジトリ](https://github.com/itdojp/ethereum-learning-bootcamp)
-
-### 🗄️ 旧版（アーカイブ）
-
-- linux-infra-textbook（linux-infra-textbook2 に置換済み）  
-  [書籍を読む](https://itdojp.github.io/linux-infra-textbook/) | [リポジトリ](https://github.com/itdojp/linux-infra-textbook)
-
----
-
-## 学習ロードマップ
-
-### レベル別学習パス
-
-#### 未経験者・初学者
-
-Linux基礎
-
-- 図解でわかるLinux基礎 → やさしく学ぶLinux WSL2ではじめる基礎
-
-次のステップへ
-
-- 実践Linux インフラエンジニア入門
-
-#### 初級者（経験0–2年）
-
-基礎固め
-
-- 根拠で進める開発仕事術 → チケット駆動の仕事術 → エンジニアリングドキュメント実践ガイド
-- 実践Linux インフラエンジニア入門 → ITインフラ全般
-- デジタル革命の先駆者たち（教養）
-
-実践スキル
-
-- GitHub初心者ガイド → AI開発のためのGitHubワークフロー実践ガイド → AIエージェント実践
-- Podman完全ガイド → Kubernetes入門
-
-#### 中級者（経験3–5年）
-
-専門技術
-
-- 実践 認証認可システム設計
-- Kubernetesクラスタ設計・運用実践ガイド
-- 『インフラ監視・運用自動化実践ガイド』（計画: OpenTelemetry / 分散トレーシングを含む）
-
-思考・プロセス
-
-- AI時代に差がつく論理的思考と表現力
-- AI主導開発時代のソフトウェアテスト戦略
-
-#### 上級者（経験6年以上）
-
-アーキテクチャ・設計
-
-- 『エンタープライズクラウドアーキテクチャ設計・運用』（計画: Platform Engineering / GitOps を含む）
-- 『災害対策・事業継続計画（BCP）実装ガイド』（計画）
-
-リーダーシップ
-
-- AI時代のプロフェッショナルITエンジニアの思考法
-- エンジニアのための実践コミュニケーション設計 → エンジニアの交渉力アーキテクチャ
-
-#### エキスパート（シニア・責任者）
-
-組織・戦略
-
-- 『実践的セキュリティインフラ構築』（計画）
-- 『コンプライアンス対応インフラ設計・運用』（計画）
-
-先端技術
-
-- 『次世代インフラ技術実践ガイド』（計画: AI/MLOps・LLMOps を含む）
-
----
-
-## Professional Foundations（基礎リテラシー）
-
-Professional Foundations は、技術基盤へ進む前に「仕事の成果物」をレビュー可能にするための基礎カテゴリです。
-調査、Issue / PR、README / 手順書 / Runbook / ADR、セキュリティ確認、インシデント報告を、GitHub 上で再利用可能な型として扱います。
-
-- 導入ガイド: [Professional Foundations 実装ガイド]({{ '/' | relative_url }}professional-foundations/)
-- 横断テンプレート: `templates/professional-foundations/`
-- GitHub初心者ガイドとの関係: GitHubガイドは操作の入口、本カテゴリは成果物の品質・完了判定・運用標準を担当します。
-
-推奨順は「根拠で進める開発仕事術 → チケット駆動の仕事術 → エンジニアリングドキュメント実践ガイド → セキュリティ＆プライバシー基礎リテラシー → インシデント対応 基礎」です。
-
----
-
-## 専門分野別学習パス
-
-### インフラエンジニア
-
-- 基礎: 実践Linux インフラエンジニア入門 → ITインフラエンジニアのためのソフトウェア基礎知識 → ITインフラストラクチャ技術ガイド
-- 発展: ITインフラトラブルシューティング実践ガイド → クラウドインフラ設計・構築ガイド → インフラエンジニアのための情報セキュリティ実装ガイド
-- 応用技術: Podman完全ガイド → Kubernetes入門 → Kubernetesクラスタ設計・運用実践ガイド → Kubernetes: Proxmox検証からクラウド本番へ
-- 設計補助: 実践 認証認可システム設計 → Supabaseアーキテクチャ
-
-### クラウドエンジニア
-
-- 基礎: ITインフラエンジニアのためのソフトウェア基礎知識 → ITインフラストラクチャ技術ガイド
-- 発展: クラウドインフラ設計・構築ガイド → ITインフラトラブルシューティング実践ガイド
-- 応用技術: Podman完全ガイド → Kubernetes入門 → Supabaseアーキテクチャ
-- 計画接続: 『エンタープライズクラウドアーキテクチャ設計・運用』 → 『災害対策・事業継続計画（BCP）実装ガイド』
-
-### セキュリティエンジニア
-
-- 基礎: セキュリティ＆プライバシー基礎リテラシー → ITインフラエンジニアのためのソフトウェア基礎知識
-- 発展: インフラエンジニアのための情報セキュリティ実装ガイド → 実践 認証認可システム設計
-- 応用技術: 実務で使えるペネトレーションテスト大全
-
-### SRE・テストエンジニア
-
-- 基礎: インシデント対応 基礎 → ITインフラエンジニアのためのソフトウェア基礎知識 → ITインフラストラクチャ技術ガイド
-- 発展: ITインフラトラブルシューティング実践ガイド → クラウドインフラ設計・構築ガイド
-- プロセス: AI主導開発時代のソフトウェアテスト戦略 → AI開発のためのGitHubワークフロー実践ガイド → GitHub AgentOps 実践ガイド
-- 応用技術: Podman完全ガイド → Kubernetesクラスタ設計・運用実践ガイド
-
-### コンピューターサイエンス理論
-
-- 前提補強: 理論計算機科学を読むための数学・証明・アルゴリズム基礎
-- 本編: 理論計算機科学教科書
-- 発展: 圏論によるAIエージェント時代の合成的ソフトウェア設計
-
-### エンジニアリングマネージャー
-
-- 仕事の型: チケット駆動の仕事術 → エンジニアリングドキュメント実践ガイド → インシデント対応 基礎
-- ソフトスキル: AI時代に差がつく論理的思考と表現力 → AI時代のプロフェッショナルITエンジニアの思考法 → 生成AIコミュニケーション技術 → エンジニアのための実践コミュニケーション設計 → エンジニアの交渉力アーキテクチャ
-- 技術理解: 基礎分野の概要習得 → 理論計算機科学を読むための数学・証明・アルゴリズム基礎 → 理論計算機科学教科書（理論的背景）
-- 教養: デジタル革命の先駆者たち → 計算論的物理主義
-
----
-
-## 計画書籍
-
-### 優先度: 高（必須追加）
-
-27. 『インフラ監視・運用自動化実践ガイド』 – Prometheus/Grafana、OpenTelemetry、SRE実践
-28. 『エンタープライズクラウドアーキテクチャ設計・運用』 – AWS/Azure/GCP、IaC、Platform Engineering / GitOps、FinOps
-29. 『災害対策・事業継続計画（BCP）実装ガイド』 – DR計画、RTO/RPO設計  
-30. 『実践的セキュリティインフラ構築』 – ゼロトラスト、SIEM/SOC  
-
-### 優先度: 中（価値向上）
-
-31. 『インフラ性能管理・キャパシティプランニング』 – 性能テスト、ボトルネック分析  
-32. 『コンプライアンス対応インフラ設計・運用』 – ISO27001、SOX法対応  
-
-### 優先度: 低（将来投資）
-
-33. 『次世代インフラ技術実践ガイド』 – エッジコンピューティング、AI/MLOps・LLMOps
-
----
-
-## コミュニティ・フィードバック
-
-### 参加方法
-
-- Issues: 改善提案、質問、議論
-- Discussions: 学習経験の共有、ロードマップの議論
-- PR: ドキュメント改善、新しい学習パスの提案
-
-### フィードバック観点
-
-- 学習パスの実用性
-- 書籍間の連携・順序
-- 不足領域の特定
-- 実務での活用事例
-
----
-
-## 組織情報
-
-主催: ITDO Inc.（株式会社アイティードゥ）  
-GitHub: [@itdojp](https://github.com/itdojp)  
-Contact: knowledge@itdo.jp  
-
----
-
-## ライセンス
-
-ITDO Inc. が公開する技術書籍は **Creative Commons BY-NC-SA 4.0** ライセンスで提供されています。
-
-### 自由な利用
-
-- 教育・研究・個人学習での利用
-- 非営利団体での活用
-- 内容の改変・派生作品の作成（同一ライセンス条件での共有が必要）
-
-### 商用利用
-
-法人・営利団体での利用には事前の商用ライセンス契約が必要です。  
-（例: 社内研修教材としての利用、社外向け有償研修での利用、商用サービスへの直接組み込みなど）
-
-詳細はリポジトリ内の LICENSE.md を参照してください。
-適用範囲（スコープ）は `LICENSE-SCOPE.md` を参照してください。
-
-### 対象書籍一覧（リポジトリ）
-
-- 図解でわかるLinux基礎 – https://github.com/itdojp/illustrated-linux-basics-book  
-- やさしく学ぶLinux WSL2ではじめる基礎 – https://github.com/itdojp/wsl2-linux-essentials-book  
-- 根拠で進める開発仕事術：検索戦略・検証・引用の実務 – https://github.com/itdojp/evidence-based-engineering-book  
-- チケット駆動の仕事術：良いIssueとPRで回すタスク管理・報告・合意形成 – https://github.com/itdojp/issue-driven-work-book  
-- エンジニアリングドキュメント実践ガイド：README・手順書・Runbook・ADR・ポストモーテム – https://github.com/itdojp/engineering-documentation-book  
-- セキュリティ＆プライバシー基礎リテラシー：秘密情報・権限・データ取り扱い – https://github.com/itdojp/security-privacy-literacy-book  
-- インシデント対応 基礎：切り分け・状況共有・復旧・ポストモーテムの型 – https://github.com/itdojp/incident-response-basics-book  
-- 実践Linux インフラエンジニア入門 – https://github.com/itdojp/linux-infra-textbook2  
-- ITインフラエンジニアのためのソフトウェア基礎知識 – https://github.com/itdojp/it-infra-software-essentials-book  
-- ITインフラストラクチャ技術ガイド – https://github.com/itdojp/IT-infra-book  
-- ITインフラトラブルシューティング実践ガイド – https://github.com/itdojp/IT-infra-troubleshooting-book  
-- クラウドインフラ設計・構築ガイド – https://github.com/itdojp/cloud-infra-book  
-- インフラエンジニアのための情報セキュリティ実装ガイド – https://github.com/itdojp/it-infra-security-guide-book  
-- 実務で使えるペネトレーションテスト大全 – https://github.com/itdojp/pentest-learning-book  
-- Proxmox VE 実践ガイド – https://github.com/itdojp/proxmox_book  
-- Kubernetes入門：PodからIngressまで（基礎と実践） – https://github.com/itdojp/kubernetes-basics-book  
-- Kubernetesクラスタ設計・運用実践ガイド – https://github.com/itdojp/kubernetes-cluster-ops-book  
-- Kubernetes: Proxmox検証からクラウド本番へ – https://github.com/itdojp/kubernetes-proxmox-to-cloud-book  
-- Podman完全ガイド – https://github.com/itdojp/podman-book  
-- 実践 認証認可システム設計 – https://github.com/itdojp/practical-auth-book  
-- Supabaseアーキテクチャ – https://github.com/itdojp/supabase-architecture-patterns-book  
-- 理論計算機科学を読むための数学・証明・アルゴリズム基礎 – https://github.com/itdojp/theoretical-computer-science-prerequisites-book
-- 理論計算機科学教科書 – https://github.com/itdojp/theoretical-computer-science-textbook  
-- 圏論によるAIエージェント時代の合成的ソフトウェア設計 – https://github.com/itdojp/categorical-software-design-book  
-- GitHub初心者ガイド – https://github.com/itdojp/github-guide-for-beginners-book  
-- AI開発のためのGitHubワークフロー実践ガイド – https://github.com/itdojp/github-workflow-book  
-- GitHub AgentOps 実践ガイド – https://github.com/itdojp/GitHub-AgentOps-book  
-- AIエージェント協働の仕事術 – Private リポジトリ（有料部分を含むため非公開、Pages は無料公開範囲に準拠する方針）
-- AIエージェント実践: Prompt / Context / Harness Engineering – https://github.com/itdojp/ai-agent-engineering-book  
-- AI主導開発時代のソフトウェアテスト戦略 – https://github.com/itdojp/ai-testing-strategy-book  
-- 形式的手法の基礎と応用 – https://github.com/itdojp/formal-methods-book  
-- 要件から始めるソフトウェア設計（小規模TS Webアプリの実践） – https://github.com/itdojp/small-webapp-software-design-book  
-- バイオインフォマティクス実践ガイド – https://github.com/itdojp/BioinformaticsGuide-book  
-- AI時代に差がつく論理的思考と表現力 – https://github.com/itdojp/LogicalThinking-AI-Era-Guide  
-- AI時代のプロフェッショナルITエンジニアの思考法 – https://github.com/itdojp/ai-era-engineers-mind-book  
-- 生成AIコミュニケーション技術 – https://github.com/itdojp/ai-communication-book  
-- エンジニアの交渉力アーキテクチャ – https://github.com/itdojp/negotiation-for-engineers-book  
-- エンジニアのための実践コミュニケーション設計 – https://github.com/itdojp/IT-engineer-communication-book  
-- デジタル革命の先駆者たち – https://github.com/itdojp/cs-visionaries-book  
-- 計算論的物理主義 – https://github.com/itdojp/computational-physicalism-book  
-- Ethereum学習ブートキャンプ – https://github.com/itdojp/ethereum-learning-bootcamp  
-
-お問い合わせ: 株式会社アイティードゥ（ITDO Inc.） / knowledge@itdo.jp  
-
----
-
-公開日: 2025/07/23  
-一冊ずつ積み上げる、エンジニアキャリアの基盤
-
----
-
-## English Catalog
-
-A dedicated English catalog is available here:
-
-- [English Catalog]({{ '/en/' | relative_url }})
-
-Use the Japanese top page for the main roadmap and Japanese updates:
-
-- [日本語トップページ]({{ '/' | relative_url }})
-
-The English page provides:
-
-- the full published lineup in English catalog form
-- English summaries for Japanese-only books
-- language availability labels (`JA only` / `EN available` / `Planned`)
-- direct links to each book page and repository
-
-For commercial licensing or training inquiries:
-
-- knowledge@itdo.jp
-
----
+{% assign catalog = site.data.catalog %}
+{% assign books = catalog.books | sort: 'displayOrder' %}
+{% assign main_count = 0 %}
+{% assign planned_count = 0 %}
+{% assign related_count = 0 %}
+{% for book in books %}
+  {% if book.countingGroup == 'main-lineup' and book.countedInMainLineup %}{% assign main_count = main_count | plus: 1 %}{% endif %}
+  {% if book.countingGroup == 'planned' %}{% assign planned_count = planned_count | plus: 1 %}{% endif %}
+  {% if book.countingGroup == 'related-independent' %}{% assign related_count = related_count | plus: 1 %}{% endif %}
+{% endfor %}
+
+<h1>ITエンジニア知識アーキテクチャ</h1>
+
+<p>実務で活かせるITエンジニア学習ロードマップを、書籍カタログと学習パスとして整理しています。</p>
+
+<section class="catalog-summary" aria-label="シリーズ概要">
+  <div class="summary-metric"><strong>{{ main_count }}</strong>公開書籍</div>
+  <div class="summary-metric"><strong>{{ planned_count }}</strong>計画書籍</div>
+  <div class="summary-metric"><strong>{{ related_count }}</strong>関連する独立英語書籍</div>
+  <div class="summary-metric"><strong>{{ catalog.learningPaths | size }}</strong>学習パス</div>
+</section>
+
+<section class="path-grid" aria-label="主要入口">
+  <article class="path-card">
+    <h2>書籍から探す</h2>
+    <p>公開済み、計画中、無料公開範囲、有料部分を含むPrivate管理書籍を、正本カタログから生成したカードで確認できます。</p>
+    <p><a class="button-link" href="{{ '/books/' | relative_url }}">書籍一覧を見る</a></p>
+  </article>
+  <article class="path-card">
+    <h2>学習パスから選ぶ</h2>
+    <p>未経験者向け、クラウド/コンテナ、セキュリティ、AI支援開発、理論計算機科学などの読書順を確認できます。</p>
+    <p><a class="button-link" href="{{ '/paths/' | relative_url }}">学習パスを見る</a></p>
+  </article>
+  <article class="path-card">
+    <h2>出版・運用ガイド</h2>
+    <p>書籍制作、公開前レビュー、UX仕様、品質スプリント、ライセンス方針などの運用資料を確認できます。</p>
+    <p><a class="button-link" href="{{ '/publishing/' | relative_url }}">出版ガイドを見る</a></p>
+  </article>
+</section>
+
+<section>
+  <h2>初めて読む場合の推奨ルート</h2>
+  <ol class="book-sequence">
+    <li><strong>仕事の型を揃える:</strong> 根拠で進める開発仕事術、チケット駆動、ドキュメント、セキュリティ基礎、インシデント対応。</li>
+    <li><strong>技術基盤へ進む:</strong> Linux / WSL2、ITインフラ、クラウド、コンテナ、認証認可、セキュリティ。</li>
+    <li><strong>AI時代の開発運用を接続する:</strong> GitHub Workflow、AIエージェント協働、AgentOps、AIエージェント実践、AIテスト戦略、形式的手法。</li>
+    <li><strong>意思決定と対人スキルで閉じる:</strong> 論理的思考、プロフェッショナルマインド、生成AIコミュニケーション、交渉、実務コミュニケーション。</li>
+  </ol>
+</section>
+
+<section class="notice-box">
+  <h2>利用方針</h2>
+  <p>各書籍は原則としてGitHub Pagesで無料閲覧できます。無料公開範囲と有料版を分けて運用する書籍では、Pagesは試読範囲のみを公開し、管理リポジトリをPrivateにする場合があります。</p>
+  <p>非営利利用は Creative Commons BY-NC-SA 4.0 に基づきます。商用利用、研修利用、組織導入は別途契約が必要です。</p>
+</section>
+
+<section>
+  <h2>English</h2>
+  <p>English overview and availability information are available in the <a href="{{ '/en/' | relative_url }}">English catalog</a>.</p>
+</section>
