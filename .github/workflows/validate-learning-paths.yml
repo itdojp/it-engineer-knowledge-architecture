@@ -13,7 +13,7 @@ on:
       - 'docs/books/**'
       - 'docs/paths/**'
       - 'docs/404.html'
-      - '.github/workflows/validate-learning-paths.yml'
+      - '.github/workflows/**'
       - 'docs/_data/**'
       - 'docs/publishing/book-registry.json'
       - 'schemas/**'
@@ -33,7 +33,7 @@ on:
       - 'docs/books/**'
       - 'docs/paths/**'
       - 'docs/404.html'
-      - '.github/workflows/validate-learning-paths.yml'
+      - '.github/workflows/**'
       - 'docs/_data/**'
       - 'docs/publishing/book-registry.json'
       - 'schemas/**'
@@ -116,7 +116,7 @@ jobs:
         run: gem install jekyll -v 4.4.1
 
       - name: Jekyll build
-        run: jekyll build --source docs --destination .site
+        run: jekyll build --source docs --destination .site --baseurl /it-engineer-knowledge-architecture
 
       - name: 主要ページ構造チェック
         run: |
@@ -124,10 +124,10 @@ jobs:
           from pathlib import Path
           root = Path('.site')
           checks = {
-              'index.html': ['<main id="main-content"', '本文へスキップ', '/books/', '/paths/'],
+              'index.html': ['<main id="main-content"', '本文へスキップ', '/it-engineer-knowledge-architecture/books/', '/it-engineer-knowledge-architecture/paths/'],
               'books/index.html': ['書籍一覧', 'data-book-card', '全 49 件', 'ai-agent-collaboration-book'],
               'paths/index.html': ['学習パス', 'beginner-linux', 'book-sequence'],
-              '404.html': ['ページが見つかりません', '/books/', '/paths/'],
+              '404.html': ['ページが見つかりません', '/it-engineer-knowledge-architecture/books/', '/it-engineer-knowledge-architecture/paths/'],
               'en/index.html': ['English Catalog', '<html lang="en"'],
           }
           for rel, markers in checks.items():
