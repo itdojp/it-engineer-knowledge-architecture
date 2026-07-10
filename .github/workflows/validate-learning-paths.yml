@@ -19,6 +19,8 @@ on:
       - 'schemas/**'
       - 'scripts/**'
       - 'tests/fixtures/**'
+      - 'tests/e2e/**'
+      - 'playwright.config.mjs'
       - 'package.json'
       - 'package-lock.json'
   pull_request:
@@ -39,6 +41,8 @@ on:
       - 'schemas/**'
       - 'scripts/**'
       - 'tests/fixtures/**'
+      - 'tests/e2e/**'
+      - 'playwright.config.mjs'
       - 'package.json'
       - 'package-lock.json'
 
@@ -51,6 +55,14 @@ jobs:
       - name: チェックアウト
         uses: actions/checkout@v4
 
+      - name: Ruby設定
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Jekyllインストール
+        run: gem install jekyll -v 4.4.1
+
       - name: Node.js設定
         uses: actions/setup-node@v4
         with:
@@ -59,15 +71,27 @@ jobs:
       - name: npm依存関係確認
         run: npm ci
 
-      - name: カタログ正本・学習グラフ検証
+      - name: Playwrightブラウザインストール
+        run: npx playwright install --with-deps chromium
+
+      - name: カタログ・生成物・サイトE2E検証
         run: npm run verify
 
       - name: マークダウンリンクチェック
         run: |
           echo "🔗 マークダウンリンクチェック中..."
 
-          # 内部リンクの存在確認
-          find . -name "*.md" -exec grep -l "\[.*\](.*\.md)" {} \; | while read file; do
+          # 内部リンクの存在確認（依存関係・生成物は対象外）
+          find . \
+            -path './.git' -prune -o \
+            -path './node_modules' -prune -o \
+            -path './.site' -prune -o \
+            -path './test-results' -prune -o \
+            -path './playwright-report' -prune -o \
+            -name "*.md" -print | while read file; do
+            if ! grep -q "\[.*\](.*\.md)" "$file"; then
+              continue
+            fi
             echo "チェック中: $file"
             grep -oE "\[.*\]\([^)]*\.md[^)]*\)" "$file" | while read link; do
               path=$(echo "$link" | sed -E 's/.*\(([^)]*)\).*/\1/')
@@ -98,46 +122,6 @@ jobs:
           done
 
           echo "✅ リンクチェック通過"
-
-  build-site:
-    runs-on: ubuntu-latest
-    name: Jekyllサイト生成チェック
-
-    steps:
-      - name: チェックアウト
-        uses: actions/checkout@v4
-
-      - name: Ruby設定
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-
-      - name: Jekyllインストール
-        run: gem install jekyll -v 4.4.1
-
-      - name: Jekyll build
-        run: jekyll build --source docs --destination .site --baseurl /it-engineer-knowledge-architecture
-
-      - name: 主要ページ構造チェック
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          root = Path('.site')
-          checks = {
-              'index.html': ['<main id="main-content"', '本文へスキップ', '/it-engineer-knowledge-architecture/books/', '/it-engineer-knowledge-architecture/paths/'],
-              'books/index.html': ['書籍一覧', 'data-book-card', '全 49 件', 'ai-agent-collaboration-book'],
-              'paths/index.html': ['学習パス', 'beginner-linux', 'book-sequence'],
-              '404.html': ['ページが見つかりません', '/it-engineer-knowledge-architecture/books/', '/it-engineer-knowledge-architecture/paths/'],
-              'en/index.html': ['English Catalog', '<html lang="en"'],
-          }
-          for rel, markers in checks.items():
-              text = (root / rel).read_text(encoding='utf-8')
-              h1_count = text.lower().count('<h1')
-              missing = [marker for marker in markers if marker not in text]
-              if h1_count != 1 or missing:
-                  raise SystemExit(f'{rel}: h1_count={h1_count}, missing={missing}')
-          print('site structure OK')
-          PY
 
   validate-yaml-structure:
     runs-on: ubuntu-latest

@@ -32,9 +32,6 @@
     <link rel="icon" type="image/png" sizes="48x48" href="{{ '/assets/images/itdo_logo_48x48_blue.png' | relative_url }}">
     <link rel="shortcut icon" type="image/png" href="{{ '/assets/images/itdo_logo_48x48_blue.png' | relative_url }}">
 
-    <!-- GitHub Pages default theme CSS -->
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-
     <!-- Custom styles -->
     <style>
         :root {
@@ -397,5 +394,15 @@
             <a href="mailto:knowledge@itdo.jp">Contact</a>
         </p>
     </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('table').forEach(function (table) {
+          if (table.scrollWidth > table.clientWidth && !table.hasAttribute('tabindex')) {
+            table.setAttribute('tabindex', '0');
+          }
+        });
+      });
+    </script>
+
 </body>
 </html>
