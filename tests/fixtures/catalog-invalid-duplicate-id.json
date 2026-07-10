@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-10",
+  "sourcePolicy": {
+    "canonical": "docs/_data/catalog.json",
+    "derivedFiles": [
+      "docs/publishing/book-registry.json"
+    ],
+    "externalDynamicFields": [
+      "stars",
+      "openIssues",
+      "updatedAtFromGitHub",
+      "openPRs",
+      "repoAvailabilityStatus"
+    ],
+    "notes": "GitHub APIから取得するStar数、Open Issue数、リポジトリ更新日時は正本へ保存しない。"
+  },
+  "expectedCounts": {
+    "mainLineup": 2,
+    "planned": 0,
+    "relatedIndependent": 0
+  },
+  "moduleCatalog": [
+    "quickStart",
+    "readingGuide",
+    "checklistPack",
+    "troubleshootingFlow",
+    "conceptMap",
+    "figureIndex",
+    "legalNotice",
+    "glossary"
+  ],
+  "books": [
+    {
+      "id": "illustrated-linux-basics-book",
+      "displayOrder": 1,
+      "title": {
+        "ja": "図解でわかるLinux基礎",
+        "en": "図解でわかるLinux基礎"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/illustrated-linux-basics-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/illustrated-linux-basics-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "beginner-track",
+      "subcategory": "未経験者向け",
+      "tags": [
+        "beginner-track"
+      ],
+      "levels": [
+        "beginner"
+      ],
+      "roles": [
+        "beginner"
+      ],
+      "audiences": [
+        "IT未経験者・初学者 / プログラミングやLinuxの基礎を楽しく学ぶ"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "A visual introduction to Linux basics, core commands, filesystems, networking, and containers."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "A",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": false,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    },
+    {
+      "id": "illustrated-linux-basics-book",
+      "displayOrder": 2,
+      "title": {
+        "ja": "やさしく学ぶLinux WSL2ではじめる基礎",
+        "en": "やさしく学ぶLinux WSL2ではじめる基礎"
+      },
+      "officialEnglishTitle": null,
+      "status": "published",
+      "repo": "itdojp/wsl2-linux-essentials-book",
+      "repoVisibility": "public",
+      "pagesUrl": "https://itdojp.github.io/wsl2-linux-essentials-book/",
+      "publicationScope": "full-public",
+      "countingGroup": "main-lineup",
+      "countedInMainLineup": true,
+      "category": "beginner-track",
+      "subcategory": "未経験者向け",
+      "tags": [
+        "beginner-track"
+      ],
+      "levels": [
+        "beginner"
+      ],
+      "roles": [
+        "beginner"
+      ],
+      "audiences": [
+        "IT未経験者・初学者 / プログラミングやLinuxの基礎を楽しく学ぶ"
+      ],
+      "summary": {
+        "ja": "",
+        "en": "Uses WSL2 on Windows as a safe learning environment for Linux setup, shell usage, processes, networking, and scripting."
+      },
+      "prerequisites": [],
+      "estimatedWeeks": null,
+      "recommendedAfter": [],
+      "languages": [
+        "ja"
+      ],
+      "relatedEditions": [],
+      "reviewStatus": "reviewed",
+      "lastReviewedAt": null,
+      "reviewIssue": null,
+      "ux": {
+        "profile": "A",
+        "modules": {
+          "quickStart": true,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": false,
+          "legalNotice": false,
+          "glossary": true
+        }
+      },
+      "addedAt": null,
+      "updatedAt": "2026-07-10",
+      "notes": [
+        "暫定割当（要確認）",
+        "日本語個別概要はREADME公開カタログ上で未記載。",
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+      ],
+      "sourceRefs": [
+        "README.md",
+        "docs/en/index.md",
+        "docs/publishing/book-registry.json"
+      ]
+    }
+  ],
+  "learningPaths": [
+    {
+      "id": "fixture-path",
+      "title": {
+        "ja": "fixture",
+        "en": "fixture"
+      },
+      "description": {
+        "ja": "fixture",
+        "en": "fixture"
+      },
+      "bookIds": [
+        "illustrated-linux-basics-book"
+      ],
+      "nextPathIds": []
+    }
+  ]
+}

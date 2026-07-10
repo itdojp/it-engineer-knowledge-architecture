@@ -75,18 +75,22 @@ jobs:
               print(f"Skip: issue already exists: {url}")
               raise SystemExit(0)
 
-          registry_path = Path("docs/publishing/book-registry.json")
-          registry = json.loads(registry_path.read_text(encoding="utf-8"))
-          books = registry.get("books") or {}
-          # Build checklist links from the registry to avoid hard-coding Pages URL format.
+          catalog_path = Path("docs/_data/catalog.json")
+          catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+          books = catalog.get("books") or []
+          # Build checklist links from the catalog to avoid hard-coding Pages URL format.
+          # Phase 8 will narrow this to 2-4 selected books; this migration only
+          # switches the metadata source of truth.
           repo_to_pages = {}
-          for meta in books.values():
-              if not isinstance(meta, dict):
+          for meta in books:
+              if not isinstance(meta, dict) or meta.get("status") != "published":
+                  continue
+              if meta.get("countingGroup") != "main-lineup" or meta.get("countedInMainLineup") is not True:
                   continue
               repo = meta.get("repo")
               if not repo:
                   continue
-              pages = (meta.get("pages") or "").strip()
+              pages = (meta.get("pagesUrl") or "").strip()
               if repo not in repo_to_pages or (not repo_to_pages[repo] and pages):
                   repo_to_pages[repo] = pages
 

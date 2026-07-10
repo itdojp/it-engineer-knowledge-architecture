@@ -2,9 +2,10 @@
 
 /*
  * Generates docs/progress_report.md (and tmp/book_status.json) from
- * docs/publishing/book-registry.json.
+ * docs/_data/catalog.json.
  *
  * Motivation:
+ * - Keep docs/_data/catalog.json as the single metadata source of truth
  * - Avoid hardcoded book lists
  * - Reduce GitHub API calls (GraphQL batching) to mitigate 429
  */
@@ -184,44 +185,41 @@ async function main() {
   }
 
   const repoRoot = path.join(__dirname, "..");
-  const registryPath = path.join(
-    repoRoot,
-    "docs",
-    "publishing",
-    "book-registry.json"
-  );
+  const catalogPath = path.join(repoRoot, "docs", "_data", "catalog.json");
   const outMdPath = path.join(repoRoot, "docs", "progress_report.md");
   const outJsonPath = path.join(repoRoot, "tmp", "book_status.json");
 
-  if (!fs.existsSync(registryPath)) {
-    fail(`book-registry が見つかりません: ${registryPath}`);
+  if (!fs.existsSync(catalogPath)) {
+    fail(`catalog が見つかりません: ${catalogPath}`);
   }
 
-  let registry;
+  let catalog;
   try {
-    registry = JSON.parse(fs.readFileSync(registryPath, "utf8"));
+    catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
   } catch (e) {
-    fail(`book-registry の JSON 解析に失敗しました: ${e.message}`);
+    fail(`catalog の JSON 解析に失敗しました: ${e.message}`);
   }
 
-  const books = registry?.books;
-  if (!books || typeof books !== "object" || Array.isArray(books)) {
-    fail("book-registry の books が不正です");
+  const books = catalog?.books;
+  if (!Array.isArray(books)) {
+    fail("catalog の books が不正です");
   }
 
-  const entries = Object.keys(books)
-    .sort()
-    .map((bookName) => {
-      const entry = books[bookName] || {};
+  const entries = books
+    .filter(
+      (entry) =>
+        entry.status === "published" &&
+        entry.countingGroup === "main-lineup" &&
+        entry.countedInMainLineup === true &&
+        entry.repo &&
+        entry.pagesUrl
+    )
+    .sort((a, b) => String(a.id).localeCompare(String(b.id)))
+    .map((entry) => {
+      const bookName = entry.id;
       const repo = entry.repo;
-      const pages = entry.pages;
+      const pages = entry.pagesUrl;
       const repoVisibility = entry.repoVisibility || "public";
-      if (!repo || typeof repo !== "string") {
-        fail(`${bookName}: repo が不正です`);
-      }
-      if (!pages || typeof pages !== "string") {
-        fail(`${bookName}: pages が不正です`);
-      }
       if (!["public", "private"].includes(repoVisibility)) {
         fail(`${bookName}: repoVisibility が不正です (${repoVisibility})`);
       }
@@ -229,6 +227,9 @@ async function main() {
       if (!owner || !name) {
         fail(`${bookName}: repo の形式が不正です (${repo})`);
       }
+      const accessNote =
+        (entry.notes || []).find((note) => String(note).includes("Private")) ||
+        (entry.notes || []).find((note) => String(note).includes("無料公開範囲"));
       return {
         bookName,
         owner,
@@ -236,8 +237,11 @@ async function main() {
         repo,
         pages,
         repoVisibility,
-        pagesPublicationScope: entry.pagesPublicationScope || null,
-        accessNote: entry.accessNote || null,
+        pagesPublicationScope:
+          entry.publicationScope === "free-preview"
+            ? "free-preview-aligned-with-zenn-free-scope"
+            : null,
+        accessNote: accessNote || null,
         isPrivateManaged: repoVisibility === "private",
       };
     });
@@ -360,7 +364,7 @@ async function main() {
     "備考: `linux-infra-textbook` は `linux-infra-textbook2` に置換済みの旧版（アーカイブ）"
   );
   md.push("");
-  md.push("生成元: `docs/publishing/book-registry.json`");
+  md.push("生成元: `docs/_data/catalog.json`");
   md.push("");
 
   fs.mkdirSync(path.dirname(outMdPath), { recursive: true });

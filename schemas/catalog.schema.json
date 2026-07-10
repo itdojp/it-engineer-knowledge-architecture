@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://itdojp.github.io/it-engineer-knowledge-architecture/schemas/catalog.schema.json",
+  "title": "IT Engineer Knowledge Architecture Catalog",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "updatedAt",
+    "sourcePolicy",
+    "expectedCounts",
+    "moduleCatalog",
+    "books",
+    "learningPaths"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "updatedAt": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "sourcePolicy": {
+      "type": "object",
+      "required": ["canonical", "derivedFiles", "externalDynamicFields", "notes"],
+      "additionalProperties": false,
+      "properties": {
+        "canonical": { "const": "docs/_data/catalog.json" },
+        "derivedFiles": { "type": "array", "items": { "type": "string" } },
+        "externalDynamicFields": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      }
+    },
+    "expectedCounts": {
+      "type": "object",
+      "required": ["mainLineup", "planned", "relatedIndependent"],
+      "additionalProperties": false,
+      "properties": {
+        "mainLineup": { "type": "integer", "minimum": 0 },
+        "planned": { "type": "integer", "minimum": 0 },
+        "relatedIndependent": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "moduleCatalog": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "books": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/book" }
+    },
+    "learningPaths": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/learningPath" }
+    }
+  },
+  "$defs": {
+    "localizedTitle": {
+      "type": "object",
+      "required": ["ja", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "ja": { "type": "string" },
+        "en": { "type": "string" }
+      }
+    },
+    "localizedSummary": {
+      "type": "object",
+      "required": ["ja", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "ja": { "type": "string" },
+        "en": { "type": "string" }
+      }
+    },
+    "ux": {
+      "type": "object",
+      "required": ["profile", "modules"],
+      "additionalProperties": false,
+      "properties": {
+        "profile": { "type": ["string", "null"], "enum": ["A", "B", "C", null] },
+        "modules": {
+          "type": "object",
+          "additionalProperties": { "type": "boolean" }
+        }
+      }
+    },
+    "book": {
+      "type": "object",
+      "required": [
+        "id",
+        "displayOrder",
+        "title",
+        "officialEnglishTitle",
+        "status",
+        "repo",
+        "repoVisibility",
+        "pagesUrl",
+        "publicationScope",
+        "countingGroup",
+        "countedInMainLineup",
+        "category",
+        "subcategory",
+        "tags",
+        "levels",
+        "roles",
+        "audiences",
+        "summary",
+        "prerequisites",
+        "estimatedWeeks",
+        "recommendedAfter",
+        "languages",
+        "relatedEditions",
+        "reviewStatus",
+        "lastReviewedAt",
+        "reviewIssue",
+        "ux",
+        "addedAt",
+        "updatedAt",
+        "notes",
+        "sourceRefs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+$" },
+        "displayOrder": { "type": "number" },
+        "title": { "$ref": "#/$defs/localizedTitle" },
+        "officialEnglishTitle": { "type": ["string", "null"] },
+        "status": { "type": "string", "enum": ["published", "planned", "archived"] },
+        "repo": { "type": ["string", "null"], "pattern": "^itdojp/[A-Za-z0-9_.-]+$" },
+        "repoVisibility": { "type": "string", "enum": ["public", "private", "not-created"] },
+        "pagesUrl": { "type": ["string", "null"], "pattern": "^https://itdojp\\.github\\.io/[A-Za-z0-9_.-]+/$" },
+        "publicationScope": { "type": "string", "enum": ["full-public", "free-preview", "planned"] },
+        "countingGroup": { "type": "string", "enum": ["main-lineup", "planned", "related-independent", "archive"] },
+        "countedInMainLineup": { "type": "boolean" },
+        "category": { "type": "string" },
+        "subcategory": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "levels": { "type": "array", "items": { "type": "string" } },
+        "roles": { "type": "array", "items": { "type": "string" } },
+        "audiences": { "type": "array", "items": { "type": "string" } },
+        "summary": { "$ref": "#/$defs/localizedSummary" },
+        "prerequisites": { "type": "array", "items": { "type": "string" } },
+        "estimatedWeeks": { "type": ["string", "number", "null"] },
+        "recommendedAfter": { "type": "array", "items": { "type": "string" } },
+        "languages": { "type": "array", "items": { "type": "string", "enum": ["ja", "en"] }, "minItems": 1 },
+        "relatedEditions": { "type": "array", "items": { "type": "string" } },
+        "reviewStatus": { "type": "string", "enum": ["reviewed", "review-needed", "not-started", "unknown"] },
+        "lastReviewedAt": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "reviewIssue": { "type": ["integer", "null"], "minimum": 1 },
+        "ux": { "$ref": "#/$defs/ux" },
+        "addedAt": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "updatedAt": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "notes": { "type": "array", "items": { "type": "string" } },
+        "sourceRefs": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+      }
+    },
+    "learningPath": {
+      "type": "object",
+      "required": ["id", "title", "description", "bookIds", "nextPathIds"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "title": { "$ref": "#/$defs/localizedTitle" },
+        "description": { "$ref": "#/$defs/localizedSummary" },
+        "bookIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "nextPathIds": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
