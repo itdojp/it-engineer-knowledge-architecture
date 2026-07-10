@@ -17,15 +17,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create quality sprint issue (idempotent)
+      - name: Create targeted quality sprint issue (idempotent)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 - << 'PY'
-          import os, json, urllib.request, urllib.parse, urllib.error
+          import json
+          import os
+          import time
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          from collections import Counter, defaultdict
           from datetime import datetime, timezone
           from pathlib import Path
-          import time
 
           token = os.environ.get("GITHUB_TOKEN", "")
           if not token:
@@ -41,6 +46,7 @@ jobs:
               headers = {
                   "Authorization": f"Bearer {token}",
                   "Accept": "application/vnd.github+json",
+                  "X-GitHub-Api-Version": "2022-11-28",
                   "User-Agent": "itdojp-automation",
               }
               if data is not None:
@@ -64,36 +70,76 @@ jobs:
                       raise
               raise RuntimeError("github api retries exceeded")
 
-          today = datetime.now(timezone.utc).date().isoformat()
-          title = f"[Quality Sprint] {today}"
+          def search_open_quality_sprints():
+              q = f'repo:{repo_full_name} is:issue is:open in:title "[Quality Sprint]"'
+              return gh_api("GET", "/search/issues?q=" + urllib.parse.quote(q, safe=""))
 
-          # Idempotency: if an open issue with the same title exists, do nothing.
-          q = f'repo:{repo_full_name} is:issue is:open in:title "{title}"'
-          search = gh_api("GET", "/search/issues?q=" + urllib.parse.quote(q, safe=""))
-          if (search.get("total_count") or 0) > 0:
-              url = (search.get("items") or [{}])[0].get("html_url") or "-"
-              print(f"Skip: issue already exists: {url}")
+          # Idempotency: one open Quality Sprint issue is enough. Avoid piling up work.
+          existing = search_open_quality_sprints()
+          if (existing.get("total_count") or 0) > 0:
+              url = (existing.get("items") or [{}])[0].get("html_url") or "-"
+              print(f"Skip: an open quality sprint issue already exists: {url}")
               raise SystemExit(0)
 
-          catalog_path = Path("docs/_data/catalog.json")
-          catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+          catalog = json.loads(Path("docs/_data/catalog.json").read_text(encoding="utf-8"))
           books = catalog.get("books") or []
-          # Build checklist links from the catalog to avoid hard-coding Pages URL format.
-          # Phase 8 will narrow this to 2-4 selected books; this migration only
-          # switches the metadata source of truth.
-          repo_to_pages = {}
-          for meta in books:
-              if not isinstance(meta, dict) or meta.get("status") != "published":
-                  continue
-              if meta.get("countingGroup") != "main-lineup" or meta.get("countedInMainLineup") is not True:
-                  continue
-              repo = meta.get("repo")
-              if not repo:
-                  continue
-              pages = (meta.get("pagesUrl") or "").strip()
-              if repo not in repo_to_pages or (not repo_to_pages[repo] and pages):
-                  repo_to_pages[repo] = pages
+          candidates = [
+              b for b in books
+              if isinstance(b, dict)
+              and b.get("status") == "published"
+              and b.get("countingGroup") == "main-lineup"
+              and b.get("countedInMainLineup") is True
+              and b.get("repo")
+          ]
+          if not candidates:
+              raise SystemExit("No published main-lineup books found in docs/_data/catalog.json")
 
+          def review_sort_key(book):
+              # Null dates are oldest so books without a recorded review are selected first.
+              last_reviewed = book.get("lastReviewedAt") or "0000-00-00"
+              return (last_reviewed, book.get("displayOrder") or 9999, book.get("repo") or "")
+
+          candidates.sort(key=review_sort_key)
+          by_category = defaultdict(list)
+          for book in candidates:
+              by_category[book.get("category") or "uncategorized"].append(book)
+
+          oldest = candidates[0]
+          target_category = oldest.get("category") or "uncategorized"
+          selected = by_category[target_category][:4]
+
+          # Prefer one coherent category, but keep the issue actionable with 2-4 books.
+          if len(selected) < 2:
+              seen = {b.get("id") for b in selected}
+              for book in candidates:
+                  if book.get("id") not in seen:
+                      selected.append(book)
+                      seen.add(book.get("id"))
+                  if len(selected) >= 2:
+                      break
+          selected = selected[:4]
+
+          today = datetime.now(timezone.utc).date().isoformat()
+          title_category = target_category if len({b.get("category") for b in selected}) == 1 else "mixed"
+          title = f"[Quality Sprint] {today} {title_category}"
+
+          def text(value):
+              if value is None or value == "":
+                  return "未記録"
+              return str(value)
+
+          def title_ja(book):
+              title = book.get("title") or {}
+              if isinstance(title, dict):
+                  return title.get("ja") or title.get("en") or book.get("id") or book.get("repo")
+              return str(title)
+
+          def warning_notes(book):
+              notes = book.get("notes") or []
+              warnings = [note for note in notes if any(marker in note for marker in ("暫定", "要確認", "未記載", "要更新", "要レビュー"))]
+              return warnings
+
+          category_counts = Counter(b.get("category") or "uncategorized" for b in selected)
           lines = []
           lines.append("# 品質スプリント")
           lines.append("")
@@ -101,24 +147,47 @@ jobs:
           lines.append("")
           lines.append("## 目的")
           lines.append("- P2/P3（誤字脱字、表記ゆれ、軽微な構造不整合、外部リンク棚卸し等）を定期的に消化し、品質劣化を抑止する。")
+          lines.append("- 1回のスプリントは2〜4冊に限定し、レビュー・修正・検証・記録更新を完了させる。")
           lines.append("")
-          lines.append("## 実施ガイド（推奨）")
-          lines.append("- 1回のスプリントで2〜4冊を対象に小粒PRで対応（カテゴリ混在を避ける）。")
-          lines.append("- 根拠が必要な修正（仕様/EOL/非推奨等）は、公式ドキュメント等の参照を併記する。")
-          lines.append("- PRは Book QA を通過し、GitHub Pages で表示確認する。")
+          lines.append("## 今回の選定方針")
+          lines.append(f"- 選定日: {today} UTC")
+          lines.append("- 選定元: `docs/_data/catalog.json` の `status=published` / `countingGroup=main-lineup` / `countedInMainLineup=true`")
+          lines.append("- 優先度: `lastReviewedAt` が古い順。未記録は最古として扱う。")
+          lines.append("- カテゴリ: " + ", ".join(f"{cat}={count}冊" for cat, count in sorted(category_counts.items())))
           lines.append("")
-          lines.append("## 全書籍チェックリスト（対象選定・消し込み用）")
-          for repo in sorted(repo_to_pages.keys()):
-              name = repo.split("/", 1)[1]
-              pages = repo_to_pages.get(repo) or f"https://itdojp.github.io/{name}/"
-              lines.append(f"- [ ] {repo}（Pages: {pages}）")
-
+          lines.append("## 対象書籍チェックリスト")
+          for book in selected:
+              repo = book.get("repo")
+              pages = book.get("pagesUrl") or f"https://itdojp.github.io/{repo.split('/', 1)[1]}/"
+              warnings = warning_notes(book)
+              lines.append(f"- [ ] `{repo}` — {title_ja(book)}")
+              lines.append(f"  - Pages: {pages}")
+              lines.append(f"  - カテゴリ: `{book.get('category') or 'uncategorized'}`")
+              lines.append(f"  - 前回レビュー日: {text(book.get('lastReviewedAt'))}")
+              lines.append(f"  - レビュー状態: `{text(book.get('reviewStatus'))}`")
+              lines.append(f"  - 公開範囲: `{text(book.get('publicationScope'))}` / リポジトリ公開状態: `{text(book.get('repoVisibility'))}`")
+              if warnings:
+                  lines.append("  - 既知メモ/警告:")
+                  for warning in warnings:
+                      lines.append(f"    - {warning}")
+              else:
+                  lines.append("  - 既知メモ/警告: なし")
+          lines.append("")
+          lines.append("## 実施チェックリスト")
+          lines.append("- [ ] 対象リポジトリごとに既存Issue/PR/CI状態を確認する。")
+          lines.append("- [ ] 誤字脱字、表記ゆれ、軽微な構造不整合、リンク切れ、ビルド警告を確認する。")
+          lines.append("- [ ] 修正が必要な場合は、小粒PRで対応する。")
+          lines.append("- [ ] 根拠が必要な修正（仕様/EOL/非推奨等）は、公式ドキュメント等の参照をPR本文またはSource Notesへ記録する。")
+          lines.append("- [ ] 各PRで Book QA / CI / GitHub Pages 表示確認を完了する。")
+          lines.append("- [ ] 完了後、必要に応じて `docs/_data/catalog.json` の `lastReviewedAt` / `reviewStatus` / `reviewIssue` を更新するPRを作成する。")
+          lines.append("")
+          lines.append("## 完了条件")
+          lines.append("- 対象書籍の確認結果または修正PRがこのIssueに記録されている。")
+          lines.append("- 修正PRがある場合、CI成功・レビューコメント対応・Pages確認が完了している。")
+          lines.append("- 品質スプリントの記録更新方針（catalog更新PRを作る、または不要理由）が明示されている。")
           body = "\n".join(lines) + "\n"
 
-          issue_path = f"/repos/{repo_full_name}/issues"
           payload = {"title": title, "body": body}
-
-          # Labels may not exist in forks; only include when available.
           try:
               gh_api("GET", f"/repos/{repo_full_name}/labels/platform-wide")
               payload["labels"] = ["platform-wide"]
@@ -126,6 +195,6 @@ jobs:
               if e.code != 404:
                   raise
 
-          created = gh_api("POST", issue_path, payload)
+          created = gh_api("POST", f"/repos/{repo_full_name}/issues", payload)
           print("Created:", created.get("html_url"))
           PY

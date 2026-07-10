@@ -5,5 +5,11 @@ tmp/
 .settings/
 .vscode/
 
+# Node dependencies
+node_modules/
+
 # Build and Data Output
 output/
+.site/
+test-results/
+playwright-report/
