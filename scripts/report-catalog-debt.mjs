@@ -12,11 +12,25 @@ import {
 export const DEFAULT_REPORT_PATH = path.join(ROOT, 'docs', 'publishing', 'catalog-debt-report.json');
 export const DEFAULT_READER_VIEW_PATH = path.join(ROOT, 'docs', 'books', 'index.html');
 export const DEFAULT_LEGACY_SOURCE_PATHS = [
+  path.join(ROOT, 'README.md'),
   path.join(ROOT, 'books', 'existing-books.md'),
   path.join(ROOT, 'books', 'planned-books.md'),
+  path.join(ROOT, 'docs', 'index.md'),
+  path.join(ROOT, 'docs', 'books', 'index.html'),
+  path.join(ROOT, 'docs', 'en', 'index.md'),
+  path.join(ROOT, 'docs', 'paths', 'index.html'),
+  path.join(ROOT, 'docs', 'publishing', 'catalog-migration-report.md'),
   path.join(ROOT, 'roadmap', 'learning-paths.md'),
   DEFAULT_CATALOG_PATH
 ];
+
+export function legacySourcePathsForCatalog(catalogPath = DEFAULT_CATALOG_PATH) {
+  return [...new Set(
+    DEFAULT_LEGACY_SOURCE_PATHS
+      .filter((sourcePath) => sourcePath !== DEFAULT_CATALOG_PATH)
+      .concat(catalogPath)
+  )];
+}
 
 const provisionalNotePattern = /(暫定|要確認|未記載|要更新|要レビュー)/;
 const uxNotePattern = /(UX|profile|modules|暫定割当)/i;
@@ -199,7 +213,7 @@ export function buildCatalogDebtReport(catalog, options = {}) {
   const readerViewPath = options.readerViewPath || DEFAULT_READER_VIEW_PATH;
   const readerViewSource = options.readerViewSource ?? fs.readFileSync(readerViewPath, 'utf8');
   const legacyOccurrences = options.legacyOccurrences ?? findLegacyIdentifierOccurrences(
-    options.legacySourcePaths || DEFAULT_LEGACY_SOURCE_PATHS
+    options.legacySourcePaths || legacySourcePathsForCatalog(options.catalogPath)
   );
   const readerViewLeaks = findReaderViewLeaks(readerViewSource, readerViewPath);
 
@@ -253,6 +267,13 @@ export function evaluateCatalogDebtCheck(report, expectedReportText) {
       errors.push(`${finding.code} at ${finding.path}:${finding.line}: ${finding.description}`);
     }
   }
+  if (report.debt.legacyIdentifierOccurrences.count > 0) {
+    for (const occurrence of report.debt.legacyIdentifierOccurrences.occurrences) {
+      errors.push(
+        `legacy identifier ${occurrence.identifier} at ${occurrence.path}:${occurrence.line}:${occurrence.column}`
+      );
+    }
+  }
   return errors;
 }
 
@@ -297,6 +318,7 @@ export function runCli(argv = process.argv.slice(2)) {
 
   const catalog = loadValidatedCatalog(options.catalogPath);
   const report = buildCatalogDebtReport(catalog, {
+    catalogPath: options.catalogPath,
     readerViewPath: options.readerViewPath,
     sourceLabel: relativePath(options.catalogPath)
   });
@@ -311,7 +333,7 @@ export function runCli(argv = process.argv.slice(2)) {
     }
     const errors = evaluateCatalogDebtCheck(report, fs.readFileSync(options.reportPath, 'utf8'));
     if (errors.length > 0) throw new Error(errors.join('\n'));
-    console.log('✅ catalog debt report is in sync and reader-view gates pass');
+    console.log('✅ catalog debt report is in sync and catalog debt gates pass');
   } else {
     process.stdout.write(serializeCatalogDebtReport(report));
   }

@@ -3144,7 +3144,9 @@
         "ja": "計画書籍。詳細は books/planned-books.md を参照。",
         "en": ""
       },
-      "prerequisites": [],
+      "prerequisites": [
+        "cloud-infra-book"
+      ],
       "estimatedWeeks": "8-10週間",
       "recommendedAfter": [],
       "languages": [
@@ -3159,9 +3161,9 @@
         "modules": {}
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "移行元の前提知識表記: cloud-infra-handbook、ネットワーク、セキュリティ基礎"
+        "移行元の前提知識表記: cloud-infra-book（catalog ID）、ネットワーク、セキュリティ基礎"
       ],
       "sourceRefs": [
         "books/planned-books.md",

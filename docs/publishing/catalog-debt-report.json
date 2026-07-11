@@ -561,75 +561,8 @@
       ]
     },
     "legacyIdentifierOccurrences": {
-      "count": 11,
-      "occurrences": [
-        {
-          "identifier": "cloud-infra-handbook",
-          "path": "books/existing-books.md",
-          "line": 130,
-          "column": 12
-        },
-        {
-          "identifier": "cloud-infra-handbook",
-          "path": "books/existing-books.md",
-          "line": 131,
-          "column": 37
-        },
-        {
-          "identifier": "cloud-infra-handbook",
-          "path": "books/existing-books.md",
-          "line": 131,
-          "column": 99
-        },
-        {
-          "identifier": "cloud-infra-handbook",
-          "path": "books/existing-books.md",
-          "line": 486,
-          "column": 3
-        },
-        {
-          "identifier": "cloud-infra-handbook",
-          "path": "books/existing-books.md",
-          "line": 504,
-          "column": 17
-        },
-        {
-          "identifier": "cloud-infra-handbook",
-          "path": "books/existing-books.md",
-          "line": 535,
-          "column": 4
-        },
-        {
-          "identifier": "cloud-infra-handbook",
-          "path": "books/existing-books.md",
-          "line": 556,
-          "column": 91
-        },
-        {
-          "identifier": "cloud-infra-handbook",
-          "path": "books/planned-books.md",
-          "line": 9,
-          "column": 19
-        },
-        {
-          "identifier": "cloud-infra-handbook",
-          "path": "books/planned-books.md",
-          "line": 122,
-          "column": 5
-        },
-        {
-          "identifier": "cloud-infra-handbook",
-          "path": "books/planned-books.md",
-          "line": 129,
-          "column": 14
-        },
-        {
-          "identifier": "cloud-infra-handbook",
-          "path": "docs/_data/catalog.json",
-          "line": 3164,
-          "column": 22
-        }
-      ]
+      "count": 0,
+      "occurrences": []
     }
   },
   "gates": {

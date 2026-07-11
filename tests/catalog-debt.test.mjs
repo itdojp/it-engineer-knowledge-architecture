@@ -6,6 +6,7 @@ import {
   evaluateCatalogDebtCheck,
   findLegacyIdentifierOccurrences,
   findReaderViewLeaks,
+  legacySourcePathsForCatalog,
   loadValidatedCatalog,
   serializeCatalogDebtReport
 } from '../scripts/report-catalog-debt.mjs';
@@ -76,7 +77,15 @@ test('legacy identifier inventory counts repeated matches on the same line', () 
   assert.deepEqual(occurrences.map((item) => item.column), [1, 26]);
 });
 
-test('--check semantics reject stale reports and reader-view leaks', () => {
+test('custom catalog checks replace the default catalog scan target', () => {
+  const customCatalog = path.join(ROOT, 'tests', 'fixtures', 'catalog-valid.json');
+  const paths = legacySourcePathsForCatalog(customCatalog);
+  assert.equal(paths.includes(customCatalog), true);
+  assert.equal(paths.includes(path.join(ROOT, 'docs', '_data', 'catalog.json')), false);
+  assert.equal(paths.includes(path.join(ROOT, 'docs', 'books', 'index.html')), true);
+});
+
+test('--check semantics reject stale reports, reader-view leaks, and legacy identifiers', () => {
   const report = fixtureReport();
   assert.deepEqual(evaluateCatalogDebtCheck(report, serializeCatalogDebtReport(report)), []);
 
@@ -96,5 +105,20 @@ test('--check semantics reject stale reports and reader-view leaks', () => {
   assert.match(
     evaluateCatalogDebtCheck(leakingReport, serializeCatalogDebtReport(leakingReport)).join('\n'),
     /visible-status-enum/
+  );
+
+  const legacyReport = structuredClone(report);
+  legacyReport.debt.legacyIdentifierOccurrences = {
+    count: 1,
+    occurrences: [{
+      identifier: 'cloud-infra-handbook',
+      path: 'books/existing-books.md',
+      line: 10,
+      column: 1
+    }]
+  };
+  assert.match(
+    evaluateCatalogDebtCheck(legacyReport, serializeCatalogDebtReport(legacyReport)).join('\n'),
+    /legacy identifier cloud-infra-handbook at books\/existing-books\.md:10:1/
   );
 });

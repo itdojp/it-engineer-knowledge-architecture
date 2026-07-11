@@ -1,4 +1,10 @@
-# 既存書籍一覧（41冊）
+# 履歴資料: 既存書籍一覧（41冊）
+
+> [!WARNING]
+> **非正本・更新停止（2026-07-12）**
+> このファイルは正本移行前の構成、説明、レビュー状態、件数、URLを保存する履歴・参照資料です。自動生成物ではなく、記載内容を現況として更新しません。現行メタデータの正本は [`docs/_data/catalog.json`](../docs/_data/catalog.json)、読者向け表示は [書籍一覧](../docs/books/index.html) と [学習パス](../docs/paths/index.html) です。現行情報は正本だけを編集してください。
+
+以下の「レビュー状況」、冊数、分類、URL、学習期間は、正本移行時点以前のスナップショットであり、現在の状態を示しません。
 
 ## 📚 書籍カテゴリ別整理
 
@@ -127,8 +133,8 @@
 - **前提知識**: Web開発基礎
 - **学習期間**: 4-5週間
 
-#### 10. **cloud-infra-handbook**
-📖 [書籍を読む](https://itdojp.github.io/cloud-infra-handbook/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-handbook)
+#### 10. **cloud-infra-book**
+📖 [書籍を読む](https://itdojp.github.io/cloud-infra-book/) | 📂 [リポジトリ](https://github.com/itdojp/cloud-infra-book)
 - **タイトル**: クラウドインフラ設計・構築ガイド
 - **対象読者**: クラウドインフラエンジニア・アーキテクト
 - **レビュー状況**: 📝 レビュー予定
@@ -483,7 +489,7 @@
 | github-workflow-book | 初級 | 高 | 0-3年 |
 | podman-book | 中級 | 高 | 1-3年 |
 | practical-auth-book | 中級 | 高 | 2-5年 |
-| cloud-infra-handbook | 中級 | 高 | 2-5年 |
+| cloud-infra-book | 中級 | 高 | 2-5年 |
 | it-infra-software-essentials-book | 中級 | 高 | 1-4年 |
 | formal-methods-book | 上級 | 中 | 3年以上 |
 | ai-testing-strategy-book | 中級 | 中 | 2-5年 |
@@ -501,7 +507,7 @@
 
 #### ✅ カバー済み領域
 - **Linux・インフラ基礎**: linux-infra-textbook2、IT-infra-book
-- **クラウドインフラ**: cloud-infra-handbook
+- **クラウドインフラ**: cloud-infra-book
 - **ソフトウェア基礎**: it-infra-software-essentials-book
 - **コンテナ技術**: podman-book
 - **認証・セキュリティ**: practical-auth-book
@@ -532,7 +538,7 @@
 1. it-infra-software-essentials-book
 2. podman-book
 3. practical-auth-book
-4. cloud-infra-handbook
+4. cloud-infra-book
 5. LogicalThinking-AI-Era-Guide
 6. ai-testing-strategy-book
 7. theoretical-computer-science-prerequisites-book（理論基礎への橋渡し）
@@ -553,7 +559,7 @@
 ## 📈 学習効果最大化のための工夫
 
 ### 1. 関連書籍の組み合わせ学習
-- **インフラ基礎**: linux-infra-textbook2 → it-infra-software-essentials-book → IT-infra-book → cloud-infra-handbook
+- **インフラ基礎**: linux-infra-textbook2 → it-infra-software-essentials-book → IT-infra-book → cloud-infra-book
 - **技術スキル**: podman-book → practical-auth-book
 - **思考力強化**: LogicalThinking-AI-Era-Guide → ai-era-engineers-mind-book → negotiation-for-engineers-book
 - **実践スキル**: github-workflow-book → ai-testing-strategy-book

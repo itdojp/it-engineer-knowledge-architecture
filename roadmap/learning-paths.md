@@ -1,4 +1,10 @@
-# 学習パス詳細設計
+# 履歴資料: 学習パス詳細設計
+
+> [!WARNING]
+> **非正本・更新停止（2026-07-12）**
+> このファイルは正本移行前の学習目標、期間、演習、専門分野別案を保存する履歴・参照資料です。自動生成物ではなく、記載内容を現行学習パスとして更新しません。現行の順序・書籍参照・接続関係の正本は [`docs/_data/catalog.json`](../docs/_data/catalog.json) の `learningPaths`、読者向け表示は [学習パス](../docs/paths/index.html) です。現行情報は正本だけを編集してください。
+
+以下の期間、段階、成果物、専門分野別構成は参考情報です。正本へ移行した項目と参考情報として保持する項目の分類は [`docs/publishing/catalog-migration-report.md`](../docs/publishing/catalog-migration-report.md) を参照してください。
 
 ## 🎯 学習パス設計原則
 
