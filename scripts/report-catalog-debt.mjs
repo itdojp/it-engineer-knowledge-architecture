@@ -11,6 +11,17 @@ import {
 
 export const DEFAULT_REPORT_PATH = path.join(ROOT, 'docs', 'publishing', 'catalog-debt-report.json');
 export const DEFAULT_READER_VIEW_PATH = path.join(ROOT, 'docs', 'books', 'index.html');
+export const DEFAULT_UX_REQUIRED_MODULE_DEBT_BASELINE_PATH = path.join(
+  ROOT,
+  'docs',
+  'publishing',
+  'ux-required-module-debt-baseline.json'
+);
+export const REQUIRED_UX_MODULES = Object.freeze({
+  A: Object.freeze(['readingGuide', 'quickStart', 'glossary']),
+  B: Object.freeze(['checklistPack', 'troubleshootingFlow', 'figureIndex']),
+  C: Object.freeze(['conceptMap', 'glossary'])
+});
 export const DEFAULT_LEGACY_SOURCE_PATHS = [
   path.join(ROOT, 'README.md'),
   path.join(ROOT, 'books', 'existing-books.md'),
@@ -119,6 +130,121 @@ function collection(bookIds) {
   return { count: bookIds.length, bookIds };
 }
 
+function requiredModuleDebtKey({ bookId, profile, module }) {
+  return `${bookId}\u0000${profile}\u0000${module}`;
+}
+
+function compareRequiredModuleDebt(left, right) {
+  return compareText(left.bookId, right.bookId) ||
+    compareText(left.profile, right.profile) ||
+    compareText(left.module, right.module);
+}
+
+export function validateUxRequiredModuleDebtBaseline(baseline) {
+  const errors = [];
+  if (!baseline || typeof baseline !== 'object' || Array.isArray(baseline)) {
+    return ['baseline must be an object'];
+  }
+  if (baseline.schemaVersion !== '1.0.0') {
+    errors.push('schemaVersion must be 1.0.0');
+  }
+  if (!Array.isArray(baseline.entries)) {
+    errors.push('entries must be an array');
+    return errors;
+  }
+
+  const seen = new Set();
+  for (const [index, entry] of baseline.entries.entries()) {
+    const prefix = `entries[${index}]`;
+    if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
+      errors.push(`${prefix} must be an object`);
+      continue;
+    }
+    if (typeof entry.bookId !== 'string' || entry.bookId.trim() === '') {
+      errors.push(`${prefix}.bookId must be a non-empty string`);
+    }
+    if (!Object.hasOwn(REQUIRED_UX_MODULES, entry.profile)) {
+      errors.push(`${prefix}.profile must be A, B, or C`);
+    } else if (!REQUIRED_UX_MODULES[entry.profile].includes(entry.module)) {
+      errors.push(`${prefix}.module ${entry.module} is not required by Profile ${entry.profile}`);
+    }
+    if (typeof entry.reason !== 'string' || entry.reason.trim() === '') {
+      errors.push(`${prefix}.reason must be a non-empty string`);
+    }
+    if (!Number.isInteger(entry.evidenceIssue) || entry.evidenceIssue < 1) {
+      errors.push(`${prefix}.evidenceIssue must be a positive integer`);
+    }
+    if (!Number.isInteger(entry.trackingIssue) || entry.trackingIssue < 1) {
+      errors.push(`${prefix}.trackingIssue must be a positive integer`);
+    }
+
+    const key = requiredModuleDebtKey(entry);
+    if (seen.has(key)) errors.push(`${prefix} duplicates ${entry.bookId}/${entry.profile}/${entry.module}`);
+    seen.add(key);
+  }
+  return errors;
+}
+
+export function loadUxRequiredModuleDebtBaseline(
+  filePath = DEFAULT_UX_REQUIRED_MODULE_DEBT_BASELINE_PATH
+) {
+  let baseline;
+  try {
+    baseline = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch (error) {
+    throw new Error(
+      `Unable to read UX required-module debt baseline at ${relativePath(filePath)}: ${error.message}`
+    );
+  }
+  const errors = validateUxRequiredModuleDebtBaseline(baseline);
+  if (errors.length > 0) {
+    throw new Error(
+      `UX required-module debt baseline validation failed at ${relativePath(filePath)}:\n- ${errors.join('\n- ')}`
+    );
+  }
+  return {
+    ...baseline,
+    entries: [...baseline.entries].sort(compareRequiredModuleDebt)
+  };
+}
+
+export function findMissingRequiredUxModules(books) {
+  return books
+    .filter((book) => book.status === 'published' && Object.hasOwn(REQUIRED_UX_MODULES, book.ux?.profile))
+    .map((book) => ({
+      id: book.id,
+      profile: book.ux.profile,
+      missingModules: REQUIRED_UX_MODULES[book.ux.profile]
+        .filter((module) => book.ux.modules[module] !== true)
+        .sort(compareText)
+    }))
+    .filter((book) => book.missingModules.length > 0)
+    .sort((left, right) => compareText(left.id, right.id));
+}
+
+export function compareUxRequiredModuleDebt(missingBooks, baseline) {
+  const baselineEntries = [...baseline.entries].sort(compareRequiredModuleDebt);
+  const baselineByKey = new Map(baselineEntries.map((entry) => [requiredModuleDebtKey(entry), entry]));
+  const actualEntries = missingBooks
+    .flatMap((book) => book.missingModules.map((module) => ({
+      bookId: book.id,
+      profile: book.profile,
+      module
+    })))
+    .sort(compareRequiredModuleDebt);
+  const actualKeys = new Set(actualEntries.map(requiredModuleDebtKey));
+  const unapproved = actualEntries.filter((entry) => !baselineByKey.has(requiredModuleDebtKey(entry)));
+  const staleBaseline = baselineEntries.filter((entry) => !actualKeys.has(requiredModuleDebtKey(entry)));
+
+  return {
+    baselineEntries,
+    baselineByKey,
+    actualEntries,
+    unapproved,
+    staleBaseline
+  };
+}
+
 export function loadValidatedCatalog(filePath = DEFAULT_CATALOG_PATH) {
   let catalog;
   try {
@@ -195,6 +321,36 @@ export function buildCatalogDebtReport(catalog, options = {}) {
   }
 
   const books = catalog.books;
+  const uxRequiredModuleDebtBaseline = options.uxRequiredModuleDebtBaseline || {
+    schemaVersion: '1.0.0',
+    entries: []
+  };
+  const baselineErrors = validateUxRequiredModuleDebtBaseline(uxRequiredModuleDebtBaseline);
+  if (baselineErrors.length > 0) {
+    throw new Error(`UX required-module debt baseline validation failed:\n- ${baselineErrors.join('\n- ')}`);
+  }
+  const missingRequiredUxModules = findMissingRequiredUxModules(books);
+  const requiredModuleDebtComparison = compareUxRequiredModuleDebt(
+    missingRequiredUxModules,
+    uxRequiredModuleDebtBaseline
+  );
+  const missingRequiredUxModuleBooks = missingRequiredUxModules.map((book) => ({
+    id: book.id,
+    profile: book.profile,
+    missingModules: book.missingModules.map((module) => {
+      const baselineEntry = requiredModuleDebtComparison.baselineByKey.get(requiredModuleDebtKey({
+        bookId: book.id,
+        profile: book.profile,
+        module
+      }));
+      return {
+        module,
+        reason: baselineEntry?.reason || null,
+        evidenceIssue: baselineEntry?.evidenceIssue || null,
+        trackingIssue: baselineEntry?.trackingIssue || null
+      };
+    })
+  }));
   const provisionalNotes = books
     .map((book) => ({
       id: book.id,
@@ -239,12 +395,25 @@ export function buildCatalogDebtReport(catalog, options = {}) {
         (book) => book.title.ja.trim() === book.title.en.trim()
       )),
       uxEvidenceCandidates: collection(uxEvidenceCandidates),
+      missingRequiredUxModules: {
+        count: requiredModuleDebtComparison.actualEntries.length,
+        bookCount: missingRequiredUxModuleBooks.length,
+        books: missingRequiredUxModuleBooks
+      },
       legacyIdentifierOccurrences: {
         count: legacyOccurrences.length,
         occurrences: legacyOccurrences
       }
     },
     gates: {
+      requiredUxModuleDebt: {
+        baselineCount: requiredModuleDebtComparison.baselineEntries.length,
+        currentCount: requiredModuleDebtComparison.actualEntries.length,
+        unapprovedCount: requiredModuleDebtComparison.unapproved.length,
+        unapproved: requiredModuleDebtComparison.unapproved,
+        staleBaselineCount: requiredModuleDebtComparison.staleBaseline.length,
+        staleBaseline: requiredModuleDebtComparison.staleBaseline
+      },
       readerViewLeaks: {
         count: readerViewLeaks.length,
         findings: readerViewLeaks
@@ -267,6 +436,20 @@ export function evaluateCatalogDebtCheck(report, expectedReportText) {
       errors.push(`${finding.code} at ${finding.path}:${finding.line}: ${finding.description}`);
     }
   }
+  if (report.gates.requiredUxModuleDebt.unapprovedCount > 0) {
+    for (const entry of report.gates.requiredUxModuleDebt.unapproved) {
+      errors.push(
+        `unapproved required UX module debt: ${entry.bookId} / Profile ${entry.profile} / ${entry.module}`
+      );
+    }
+  }
+  if (report.gates.requiredUxModuleDebt.staleBaselineCount > 0) {
+    for (const entry of report.gates.requiredUxModuleDebt.staleBaseline) {
+      errors.push(
+        `stale required UX module debt baseline: ${entry.bookId} / Profile ${entry.profile} / ${entry.module}`
+      );
+    }
+  }
   if (report.debt.legacyIdentifierOccurrences.count > 0) {
     for (const occurrence of report.debt.legacyIdentifierOccurrences.occurrences) {
       errors.push(
@@ -282,8 +465,10 @@ function parseArgs(argv) {
     catalogPath: DEFAULT_CATALOG_PATH,
     readerViewPath: DEFAULT_READER_VIEW_PATH,
     reportPath: DEFAULT_REPORT_PATH,
+    uxRequiredModuleDebtBaselinePath: DEFAULT_UX_REQUIRED_MODULE_DEBT_BASELINE_PATH,
     check: false,
-    write: false
+    write: false,
+    baselinePathExplicit: false
   };
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
@@ -292,8 +477,15 @@ function parseArgs(argv) {
     else if (arg === '--catalog') options.catalogPath = path.resolve(argv[++index]);
     else if (arg === '--reader-view') options.readerViewPath = path.resolve(argv[++index]);
     else if (arg === '--report') options.reportPath = path.resolve(argv[++index]);
+    else if (arg === '--ux-debt-baseline') {
+      options.uxRequiredModuleDebtBaselinePath = path.resolve(argv[++index]);
+      options.baselinePathExplicit = true;
+    }
     else if (arg === '--help') options.help = true;
     else throw new Error(`Unknown argument: ${arg}`);
+  }
+  if (options.catalogPath !== DEFAULT_CATALOG_PATH && !options.baselinePathExplicit) {
+    options.uxRequiredModuleDebtBaselinePath = null;
   }
   return options;
 }
@@ -304,23 +496,30 @@ function printSummary(report) {
     `Catalog debt: summary.ja=${debt.emptySummaryJa.count}, ` +
     `summary.en=${debt.emptySummaryEn.count}, estimatedWeeks=${debt.missingEstimatedWeeks.count}, ` +
     `reviewDate=${debt.missingLastReviewedAt.count}, reviewIssue=${debt.missingReviewIssue.count}, ` +
-    `provisionalNotes=${debt.provisionalNotes.count}, readerViewLeaks=${report.gates.readerViewLeaks.count}`
+    `provisionalNotes=${debt.provisionalNotes.count}, ` +
+    `requiredUxModules=${debt.missingRequiredUxModules.count}, ` +
+    `unapprovedRequiredUxModules=${report.gates.requiredUxModuleDebt.unapprovedCount}, ` +
+    `readerViewLeaks=${report.gates.readerViewLeaks.count}`
   );
 }
 
 export function runCli(argv = process.argv.slice(2)) {
   const options = parseArgs(argv);
   if (options.help) {
-    console.log('Usage: node scripts/report-catalog-debt.mjs [--write | --check] [--catalog PATH] [--reader-view PATH] [--report PATH]');
+    console.log('Usage: node scripts/report-catalog-debt.mjs [--write | --check] [--catalog PATH] [--reader-view PATH] [--report PATH] [--ux-debt-baseline PATH]');
     return 0;
   }
   if (options.write && options.check) throw new Error('--write and --check cannot be used together');
 
   const catalog = loadValidatedCatalog(options.catalogPath);
+  const uxRequiredModuleDebtBaseline = options.uxRequiredModuleDebtBaselinePath
+    ? loadUxRequiredModuleDebtBaseline(options.uxRequiredModuleDebtBaselinePath)
+    : { schemaVersion: '1.0.0', entries: [] };
   const report = buildCatalogDebtReport(catalog, {
     catalogPath: options.catalogPath,
     readerViewPath: options.readerViewPath,
-    sourceLabel: relativePath(options.catalogPath)
+    sourceLabel: relativePath(options.catalogPath),
+    uxRequiredModuleDebtBaseline
   });
 
   if (options.write) {
