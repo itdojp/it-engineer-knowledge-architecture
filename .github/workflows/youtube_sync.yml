@@ -31,8 +31,23 @@ jobs:
       - name: 1. Generate description texts
         run: python scripts/generate_descriptions.py
 
-      - name: 2. Update YouTube Videos via API
+      - name: Check whether YouTube credentials are available
+        id: youtube_credentials
         env:
-          # GitHub Secrets から YouTube の認証情報を読み込む
+          YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+        run: |
+          if [[ -n "$YOUTUBE_TOKEN_JSON" ]]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 2. Update YouTube Videos via API
+        if: ${{ steps.youtube_credentials.outputs.available == 'true' }}
+        env:
           YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
         run: python scripts/update_youtube_videos.py
+
+      - name: Skip YouTube API update when credentials are unavailable
+        if: ${{ steps.youtube_credentials.outputs.available != 'true' }}
+        run: echo "::notice::YOUTUBE_TOKEN_JSON is not configured; generated descriptions were validated without updating YouTube."
