@@ -5,6 +5,8 @@ on:
     branches: [ main ]
     paths:
       - 'docs/**'
+      - 'scripts/write-build-info.mjs'
+      - 'scripts/smoke-production.mjs'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch: {}
 
@@ -18,11 +20,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
+    name: Build Pages artifact
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,11 +42,75 @@ jobs:
       - name: Build site
         run: jekyll build --source docs --destination _site --baseurl /it-engineer-knowledge-architecture
 
-      - name: Upload artifact
+      - name: Add deployment build information
+        run: node scripts/write-build-info.mjs _site/build-info.json
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
+  deploy:
+    name: Deploy Pages
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  post-deploy-smoke:
+    name: Production smoke
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout deployed revision
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify production deployment
+        id: smoke
+        continue-on-error: true
+        run: |
+          node scripts/smoke-production.mjs \
+            --base-url "${{ needs.deploy.outputs.page_url }}" \
+            --expected-sha "${{ github.sha }}" \
+            --max-attempts 8 \
+            --retry-delay-ms 3000 \
+            --timeout-ms 15000 \
+            --report-json tmp/production-smoke/report.json \
+            --report-markdown tmp/production-smoke/report.md
+
+      - name: Add smoke result to job summary
+        if: always()
+        run: |
+          if [[ -f tmp/production-smoke/report.md ]]; then
+            cat tmp/production-smoke/report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Production smoke did not create a report.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload production smoke report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-smoke-${{ github.run_id }}-${{ github.run_attempt }}
+          path: tmp/production-smoke
+          if-no-files-found: error
+
+      - name: Enforce production smoke result
+        if: always() && steps.smoke.outcome != 'success'
+        run: |
+          echo 'Production smoke failed. See the job summary and artifact.' >&2
+          exit 1
