@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Configure Pages
         uses: actions/configure-pages@v6
@@ -67,10 +67,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout deployed revision
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
 
@@ -98,7 +98,7 @@ jobs:
 
       - name: Upload production smoke report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: production-smoke-${{ github.run_id }}-${{ github.run_attempt }}
           path: tmp/production-smoke

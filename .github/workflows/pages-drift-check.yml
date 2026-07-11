@@ -32,7 +32,7 @@ jobs:
       DRIFT_REPORT_MARKDOWN: tmp/pages-drift/report.md
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -55,7 +55,7 @@ jobs:
 
       - name: Upload drift report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: pages-drift-${{ github.run_id }}-${{ github.run_attempt }}
           path: tmp/pages-drift

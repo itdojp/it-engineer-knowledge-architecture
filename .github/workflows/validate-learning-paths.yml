@@ -53,7 +53,7 @@ jobs:
 
     steps:
       - name: チェックアウト
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Ruby設定
         uses: ruby/setup-ruby@v1
@@ -64,7 +64,7 @@ jobs:
         run: gem install jekyll -v 4.4.1
 
       - name: Node.js設定
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
 
@@ -88,12 +88,12 @@ jobs:
             -path './.site' -prune -o \
             -path './test-results' -prune -o \
             -path './playwright-report' -prune -o \
-            -name "*.md" -print | while read file; do
+            -name "*.md" -print | while read -r file; do
             if ! grep -q "\[.*\](.*\.md)" "$file"; then
               continue
             fi
             echo "チェック中: $file"
-            grep -oE "\[.*\]\([^)]*\.md[^)]*\)" "$file" | while read link; do
+            grep -oE "\[.*\]\([^)]*\.md[^)]*\)" "$file" | while read -r link; do
               path=$(echo "$link" | sed -E 's/.*\(([^)]*)\).*/\1/')
 
               # 外部リンク（http/https）はファイル存在チェックの対象外
@@ -129,7 +129,7 @@ jobs:
 
     steps:
       - name: チェックアウト
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: YAMLlint設定
         run: |
@@ -138,7 +138,7 @@ jobs:
       - name: YAML構文チェック
         run: |
           echo "📄 YAML構文チェック中..."
-          find . -name "*.yml" -o -name "*.yaml" | xargs yamllint -d '{extends: relaxed, rules: {line-length: disable}}'
+          find . \( -name "*.yml" -o -name "*.yaml" \) -print0 | xargs -0 yamllint -d '{extends: relaxed, rules: {line-length: disable}}'
           echo "✅ YAML構文チェック通過"
 
   generate-stats:
@@ -148,10 +148,10 @@ jobs:
 
     steps:
       - name: チェックアウト
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Node.js設定
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
 
@@ -183,7 +183,7 @@ jobs:
           NODE
 
       - name: 統計をアーティファクトとして保存
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: learning-path-stats
           path: stats.md
