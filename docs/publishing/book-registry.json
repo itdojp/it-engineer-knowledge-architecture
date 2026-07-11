@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-07-11",
+  "updatedAt": "2026-07-12",
   "generatedFrom": "docs/_data/catalog.json",
   "modulesCatalog": [
     "quickStart",
@@ -310,16 +310,16 @@
       "pages": "https://itdojp.github.io/incident-response-basics-book/",
       "profile": "B",
       "modules": {
-        "quickStart": false,
-        "readingGuide": false,
+        "quickStart": true,
+        "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": true,
+        "figureIndex": false,
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-12のmetadata監査#205で、source main 42876458d1319e7323733468e7fc130a14a4afb7の公開トップ、章1〜8、チェックリスト、テンプレートを照合し、実務適用型のProfile Bとmodulesを確定。期間は根拠がなく、専用図表索引がないためfigureIndex=falseとし、必須module debtは#197で追跡する。"
     },
     "issue-driven-work-book": {
       "repo": "itdojp/issue-driven-work-book",
@@ -583,15 +583,15 @@
       "profile": "B",
       "modules": {
         "quickStart": false,
-        "readingGuide": false,
+        "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": true,
+        "figureIndex": false,
         "legalNotice": false,
-        "glossary": false
+        "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-12のmetadata監査#205で、source main 4966d45234c336a71136bee7d79c8eb36140777fのbook-configと公開トップ、チェックリスト、テンプレートを照合し、Profile Bとmodulesを確定。時間目安は週換算せず、専用図表索引がないためfigureIndex=falseとし、必須module debtは#197で追跡する。"
     },
     "small-webapp-software-design-book": {
       "repo": "itdojp/small-webapp-software-design-book",

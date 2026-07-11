@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-07-11",
+  "updatedAt": "2026-07-12",
   "sourcePolicy": {
     "canonical": "docs/_data/catalog.json",
     "derivedFiles": [
@@ -434,52 +434,61 @@
         "professional-foundations"
       ],
       "levels": [
-        "all-levels"
+        "beginner",
+        "intermediate"
       ],
       "roles": [
         "all-engineers"
       ],
       "audiences": [
-        "全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎"
+        "開発 / 運用に参加し始めた新人エンジニア",
+        "業務委託 / 外部メンバーを含むチーム"
       ],
       "summary": {
-        "ja": "",
-        "en": "Introduces everyday security and privacy practice around secrets, permissions, and responsible data handling."
+        "ja": "開発・運用に参加し始めたエンジニアが、秘密情報、認証、最小権限、データ分類、誤公開防止、漏えい疑いの初動を学び、テンプレートとチェックリストをレビューやリリース前確認へ組み込むための基礎実務書です。",
+        "en": "Introduces early-career development and operations practitioners to secrets, authentication, least privilege, data classification, accidental disclosure prevention, and incident first response, with reusable templates and checklists for reviews and releases."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "incident-response-basics-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 205,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
-          "glossary": false
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査#205で、source main 4966d45234c336a71136bee7d79c8eb36140777fのbook-configと公開トップ、チェックリスト、テンプレートを照合し、Profile Bとmodulesを確定。時間目安は週換算せず、専用図表索引がないためfigureIndex=falseとし、必須module debtは#197で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/4966d45234c336a71136bee7d79c8eb36140777f/README.md",
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/4966d45234c336a71136bee7d79c8eb36140777f/BOOK-PROPOSAL.md",
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/4966d45234c336a71136bee7d79c8eb36140777f/book-config.json",
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/4966d45234c336a71136bee7d79c8eb36140777f/docs/index.md",
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/4966d45234c336a71136bee7d79c8eb36140777f/docs/_data/navigation.yml",
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/4966d45234c336a71136bee7d79c8eb36140777f/docs/appendices/checklists/index.md",
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/4966d45234c336a71136bee7d79c8eb36140777f/docs/appendices/templates/index.md",
+        "docs/professional-foundations.md",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/205",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/206"
       ]
     },
     {
@@ -504,17 +513,23 @@
         "professional-foundations"
       ],
       "levels": [
-        "all-levels"
+        "beginner",
+        "intermediate"
       ],
       "roles": [
-        "all-engineers"
+        "software-engineer",
+        "infrastructure-engineer",
+        "sre",
+        "engineering-manager"
       ],
       "audiences": [
-        "全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎"
+        "インシデント対応の一次受け、SRE、運用リード",
+        "障害時の切り分け・状況共有・復旧判断を標準化したい開発 / 運用担当",
+        "ポストモーテムを改善サイクルにつなげたいテックリードや管理者"
       ],
       "summary": {
-        "ja": "",
-        "en": "Provides a reusable incident response pattern from initial triage through communication, recovery, and postmortem review."
+        "ja": "インシデント対応の一次受け・運用担当者が、症状と影響の切り分け、証跡収集、Severity、状況共有、復旧・ロールバック、エスカレーション、ポストモーテムを一連の再現可能な運用として実践するための基礎書です。",
+        "en": "Provides first responders and operations practitioners with a repeatable flow for triage, evidence collection, severity assessment, communication, recovery and rollback, escalation, and postmortems."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -524,32 +539,37 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 205,
       "ux": {
         "profile": "B",
         "modules": {
-          "quickStart": false,
-          "readingGuide": false,
+          "quickStart": true,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査#205で、source main 42876458d1319e7323733468e7fc130a14a4afb7の公開トップ、章1〜8、チェックリスト、テンプレートを照合し、実務適用型のProfile Bとmodulesを確定。期間は根拠がなく、専用図表索引がないためfigureIndex=falseとし、必須module debtは#197で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/incident-response-basics-book/blob/42876458d1319e7323733468e7fc130a14a4afb7/README.md",
+        "https://github.com/itdojp/incident-response-basics-book/blob/42876458d1319e7323733468e7fc130a14a4afb7/BOOK-PROPOSAL.md",
+        "https://github.com/itdojp/incident-response-basics-book/blob/42876458d1319e7323733468e7fc130a14a4afb7/book-config.json",
+        "https://github.com/itdojp/incident-response-basics-book/blob/42876458d1319e7323733468e7fc130a14a4afb7/docs/index.md",
+        "https://github.com/itdojp/incident-response-basics-book/blob/42876458d1319e7323733468e7fc130a14a4afb7/docs/_data/navigation.yml",
+        "https://github.com/itdojp/incident-response-basics-book/blob/42876458d1319e7323733468e7fc130a14a4afb7/docs/appendices/checklists/index.md",
+        "https://github.com/itdojp/incident-response-basics-book/blob/42876458d1319e7323733468e7fc130a14a4afb7/docs/appendices/templates/index.md",
+        "docs/professional-foundations.md",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/205",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/206"
       ]
     },
     {
