@@ -70,6 +70,20 @@ const englishUrlCases = [
     name: 'englishPagesUrl on an invalid host',
     mutate: (book) => { book.languages = ['ja', 'en']; book.englishPagesUrl = 'https://example.com/book-one/en/'; },
     mustContain: 'englishPagesUrl is invalid'
+  },
+  {
+    name: 'planned book with englishPagesUrl',
+    mutate: (book) => {
+      book.status = 'planned';
+      book.repoVisibility = 'not-created';
+      book.pagesUrl = null;
+      book.publicationScope = 'planned';
+      book.countingGroup = 'planned';
+      book.countedInMainLineup = false;
+      book.languages = ['en'];
+      book.englishPagesUrl = 'https://itdojp.github.io/book-one/en/';
+    },
+    mustContain: 'planned book must not define englishPagesUrl'
   }
 ];
 for (const testCase of englishUrlCases) {
@@ -84,6 +98,27 @@ for (const testCase of englishUrlCases) {
   } else {
     console.log(`✅ inline fixture invalid as expected: ${testCase.name}`);
   }
+}
+
+const plannedEnglishCatalog = structuredClone(validCatalog);
+Object.assign(plannedEnglishCatalog.books[0], {
+  status: 'planned',
+  repoVisibility: 'not-created',
+  pagesUrl: null,
+  englishPagesUrl: null,
+  publicationScope: 'planned',
+  countingGroup: 'planned',
+  countedInMainLineup: false,
+  languages: ['en']
+});
+plannedEnglishCatalog.expectedCounts = { mainLineup: 1, planned: 1, relatedIndependent: 0 };
+const plannedEnglishErrors = validateCatalog(plannedEnglishCatalog);
+if (plannedEnglishErrors.length > 0) {
+  failed++;
+  console.error('❌ inline fixture expectation failed: planned English book without URL');
+  console.error(plannedEnglishErrors.join('\n'));
+} else {
+  console.log('✅ inline fixture valid as expected: planned English book without URL');
 }
 
 if (failed > 0) process.exit(1);

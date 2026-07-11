@@ -130,7 +130,7 @@ export function validateCatalog(catalog) {
     if (book.englishPagesUrl !== null && (typeof book.englishPagesUrl !== 'string' || !englishPagesRe.test(book.englishPagesUrl))) {
       errors.push(`${prefix}.englishPagesUrl is invalid`);
     }
-    if ((book.languages || []).includes('en') && !book.englishPagesUrl) {
+    if (book.status !== 'planned' && (book.languages || []).includes('en') && !book.englishPagesUrl) {
       errors.push(`${prefix}: English-language book must define englishPagesUrl`);
     }
     if (book.englishPagesUrl && !(book.languages || []).includes('en')) {
@@ -178,6 +178,7 @@ export function validateCatalog(catalog) {
     if (book.status === 'planned') {
       if (book.repoVisibility !== 'not-created') errors.push(`${prefix}: planned book must use repoVisibility=not-created`);
       if (book.pagesUrl !== null) errors.push(`${prefix}: planned book must not define pagesUrl`);
+      if (book.englishPagesUrl !== null) errors.push(`${prefix}: planned book must not define englishPagesUrl`);
       if (book.publicationScope !== 'planned') errors.push(`${prefix}: planned book must use publicationScope=planned`);
     }
     if (book.status === 'published') {
