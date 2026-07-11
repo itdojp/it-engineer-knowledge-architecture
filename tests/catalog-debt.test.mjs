@@ -76,7 +76,7 @@ test('legacy identifier inventory counts repeated matches on the same line', () 
   assert.deepEqual(occurrences.map((item) => item.column), [1, 26]);
 });
 
-test('--check semantics reject stale reports and reader-view leaks', () => {
+test('--check semantics reject stale reports, reader-view leaks, and legacy identifiers', () => {
   const report = fixtureReport();
   assert.deepEqual(evaluateCatalogDebtCheck(report, serializeCatalogDebtReport(report)), []);
 
@@ -96,5 +96,20 @@ test('--check semantics reject stale reports and reader-view leaks', () => {
   assert.match(
     evaluateCatalogDebtCheck(leakingReport, serializeCatalogDebtReport(leakingReport)).join('\n'),
     /visible-status-enum/
+  );
+
+  const legacyReport = structuredClone(report);
+  legacyReport.debt.legacyIdentifierOccurrences = {
+    count: 1,
+    occurrences: [{
+      identifier: 'cloud-infra-handbook',
+      path: 'books/existing-books.md',
+      line: 10,
+      column: 1
+    }]
+  };
+  assert.match(
+    evaluateCatalogDebtCheck(legacyReport, serializeCatalogDebtReport(legacyReport)).join('\n'),
+    /legacy identifier cloud-infra-handbook at books\/existing-books\.md:10:1/
   );
 });
