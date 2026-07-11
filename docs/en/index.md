@@ -59,7 +59,7 @@ Recommended reading flow after the review:
 
 ### Beginner Track
 
-Audience: absolute beginners and first-time learners who want a gentle introduction to Linux and everyday development tools.
+Audience: first-time learners starting with a gentle Linux introduction, followed by beginners who want to apply those basics in WSL2.
 
 | Canonical title | Availability | Audience | Short English summary | Links |
 | --- | --- | --- | --- | --- |
