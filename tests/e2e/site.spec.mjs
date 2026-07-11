@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import catalog from '../../docs/_data/catalog.json' with { type: 'json' };
 
 const basePath = '/it-engineer-knowledge-architecture';
 const sitePath = (path) => `${basePath}${path}`;
@@ -132,5 +133,44 @@ test.describe('catalog interactions', () => {
     await firstCatalogLink.click();
     await expect(page).toHaveURL(/\/books\/#illustrated-linux-basics-book$/);
     await expect(page.locator('#illustrated-linux-basics-book')).toBeVisible();
+  });
+});
+
+
+test.describe('English canonical catalog', () => {
+  test('English rows match the canonical catalog IDs and availability rules', async ({ page }) => {
+    await page.goto(sitePath('/en/'));
+    const rows = page.locator('[data-en-book]');
+    const expectedBooks = [...catalog.books].sort((left, right) => left.displayOrder - right.displayOrder);
+    const expectedIds = expectedBooks.map((book) => book.id);
+    await expect(rows).toHaveCount(expectedIds.length);
+    expect(await rows.evaluateAll((elements) => elements.map((element) => element.dataset.catalogId))).toEqual(expectedIds);
+
+    await expect(page.locator('[data-catalog-id="ai-agent-engineering-book"]')).toHaveAttribute('data-availability', 'EN available');
+    await expect(page.locator('[data-catalog-id="composable-software-design-book"]')).toHaveAttribute('data-availability', 'Independent EN book');
+    await expect(page.locator('[data-catalog-id="infrastructure-monitoring-automation-guide"]')).toHaveAttribute('data-availability', 'Planned');
+    await expect(page.locator('[data-catalog-id="ai-agent-collaboration-book"]')).toHaveAttribute('data-availability', 'JA only; free preview');
+
+    const privateBook = page.locator('[data-catalog-id="ai-agent-collaboration-book"]');
+    await expect(privateBook).toContainText('Repository private');
+    await expect(privateBook.getByRole('link', { name: 'Repository', exact: true })).toHaveCount(0);
+    await expect(page.locator('[data-catalog-id="categorical-software-design-book"]')).toContainText('Related: Compositional Software Design for Agentic Systems');
+    const plannedBook = page.locator('[data-catalog-id="infrastructure-monitoring-automation-guide"]');
+    await expect(plannedBook).toContainText('Planned book; details will be added when the scope is finalized.');
+    await expect(plannedBook).toContainText('Not yet available');
+
+    const bilingualBook = page.locator('[data-catalog-id="ai-agent-engineering-book"]');
+    await expect(bilingualBook.getByRole('link', { name: 'JA', exact: true })).toHaveAttribute('href', 'https://itdojp.github.io/ai-agent-engineering-book/');
+    await expect(bilingualBook.getByRole('link', { name: 'EN', exact: true })).toHaveAttribute('href', 'https://itdojp.github.io/ai-agent-engineering-book/en/');
+    await expect(page.locator('.table-wrapper[aria-label="English book catalog"]')).not.toHaveAttribute('tabindex', '0');
+    await expect(page.locator('[data-catalog-id="categorical-software-design-book"]')).not.toContainText('*Compositional Software Design for Agentic Systems*');
+  });
+
+  test('Japanese and English catalog views expose the same canonical ID set', async ({ page }) => {
+    await page.goto(sitePath('/books/'));
+    const japaneseIds = await page.locator('[data-book-card] > h2[id]').evaluateAll((elements) => elements.map((element) => element.id).sort());
+    await page.goto(sitePath('/en/'));
+    const englishIds = await page.locator('[data-en-book]').evaluateAll((elements) => elements.map((element) => element.dataset.catalogId).sort());
+    expect(englishIds).toEqual(japaneseIds);
   });
 });

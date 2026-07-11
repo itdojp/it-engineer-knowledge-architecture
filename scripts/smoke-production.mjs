@@ -1,9 +1,13 @@
+import { readFileSync } from 'node:fs';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 const DEFAULT_BASE_URL = 'https://itdojp.github.io/it-engineer-knowledge-architecture/';
 const DEFAULT_EXPECTED_SHA = '';
+const canonicalCatalog = JSON.parse(readFileSync(new URL('../docs/_data/catalog.json', import.meta.url), 'utf8'));
+const CANONICAL_BOOK_COUNT = canonicalCatalog.books.length;
+const CANONICAL_PATH_COUNT = canonicalCatalog.learningPaths.length;
 const OLD_HOME_MARKERS = [
   'Building Your Tech Career, One Book at a Time',
   'id="日本語概要"',
@@ -12,9 +16,9 @@ const OLD_HOME_MARKERS = [
 
 const HTML_TARGETS = [
   { path: '', label: '/', h1: 'ITエンジニア知識アーキテクチャ' },
-  { path: 'books/', label: '/books/', h1: '書籍一覧', cardCount: 49 },
-  { path: 'paths/', label: '/paths/', h1: '学習パス', pathCount: 7 },
-  { path: 'en/', label: '/en/', h1: 'English Catalog' },
+  { path: 'books/', label: '/books/', h1: '書籍一覧', cardCount: CANONICAL_BOOK_COUNT },
+  { path: 'paths/', label: '/paths/', h1: '学習パス', pathCount: CANONICAL_PATH_COUNT },
+  { path: 'en/', label: '/en/', h1: 'English Catalog', enBookCount: CANONICAL_BOOK_COUNT },
   { path: '404.html', label: '/404.html', h1: 'ページが見つかりません' }
 ];
 
@@ -127,6 +131,11 @@ async function checkHtmlTarget(fetchImpl, config, target, attempt, now) {
       const count = (html.match(/<article\b[^>]*class=["'][^"']*\bpath-card\b[^"']*["']/gi) || []).length;
       result.markers.pathCount = count;
       if (count !== target.pathCount) result.errors.push(`learning paths ${count}, expected ${target.pathCount}`);
+    }
+    if (target.enBookCount !== undefined) {
+      const count = (html.match(/\bdata-en-book(?:\s|=|>)/g) || []).length;
+      result.markers.enBookCount = count;
+      if (count !== target.enBookCount) result.errors.push(`English catalog books ${count}, expected ${target.enBookCount}`);
     }
     if (target.label === '/') {
       const basePath = new URL(config.baseUrl).pathname;

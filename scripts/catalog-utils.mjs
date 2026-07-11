@@ -28,7 +28,7 @@ const allowedReviewStatus = new Set(['reviewed', 'review-needed', 'not-started',
 const allowedLanguages = new Set(['ja', 'en']);
 const requiredBookFields = [
   'id', 'displayOrder', 'title', 'officialEnglishTitle', 'status', 'repo', 'repoVisibility',
-  'pagesUrl', 'publicationScope', 'countingGroup', 'countedInMainLineup', 'category',
+  'pagesUrl', 'englishPagesUrl', 'publicationScope', 'countingGroup', 'countedInMainLineup', 'category',
   'subcategory', 'tags', 'levels', 'roles', 'audiences', 'summary', 'prerequisites',
   'estimatedWeeks', 'recommendedAfter', 'languages', 'relatedEditions', 'reviewStatus',
   'lastReviewedAt', 'reviewIssue', 'ux', 'addedAt', 'updatedAt', 'notes', 'sourceRefs'
@@ -36,6 +36,7 @@ const requiredBookFields = [
 const dateRe = /^\d{4}-\d{2}-\d{2}$/;
 const repoRe = /^itdojp\/[A-Za-z0-9_.-]+$/;
 const pagesRe = /^https:\/\/itdojp\.github\.io\/[A-Za-z0-9_.-]+\/$/;
+const englishPagesRe = /^https:\/\/itdojp\.github\.io\/[A-Za-z0-9_.-]+\/(?:[A-Za-z0-9_.-]+\/)*$/;
 const idRe = /^[A-Za-z0-9_.-]+$/;
 
 function isObject(value) {
@@ -125,6 +126,15 @@ export function validateCatalog(catalog) {
       if (typeof book.pagesUrl !== 'string' || !pagesRe.test(book.pagesUrl)) errors.push(`${prefix}.pagesUrl is invalid`);
       if (seenPages.has(book.pagesUrl)) errors.push(`duplicate pagesUrl: ${book.pagesUrl}`);
       seenPages.set(book.pagesUrl, prefix);
+    }
+    if (book.englishPagesUrl !== null && (typeof book.englishPagesUrl !== 'string' || !englishPagesRe.test(book.englishPagesUrl))) {
+      errors.push(`${prefix}.englishPagesUrl is invalid`);
+    }
+    if ((book.languages || []).includes('en') && !book.englishPagesUrl) {
+      errors.push(`${prefix}: English-language book must define englishPagesUrl`);
+    }
+    if (book.englishPagesUrl && !(book.languages || []).includes('en')) {
+      errors.push(`${prefix}: englishPagesUrl requires languages to include en`);
     }
     if (!allowedPublicationScope.has(book.publicationScope)) errors.push(`${prefix}.publicationScope invalid: ${book.publicationScope}`);
     if (!allowedCountingGroup.has(book.countingGroup)) errors.push(`${prefix}.countingGroup invalid: ${book.countingGroup}`);

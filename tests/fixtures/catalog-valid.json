@@ -43,6 +43,7 @@
       "repo": "itdojp/illustrated-linux-basics-book",
       "repoVisibility": "public",
       "pagesUrl": "https://itdojp.github.io/illustrated-linux-basics-book/",
+      "englishPagesUrl": "https://itdojp.github.io/book-one/en/",
       "publicationScope": "full-public",
       "countingGroup": "main-lineup",
       "countedInMainLineup": true,
@@ -68,7 +69,8 @@
       "estimatedWeeks": null,
       "recommendedAfter": [],
       "languages": [
-        "ja"
+        "ja",
+        "en"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
@@ -112,6 +114,7 @@
       "repo": "itdojp/wsl2-linux-essentials-book",
       "repoVisibility": "public",
       "pagesUrl": "https://itdojp.github.io/wsl2-linux-essentials-book/",
+      "englishPagesUrl": null,
       "publicationScope": "full-public",
       "countingGroup": "main-lineup",
       "countedInMainLineup": true,
