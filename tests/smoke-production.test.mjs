@@ -4,12 +4,15 @@ import { createServer } from 'node:http';
 import { join } from 'node:path';
 import { test } from 'node:test';
 
+import catalog from '../docs/_data/catalog.json' with { type: 'json' };
 import { runProductionSmoke } from '../scripts/smoke-production.mjs';
 import { createBuildInfo, writeBuildInfo } from '../scripts/write-build-info.mjs';
 
 const SHA = '1234567890abcdef1234567890abcdef12345678';
 const OTHER_SHA = 'abcdef1234567890abcdef1234567890abcdef12';
 const basePath = '/it-engineer-knowledge-architecture/';
+const BOOK_COUNT = catalog.books.length;
+const PATH_COUNT = catalog.learningPaths.length;
 
 function page(title, content = '') {
   return `<!doctype html><html><body><nav aria-label="主要ナビゲーション"></nav><main id="main-content"><h1>${title}</h1>${content}</main></body></html>`;
@@ -38,9 +41,9 @@ async function startSite(options = {}) {
         'ITエンジニア知識アーキテクチャ',
         `<a href="${basePath}books/">books</a><a href="${basePath}paths/">paths</a><a href="${basePath}en/">en</a>${options.oldMarker || ''}`
       ),
-      'books/': page('書籍一覧', '<article data-book-card></article>'.repeat(options.cardCount ?? 49)),
-      'paths/': page('学習パス', '<article class="path-card"></article>'.repeat(options.pathCount ?? 7)),
-      'en/': page('English Catalog', '<tr data-en-book></tr>'.repeat(options.enBookCount ?? 49)),
+      'books/': page('書籍一覧', '<article data-book-card></article>'.repeat(options.cardCount ?? BOOK_COUNT)),
+      'paths/': page('学習パス', '<article class="path-card"></article>'.repeat(options.pathCount ?? PATH_COUNT)),
+      'en/': page('English Catalog', '<tr data-en-book></tr>'.repeat(options.enBookCount ?? BOOK_COUNT)),
       '404.html': page('ページが見つかりません')
     };
     if (relative === 'build-info.json') {
@@ -129,12 +132,12 @@ test('production smoke passes all required pages and writes reports', async () =
 
 
 test('production smoke detects an English catalog count mismatch', async () => {
-  await withSite({ enBookCount: 48 }, async (site, output) => {
+  await withSite({ enBookCount: BOOK_COUNT - 1 }, async (site, output) => {
     const report = await runProductionSmoke(config(site, output));
     assert.equal(report.ok, false);
     const english = report.endpoints.find((endpoint) => endpoint.label === '/en/');
-    assert.equal(english.markers.enBookCount, 48);
-    assert.match(english.errors.join('\n'), /English catalog books 48, expected 49/);
+    assert.equal(english.markers.enBookCount, BOOK_COUNT - 1);
+    assert.match(english.errors.join('\n'), new RegExp(`English catalog books ${BOOK_COUNT - 1}, expected ${BOOK_COUNT}`));
   });
 });
 
