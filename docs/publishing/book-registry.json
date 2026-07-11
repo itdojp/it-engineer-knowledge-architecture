@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-07-10",
+  "updatedAt": "2026-07-11",
   "generatedFrom": "docs/_data/catalog.json",
   "modulesCatalog": [
     "quickStart",
@@ -303,7 +303,7 @@
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-11の品質スプリント#186でUX構成（Profile Aとmodules）を実ファイルに基づき確認済み。"
     },
     "incident-response-basics-book": {
       "repo": "itdojp/incident-response-basics-book",
@@ -671,7 +671,7 @@
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-11の品質スプリント#186でUX構成（Profile Aとmodules）を実ファイルに基づき確認済み。"
     }
   }
 }
