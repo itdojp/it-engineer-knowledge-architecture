@@ -160,12 +160,18 @@ export function validateUxRequiredModuleDebtBaseline(baseline) {
       errors.push(`${prefix} must be an object`);
       continue;
     }
-    if (typeof entry.bookId !== 'string' || entry.bookId.trim() === '') {
+    const bookIdIsValid = typeof entry.bookId === 'string' && entry.bookId.trim() !== '';
+    const profileIsValid = Object.hasOwn(REQUIRED_UX_MODULES, entry.profile);
+    const moduleIsValid = typeof entry.module === 'string' && entry.module.trim() !== '';
+    if (!bookIdIsValid) {
       errors.push(`${prefix}.bookId must be a non-empty string`);
     }
-    if (!Object.hasOwn(REQUIRED_UX_MODULES, entry.profile)) {
+    if (!profileIsValid) {
       errors.push(`${prefix}.profile must be A, B, or C`);
-    } else if (!REQUIRED_UX_MODULES[entry.profile].includes(entry.module)) {
+    }
+    if (!moduleIsValid) {
+      errors.push(`${prefix}.module must be a non-empty string`);
+    } else if (profileIsValid && !REQUIRED_UX_MODULES[entry.profile].includes(entry.module)) {
       errors.push(`${prefix}.module ${entry.module} is not required by Profile ${entry.profile}`);
     }
     if (typeof entry.reason !== 'string' || entry.reason.trim() === '') {
@@ -178,9 +184,11 @@ export function validateUxRequiredModuleDebtBaseline(baseline) {
       errors.push(`${prefix}.trackingIssue must be a positive integer`);
     }
 
-    const key = requiredModuleDebtKey(entry);
-    if (seen.has(key)) errors.push(`${prefix} duplicates ${entry.bookId}/${entry.profile}/${entry.module}`);
-    seen.add(key);
+    if (bookIdIsValid && profileIsValid && moduleIsValid) {
+      const key = requiredModuleDebtKey(entry);
+      if (seen.has(key)) errors.push(`${prefix} duplicates ${entry.bookId}/${entry.profile}/${entry.module}`);
+      seen.add(key);
+    }
   }
   return errors;
 }

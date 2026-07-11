@@ -156,6 +156,22 @@ test('required-module debt baseline rejects duplicates and modules not required 
         reason: '',
         evidenceIssue: 0,
         trackingIssue: 0
+      },
+      {
+        bookId: '',
+        profile: 'A',
+        module: null,
+        reason: 'invalid fields should not create a duplicate-key error',
+        evidenceIssue: 1,
+        trackingIssue: 2
+      },
+      {
+        bookId: '',
+        profile: 'A',
+        module: null,
+        reason: 'second invalid entry',
+        evidenceIssue: 1,
+        trackingIssue: 2
       }
     ]
   };
@@ -164,7 +180,11 @@ test('required-module debt baseline rejects duplicates and modules not required 
     'entries[2].module quickStart is not required by Profile C',
     'entries[2].reason must be a non-empty string',
     'entries[2].evidenceIssue must be a positive integer',
-    'entries[2].trackingIssue must be a positive integer'
+    'entries[2].trackingIssue must be a positive integer',
+    'entries[3].bookId must be a non-empty string',
+    'entries[3].module must be a non-empty string',
+    'entries[4].bookId must be a non-empty string',
+    'entries[4].module must be a non-empty string'
   ]);
 });
 
