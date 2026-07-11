@@ -3,11 +3,6 @@ name: Deploy Pages
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'docs/**'
-      - 'scripts/write-build-info.mjs'
-      - 'scripts/smoke-production.mjs'
-      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch: {}
 
 permissions:

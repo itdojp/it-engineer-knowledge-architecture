@@ -147,12 +147,12 @@ async function updateAlert(api, repository, report) {
       });
       return { action: 'created', issueNumber: issue.number, openAlertCount: 1 };
     }
-    const primary = openAlerts[0];
+    const primary = openAlerts.find((issue) => issue.title === ALERT_TITLE) || openAlerts[0];
     await api.request(`/repos/${repository}/issues/${primary.number}/comments`, {
       method: 'POST',
       body: JSON.stringify({ body: `## 不整合の継続を確認\n\n${body}` })
     });
-    for (const duplicate of openAlerts.slice(1)) {
+    for (const duplicate of openAlerts.filter((issue) => issue.number !== primary.number)) {
       await api.request(`/repos/${repository}/issues/${duplicate.number}/comments`, {
         method: 'POST',
         body: JSON.stringify({ body: `重複Alertを #${primary.number} に集約するため、このIssueをクローズします。` })

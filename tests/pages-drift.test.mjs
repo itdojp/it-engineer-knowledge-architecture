@@ -126,14 +126,14 @@ test('mismatch consolidates pre-existing duplicate alerts into one open Issue', 
   const api = new FakeApi({
     deploymentSha: OTHER_SHA,
     publicIssues: [
-      { number: 42, state: 'open', title: ALERT_TITLE, body: ALERT_MARKER },
-      { number: 43, state: 'open', title: 'legacy duplicate', body: ALERT_MARKER }
+      { number: 42, state: 'open', title: 'legacy duplicate', body: ALERT_MARKER },
+      { number: 43, state: 'open', title: ALERT_TITLE, body: ALERT_MARKER }
     ]
   });
   const { report } = await runWith(api, smokeResult({ ok: false, actualSha: OTHER_SHA }));
-  assert.equal(report.alert.issueNumber, 42);
+  assert.equal(report.alert.issueNumber, 43);
   assert.equal(report.alert.closedDuplicateCount, 1);
-  assert.deepEqual(api.issues.map((issue) => issue.state), ['open', 'closed']);
+  assert.deepEqual(api.issues.map((issue) => issue.state), ['closed', 'open']);
 });
 
 test('recovery comments on and closes every open drift alert', async () => {
