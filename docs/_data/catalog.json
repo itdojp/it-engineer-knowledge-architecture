@@ -199,15 +199,19 @@
         "all-engineers"
       ],
       "audiences": [
-        "全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎"
+        "一次情報を起点に調査・検証・レビューを進めたいITエンジニア",
+        "テックリード、EM、レビュー担当として根拠の明示を標準化したい人",
+        "AIを補助的に使いつつ、再現性と安全性を崩したくない実務者"
       ],
       "summary": {
-        "ja": "",
+        "ja": "一次情報を起点に、検索、仕様読解、検証、引用、AI利用ガードレールを身につけ、調査結果を再現性と安全性を備えた根拠として説明できるようにする実務書です。",
         "en": "Explains how to search, verify, quote, and document evidence so engineering decisions stay defensible."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "issue-driven-work-book"
+      ],
       "languages": [
         "ja"
       ],
@@ -219,7 +223,7 @@
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
@@ -229,16 +233,20 @@
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査#193で、book-configのProfile Bとmodulesを、公開トップ、第4章の検証手順、ケーススタディ、チェックリスト、図表索引の実体と照合済み。レビュー完了日とIssue証跡はmerge後確認を終えるまでnullを維持する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/evidence-based-engineering-book/blob/main/README.md",
+        "https://github.com/itdojp/evidence-based-engineering-book/blob/main/docs/index.md",
+        "https://github.com/itdojp/evidence-based-engineering-book/blob/main/book-config.json",
+        "https://github.com/itdojp/evidence-based-engineering-book/blob/main/docs/_data/navigation.yml",
+        "https://github.com/itdojp/evidence-based-engineering-book/blob/main/docs/appendices/checklists/index.md",
+        "https://github.com/itdojp/evidence-based-engineering-book/blob/main/docs/appendices/figure-index/index.md",
+        "https://github.com/itdojp/evidence-based-engineering-book/blob/main/docs/appendices/case-studies/index.md",
+        "docs/professional-foundations.md",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/193"
       ]
     },
     {
@@ -268,15 +276,19 @@
         "all-engineers"
       ],
       "audiences": [
-        "全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎"
+        "Issue / PRを使っているが、起票・レビュー・完了の品質が安定しない人",
+        "口頭・チャット依存の進め方から脱却し、引き継ぎ可能な形に整えたい人",
+        "複数人での合意形成を、テンプレートとチェックリストで再現可能にしたい人"
       ],
       "summary": {
-        "ja": "",
+        "ja": "IssueとPRの作成、DoR/DoD、進捗報告、合意形成、ナレッジ化を、テンプレートとチェックリストでレビュー可能かつ再現可能にする実務書です。",
         "en": "Shows how to manage work with high-quality issues and pull requests for tracking, reporting, and consensus building."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "engineering-documentation-book"
+      ],
       "languages": [
         "ja"
       ],
@@ -285,29 +297,34 @@
       "lastReviewedAt": null,
       "reviewIssue": null,
       "ux": {
-        "profile": "B",
+        "profile": "A",
         "modules": {
-          "quickStart": false,
-          "readingGuide": false,
+          "quickStart": true,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
-          "legalNotice": false,
+          "figureIndex": false,
+          "legalNotice": true,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査#193で、book-configのProfile Aとmodulesを、公開トップのクイックスタート・注意事項・読み方ガイド、トリアージ判断表、チェックリスト、LICENSEの実体と照合済み。レビュー完了日とIssue証跡はmerge後確認を終えるまでnullを維持する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/issue-driven-work-book/blob/main/README.md",
+        "https://github.com/itdojp/issue-driven-work-book/blob/main/docs/index.md",
+        "https://github.com/itdojp/issue-driven-work-book/blob/main/book-config.json",
+        "https://github.com/itdojp/issue-driven-work-book/blob/main/docs/_data/navigation.yml",
+        "https://github.com/itdojp/issue-driven-work-book/blob/main/docs/appendices/templates/triage-matrix/index.md",
+        "https://github.com/itdojp/issue-driven-work-book/blob/main/docs/appendices/checklists/index.md",
+        "https://github.com/itdojp/issue-driven-work-book/blob/main/docs/appendices/case-studies/index.md",
+        "https://github.com/itdojp/issue-driven-work-book/blob/main/LICENSE.md",
+        "docs/professional-foundations.md",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/193"
       ]
     },
     {
@@ -337,15 +354,19 @@
         "all-engineers"
       ],
       "audiences": [
-        "全レベル / 仕事の進め方・調査・ドキュメント・セキュリティ基礎"
+        "README / 手順書 / Runbook / ADR / ポストモーテムを体系的に整えたい初級〜中級エンジニア",
+        "レビュー観点を揃えたいテックリード / EM",
+        "Docs-as-Codeを導入したい開発チーム"
       ],
       "summary": {
-        "ja": "",
+        "ja": "初級〜中級エンジニアが、README、手順書、Runbook、ADR、障害報告、ポストモーテムを設計し、レビュー、版管理、再利用テンプレートを含むDocs-as-Code運用へ組み込むための実務書です。",
         "en": "Covers practical engineering documents such as READMEs, procedures, runbooks, ADRs, and postmortems."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "security-privacy-literacy-book"
+      ],
       "languages": [
         "ja"
       ],
@@ -357,26 +378,30 @@
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
-          "glossary": false
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査#193で、UX設定がbook-configにないことを確認し、実務参照を主目的とするProfile B、公開トップの読み方ガイド、Runbookテンプレート、チェックリスト、用語集の実体からmodulesを判定。独立した図表索引は未実装。レビュー完了日とIssue証跡はmerge後確認を終えるまでnullを維持する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/engineering-documentation-book/blob/main/README.md",
+        "https://github.com/itdojp/engineering-documentation-book/blob/main/docs/index.md",
+        "https://github.com/itdojp/engineering-documentation-book/blob/main/book-config.json",
+        "https://github.com/itdojp/engineering-documentation-book/blob/main/docs/_data/navigation.yml",
+        "https://github.com/itdojp/engineering-documentation-book/blob/main/docs/appendices/templates/runbook/index.md",
+        "https://github.com/itdojp/engineering-documentation-book/blob/main/docs/appendices/checklists/index.md",
+        "https://github.com/itdojp/engineering-documentation-book/blob/main/docs/appendices/glossary/index.md",
+        "docs/professional-foundations.md",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/193"
       ]
     },
     {

@@ -10,7 +10,7 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 37,
+      "count": 34,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -26,14 +26,11 @@
         "cloud-infra-book",
         "computational-physicalism-book",
         "cs-visionaries-book",
-        "engineering-documentation-book",
         "ethereum-learning-bootcamp",
-        "evidence-based-engineering-book",
         "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
         "incident-response-basics-book",
-        "issue-driven-work-book",
         "it-infra-security-guide-book",
         "it-infra-software-essentials-book",
         "kubernetes-basics-book",
@@ -214,7 +211,7 @@
       ]
     },
     "provisionalNotes": {
-      "count": 37,
+      "count": 34,
       "books": [
         {
           "id": "BioinformaticsGuide-book",
@@ -328,23 +325,7 @@
           ]
         },
         {
-          "id": "engineering-documentation-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
           "id": "ethereum-learning-bootcamp",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "evidence-based-engineering-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -377,14 +358,6 @@
         },
         {
           "id": "incident-response-basics-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "issue-driven-work-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -558,7 +531,7 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 34,
+      "count": 31,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -575,14 +548,11 @@
         "composable-software-design-book",
         "computational-physicalism-book",
         "cs-visionaries-book",
-        "engineering-documentation-book",
         "ethereum-learning-bootcamp",
-        "evidence-based-engineering-book",
         "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
         "incident-response-basics-book",
-        "issue-driven-work-book",
         "it-infra-security-guide-book",
         "it-infra-software-essentials-book",
         "negotiation-for-engineers-book",
@@ -662,7 +632,7 @@
         {
           "identifier": "cloud-infra-handbook",
           "path": "docs/_data/catalog.json",
-          "line": 3092,
+          "line": 3117,
           "column": 22
         }
       ]
