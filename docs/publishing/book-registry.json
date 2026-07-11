@@ -183,15 +183,15 @@
       "profile": "B",
       "modules": {
         "quickStart": false,
-        "readingGuide": false,
+        "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": true,
+        "figureIndex": false,
         "legalNotice": false,
-        "glossary": false
+        "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-12のmetadata監査#193で、UX設定がbook-configにないことを確認し、実務参照を主目的とするProfile B、公開トップの読み方ガイド、Runbookテンプレート、チェックリスト、用語集の実体からmodulesを判定。独立した図表索引は未実装。レビュー完了日とIssue証跡はmerge後確認を終えるまでnullを維持する。"
     },
     "ethereum-learning-bootcamp": {
       "repo": "itdojp/ethereum-learning-bootcamp",
@@ -215,7 +215,7 @@
       "profile": "B",
       "modules": {
         "quickStart": false,
-        "readingGuide": false,
+        "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
@@ -223,7 +223,7 @@
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-12のmetadata監査#193で、book-configのProfile Bとmodulesを、公開トップ、第4章の検証手順、ケーススタディ、チェックリスト、図表索引の実体と照合済み。レビュー完了日とIssue証跡はmerge後確認を終えるまでnullを維持する。"
     },
     "formal-methods-book": {
       "repo": "itdojp/formal-methods-book",
@@ -324,18 +324,18 @@
     "issue-driven-work-book": {
       "repo": "itdojp/issue-driven-work-book",
       "pages": "https://itdojp.github.io/issue-driven-work-book/",
-      "profile": "B",
+      "profile": "A",
       "modules": {
-        "quickStart": false,
-        "readingGuide": false,
+        "quickStart": true,
+        "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
+        "figureIndex": false,
+        "legalNotice": true,
         "glossary": false
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-12のmetadata監査#193で、book-configのProfile Aとmodulesを、公開トップのクイックスタート・注意事項・読み方ガイド、トリアージ判断表、チェックリスト、LICENSEの実体と照合済み。レビュー完了日とIssue証跡はmerge後確認を終えるまでnullを維持する。"
     },
     "IT-engineer-communication-book": {
       "repo": "itdojp/IT-engineer-communication-book",
