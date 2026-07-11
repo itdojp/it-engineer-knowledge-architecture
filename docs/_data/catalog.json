@@ -127,13 +127,15 @@
         "beginner"
       ],
       "audiences": [
-        "IT未経験者・初学者 / プログラミングやLinuxの基礎を楽しく学ぶ"
+        "Linuxの基本操作を学習済みの初学者 / Windows上のWSL2で実践的なLinuxスキルを学ぶ"
       ],
       "summary": {
         "ja": "Linux基礎を終えた読者が、Windows上のWSL2とUbuntuを使って、ファイル・権限、テキスト処理、プロセス／サービス、ネットワーク、シェルスクリプトを実践し、学習用WordPress環境の構築まで進める教材です。",
         "en": "A hands-on guide for readers with Linux basics to set up WSL2 and Ubuntu on Windows, practice files and permissions, text processing, processes and services, networking, shell scripting, and build a local WordPress environment."
       },
-      "prerequisites": [],
+      "prerequisites": [
+        "illustrated-linux-basics-book"
+      ],
       "estimatedWeeks": null,
       "recommendedAfter": [],
       "languages": [

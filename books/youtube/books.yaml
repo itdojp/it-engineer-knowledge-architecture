@@ -10,10 +10,10 @@
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
   hook_en: Are you struggling with ...?
 - id: wsl2-linux-essentials-book
-  title_ja: やさしく学ぶLinux WSL2ではじめる基礎
+  title_ja: WSL2 Linux実践ガイド
   title_en: ''
   category: 未経験者向け
-  level: IT未経験者・初学者
+  level: Linux基礎を学習済みの初学者
   url: https://itdojp.github.io/wsl2-linux-essentials-book/
   repo: https://github.com/itdojp/wsl2-linux-essentials-book
   youtube_id_ja: ''
