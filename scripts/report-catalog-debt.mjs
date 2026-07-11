@@ -24,6 +24,14 @@ export const DEFAULT_LEGACY_SOURCE_PATHS = [
   DEFAULT_CATALOG_PATH
 ];
 
+export function legacySourcePathsForCatalog(catalogPath = DEFAULT_CATALOG_PATH) {
+  return [...new Set(
+    DEFAULT_LEGACY_SOURCE_PATHS
+      .filter((sourcePath) => sourcePath !== DEFAULT_CATALOG_PATH)
+      .concat(catalogPath)
+  )];
+}
+
 const provisionalNotePattern = /(暫定|要確認|未記載|要更新|要レビュー)/;
 const uxNotePattern = /(UX|profile|modules|暫定割当)/i;
 const legacyIdentifiers = ['cloud-infra-handbook'];
@@ -205,7 +213,7 @@ export function buildCatalogDebtReport(catalog, options = {}) {
   const readerViewPath = options.readerViewPath || DEFAULT_READER_VIEW_PATH;
   const readerViewSource = options.readerViewSource ?? fs.readFileSync(readerViewPath, 'utf8');
   const legacyOccurrences = options.legacyOccurrences ?? findLegacyIdentifierOccurrences(
-    options.legacySourcePaths || DEFAULT_LEGACY_SOURCE_PATHS
+    options.legacySourcePaths || legacySourcePathsForCatalog(options.catalogPath)
   );
   const readerViewLeaks = findReaderViewLeaks(readerViewSource, readerViewPath);
 
@@ -310,6 +318,7 @@ export function runCli(argv = process.argv.slice(2)) {
 
   const catalog = loadValidatedCatalog(options.catalogPath);
   const report = buildCatalogDebtReport(catalog, {
+    catalogPath: options.catalogPath,
     readerViewPath: options.readerViewPath,
     sourceLabel: relativePath(options.catalogPath)
   });

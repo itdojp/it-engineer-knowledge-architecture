@@ -6,6 +6,7 @@ import {
   evaluateCatalogDebtCheck,
   findLegacyIdentifierOccurrences,
   findReaderViewLeaks,
+  legacySourcePathsForCatalog,
   loadValidatedCatalog,
   serializeCatalogDebtReport
 } from '../scripts/report-catalog-debt.mjs';
@@ -74,6 +75,14 @@ test('legacy identifier inventory counts repeated matches on the same line', () 
   const occurrences = findLegacyIdentifierOccurrences([legacyFixture]);
   assert.equal(occurrences.length, 2);
   assert.deepEqual(occurrences.map((item) => item.column), [1, 26]);
+});
+
+test('custom catalog checks replace the default catalog scan target', () => {
+  const customCatalog = path.join(ROOT, 'tests', 'fixtures', 'catalog-valid.json');
+  const paths = legacySourcePathsForCatalog(customCatalog);
+  assert.equal(paths.includes(customCatalog), true);
+  assert.equal(paths.includes(path.join(ROOT, 'docs', '_data', 'catalog.json')), false);
+  assert.equal(paths.includes(path.join(ROOT, 'docs', 'books', 'index.html')), true);
 });
 
 test('--check semantics reject stale reports, reader-view leaks, and legacy identifiers', () => {
