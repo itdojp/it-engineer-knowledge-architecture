@@ -156,14 +156,21 @@ export function findLegacyIdentifierOccurrences(sourcePaths = DEFAULT_LEGACY_SOU
     const lines = fs.readFileSync(filePath, 'utf8').split('\n');
     for (const [index, line] of lines.entries()) {
       for (const identifier of legacyIdentifiers) {
-        if (line.includes(identifier)) {
-          occurrences.push({ identifier, path: relativePath(filePath), line: index + 1 });
+        let matchIndex = line.indexOf(identifier);
+        while (matchIndex !== -1) {
+          occurrences.push({
+            identifier,
+            path: relativePath(filePath),
+            line: index + 1,
+            column: matchIndex + 1
+          });
+          matchIndex = line.indexOf(identifier, matchIndex + identifier.length);
         }
       }
     }
   }
   return occurrences.sort((a, b) =>
-    compareText(a.identifier, b.identifier) || compareText(a.path, b.path) || a.line - b.line
+    compareText(a.identifier, b.identifier) || compareText(a.path, b.path) || a.line - b.line || a.column - b.column
   );
 }
 

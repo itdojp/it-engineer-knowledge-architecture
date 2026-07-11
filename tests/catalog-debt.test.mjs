@@ -4,6 +4,7 @@ import test from 'node:test';
 import {
   buildCatalogDebtReport,
   evaluateCatalogDebtCheck,
+  findLegacyIdentifierOccurrences,
   findReaderViewLeaks,
   loadValidatedCatalog,
   serializeCatalogDebtReport
@@ -66,6 +67,13 @@ test('reader-view leak rules detect direct internal rendering', () => {
     findReaderViewLeaks(source).map((finding) => finding.code),
     ['visible-status-enum', 'visible-operational-notes', 'raw-prerequisite-id']
   );
+});
+
+test('legacy identifier inventory counts repeated matches on the same line', () => {
+  const legacyFixture = path.join(ROOT, 'tests', 'fixtures', 'catalog-debt-legacy-identifiers.txt');
+  const occurrences = findLegacyIdentifierOccurrences([legacyFixture]);
+  assert.equal(occurrences.length, 2);
+  assert.deepEqual(occurrences.map((item) => item.column), [1, 26]);
 });
 
 test('--check semantics reject stale reports and reader-view leaks', () => {
