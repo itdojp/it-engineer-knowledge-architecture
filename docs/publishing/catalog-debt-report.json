@@ -1,0 +1,677 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedFrom": "docs/_data/catalog.json",
+  "recordCount": 49,
+  "scopeCounts": {
+    "published": 42,
+    "mainLineup": 41,
+    "planned": 7,
+    "relatedIndependent": 1
+  },
+  "debt": {
+    "emptySummaryJa": {
+      "count": 37,
+      "bookIds": [
+        "BioinformaticsGuide-book",
+        "GitHub-AgentOps-book",
+        "IT-engineer-communication-book",
+        "IT-infra-book",
+        "IT-infra-troubleshooting-book",
+        "LogicalThinking-AI-Era-Guide",
+        "ai-agent-engineering-book",
+        "ai-communication-book",
+        "ai-era-engineers-mind-book",
+        "ai-testing-strategy-book",
+        "categorical-software-design-book",
+        "cloud-infra-book",
+        "computational-physicalism-book",
+        "cs-visionaries-book",
+        "engineering-documentation-book",
+        "ethereum-learning-bootcamp",
+        "evidence-based-engineering-book",
+        "formal-methods-book",
+        "github-guide-for-beginners-book",
+        "github-workflow-book",
+        "incident-response-basics-book",
+        "issue-driven-work-book",
+        "it-infra-security-guide-book",
+        "it-infra-software-essentials-book",
+        "kubernetes-basics-book",
+        "kubernetes-cluster-ops-book",
+        "kubernetes-proxmox-to-cloud-book",
+        "linux-infra-textbook2",
+        "negotiation-for-engineers-book",
+        "pentest-learning-book",
+        "podman-book",
+        "practical-auth-book",
+        "proxmox_book",
+        "security-privacy-literacy-book",
+        "small-webapp-software-design-book",
+        "supabase-architecture-patterns-book",
+        "theoretical-computer-science-textbook"
+      ]
+    },
+    "emptySummaryEn": {
+      "count": 7,
+      "bookIds": [
+        "compliance-infrastructure-guide",
+        "disaster-recovery-bcp-guide",
+        "enterprise-cloud-architecture-guide",
+        "infrastructure-monitoring-automation-guide",
+        "infrastructure-performance-capacity-planning",
+        "next-generation-infrastructure-guide",
+        "practical-security-infrastructure-guide"
+      ]
+    },
+    "missingEstimatedWeeks": {
+      "count": 42,
+      "bookIds": [
+        "BioinformaticsGuide-book",
+        "GitHub-AgentOps-book",
+        "IT-engineer-communication-book",
+        "IT-infra-book",
+        "IT-infra-troubleshooting-book",
+        "LogicalThinking-AI-Era-Guide",
+        "ai-agent-collaboration-book",
+        "ai-agent-engineering-book",
+        "ai-communication-book",
+        "ai-era-engineers-mind-book",
+        "ai-testing-strategy-book",
+        "categorical-software-design-book",
+        "cloud-infra-book",
+        "composable-software-design-book",
+        "computational-physicalism-book",
+        "cs-visionaries-book",
+        "engineering-documentation-book",
+        "ethereum-learning-bootcamp",
+        "evidence-based-engineering-book",
+        "formal-methods-book",
+        "github-guide-for-beginners-book",
+        "github-workflow-book",
+        "illustrated-linux-basics-book",
+        "incident-response-basics-book",
+        "issue-driven-work-book",
+        "it-infra-security-guide-book",
+        "it-infra-software-essentials-book",
+        "kubernetes-basics-book",
+        "kubernetes-cluster-ops-book",
+        "kubernetes-proxmox-to-cloud-book",
+        "linux-infra-textbook2",
+        "negotiation-for-engineers-book",
+        "pentest-learning-book",
+        "podman-book",
+        "practical-auth-book",
+        "proxmox_book",
+        "security-privacy-literacy-book",
+        "small-webapp-software-design-book",
+        "supabase-architecture-patterns-book",
+        "theoretical-computer-science-prerequisites-book",
+        "theoretical-computer-science-textbook",
+        "wsl2-linux-essentials-book"
+      ]
+    },
+    "missingLastReviewedAt": {
+      "count": 47,
+      "bookIds": [
+        "BioinformaticsGuide-book",
+        "GitHub-AgentOps-book",
+        "IT-engineer-communication-book",
+        "IT-infra-book",
+        "IT-infra-troubleshooting-book",
+        "LogicalThinking-AI-Era-Guide",
+        "ai-agent-collaboration-book",
+        "ai-agent-engineering-book",
+        "ai-communication-book",
+        "ai-era-engineers-mind-book",
+        "ai-testing-strategy-book",
+        "categorical-software-design-book",
+        "cloud-infra-book",
+        "compliance-infrastructure-guide",
+        "composable-software-design-book",
+        "computational-physicalism-book",
+        "cs-visionaries-book",
+        "disaster-recovery-bcp-guide",
+        "engineering-documentation-book",
+        "enterprise-cloud-architecture-guide",
+        "ethereum-learning-bootcamp",
+        "evidence-based-engineering-book",
+        "formal-methods-book",
+        "github-guide-for-beginners-book",
+        "github-workflow-book",
+        "incident-response-basics-book",
+        "infrastructure-monitoring-automation-guide",
+        "infrastructure-performance-capacity-planning",
+        "issue-driven-work-book",
+        "it-infra-security-guide-book",
+        "it-infra-software-essentials-book",
+        "kubernetes-basics-book",
+        "kubernetes-cluster-ops-book",
+        "kubernetes-proxmox-to-cloud-book",
+        "linux-infra-textbook2",
+        "negotiation-for-engineers-book",
+        "next-generation-infrastructure-guide",
+        "pentest-learning-book",
+        "podman-book",
+        "practical-auth-book",
+        "practical-security-infrastructure-guide",
+        "proxmox_book",
+        "security-privacy-literacy-book",
+        "small-webapp-software-design-book",
+        "supabase-architecture-patterns-book",
+        "theoretical-computer-science-prerequisites-book",
+        "theoretical-computer-science-textbook"
+      ]
+    },
+    "missingReviewIssue": {
+      "count": 46,
+      "bookIds": [
+        "BioinformaticsGuide-book",
+        "GitHub-AgentOps-book",
+        "IT-engineer-communication-book",
+        "IT-infra-book",
+        "IT-infra-troubleshooting-book",
+        "LogicalThinking-AI-Era-Guide",
+        "ai-agent-collaboration-book",
+        "ai-agent-engineering-book",
+        "ai-communication-book",
+        "ai-era-engineers-mind-book",
+        "ai-testing-strategy-book",
+        "categorical-software-design-book",
+        "cloud-infra-book",
+        "compliance-infrastructure-guide",
+        "computational-physicalism-book",
+        "cs-visionaries-book",
+        "disaster-recovery-bcp-guide",
+        "engineering-documentation-book",
+        "enterprise-cloud-architecture-guide",
+        "ethereum-learning-bootcamp",
+        "evidence-based-engineering-book",
+        "formal-methods-book",
+        "github-guide-for-beginners-book",
+        "github-workflow-book",
+        "incident-response-basics-book",
+        "infrastructure-monitoring-automation-guide",
+        "infrastructure-performance-capacity-planning",
+        "issue-driven-work-book",
+        "it-infra-security-guide-book",
+        "it-infra-software-essentials-book",
+        "kubernetes-basics-book",
+        "kubernetes-cluster-ops-book",
+        "kubernetes-proxmox-to-cloud-book",
+        "linux-infra-textbook2",
+        "negotiation-for-engineers-book",
+        "next-generation-infrastructure-guide",
+        "pentest-learning-book",
+        "podman-book",
+        "practical-auth-book",
+        "practical-security-infrastructure-guide",
+        "proxmox_book",
+        "security-privacy-literacy-book",
+        "small-webapp-software-design-book",
+        "supabase-architecture-patterns-book",
+        "theoretical-computer-science-prerequisites-book",
+        "theoretical-computer-science-textbook"
+      ]
+    },
+    "provisionalNotes": {
+      "count": 37,
+      "books": [
+        {
+          "id": "BioinformaticsGuide-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "GitHub-AgentOps-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "IT-engineer-communication-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "IT-infra-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "IT-infra-troubleshooting-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "LogicalThinking-AI-Era-Guide",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "ai-agent-engineering-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）/ 英語版あり"
+          ]
+        },
+        {
+          "id": "ai-communication-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "ai-era-engineers-mind-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "ai-testing-strategy-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "categorical-software-design-book",
+          "notes": [
+            "Profile C の暫定割当。付録Dは図版・レビュー前の最小確認項目・症状別再参照の入口として扱う。raw サンプルは本文より先に更新される場合があるため要確認。",
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。"
+          ]
+        },
+        {
+          "id": "cloud-infra-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "computational-physicalism-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "cs-visionaries-book",
+          "notes": [
+            "人物史中心の導入書として暫定 Profile A。reader-facing な正本はトップページの目次を基準とし、付録C/付録Dは補助資料として扱う。AI 関連の主導入は第10章で、技術史の深掘りは付録Cと関連人物章を併用する。",
+            "日本語個別概要はREADME公開カタログ上で未記載。"
+          ]
+        },
+        {
+          "id": "engineering-documentation-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "ethereum-learning-bootcamp",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "evidence-based-engineering-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "formal-methods-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "github-guide-for-beginners-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "github-workflow-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "incident-response-basics-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "issue-driven-work-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "it-infra-security-guide-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "it-infra-software-essentials-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "kubernetes-basics-book",
+          "notes": [
+            "日本語個別概要はREADME公開カタログ上で未記載。"
+          ]
+        },
+        {
+          "id": "kubernetes-cluster-ops-book",
+          "notes": [
+            "日本語個別概要はREADME公開カタログ上で未記載。"
+          ]
+        },
+        {
+          "id": "kubernetes-proxmox-to-cloud-book",
+          "notes": [
+            "日本語個別概要はREADME公開カタログ上で未記載。"
+          ]
+        },
+        {
+          "id": "linux-infra-textbook2",
+          "notes": [
+            "日本語個別概要はREADME公開カタログ上で未記載。"
+          ]
+        },
+        {
+          "id": "negotiation-for-engineers-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "pentest-learning-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "podman-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "practical-auth-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "proxmox_book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "security-privacy-literacy-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "small-webapp-software-design-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "supabase-architecture-patterns-book",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        },
+        {
+          "id": "theoretical-computer-science-textbook",
+          "notes": [
+            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+            "日本語個別概要はREADME公開カタログ上で未記載。",
+            "暫定割当（要確認）"
+          ]
+        }
+      ]
+    },
+    "identicalLocalizedTitles": {
+      "count": 47,
+      "bookIds": [
+        "BioinformaticsGuide-book",
+        "GitHub-AgentOps-book",
+        "IT-engineer-communication-book",
+        "IT-infra-book",
+        "IT-infra-troubleshooting-book",
+        "LogicalThinking-AI-Era-Guide",
+        "ai-agent-collaboration-book",
+        "ai-communication-book",
+        "ai-era-engineers-mind-book",
+        "ai-testing-strategy-book",
+        "categorical-software-design-book",
+        "cloud-infra-book",
+        "compliance-infrastructure-guide",
+        "composable-software-design-book",
+        "computational-physicalism-book",
+        "cs-visionaries-book",
+        "disaster-recovery-bcp-guide",
+        "engineering-documentation-book",
+        "enterprise-cloud-architecture-guide",
+        "ethereum-learning-bootcamp",
+        "evidence-based-engineering-book",
+        "formal-methods-book",
+        "github-guide-for-beginners-book",
+        "github-workflow-book",
+        "illustrated-linux-basics-book",
+        "incident-response-basics-book",
+        "infrastructure-monitoring-automation-guide",
+        "infrastructure-performance-capacity-planning",
+        "issue-driven-work-book",
+        "it-infra-security-guide-book",
+        "it-infra-software-essentials-book",
+        "kubernetes-basics-book",
+        "kubernetes-cluster-ops-book",
+        "kubernetes-proxmox-to-cloud-book",
+        "linux-infra-textbook2",
+        "negotiation-for-engineers-book",
+        "next-generation-infrastructure-guide",
+        "pentest-learning-book",
+        "podman-book",
+        "practical-auth-book",
+        "practical-security-infrastructure-guide",
+        "proxmox_book",
+        "security-privacy-literacy-book",
+        "small-webapp-software-design-book",
+        "supabase-architecture-patterns-book",
+        "theoretical-computer-science-textbook",
+        "wsl2-linux-essentials-book"
+      ]
+    },
+    "uxEvidenceCandidates": {
+      "count": 34,
+      "bookIds": [
+        "BioinformaticsGuide-book",
+        "GitHub-AgentOps-book",
+        "IT-engineer-communication-book",
+        "IT-infra-book",
+        "IT-infra-troubleshooting-book",
+        "LogicalThinking-AI-Era-Guide",
+        "ai-agent-engineering-book",
+        "ai-communication-book",
+        "ai-era-engineers-mind-book",
+        "ai-testing-strategy-book",
+        "categorical-software-design-book",
+        "cloud-infra-book",
+        "composable-software-design-book",
+        "computational-physicalism-book",
+        "cs-visionaries-book",
+        "engineering-documentation-book",
+        "ethereum-learning-bootcamp",
+        "evidence-based-engineering-book",
+        "formal-methods-book",
+        "github-guide-for-beginners-book",
+        "github-workflow-book",
+        "incident-response-basics-book",
+        "issue-driven-work-book",
+        "it-infra-security-guide-book",
+        "it-infra-software-essentials-book",
+        "negotiation-for-engineers-book",
+        "pentest-learning-book",
+        "podman-book",
+        "practical-auth-book",
+        "proxmox_book",
+        "security-privacy-literacy-book",
+        "small-webapp-software-design-book",
+        "supabase-architecture-patterns-book",
+        "theoretical-computer-science-textbook"
+      ]
+    },
+    "legacyIdentifierOccurrences": {
+      "count": 11,
+      "occurrences": [
+        {
+          "identifier": "cloud-infra-handbook",
+          "path": "books/existing-books.md",
+          "line": 130,
+          "column": 12
+        },
+        {
+          "identifier": "cloud-infra-handbook",
+          "path": "books/existing-books.md",
+          "line": 131,
+          "column": 37
+        },
+        {
+          "identifier": "cloud-infra-handbook",
+          "path": "books/existing-books.md",
+          "line": 131,
+          "column": 99
+        },
+        {
+          "identifier": "cloud-infra-handbook",
+          "path": "books/existing-books.md",
+          "line": 486,
+          "column": 3
+        },
+        {
+          "identifier": "cloud-infra-handbook",
+          "path": "books/existing-books.md",
+          "line": 504,
+          "column": 17
+        },
+        {
+          "identifier": "cloud-infra-handbook",
+          "path": "books/existing-books.md",
+          "line": 535,
+          "column": 4
+        },
+        {
+          "identifier": "cloud-infra-handbook",
+          "path": "books/existing-books.md",
+          "line": 556,
+          "column": 91
+        },
+        {
+          "identifier": "cloud-infra-handbook",
+          "path": "books/planned-books.md",
+          "line": 9,
+          "column": 19
+        },
+        {
+          "identifier": "cloud-infra-handbook",
+          "path": "books/planned-books.md",
+          "line": 122,
+          "column": 5
+        },
+        {
+          "identifier": "cloud-infra-handbook",
+          "path": "books/planned-books.md",
+          "line": 129,
+          "column": 14
+        },
+        {
+          "identifier": "cloud-infra-handbook",
+          "path": "docs/_data/catalog.json",
+          "line": 3092,
+          "column": 22
+        }
+      ]
+    }
+  },
+  "gates": {
+    "readerViewLeaks": {
+      "count": 0,
+      "findings": []
+    }
+  }
+}

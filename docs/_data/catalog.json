@@ -4,7 +4,8 @@
   "sourcePolicy": {
     "canonical": "docs/_data/catalog.json",
     "derivedFiles": [
-      "docs/publishing/book-registry.json"
+      "docs/publishing/book-registry.json",
+      "docs/publishing/catalog-debt-report.json"
     ],
     "externalDynamicFields": [
       "stars",
