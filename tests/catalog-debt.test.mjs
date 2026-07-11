@@ -60,7 +60,7 @@ test('reader-view leak rules detect direct internal rendering', () => {
   const source = [
     '<div data-status="{{ book.status | escape }}"><span>{{ book.status | escape }}</span></div>',
     '{% for note in book.notes %}<li>{{ note }}</li>{% endfor %}',
-    '<a href="#{{ prerequisite }}">{{ prerequisite }}</a>'
+    '<a href="#{{ prerequisite }}">{{ prerequisite | escape }}</a>'
   ].join('\n');
   assert.deepEqual(
     findReaderViewLeaks(source).map((finding) => finding.code),

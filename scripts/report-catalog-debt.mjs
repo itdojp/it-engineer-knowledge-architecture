@@ -74,7 +74,7 @@ const readerViewRules = [
   {
     code: 'raw-prerequisite-id',
     description: 'a prerequisite catalog ID is rendered as link text',
-    pattern: />\s*\{\{\s*prerequisite\s*\}\}\s*<\/a>/g
+    pattern: />\s*\{\{\s*prerequisite(?:\s*\|[^}]*)?\s*\}\}\s*<\/a>/g
   }
 ];
 

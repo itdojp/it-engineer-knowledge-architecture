@@ -118,7 +118,7 @@ permalink: /books/
     {% if book.audiences and book.audiences.size > 0 %}<p><strong>対象:</strong> {{ book.audiences | join: ' / ' }}</p>{% endif %}
     {% if book.prerequisites and book.prerequisites.size > 0 %}
       <p><strong>前提:</strong>
-      {% for prerequisite in book.prerequisites %}{% assign prerequisite_book = books | where: 'id', prerequisite | first %}<a href="#{{ prerequisite }}">{{ prerequisite_book.title.ja }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
+      {% for prerequisite in book.prerequisites %}{% assign prerequisite_book = books | where: 'id', prerequisite | first %}<a href="#{{ prerequisite }}">{{ prerequisite_book.title.ja | escape }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
       </p>
     {% endif %}
     <div class="card-actions">
