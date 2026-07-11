@@ -10,7 +10,7 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 34,
+      "count": 32,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -30,7 +30,6 @@
         "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
-        "incident-response-basics-book",
         "it-infra-security-guide-book",
         "it-infra-software-essentials-book",
         "kubernetes-basics-book",
@@ -42,7 +41,6 @@
         "podman-book",
         "practical-auth-book",
         "proxmox_book",
-        "security-privacy-literacy-book",
         "small-webapp-software-design-book",
         "supabase-architecture-patterns-book",
         "theoretical-computer-science-textbook"
@@ -108,7 +106,7 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 44,
+      "count": 42,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -133,7 +131,6 @@
         "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
-        "incident-response-basics-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
         "it-infra-security-guide-book",
@@ -149,7 +146,6 @@
         "practical-auth-book",
         "practical-security-infrastructure-guide",
         "proxmox_book",
-        "security-privacy-literacy-book",
         "small-webapp-software-design-book",
         "supabase-architecture-patterns-book",
         "theoretical-computer-science-prerequisites-book",
@@ -157,7 +153,7 @@
       ]
     },
     "missingReviewIssue": {
-      "count": 43,
+      "count": 41,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -181,7 +177,6 @@
         "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
-        "incident-response-basics-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
         "it-infra-security-guide-book",
@@ -197,7 +192,6 @@
         "practical-auth-book",
         "practical-security-infrastructure-guide",
         "proxmox_book",
-        "security-privacy-literacy-book",
         "small-webapp-software-design-book",
         "supabase-architecture-patterns-book",
         "theoretical-computer-science-prerequisites-book",
@@ -205,7 +199,7 @@
       ]
     },
     "provisionalNotes": {
-      "count": 34,
+      "count": 32,
       "books": [
         {
           "id": "BioinformaticsGuide-book",
@@ -351,14 +345,6 @@
           ]
         },
         {
-          "id": "incident-response-basics-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
           "id": "it-infra-security-guide-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
@@ -432,14 +418,6 @@
         },
         {
           "id": "proxmox_book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "security-privacy-literacy-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -525,7 +503,7 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 31,
+      "count": 29,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -546,7 +524,6 @@
         "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
-        "incident-response-basics-book",
         "it-infra-security-guide-book",
         "it-infra-software-essentials-book",
         "negotiation-for-engineers-book",
@@ -554,7 +531,6 @@
         "podman-book",
         "practical-auth-book",
         "proxmox_book",
-        "security-privacy-literacy-book",
         "small-webapp-software-design-book",
         "supabase-architecture-patterns-book",
         "theoretical-computer-science-textbook"
