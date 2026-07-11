@@ -33,7 +33,7 @@ gh workflow run deploy-pages.yml --repo itdojp/it-engineer-knowledge-architectur
 
 ## 通常のデプロイと検証
 
-`main` の `docs/**`、デプロイWorkflow、build情報生成、または本番スモークの変更でDeploy Pagesが起動する。処理は次の3 jobで構成する。
+`main` の更新は変更パスを問わずDeploy Pagesを起動する。定期drift確認がdefault branchの最新SHAを期待値とするため、公開内容に影響しない変更も同じSHAのartifactとして再デプロイし、default branchと公開SHAの一貫性を維持する。処理は次の3 jobで構成する。
 
 1. Jekyllをbuildし、`_site/build-info.json` を追加してPages artifactを作る。
 2. artifactを `github-pages` environmentへデプロイする。
