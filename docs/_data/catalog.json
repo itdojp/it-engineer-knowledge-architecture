@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-07-10",
+  "updatedAt": "2026-07-11",
   "sourcePolicy": {
     "canonical": "docs/_data/catalog.json",
     "derivedFiles": [
@@ -61,8 +61,8 @@
         "IT未経験者・初学者 / プログラミングやLinuxの基礎を楽しく学ぶ"
       ],
       "summary": {
-        "ja": "",
-        "en": "A visual introduction to Linux basics, core commands, filesystems, networking, and containers."
+        "ja": "図解を中心に、コンピュータとOSの仕組み、Linuxの基本コマンド、権限・ユーザー管理、テキスト処理、パッケージ管理、トラブル対応、簡単なシェルスクリプトを初学者向けに学べる入門書です。",
+        "en": "A visual introduction to computer and operating-system concepts, core Linux commands, permissions and users, text and package management, troubleshooting, and simple shell scripts."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -72,8 +72,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-11",
+      "reviewIssue": 186,
       "ux": {
         "profile": "A",
         "modules": {
@@ -88,24 +88,22 @@
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
-      "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
-      ],
+      "updatedAt": "2026-07-11",
+      "notes": [],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/illustrated-linux-basics-book/blob/main/README.md",
+        "https://github.com/itdojp/illustrated-linux-basics-book/blob/main/book-config.json",
+        "https://github.com/itdojp/illustrated-linux-basics-book/blob/main/docs/index.md",
+        "https://github.com/itdojp/illustrated-linux-basics-book/pull/95",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/186"
       ]
     },
     {
       "id": "wsl2-linux-essentials-book",
       "displayOrder": 2,
       "title": {
-        "ja": "やさしく学ぶLinux WSL2ではじめる基礎",
-        "en": "やさしく学ぶLinux WSL2ではじめる基礎"
+        "ja": "WSL2 Linux実践ガイド",
+        "en": "WSL2 Linux実践ガイド"
       },
       "officialEnglishTitle": null,
       "status": "published",
@@ -130,8 +128,8 @@
         "IT未経験者・初学者 / プログラミングやLinuxの基礎を楽しく学ぶ"
       ],
       "summary": {
-        "ja": "",
-        "en": "Uses WSL2 on Windows as a safe learning environment for Linux setup, shell usage, processes, networking, and scripting."
+        "ja": "Linux基礎を終えた読者が、Windows上のWSL2とUbuntuを使って、ファイル・権限、テキスト処理、プロセス／サービス、ネットワーク、シェルスクリプトを実践し、学習用WordPress環境の構築まで進める教材です。",
+        "en": "A hands-on guide for readers with Linux basics to set up WSL2 and Ubuntu on Windows, practice files and permissions, text processing, processes and services, networking, shell scripting, and build a local WordPress environment."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -141,8 +139,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-11",
+      "reviewIssue": 186,
       "ux": {
         "profile": "A",
         "modules": {
@@ -157,16 +155,14 @@
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
-      "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
-      ],
+      "updatedAt": "2026-07-11",
+      "notes": [],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/wsl2-linux-essentials-book/blob/main/README.md",
+        "https://github.com/itdojp/wsl2-linux-essentials-book/blob/main/book-config.json",
+        "https://github.com/itdojp/wsl2-linux-essentials-book/blob/main/docs/index.md",
+        "https://github.com/itdojp/wsl2-linux-essentials-book/pull/130",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/186"
       ]
     },
     {
