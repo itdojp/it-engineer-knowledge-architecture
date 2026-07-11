@@ -62,11 +62,15 @@ jekyll build --source docs --destination .site --baseurl /it-engineer-knowledge-
 ```
 
 GitHub Pages 用の本番デプロイは `.github/workflows/deploy-pages.yml` で Actions artifact として行います。
+`main` の更新後は `/build-info.json` を含む本番スモークテストを実行し、公開物がデプロイ対象commitと一致することを確認します。さらに `.github/workflows/pages-drift-check.yml` が毎日、default branch、最新の成功済みPages deployment、公開中のbuild情報を比較します。不整合時は単一のAlert Issueを作成または更新し、復旧時に証跡を残してクローズします。
+
+Pagesの公開方式は **GitHub Actions**（API上の `build_type: workflow`）に固定します。`main` や `docs/` を直接公開するbranch deploymentへ戻してはいけません。初期設定、確認コマンド、障害対応は[Pagesデプロイ運用Runbook](docs/publishing/pages-deployment-runbook.md)を参照してください。
 
 ## Workflow運用方針
 
 - PRでは `npm run verify` と Jekyll build の構造チェックを通す。
 - 定期実行Workflowは、実行時点の動的データをartifactまたはIssue通知として扱い、定期実行だけを理由に `main` へ自動コミットしない。
+- Pages drift確認はソースを変更・コミットせず、実行サマリ、artifact、重複しないAlert Issueだけを更新する。
 - Star数、Open Issue/PR数、リポジトリ更新日時などの時点依存データは正本へ保存しない。
 
 ## コントリビューション
