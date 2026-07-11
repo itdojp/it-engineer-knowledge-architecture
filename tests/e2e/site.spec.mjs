@@ -65,12 +65,63 @@ test.describe('catalog interactions', () => {
     await expect(page.locator('[data-book-card]:visible')).toContainText('AIエージェント協働の仕事術');
   });
 
+  test('book catalog separates reader labels from operational metadata', async ({ page }) => {
+    await page.goto(sitePath('/books/'));
+    const cards = page.locator('[data-book-card]');
+    for (const internalValue of [
+      'published', 'planned', 'archived', 'main-lineup', 'related-independent',
+      'full-public', 'free-preview', 'public', 'private', 'not-created',
+      'beginner', 'junior', 'intermediate', 'advanced', 'all-levels', 'ja', 'en'
+    ]) {
+      await expect(cards.getByText(internalValue, { exact: true })).toHaveCount(0);
+    }
+    await expect(cards.getByText('暫定割当（要確認）', { exact: true })).toHaveCount(0);
+    await expect(cards.getByText('日本語個別概要はREADME公開カタログ上で未記載。', { exact: true })).toHaveCount(0);
+
+    const wslCard = page.locator('#wsl2-linux-essentials-book').locator('..');
+    const prerequisite = wslCard.getByRole('link', { name: '図解でわかるLinux基礎', exact: true });
+    await expect(prerequisite).toHaveAttribute('href', '#illustrated-linux-basics-book');
+    await expect(wslCard).not.toContainText('illustrated-linux-basics-book');
+
+    await expect(page.locator('#ai-agent-collaboration-book').locator('..')).toContainText('管理リポジトリは非公開');
+    await expect(page.locator('[data-book-card][data-status="planned"]').first()).toContainText('計画中の書籍です');
+    await expect(page.locator('#composable-software-design-book').locator('..')).toContainText('独立した英語書籍です');
+  });
+
+  test('book catalog reports an empty result and resets all filters', async ({ page }) => {
+    await page.goto(sitePath('/books/'));
+    const keyword = page.locator('#book-filter-keyword');
+    const empty = page.locator('#book-filter-empty');
+
+    await keyword.fill('__no_catalog_match__');
+    await expect(page.locator('[data-book-card]:visible')).toHaveCount(0);
+    await expect(page.locator('#book-filter-result')).toContainText('0 / 49 件');
+    await expect(empty).toBeVisible();
+
+    await page.locator('#book-filter-reset').click();
+    await expect(keyword).toHaveValue('');
+    await expect(keyword).toBeFocused();
+    await expect(page.locator('[data-book-card]:visible')).toHaveCount(49);
+    await expect(page.locator('#book-filter-result')).toContainText('49 / 49 件');
+    await expect(empty).toBeHidden();
+  });
+
+  test('search data can use a catalog ID without displaying it as a reader label', async ({ page }) => {
+    await page.goto(sitePath('/books/'));
+    await page.locator('#book-filter-keyword').fill('wsl2-linux-essentials-book');
+    const visibleCard = page.locator('[data-book-card]:visible');
+    await expect(visibleCard).toHaveCount(1);
+    await expect(visibleCard).toContainText('WSL2 Linux実践ガイド');
+    await expect(visibleCard).not.toContainText('wsl2-linux-essentials-book');
+  });
+
   test('book catalog remains fully visible without JavaScript', async ({ browser, baseURL }) => {
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
     await page.goto(`${baseURL}${sitePath('/books/')}`);
     await expect(page.locator('[data-book-card]')).toHaveCount(49);
     await expect(page.locator('[data-book-card]').first()).toBeVisible();
+    await expect(page.locator('#book-filter-empty')).toBeHidden();
     await context.close();
   });
 
