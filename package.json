@@ -9,11 +9,12 @@
     "validate:catalog": "node scripts/validate-catalog.mjs",
     "validate:learning-graph": "node scripts/validate-learning-graph.mjs",
     "test:fixtures": "node scripts/test-catalog-fixtures.mjs",
-    "verify": "npm run verify:catalog && npm run test:production-smoke && npm run build:site && npm run test:e2e",
+    "verify": "npm run verify:catalog && npm run test:production-smoke && npm run test:pages-drift && npm run build:site && npm run test:e2e",
     "verify:catalog": "npm run validate:catalog && npm run validate:learning-graph && npm run check:generated && npm run test:fixtures",
     "build:site": "rm -rf .site && jekyll build --source docs --destination .site/it-engineer-knowledge-architecture --baseurl /it-engineer-knowledge-architecture",
     "test:e2e": "playwright test",
-    "test:production-smoke": "node --test tests/smoke-production.test.mjs"
+    "test:production-smoke": "node --test tests/smoke-production.test.mjs",
+    "test:pages-drift": "node --test tests/pages-drift.test.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.12.1",

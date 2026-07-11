@@ -15,6 +15,7 @@ description: 書籍シリーズの体裁・構成・運用の標準
 - [運用プレイブック（book-formatter更新の横展開）](./operations-playbook.md)
 - [運用ダッシュボード](./operations-dashboard.html)
 - [品質スプリント運用](./quality-sprint.md)
+- [GitHub Pagesデプロイ運用Runbook](./pages-deployment-runbook.md)
 - [フォント可読性 E2E 確認ログ（2026-05-24）](./font-readability-check-2026-05-24.html)
 - [Sidebar TOC overlap 調査ログ（2026-06-07）](./sidebar-overlap-investigation-2026-06-07.html)
 - [新規書籍クイックスタート](./new-book-quickstart.md)

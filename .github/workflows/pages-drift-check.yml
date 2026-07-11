@@ -1,0 +1,63 @@
+name: Pages drift check
+
+on:
+  schedule:
+    - cron: '30 0 * * *'
+  workflow_dispatch:
+    inputs:
+      expected_sha_override:
+        description: '異常系の動作確認専用。通常は空欄。40文字の期待SHAを指定する'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  deployments: read
+  issues: write
+
+concurrency:
+  group: pages-drift-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Compare source, deployment, and production
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PAGES_BASE_URL: https://itdojp.github.io/it-engineer-knowledge-architecture/
+      EXPECTED_SHA_OVERRIDE: ${{ inputs.expected_sha_override || '' }}
+      DRIFT_REPORT_JSON: tmp/pages-drift/report.json
+      DRIFT_REPORT_MARKDOWN: tmp/pages-drift/report.md
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check Pages drift and manage alert
+        id: drift
+        continue-on-error: true
+        run: node scripts/check-pages-drift.mjs
+
+      - name: Add result to job summary
+        if: always()
+        run: |
+          if [[ -f "$DRIFT_REPORT_MARKDOWN" ]]; then
+            cat "$DRIFT_REPORT_MARKDOWN" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Pages drift check did not create a report.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload drift report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-drift-${{ github.run_id }}-${{ github.run_attempt }}
+          path: tmp/pages-drift
+          if-no-files-found: error
+
+      - name: Enforce drift result
+        if: always() && steps.drift.outcome != 'success'
+        run: |
+          echo 'Pages drift or monitoring failure detected. See the job summary, artifact, and alert Issue.' >&2
+          exit 1
