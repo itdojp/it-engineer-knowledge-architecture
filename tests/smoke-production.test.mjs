@@ -40,7 +40,7 @@ async function startSite(options = {}) {
       ),
       'books/': page('書籍一覧', '<article data-book-card></article>'.repeat(options.cardCount ?? 49)),
       'paths/': page('学習パス', '<article class="path-card"></article>'.repeat(options.pathCount ?? 7)),
-      'en/': page('English Catalog'),
+      'en/': page('English Catalog', '<tr data-en-book></tr>'.repeat(options.enBookCount ?? 49)),
       '404.html': page('ページが見つかりません')
     };
     if (relative === 'build-info.json') {
@@ -124,6 +124,17 @@ test('production smoke passes all required pages and writes reports', async () =
     assert.equal(report.endpoints.length, 6);
     assert.equal(JSON.parse(await readFile(join(output, 'report.json'), 'utf8')).ok, true);
     assert.match(await readFile(join(output, 'report.md'), 'utf8'), /Result: \*\*PASS\*\*/);
+  });
+});
+
+
+test('production smoke detects an English catalog count mismatch', async () => {
+  await withSite({ enBookCount: 48 }, async (site, output) => {
+    const report = await runProductionSmoke(config(site, output));
+    assert.equal(report.ok, false);
+    const english = report.endpoints.find((endpoint) => endpoint.label === '/en/');
+    assert.equal(english.markers.enBookCount, 48);
+    assert.match(english.errors.join('\n'), /English catalog books 48, expected 49/);
   });
 });
 

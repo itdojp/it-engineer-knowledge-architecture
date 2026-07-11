@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
-import { ROOT } from './catalog-utils.mjs';
+import { ROOT, readJson, validateCatalog } from './catalog-utils.mjs';
 
 const cases = [
   { file: 'tests/fixtures/catalog-valid.json', valid: true, script: 'scripts/validate-catalog.mjs' },
@@ -29,6 +29,8 @@ const cases = [
     script: 'scripts/validate-catalog.mjs',
     mustContain: 'private managed book must declare publicationScope=free-preview'
   }
+
+
 ];
 
 let failed = 0;
@@ -50,4 +52,38 @@ for (const testCase of cases) {
     console.log(`✅ fixture ${testCase.valid ? 'valid' : 'invalid'} as expected: ${testCase.file}`);
   }
 }
+
+
+const validCatalog = readJson(path.join(ROOT, 'tests/fixtures/catalog-valid.json'));
+const englishUrlCases = [
+  {
+    name: 'English language without englishPagesUrl',
+    mutate: (book) => { book.languages = ['ja', 'en']; book.englishPagesUrl = null; },
+    mustContain: 'English-language book must define englishPagesUrl'
+  },
+  {
+    name: 'englishPagesUrl without English language',
+    mutate: (book) => { book.languages = ['ja']; book.englishPagesUrl = 'https://itdojp.github.io/book-one/en/'; },
+    mustContain: 'englishPagesUrl requires languages to include en'
+  },
+  {
+    name: 'englishPagesUrl on an invalid host',
+    mutate: (book) => { book.languages = ['ja', 'en']; book.englishPagesUrl = 'https://example.com/book-one/en/'; },
+    mustContain: 'englishPagesUrl is invalid'
+  }
+];
+for (const testCase of englishUrlCases) {
+  const catalog = structuredClone(validCatalog);
+  testCase.mutate(catalog.books[0]);
+  const errors = validateCatalog(catalog);
+  const passed = errors.some((error) => error.includes(testCase.mustContain));
+  if (!passed) {
+    failed++;
+    console.error(`❌ inline fixture expectation failed: ${testCase.name}`);
+    console.error(errors.join('\n'));
+  } else {
+    console.log(`✅ inline fixture invalid as expected: ${testCase.name}`);
+  }
+}
+
 if (failed > 0) process.exit(1);
