@@ -93,7 +93,7 @@ The table below is rendered directly from `docs/_data/catalog.json`. Titles foll
       <td>{{ level_labels | strip }} / {{ role_labels | strip }}</td>
       <td>{{ english_summary | escape }}</td>
       <td>
-        {% if book.languages contains 'en' and book.englishPagesUrl %}{% if book.pagesUrl != book.englishPagesUrl %}<a href="{{ book.pagesUrl | escape }}">JA</a> / {% endif %}<a href="{{ book.englishPagesUrl | escape }}">EN</a>{% elsif book.pagesUrl %}<a href="{{ book.pagesUrl | escape }}">Read</a>{% endif %}
+        {% if book.languages contains 'en' and book.englishPagesUrl %}{% if book.pagesUrl and book.pagesUrl != book.englishPagesUrl %}<a href="{{ book.pagesUrl | escape }}">JA</a> / {% endif %}<a href="{{ book.englishPagesUrl | escape }}">EN</a>{% elsif book.pagesUrl %}<a href="{{ book.pagesUrl | escape }}">Read</a>{% endif %}
         {% if book.repo and book.repoVisibility == 'public' %}{% if book.pagesUrl or book.englishPagesUrl %} / {% endif %}<a href="https://github.com/{{ book.repo | escape }}">Repository</a>{% elsif book.repoVisibility == 'private' %}{% if book.pagesUrl or book.englishPagesUrl %} / {% endif %}<span>Repository private</span>{% endif %}
         {% for related_id in book.relatedEditions %}{% assign related_book = catalog_books | where: 'id', related_id | first %}{% if related_book and related_book.pagesUrl %} / <a href="{{ related_book.pagesUrl | escape }}">Related: {{ related_book.officialEnglishTitle | default: related_book.title.en | escape }}</a>{% endif %}{% endfor %}
         {% if book.status == 'planned' or book.repoVisibility == 'not-created' %}<span>Not yet available</span>{% endif %}
