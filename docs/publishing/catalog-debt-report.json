@@ -108,7 +108,7 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 47,
+      "count": 44,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -128,17 +128,14 @@
         "computational-physicalism-book",
         "cs-visionaries-book",
         "disaster-recovery-bcp-guide",
-        "engineering-documentation-book",
         "enterprise-cloud-architecture-guide",
         "ethereum-learning-bootcamp",
-        "evidence-based-engineering-book",
         "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
         "incident-response-basics-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
-        "issue-driven-work-book",
         "it-infra-security-guide-book",
         "it-infra-software-essentials-book",
         "kubernetes-basics-book",
@@ -160,7 +157,7 @@
       ]
     },
     "missingReviewIssue": {
-      "count": 46,
+      "count": 43,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -179,17 +176,14 @@
         "computational-physicalism-book",
         "cs-visionaries-book",
         "disaster-recovery-bcp-guide",
-        "engineering-documentation-book",
         "enterprise-cloud-architecture-guide",
         "ethereum-learning-bootcamp",
-        "evidence-based-engineering-book",
         "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
         "incident-response-basics-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
-        "issue-driven-work-book",
         "it-infra-security-guide-book",
         "it-infra-software-essentials-book",
         "kubernetes-basics-book",
@@ -632,7 +626,7 @@
         {
           "identifier": "cloud-infra-handbook",
           "path": "docs/_data/catalog.json",
-          "line": 3117,
+          "line": 3120,
           "column": 22
         }
       ]
