@@ -89,7 +89,9 @@
       },
       "addedAt": null,
       "updatedAt": "2026-07-11",
-      "notes": [],
+      "notes": [
+        "2026-07-11の品質スプリント#186でUX構成（Profile Aとmodules）を実ファイルに基づき確認済み。"
+      ],
       "sourceRefs": [
         "https://github.com/itdojp/illustrated-linux-basics-book/blob/main/README.md",
         "https://github.com/itdojp/illustrated-linux-basics-book/blob/main/book-config.json",
@@ -156,7 +158,9 @@
       },
       "addedAt": null,
       "updatedAt": "2026-07-11",
-      "notes": [],
+      "notes": [
+        "2026-07-11の品質スプリント#186でUX構成（Profile Aとmodules）を実ファイルに基づき確認済み。"
+      ],
       "sourceRefs": [
         "https://github.com/itdojp/wsl2-linux-essentials-book/blob/main/README.md",
         "https://github.com/itdojp/wsl2-linux-essentials-book/blob/main/book-config.json",

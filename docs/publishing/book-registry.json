@@ -303,7 +303,7 @@
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "catalog generated"
+      "notes": "2026-07-11の品質スプリント#186でUX構成（Profile Aとmodules）を実ファイルに基づき確認済み。"
     },
     "incident-response-basics-book": {
       "repo": "itdojp/incident-response-basics-book",
@@ -671,7 +671,7 @@
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "catalog generated"
+      "notes": "2026-07-11の品質スプリント#186でUX構成（Profile Aとmodules）を実ファイルに基づき確認済み。"
     }
   }
 }

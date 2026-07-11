@@ -63,8 +63,8 @@ Audience: absolute beginners and first-time learners who want a gentle introduct
 
 | Canonical title | Availability | Audience | Short English summary | Links |
 | --- | --- | --- | --- | --- |
-| 図解でわかるLinux基礎 | `JA only` | Absolute beginners | A visual introduction to Linux basics, core commands, filesystems, networking, and containers. | [Read](https://itdojp.github.io/illustrated-linux-basics-book/) / [Repository](https://github.com/itdojp/illustrated-linux-basics-book) |
-| やさしく学ぶLinux WSL2ではじめる基礎 | `JA only` | Absolute beginners | Uses WSL2 on Windows as a safe learning environment for Linux setup, shell usage, processes, networking, and scripting. | [Read](https://itdojp.github.io/wsl2-linux-essentials-book/) / [Repository](https://github.com/itdojp/wsl2-linux-essentials-book) |
+| 図解でわかるLinux基礎 | `JA only` | Absolute beginners | A visual introduction to computer and operating-system concepts, core Linux commands, permissions and users, text and package management, troubleshooting, and simple shell scripts. | [Read](https://itdojp.github.io/illustrated-linux-basics-book/) / [Repository](https://github.com/itdojp/illustrated-linux-basics-book) |
+| WSL2 Linux実践ガイド | `JA only` | Readers with Linux basics | A hands-on guide for readers with Linux basics to set up WSL2 and Ubuntu on Windows, practice files and permissions, text processing, processes and services, networking, shell scripting, and build a local WordPress environment. | [Read](https://itdojp.github.io/wsl2-linux-essentials-book/) / [Repository](https://github.com/itdojp/wsl2-linux-essentials-book) |
 
 ### Professional Foundations
 
