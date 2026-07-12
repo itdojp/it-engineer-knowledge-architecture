@@ -2056,29 +2056,35 @@
         "development-delivery"
       ],
       "levels": [
-        "all-levels"
+        "beginner",
+        "intermediate"
       ],
       "roles": [
         "software-engineer",
         "engineering-manager"
       ],
       "audiences": [
-        "全レベル / 開発効率化・品質向上"
+        "プログラミング初心者で、バージョン管理の必要性とGit／GitHubの基本を学びたい方",
+        "チーム開発のスキルを身につけたい学生・研究者",
+        "GitHubによる文書管理・プロジェクト管理を学びたい非エンジニア",
+        "チーム全体のGitHubスキル向上を検討する企業研修担当者"
       ],
       "summary": {
-        "ja": "",
-        "en": "Introduces GitHub basics for repositories, branching, pull requests, and team collaboration."
+        "ja": "GitとGitHubを初めて学ぶ読者が、リポジトリ、コミット、ブランチ、Pull Requestの基本から、チーム開発、Actions、セキュリティ、トラブル対応までを実習を通して体系的に習得するための入門書です。",
+        "en": "A hands-on introduction for readers new to Git and GitHub, covering repositories, commits, branches, pull requests, team collaboration, Actions, security, and troubleshooting."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "github-workflow-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 226,
       "ux": {
         "profile": "A",
         "modules": {
@@ -2086,23 +2092,28 @@
           "readingGuide": true,
           "checklistPack": false,
           "troubleshootingFlow": false,
-          "conceptMap": true,
+          "conceptMap": false,
           "figureIndex": false,
-          "legalNotice": false,
-          "glossary": true
+          "legalNotice": true,
+          "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#226とsource修正itdojp/github-guide-for-beginners-book#226 / PR #227で、source main 052ddbe2e279cf1e87f2e2c18351814233b93ffcのREADME、book-config、公開トップ、導入、学習リソース、公開Pagesを照合し、対象読者、初級〜中級、Profile A、modulesを確定。公開トップの通読6〜12時間・演習込み12〜24時間と、導入の基本操作約1週間・チーム開発追加1週間・高度な活用は必要に応じてという複数目安は、書籍全体を閉じた単一の標準週数ではないためestimatedWeeksはnullとした。学習ロードマップ図は章内図版で独立したconcept map moduleではなく、専用用語集も未実装のためfalse。Profile A必須の用語導線はitdojp/it-engineer-knowledge-architecture#227で追跡する。Ruby 3.4・Sass/minima warningはitdojp/github-guide-for-beginners-book#225へ分離した。付録の明示導線に基づきgithub-workflow-bookを次読とした。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/github-guide-for-beginners-book/blob/052ddbe2e279cf1e87f2e2c18351814233b93ffc/README.md",
+        "https://github.com/itdojp/github-guide-for-beginners-book/blob/052ddbe2e279cf1e87f2e2c18351814233b93ffc/book-config.json",
+        "https://github.com/itdojp/github-guide-for-beginners-book/blob/052ddbe2e279cf1e87f2e2c18351814233b93ffc/docs/index.md",
+        "https://github.com/itdojp/github-guide-for-beginners-book/blob/052ddbe2e279cf1e87f2e2c18351814233b93ffc/docs/chapters/chapter-introduction/index.md",
+        "https://github.com/itdojp/github-guide-for-beginners-book/blob/052ddbe2e279cf1e87f2e2c18351814233b93ffc/docs/appendices/appendix-resources/index.md",
+        "https://itdojp.github.io/github-guide-for-beginners-book/",
+        "https://github.com/itdojp/github-guide-for-beginners-book/issues/225",
+        "https://github.com/itdojp/github-guide-for-beginners-book/issues/226",
+        "https://github.com/itdojp/github-guide-for-beginners-book/pull/227",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/226"
       ]
     },
     {
@@ -2127,53 +2138,70 @@
         "development-delivery"
       ],
       "levels": [
-        "all-levels"
+        "intermediate",
+        "advanced"
       ],
       "roles": [
         "software-engineer",
-        "engineering-manager"
+        "architect",
+        "engineering-manager",
+        "security-engineer"
       ],
       "audiences": [
-        "全レベル / 開発効率化・品質向上"
+        "GitHubを中心にチーム開発を行い、AI支援開発を含む運用を整理したいエンジニア",
+        "PR運用、CI/CD、セキュリティを含む開発標準を整備するテックリード／アーキテクト",
+        "権限設計やレビュー体制をガバナンス／コンプライアンス観点で見直す担当者"
       ],
       "summary": {
-        "ja": "",
-        "en": "Shows how to use GitHub workflows, automation, and AI-assisted review in modern software delivery."
+        "ja": "GitHubを使う開発チームや標準化担当者が、AI支援開発を前提としたIssue・PR・レビュー、Actions、CI/CD、権限、セキュリティ、ガバナンスの設計と改善を体系的に学ぶ実践書です。",
+        "en": "A practical guide for engineering teams and standards owners designing AI-assisted GitHub delivery, from issues, pull requests, reviews, and Actions to CI/CD, permissions, security, and governance."
       },
-      "prerequisites": [],
+      "prerequisites": [
+        "github-guide-for-beginners-book"
+      ],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "GitHub-AgentOps-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 226,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
-          "checklistPack": true,
+          "readingGuide": true,
+          "checklistPack": false,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
-          "legalNotice": false,
-          "glossary": false
+          "figureIndex": false,
+          "legalNotice": true,
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#226とsource修正itdojp/github-workflow-book#236 / #238、PR #237 / #239で、source main 2996cdac4eca5a8d611f71818741de4cdfd10511のREADME、book-config、公開トップ、第6章、用語集、トラブルシューティング、公開Pagesを照合し、対象読者、中級〜上級、Profile B、modulesを確定。公開トップがGitHub初心者ガイドを前提と明記するためprerequisitesへ設定し、第6章が運用設計の詳細を公開済みAgentOps本へ委譲するためrecommendedAfterへ設定した。通読2〜2.5時間は週単位の標準計画ではないためestimatedWeeksはnull。専用チェックリスト集と図表索引は未実装のためitdojp/it-engineer-knowledge-architecture#227で追跡する。npm allowScriptsとFaraday warningはitdojp/github-workflow-book#235へ分離した。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/github-workflow-book/blob/2996cdac4eca5a8d611f71818741de4cdfd10511/README.md",
+        "https://github.com/itdojp/github-workflow-book/blob/2996cdac4eca5a8d611f71818741de4cdfd10511/book-config.json",
+        "https://github.com/itdojp/github-workflow-book/blob/2996cdac4eca5a8d611f71818741de4cdfd10511/docs/index.md",
+        "https://github.com/itdojp/github-workflow-book/blob/2996cdac4eca5a8d611f71818741de4cdfd10511/docs/chapters/chapter06/index.md",
+        "https://github.com/itdojp/github-workflow-book/blob/2996cdac4eca5a8d611f71818741de4cdfd10511/docs/appendices/appendix-a/index.md",
+        "https://github.com/itdojp/github-workflow-book/blob/2996cdac4eca5a8d611f71818741de4cdfd10511/docs/appendices/appendix-b/index.md",
+        "https://itdojp.github.io/github-workflow-book/",
+        "https://github.com/itdojp/github-workflow-book/issues/235",
+        "https://github.com/itdojp/github-workflow-book/issues/236",
+        "https://github.com/itdojp/github-workflow-book/issues/238",
+        "https://github.com/itdojp/github-workflow-book/pull/237",
+        "https://github.com/itdojp/github-workflow-book/pull/239",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/226"
       ]
     },
     {
@@ -2183,7 +2211,7 @@
         "ja": "GitHub AgentOps 実践ガイド",
         "en": "GitHub AgentOps 実践ガイド"
       },
-      "officialEnglishTitle": null,
+      "officialEnglishTitle": "GitHub AgentOps Practical Guide",
       "status": "published",
       "repo": "itdojp/GitHub-AgentOps-book",
       "repoVisibility": "public",
@@ -2198,18 +2226,24 @@
         "development-delivery"
       ],
       "levels": [
-        "all-levels"
+        "intermediate",
+        "advanced"
       ],
       "roles": [
         "software-engineer",
-        "engineering-manager"
+        "architect",
+        "engineering-manager",
+        "security-engineer",
+        "sre"
       ],
       "audiences": [
-        "全レベル / 開発効率化・品質向上"
+        "AIエージェント開発の標準化、統制、レビュー設計を担う開発リーダー／テックリード",
+        "CI、権限、品質ゲートを運用する中〜大規模開発のメンテナー",
+        "運用設計と自動化を担うSRE／DevEx／Platform Engineering担当者"
       ],
       "summary": {
-        "ja": "",
-        "en": "Organizes GitHub-centered AgentOps practices for prompts, reviews, governance, and operational control of AI agents."
+        "ja": "テックリード、メンテナー、SRE／Platform Engineering担当者が、AIエージェントをGitHub上で安全かつ監査可能に運用するための責任分界、指示設計、CI、権限、供給網、コスト、運用評価を実装可能な形で学ぶ実践書です。",
+        "en": "A practical guide for leads, maintainers, SRE, and platform teams operating AI agents on GitHub with auditable responsibility boundaries, instructions, CI, permissions, supply-chain controls, cost governance, and operational review."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -2219,32 +2253,41 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 226,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
-          "legalNotice": false,
+          "figureIndex": false,
+          "legalNotice": true,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#226、dependency修正itdojp/GitHub-AgentOps-book#54 / PR #56、UX修正itdojp/GitHub-AgentOps-book#57 / PR #58で、source main e55a4620dadf014a051c9e591f552e5f92a2153bのREADME、book-config、公開トップ、セキュリティ章、テンプレート、プレイブック、トラブルシューティング、公開Pagesを照合し、正式英語書名、対象読者、中級〜上級、Profile B、modulesを確定。通読2〜3時間・導入半日〜1日は週単位の標準計画ではないためestimatedWeeksはnull。GitHub基礎とCIは知識要件であり特定書籍の修了を必須としないためprerequisitesは空。関連書籍のworkflow本は補完資料であり循環的な次読にしない。専用図表索引は未実装のためitdojp/it-engineer-knowledge-architecture#227で追跡する。npm audit 10件は0へ解消し、残るFaraday・whatwg-encoding warningはitdojp/GitHub-AgentOps-book#55へ分離した。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/e55a4620dadf014a051c9e591f552e5f92a2153b/README.md",
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/e55a4620dadf014a051c9e591f552e5f92a2153b/book-config.json",
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/e55a4620dadf014a051c9e591f552e5f92a2153b/docs/index.md",
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/e55a4620dadf014a051c9e591f552e5f92a2153b/docs/chapters/chapter10/index.md",
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/e55a4620dadf014a051c9e591f552e5f92a2153b/docs/appendices/appendix-a/index.md",
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/e55a4620dadf014a051c9e591f552e5f92a2153b/docs/appendices/appendix-b/index.md",
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/e55a4620dadf014a051c9e591f552e5f92a2153b/docs/appendices/appendix-c/index.md",
+        "https://itdojp.github.io/GitHub-AgentOps-book/",
+        "https://github.com/itdojp/GitHub-AgentOps-book/issues/54",
+        "https://github.com/itdojp/GitHub-AgentOps-book/issues/55",
+        "https://github.com/itdojp/GitHub-AgentOps-book/issues/57",
+        "https://github.com/itdojp/GitHub-AgentOps-book/pull/56",
+        "https://github.com/itdojp/GitHub-AgentOps-book/pull/58",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/226"
       ]
     },
     {
