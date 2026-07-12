@@ -166,18 +166,18 @@
     "cs-visionaries-book": {
       "repo": "itdojp/cs-visionaries-book",
       "pages": "https://itdojp.github.io/cs-visionaries-book/",
-      "profile": "A",
+      "profile": "C",
       "modules": {
         "quickStart": true,
         "readingGuide": true,
         "checklistPack": false,
         "troubleshootingFlow": false,
-        "conceptMap": false,
+        "conceptMap": true,
         "figureIndex": false,
-        "legalNotice": true,
+        "legalNotice": false,
         "glossary": true
       },
-      "notes": "人物史中心の導入書として暫定 Profile A。reader-facing な正本はトップページの目次を基準とし、付録C/付録Dは補助資料として扱う。AI 関連の主導入は第10章で、技術史の深掘りは付録Cと関連人物章を併用する。"
+      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#238で、source main 3a98fc337a0de3c6f073b836ea4a44178d8249c6のREADME、book-config、canonical templates/index、序章、12章、付録A〜D、QAと公開Pagesを照合し、現行書名、全レベル、対象読者、Profile Cを確定した。特別な前提知識は不要で、通読5.5〜8.5時間は週単位の標準計画ではないため学習関係は空、estimatedWeeksはnullとした。 / Quick Start、読み方、付録DのAI時代形成統合ビュー、付録Bの専用用語解説を公開実体として確認した。source #169 / PR #171で未使用optional dependencyとaudit 9件を除去し、#172 / PR #173でUX flagsを整合、#170 / PR #174でsrc/templatesからdocsを決定的に再生成する契約、canonical Edit link、faviconとrequired asset QAを修復した。固定SHAで3回build hash一致、audit 0、18 routeとPagesを確認し、依存warningはsource #175へ分離した。"
     },
     "engineering-documentation-book": {
       "repo": "itdojp/engineering-documentation-book",
@@ -344,16 +344,16 @@
       "pages": "https://itdojp.github.io/IT-engineer-communication-book/",
       "profile": "B",
       "modules": {
-        "quickStart": false,
-        "readingGuide": false,
+        "quickStart": true,
+        "readingGuide": true,
         "checklistPack": true,
-        "troubleshootingFlow": true,
+        "troubleshootingFlow": false,
         "conceptMap": false,
-        "figureIndex": true,
+        "figureIndex": false,
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#238で、source main f3b07c4eba988a627f834744e4c8e2a96bf879a1のREADME、root / 公開book-config、トップ、Quick Start、10章、チェックリスト集、テンプレート集、QAと公開Pagesを照合し、全レベル、対象読者、Profile Bを確定した。共同作業・日本語業務コミュニケーションの経験は特定書籍の前提ではなく、通読8〜12時間は週単位の標準計画ではないためprerequisitesは空、estimatedWeeksはnullとした。 / 公開トップの「シリーズとの接続」と各章の「次の一手」が、利害調整時はnegotiation-for-engineers-book、AI支援導入時はai-communication-bookへ進む導線を明示するためrecommendedAfterへ記録した。source #136 / PR #139でnpm audit 16件を0へ解消してroot QAをCI化し、#138 / PR #140でrootと公開UX metadataを同期した。専用troubleshooting flow / figure indexはなくProfile B必須module 2件をportal #239で追跡する。source残件は#137、#141〜#143。"
     },
     "IT-infra-book": {
       "repo": "itdojp/IT-infra-book",
@@ -505,15 +505,15 @@
       "profile": "B",
       "modules": {
         "quickStart": false,
-        "readingGuide": false,
+        "readingGuide": true,
         "checklistPack": true,
-        "troubleshootingFlow": true,
+        "troubleshootingFlow": false,
         "conceptMap": false,
-        "figureIndex": true,
+        "figureIndex": false,
         "legalNotice": false,
-        "glossary": false
+        "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#238で、source main be764e7d5a2911df7fb1cc84643baf1344f9363cのREADME、book-config、公開トップ、読み方ガイド、基礎語彙、6章、実践ツールキット、ケース集、用語集、QAと公開Pagesを照合し、全レベル、対象読者、Profile Bを確定した。特定書籍を必須前提とする記述はなく、通読1〜1.5時間は週単位の標準計画ではないため学習関係は空、estimatedWeeksはnullとした。 / itdojp/negotiation-for-engineers-book#111 / PR #112でUX flags、旧repository slug、latent HTML typoを修正した。専用troubleshooting flowと図表索引は公開実体がないためfalseとし、Profile B必須module 2件はportal #239で追跡する。固定SHAでnpm test、Jekyll build、full audit 0、Pages top / glossaryを確認し、whatwg-encoding deprecationはsource #113へ分離した。"
     },
     "pentest-learning-book": {
       "repo": "itdojp/pentest-learning-book",

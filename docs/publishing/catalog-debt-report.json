@@ -10,13 +10,10 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 5,
+      "count": 2,
       "bookIds": [
-        "IT-engineer-communication-book",
         "computational-physicalism-book",
-        "cs-visionaries-book",
-        "ethereum-learning-bootcamp",
-        "negotiation-for-engineers-book"
+        "ethereum-learning-bootcamp"
       ]
     },
     "emptySummaryEn": {
@@ -76,52 +73,38 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 14,
+      "count": 11,
       "bookIds": [
-        "IT-engineer-communication-book",
         "compliance-infrastructure-guide",
         "composable-software-design-book",
         "computational-physicalism-book",
-        "cs-visionaries-book",
         "disaster-recovery-bcp-guide",
         "enterprise-cloud-architecture-guide",
         "ethereum-learning-bootcamp",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
-        "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
         "practical-security-infrastructure-guide",
         "theoretical-computer-science-textbook"
       ]
     },
     "missingReviewIssue": {
-      "count": 12,
+      "count": 9,
       "bookIds": [
-        "IT-engineer-communication-book",
         "compliance-infrastructure-guide",
         "computational-physicalism-book",
-        "cs-visionaries-book",
         "disaster-recovery-bcp-guide",
         "enterprise-cloud-architecture-guide",
         "ethereum-learning-bootcamp",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
-        "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
         "practical-security-infrastructure-guide"
       ]
     },
     "provisionalNotes": {
-      "count": 5,
+      "count": 2,
       "books": [
-        {
-          "id": "IT-engineer-communication-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
         {
           "id": "computational-physicalism-book",
           "notes": [
@@ -131,22 +114,7 @@
           ]
         },
         {
-          "id": "cs-visionaries-book",
-          "notes": [
-            "人物史中心の導入書として暫定 Profile A。reader-facing な正本はトップページの目次を基準とし、付録C/付録Dは補助資料として扱う。AI 関連の主導入は第10章で、技術史の深掘りは付録Cと関連人物章を併用する。",
-            "日本語個別概要はREADME公開カタログ上で未記載。"
-          ]
-        },
-        {
           "id": "ethereum-learning-bootcamp",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "negotiation-for-engineers-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -207,19 +175,16 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 6,
+      "count": 3,
       "bookIds": [
-        "IT-engineer-communication-book",
         "composable-software-design-book",
         "computational-physicalism-book",
-        "cs-visionaries-book",
-        "ethereum-learning-bootcamp",
-        "negotiation-for-engineers-book"
+        "ethereum-learning-bootcamp"
       ]
     },
     "missingRequiredUxModules": {
-      "count": 37,
-      "bookCount": 27,
+      "count": 41,
+      "bookCount": 29,
       "books": [
         {
           "id": "BioinformaticsGuide-book",
@@ -248,6 +213,24 @@
               "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。章内図表を索引として扱わず、根拠のないtrueへの変更は行わない。",
               "evidenceIssue": 226,
               "trackingIssue": 227
+            }
+          ]
+        },
+        {
+          "id": "IT-engineer-communication-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "公開Pagesに専用図表索引とreader-facing navigationがない。トップの図から読む案内や章内図版を独立した図表索引として代用せずfalseを維持する。",
+              "evidenceIssue": 238,
+              "trackingIssue": 239
+            },
+            {
+              "module": "troubleshootingFlow",
+              "reason": "公開Pagesに専用トラブルシューティングフローとreader-facing navigationがない。章内の失敗例、デバッグ手順、ストレス対処を専用moduleとして代用せずfalseを維持する。",
+              "evidenceIssue": 238,
+              "trackingIssue": 239
             }
           ]
         },
@@ -516,6 +499,24 @@
           ]
         },
         {
+          "id": "negotiation-for-engineers-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "公開Pagesに専用図表索引とreader-facing navigationがない。個別図版、目次、テンプレート一覧を図表索引として代用せずfalseを維持する。",
+              "evidenceIssue": 238,
+              "trackingIssue": 239
+            },
+            {
+              "module": "troubleshootingFlow",
+              "reason": "公開Pagesに専用トラブルシューティングフローとreader-facing navigationがない。章内のケース、感情デバッグ、失敗時の立て直し説明を専用moduleとして代用せずfalseを維持する。",
+              "evidenceIssue": 238,
+              "trackingIssue": 239
+            }
+          ]
+        },
+        {
           "id": "pentest-learning-book",
           "profile": "B",
           "missingModules": [
@@ -614,8 +615,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 37,
-      "currentCount": 37,
+      "baselineCount": 41,
+      "currentCount": 41,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,

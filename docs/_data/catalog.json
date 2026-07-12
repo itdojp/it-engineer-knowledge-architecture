@@ -3077,11 +3077,13 @@
         "engineering-manager"
       ],
       "audiences": [
-        "全レベル / キャリア発展・コミュニケーション"
+        "技術提案、見積、優先順位、障害対応などで、立場の異なる関係者との合意形成を担うエンジニア",
+        "技術的根拠を経営層・PM・非技術職の判断軸へ翻訳するテックリード・アーキテクト",
+        "交渉の準備、実行、記録、振り返りを再現可能なチーム運用にしたいエンジニアリングマネージャー"
       ],
       "summary": {
-        "ja": "",
-        "en": "Treats negotiation as an engineering skill built from structure, trade-offs, and shared understanding."
+        "ja": "技術提案や懸念を、利害・制約・権限境界を整理した反復的な合意形成へ変換する実践書です。エンジニア向けのテンプレート、ケース、ログを使い、準備・実行・振り返りを業務へ適用できます。",
+        "en": "A practical guide for engineers to turn technical proposals and concerns into iterative, accountable agreements by structuring interests, constraints, and authority boundaries with reusable templates, cases, and logs."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -3091,32 +3093,40 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 238,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
-          "troubleshootingFlow": true,
+          "troubleshootingFlow": false,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
-          "glossary": false
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#238で、source main be764e7d5a2911df7fb1cc84643baf1344f9363cのREADME、book-config、公開トップ、読み方ガイド、基礎語彙、6章、実践ツールキット、ケース集、用語集、QAと公開Pagesを照合し、全レベル、対象読者、Profile Bを確定した。特定書籍を必須前提とする記述はなく、通読1〜1.5時間は週単位の標準計画ではないため学習関係は空、estimatedWeeksはnullとした。",
+        "itdojp/negotiation-for-engineers-book#111 / PR #112でUX flags、旧repository slug、latent HTML typoを修正した。専用troubleshooting flowと図表索引は公開実体がないためfalseとし、Profile B必須module 2件はportal #239で追跡する。固定SHAでnpm test、Jekyll build、full audit 0、Pages top / glossaryを確認し、whatwg-encoding deprecationはsource #113へ分離した。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/negotiation-for-engineers-book/blob/be764e7d5a2911df7fb1cc84643baf1344f9363c/README.md",
+        "https://github.com/itdojp/negotiation-for-engineers-book/blob/be764e7d5a2911df7fb1cc84643baf1344f9363c/book-config.json",
+        "https://github.com/itdojp/negotiation-for-engineers-book/blob/be764e7d5a2911df7fb1cc84643baf1344f9363c/docs/index.md",
+        "https://github.com/itdojp/negotiation-for-engineers-book/blob/be764e7d5a2911df7fb1cc84643baf1344f9363c/docs/glossary/index.md",
+        "https://github.com/itdojp/negotiation-for-engineers-book/blob/be764e7d5a2911df7fb1cc84643baf1344f9363c/docs/appendices/toolkit/index.md",
+        "https://itdojp.github.io/negotiation-for-engineers-book/",
+        "https://itdojp.github.io/negotiation-for-engineers-book/glossary/",
+        "https://itdojp.github.io/negotiation-for-engineers-book/appendices/toolkit/",
+        "https://github.com/itdojp/negotiation-for-engineers-book/issues/111",
+        "https://github.com/itdojp/negotiation-for-engineers-book/pull/112",
+        "https://github.com/itdojp/negotiation-for-engineers-book/issues/113",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/238"
       ]
     },
     {
@@ -3148,54 +3158,70 @@
         "engineering-manager"
       ],
       "audiences": [
-        "全レベル / キャリア発展・コミュニケーション"
+        "技術の背景や判断を、対面・チャット・文書・会議で誤解なく説明したいエンジニア",
+        "依頼、レビュー、合意形成、ストレス対処を再現可能な手順とテンプレートで改善したい実務者",
+        "技術リーダーシップ、チーム協働、キャリア形成の対人基盤を整備するリーダー・マネージャー"
       ],
       "summary": {
-        "ja": "",
-        "en": "Designs practical communication for engineers across teams, stakeholders, and delivery work."
+        "ja": "説明・依頼・会議・レビューを再現可能なコミュニケーション契約として設計する実践書です。チェックリストとテンプレートを使い、ストレス管理、技術リーダーシップ、交渉・AI支援への接続まで扱います。",
+        "en": "A practical guide to designing explanations, requests, meetings, and reviews as repeatable communication contracts, with checklists and templates spanning stress management, technical leadership, negotiation, and AI-assisted work."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "negotiation-for-engineers-book",
+        "ai-communication-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 238,
       "ux": {
         "profile": "B",
         "modules": {
-          "quickStart": false,
-          "readingGuide": false,
+          "quickStart": true,
+          "readingGuide": true,
           "checklistPack": true,
-          "troubleshootingFlow": true,
+          "troubleshootingFlow": false,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#238で、source main f3b07c4eba988a627f834744e4c8e2a96bf879a1のREADME、root / 公開book-config、トップ、Quick Start、10章、チェックリスト集、テンプレート集、QAと公開Pagesを照合し、全レベル、対象読者、Profile Bを確定した。共同作業・日本語業務コミュニケーションの経験は特定書籍の前提ではなく、通読8〜12時間は週単位の標準計画ではないためprerequisitesは空、estimatedWeeksはnullとした。",
+        "公開トップの「シリーズとの接続」と各章の「次の一手」が、利害調整時はnegotiation-for-engineers-book、AI支援導入時はai-communication-bookへ進む導線を明示するためrecommendedAfterへ記録した。source #136 / PR #139でnpm audit 16件を0へ解消してroot QAをCI化し、#138 / PR #140でrootと公開UX metadataを同期した。専用troubleshooting flow / figure indexはなくProfile B必須module 2件をportal #239で追跡する。source残件は#137、#141〜#143。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/IT-engineer-communication-book/blob/f3b07c4eba988a627f834744e4c8e2a96bf879a1/README.md",
+        "https://github.com/itdojp/IT-engineer-communication-book/blob/f3b07c4eba988a627f834744e4c8e2a96bf879a1/book-config.json",
+        "https://github.com/itdojp/IT-engineer-communication-book/blob/f3b07c4eba988a627f834744e4c8e2a96bf879a1/docs/book-config.json",
+        "https://github.com/itdojp/IT-engineer-communication-book/blob/f3b07c4eba988a627f834744e4c8e2a96bf879a1/docs/index.md",
+        "https://github.com/itdojp/IT-engineer-communication-book/blob/f3b07c4eba988a627f834744e4c8e2a96bf879a1/docs/chapter-quickstart/index.md",
+        "https://github.com/itdojp/IT-engineer-communication-book/blob/f3b07c4eba988a627f834744e4c8e2a96bf879a1/docs/appendix-01-checklists/index.md",
+        "https://itdojp.github.io/IT-engineer-communication-book/",
+        "https://itdojp.github.io/IT-engineer-communication-book/book-config.json",
+        "https://itdojp.github.io/IT-engineer-communication-book/chapter-quickstart/",
+        "https://itdojp.github.io/IT-engineer-communication-book/appendix-01-checklists/",
+        "https://github.com/itdojp/IT-engineer-communication-book/issues/136",
+        "https://github.com/itdojp/IT-engineer-communication-book/pull/139",
+        "https://github.com/itdojp/IT-engineer-communication-book/issues/138",
+        "https://github.com/itdojp/IT-engineer-communication-book/pull/140",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/238"
       ]
     },
     {
       "id": "cs-visionaries-book",
       "displayOrder": 39,
       "title": {
-        "ja": "デジタル革命の先駆者たち",
-        "en": "デジタル革命の先駆者たち"
+        "ja": "デジタル革命の舞台裏",
+        "en": "デジタル革命の舞台裏"
       },
       "officialEnglishTitle": null,
       "status": "published",
@@ -3215,14 +3241,18 @@
         "all-levels"
       ],
       "roles": [
-        "all-engineers"
+        "all-engineers",
+        "engineering-manager"
       ],
       "audiences": [
-        "全レベル / 技術的教養・視野拡大"
+        "コンピュータサイエンスとデジタル社会の技術史を、人物の挑戦と意思決定から学びたい一般読者・技術者",
+        "Web、検索、クラウド、AI、量子など現代技術の背景と相互関係を俯瞰したいエンジニア",
+        "技術革新の成功・失敗から、ビジネス、組織、戦略への示唆を得たいリーダー・マネージャー",
+        "年表、用語解説、参考文献、AI統合ビューを使って読書会・研修を行うチーム"
       ],
       "summary": {
-        "ja": "",
-        "en": "Introduces key people and ideas that shaped the digital revolution and modern computing culture."
+        "ja": "計算理論からWeb、クラウド、現代AI、量子まで、デジタル社会を形作った人物と技術潮流をたどる技術史ガイドです。発明と意思決定の背景から、技術・ビジネス・組織への示唆を学べます。",
+        "en": "A history of the people and technology currents behind the digital world, from computation theory through the Web, cloud, modern AI, and quantum computing, connecting invention and decision-making to lessons for technology, business, and organizations."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -3232,31 +3262,45 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 238,
       "ux": {
-        "profile": "A",
+        "profile": "C",
         "modules": {
           "quickStart": true,
           "readingGuide": true,
           "checklistPack": false,
           "troubleshootingFlow": false,
-          "conceptMap": false,
+          "conceptMap": true,
           "figureIndex": false,
-          "legalNotice": true,
+          "legalNotice": false,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "人物史中心の導入書として暫定 Profile A。reader-facing な正本はトップページの目次を基準とし、付録C/付録Dは補助資料として扱う。AI 関連の主導入は第10章で、技術史の深掘りは付録Cと関連人物章を併用する。",
-        "日本語個別概要はREADME公開カタログ上で未記載。"
+        "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#238で、source main 3a98fc337a0de3c6f073b836ea4a44178d8249c6のREADME、book-config、canonical templates/index、序章、12章、付録A〜D、QAと公開Pagesを照合し、現行書名、全レベル、対象読者、Profile Cを確定した。特別な前提知識は不要で、通読5.5〜8.5時間は週単位の標準計画ではないため学習関係は空、estimatedWeeksはnullとした。",
+        "Quick Start、読み方、付録DのAI時代形成統合ビュー、付録Bの専用用語解説を公開実体として確認した。source #169 / PR #171で未使用optional dependencyとaudit 9件を除去し、#172 / PR #173でUX flagsを整合、#170 / PR #174でsrc/templatesからdocsを決定的に再生成する契約、canonical Edit link、faviconとrequired asset QAを修復した。固定SHAで3回build hash一致、audit 0、18 routeとPagesを確認し、依存warningはsource #175へ分離した。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/cs-visionaries-book/blob/3a98fc337a0de3c6f073b836ea4a44178d8249c6/README.md",
+        "https://github.com/itdojp/cs-visionaries-book/blob/3a98fc337a0de3c6f073b836ea4a44178d8249c6/book-config.json",
+        "https://github.com/itdojp/cs-visionaries-book/blob/3a98fc337a0de3c6f073b836ea4a44178d8249c6/templates/index.md",
+        "https://github.com/itdojp/cs-visionaries-book/blob/3a98fc337a0de3c6f073b836ea4a44178d8249c6/src/chapters/chapter10.md",
+        "https://github.com/itdojp/cs-visionaries-book/blob/3a98fc337a0de3c6f073b836ea4a44178d8249c6/src/appendices/appendix-b.md",
+        "https://github.com/itdojp/cs-visionaries-book/blob/3a98fc337a0de3c6f073b836ea4a44178d8249c6/src/appendices/appendix-d.md",
+        "https://itdojp.github.io/cs-visionaries-book/",
+        "https://itdojp.github.io/cs-visionaries-book/chapters/chapter10/",
+        "https://itdojp.github.io/cs-visionaries-book/appendices/appendix-b/",
+        "https://itdojp.github.io/cs-visionaries-book/appendices/appendix-d/",
+        "https://github.com/itdojp/cs-visionaries-book/issues/169",
+        "https://github.com/itdojp/cs-visionaries-book/pull/171",
+        "https://github.com/itdojp/cs-visionaries-book/issues/172",
+        "https://github.com/itdojp/cs-visionaries-book/pull/173",
+        "https://github.com/itdojp/cs-visionaries-book/issues/170",
+        "https://github.com/itdojp/cs-visionaries-book/pull/174",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/238"
       ]
     },
     {
