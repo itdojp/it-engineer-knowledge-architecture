@@ -10,7 +10,7 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 21,
+      "count": 18,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -28,10 +28,7 @@
         "github-guide-for-beginners-book",
         "github-workflow-book",
         "negotiation-for-engineers-book",
-        "podman-book",
-        "practical-auth-book",
         "small-webapp-software-design-book",
-        "supabase-architecture-patterns-book",
         "theoretical-computer-science-textbook"
       ]
     },
@@ -94,7 +91,7 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 31,
+      "count": 28,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -120,17 +117,14 @@
         "infrastructure-performance-capacity-planning",
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
-        "podman-book",
-        "practical-auth-book",
         "practical-security-infrastructure-guide",
         "small-webapp-software-design-book",
-        "supabase-architecture-patterns-book",
         "theoretical-computer-science-prerequisites-book",
         "theoretical-computer-science-textbook"
       ]
     },
     "missingReviewIssue": {
-      "count": 30,
+      "count": 27,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -155,17 +149,14 @@
         "infrastructure-performance-capacity-planning",
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
-        "podman-book",
-        "practical-auth-book",
         "practical-security-infrastructure-guide",
         "small-webapp-software-design-book",
-        "supabase-architecture-patterns-book",
         "theoretical-computer-science-prerequisites-book",
         "theoretical-computer-science-textbook"
       ]
     },
     "provisionalNotes": {
-      "count": 21,
+      "count": 18,
       "books": [
         {
           "id": "BioinformaticsGuide-book",
@@ -295,31 +286,7 @@
           ]
         },
         {
-          "id": "podman-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "practical-auth-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
           "id": "small-webapp-software-design-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "supabase-architecture-patterns-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -389,7 +356,7 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 22,
+      "count": 19,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -408,16 +375,13 @@
         "github-guide-for-beginners-book",
         "github-workflow-book",
         "negotiation-for-engineers-book",
-        "podman-book",
-        "practical-auth-book",
         "small-webapp-software-design-book",
-        "supabase-architecture-patterns-book",
         "theoretical-computer-science-textbook"
       ]
     },
     "missingRequiredUxModules": {
-      "count": 16,
-      "bookCount": 13,
+      "count": 19,
+      "bookCount": 16,
       "books": [
         {
           "id": "IT-infra-book",
@@ -582,6 +546,30 @@
           ]
         },
         {
+          "id": "podman-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。個別の図版やトラブルシューティング図を代用せず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 219,
+              "trackingIssue": 220
+            }
+          ]
+        },
+        {
+          "id": "practical-auth-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。章内図版を索引として扱わず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 219,
+              "trackingIssue": 220
+            }
+          ]
+        },
+        {
           "id": "security-privacy-literacy-book",
           "profile": "B",
           "missingModules": [
@@ -590,6 +578,18 @@
               "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
               "evidenceIssue": 205,
               "trackingIssue": 197
+            }
+          ]
+        },
+        {
+          "id": "supabase-architecture-patterns-book",
+          "profile": "C",
+          "missingModules": [
+            {
+              "module": "conceptMap",
+              "reason": "実ファイルと公開Pages監査で専用の概念マップが未実装であることを確認済み。パターン選定ガイドや個別図版を概念マップとして代用せず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 219,
+              "trackingIssue": 220
             }
           ]
         }
@@ -602,8 +602,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 16,
-      "currentCount": 16,
+      "baselineCount": 19,
+      "currentCount": 19,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
