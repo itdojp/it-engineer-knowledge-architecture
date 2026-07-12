@@ -163,7 +163,9 @@ test.describe('English canonical catalog', () => {
     await expect(privateBook.getByRole('link', { name: 'Repository', exact: true })).toHaveCount(0);
     await expect(page.locator('[data-catalog-id="categorical-software-design-book"]')).toContainText('Related: Compositional Software Design for Agentic Systems');
     const plannedBook = page.locator('[data-catalog-id="infrastructure-monitoring-automation-guide"]');
-    await expect(plannedBook).toContainText('Planned book; details will be added when the scope is finalized.');
+    const plannedBookMetadata = expectedBooks.find((book) => book.id === 'infrastructure-monitoring-automation-guide');
+    const plannedSummary = plannedBookMetadata.summary.en || 'Planned book; details will be added when the scope is finalized.';
+    await expect(plannedBook).toContainText(plannedSummary);
     await expect(plannedBook).toContainText('Not yet available');
 
     const bilingualBook = page.locator('[data-catalog-id="ai-agent-engineering-book"]');
