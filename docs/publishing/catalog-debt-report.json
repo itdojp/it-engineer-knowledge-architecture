@@ -10,12 +10,9 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 8,
+      "count": 5,
       "bookIds": [
         "IT-engineer-communication-book",
-        "LogicalThinking-AI-Era-Guide",
-        "ai-communication-book",
-        "ai-era-engineers-mind-book",
         "computational-physicalism-book",
         "cs-visionaries-book",
         "ethereum-learning-bootcamp",
@@ -79,12 +76,9 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 17,
+      "count": 14,
       "bookIds": [
         "IT-engineer-communication-book",
-        "LogicalThinking-AI-Era-Guide",
-        "ai-communication-book",
-        "ai-era-engineers-mind-book",
         "compliance-infrastructure-guide",
         "composable-software-design-book",
         "computational-physicalism-book",
@@ -101,12 +95,9 @@
       ]
     },
     "missingReviewIssue": {
-      "count": 15,
+      "count": 12,
       "bookIds": [
         "IT-engineer-communication-book",
-        "LogicalThinking-AI-Era-Guide",
-        "ai-communication-book",
-        "ai-era-engineers-mind-book",
         "compliance-infrastructure-guide",
         "computational-physicalism-book",
         "cs-visionaries-book",
@@ -121,34 +112,10 @@
       ]
     },
     "provisionalNotes": {
-      "count": 8,
+      "count": 5,
       "books": [
         {
           "id": "IT-engineer-communication-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "LogicalThinking-AI-Era-Guide",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "ai-communication-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "ai-era-engineers-mind-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -240,12 +207,9 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 9,
+      "count": 6,
       "bookIds": [
         "IT-engineer-communication-book",
-        "LogicalThinking-AI-Era-Guide",
-        "ai-communication-book",
-        "ai-era-engineers-mind-book",
         "composable-software-design-book",
         "computational-physicalism-book",
         "cs-visionaries-book",
@@ -254,8 +218,8 @@
       ]
     },
     "missingRequiredUxModules": {
-      "count": 33,
-      "bookCount": 25,
+      "count": 37,
+      "bookCount": 27,
       "books": [
         {
           "id": "BioinformaticsGuide-book",
@@ -300,6 +264,24 @@
           ]
         },
         {
+          "id": "LogicalThinking-AI-Era-Guide",
+          "profile": "C",
+          "missingModules": [
+            {
+              "module": "conceptMap",
+              "reason": "公開Pagesに概念・章間関係を俯瞰する専用concept mapとreader-facing導線がない。実務テンプレート集や章構成を代用せずfalseを維持する。",
+              "evidenceIssue": 235,
+              "trackingIssue": 236
+            },
+            {
+              "module": "glossary",
+              "reason": "公開Pagesに専用用語集とreader-facing導線がない。導入部の個別用語説明や実務テンプレート集を用語集として代用せずfalseを維持する。",
+              "evidenceIssue": 235,
+              "trackingIssue": 236
+            }
+          ]
+        },
+        {
           "id": "ai-agent-collaboration-book",
           "profile": "B",
           "missingModules": [
@@ -332,6 +314,24 @@
               "reason": "公開書籍に専用トラブルシューティングフローがないため、一般的な運用・検証説明を代用せずfalseを維持する。",
               "evidenceIssue": 229,
               "trackingIssue": 230
+            }
+          ]
+        },
+        {
+          "id": "ai-era-engineers-mind-book",
+          "profile": "C",
+          "missingModules": [
+            {
+              "module": "conceptMap",
+              "reason": "公開Pagesに専用concept mapとreader-facing導線がない。章構成表、ステークホルダーマップ、個別SVGを横断概念マップとして代用せずfalseを維持する。",
+              "evidenceIssue": 235,
+              "trackingIssue": 236
+            },
+            {
+              "module": "glossary",
+              "reason": "公開Pagesに専用用語集とreader-facing導線がない。本文内の用語統一方針を用語集の実体として代用せずfalseを維持する。",
+              "evidenceIssue": 235,
+              "trackingIssue": 236
             }
           ]
         },
@@ -614,8 +614,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 33,
-      "currentCount": 33,
+      "baselineCount": 37,
+      "currentCount": 37,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
