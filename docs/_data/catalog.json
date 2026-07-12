@@ -3860,11 +3860,12 @@
         "sre"
       ],
       "audiences": [
-        "パフォーマンスエンジニア、SRE、上級インフラエンジニア"
+        "負荷テスト、APM、ボトルネック分析を継続的な性能管理へ組み込みたいSRE・パフォーマンスエンジニア",
+        "統計・機械学習による需要予測とクラウド容量・コスト計画を接続したい上級インフラエンジニア"
       ],
       "summary": {
-        "ja": "計画書籍。詳細は books/planned-books.md を参照。",
-        "en": ""
+        "ja": "JMeter・Gatling・k6による負荷テスト、APMとデータベースのボトルネック分析、統計・機械学習による需要予測、オートスケーリングとコスト最適化を扱うSRE・性能担当者向け計画書籍。",
+        "en": "A planned guide for SREs and performance engineers covering load testing with JMeter, Gatling, and k6, APM and database bottleneck analysis, statistical and machine-learning forecasting, autoscaling, and cost-aware capacity planning."
       },
       "prerequisites": [],
       "estimatedWeeks": "6-7週間",
@@ -3875,19 +3876,21 @@
       "relatedEditions": [],
       "reviewStatus": "not-started",
       "lastReviewedAt": null,
-      "reviewIssue": null,
+      "reviewIssue": 245,
       "ux": {
         "profile": null,
         "modules": {}
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "移行元の前提知識表記: インフラ基礎、統計基礎"
+        "2026-07-13のplanned metadata監査#245で、固定portal SHA a5df96991f256e53d1074b2356d5162e739edcb0の履歴企画資料、現行catalogと公開表示を照合した。性能テスト、分析、予測、クラウド最適化の計画範囲、対象読者、level/roles、6-7週間の企画上の学習期間rangeを確認した。前提のインフラ・統計基礎は書籍外知識のためcatalog prerequisitesへ追加しない。",
+        "2026-07-13にgh CLIで想定repositoryを確認したが、存在を確認できずrepoVisibility=not-createdを維持した。書籍本文・公開Pages・reader-facing moduleは未成立のためreviewStatus=not-started、lastReviewedAt=null、UX profile/modules未割当を維持する。制作scheduleは履歴値であり現行予定として扱わない。"
       ],
       "sourceRefs": [
-        "books/planned-books.md",
-        "docs/en/index.md"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/blob/a5df96991f256e53d1074b2356d5162e739edcb0/books/planned-books.md",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/187",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/245"
       ]
     },
     {
@@ -3919,14 +3922,16 @@
       ],
       "roles": [
         "infrastructure-engineer",
-        "sre"
+        "security-engineer",
+        "engineering-manager"
       ],
       "audiences": [
-        "企業インフラ責任者、監査対応担当者、コンプライアンス担当"
+        "法規制・業界要件をインフラ設計、ログ、証跡保全へ落とし込む企業インフラ責任者・監査対応担当者",
+        "データガバナンス、PAM、職務分離、最小権限の統制を技術運用と監査へ接続するセキュリティ・コンプライアンス担当者"
       ],
       "summary": {
-        "ja": "計画書籍。詳細は books/planned-books.md を参照。",
-        "en": ""
+        "ja": "ISO 27001・SOX・GDPR等の要件、監査証跡、データ分類・ライフサイクル、PAM・職務分離・最小権限を、技術設計と監査対応へ接続するインフラ責任者向け計画書籍。",
+        "en": "A planned guide connecting regulatory and audit requirements such as ISO 27001, SOX, and GDPR to evidence retention, data governance, privileged access management, separation of duties, and infrastructure operations."
       },
       "prerequisites": [],
       "estimatedWeeks": "5-7週間",
@@ -3937,19 +3942,21 @@
       "relatedEditions": [],
       "reviewStatus": "not-started",
       "lastReviewedAt": null,
-      "reviewIssue": null,
+      "reviewIssue": 245,
       "ux": {
         "profile": null,
         "modules": {}
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "移行元の前提知識表記: セキュリティ基礎、法務基礎知識"
+        "2026-07-13のplanned metadata監査#245で、固定portal SHA a5df96991f256e53d1074b2356d5162e739edcb0の履歴企画資料、現行catalogと公開表示を照合した。法規制、監査証跡、データガバナンス、アクセス統制の計画範囲、対象読者、level/roles、5-7週間の企画上の学習期間rangeを確認した。前提のセキュリティ・法務基礎は書籍外知識のためcatalog prerequisitesへ追加しない。",
+        "2026-07-13にgh CLIで想定repositoryを確認したが、存在を確認できずrepoVisibility=not-createdを維持した。書籍本文・公開Pages・reader-facing moduleは未成立のためreviewStatus=not-started、lastReviewedAt=null、UX profile/modules未割当を維持する。制作scheduleは履歴値であり現行予定として扱わない。"
       ],
       "sourceRefs": [
-        "books/planned-books.md",
-        "docs/en/index.md"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/blob/a5df96991f256e53d1074b2356d5162e739edcb0/books/planned-books.md",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/187",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/245"
       ]
     },
     {
@@ -3980,15 +3987,17 @@
         "advanced"
       ],
       "roles": [
-        "infrastructure-engineer",
-        "sre"
+        "architect",
+        "engineering-manager",
+        "infrastructure-engineer"
       ],
       "audiences": [
-        "技術先端を追求するエンジニア、CTO、技術責任者"
+        "エッジ・IoT、AI/MLOps・LLMOps、サーバーレスを既存基盤へ安全に統合したいアーキテクト・インフラエンジニア",
+        "Green IT、量子耐性暗号、先端技術の運用可能性と投資判断を評価するCTO・技術責任者"
       ],
       "summary": {
-        "ja": "計画書籍。詳細は books/planned-books.md を参照。",
-        "en": ""
+        "ja": "エッジ・IoT、AI/MLOps・LLMOps、サーバーレス、Green IT、量子耐性暗号を、既存基盤への統合、運用、セキュリティ、技術投資判断まで扱うアーキテクト・技術責任者向け計画書籍。",
+        "en": "A planned forward-looking guide for architects and technology leaders covering edge and IoT, AI/MLOps and LLMOps, serverless operations, Green IT, and post-quantum readiness, with emphasis on integration, security, operations, and investment decisions."
       },
       "prerequisites": [],
       "estimatedWeeks": "8-10週間",
@@ -3999,19 +4008,22 @@
       "relatedEditions": [],
       "reviewStatus": "not-started",
       "lastReviewedAt": null,
-      "reviewIssue": null,
+      "reviewIssue": 245,
       "ux": {
         "profile": null,
         "modules": {}
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "移行元の前提知識表記: インフラ全般、AI/ML基礎"
+        "2026-07-13のplanned metadata監査#245で、固定portal SHA a5df96991f256e53d1074b2356d5162e739edcb0の履歴企画資料、Issue #83、現行catalogと公開表示を照合した。AI/MLOps章をLLMOpsまで拡張する判断、先端インフラの計画範囲、対象読者、level/roles、8-10週間の企画上の学習期間rangeを確認した。前提のインフラ全般・AI/ML基礎は書籍外知識のためcatalog prerequisitesへ追加しない。",
+        "2026-07-13にgh CLIで想定repositoryを確認したが、存在を確認できずrepoVisibility=not-createdを維持した。書籍本文・公開Pages・reader-facing moduleは未成立のためreviewStatus=not-started、lastReviewedAt=null、UX profile/modules未割当を維持する。制作scheduleは履歴値であり現行予定として扱わない。"
       ],
       "sourceRefs": [
-        "books/planned-books.md",
-        "docs/en/index.md"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/blob/a5df96991f256e53d1074b2356d5162e739edcb0/books/planned-books.md",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/83",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/187",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/245"
       ]
     }
   ],

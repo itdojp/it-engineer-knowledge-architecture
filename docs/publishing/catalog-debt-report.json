@@ -14,12 +14,8 @@
       "bookIds": []
     },
     "emptySummaryEn": {
-      "count": 3,
-      "bookIds": [
-        "compliance-infrastructure-guide",
-        "infrastructure-performance-capacity-planning",
-        "next-generation-infrastructure-guide"
-      ]
+      "count": 0,
+      "bookIds": []
     },
     "missingEstimatedWeeks": {
       "count": 39,
@@ -79,12 +75,8 @@
       ]
     },
     "missingReviewIssue": {
-      "count": 3,
-      "bookIds": [
-        "compliance-infrastructure-guide",
-        "infrastructure-performance-capacity-planning",
-        "next-generation-infrastructure-guide"
-      ]
+      "count": 0,
+      "bookIds": []
     },
     "provisionalNotes": {
       "count": 0,
