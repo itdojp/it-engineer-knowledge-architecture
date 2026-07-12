@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "entries": [
+    {
+      "bookId": "profile-a-book",
+      "profile": "A",
+      "module": "glossary",
+      "reason": "Profile A fixture debt",
+      "evidenceIssue": 1,
+      "trackingIssue": 10
+    },
+    {
+      "bookId": "profile-b-book",
+      "profile": "B",
+      "module": "figureIndex",
+      "reason": "Profile B fixture debt",
+      "evidenceIssue": 2,
+      "trackingIssue": 10
+    },
+    {
+      "bookId": "profile-c-book",
+      "profile": "C",
+      "module": "glossary",
+      "reason": "Profile C fixture debt",
+      "evidenceIssue": 3,
+      "trackingIssue": 10
+    }
+  ]
+}

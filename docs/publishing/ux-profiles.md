@@ -30,5 +30,7 @@
 4. 迷う場合は A/B/C のいずれか 1 つに決定し、必要な modules を追加する
 
 ## 運用メモ
-- 必須 modules の強制は初期は warning とし、段階的に厳格化する
+- 必須 modules の未実装は `catalog-debt-report.json` の決定的debtとして可視化し、確認済みの欠損だけを `ux-required-module-debt-baseline.json` で一時的に許容する
+- baselineにない新規欠損、または解消後も残るbaseline entryはCIで拒否し、既存欠損そのものは突然failureにしない
+- baseline entryには未実装理由、根拠Issue、追跡Issueを記録し、実体がないmoduleをgate回避のために`true`へ変更しない
 - profile 変更は「構成の再設計」ではなく「導線の調整」として扱う

@@ -18,6 +18,7 @@
 
 ## 運用ルール
 - 追加/変更は `docs/publishing/ux-modules.md` を更新する
-- `ux.modules` に未定義キーが入った場合はエラー（または警告）とする
+- `ux.modules` に未定義キーが入った場合は検証エラーとする
 - profile の必須 modules は `docs/publishing/ux-profiles.md` を正とする
+- 必須moduleの不足は `catalog-debt-report.json` へ集計し、確認済みの一時的な例外は `ux-required-module-debt-baseline.json` で理由とIssueを追跡する
 - `readingGuide` はトップページ標準スロットであり、modules の ON/OFF に従い表示される
