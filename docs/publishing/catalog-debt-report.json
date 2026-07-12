@@ -10,15 +10,13 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 13,
+      "count": 11,
       "bookIds": [
         "BioinformaticsGuide-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
-        "ai-agent-engineering-book",
         "ai-communication-book",
         "ai-era-engineers-mind-book",
-        "ai-testing-strategy-book",
         "computational-physicalism-book",
         "cs-visionaries-book",
         "ethereum-learning-bootcamp",
@@ -85,16 +83,13 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 23,
+      "count": 20,
       "bookIds": [
         "BioinformaticsGuide-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
-        "ai-agent-collaboration-book",
-        "ai-agent-engineering-book",
         "ai-communication-book",
         "ai-era-engineers-mind-book",
-        "ai-testing-strategy-book",
         "compliance-infrastructure-guide",
         "composable-software-design-book",
         "computational-physicalism-book",
@@ -113,16 +108,13 @@
       ]
     },
     "missingReviewIssue": {
-      "count": 21,
+      "count": 18,
       "bookIds": [
         "BioinformaticsGuide-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
-        "ai-agent-collaboration-book",
-        "ai-agent-engineering-book",
         "ai-communication-book",
         "ai-era-engineers-mind-book",
-        "ai-testing-strategy-book",
         "compliance-infrastructure-guide",
         "computational-physicalism-book",
         "cs-visionaries-book",
@@ -139,7 +131,7 @@
       ]
     },
     "provisionalNotes": {
-      "count": 13,
+      "count": 11,
       "books": [
         {
           "id": "BioinformaticsGuide-book",
@@ -166,14 +158,6 @@
           ]
         },
         {
-          "id": "ai-agent-engineering-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）/ 英語版あり"
-          ]
-        },
-        {
           "id": "ai-communication-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
@@ -183,14 +167,6 @@
         },
         {
           "id": "ai-era-engineers-mind-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "ai-testing-strategy-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -299,15 +275,13 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 14,
+      "count": 12,
       "bookIds": [
         "BioinformaticsGuide-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
-        "ai-agent-engineering-book",
         "ai-communication-book",
         "ai-era-engineers-mind-book",
-        "ai-testing-strategy-book",
         "composable-software-design-book",
         "computational-physicalism-book",
         "cs-visionaries-book",
@@ -318,8 +292,8 @@
       ]
     },
     "missingRequiredUxModules": {
-      "count": 24,
-      "bookCount": 20,
+      "count": 30,
+      "bookCount": 23,
       "books": [
         {
           "id": "GitHub-AgentOps-book",
@@ -342,6 +316,60 @@
               "reason": "実ファイル監査で図版は存在するが専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
               "evidenceIssue": 208,
               "trackingIssue": 210
+            }
+          ]
+        },
+        {
+          "id": "ai-agent-collaboration-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "Private管理原稿には対応資産があるが、無料試読Pagesには専用route・navigationがない。無料公開境界を越える実体を公開moduleとして扱わない。",
+              "evidenceIssue": 229,
+              "trackingIssue": 230
+            },
+            {
+              "module": "troubleshootingFlow",
+              "reason": "Private管理原稿には対応資産があるが、無料試読Pagesには専用route・navigationがない。無料公開境界を越える実体を公開moduleとして扱わない。",
+              "evidenceIssue": 229,
+              "trackingIssue": 230
+            }
+          ]
+        },
+        {
+          "id": "ai-agent-engineering-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "checklistPack",
+              "reason": "repo内チェックリストは存在するが、公開書籍の独立したチェックリスト集としての導線がないため、根拠のないtrueにしない。",
+              "evidenceIssue": 229,
+              "trackingIssue": 230
+            },
+            {
+              "module": "troubleshootingFlow",
+              "reason": "公開書籍に専用トラブルシューティングフローがないため、一般的な運用・検証説明を代用せずfalseを維持する。",
+              "evidenceIssue": 229,
+              "trackingIssue": 230
+            }
+          ]
+        },
+        {
+          "id": "ai-testing-strategy-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "公開書籍に専用図表索引がないため、個別図表を索引として扱わずfalseを維持する。",
+              "evidenceIssue": 229,
+              "trackingIssue": 230
+            },
+            {
+              "module": "troubleshootingFlow",
+              "reason": "公開書籍に専用トラブルシューティングフローがないため、章内の問題対処説明を代用せずfalseを維持する。",
+              "evidenceIssue": 229,
+              "trackingIssue": 230
             }
           ]
         },
@@ -594,8 +622,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 24,
-      "currentCount": 24,
+      "baselineCount": 30,
+      "currentCount": 30,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
