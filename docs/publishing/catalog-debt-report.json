@@ -10,11 +10,8 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 2,
-      "bookIds": [
-        "computational-physicalism-book",
-        "ethereum-learning-bootcamp"
-      ]
+      "count": 0,
+      "bookIds": []
     },
     "emptySummaryEn": {
       "count": 7,
@@ -73,14 +70,11 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 11,
+      "count": 8,
       "bookIds": [
         "compliance-infrastructure-guide",
-        "composable-software-design-book",
-        "computational-physicalism-book",
         "disaster-recovery-bcp-guide",
         "enterprise-cloud-architecture-guide",
-        "ethereum-learning-bootcamp",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
         "next-generation-infrastructure-guide",
@@ -89,13 +83,11 @@
       ]
     },
     "missingReviewIssue": {
-      "count": 9,
+      "count": 7,
       "bookIds": [
         "compliance-infrastructure-guide",
-        "computational-physicalism-book",
         "disaster-recovery-bcp-guide",
         "enterprise-cloud-architecture-guide",
-        "ethereum-learning-bootcamp",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
         "next-generation-infrastructure-guide",
@@ -103,25 +95,8 @@
       ]
     },
     "provisionalNotes": {
-      "count": 2,
-      "books": [
-        {
-          "id": "computational-physicalism-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "ethereum-learning-bootcamp",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        }
-      ]
+      "count": 0,
+      "books": []
     },
     "identicalLocalizedTitles": {
       "count": 46,
@@ -175,12 +150,8 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 3,
-      "bookIds": [
-        "composable-software-design-book",
-        "computational-physicalism-book",
-        "ethereum-learning-bootcamp"
-      ]
+      "count": 0,
+      "bookIds": []
     },
     "missingRequiredUxModules": {
       "count": 41,

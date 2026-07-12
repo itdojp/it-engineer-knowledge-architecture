@@ -157,11 +157,11 @@
         "checklistPack": false,
         "troubleshootingFlow": false,
         "conceptMap": true,
-        "figureIndex": true,
+        "figureIndex": false,
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#241で、source main 158239d67f6b172d407a860e3da3ab1f6a7bd0cbのREADME、canonical src、公開docs、5章、概念マップ、用語集、QAと公開Pagesを照合し、中級、対象読者、Profile Cを確定した。特定書籍を必須前提または次読とする明示はなく、通読約1時間は週単位の標準計画ではないため学習関係は空、estimatedWeeksはnullとした。 / source #147 / PR #150でstale optional dependencyとaudit 9件を除去し、#149 / PR #151で第5章欠落、過度な「厳密な証明」章題、figureIndex flagを修正した。#148 / PR #152でsrc/templatesを正本とする決定的docs生成、検索・copy・theme・Edit linkとCI gateを修復し、2回buildのhash一致、review thread 7件の修正・resolve、audit 0を確認した。"
     },
     "cs-visionaries-book": {
       "repo": "itdojp/cs-visionaries-book",
@@ -202,14 +202,14 @@
       "modules": {
         "quickStart": true,
         "readingGuide": true,
-        "checklistPack": false,
+        "checklistPack": true,
         "troubleshootingFlow": false,
-        "conceptMap": true,
+        "conceptMap": false,
         "figureIndex": false,
-        "legalNotice": false,
+        "legalNotice": true,
         "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#241で、source main 3d44c5e9408cb2b43caadc4d812e319614673af1のREADME、book-config、14日間カリキュラム、Guide、Progress、Project、Day12、QAと公開Pagesを照合し、初学者〜初級、対象ロール、Profile Aを確定した。14日間は日別カリキュラムであり任意の週換算をせずestimatedWeeksはnull、他書籍との一意な前提・次読順序は明示されないため学習関係は空とした。 / source #123 / PR #124でProgress実体をchecklistPack=true、専用実体のないconceptMapをfalseへ整合した。#122 / PR #125でroot 41件・DApp 2件のmoderate以上を0へ解消し、Hardhat HTTP/verify compatibility CIとoverride解除条件を追加した。root 23件・DApp 1件のlow finding、およびdeploy・秘密鍵・Etherscan V2等の安全性課題はopen #121で継続追跡する。"
     },
     "evidence-based-engineering-book": {
       "repo": "itdojp/evidence-based-engineering-book",

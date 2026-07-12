@@ -3325,17 +3325,20 @@
         "liberal-arts-philosophy"
       ],
       "levels": [
-        "all-levels"
+        "intermediate"
       ],
       "roles": [
-        "all-engineers"
+        "all-engineers",
+        "architect"
       ],
       "audiences": [
-        "全レベル / 技術的教養・視野拡大"
+        "AIと人間の知能の関係を、哲学・認知科学・理論計算機科学の観点から整理したい読者",
+        "計算可能性・計算量・物理的制約を使い、実装上の限界と原理的制約を区別したいエンジニア・研究者",
+        "チューリングマシンや計算モデルの基礎を持ち、AIの原理的論点と倫理的含意を検討したい中級読者"
       ],
       "summary": {
-        "ja": "",
-        "en": "Explores computational physicalism and its implications for mind, intelligence, and engineered systems."
+        "ja": "計算可能性理論と物理的制約を軸に、人間とAIの知能の等価性を哲学・認知科学・理論計算機科学の観点から検討する。実装上の限界と原理的制約を区別して考えたい読者向け。",
+        "en": "Examines computational physicalism across philosophy, cognitive science, and theoretical computer science while separating implementation limits from principled computational and physical constraints."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -3345,8 +3348,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 241,
       "ux": {
         "profile": "C",
         "modules": {
@@ -3355,32 +3358,43 @@
           "checklistPack": false,
           "troubleshootingFlow": false,
           "conceptMap": true,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#241で、source main 158239d67f6b172d407a860e3da3ab1f6a7bd0cbのREADME、canonical src、公開docs、5章、概念マップ、用語集、QAと公開Pagesを照合し、中級、対象読者、Profile Cを確定した。特定書籍を必須前提または次読とする明示はなく、通読約1時間は週単位の標準計画ではないため学習関係は空、estimatedWeeksはnullとした。",
+        "source #147 / PR #150でstale optional dependencyとaudit 9件を除去し、#149 / PR #151で第5章欠落、過度な「厳密な証明」章題、figureIndex flagを修正した。#148 / PR #152でsrc/templatesを正本とする決定的docs生成、検索・copy・theme・Edit linkとCI gateを修復し、2回buildのhash一致、review thread 7件の修正・resolve、audit 0を確認した。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/computational-physicalism-book/blob/158239d67f6b172d407a860e3da3ab1f6a7bd0cb/README.md",
+        "https://github.com/itdojp/computational-physicalism-book/blob/158239d67f6b172d407a860e3da3ab1f6a7bd0cb/book-config.json",
+        "https://github.com/itdojp/computational-physicalism-book/blob/158239d67f6b172d407a860e3da3ab1f6a7bd0cb/src/index.md",
+        "https://github.com/itdojp/computational-physicalism-book/blob/158239d67f6b172d407a860e3da3ab1f6a7bd0cb/src/chapters/chapter02/index.md",
+        "https://github.com/itdojp/computational-physicalism-book/blob/158239d67f6b172d407a860e3da3ab1f6a7bd0cb/src/chapters/chapter05/index.md",
+        "https://itdojp.github.io/computational-physicalism-book/",
+        "https://itdojp.github.io/computational-physicalism-book/chapters/chapter02/",
+        "https://itdojp.github.io/computational-physicalism-book/appendices/appendix01/",
+        "https://github.com/itdojp/computational-physicalism-book/issues/147",
+        "https://github.com/itdojp/computational-physicalism-book/pull/150",
+        "https://github.com/itdojp/computational-physicalism-book/issues/148",
+        "https://github.com/itdojp/computational-physicalism-book/pull/152",
+        "https://github.com/itdojp/computational-physicalism-book/issues/149",
+        "https://github.com/itdojp/computational-physicalism-book/pull/151",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/241"
       ]
     },
     {
       "id": "ethereum-learning-bootcamp",
       "displayOrder": 41,
       "title": {
-        "ja": "Ethereum学習ブートキャンプ",
-        "en": "Ethereum学習ブートキャンプ"
+        "ja": "Ethereum Learning Bootcamp",
+        "en": "Ethereum Learning Bootcamp"
       },
-      "officialEnglishTitle": null,
+      "officialEnglishTitle": "Ethereum Learning Bootcamp",
       "status": "published",
       "repo": "itdojp/ethereum-learning-bootcamp",
       "repoVisibility": "public",
@@ -3395,18 +3409,20 @@
         "web3-blockchain"
       ],
       "levels": [
-        "intermediate"
+        "beginner"
       ],
       "roles": [
         "web3-engineer",
         "software-engineer"
       ],
       "audiences": [
-        "Web3 / ブロックチェーン / スマートコントラクト開発を学びたい方向け"
+        "JavaScript・TypeScriptとGitの基礎から、Ethereum・Solidity・スマートコントラクト開発へ進みたい初学者",
+        "Hardhat、ERC-20/ERC-721、テスト、デプロイ、DApp接続を14日間の演習で学びたい開発者",
+        "テストネット、秘密鍵、RPC、L2、セキュリティ、ガス最適化の安全な学習手順を必要とする初級エンジニア"
       ],
       "summary": {
-        "ja": "",
-        "en": "Introduces Ethereum fundamentals, smart contracts, tooling, and hands-on exercises."
+        "ja": "EthereumとSolidityの基礎からHardhat、ERC標準、テスト、デプロイ、L2、DApp、NFT、セキュリティまでを14日間で学ぶ実践教材。進捗表と統合演習で初級実装へ接続する。",
+        "en": "A 14-day hands-on path from Ethereum and Solidity fundamentals through Hardhat, token standards, testing, deployment, L2, DApps, NFTs, security, and an integrated project."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -3416,32 +3432,42 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 241,
       "ux": {
         "profile": "A",
         "modules": {
           "quickStart": true,
           "readingGuide": true,
-          "checklistPack": false,
+          "checklistPack": true,
           "troubleshootingFlow": false,
-          "conceptMap": true,
+          "conceptMap": false,
           "figureIndex": false,
-          "legalNotice": false,
+          "legalNotice": true,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#241で、source main 3d44c5e9408cb2b43caadc4d812e319614673af1のREADME、book-config、14日間カリキュラム、Guide、Progress、Project、Day12、QAと公開Pagesを照合し、初学者〜初級、対象ロール、Profile Aを確定した。14日間は日別カリキュラムであり任意の週換算をせずestimatedWeeksはnull、他書籍との一意な前提・次読順序は明示されないため学習関係は空とした。",
+        "source #123 / PR #124でProgress実体をchecklistPack=true、専用実体のないconceptMapをfalseへ整合した。#122 / PR #125でroot 41件・DApp 2件のmoderate以上を0へ解消し、Hardhat HTTP/verify compatibility CIとoverride解除条件を追加した。root 23件・DApp 1件のlow finding、およびdeploy・秘密鍵・Etherscan V2等の安全性課題はopen #121で継続追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/ethereum-learning-bootcamp/blob/3d44c5e9408cb2b43caadc4d812e319614673af1/README.md",
+        "https://github.com/itdojp/ethereum-learning-bootcamp/blob/3d44c5e9408cb2b43caadc4d812e319614673af1/book-config.json",
+        "https://github.com/itdojp/ethereum-learning-bootcamp/blob/3d44c5e9408cb2b43caadc4d812e319614673af1/docs/index.md",
+        "https://github.com/itdojp/ethereum-learning-bootcamp/blob/3d44c5e9408cb2b43caadc4d812e319614673af1/docs/curriculum/Guide.md",
+        "https://github.com/itdojp/ethereum-learning-bootcamp/blob/3d44c5e9408cb2b43caadc4d812e319614673af1/docs/curriculum/Progress.md",
+        "https://github.com/itdojp/ethereum-learning-bootcamp/blob/3d44c5e9408cb2b43caadc4d812e319614673af1/docs/curriculum/Day12_Security.md",
+        "https://itdojp.github.io/ethereum-learning-bootcamp/",
+        "https://itdojp.github.io/ethereum-learning-bootcamp/curriculum/Progress/",
+        "https://github.com/itdojp/ethereum-learning-bootcamp/issues/121",
+        "https://github.com/itdojp/ethereum-learning-bootcamp/issues/122",
+        "https://github.com/itdojp/ethereum-learning-bootcamp/pull/125",
+        "https://github.com/itdojp/ethereum-learning-bootcamp/issues/123",
+        "https://github.com/itdojp/ethereum-learning-bootcamp/pull/124",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/241"
       ]
     },
     {
@@ -3473,14 +3499,17 @@
       ],
       "roles": [
         "software-engineer",
-        "architect"
+        "architect",
+        "engineering-manager"
       ],
       "audiences": [
-        "Intermediate+"
+        "AI支援開発の責任境界、設計レビュー、実行制御、検証証跡を一つの設計体系で扱いたいアーキテクト",
+        "圏論のobjects・morphisms・composition・functors・monadsを実務のインターフェースと効果境界へ接続したい中上級エンジニア",
+        "仕様から実装・実行・受け入れ証跡まで追跡可能なagentic systemを設計するテックリード・プラットフォーム担当者"
       ],
       "summary": {
-        "ja": "独立した英語書籍。日本語書籍 categorical-software-design-book の単純翻訳ではなく、関連書として扱う。",
-        "en": "English book focused on compositional software design for agentic systems, with its own scope, manuscript structure, and publication policy."
+        "ja": "圏論の構成・図式・関手・モナドを、AI支援ソフトウェア開発の責任境界、設計レビュー、効果制御、検証証跡へ接続する英語の実務書。追跡可能なrunning exampleで方法を検証する。",
+        "en": "Connects composition, diagrams, functors, and effect boundaries to accountable AI-assisted software delivery, using a traceable running example from specification through acceptance evidence."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -3492,21 +3521,45 @@
         "categorical-software-design-book"
       ],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": 133,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 241,
       "ux": {
-        "profile": null,
-        "modules": {}
+        "profile": "C",
+        "modules": {
+          "quickStart": false,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
+          "conceptMap": true,
+          "figureIndex": true,
+          "legalNotice": false,
+          "glossary": true
+        }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "関連する独立英語書籍。41冊の日本語メインライン冊数には含めない。",
-        "UX profile/modules は未割当。"
+        "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#241で、英語正本source main 99d10da430935a9f964e8301f074dac9afcdf77fのREADME、book-config、Reading Guide、Concept Map、10章、running example、Glossary、List of Figures、QAと公開Pagesを照合し、中級〜上級、対象ロール、Profile Cを確定した。標準学習期間と全読者共通の一意な前提・次読順序は明示されないためestimatedWeeksはnull、学習関係は空とした。",
+        "source #79 / PR #82でroot lockfile、Node/npm要件、dev dependencyを含むaudit CIを追加し0件を確認した。#80 / PR #81で公開更新日を2026-05-23へ整合し、厳密な日付・front matter検証を追加した。#83 / PR #84でProfile Cへ整合し、専用Concept Map routeとnavigation・Reading Guide導線を実装したためportal UX #242を解消できる。"
       ],
       "sourceRefs": [
-        "docs/en/index.md",
-        "README.md"
+        "https://github.com/itdojp/composable-software-design-book/blob/99d10da430935a9f964e8301f074dac9afcdf77f/README.md",
+        "https://github.com/itdojp/composable-software-design-book/blob/99d10da430935a9f964e8301f074dac9afcdf77f/book-config.json",
+        "https://github.com/itdojp/composable-software-design-book/blob/99d10da430935a9f964e8301f074dac9afcdf77f/index.md",
+        "https://github.com/itdojp/composable-software-design-book/blob/99d10da430935a9f964e8301f074dac9afcdf77f/src/additional/how-to-use-this-book/index.md",
+        "https://github.com/itdojp/composable-software-design-book/blob/99d10da430935a9f964e8301f074dac9afcdf77f/src/additional/concept-map/index.md",
+        "https://github.com/itdojp/composable-software-design-book/blob/99d10da430935a9f964e8301f074dac9afcdf77f/src/appendices/appendix-b.md",
+        "https://github.com/itdojp/composable-software-design-book/blob/99d10da430935a9f964e8301f074dac9afcdf77f/src/backmatter/list-of-figures/index.md",
+        "https://itdojp.github.io/composable-software-design-book/",
+        "https://itdojp.github.io/composable-software-design-book/src/additional/concept-map/",
+        "https://itdojp.github.io/composable-software-design-book/src/backmatter/list-of-figures/",
+        "https://github.com/itdojp/composable-software-design-book/issues/79",
+        "https://github.com/itdojp/composable-software-design-book/pull/82",
+        "https://github.com/itdojp/composable-software-design-book/issues/80",
+        "https://github.com/itdojp/composable-software-design-book/pull/81",
+        "https://github.com/itdojp/composable-software-design-book/issues/83",
+        "https://github.com/itdojp/composable-software-design-book/pull/84",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/241"
       ]
     },
     {
