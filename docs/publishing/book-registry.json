@@ -431,7 +431,7 @@
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-basics-book#34で、source main 8e02d0298fc9a9bb960b0bb1acec5d5fea259522のREADME、両config、公開トップ、導入、チェックリスト、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。Podman本は必要時の参照であり必須前提にせず、次読は本文で明示されたkubernetes-cluster-ops-bookとした。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-basics-book#34で、source main 8e02d0298fc9a9bb960b0bb1acec5d5fea259522のREADME、両config、公開トップ、導入、チェックリスト、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。Podman本は必要時の参照であり必須前提にせず、次読は本文とあとがきで明示されたkubernetes-cluster-ops-bookとpodman-bookとした。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
     },
     "kubernetes-cluster-ops-book": {
       "repo": "itdojp/kubernetes-cluster-ops-book",
