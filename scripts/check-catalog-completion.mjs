@@ -9,12 +9,15 @@ import {
 
 export function findCatalogCompletionErrors(catalog) {
   const errors = [];
+  const books = Array.isArray(catalog?.books) ? catalog.books : [];
 
-  for (const [index, book] of (catalog.books || []).entries()) {
+  for (const [index, book] of books.entries()) {
+    if (!book || typeof book !== 'object' || Array.isArray(book)) continue;
     const prefix = `books[${index}](${book.id || 'unknown'})`;
-    const isPublishedJapaneseBook = book.status === 'published' && (book.languages || []).includes('ja');
+    const languages = Array.isArray(book.languages) ? book.languages : [];
+    const isPublishedJapaneseBook = book.status === 'published' && languages.includes('ja');
 
-    if (isPublishedJapaneseBook && !book.summary?.ja?.trim()) {
+    if (isPublishedJapaneseBook && (typeof book.summary?.ja !== 'string' || !book.summary.ja.trim())) {
       errors.push(`${prefix}: published Japanese book must define summary.ja`);
     }
 
@@ -32,7 +35,9 @@ export function findCatalogCompletionErrors(catalog) {
 }
 
 export function checkCatalogCompletion(catalog) {
-  return [...validateCatalog(catalog), ...findCatalogCompletionErrors(catalog)];
+  const validationErrors = validateCatalog(catalog);
+  if (validationErrors.length > 0) return validationErrors;
+  return findCatalogCompletionErrors(catalog);
 }
 
 function main() {

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
+  checkCatalogCompletion,
   findCatalogCompletionErrors
 } from '../scripts/check-catalog-completion.mjs';
 import {
@@ -55,4 +56,14 @@ test('structured incomplete states may keep lastReviewedAt null', () => {
     ]
   });
   assert.deepEqual(errors, []);
+});
+
+test('schema errors short-circuit completion checks without throwing', () => {
+  const malformedSummary = structuredClone(loadCatalog(DEFAULT_CATALOG_PATH));
+  malformedSummary.books[0].summary.ja = 42;
+  assert.match(checkCatalogCompletion(malformedSummary).join('\n'), /summary\.ja must be a string/);
+
+  const malformedBooks = structuredClone(loadCatalog(DEFAULT_CATALOG_PATH));
+  malformedBooks.books = {};
+  assert.match(checkCatalogCompletion(malformedBooks).join('\n'), /books must be an array/);
 });
