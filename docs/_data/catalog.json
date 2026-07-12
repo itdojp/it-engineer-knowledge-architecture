@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-07-12",
+  "updatedAt": "2026-07-13",
   "sourcePolicy": {
     "canonical": "docs/_data/catalog.json",
     "derivedFiles": [
@@ -2820,11 +2820,14 @@
         "engineering-manager"
       ],
       "audiences": [
-        "全レベル / キャリア発展・コミュニケーション"
+        "生成AIを使い始め、問題設定・構造化・根拠確認・表現の基礎を業務成果物へ適用したい実務者",
+        "企画、営業、マーケティング、人事、オペレーションなど非技術職でAI出力をレビュー・承認へ回す担当者",
+        "AI活用の情報分類、承認、ログ、テンプレート再利用をチーム標準として整備するリーダー・管理職",
+        "論理的思考に苦手意識があり、ケーススタディと実務テンプレートから段階的に学びたい読者"
       ],
       "summary": {
-        "ja": "",
-        "en": "Improves logic, structure, and expression for clearer thinking and communication in the AI era."
+        "ja": "AIを使った業務成果物を、タスク定義・情報分類・根拠確認・評価・承認・再利用まで含めて仕上げるための論理的思考と表現力の実践ガイドです。",
+        "en": "A practical guide to applying logical thinking and clear expression to AI-assisted work, from task definition and information classification through evidence checks, evaluation, approval, and reuse."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -2834,8 +2837,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 235,
       "ux": {
         "profile": "C",
         "modules": {
@@ -2843,23 +2846,33 @@
           "readingGuide": true,
           "checklistPack": false,
           "troubleshootingFlow": false,
-          "conceptMap": true,
-          "figureIndex": true,
+          "conceptMap": false,
+          "figureIndex": false,
           "legalNotice": false,
-          "glossary": true
+          "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#235で、source main 334c61a0f3f9ec02033c59f3ce1b77b7c1fb4b2fのREADME、book-config、公開正本docs、読み方、標準業務フロー、17章、ケーススタディ、付録A、QAと公開Pagesを照合し、全レベル、対象読者、Profile Cを確定した。特別な前提書籍と単一の標準学習週数は明示されていないためprerequisites/recommendedAfterは空、estimatedWeeksはnullとした。",
+        "itdojp/LogicalThinking-AI-Era-Guide#155 / PR #157で付録Aを概念マップ・用語集・図表索引相当とする誤案内とUX flagsを修正し、未実装のconceptMap / glossary / figureIndexをfalseとした。Profile C必須のconceptMap / glossaryはportal #236で追跡する。npm audit 15件はitdojp/LogicalThinking-AI-Era-Guide#156 / PR #158で0件へ解消し、deprecation warningはitdojp/LogicalThinking-AI-Era-Guide#159、docs/src境界はitdojp/LogicalThinking-AI-Era-Guide#160で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/334c61a0f3f9ec02033c59f3ce1b77b7c1fb4b2f/README.md",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/334c61a0f3f9ec02033c59f3ce1b77b7c1fb4b2f/book-config.json",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/334c61a0f3f9ec02033c59f3ce1b77b7c1fb4b2f/docs/index.md",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/334c61a0f3f9ec02033c59f3ce1b77b7c1fb4b2f/docs/introduction/01-introduction/index.md",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/334c61a0f3f9ec02033c59f3ce1b77b7c1fb4b2f/docs/introduction/02-standard-workflow/index.md",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/334c61a0f3f9ec02033c59f3ce1b77b7c1fb4b2f/docs/appendices/appendix-a/index.md",
+        "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/",
+        "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/introduction/02-standard-workflow/",
+        "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/appendices/appendix-a/",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/issues/155",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/157",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/issues/156",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/158",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/235"
       ]
     },
     {
@@ -2884,18 +2897,25 @@
         "soft-skills-thinking"
       ],
       "levels": [
-        "all-levels"
+        "intermediate",
+        "advanced"
       ],
       "roles": [
-        "all-engineers",
-        "engineering-manager"
+        "software-engineer",
+        "architect",
+        "engineering-manager",
+        "sre",
+        "security-engineer"
       ],
       "audiences": [
-        "全レベル / キャリア発展・コミュニケーション"
+        "AIを含む要件定義・設計・開発・運用で、判断根拠と説明責任を成果物として残す中堅〜上級エンジニア",
+        "ADR、PR、Eval、Runbook、Postmortemを使い、AI協働の承認・検証・ロールバックを設計するテックリード・アーキテクト",
+        "チームのAI利用ルール、権限、監査、教育、継続改善を整備するEM・エンジニアリングマネージャー",
+        "インシデント、セキュリティ、プライバシー、コンプライアンスの責任境界を扱うSRE・運用・統制担当者"
       ],
       "summary": {
-        "ja": "",
-        "en": "Focuses on professional judgment, habits, and decision-making for IT engineers working in the AI era."
+        "ja": "AIネイティブな実務で、ITエンジニアがIssue、ADR、PR、Eval、Runbook、Postmortemを通じて意思決定・説明責任・運用統制を成果物として残すための実践書です。",
+        "en": "A practical guide for IT engineers to turn AI-native work into accountable decisions and operational controls through Issues, ADRs, PRs, evals, runbooks, and postmortems."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -2905,8 +2925,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 235,
       "ux": {
         "profile": "C",
         "modules": {
@@ -2914,31 +2934,41 @@
           "readingGuide": true,
           "checklistPack": false,
           "troubleshootingFlow": false,
-          "conceptMap": true,
-          "figureIndex": true,
-          "legalNotice": false,
-          "glossary": true
+          "conceptMap": false,
+          "figureIndex": false,
+          "legalNotice": true,
+          "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#235で、source main 4162fc01ac667d2208220d555386ee2546677c9cのREADME、book-config、まえがき、AI協働SOP、6章、成果物テンプレート、ケーススタディ、推奨読書リスト、更新方針、専用ライセンスFAQ、QAと公開Pagesを照合し、中級〜上級、対象ロール、Profile Cを確定した。特定書籍を必須前提とする記述と単一の標準学習週数はないため学習関係は空、estimatedWeeksはnullとした。",
+        "itdojp/ai-era-engineers-mind-book#146 / PR #147で実体のないconceptMap / figureIndex / glossaryをfalseへ整合し、専用ライセンスFAQに基づくlegalNoticeはtrueとした。Profile C必須のconceptMap / glossaryはportal #236で追跡する。npm auditは0件、whatwg-encoding deprecationはitdojp/ai-era-engineers-mind-book#148、shared.lastSyncの用途・鮮度はitdojp/ai-era-engineers-mind-book#149で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/4162fc01ac667d2208220d555386ee2546677c9c/README.md",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/4162fc01ac667d2208220d555386ee2546677c9c/book-config.json",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/4162fc01ac667d2208220d555386ee2546677c9c/docs/index.md",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/4162fc01ac667d2208220d555386ee2546677c9c/docs/introduction/preface.md",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/4162fc01ac667d2208220d555386ee2546677c9c/docs/introduction/ai-collaboration-sop.md",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/4162fc01ac667d2208220d555386ee2546677c9c/docs/introduction/license-faq.md",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/4162fc01ac667d2208220d555386ee2546677c9c/docs/appendices/reading-list.md",
+        "https://itdojp.github.io/ai-era-engineers-mind-book/",
+        "https://itdojp.github.io/ai-era-engineers-mind-book/introduction/ai-collaboration-sop/",
+        "https://itdojp.github.io/ai-era-engineers-mind-book/introduction/license-faq/",
+        "https://itdojp.github.io/ai-era-engineers-mind-book/appendices/reading-list/",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/issues/146",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/pull/147",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/235"
       ]
     },
     {
       "id": "ai-communication-book",
       "displayOrder": 36,
       "title": {
-        "ja": "生成AIコミュニケーション技術",
-        "en": "生成AIコミュニケーション技術"
+        "ja": "AIエージェント・コミュニケーション実践ガイド",
+        "en": "AIエージェント・コミュニケーション実践ガイド"
       },
       "officialEnglishTitle": null,
       "status": "published",
@@ -2962,11 +2992,15 @@
         "engineering-manager"
       ],
       "audiences": [
-        "全レベル / キャリア発展・コミュニケーション"
+        "生成AIとの対話を、単発の質問ではなく目的・制約・出力契約・評価を持つ業務手順として設計したい実務者",
+        "プロンプト、コンテキスト、モデル選定、RAG、ツール利用を実務へ適用するエンジニア・開発者",
+        "AI活用をプロダクトや業務プロセスへ組み込むプロダクトマネージャー・コンサルタント・アナリスト",
+        "チームのAI利用、品質保証、リスク、プライバシー、コンプライアンスを整備する技術リーダー・IT経営層",
+        "生成AIの基礎から組織運用まで役割別の読み方で学びたい学生・研究者・ビジネス職"
       ],
       "summary": {
-        "ja": "",
-        "en": "Explains how to communicate effectively with generative AI through prompts, context control, and collaborative patterns."
+        "ja": "生成AIとのコミュニケーションを、プロンプトとコンテキストの設計、モデル選定、知識・ツール連携、業務統合、品質保証、リスク管理まで一気通貫で学ぶ実務テンプレート付きガイドです。",
+        "en": "A practical guide to AI-agent communication across prompt and context design, model selection, knowledge and tool integration, workflow adoption, quality assurance, and risk control, with reusable templates."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -2976,8 +3010,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 235,
       "ux": {
         "profile": "A",
         "modules": {
@@ -2987,21 +3021,31 @@
           "troubleshootingFlow": false,
           "conceptMap": true,
           "figureIndex": false,
-          "legalNotice": false,
+          "legalNotice": true,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#235で、source main 198273bd2874f26428de65fec814e3aa3027007cのREADME、book-config、トップ、導入、AI協働SOP、8章、テンプレート付録、用語・更新確認ノート、QAと公開Pagesを照合し、現行書名、全レベル、対象読者、Profile Aを確定した。PC・ブラウザ操作等の知識要件は特定書籍の前提ではなく、通読1.5〜2時間は週単位の標準計画ではないためprerequisites/recommendedAfterは空、estimatedWeeksはnullとした。",
+        "Quick Start、読み方、4層モデルとmindmap、専用用語・更新確認ノート、ライセンス注意を確認し、対応modulesをtrueとした。独立checklist pack、troubleshooting flow、figure indexはないためfalse。2026年版全面リライトはitdojp/ai-communication-book#131、whatwg-encoding deprecationはitdojp/ai-communication-book#143で継続追跡する。固定SHAでのnpm test再実行とaudit 0を確認した。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/ai-communication-book/blob/198273bd2874f26428de65fec814e3aa3027007c/README.md",
+        "https://github.com/itdojp/ai-communication-book/blob/198273bd2874f26428de65fec814e3aa3027007c/book-config.json",
+        "https://github.com/itdojp/ai-communication-book/blob/198273bd2874f26428de65fec814e3aa3027007c/docs/index.md",
+        "https://github.com/itdojp/ai-communication-book/blob/198273bd2874f26428de65fec814e3aa3027007c/docs/introduction/index.md",
+        "https://github.com/itdojp/ai-communication-book/blob/198273bd2874f26428de65fec814e3aa3027007c/docs/introduction/agent-protocol.md",
+        "https://github.com/itdojp/ai-communication-book/blob/198273bd2874f26428de65fec814e3aa3027007c/docs/appendices/appendix-a.md",
+        "https://github.com/itdojp/ai-communication-book/blob/198273bd2874f26428de65fec814e3aa3027007c/docs/appendices/appendix-e.md",
+        "https://itdojp.github.io/ai-communication-book/",
+        "https://itdojp.github.io/ai-communication-book/introduction/",
+        "https://itdojp.github.io/ai-communication-book/introduction/agent-protocol/",
+        "https://itdojp.github.io/ai-communication-book/appendices/appendix-a/",
+        "https://itdojp.github.io/ai-communication-book/appendices/appendix-e/",
+        "https://github.com/itdojp/ai-communication-book/issues/131",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/235"
       ]
     },
     {

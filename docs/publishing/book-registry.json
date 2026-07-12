@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-07-12",
+  "updatedAt": "2026-07-13",
   "generatedFrom": "docs/_data/catalog.json",
   "modulesCatalog": [
     "quickStart",
@@ -60,10 +60,10 @@
         "troubleshootingFlow": false,
         "conceptMap": true,
         "figureIndex": false,
-        "legalNotice": false,
+        "legalNotice": true,
         "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#235で、source main 198273bd2874f26428de65fec814e3aa3027007cのREADME、book-config、トップ、導入、AI協働SOP、8章、テンプレート付録、用語・更新確認ノート、QAと公開Pagesを照合し、現行書名、全レベル、対象読者、Profile Aを確定した。PC・ブラウザ操作等の知識要件は特定書籍の前提ではなく、通読1.5〜2時間は週単位の標準計画ではないためprerequisites/recommendedAfterは空、estimatedWeeksはnullとした。 / Quick Start、読み方、4層モデルとmindmap、専用用語・更新確認ノート、ライセンス注意を確認し、対応modulesをtrueとした。独立checklist pack、troubleshooting flow、figure indexはないためfalse。2026年版全面リライトはitdojp/ai-communication-book#131、whatwg-encoding deprecationはitdojp/ai-communication-book#143で継続追跡する。固定SHAでのnpm test再実行とaudit 0を確認した。"
     },
     "ai-era-engineers-mind-book": {
       "repo": "itdojp/ai-era-engineers-mind-book",
@@ -74,12 +74,12 @@
         "readingGuide": true,
         "checklistPack": false,
         "troubleshootingFlow": false,
-        "conceptMap": true,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": true
+        "conceptMap": false,
+        "figureIndex": false,
+        "legalNotice": true,
+        "glossary": false
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#235で、source main 4162fc01ac667d2208220d555386ee2546677c9cのREADME、book-config、まえがき、AI協働SOP、6章、成果物テンプレート、ケーススタディ、推奨読書リスト、更新方針、専用ライセンスFAQ、QAと公開Pagesを照合し、中級〜上級、対象ロール、Profile Cを確定した。特定書籍を必須前提とする記述と単一の標準学習週数はないため学習関係は空、estimatedWeeksはnullとした。 / itdojp/ai-era-engineers-mind-book#146 / PR #147で実体のないconceptMap / figureIndex / glossaryをfalseへ整合し、専用ライセンスFAQに基づくlegalNoticeはtrueとした。Profile C必須のconceptMap / glossaryはportal #236で追跡する。npm auditは0件、whatwg-encoding deprecationはitdojp/ai-era-engineers-mind-book#148、shared.lastSyncの用途・鮮度はitdojp/ai-era-engineers-mind-book#149で追跡する。"
     },
     "ai-testing-strategy-book": {
       "repo": "itdojp/ai-testing-strategy-book",
@@ -492,12 +492,12 @@
         "readingGuide": true,
         "checklistPack": false,
         "troubleshootingFlow": false,
-        "conceptMap": true,
-        "figureIndex": true,
+        "conceptMap": false,
+        "figureIndex": false,
         "legalNotice": false,
-        "glossary": true
+        "glossary": false
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#235で、source main 334c61a0f3f9ec02033c59f3ce1b77b7c1fb4b2fのREADME、book-config、公開正本docs、読み方、標準業務フロー、17章、ケーススタディ、付録A、QAと公開Pagesを照合し、全レベル、対象読者、Profile Cを確定した。特別な前提書籍と単一の標準学習週数は明示されていないためprerequisites/recommendedAfterは空、estimatedWeeksはnullとした。 / itdojp/LogicalThinking-AI-Era-Guide#155 / PR #157で付録Aを概念マップ・用語集・図表索引相当とする誤案内とUX flagsを修正し、未実装のconceptMap / glossary / figureIndexをfalseとした。Profile C必須のconceptMap / glossaryはportal #236で追跡する。npm audit 15件はitdojp/LogicalThinking-AI-Era-Guide#156 / PR #158で0件へ解消し、deprecation warningはitdojp/LogicalThinking-AI-Era-Guide#159、docs/src境界はitdojp/LogicalThinking-AI-Era-Guide#160で追跡する。"
     },
     "negotiation-for-engineers-book": {
       "repo": "itdojp/negotiation-for-engineers-book",

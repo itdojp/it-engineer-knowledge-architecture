@@ -264,6 +264,38 @@
       "reason": "公開Pagesに専用図表索引とreader-facing navigationがないため、個別図表を索引として扱わずfalseを維持する。",
       "evidenceIssue": 232,
       "trackingIssue": 233
+    },
+    {
+      "bookId": "LogicalThinking-AI-Era-Guide",
+      "profile": "C",
+      "module": "conceptMap",
+      "reason": "公開Pagesに概念・章間関係を俯瞰する専用concept mapとreader-facing導線がない。実務テンプレート集や章構成を代用せずfalseを維持する。",
+      "evidenceIssue": 235,
+      "trackingIssue": 236
+    },
+    {
+      "bookId": "LogicalThinking-AI-Era-Guide",
+      "profile": "C",
+      "module": "glossary",
+      "reason": "公開Pagesに専用用語集とreader-facing導線がない。導入部の個別用語説明や実務テンプレート集を用語集として代用せずfalseを維持する。",
+      "evidenceIssue": 235,
+      "trackingIssue": 236
+    },
+    {
+      "bookId": "ai-era-engineers-mind-book",
+      "profile": "C",
+      "module": "conceptMap",
+      "reason": "公開Pagesに専用concept mapとreader-facing導線がない。章構成表、ステークホルダーマップ、個別SVGを横断概念マップとして代用せずfalseを維持する。",
+      "evidenceIssue": 235,
+      "trackingIssue": 236
+    },
+    {
+      "bookId": "ai-era-engineers-mind-book",
+      "profile": "C",
+      "module": "glossary",
+      "reason": "公開Pagesに専用用語集とreader-facing導線がない。本文内の用語統一方針を用語集の実体として代用せずfalseを維持する。",
+      "evidenceIssue": 235,
+      "trackingIssue": 236
     }
   ]
 }
