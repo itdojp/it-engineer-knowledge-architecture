@@ -476,7 +476,7 @@
       "addedAt": null,
       "updatedAt": "2026-07-12",
       "notes": [
-        "2026-07-12のmetadata監査#205で、source main 4966d45234c336a71136bee7d79c8eb36140777fのbook-configと公開トップ、チェックリスト、テンプレートを照合し、Profile Bとmodulesを確定。時間目安は週換算せず、専用図表索引がないためfigureIndex=falseとし、必須module debtは#197で追跡する。"
+        "2026-07-12のmetadata監査#205で、source main 4966d45234c336a71136bee7d79c8eb36140777fのbook-configと公開トップ、チェックリスト、テンプレートを照合し、Profile Bとmodulesを確定。時間目安は週換算せず、専用図表索引がないためfigureIndex=falseとし、必須module debtの実装は#250で追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/security-privacy-literacy-book/blob/4966d45234c336a71136bee7d79c8eb36140777f/README.md",
@@ -557,7 +557,7 @@
       "addedAt": null,
       "updatedAt": "2026-07-12",
       "notes": [
-        "2026-07-12のmetadata監査#205で、source main 42876458d1319e7323733468e7fc130a14a4afb7の公開トップ、章1〜8、チェックリスト、テンプレートを照合し、実務適用型のProfile Bとmodulesを確定。期間は根拠がなく、専用図表索引がないためfigureIndex=falseとし、必須module debtは#197で追跡する。"
+        "2026-07-12のmetadata監査#205で、source main 42876458d1319e7323733468e7fc130a14a4afb7の公開トップ、章1〜8、チェックリスト、テンプレートを照合し、実務適用型のProfile Bとmodulesを確定。期間は根拠がなく、専用図表索引がないためfigureIndex=falseとし、必須module debtの実装は#250で追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/incident-response-basics-book/blob/42876458d1319e7323733468e7fc130a14a4afb7/README.md",
