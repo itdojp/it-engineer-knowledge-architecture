@@ -945,7 +945,7 @@
       "prerequisites": [],
       "estimatedWeeks": null,
       "recommendedAfter": [
-        "kubernetes-basics-book"
+        "podman-book"
       ],
       "languages": [
         "ja"
@@ -970,7 +970,7 @@
       "addedAt": null,
       "updatedAt": "2026-07-12",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211、itdojp/cloud-infra-book#138、build修正itdojp/cloud-infra-book#139で、source main b282a4b7b2c623e8bd703fdb19d1473a44c03a06のREADME、book-config、公開トップ、導入、設計・運用チェックリスト、法的注意、用語集を照合し、対象読者、Profile C、modulesを確定。学習時間は週換算せず、次の学習先はポータル正本のcloud-container学習パスに基づきkubernetes-basics-bookとした。専用概念マップがない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211、itdojp/cloud-infra-book#138、build修正itdojp/cloud-infra-book#139で、source main b282a4b7b2c623e8bd703fdb19d1473a44c03a06のREADME、book-config、公開トップ、導入、設計・運用チェックリスト、法的注意、用語集を照合し、対象読者、Profile C、modulesを確定。学習時間は週換算しない。itdojp/it-engineer-knowledge-architecture#216の5冊固定SHA監査で、cloud-container線形パスの次の学習先をコンテナ基礎のpodman-bookへ補正した。専用概念マップがない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/cloud-infra-book/blob/b282a4b7b2c623e8bd703fdb19d1473a44c03a06/README.md",
@@ -988,7 +988,9 @@
         "https://github.com/itdojp/cloud-infra-book/pull/141",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/211",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/212",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/211#issuecomment-4949850445"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/211#issuecomment-4949850445",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216#issuecomment-4950171069"
       ]
     },
     {
@@ -1311,7 +1313,7 @@
       "addedAt": null,
       "updatedAt": "2026-07-12",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-basics-book#34で、source main 8e02d0298fc9a9bb960b0bb1acec5d5fea259522のREADME、両config、公開トップ、導入、チェックリスト、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。Podman本は必要時の参照であり必須前提にせず、次読は本文とあとがきで明示されたkubernetes-cluster-ops-bookとpodman-bookとした。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-basics-book#34で、source main 8e02d0298fc9a9bb960b0bb1acec5d5fea259522のREADME、両config、公開トップ、導入、チェックリスト、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。itdojp/it-engineer-knowledge-architecture#216で、コンテナ基礎を先に学ぶcanonical pathはpodman-bookから本書へ進む順へ補正した。一方、本文・あとがきのPodman本は基礎を後から補う任意参照として有効なため、recommendedAfterはkubernetes-cluster-ops-bookとpodman-bookを維持する。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/README.md",
@@ -1328,7 +1330,9 @@
         "https://github.com/itdojp/kubernetes-basics-book/pull/35",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/215",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216#issuecomment-4950171069"
       ]
     },
     {
@@ -1400,7 +1404,7 @@
       "addedAt": null,
       "updatedAt": "2026-07-12",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-cluster-ops-book#34で、source main b1cda610e6c006589093b5cce1b5d7a6f63b6474のREADME、両config、公開トップ、導入、チェックリスト、Runbook、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。本文で案内されたkubernetes-basics-bookを前提とし、次読はポータル正本のcloud-container学習パスに基づきkubernetes-proxmox-to-cloud-bookとした。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-cluster-ops-book#34で、source main b1cda610e6c006589093b5cce1b5d7a6f63b6474のREADME、両config、公開トップ、導入、チェックリスト、Runbook、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。本文で案内されたkubernetes-basics-bookを前提とする。itdojp/it-engineer-knowledge-architecture#216では、kubernetes-proxmox-to-cloud-bookを必須前提ではない線形パス上の発展先として維持した。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/README.md",
@@ -1417,7 +1421,9 @@
         "https://github.com/itdojp/kubernetes-cluster-ops-book/pull/35",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/215",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216#issuecomment-4950171069"
       ]
     },
     {
@@ -1485,7 +1491,7 @@
       "addedAt": null,
       "updatedAt": "2026-07-12",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-proxmox-to-cloud-book#39で、source main d445b408e506551923bb3c1aa38d383ba9961e24のREADME、book-config、公開トップ、Quick Start、読み方、ライセンスFAQ、チェックリスト、トラブルシュート、用語集を照合し、対象読者、Profile B、modulesを確定。1〜3週間の範囲表記はcatalogの単一整数へ任意転記せずestimatedWeeksはnull。必須前提は追加せず、現行cloud-container学習パス末尾のpodman-bookは内容上の順序を再監査するitdojp/it-engineer-knowledge-architecture#216へ分離したため、根拠のある次読書籍も追加しない。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-proxmox-to-cloud-book#39で、source main d445b408e506551923bb3c1aa38d383ba9961e24のREADME、book-config、公開トップ、Quick Start、読み方、ライセンスFAQ、チェックリスト、トラブルシュート、用語集を照合し、対象読者、Profile B、modulesを確定。1〜3週間の範囲表記はcatalogの単一整数へ任意転記せずestimatedWeeksはnull。必須前提は追加しない。itdojp/it-engineer-knowledge-architecture#216でcloud-container線形パスの発展的な終点へ補正し、根拠のある次読書籍がないためrecommendedAfterは空を維持する。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/README.md",
@@ -1505,7 +1511,8 @@
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/215",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216#issuecomment-4950171069"
       ]
     },
     {
@@ -1546,7 +1553,9 @@
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "kubernetes-basics-book"
+      ],
       "languages": [
         "ja"
       ],
@@ -1572,12 +1581,16 @@
       "notes": [
         "暫定割当（要確認）",
         "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "UX profile/modules は移行元 book-registry の暫定割当を維持。",
+        "2026-07-12の学習順監査itdojp/it-engineer-knowledge-architecture#216で、source main 6ad8232090cc34dd7ef03250d664c8ca4d6ccacfのコンテナ基礎から応用への構成と、あとがきのKubernetes学習方向を確認し、cloud-container線形パスではkubernetes-basics-bookの前、recommendedAfterでは同書を次の学習先とした。全metadata/UX監査は次のQuality Sprintで実施する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/podman-book/blob/6ad8232090cc34dd7ef03250d664c8ca4d6ccacf/README.md",
+        "https://github.com/itdojp/podman-book/blob/6ad8232090cc34dd7ef03250d664c8ca4d6ccacf/docs/index.md",
+        "https://github.com/itdojp/podman-book/blob/6ad8232090cc34dd7ef03250d664c8ca4d6ccacf/docs/additional/learning-path.md",
+        "https://github.com/itdojp/podman-book/blob/6ad8232090cc34dd7ef03250d664c8ca4d6ccacf/docs/afterword/index.md",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216#issuecomment-4950171069"
       ]
     },
     {
@@ -3707,10 +3720,10 @@
       },
       "bookIds": [
         "cloud-infra-book",
+        "podman-book",
         "kubernetes-basics-book",
         "kubernetes-cluster-ops-book",
-        "kubernetes-proxmox-to-cloud-book",
-        "podman-book"
+        "kubernetes-proxmox-to-cloud-book"
       ],
       "nextPathIds": []
     },
