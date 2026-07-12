@@ -88,7 +88,7 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 25,
+      "count": 26,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -114,7 +114,8 @@
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
         "practical-security-infrastructure-guide",
-        "small-webapp-software-design-book"
+        "small-webapp-software-design-book",
+        "theoretical-computer-science-textbook"
       ]
     },
     "missingReviewIssue": {
