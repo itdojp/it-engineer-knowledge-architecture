@@ -423,15 +423,15 @@
       "profile": "B",
       "modules": {
         "quickStart": false,
-        "readingGuide": false,
+        "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": true,
+        "figureIndex": false,
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "初期登録"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-basics-book#34で、source main 8e02d0298fc9a9bb960b0bb1acec5d5fea259522のREADME、両config、公開トップ、導入、チェックリスト、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。Podman本は必要時の参照であり必須前提にせず、次読は本文で明示されたkubernetes-cluster-ops-bookとした。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
     },
     "kubernetes-cluster-ops-book": {
       "repo": "itdojp/kubernetes-cluster-ops-book",
@@ -439,15 +439,15 @@
       "profile": "B",
       "modules": {
         "quickStart": false,
-        "readingGuide": false,
+        "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": true,
+        "figureIndex": false,
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "初期登録"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-cluster-ops-book#34で、source main b1cda610e6c006589093b5cce1b5d7a6f63b6474のREADME、両config、公開トップ、導入、チェックリスト、Runbook、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。本文で案内されたkubernetes-basics-bookを前提とし、次読はポータル正本のcloud-container学習パスに基づきkubernetes-proxmox-to-cloud-bookとした。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
     },
     "kubernetes-proxmox-to-cloud-book": {
       "repo": "itdojp/kubernetes-proxmox-to-cloud-book",
@@ -459,11 +459,11 @@
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
+        "figureIndex": false,
+        "legalNotice": true,
         "glossary": true
       },
-      "notes": "初期登録"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-proxmox-to-cloud-book#39で、source main d445b408e506551923bb3c1aa38d383ba9961e24のREADME、book-config、公開トップ、Quick Start、読み方、ライセンスFAQ、チェックリスト、トラブルシュート、用語集を照合し、対象読者、Profile B、modulesを確定。1〜3週間の範囲表記はcatalogの単一整数へ任意転記せずestimatedWeeksはnull。必須前提は追加せず、現行cloud-container学習パス末尾のpodman-bookは内容上の順序を再監査するitdojp/it-engineer-knowledge-architecture#216へ分離したため、根拠のある次読書籍も追加しない。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
     },
     "linux-infra-textbook2": {
       "repo": "itdojp/linux-infra-textbook2",
@@ -567,7 +567,7 @@
       "profile": "B",
       "modules": {
         "quickStart": false,
-        "readingGuide": false,
+        "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
@@ -575,7 +575,7 @@
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/proxmox_book#131で、source main bc8cf4bfb6a638b7da771162a43c1de25afce820のREADME、book-config、公開トップ、導入、環境準備、運用章、図表導線を照合し、対象読者、Profile B、modulesを確定。一般的なライセンス表記は専用legal notice moduleとして扱わず、所要時間は週換算しないためestimatedWeeksはnullを維持した。根拠のある前提・次読書籍はない。"
     },
     "security-privacy-literacy-book": {
       "repo": "itdojp/security-privacy-literacy-book",
