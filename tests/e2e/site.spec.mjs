@@ -164,7 +164,8 @@ test.describe('English canonical catalog', () => {
     await expect(page.locator('[data-catalog-id="categorical-software-design-book"]')).toContainText('Related: Compositional Software Design for Agentic Systems');
     const plannedBook = page.locator('[data-catalog-id="infrastructure-monitoring-automation-guide"]');
     const plannedBookMetadata = expectedBooks.find((book) => book.id === 'infrastructure-monitoring-automation-guide');
-    const plannedSummary = plannedBookMetadata.summary.en || 'Planned book; details will be added when the scope is finalized.';
+    expect(plannedBookMetadata, 'planned book metadata should exist in the canonical catalog').toBeDefined();
+    const plannedSummary = plannedBookMetadata?.summary.en || 'Planned book; details will be added when the scope is finalized.';
     await expect(plannedBook).toContainText(plannedSummary);
     await expect(plannedBook).toContainText('Not yet available');
 
