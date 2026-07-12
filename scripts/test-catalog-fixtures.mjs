@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
-import { ROOT, readJson, validateCatalog } from './catalog-utils.mjs';
+import {
+  ROOT,
+  accessNoteFor,
+  legacyRegistryFromCatalog,
+  readJson,
+  validateCatalog
+} from './catalog-utils.mjs';
 
 const cases = [
   { file: 'tests/fixtures/catalog-valid.json', valid: true, script: 'scripts/validate-catalog.mjs' },
@@ -24,10 +30,10 @@ const cases = [
     mustContain: 'cycle detected'
   },
   {
-    file: 'tests/fixtures/catalog-invalid-private-scope.json',
+    file: 'tests/fixtures/catalog-invalid-published-planned-scope.json',
     valid: false,
     script: 'scripts/validate-catalog.mjs',
-    mustContain: 'private managed book must declare publicationScope=free-preview'
+    mustContain: 'published book must use publicationScope=full-public or free-preview'
   }
 
 
@@ -119,6 +125,50 @@ if (plannedEnglishErrors.length > 0) {
   console.error(plannedEnglishErrors.join('\n'));
 } else {
   console.log('✅ inline fixture valid as expected: planned English book without URL');
+}
+
+const privateFullPublicCatalog = structuredClone(validCatalog);
+Object.assign(privateFullPublicCatalog.books[0], {
+  repoVisibility: 'private',
+  publicationScope: 'full-public'
+});
+const privateFullPublicErrors = validateCatalog(privateFullPublicCatalog);
+if (privateFullPublicErrors.length > 0) {
+  failed++;
+  console.error('❌ inline fixture expectation failed: private repository with full-public Pages');
+  console.error(privateFullPublicErrors.join('\n'));
+} else {
+  console.log('✅ inline fixture valid as expected: private repository with full-public Pages');
+}
+
+const privateFullPublicRegistry = legacyRegistryFromCatalog(privateFullPublicCatalog);
+const privateFullPublicBook = privateFullPublicRegistry.books[privateFullPublicCatalog.books[0].id];
+if (privateFullPublicBook.accessNote !== '管理リポジトリは非公開ですが、公開サイトでは全文を読めます。') {
+  failed++;
+  console.error('❌ inline fixture expectation failed: private full-public access note');
+} else {
+  console.log('✅ inline fixture generated structured private full-public access note');
+}
+
+const privateFreePreviewCatalog = structuredClone(validCatalog);
+Object.assign(privateFreePreviewCatalog.books[0], {
+  repoVisibility: 'private',
+  publicationScope: 'free-preview'
+});
+const privateFreePreviewRegistry = legacyRegistryFromCatalog(privateFreePreviewCatalog);
+const privateFreePreviewBook = privateFreePreviewRegistry.books[privateFreePreviewCatalog.books[0].id];
+if (privateFreePreviewBook.accessNote !== '有料部分を含むため管理リポジトリは非公開です。公開サイトでは無料試読範囲を読めます。') {
+  failed++;
+  console.error('❌ inline fixture expectation failed: private free-preview access note');
+} else {
+  console.log('✅ inline fixture generated structured private free-preview access note');
+}
+
+if (accessNoteFor({ repoVisibility: 'private', publicationScope: 'planned' }) !== null) {
+  failed++;
+  console.error('❌ inline fixture expectation failed: invalid private planned scope has no access note');
+} else {
+  console.log('✅ inline fixture does not mislabel an invalid private planned scope');
 }
 
 if (failed > 0) process.exit(1);

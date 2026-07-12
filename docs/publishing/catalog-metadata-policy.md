@@ -16,6 +16,8 @@
 4. 内部enum、移行メモ、監査用参照は検索・運用には利用しても、通常の読者向けカードへ直接表示しない。
 5. metadata補完はQuality Sprintの2〜4冊単位で行い、根拠と検証結果をIssue・PRへ記録する。
 
+`repoVisibility` は管理リポジトリへのアクセス可否、`publicationScope` は公開Pagesで読める範囲を表し、独立して記録する。Private repositoryでも、公開Pagesが正本全文を提供する場合は `publicationScope: full-public`、無料試読だけを提供する場合は `publicationScope: free-preview` とする。
+
 ## 2. 読者向け概要
 
 ### `summary.ja`

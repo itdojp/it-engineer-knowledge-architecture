@@ -131,6 +131,8 @@ permalink: /books/
       <p><small>関連書として掲載している独立した英語書籍です。</small></p>
     {% elsif book.repoVisibility == 'private' and book.publicationScope == 'free-preview' %}
       <p><small>有料部分を含むため管理リポジトリは非公開です。公開サイトでは無料試読範囲を読めます。</small></p>
+    {% elsif book.repoVisibility == 'private' and book.publicationScope == 'full-public' %}
+      <p><small>管理リポジトリは非公開ですが、公開サイトでは全文を読めます。</small></p>
     {% elsif book.publicationScope == 'free-preview' %}
       <p><small>公開サイトでは無料試読範囲を読めます。</small></p>
     {% endif %}

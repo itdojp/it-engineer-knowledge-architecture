@@ -179,6 +179,7 @@ function buildRepoBatchQuery(repos) {
 }
 
 async function main() {
+  const { accessNoteFor } = await import("./catalog-utils.mjs");
   const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
   if (!token) {
     fail("GITHUB_TOKEN が必要です（GitHub Actions / ローカル実行）");
@@ -227,9 +228,7 @@ async function main() {
       if (!owner || !name) {
         fail(`${bookName}: repo の形式が不正です (${repo})`);
       }
-      const accessNote =
-        (entry.notes || []).find((note) => String(note).includes("Private")) ||
-        (entry.notes || []).find((note) => String(note).includes("無料公開範囲"));
+      const accessNote = accessNoteFor(entry);
       return {
         bookName,
         owner,
