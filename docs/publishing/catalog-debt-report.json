@@ -10,7 +10,7 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 25,
+      "count": 21,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -27,13 +27,9 @@
         "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
-        "kubernetes-basics-book",
-        "kubernetes-cluster-ops-book",
-        "kubernetes-proxmox-to-cloud-book",
         "negotiation-for-engineers-book",
         "podman-book",
         "practical-auth-book",
-        "proxmox_book",
         "small-webapp-software-design-book",
         "supabase-architecture-patterns-book",
         "theoretical-computer-science-textbook"
@@ -98,7 +94,7 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 35,
+      "count": 31,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -122,15 +118,11 @@
         "github-workflow-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
-        "kubernetes-basics-book",
-        "kubernetes-cluster-ops-book",
-        "kubernetes-proxmox-to-cloud-book",
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
         "podman-book",
         "practical-auth-book",
         "practical-security-infrastructure-guide",
-        "proxmox_book",
         "small-webapp-software-design-book",
         "supabase-architecture-patterns-book",
         "theoretical-computer-science-prerequisites-book",
@@ -138,7 +130,7 @@
       ]
     },
     "missingReviewIssue": {
-      "count": 34,
+      "count": 30,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -161,15 +153,11 @@
         "github-workflow-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
-        "kubernetes-basics-book",
-        "kubernetes-cluster-ops-book",
-        "kubernetes-proxmox-to-cloud-book",
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
         "podman-book",
         "practical-auth-book",
         "practical-security-infrastructure-guide",
-        "proxmox_book",
         "small-webapp-software-design-book",
         "supabase-architecture-patterns-book",
         "theoretical-computer-science-prerequisites-book",
@@ -177,7 +165,7 @@
       ]
     },
     "provisionalNotes": {
-      "count": 25,
+      "count": 21,
       "books": [
         {
           "id": "BioinformaticsGuide-book",
@@ -299,24 +287,6 @@
           ]
         },
         {
-          "id": "kubernetes-basics-book",
-          "notes": [
-            "日本語個別概要はREADME公開カタログ上で未記載。"
-          ]
-        },
-        {
-          "id": "kubernetes-cluster-ops-book",
-          "notes": [
-            "日本語個別概要はREADME公開カタログ上で未記載。"
-          ]
-        },
-        {
-          "id": "kubernetes-proxmox-to-cloud-book",
-          "notes": [
-            "日本語個別概要はREADME公開カタログ上で未記載。"
-          ]
-        },
-        {
           "id": "negotiation-for-engineers-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
@@ -334,14 +304,6 @@
         },
         {
           "id": "practical-auth-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "proxmox_book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -427,7 +389,7 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 23,
+      "count": 22,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -448,15 +410,14 @@
         "negotiation-for-engineers-book",
         "podman-book",
         "practical-auth-book",
-        "proxmox_book",
         "small-webapp-software-design-book",
         "supabase-architecture-patterns-book",
         "theoretical-computer-science-textbook"
       ]
     },
     "missingRequiredUxModules": {
-      "count": 13,
-      "bookCount": 10,
+      "count": 16,
+      "bookCount": 13,
       "books": [
         {
           "id": "IT-infra-book",
@@ -555,6 +516,42 @@
           ]
         },
         {
+          "id": "kubernetes-basics-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 214,
+              "trackingIssue": 215
+            }
+          ]
+        },
+        {
+          "id": "kubernetes-cluster-ops-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 214,
+              "trackingIssue": 215
+            }
+          ]
+        },
+        {
+          "id": "kubernetes-proxmox-to-cloud-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 214,
+              "trackingIssue": 215
+            }
+          ]
+        },
+        {
           "id": "linux-infra-textbook2",
           "profile": "A",
           "missingModules": [
@@ -605,8 +602,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 13,
-      "currentCount": 13,
+      "baselineCount": 16,
+      "currentCount": 16,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,

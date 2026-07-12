@@ -1185,19 +1185,21 @@
         "applied-technologies"
       ],
       "levels": [
-        "intermediate",
-        "advanced"
+        "beginner",
+        "intermediate"
       ],
       "roles": [
         "infrastructure-engineer",
-        "backend-engineer"
+        "architect"
       ],
       "audiences": [
-        "中級者以上 / 特定技術スタックの実践的活用"
+        "Proxmox VEを評価し、単一ノードからクラスタまでの導入・運用を担うインフラエンジニア",
+        "小〜中規模のオンプレミス仮想化基盤を提案・構築するシステムインテグレーター",
+        "既存仮想化基盤からの移行、バックアップ、監視、障害対応をレビューする技術リーダー"
       ],
       "summary": {
-        "ja": "",
-        "en": "Explains how to build and operate virtualization environments with Proxmox VE in practical scenarios."
+        "ja": "Proxmox VE 9.1を前提に、単一ノード導入からクラスタ、ストレージ、ネットワーク、バックアップ、監視、障害対応、エンタープライズ連携までを、設計判断と安全な運用の観点で体系化した実践書です。",
+        "en": "A practical guide for infrastructure engineers evaluating or deploying Proxmox VE 9.1, covering single-node setup, clusters, storage, networking, backups, monitoring, incident response, and enterprise integration with explicit design and operational tradeoffs."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -1207,13 +1209,13 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 214,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
@@ -1223,16 +1225,23 @@
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/proxmox_book#131で、source main bc8cf4bfb6a638b7da771162a43c1de25afce820のREADME、book-config、公開トップ、導入、環境準備、運用章、図表導線を照合し、対象読者、Profile B、modulesを確定。一般的なライセンス表記は専用legal notice moduleとして扱わず、所要時間は週換算しないためestimatedWeeksはnullを維持した。根拠のある前提・次読書籍はない。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/proxmox_book/blob/bc8cf4bfb6a638b7da771162a43c1de25afce820/README.md",
+        "https://github.com/itdojp/proxmox_book/blob/bc8cf4bfb6a638b7da771162a43c1de25afce820/book-config.json",
+        "https://github.com/itdojp/proxmox_book/blob/bc8cf4bfb6a638b7da771162a43c1de25afce820/docs/index.md",
+        "https://github.com/itdojp/proxmox_book/blob/bc8cf4bfb6a638b7da771162a43c1de25afce820/docs/_data/navigation.yml",
+        "https://github.com/itdojp/proxmox_book/blob/bc8cf4bfb6a638b7da771162a43c1de25afce820/docs/introduction/index.md",
+        "https://github.com/itdojp/proxmox_book/blob/bc8cf4bfb6a638b7da771162a43c1de25afce820/docs/introduction/env-setup.md",
+        "https://github.com/itdojp/proxmox_book/blob/bc8cf4bfb6a638b7da771162a43c1de25afce820/docs/chapters/chapter-09-operations.md",
+        "https://github.com/itdojp/proxmox_book/blob/bc8cf4bfb6a638b7da771162a43c1de25afce820/docs/diagrams/part4/ch9/triage-flow.svg",
+        "https://github.com/itdojp/proxmox_book/issues/131",
+        "https://github.com/itdojp/proxmox_book/pull/132",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573"
       ]
     },
     {
@@ -1257,53 +1266,69 @@
         "applied-technologies"
       ],
       "levels": [
-        "intermediate",
-        "advanced"
+        "beginner",
+        "intermediate"
       ],
       "roles": [
-        "infrastructure-engineer",
-        "backend-engineer"
+        "backend-engineer",
+        "infrastructure-engineer"
       ],
       "audiences": [
-        "中級者以上 / 特定技術スタックの実践的活用"
+        "Kubernetesへアプリケーションを載せる基礎をハンズオンで学びたい初学者",
+        "kubectl、YAML、Pod、Deployment、Service、Ingressを整理したいアプリケーション／インフラ担当者",
+        "実務チェックリストと基本的な障害切り分け手順を必要とする開発・運用担当者"
       ],
       "summary": {
-        "ja": "",
-        "en": "Introduces Kubernetes from core objects to service exposure, with hands-on operational basics."
+        "ja": "Kubernetesを学び始めるアプリケーション／インフラ担当者が、kubectl、YAML、Pod、Deployment、Service、Ingress、設定・ストレージの基礎をハンズオンで学び、実務チェックリストと障害切り分けへつなげる入門実践書です。",
+        "en": "A hands-on introductory guide for application and infrastructure engineers to learn kubectl, YAML, Pods, Deployments, Services, Ingress, configuration, and storage, then apply practical checklists and troubleshooting flows."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "kubernetes-cluster-ops-book",
+        "podman-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 214,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "初期登録",
-        "日本語個別概要はREADME公開カタログ上で未記載。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-basics-book#34で、source main 8e02d0298fc9a9bb960b0bb1acec5d5fea259522のREADME、両config、公開トップ、導入、チェックリスト、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。Podman本は必要時の参照であり必須前提にせず、次読は本文とあとがきで明示されたkubernetes-cluster-ops-bookとpodman-bookとした。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/README.md",
+        "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/book-config.json",
+        "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/book-formatter-config.json",
+        "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/docs/index.md",
+        "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/docs/_data/navigation.yml",
+        "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/docs/introduction/index.md",
+        "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/docs/appendices/appendix-a/index.md",
+        "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/docs/appendices/appendix-b/index.md",
+        "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/docs/appendices/appendix-d/index.md",
+        "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/docs/afterword/index.md",
+        "https://github.com/itdojp/kubernetes-basics-book/issues/34",
+        "https://github.com/itdojp/kubernetes-basics-book/pull/35",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/215",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573"
       ]
     },
     {
@@ -1333,48 +1358,66 @@
       ],
       "roles": [
         "infrastructure-engineer",
-        "backend-engineer"
+        "sre",
+        "architect"
       ],
       "audiences": [
-        "中級者以上 / 特定技術スタックの実践的活用"
+        "Kubernetesクラスタの設計・運用を担うインフラエンジニア、SRE、プラットフォーム担当者",
+        "責任分界、HA、etcd、ネットワーク、ストレージ、認証認可、監視を体系化したい運用担当者",
+        "チェックリストとRunbookでクラスタ運用品質を標準化する技術リーダー・アーキテクト"
       ],
       "summary": {
-        "ja": "",
-        "en": "Covers Kubernetes cluster design and day-2 operations with reliability, lifecycle, and security concerns in mind."
+        "ja": "Kubernetesクラスタの設計・運用責任者が、責任分界、HA、etcd、ネットワーク、ストレージ、認証認可、監視、障害対応、アップグレード、自動化を整理し、チェックリストとRunbookで運用品質を標準化するための実践書です。",
+        "en": "A practical guide for Kubernetes cluster owners to structure responsibility boundaries, high availability, etcd, networking, storage, access control, observability, incident response, upgrades, and automation, using checklists and runbooks to standardize operations."
       },
-      "prerequisites": [],
+      "prerequisites": [
+        "kubernetes-basics-book"
+      ],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "kubernetes-proxmox-to-cloud-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 214,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "初期登録",
-        "日本語個別概要はREADME公開カタログ上で未記載。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-cluster-ops-book#34で、source main b1cda610e6c006589093b5cce1b5d7a6f63b6474のREADME、両config、公開トップ、導入、チェックリスト、Runbook、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。本文で案内されたkubernetes-basics-bookを前提とし、次読はポータル正本のcloud-container学習パスに基づきkubernetes-proxmox-to-cloud-bookとした。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/README.md",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/book-config.json",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/book-formatter-config.json",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/docs/index.md",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/docs/_data/navigation.yml",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/docs/introduction/index.md",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/docs/appendices/appendix-a/index.md",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/docs/appendices/appendix-b/index.md",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/docs/chapters/chapter11/index.md",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/docs/afterword/index.md",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/issues/34",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/pull/35",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/215",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573"
       ]
     },
     {
@@ -1404,14 +1447,17 @@
       ],
       "roles": [
         "infrastructure-engineer",
-        "backend-engineer"
+        "sre",
+        "architect"
       ],
       "audiences": [
-        "中級者以上 / 特定技術スタックの実践的活用"
+        "Proxmox上の検証Kubernetesをクラウド本番へ移行するインフラエンジニア",
+        "ロードバランサー、ストレージ、認証、可観測性の環境差分を整理するSRE・運用担当者",
+        "kubeadm、Kustomize、Helm、GitOpsを使った再現可能な移行・復旧設計をレビューするアーキテクト"
       ],
       "summary": {
-        "ja": "",
-        "en": "Bridges local Proxmox-based Kubernetes experiments to cloud production architecture and operations."
+        "ja": "Proxmox上の検証Kubernetesからクラウド本番へ移行する担当者が、ロードバランサー、ストレージ、認証、可観測性の差分を整理し、kubeadm、Kustomize、Helm、GitOps、運用・復旧を再現可能な設計へ落とし込む実務ガイドです。",
+        "en": "A practical migration guide for moving Kubernetes from a Proxmox lab to cloud production, mapping load balancing, storage, identity, and observability differences into reproducible designs with kubeadm, Kustomize, Helm, GitOps, operations, and recovery."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -1421,8 +1467,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 214,
       "ux": {
         "profile": "B",
         "modules": {
@@ -1431,21 +1477,35 @@
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
-          "legalNotice": false,
+          "figureIndex": false,
+          "legalNotice": true,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "初期登録",
-        "日本語個別概要はREADME公開カタログ上で未記載。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-proxmox-to-cloud-book#39で、source main d445b408e506551923bb3c1aa38d383ba9961e24のREADME、book-config、公開トップ、Quick Start、読み方、ライセンスFAQ、チェックリスト、トラブルシュート、用語集を照合し、対象読者、Profile B、modulesを確定。1〜3週間の範囲表記はcatalogの単一整数へ任意転記せずestimatedWeeksはnull。必須前提は追加せず、現行cloud-container学習パス末尾のpodman-bookは内容上の順序を再監査するitdojp/it-engineer-knowledge-architecture#216へ分離したため、根拠のある次読書籍も追加しない。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/README.md",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/book-config.json",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/docs/index.md",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/docs/_data/navigation.yml",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/docs/introduction/preface.md",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/docs/introduction/quickstart.md",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/docs/introduction/reading-guide.md",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/docs/introduction/license-faq.md",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/docs/appendices/smoke-test-checklist/index.md",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/docs/appendices/troubleshooting/index.md",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/docs/appendices/glossary/index.md",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/docs/appendices/version-matrix/index.md",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/issues/39",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/pull/40",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/215",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573"
       ]
     },
     {
