@@ -849,46 +849,58 @@
         "sre"
       ],
       "audiences": [
-        "中級〜上級者（経験2年以上）/ 高度な設計・運用・問題解決スキル"
+        "ITインフラの運用・保守を担当し、障害対応を体系化したいエンジニア",
+        "ネットワーク、OS、ミドルウェア、クラウド、コンテナの切り分け力を高めたいシステム管理者",
+        "インシデント時の復旧、エスカレーション、ポストモーテムを改善したいSRE・運用チーム"
       ],
       "summary": {
-        "ja": "",
-        "en": "Teaches systematic troubleshooting through hypothesis building, observation, isolation, verification, and recovery."
+        "ja": "インフラ運用・保守担当者が、仮説立案、観測、レイヤー別の切り分け、復旧、エスカレーション、ポストモーテムを体系化し、ネットワーク、OS、ミドルウェア、クラウド、コンテナの障害へ安全かつ再現可能に対応するための実践書です。",
+        "en": "Provides infrastructure operators with a systematic, safety-conscious workflow for hypothesis building, observation, layer-by-layer isolation, recovery, escalation, and postmortems across networks, operating systems, middleware, cloud, and containers."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "cloud-infra-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 211,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
           "figureIndex": true,
           "legalNotice": false,
-          "glossary": false
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/IT-infra-troubleshooting-book#139で、source main d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723dのREADME、book-config、公開トップ、学習ガイド、前提知識、チェックリスト、症状別フロー、図表導線、用語集を照合し、対象読者、Profile B、modulesを確定。読了・演習時間は週換算せず、次の学習先はポータル正本のcore-infrastructure学習パスに基づきcloud-infra-bookとした。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723d/README.md",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723d/book-config.json",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723d/docs/index.md",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723d/docs/_data/navigation.yml",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723d/docs/introduction/learning-guide.md",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723d/docs/introduction/prerequisites.md",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723d/docs/appendices/a.md",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723d/docs/appendices/b.md",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723d/docs/appendices/d.md",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/issues/139",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/pull/141",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/211",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/211#issuecomment-4949850445"
       ]
     },
     {
@@ -918,49 +930,65 @@
       ],
       "roles": [
         "infrastructure-engineer",
-        "sre"
+        "sre",
+        "architect"
       ],
       "audiences": [
-        "中級〜上級者（経験2年以上）/ 高度な設計・運用・問題解決スキル"
+        "クラウドインフラの設計・構築・運用を担うインフラエンジニア",
+        "オンプレミスからクラウドへの移行やハイブリッド構成を検討する担当者",
+        "可用性、コスト、セキュリティの設計判断をレビューするSRE・DevOps・アーキテクト"
       ],
       "summary": {
-        "ja": "",
-        "en": "Focuses on designing and building cloud infrastructure with sound choices for compute, storage, networking, and operations."
+        "ja": "クラウド設計・構築・運用に携わるエンジニアが、コンピュート、ストレージ、ネットワーク、IAM、監視、DR、コンテナ、IaCをベンダー横断の原理で整理し、可用性・コスト・セキュリティのトレードオフを説明可能な設計へ落とし込む実践書です。",
+        "en": "Helps cloud infrastructure engineers design compute, storage, networking, IAM, observability, disaster recovery, containers, and IaC using vendor-neutral principles, making availability, cost, and security tradeoffs explicit and reviewable."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "kubernetes-basics-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 211,
       "ux": {
-        "profile": "B",
+        "profile": "C",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
-          "troubleshootingFlow": true,
+          "troubleshootingFlow": false,
           "conceptMap": false,
-          "figureIndex": true,
-          "legalNotice": false,
-          "glossary": false
+          "figureIndex": false,
+          "legalNotice": true,
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211、itdojp/cloud-infra-book#138、build修正itdojp/cloud-infra-book#139で、source main b282a4b7b2c623e8bd703fdb19d1473a44c03a06のREADME、book-config、公開トップ、導入、設計・運用チェックリスト、法的注意、用語集を照合し、対象読者、Profile C、modulesを確定。学習時間は週換算せず、次の学習先はポータル正本のcloud-container学習パスに基づきkubernetes-basics-bookとした。専用概念マップがない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/cloud-infra-book/blob/b282a4b7b2c623e8bd703fdb19d1473a44c03a06/README.md",
+        "https://github.com/itdojp/cloud-infra-book/blob/b282a4b7b2c623e8bd703fdb19d1473a44c03a06/book-config.json",
+        "https://github.com/itdojp/cloud-infra-book/blob/b282a4b7b2c623e8bd703fdb19d1473a44c03a06/docs/index.md",
+        "https://github.com/itdojp/cloud-infra-book/blob/b282a4b7b2c623e8bd703fdb19d1473a44c03a06/docs/_data/navigation.yml",
+        "https://github.com/itdojp/cloud-infra-book/blob/b282a4b7b2c623e8bd703fdb19d1473a44c03a06/docs/introduction/index.md",
+        "https://github.com/itdojp/cloud-infra-book/blob/b282a4b7b2c623e8bd703fdb19d1473a44c03a06/docs/appendices/index.md",
+        "https://github.com/itdojp/cloud-infra-book/blob/b282a4b7b2c623e8bd703fdb19d1473a44c03a06/docs/chapter-chapter02/index.md",
+        "https://github.com/itdojp/cloud-infra-book/blob/b282a4b7b2c623e8bd703fdb19d1473a44c03a06/docs/chapter-chapter11/index.md",
+        "https://github.com/itdojp/cloud-infra-book/blob/b282a4b7b2c623e8bd703fdb19d1473a44c03a06/src/chapter-chapter04/index.md",
+        "https://github.com/itdojp/cloud-infra-book/issues/138",
+        "https://github.com/itdojp/cloud-infra-book/pull/142",
+        "https://github.com/itdojp/cloud-infra-book/issues/139",
+        "https://github.com/itdojp/cloud-infra-book/pull/141",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/211",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/212",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/211#issuecomment-4949850445"
       ]
     },
     {
@@ -990,49 +1018,63 @@
       ],
       "roles": [
         "security-engineer",
-        "infrastructure-engineer"
+        "infrastructure-engineer",
+        "sre",
+        "architect"
       ],
       "audiences": [
-        "中級者以上 / インフラ・アプリケーションのセキュリティ設計・診断"
+        "ネットワーク、OS、クラウド、コンテナの防御設計・実装を担うインフラ／セキュリティエンジニア",
+        "監視とインシデント対応を含むセキュリティ運用を改善したいSRE・DevOps担当者",
+        "リスク評価、多層防御、技術対策をレビューするアーキテクト・技術リーダー"
       ],
       "summary": {
-        "ja": "",
-        "en": "Covers practical security controls for infrastructure, including identity, hardening, monitoring, and incident readiness."
+        "ja": "インフラ・セキュリティ担当者が、リスク評価と多層防御を基礎に、ネットワーク、OS、クラウド、コンテナの防御、監視、インシデント対応を設計・実装・レビューし、技術対策と組織運用を継続的に改善するための実践書です。",
+        "en": "Helps infrastructure and security practitioners apply risk assessment and defense in depth across networks, operating systems, cloud, and containers, integrating monitoring and incident response into continuous operational improvement."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "practical-auth-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 211,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
-          "troubleshootingFlow": true,
+          "troubleshootingFlow": false,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/it-infra-security-guide-book#139で、source main 10c29d4aafba9b0c4b7378256f94d91e87ca4c54のREADME、book-config、公開トップ、導入、インシデント対応章、チェックリストを照合し、対象読者、Profile B、modulesを確定。週単位の根拠がないためestimatedWeeksは設定せず、次の学習先はポータル正本のsecurity学習パスに基づきpractical-auth-bookとした。専用トラブルシューティングフローと図表索引がない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/it-infra-security-guide-book/blob/10c29d4aafba9b0c4b7378256f94d91e87ca4c54/README.md",
+        "https://github.com/itdojp/it-infra-security-guide-book/blob/10c29d4aafba9b0c4b7378256f94d91e87ca4c54/book-config.json",
+        "https://github.com/itdojp/it-infra-security-guide-book/blob/10c29d4aafba9b0c4b7378256f94d91e87ca4c54/docs/index.md",
+        "https://github.com/itdojp/it-infra-security-guide-book/blob/10c29d4aafba9b0c4b7378256f94d91e87ca4c54/docs/_data/navigation.yml",
+        "https://github.com/itdojp/it-infra-security-guide-book/blob/10c29d4aafba9b0c4b7378256f94d91e87ca4c54/docs/chapter-introduction/index.md",
+        "https://github.com/itdojp/it-infra-security-guide-book/blob/10c29d4aafba9b0c4b7378256f94d91e87ca4c54/docs/chapter-chapter09/index.md",
+        "https://github.com/itdojp/it-infra-security-guide-book/blob/10c29d4aafba9b0c4b7378256f94d91e87ca4c54/docs/appendices/appendix-a/index.md",
+        "https://github.com/itdojp/it-infra-security-guide-book/blob/10c29d4aafba9b0c4b7378256f94d91e87ca4c54/docs/appendices/appendix-b/index.md",
+        "https://github.com/itdojp/it-infra-security-guide-book/issues/139",
+        "https://github.com/itdojp/it-infra-security-guide-book/pull/140",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/211",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/212",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/211#issuecomment-4949850445"
       ]
     },
     {
@@ -1062,49 +1104,63 @@
       ],
       "roles": [
         "security-engineer",
-        "infrastructure-engineer"
+        "infrastructure-engineer",
+        "backend-engineer"
       ],
       "audiences": [
-        "中級者以上 / インフラ・アプリケーションのセキュリティ設計・診断"
+        "ペネトレーションテストを体系的に学びたいセキュリティ・アプリケーションセキュリティ担当者",
+        "Web、API、モバイル、クラウド、Linux、コンテナの検証に関わるインフラ・バックエンドエンジニア",
+        "外部診断のスコープ、証跡、PoC、報告書をレビューする技術担当者"
       ],
       "summary": {
-        "ja": "",
-        "en": "Introduces penetration testing workflows, tooling, and reporting for real-world security assessments."
+        "ja": "セキュリティ、インフラ、バックエンド担当者が、許可とスコープ管理を前提に、Web、API、モバイル、クラウド、Linux、コンテナのペネトレーションテストを計画・実施し、証跡、PoC、改善提案を含む再現可能な報告へまとめるための実践教材です。",
+        "en": "Guides security, infrastructure, and backend practitioners through authorized, scoped penetration tests across web, API, mobile, cloud, Linux, and containers, producing reproducible evidence, proofs of concept, and actionable reports."
       },
       "prerequisites": [],
-      "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "estimatedWeeks": 12,
+      "recommendedAfter": [
+        "incident-response-basics-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 211,
       "ux": {
         "profile": "B",
         "modules": {
-          "quickStart": false,
-          "readingGuide": false,
+          "quickStart": true,
+          "readingGuide": true,
           "checklistPack": true,
-          "troubleshootingFlow": true,
+          "troubleshootingFlow": false,
           "conceptMap": false,
-          "figureIndex": true,
-          "legalNotice": false,
-          "glossary": false
+          "figureIndex": false,
+          "legalNotice": true,
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/pentest-learning-book#201で、source main 43118347749e22d6533d44cd83e1ab53bcfccc21のREADME、book-config、公開トップ、12週間カリキュラム、法的・倫理的注意、演習Quick Start、チェックリスト、用語集を照合し、対象読者、Profile B、modules、estimatedWeeks=12を確定。次の学習先はポータル正本のsecurity学習パスに基づきincident-response-basics-bookとした。専用トラブルシューティングフローと図表索引がない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/pentest-learning-book/blob/43118347749e22d6533d44cd83e1ab53bcfccc21/README.md",
+        "https://github.com/itdojp/pentest-learning-book/blob/43118347749e22d6533d44cd83e1ab53bcfccc21/book-config.json",
+        "https://github.com/itdojp/pentest-learning-book/blob/43118347749e22d6533d44cd83e1ab53bcfccc21/docs/index.md",
+        "https://github.com/itdojp/pentest-learning-book/blob/43118347749e22d6533d44cd83e1ab53bcfccc21/docs/_data/navigation.yml",
+        "https://github.com/itdojp/pentest-learning-book/blob/43118347749e22d6533d44cd83e1ab53bcfccc21/docs/part0_intro/00_overview.md",
+        "https://github.com/itdojp/pentest-learning-book/blob/43118347749e22d6533d44cd83e1ab53bcfccc21/docs/part0_intro/02_legal_and_ethics.md",
+        "https://github.com/itdojp/pentest-learning-book/blob/43118347749e22d6533d44cd83e1ab53bcfccc21/docs/appendix/exercises_quickstart.md",
+        "https://github.com/itdojp/pentest-learning-book/blob/43118347749e22d6533d44cd83e1ab53bcfccc21/docs/appendix/checklists.md",
+        "https://github.com/itdojp/pentest-learning-book/blob/43118347749e22d6533d44cd83e1ab53bcfccc21/docs/appendix/glossary.md",
+        "https://github.com/itdojp/pentest-learning-book/issues/201",
+        "https://github.com/itdojp/pentest-learning-book/pull/202",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/211",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/212",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/211#issuecomment-4949850445"
       ]
     },
     {

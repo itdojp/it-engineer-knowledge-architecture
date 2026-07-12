@@ -10,6 +10,14 @@
       "trackingIssue": 210
     },
     {
+      "bookId": "cloud-infra-book",
+      "profile": "C",
+      "module": "conceptMap",
+      "reason": "実ファイル監査で専用の概念マップが未実装であることを確認済み。未参照の図版assetをreader-facing moduleとして扱わず、根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 211,
+      "trackingIssue": 212
+    },
+    {
       "bookId": "engineering-documentation-book",
       "profile": "B",
       "module": "figureIndex",
@@ -34,6 +42,22 @@
       "trackingIssue": 197
     },
     {
+      "bookId": "it-infra-security-guide-book",
+      "profile": "B",
+      "module": "figureIndex",
+      "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 211,
+      "trackingIssue": 212
+    },
+    {
+      "bookId": "it-infra-security-guide-book",
+      "profile": "B",
+      "module": "troubleshootingFlow",
+      "reason": "実ファイル監査で専用のトラブルシューティングフローが未実装であることを確認済み。インシデント対応章を代用せず、根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 211,
+      "trackingIssue": 212
+    },
+    {
       "bookId": "it-infra-software-essentials-book",
       "profile": "B",
       "module": "figureIndex",
@@ -56,6 +80,22 @@
       "reason": "実ファイル監査で公開読者向けのQuick Startが未実装であることを確認済み。リポジトリ作業者向けQUICK-START.mdは読者向けmoduleとして扱わず、根拠のないtrueへの変更は行わない。",
       "evidenceIssue": 208,
       "trackingIssue": 210
+    },
+    {
+      "bookId": "pentest-learning-book",
+      "profile": "B",
+      "module": "figureIndex",
+      "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 211,
+      "trackingIssue": 212
+    },
+    {
+      "bookId": "pentest-learning-book",
+      "profile": "B",
+      "module": "troubleshootingFlow",
+      "reason": "実ファイル監査で専用のトラブルシューティングフローが未実装であることを確認済み。一般的な検証手順を代用せず、根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 211,
+      "trackingIssue": 212
     },
     {
       "bookId": "security-privacy-literacy-book",
