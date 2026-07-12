@@ -57,8 +57,8 @@ test.describe('catalog interactions', () => {
     await expect(page.locator('#book-filter-result')).toContainText('全 49 件');
 
     await page.locator('#book-filter-keyword').fill('Kubernetes');
-    await expect(page.locator('[data-book-card]:visible')).toHaveCount(3);
-    await expect(page.locator('#book-filter-result')).toContainText('3 / 49 件');
+    await expect(page.locator('[data-book-card]:visible')).toHaveCount(4);
+    await expect(page.locator('#book-filter-result')).toContainText('4 / 49 件');
 
     await page.locator('#book-filter-keyword').fill('');
     await page.locator('#book-filter-scope').selectOption('free-preview');

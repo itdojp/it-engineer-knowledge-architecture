@@ -1537,6 +1537,7 @@
         "applied-technologies"
       ],
       "levels": [
+        "beginner",
         "intermediate",
         "advanced"
       ],
@@ -1545,11 +1546,14 @@
         "backend-engineer"
       ],
       "audiences": [
-        "中級者以上 / 特定技術スタックの実践的活用"
+        "コンテナ技術を基礎から学びたいエンジニア",
+        "DockerからPodmanへの移行を検討している方",
+        "エンタープライズ環境でコンテナを活用したい方",
+        "セキュアなコンテナ環境を構築したい方"
       ],
       "summary": {
-        "ja": "",
-        "en": "Explains Podman-based container workflows, including images, storage, networking, pods, and rootless operation."
+        "ja": "コンテナを基礎から学ぶ開発・インフラ担当者が、Podmanのrootless運用、イメージ、ストレージ、ネットワーク、Pod、CI/CD、Kubernetes連携、障害対応を段階的に習得し、セキュアな企業向けコンテナ運用を設計・実践するための実務書です。",
+        "en": "Guides developers and infrastructure engineers from container fundamentals through Podman images, storage, networking, pods, rootless security, CI/CD, Kubernetes integration, and enterprise troubleshooting."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -1561,17 +1565,17 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 219,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
           "glossary": false
         }
@@ -1579,18 +1583,25 @@
       "addedAt": null,
       "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-        "2026-07-12の学習順監査itdojp/it-engineer-knowledge-architecture#216で、source main 6ad8232090cc34dd7ef03250d664c8ca4d6ccacfのコンテナ基礎から応用への構成と、あとがきのKubernetes学習方向を確認し、cloud-container線形パスではkubernetes-basics-bookの前、recommendedAfterでは同書を次の学習先とした。全metadata/UX監査は次のQuality Sprintで実施する。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#219とsource修正itdojp/podman-book#206 / PR #209で、source main 4440506ceb2299b810952f9275d5f450b67b463aのREADME、両config、公開トップ、学習パス、チェックリスト、トラブルシューティング、あとがきを照合し、対象読者、初級〜上級、Profile B、modulesを確定。itdojp/it-engineer-knowledge-architecture#216に従いkubernetes-basics-bookを次の学習先として維持する。stage別期間は全体週数ではなく、章見出し・本文・学習パスの構成ずれをitdojp/podman-book#207で追跡中のためestimatedWeeksはnull。専用図表索引はitdojp/it-engineer-knowledge-architecture#220、Ruby Sass EOL warningはitdojp/podman-book#208で分離追跡する。"
       ],
       "sourceRefs": [
-        "https://github.com/itdojp/podman-book/blob/6ad8232090cc34dd7ef03250d664c8ca4d6ccacf/README.md",
-        "https://github.com/itdojp/podman-book/blob/6ad8232090cc34dd7ef03250d664c8ca4d6ccacf/docs/index.md",
-        "https://github.com/itdojp/podman-book/blob/6ad8232090cc34dd7ef03250d664c8ca4d6ccacf/docs/additional/learning-path.md",
-        "https://github.com/itdojp/podman-book/blob/6ad8232090cc34dd7ef03250d664c8ca4d6ccacf/docs/afterword/index.md",
+        "https://github.com/itdojp/podman-book/blob/4440506ceb2299b810952f9275d5f450b67b463a/README.md",
+        "https://github.com/itdojp/podman-book/blob/4440506ceb2299b810952f9275d5f450b67b463a/book-config.json",
+        "https://github.com/itdojp/podman-book/blob/4440506ceb2299b810952f9275d5f450b67b463a/book-formatter-config.json",
+        "https://github.com/itdojp/podman-book/blob/4440506ceb2299b810952f9275d5f450b67b463a/docs/index.md",
+        "https://github.com/itdojp/podman-book/blob/4440506ceb2299b810952f9275d5f450b67b463a/docs/_data/navigation.yml",
+        "https://github.com/itdojp/podman-book/blob/4440506ceb2299b810952f9275d5f450b67b463a/docs/additional/learning-path.md",
+        "https://github.com/itdojp/podman-book/blob/4440506ceb2299b810952f9275d5f450b67b463a/docs/additional/troubleshooting-guide.md",
+        "https://github.com/itdojp/podman-book/blob/4440506ceb2299b810952f9275d5f450b67b463a/docs/appendices/appendix-b/index.md",
+        "https://github.com/itdojp/podman-book/blob/4440506ceb2299b810952f9275d5f450b67b463a/docs/afterword/index.md",
+        "https://github.com/itdojp/podman-book/issues/206",
+        "https://github.com/itdojp/podman-book/pull/209",
+        "https://github.com/itdojp/podman-book/issues/207",
+        "https://github.com/itdojp/podman-book/issues/208",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216#issuecomment-4950171069"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/219",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/220"
       ]
     },
     {
@@ -1619,15 +1630,18 @@
         "advanced"
       ],
       "roles": [
-        "infrastructure-engineer",
-        "backend-engineer"
+        "backend-engineer",
+        "security-engineer",
+        "architect"
       ],
       "audiences": [
-        "中級者以上 / 特定技術スタックの実践的活用"
+        "Web / モバイルアプリケーションの開発者（ログイン / 権限管理を設計・実装する必要がある方）",
+        "テックリード / アーキテクト（認証基盤の方式選定、移行、標準化を担う方）",
+        "セキュリティ / プラットフォーム担当（脅威・監視・運用の観点から改善したい方）"
       ],
       "summary": {
-        "ja": "",
-        "en": "Designs authentication and authorization systems from sessions and tokens to OAuth 2.0, OIDC, and federated identity."
+        "ja": "Web／モバイル開発者、セキュリティ担当、アーキテクトが、セッション、トークン、OAuth 2.0、OIDC、SAMLからマイクロサービス、脅威対策、性能・監視までを体系化し、要件に適した認証・認可基盤を設計・実装・運用するための実務書です。",
+        "en": "Guides developers, security engineers, and architects through sessions, tokens, OAuth 2.0, OIDC, SAML, microservice identity, threat mitigation, performance, and monitoring to design and operate authentication and authorization systems."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -1637,32 +1651,44 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 219,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
-          "glossary": false
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#219とsource修正itdojp/practical-auth-book#148 / #149、PR #151 / #153で、source main e6d5d825ad4b02327cf815de7276c8eb8da878d4のREADME、book-config、公開トップ、導入、環境構築、トラブルシューティング、用語集、navigation、公開link gateを照合し、対象読者、中級〜上級、Profile B、modulesを確定。所要時間4〜5.5時間は週単位の学習計画ではないためestimatedWeeksはnull。専用図表索引はitdojp/it-engineer-knowledge-architecture#220、既存toolchain warningはitdojp/practical-auth-book#150 / #152で分離追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/practical-auth-book/blob/e6d5d825ad4b02327cf815de7276c8eb8da878d4/README.md",
+        "https://github.com/itdojp/practical-auth-book/blob/e6d5d825ad4b02327cf815de7276c8eb8da878d4/book-config.json",
+        "https://github.com/itdojp/practical-auth-book/blob/e6d5d825ad4b02327cf815de7276c8eb8da878d4/docs/index.md",
+        "https://github.com/itdojp/practical-auth-book/blob/e6d5d825ad4b02327cf815de7276c8eb8da878d4/docs/_data/navigation.yml",
+        "https://github.com/itdojp/practical-auth-book/blob/e6d5d825ad4b02327cf815de7276c8eb8da878d4/docs/introduction/index.md",
+        "https://github.com/itdojp/practical-auth-book/blob/e6d5d825ad4b02327cf815de7276c8eb8da878d4/docs/appendices/appendix-0-environment-setup/index.md",
+        "https://github.com/itdojp/practical-auth-book/blob/e6d5d825ad4b02327cf815de7276c8eb8da878d4/docs/appendices/appendix-b-troubleshooting/index.md",
+        "https://github.com/itdojp/practical-auth-book/blob/e6d5d825ad4b02327cf815de7276c8eb8da878d4/docs/appendices/appendix-c-glossary/index.md",
+        "https://github.com/itdojp/practical-auth-book/blob/e6d5d825ad4b02327cf815de7276c8eb8da878d4/scripts/check-links.js",
+        "https://github.com/itdojp/practical-auth-book/issues/148",
+        "https://github.com/itdojp/practical-auth-book/pull/153",
+        "https://github.com/itdojp/practical-auth-book/issues/149",
+        "https://github.com/itdojp/practical-auth-book/pull/151",
+        "https://github.com/itdojp/practical-auth-book/issues/150",
+        "https://github.com/itdojp/practical-auth-book/issues/152",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/219",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/220"
       ]
     },
     {
@@ -1687,19 +1713,22 @@
         "applied-technologies"
       ],
       "levels": [
+        "beginner",
         "intermediate",
         "advanced"
       ],
       "roles": [
-        "infrastructure-engineer",
-        "backend-engineer"
+        "backend-engineer",
+        "architect"
       ],
       "audiences": [
-        "中級者以上 / 特定技術スタックの実践的活用"
+        "Supabase を用いてプロダクトを構築・運用したい Web/アプリ開発者",
+        "認証・権限管理・DB 設計（RLS を含む）を前提にアーキテクチャを検討する担当者",
+        "複数パターン（クライアント直結/Edge Functions/独立 API サーバー等）のトレードオフを整理したいテックリード/アーキテクト"
       ],
       "summary": {
-        "ja": "",
-        "en": "Uses Supabase as a practical application platform covering auth, data, edge functions, and operations."
+        "ja": "Web／アプリ開発者とアーキテクトが、Supabaseを使うクライアント直結、Edge Functions、独立APIサーバーの3パターンを比較し、認証・RLS、性能、監視、障害対応を含む3層アプリケーションを設計・実装・運用するための実務書です。",
+        "en": "Compares client-direct, Edge Functions, and independent API server patterns for Supabase-based three-tier applications, covering authentication, RLS, performance, operations, and troubleshooting."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -1709,32 +1738,42 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 219,
       "ux": {
         "profile": "C",
         "modules": {
           "quickStart": false,
           "readingGuide": true,
-          "checklistPack": false,
-          "troubleshootingFlow": false,
-          "conceptMap": true,
+          "checklistPack": true,
+          "troubleshootingFlow": true,
+          "conceptMap": false,
           "figureIndex": true,
           "legalNotice": false,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#219とsource修正itdojp/supabase-architecture-patterns-book#147 / PR #148で、source main 3708ef84552b891416694b5e83e53c8a7da26abbのREADME、book-config、公開トップ、導入、パターン選定、図版索引、チェックリスト、トラブルシューティング、用語集を照合し、対象読者、初級〜上級、Profile C、modulesを確定。導入には初心者12週・中級者8週・上級者4週の複数学習パスと2〜3ヶ月の範囲が併記され、単一整数を恣意的に代表値へ選べないためestimatedWeeksはnull。専用concept mapは未実装のためitdojp/it-engineer-knowledge-architecture#220で分離追跡し、実体と異なるtrueにはしない。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/README.md",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/book-config.json",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/package.json",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/docs/index.md",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/docs/_data/navigation.yml",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/docs/introduction/index.md",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/docs/guides/pattern-selection/index.md",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/docs/guides/figure-index/index.md",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/docs/guides/glossary/index.md",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/docs/guides/troubleshooting/index.md",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/docs/appendices/appendix01/index.md",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/issues/147",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/pull/148",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/219",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/220"
       ]
     },
     {
