@@ -23,7 +23,7 @@
       "module": "figureIndex",
       "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
       "evidenceIssue": 193,
-      "trackingIssue": 197
+      "trackingIssue": 250
     },
     {
       "bookId": "incident-response-basics-book",
@@ -31,7 +31,7 @@
       "module": "figureIndex",
       "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
       "evidenceIssue": 205,
-      "trackingIssue": 197
+      "trackingIssue": 250
     },
     {
       "bookId": "issue-driven-work-book",
@@ -39,7 +39,7 @@
       "module": "glossary",
       "reason": "実ファイル監査で専用の用語導線が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
       "evidenceIssue": 193,
-      "trackingIssue": 197
+      "trackingIssue": 250
     },
     {
       "bookId": "it-infra-security-guide-book",
@@ -127,7 +127,7 @@
       "module": "figureIndex",
       "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
       "evidenceIssue": 205,
-      "trackingIssue": 197
+      "trackingIssue": 250
     },
     {
       "bookId": "podman-book",
