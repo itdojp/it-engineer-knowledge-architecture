@@ -10,31 +10,27 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 29,
+      "count": 25,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
-        "IT-infra-troubleshooting-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-engineering-book",
         "ai-communication-book",
         "ai-era-engineers-mind-book",
         "ai-testing-strategy-book",
         "categorical-software-design-book",
-        "cloud-infra-book",
         "computational-physicalism-book",
         "cs-visionaries-book",
         "ethereum-learning-bootcamp",
         "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
-        "it-infra-security-guide-book",
         "kubernetes-basics-book",
         "kubernetes-cluster-ops-book",
         "kubernetes-proxmox-to-cloud-book",
         "negotiation-for-engineers-book",
-        "pentest-learning-book",
         "podman-book",
         "practical-auth-book",
         "proxmox_book",
@@ -56,7 +52,7 @@
       ]
     },
     "missingEstimatedWeeks": {
-      "count": 42,
+      "count": 41,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -90,7 +86,6 @@
         "kubernetes-proxmox-to-cloud-book",
         "linux-infra-textbook2",
         "negotiation-for-engineers-book",
-        "pentest-learning-book",
         "podman-book",
         "practical-auth-book",
         "proxmox_book",
@@ -103,12 +98,11 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 39,
+      "count": 35,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
-        "IT-infra-troubleshooting-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-collaboration-book",
         "ai-agent-engineering-book",
@@ -116,7 +110,6 @@
         "ai-era-engineers-mind-book",
         "ai-testing-strategy-book",
         "categorical-software-design-book",
-        "cloud-infra-book",
         "compliance-infrastructure-guide",
         "composable-software-design-book",
         "computational-physicalism-book",
@@ -129,13 +122,11 @@
         "github-workflow-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
-        "it-infra-security-guide-book",
         "kubernetes-basics-book",
         "kubernetes-cluster-ops-book",
         "kubernetes-proxmox-to-cloud-book",
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
-        "pentest-learning-book",
         "podman-book",
         "practical-auth-book",
         "practical-security-infrastructure-guide",
@@ -147,12 +138,11 @@
       ]
     },
     "missingReviewIssue": {
-      "count": 38,
+      "count": 34,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
-        "IT-infra-troubleshooting-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-collaboration-book",
         "ai-agent-engineering-book",
@@ -160,7 +150,6 @@
         "ai-era-engineers-mind-book",
         "ai-testing-strategy-book",
         "categorical-software-design-book",
-        "cloud-infra-book",
         "compliance-infrastructure-guide",
         "computational-physicalism-book",
         "cs-visionaries-book",
@@ -172,13 +161,11 @@
         "github-workflow-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
-        "it-infra-security-guide-book",
         "kubernetes-basics-book",
         "kubernetes-cluster-ops-book",
         "kubernetes-proxmox-to-cloud-book",
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
-        "pentest-learning-book",
         "podman-book",
         "practical-auth-book",
         "practical-security-infrastructure-guide",
@@ -190,7 +177,7 @@
       ]
     },
     "provisionalNotes": {
-      "count": 29,
+      "count": 25,
       "books": [
         {
           "id": "BioinformaticsGuide-book",
@@ -210,14 +197,6 @@
         },
         {
           "id": "IT-engineer-communication-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "IT-infra-troubleshooting-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -273,14 +252,6 @@
           ]
         },
         {
-          "id": "cloud-infra-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
           "id": "computational-physicalism-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
@@ -328,14 +299,6 @@
           ]
         },
         {
-          "id": "it-infra-security-guide-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
           "id": "kubernetes-basics-book",
           "notes": [
             "日本語個別概要はREADME公開カタログ上で未記載。"
@@ -355,14 +318,6 @@
         },
         {
           "id": "negotiation-for-engineers-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "pentest-learning-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -472,19 +427,17 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 27,
+      "count": 23,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
-        "IT-infra-troubleshooting-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-engineering-book",
         "ai-communication-book",
         "ai-era-engineers-mind-book",
         "ai-testing-strategy-book",
         "categorical-software-design-book",
-        "cloud-infra-book",
         "composable-software-design-book",
         "computational-physicalism-book",
         "cs-visionaries-book",
@@ -492,9 +445,7 @@
         "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
-        "it-infra-security-guide-book",
         "negotiation-for-engineers-book",
-        "pentest-learning-book",
         "podman-book",
         "practical-auth-book",
         "proxmox_book",
@@ -504,8 +455,8 @@
       ]
     },
     "missingRequiredUxModules": {
-      "count": 8,
-      "bookCount": 7,
+      "count": 13,
+      "bookCount": 10,
       "books": [
         {
           "id": "IT-infra-book",
@@ -516,6 +467,18 @@
               "reason": "実ファイル監査で図版は存在するが専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
               "evidenceIssue": 208,
               "trackingIssue": 210
+            }
+          ]
+        },
+        {
+          "id": "cloud-infra-book",
+          "profile": "C",
+          "missingModules": [
+            {
+              "module": "conceptMap",
+              "reason": "実ファイル監査で専用の概念マップが未実装であることを確認済み。未参照の図版assetをreader-facing moduleとして扱わず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 211,
+              "trackingIssue": 212
             }
           ]
         },
@@ -556,6 +519,24 @@
           ]
         },
         {
+          "id": "it-infra-security-guide-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 211,
+              "trackingIssue": 212
+            },
+            {
+              "module": "troubleshootingFlow",
+              "reason": "実ファイル監査で専用のトラブルシューティングフローが未実装であることを確認済み。インシデント対応章を代用せず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 211,
+              "trackingIssue": 212
+            }
+          ]
+        },
+        {
           "id": "it-infra-software-essentials-book",
           "profile": "B",
           "missingModules": [
@@ -586,6 +567,24 @@
           ]
         },
         {
+          "id": "pentest-learning-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 211,
+              "trackingIssue": 212
+            },
+            {
+              "module": "troubleshootingFlow",
+              "reason": "実ファイル監査で専用のトラブルシューティングフローが未実装であることを確認済み。一般的な検証手順を代用せず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 211,
+              "trackingIssue": 212
+            }
+          ]
+        },
+        {
           "id": "security-privacy-literacy-book",
           "profile": "B",
           "missingModules": [
@@ -606,8 +605,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 8,
-      "currentCount": 8,
+      "baselineCount": 13,
+      "currentCount": 13,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,

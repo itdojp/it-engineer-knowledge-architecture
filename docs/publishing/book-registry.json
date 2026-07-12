@@ -132,18 +132,18 @@
     "cloud-infra-book": {
       "repo": "itdojp/cloud-infra-book",
       "pages": "https://itdojp.github.io/cloud-infra-book/",
-      "profile": "B",
+      "profile": "C",
       "modules": {
         "quickStart": false,
-        "readingGuide": false,
+        "readingGuide": true,
         "checklistPack": true,
-        "troubleshootingFlow": true,
+        "troubleshootingFlow": false,
         "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
+        "figureIndex": false,
+        "legalNotice": true,
+        "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211、itdojp/cloud-infra-book#138、build修正itdojp/cloud-infra-book#139で、source main b282a4b7b2c623e8bd703fdb19d1473a44c03a06のREADME、book-config、公開トップ、導入、設計・運用チェックリスト、法的注意、用語集を照合し、対象読者、Profile C、modulesを確定。学習時間は週換算せず、次の学習先はポータル正本のcloud-container学習パスに基づきkubernetes-basics-bookとした。専用概念マップがない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。"
     },
     "computational-physicalism-book": {
       "repo": "itdojp/computational-physicalism-book",
@@ -375,15 +375,15 @@
       "profile": "B",
       "modules": {
         "quickStart": false,
-        "readingGuide": false,
+        "readingGuide": true,
         "checklistPack": true,
-        "troubleshootingFlow": true,
+        "troubleshootingFlow": false,
         "conceptMap": false,
-        "figureIndex": true,
+        "figureIndex": false,
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/it-infra-security-guide-book#139で、source main 10c29d4aafba9b0c4b7378256f94d91e87ca4c54のREADME、book-config、公開トップ、導入、インシデント対応章、チェックリストを照合し、対象読者、Profile B、modulesを確定。週単位の根拠がないためestimatedWeeksは設定せず、次の学習先はポータル正本のsecurity学習パスに基づきpractical-auth-bookとした。専用トラブルシューティングフローと図表索引がない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。"
     },
     "it-infra-software-essentials-book": {
       "repo": "itdojp/it-infra-software-essentials-book",
@@ -407,15 +407,15 @@
       "profile": "B",
       "modules": {
         "quickStart": false,
-        "readingGuide": false,
+        "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
         "figureIndex": true,
         "legalNotice": false,
-        "glossary": false
+        "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/IT-infra-troubleshooting-book#139で、source main d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723dのREADME、book-config、公開トップ、学習ガイド、前提知識、チェックリスト、症状別フロー、図表導線、用語集を照合し、対象読者、Profile B、modulesを確定。読了・演習時間は週換算せず、次の学習先はポータル正本のcore-infrastructure学習パスに基づきcloud-infra-bookとした。"
     },
     "kubernetes-basics-book": {
       "repo": "itdojp/kubernetes-basics-book",
@@ -518,16 +518,16 @@
       "pages": "https://itdojp.github.io/pentest-learning-book/",
       "profile": "B",
       "modules": {
-        "quickStart": false,
-        "readingGuide": false,
+        "quickStart": true,
+        "readingGuide": true,
         "checklistPack": true,
-        "troubleshootingFlow": true,
+        "troubleshootingFlow": false,
         "conceptMap": false,
-        "figureIndex": true,
-        "legalNotice": false,
-        "glossary": false
+        "figureIndex": false,
+        "legalNotice": true,
+        "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/pentest-learning-book#201で、source main 43118347749e22d6533d44cd83e1ab53bcfccc21のREADME、book-config、公開トップ、12週間カリキュラム、法的・倫理的注意、演習Quick Start、チェックリスト、用語集を照合し、対象読者、Profile B、modules、estimatedWeeks=12を確定。次の学習先はポータル正本のsecurity学習パスに基づきincident-response-basics-bookとした。専用トラブルシューティングフローと図表索引がない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。"
     },
     "podman-book": {
       "repo": "itdojp/podman-book",
