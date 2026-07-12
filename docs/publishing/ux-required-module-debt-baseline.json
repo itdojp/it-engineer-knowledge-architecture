@@ -160,6 +160,38 @@
       "reason": "実ファイルと公開Pages監査で専用の概念マップが未実装であることを確認済み。概念別逆引きは詰まり方から参照先を探す索引であり、概念・章間依存を俯瞰するmapとして代用せず、根拠のないtrueへの変更は行わない。",
       "evidenceIssue": 222,
       "trackingIssue": 223
+    },
+    {
+      "bookId": "github-guide-for-beginners-book",
+      "profile": "A",
+      "module": "glossary",
+      "reason": "実ファイルと公開Pages監査で専用の用語導線が未実装であることを確認済み。章内の用語説明を独立した用語集として扱わず、根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 226,
+      "trackingIssue": 227
+    },
+    {
+      "bookId": "github-workflow-book",
+      "profile": "B",
+      "module": "checklistPack",
+      "reason": "実ファイルと公開Pages監査で独立したチェックリスト集が未実装であることを確認済み。章内の確認項目を専用moduleとして扱わず、根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 226,
+      "trackingIssue": 227
+    },
+    {
+      "bookId": "github-workflow-book",
+      "profile": "B",
+      "module": "figureIndex",
+      "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。個別図版を索引として扱わず、根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 226,
+      "trackingIssue": 227
+    },
+    {
+      "bookId": "GitHub-AgentOps-book",
+      "profile": "B",
+      "module": "figureIndex",
+      "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。章内図表を索引として扱わず、根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 226,
+      "trackingIssue": 227
     }
   ]
 }

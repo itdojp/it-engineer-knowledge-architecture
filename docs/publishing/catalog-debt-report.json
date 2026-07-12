@@ -10,10 +10,9 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 16,
+      "count": 13,
       "bookIds": [
         "BioinformaticsGuide-book",
-        "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-engineering-book",
@@ -24,8 +23,6 @@
         "cs-visionaries-book",
         "ethereum-learning-bootcamp",
         "formal-methods-book",
-        "github-guide-for-beginners-book",
-        "github-workflow-book",
         "negotiation-for-engineers-book",
         "small-webapp-software-design-book"
       ]
@@ -88,10 +85,9 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 26,
+      "count": 23,
       "bookIds": [
         "BioinformaticsGuide-book",
-        "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-collaboration-book",
@@ -107,8 +103,6 @@
         "enterprise-cloud-architecture-guide",
         "ethereum-learning-bootcamp",
         "formal-methods-book",
-        "github-guide-for-beginners-book",
-        "github-workflow-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
         "negotiation-for-engineers-book",
@@ -119,10 +113,9 @@
       ]
     },
     "missingReviewIssue": {
-      "count": 24,
+      "count": 21,
       "bookIds": [
         "BioinformaticsGuide-book",
-        "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-collaboration-book",
@@ -137,8 +130,6 @@
         "enterprise-cloud-architecture-guide",
         "ethereum-learning-bootcamp",
         "formal-methods-book",
-        "github-guide-for-beginners-book",
-        "github-workflow-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
         "negotiation-for-engineers-book",
@@ -148,18 +139,10 @@
       ]
     },
     "provisionalNotes": {
-      "count": 16,
+      "count": 13,
       "books": [
         {
           "id": "BioinformaticsGuide-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "GitHub-AgentOps-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -246,22 +229,6 @@
           ]
         },
         {
-          "id": "github-guide-for-beginners-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "github-workflow-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
           "id": "negotiation-for-engineers-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
@@ -332,10 +299,9 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 17,
+      "count": 14,
       "bookIds": [
         "BioinformaticsGuide-book",
-        "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-engineering-book",
@@ -347,16 +313,26 @@
         "cs-visionaries-book",
         "ethereum-learning-bootcamp",
         "formal-methods-book",
-        "github-guide-for-beginners-book",
-        "github-workflow-book",
         "negotiation-for-engineers-book",
         "small-webapp-software-design-book"
       ]
     },
     "missingRequiredUxModules": {
-      "count": 20,
-      "bookCount": 17,
+      "count": 24,
+      "bookCount": 20,
       "books": [
+        {
+          "id": "GitHub-AgentOps-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。章内図表を索引として扱わず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 226,
+              "trackingIssue": 227
+            }
+          ]
+        },
         {
           "id": "IT-infra-book",
           "profile": "B",
@@ -390,6 +366,36 @@
               "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
               "evidenceIssue": 193,
               "trackingIssue": 197
+            }
+          ]
+        },
+        {
+          "id": "github-guide-for-beginners-book",
+          "profile": "A",
+          "missingModules": [
+            {
+              "module": "glossary",
+              "reason": "実ファイルと公開Pages監査で専用の用語導線が未実装であることを確認済み。章内の用語説明を独立した用語集として扱わず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 226,
+              "trackingIssue": 227
+            }
+          ]
+        },
+        {
+          "id": "github-workflow-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "checklistPack",
+              "reason": "実ファイルと公開Pages監査で独立したチェックリスト集が未実装であることを確認済み。章内の確認項目を専用moduleとして扱わず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 226,
+              "trackingIssue": 227
+            },
+            {
+              "module": "figureIndex",
+              "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。個別図版を索引として扱わず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 226,
+              "trackingIssue": 227
             }
           ]
         },
@@ -588,8 +594,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 20,
-      "currentCount": 20,
+      "baselineCount": 24,
+      "currentCount": 24,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
