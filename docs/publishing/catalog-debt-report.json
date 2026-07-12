@@ -10,9 +10,8 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 11,
+      "count": 8,
       "bookIds": [
-        "BioinformaticsGuide-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-communication-book",
@@ -20,9 +19,7 @@
         "computational-physicalism-book",
         "cs-visionaries-book",
         "ethereum-learning-bootcamp",
-        "formal-methods-book",
-        "negotiation-for-engineers-book",
-        "small-webapp-software-design-book"
+        "negotiation-for-engineers-book"
       ]
     },
     "emptySummaryEn": {
@@ -38,9 +35,8 @@
       ]
     },
     "missingEstimatedWeeks": {
-      "count": 40,
+      "count": 39,
       "bookIds": [
-        "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
         "IT-infra-book",
@@ -83,9 +79,8 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 20,
+      "count": 17,
       "bookIds": [
-        "BioinformaticsGuide-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-communication-book",
@@ -97,20 +92,17 @@
         "disaster-recovery-bcp-guide",
         "enterprise-cloud-architecture-guide",
         "ethereum-learning-bootcamp",
-        "formal-methods-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
         "practical-security-infrastructure-guide",
-        "small-webapp-software-design-book",
         "theoretical-computer-science-textbook"
       ]
     },
     "missingReviewIssue": {
-      "count": 18,
+      "count": 15,
       "bookIds": [
-        "BioinformaticsGuide-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-communication-book",
@@ -121,26 +113,16 @@
         "disaster-recovery-bcp-guide",
         "enterprise-cloud-architecture-guide",
         "ethereum-learning-bootcamp",
-        "formal-methods-book",
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
-        "practical-security-infrastructure-guide",
-        "small-webapp-software-design-book"
+        "practical-security-infrastructure-guide"
       ]
     },
     "provisionalNotes": {
-      "count": 11,
+      "count": 8,
       "books": [
-        {
-          "id": "BioinformaticsGuide-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
         {
           "id": "IT-engineer-communication-book",
           "notes": [
@@ -197,23 +179,7 @@
           ]
         },
         {
-          "id": "formal-methods-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
           "id": "negotiation-for-engineers-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "small-webapp-software-design-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -223,7 +189,7 @@
       ]
     },
     "identicalLocalizedTitles": {
-      "count": 47,
+      "count": 46,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -246,7 +212,6 @@
         "enterprise-cloud-architecture-guide",
         "ethereum-learning-bootcamp",
         "evidence-based-engineering-book",
-        "formal-methods-book",
         "github-guide-for-beginners-book",
         "github-workflow-book",
         "illustrated-linux-basics-book",
@@ -275,9 +240,8 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 12,
+      "count": 9,
       "bookIds": [
-        "BioinformaticsGuide-book",
         "IT-engineer-communication-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-communication-book",
@@ -286,15 +250,31 @@
         "computational-physicalism-book",
         "cs-visionaries-book",
         "ethereum-learning-bootcamp",
-        "formal-methods-book",
-        "negotiation-for-engineers-book",
-        "small-webapp-software-design-book"
+        "negotiation-for-engineers-book"
       ]
     },
     "missingRequiredUxModules": {
-      "count": 30,
-      "bookCount": 23,
+      "count": 33,
+      "bookCount": 25,
       "books": [
+        {
+          "id": "BioinformaticsGuide-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "checklistPack",
+              "reason": "公開章内に個別チェックリストはあるが、独立したチェックリスト集とreader-facing navigationがないためfalseを維持する。",
+              "evidenceIssue": 232,
+              "trackingIssue": 233
+            },
+            {
+              "module": "figureIndex",
+              "reason": "公開Pagesに専用図表索引とreader-facing navigationがないため、個別図表を索引として扱わずfalseを維持する。",
+              "evidenceIssue": 232,
+              "trackingIssue": 233
+            }
+          ]
+        },
         {
           "id": "GitHub-AgentOps-book",
           "profile": "B",
@@ -590,6 +570,18 @@
           ]
         },
         {
+          "id": "small-webapp-software-design-book",
+          "profile": "C",
+          "missingModules": [
+            {
+              "module": "conceptMap",
+              "reason": "公開書籍に概念・章間関係を俯瞰する専用concept mapがないため、局所的な相互作用マップを代用せずfalseを維持する。",
+              "evidenceIssue": 232,
+              "trackingIssue": 233
+            }
+          ]
+        },
+        {
           "id": "supabase-architecture-patterns-book",
           "profile": "C",
           "missingModules": [
@@ -622,8 +614,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 30,
-      "currentCount": 30,
+      "baselineCount": 33,
+      "currentCount": 33,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,

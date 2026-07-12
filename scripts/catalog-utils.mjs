@@ -185,9 +185,9 @@ export function validateCatalog(catalog) {
       if (!book.repo) errors.push(`${prefix}: published book must define repo`);
       if (!book.pagesUrl) errors.push(`${prefix}: published book must define pagesUrl`);
       if (book.repoVisibility === 'not-created') errors.push(`${prefix}: published book cannot use repoVisibility=not-created`);
-    }
-    if (book.repoVisibility === 'private' && book.publicationScope !== 'free-preview') {
-      errors.push(`${prefix}: private managed book must declare publicationScope=free-preview`);
+      if (!['full-public', 'free-preview'].includes(book.publicationScope)) {
+        errors.push(`${prefix}: published book must use publicationScope=full-public or free-preview`);
+      }
     }
     if (book.countedInMainLineup && book.countingGroup !== 'main-lineup') {
       errors.push(`${prefix}: countedInMainLineup=true requires countingGroup=main-lineup`);
@@ -315,10 +315,12 @@ export function legacyRegistryFromCatalog(catalog) {
       books[book.id].publicationModel = 'free-preview-and-paid-edition';
       books[book.id].pagesPublicationScope = 'free-preview-aligned-with-zenn-free-scope';
     }
-    const accessNote =
-      (book.notes || []).find((note) => note.includes('Private')) ||
-      (book.notes || []).find((note) => note.includes('無料公開範囲'));
-    if (accessNote) books[book.id].accessNote = accessNote;
+    if (book.repoVisibility === 'private') {
+      books[book.id].accessNote =
+        book.publicationScope === 'free-preview'
+          ? '有料部分を含むため管理リポジトリは非公開です。公開サイトでは無料試読範囲を読めます。'
+          : '管理リポジトリは非公開ですが、公開サイトでは全文を読めます。';
+    }
   }
   return {
     schemaVersion: '1.0.0',

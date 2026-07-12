@@ -85,6 +85,13 @@ test.describe('catalog interactions', () => {
     await expect(wslCard).not.toContainText('illustrated-linux-basics-book');
 
     await expect(page.locator('#ai-agent-collaboration-book').locator('..')).toContainText('管理リポジトリは非公開');
+    const bioinformaticsCard = page.locator('#BioinformaticsGuide-book').locator('..');
+    await expect(bioinformaticsCard).toContainText('管理リポジトリは非公開ですが、公開サイトでは全文を読めます。');
+    await expect(bioinformaticsCard.getByRole('link', { name: 'リポジトリ', exact: true })).toHaveCount(0);
+    await expect(bioinformaticsCard.getByRole('link', { name: '読む', exact: true })).toHaveAttribute(
+      'href',
+      'https://itdojp.github.io/BioinformaticsGuide-book/'
+    );
     await expect(page.locator('[data-book-card][data-status="planned"]').first()).toContainText('計画中の書籍です');
     await expect(page.locator('#composable-software-design-book').locator('..')).toContainText('独立した英語書籍です');
   });

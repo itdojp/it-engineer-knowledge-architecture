@@ -228,8 +228,11 @@ async function main() {
         fail(`${bookName}: repo の形式が不正です (${repo})`);
       }
       const accessNote =
-        (entry.notes || []).find((note) => String(note).includes("Private")) ||
-        (entry.notes || []).find((note) => String(note).includes("無料公開範囲"));
+        repoVisibility === "private"
+          ? entry.publicationScope === "free-preview"
+            ? "有料部分を含むため管理リポジトリは非公開です。公開サイトでは無料試読範囲を読めます。"
+            : "管理リポジトリは非公開ですが、公開サイトでは全文を読めます。"
+          : null;
       return {
         bookName,
         owner,
