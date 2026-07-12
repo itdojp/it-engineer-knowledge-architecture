@@ -21,9 +21,13 @@ export function loadCatalog(filePath = DEFAULT_CATALOG_PATH) {
 
 export function accessNoteFor({ repoVisibility, publicationScope }) {
   if (repoVisibility !== 'private') return null;
-  return publicationScope === 'free-preview'
-    ? '有料部分を含むため管理リポジトリは非公開です。公開サイトでは無料試読範囲を読めます。'
-    : '管理リポジトリは非公開ですが、公開サイトでは全文を読めます。';
+  if (publicationScope === 'free-preview') {
+    return '有料部分を含むため管理リポジトリは非公開です。公開サイトでは無料試読範囲を読めます。';
+  }
+  if (publicationScope === 'full-public') {
+    return '管理リポジトリは非公開ですが、公開サイトでは全文を読めます。';
+  }
+  return null;
 }
 
 const allowedProfiles = new Set(['A', 'B', 'C', null]);

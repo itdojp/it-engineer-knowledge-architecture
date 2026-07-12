@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
-import { ROOT, legacyRegistryFromCatalog, readJson, validateCatalog } from './catalog-utils.mjs';
+import {
+  ROOT,
+  accessNoteFor,
+  legacyRegistryFromCatalog,
+  readJson,
+  validateCatalog
+} from './catalog-utils.mjs';
 
 const cases = [
   { file: 'tests/fixtures/catalog-valid.json', valid: true, script: 'scripts/validate-catalog.mjs' },
@@ -156,6 +162,13 @@ if (privateFreePreviewBook.accessNote !== '有料部分を含むため管理リ�
   console.error('❌ inline fixture expectation failed: private free-preview access note');
 } else {
   console.log('✅ inline fixture generated structured private free-preview access note');
+}
+
+if (accessNoteFor({ repoVisibility: 'private', publicationScope: 'planned' }) !== null) {
+  failed++;
+  console.error('❌ inline fixture expectation failed: invalid private planned scope has no access note');
+} else {
+  console.log('✅ inline fixture does not mislabel an invalid private planned scope');
 }
 
 if (failed > 0) process.exit(1);
