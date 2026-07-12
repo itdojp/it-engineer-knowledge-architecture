@@ -43,7 +43,7 @@
       ]
     },
     "missingEstimatedWeeks": {
-      "count": 41,
+      "count": 40,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -83,7 +83,6 @@
         "security-privacy-literacy-book",
         "small-webapp-software-design-book",
         "supabase-architecture-patterns-book",
-        "theoretical-computer-science-prerequisites-book",
         "theoretical-computer-science-textbook",
         "wsl2-linux-essentials-book"
       ]
