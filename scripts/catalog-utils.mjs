@@ -19,6 +19,13 @@ export function loadCatalog(filePath = DEFAULT_CATALOG_PATH) {
   return readJson(filePath);
 }
 
+export function accessNoteFor({ repoVisibility, publicationScope }) {
+  if (repoVisibility !== 'private') return null;
+  return publicationScope === 'free-preview'
+    ? '有料部分を含むため管理リポジトリは非公開です。公開サイトでは無料試読範囲を読めます。'
+    : '管理リポジトリは非公開ですが、公開サイトでは全文を読めます。';
+}
+
 const allowedProfiles = new Set(['A', 'B', 'C', null]);
 const allowedBookStatus = new Set(['published', 'planned', 'archived']);
 const allowedRepoVisibility = new Set(['public', 'private', 'not-created']);
@@ -316,10 +323,7 @@ export function legacyRegistryFromCatalog(catalog) {
       books[book.id].pagesPublicationScope = 'free-preview-aligned-with-zenn-free-scope';
     }
     if (book.repoVisibility === 'private') {
-      books[book.id].accessNote =
-        book.publicationScope === 'free-preview'
-          ? '有料部分を含むため管理リポジトリは非公開です。公開サイトでは無料試読範囲を読めます。'
-          : '管理リポジトリは非公開ですが、公開サイトでは全文を読めます。';
+      books[book.id].accessNote = accessNoteFor(book);
     }
   }
   return {

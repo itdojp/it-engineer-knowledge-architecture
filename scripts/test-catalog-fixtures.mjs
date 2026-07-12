@@ -24,7 +24,7 @@ const cases = [
     mustContain: 'cycle detected'
   },
   {
-    file: 'tests/fixtures/catalog-invalid-private-scope.json',
+    file: 'tests/fixtures/catalog-invalid-published-planned-scope.json',
     valid: false,
     script: 'scripts/validate-catalog.mjs',
     mustContain: 'published book must use publicationScope=full-public or free-preview'

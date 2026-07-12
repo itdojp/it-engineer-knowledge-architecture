@@ -179,6 +179,7 @@ function buildRepoBatchQuery(repos) {
 }
 
 async function main() {
+  const { accessNoteFor } = await import("./catalog-utils.mjs");
   const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
   if (!token) {
     fail("GITHUB_TOKEN が必要です（GitHub Actions / ローカル実行）");
@@ -227,12 +228,7 @@ async function main() {
       if (!owner || !name) {
         fail(`${bookName}: repo の形式が不正です (${repo})`);
       }
-      const accessNote =
-        repoVisibility === "private"
-          ? entry.publicationScope === "free-preview"
-            ? "有料部分を含むため管理リポジトリは非公開です。公開サイトでは無料試読範囲を読めます。"
-            : "管理リポジトリは非公開ですが、公開サイトでは全文を読めます。"
-          : null;
+      const accessNote = accessNoteFor(entry);
       return {
         bookName,
         owner,
