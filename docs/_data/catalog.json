@@ -1798,52 +1798,69 @@
         "computer-science-theory"
       ],
       "levels": [
-        "intermediate",
-        "advanced"
+        "beginner",
+        "intermediate"
       ],
       "roles": [
         "software-engineer",
         "architect"
       ],
       "audiences": [
-        "中級者以上 / 理論的バックグラウンドの深化"
+        "理論計算機科学を学びたいが、数学記法・証明・離散数学に不安がある読者",
+        "実務経験はあるが、集合・論理・計算量・形式言語・確率・数論を体系的に補強したいソフトウェアエンジニア",
+        "『理論計算機科学教科書』へ入る前に前提診断と演習で準備したい読者",
+        "研修・輪読会で理論計算機科学の前処理教材を使いたい教員・研修担当者"
       ],
       "summary": {
-        "ja": "集合・論理・関数・関係・証明技法・漸近記法・擬似コード・グラフ・組合せ・データ構造・形式言語・確率・数論・線形代数・並行モデルを、理論計算機科学教科書に進むための前提として整理するブリッジ教材。",
-        "en": "A Japanese bridge textbook for readers who need prerequisites before studying theoretical computer science: sets, logic, proofs, asymptotic notation, graphs, counting, data structures, formal languages, probability, number theory, linear algebra, and concurrency models."
+        "ja": "理論計算機科学へ進む読者が、集合・論理、証明、漸近記法、グラフ、形式言語、確率、数論、線形代数、並行モデルを前提診断と演習で補強し、本体教科書を定義・定理・擬似コードで止まらず読める状態を目指すブリッジ教材です。",
+        "en": "A Japanese bridge textbook for readers preparing for theoretical computer science, using prerequisite diagnostics and exercises to strengthen sets, logic, proofs, asymptotic notation, graphs, formal languages, probability, number theory, linear algebra, and concurrency models."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "theoretical-computer-science-textbook"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 222,
       "ux": {
         "profile": "C",
         "modules": {
-          "quickStart": true,
+          "quickStart": false,
           "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": false,
-          "conceptMap": true,
+          "conceptMap": false,
           "figureIndex": true,
-          "legalNotice": true,
+          "legalNotice": false,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "理論計算機科学教科書の前提補強ブリッジ教材"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#222とsource修正itdojp/theoretical-computer-science-prerequisites-book#5 / #7、PR #6 / #8で、source main a6b193c0546630fa580998b04ad90ca067194a80のREADME、book-config、公開トップ、学習パス、前提診断、本体対応表、索引を照合し、対象読者、初級〜中級、Profile C、modulesを確定。前提教材から本体教科書への明示導線に基づきrecommendedAfterを設定した。Core 2〜4週、Standard 6〜8週、Extended 10〜12週は複数ルートで単一整数を代表値化できないためestimatedWeeksはnull。専用concept mapは未実装のためitdojp/it-engineer-knowledge-architecture#223で分離追跡し、逆引きconcept indexを代用してtrueにはしない。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/a6b193c0546630fa580998b04ad90ca067194a80/README.md",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/a6b193c0546630fa580998b04ad90ca067194a80/book-config.json",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/a6b193c0546630fa580998b04ad90ca067194a80/docs/index.md",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/a6b193c0546630fa580998b04ad90ca067194a80/docs/_data/navigation.yml",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/a6b193c0546630fa580998b04ad90ca067194a80/docs/learning-path.md",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/a6b193c0546630fa580998b04ad90ca067194a80/docs/appendix/mapping-to-main-textbook.md",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/a6b193c0546630fa580998b04ad90ca067194a80/docs/reference/concept-index.md",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/a6b193c0546630fa580998b04ad90ca067194a80/docs/reference/glossary.md",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/a6b193c0546630fa580998b04ad90ca067194a80/docs/reference/symbol-index.md",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/issues/5",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/pull/6",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/issues/7",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/pull/8",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/222",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/223"
       ]
     },
     {
@@ -1876,26 +1893,25 @@
         "architect"
       ],
       "audiences": [
-        "中級者以上 / 理論的バックグラウンドの深化"
+        "情報系学部3〜4年生、または大学院初年度で、離散数学と基本的なプログラミング経験がある読者",
+        "計算可能性・複雑性・形式言語・情報理論を体系で学び直したいソフトウェアエンジニア"
       ],
       "summary": {
-        "ja": "",
-        "en": "Builds a foundation in algorithms, automata, computability, and complexity theory."
+        "ja": "離散数学と基本的なプログラミング経験を持つ学部上級生・大学院初年度・ソフトウェアエンジニアに向けて、集合・論理から計算可能性・複雑性・情報理論・暗号・並行計算までを日本語で体系的に学べる理論計算機科学の教科書です。",
+        "en": "A Japanese theoretical computer science textbook for advanced undergraduates, early graduate students, and software engineers with discrete mathematics and basic programming experience, covering sets and logic, formal languages, computability, complexity, information theory, cryptography, and concurrency."
       },
       "prerequisites": [
         "theoretical-computer-science-prerequisites-book"
       ],
       "estimatedWeeks": null,
-      "recommendedAfter": [
-        "theoretical-computer-science-prerequisites-book"
-      ],
+      "recommendedAfter": [],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 222,
       "ux": {
         "profile": "C",
         "modules": {
@@ -1910,16 +1926,30 @@
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#222で、source main 898c224bd4eb48268147f165a161506782ab2b10のREADME、book-config、公開トップ、目的、学習ガイド、前提知識、概念マップ、図表索引、用語集を照合し、対象読者、中級〜上級、Profile C、modulesを確定。前提補強教材をprerequisitesに維持し、同教材へ戻す循環的なrecommendedAfterは削除した。短時間の読書目安と学期・月単位の学習計画が併存するためestimatedWeeksはnullとし、期間driftはitdojp/theoretical-computer-science-textbook#394で追跡する。metadataは#393、本文正確性P0は#397 / #398 / #399 / #401 / #402、Jekyll/Faraday warningは#403で分離追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/README.md",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/book-config.json",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/docs/index.md",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/docs/_data/navigation.yml",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/docs/introduction/purpose.md",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/docs/introduction/learning-guide.md",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/docs/introduction/prerequisites.md",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/docs/appendices/d.md",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/docs/appendices/h.md",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/docs/appendices/i.md",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/issues/393",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/issues/394",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/issues/397",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/issues/398",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/issues/399",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/issues/401",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/issues/402",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/issues/403",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/222"
       ]
     },
     {
@@ -1952,11 +1982,13 @@
         "architect"
       ],
       "audiences": [
-        "中級者以上 / 理論的バックグラウンドの深化"
+        "AIを用いた実装・テスト生成を運用している、または導入したい開発者・テックリード",
+        "仕様追加・境界破壊・検証漏れを、成果物とプロセスで抑止したい読者",
+        "GitHubのIssue・PRとCIで、レビュー可能な差分として設計を運用したい読者"
       ],
       "summary": {
-        "ja": "",
-        "en": "Japanese book focused on category-theoretic design for the AI agent era. It stands alongside the separate English book Compositional Software Design for Agentic Systems rather than serving as an older edition or a direct translation."
+        "ja": "AI実装・テスト生成を運用する開発者やテックリードが、圏論の対象・射・図式・関手・自然変換・普遍性・モナドを、Context Pack、設計成果物、検証条件、CIへ接続し、AIへの委任をレビュー可能なソフトウェア設計として運用するための実務書です。",
+        "en": "A Japanese practical guide for developers and technical leads using AI-assisted implementation and testing, connecting category-theoretic objects, morphisms, diagrams, functors, natural transformations, universal constructions, and monads to Context Packs, verifiable design artifacts, review, and CI."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -1968,8 +2000,8 @@
         "composable-software-design-book"
       ],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 222,
       "ux": {
         "profile": "C",
         "modules": {
@@ -1986,15 +2018,19 @@
       "addedAt": null,
       "updatedAt": "2026-07-12",
       "notes": [
-        "Profile C の暫定割当。付録Dは図版・レビュー前の最小確認項目・症状別再参照の入口として扱う。raw サンプルは本文より先に更新される場合があるため要確認。",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-        "独立英語書籍 composable-software-design-book と関連。単純翻訳・旧新版関係ではない。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#222で、source main e1d0df204ecf49322b6d932ffbf5e23daa629a29のREADME、book-config、公開トップ、navigation、用語集、テンプレート、付録Dのdesk reference、参考文献を照合し、対象読者、中級〜上級、Profile C、modulesを確定。通読2〜4時間と演習1〜2日は週単位の標準計画ではないためestimatedWeeksはnull。composable-software-design-bookとはAI時代の合成的設計を扱う独立した関連英語書籍であり、翻訳・旧新版関係ではない。付録Dは図版、レビュー前の最小確認項目、症状別再参照の入口を提供する。package-lock / Gemfile.lockの欠落とJekyll/Faraday warningはitdojp/categorical-software-design-book#141で分離追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/categorical-software-design-book/blob/e1d0df204ecf49322b6d932ffbf5e23daa629a29/README.md",
+        "https://github.com/itdojp/categorical-software-design-book/blob/e1d0df204ecf49322b6d932ffbf5e23daa629a29/book-config.json",
+        "https://github.com/itdojp/categorical-software-design-book/blob/e1d0df204ecf49322b6d932ffbf5e23daa629a29/index.md",
+        "https://github.com/itdojp/categorical-software-design-book/blob/e1d0df204ecf49322b6d932ffbf5e23daa629a29/_data/navigation.yml",
+        "https://github.com/itdojp/categorical-software-design-book/blob/e1d0df204ecf49322b6d932ffbf5e23daa629a29/GLOSSARY.md",
+        "https://github.com/itdojp/categorical-software-design-book/blob/e1d0df204ecf49322b6d932ffbf5e23daa629a29/appendices/templates/index.md",
+        "https://github.com/itdojp/categorical-software-design-book/blob/e1d0df204ecf49322b6d932ffbf5e23daa629a29/appendices/desk-reference/index.md",
+        "https://github.com/itdojp/categorical-software-design-book/blob/e1d0df204ecf49322b6d932ffbf5e23daa629a29/appendices/references/index.md",
+        "https://github.com/itdojp/categorical-software-design-book/issues/141",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/222"
       ]
     },
     {

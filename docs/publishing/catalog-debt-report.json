@@ -10,7 +10,7 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 18,
+      "count": 16,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -20,7 +20,6 @@
         "ai-communication-book",
         "ai-era-engineers-mind-book",
         "ai-testing-strategy-book",
-        "categorical-software-design-book",
         "computational-physicalism-book",
         "cs-visionaries-book",
         "ethereum-learning-bootcamp",
@@ -28,8 +27,7 @@
         "github-guide-for-beginners-book",
         "github-workflow-book",
         "negotiation-for-engineers-book",
-        "small-webapp-software-design-book",
-        "theoretical-computer-science-textbook"
+        "small-webapp-software-design-book"
       ]
     },
     "emptySummaryEn": {
@@ -91,7 +89,7 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 28,
+      "count": 25,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -102,7 +100,6 @@
         "ai-communication-book",
         "ai-era-engineers-mind-book",
         "ai-testing-strategy-book",
-        "categorical-software-design-book",
         "compliance-infrastructure-guide",
         "composable-software-design-book",
         "computational-physicalism-book",
@@ -118,13 +115,11 @@
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
         "practical-security-infrastructure-guide",
-        "small-webapp-software-design-book",
-        "theoretical-computer-science-prerequisites-book",
-        "theoretical-computer-science-textbook"
+        "small-webapp-software-design-book"
       ]
     },
     "missingReviewIssue": {
-      "count": 27,
+      "count": 24,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -135,7 +130,6 @@
         "ai-communication-book",
         "ai-era-engineers-mind-book",
         "ai-testing-strategy-book",
-        "categorical-software-design-book",
         "compliance-infrastructure-guide",
         "computational-physicalism-book",
         "cs-visionaries-book",
@@ -150,13 +144,11 @@
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
         "practical-security-infrastructure-guide",
-        "small-webapp-software-design-book",
-        "theoretical-computer-science-prerequisites-book",
-        "theoretical-computer-science-textbook"
+        "small-webapp-software-design-book"
       ]
     },
     "provisionalNotes": {
-      "count": 18,
+      "count": 16,
       "books": [
         {
           "id": "BioinformaticsGuide-book",
@@ -223,14 +215,6 @@
           ]
         },
         {
-          "id": "categorical-software-design-book",
-          "notes": [
-            "Profile C の暫定割当。付録Dは図版・レビュー前の最小確認項目・症状別再参照の入口として扱う。raw サンプルは本文より先に更新される場合があるため要確認。",
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。"
-          ]
-        },
-        {
           "id": "computational-physicalism-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
@@ -292,14 +276,6 @@
             "日本語個別概要はREADME公開カタログ上で未記載。",
             "暫定割当（要確認）"
           ]
-        },
-        {
-          "id": "theoretical-computer-science-textbook",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
         }
       ]
     },
@@ -356,7 +332,7 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 19,
+      "count": 17,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
@@ -366,7 +342,6 @@
         "ai-communication-book",
         "ai-era-engineers-mind-book",
         "ai-testing-strategy-book",
-        "categorical-software-design-book",
         "composable-software-design-book",
         "computational-physicalism-book",
         "cs-visionaries-book",
@@ -375,13 +350,12 @@
         "github-guide-for-beginners-book",
         "github-workflow-book",
         "negotiation-for-engineers-book",
-        "small-webapp-software-design-book",
-        "theoretical-computer-science-textbook"
+        "small-webapp-software-design-book"
       ]
     },
     "missingRequiredUxModules": {
-      "count": 19,
-      "bookCount": 16,
+      "count": 20,
+      "bookCount": 17,
       "books": [
         {
           "id": "IT-infra-book",
@@ -592,6 +566,18 @@
               "trackingIssue": 220
             }
           ]
+        },
+        {
+          "id": "theoretical-computer-science-prerequisites-book",
+          "profile": "C",
+          "missingModules": [
+            {
+              "module": "conceptMap",
+              "reason": "実ファイルと公開Pages監査で専用の概念マップが未実装であることを確認済み。概念別逆引きは詰まり方から参照先を探す索引であり、概念・章間依存を俯瞰するmapとして代用せず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 222,
+              "trackingIssue": 223
+            }
+          ]
         }
       ]
     },
@@ -602,8 +588,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 19,
-      "currentCount": 19,
+      "baselineCount": 20,
+      "currentCount": 20,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
