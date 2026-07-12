@@ -367,7 +367,7 @@
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "2026-07-12のmetadata監査#208と書籍側#155で、source main e132c9faeb7348f9656563c593abd9ffbb79dba1のREADME、book-config、公開トップ、導入、用語集、トラブルシューティング付録を照合し、対象読者、Profile B、modulesを確定。学習時間は時間単位のみのため週換算せず、専用図表索引がない必須module debtは#210で追跡する。"
+      "notes": "2026-07-12のmetadata監査#208とitdojp/IT-infra-book#155で、source main e132c9faeb7348f9656563c593abd9ffbb79dba1のREADME、book-config、公開トップ、導入、用語集、トラブルシューティング付録を照合し、対象読者、Profile B、modulesを確定。学習時間は時間単位のみのため週換算せず、専用図表索引がない必須module debtは#210で追跡する。"
     },
     "it-infra-security-guide-book": {
       "repo": "itdojp/it-infra-security-guide-book",
@@ -399,7 +399,7 @@
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "2026-07-12のmetadata監査#208と書籍側#126で、source main fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7のREADME、book-config、公開トップ、全5章を照合し、対象読者、Profile B、modulesを確定。READMEと公開トップの学習時間に差があるため週換算せず、専用トラブルシューティングフローと図表索引がない必須module debtは#210で追跡する。"
+      "notes": "2026-07-12のmetadata監査#208とitdojp/it-infra-software-essentials-book#126で、source main fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7のREADME、book-config、公開トップ、全5章を照合し、対象読者、Profile B、modulesを確定。READMEと公開トップの学習時間に差があるため週換算せず、専用トラブルシューティングフローと図表索引がない必須module debtは#210で追跡する。"
     },
     "IT-infra-troubleshooting-book": {
       "repo": "itdojp/IT-infra-troubleshooting-book",
