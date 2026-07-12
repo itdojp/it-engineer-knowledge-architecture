@@ -2315,11 +2315,15 @@
         "all-levels"
       ],
       "roles": [
-        "software-engineer",
-        "engineering-manager"
+        "all-engineers",
+        "engineering-manager",
+        "security-engineer"
       ],
       "audiences": [
-        "全レベル / 開発効率化・品質向上"
+        "AIエージェントを業務改善、資料作成、調査、レビュー、運用補助へ導入したい実務担当者",
+        "AI活用の品質、権限、ログ、セキュリティ、ガバナンスを設計する管理者・推進担当者",
+        "チームのAI利用を標準化し、教育、評価、KPI、認定へ展開したいマネージャー",
+        "AIサービスや社内AI基盤を業務プロセスへ組み込むエンジニア・情シス担当者"
       ],
       "summary": {
         "ja": "AIエージェントを業務成果へ接続するための依頼、コンテキスト、委任、レビュー、権限、判断、組織展開の実践フレームワーク。GitHub Pages は Zenn 等で無料公開する範囲に準じた試読範囲を公開する方針です。",
@@ -2333,31 +2337,38 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 229,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": true,
           "readingGuide": true,
           "checklistPack": true,
-          "troubleshootingFlow": true,
+          "troubleshootingFlow": false,
           "conceptMap": true,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": true,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "AIエージェントを業務成果へ接続する依頼・文脈・委任・検証・権限・判断・組織展開の横断書籍。無料公開範囲と有料版を分けて運用する。",
-        "有料部分を含むPrivate管理書籍。Pagesは無料公開範囲のみ。"
+        "2026-07-12のmetadata・公開境界監査itdojp/it-engineer-knowledge-architecture#229で、認証済みfixed-SHAの管理原稿・公開範囲定義・QAと、公開Pagesのトップ、Quick Start、Concept Map、読み方、章1〜3、付録抜粋、用語集、出典、ライセンスを照合し、対象読者、全レベル、Profile B、無料試読modulesを確定した。管理リポジトリは有料部分を含むPrivateであり、sourceRefsには公開Pagesと公開監査Issueだけを記録する。",
+        "無料公開範囲には専用troubleshooting flowとfigure indexを含めないためfalseとし、公開範囲を増やす場合の再監査をitdojp/it-engineer-knowledge-architecture#230で追跡する。90分Quick Startや組織展開の期間例は書籍全体の標準週数ではないためestimatedWeeksはnull。GitHub PagesはZenn等の無料公開範囲に準じる。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://itdojp.github.io/ai-agent-collaboration-book/",
+        "https://itdojp.github.io/ai-agent-collaboration-book/quickstart/",
+        "https://itdojp.github.io/ai-agent-collaboration-book/concept-map/",
+        "https://itdojp.github.io/ai-agent-collaboration-book/reading-guide/",
+        "https://itdojp.github.io/ai-agent-collaboration-book/paid-edition/",
+        "https://itdojp.github.io/ai-agent-collaboration-book/appendices/appendix-a-sample/",
+        "https://itdojp.github.io/ai-agent-collaboration-book/appendices/appendix-b-sample/",
+        "https://itdojp.github.io/ai-agent-collaboration-book/appendices/appendix-e/",
+        "https://itdojp.github.io/ai-agent-collaboration-book/source-notes/",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/229"
       ]
     },
     {
@@ -2382,18 +2393,22 @@
         "development-delivery"
       ],
       "levels": [
-        "all-levels"
+        "intermediate",
+        "advanced"
       ],
       "roles": [
         "software-engineer",
+        "architect",
         "engineering-manager"
       ],
       "audiences": [
-        "全レベル / 開発効率化・品質向上"
+        "AIエージェントを開発業務へ導入し、出力だけでなく完了品質を安定させたいエンジニア",
+        "Issue、仕様、テスト、レビューを使う開発プロセスでAIエージェントを安全に運用するテックリード",
+        "PromptだけでなくContextとHarnessまで設計対象にしたい実務者"
       ],
       "summary": {
-        "ja": "",
-        "en": "Covers prompt contracts, context engineering, and harness design so AI agents can read repos, make changes, verify results, and complete work safely."
+        "ja": "Git、Issue、テスト、コードレビューの基礎を持つ開発者やテックリードが、Prompt Contract、Context Pack、verification harnessなどを使い、AIエージェントによるrepo変更を安全に完了・検証・再開する設計を学ぶ実践書です。",
+        "en": "A practical guide for developers and technical leads using prompt contracts, context packs, and verification harnesses to make AI-agent repository changes safe, verifiable, resumable, and review-ready."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -2404,33 +2419,37 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 229,
       "ux": {
-        "profile": "A",
+        "profile": "B",
         "modules": {
-          "quickStart": true,
+          "quickStart": false,
           "readingGuide": true,
           "checklistPack": false,
           "troubleshootingFlow": false,
           "conceptMap": false,
-          "figureIndex": false,
-          "legalNotice": false,
+          "figureIndex": true,
+          "legalNotice": true,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）/ 英語版あり",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-        "同一書籍内に英語版ページあり。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#229で、source main 3241a6bd31bd98cd146bd6845ec3f5d05b5a67efのREADME、2026 rewrite status、日本語・英語原稿、読み方、Prompt / Context / Harness各部、テンプレート付録、用語集、図表一覧方針、検証scripts、公開JA/EN Pagesを照合し、対象読者、中級〜上級、Profile B、modulesを確定した。Git・Issue・テスト・レビューは知識要件であり、特定書籍の修了を必須としない。週単位の標準学習計画はないためestimatedWeeksはnull。",
+        "公開書籍には読み方、用語集、図表一覧方針、安全上の注意がある一方、専用Quick Start、独立checklist pack、troubleshooting flow、concept mapはない。Profile B必須のchecklistPack / troubleshootingFlowはitdojp/it-engineer-knowledge-architecture#230で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/ai-agent-engineering-book/blob/3241a6bd31bd98cd146bd6845ec3f5d05b5a67ef/README.md",
+        "https://github.com/itdojp/ai-agent-engineering-book/blob/3241a6bd31bd98cd146bd6845ec3f5d05b5a67ef/STATUS.md",
+        "https://github.com/itdojp/ai-agent-engineering-book/blob/3241a6bd31bd98cd146bd6845ec3f5d05b5a67ef/manuscript/front-matter/00-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB.md",
+        "https://github.com/itdojp/ai-agent-engineering-book/blob/3241a6bd31bd98cd146bd6845ec3f5d05b5a67ef/manuscript/front-matter/01-%E6%9C%AC%E6%9B%B8%E3%81%AE%E8%AA%AD%E3%81%BF%E6%96%B9.md",
+        "https://github.com/itdojp/ai-agent-engineering-book/blob/3241a6bd31bd98cd146bd6845ec3f5d05b5a67ef/manuscript/appendices/app-d-%E7%94%A8%E8%AA%9E%E9%9B%86.md",
+        "https://github.com/itdojp/ai-agent-engineering-book/blob/3241a6bd31bd98cd146bd6845ec3f5d05b5a67ef/manuscript/backmatter/03-%E5%9B%B3%E8%A1%A8%E4%B8%80%E8%A6%A7%E6%96%B9%E9%87%9D.md",
+        "https://itdojp.github.io/ai-agent-engineering-book/",
+        "https://itdojp.github.io/ai-agent-engineering-book/en/",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/229"
       ]
     },
     {
@@ -2455,18 +2474,24 @@
         "development-delivery"
       ],
       "levels": [
-        "all-levels"
+        "intermediate",
+        "advanced"
       ],
       "roles": [
         "software-engineer",
-        "engineering-manager"
+        "architect",
+        "engineering-manager",
+        "sre"
       ],
       "audiences": [
-        "全レベル / 開発効率化・品質向上"
+        "AI生成コードの品質保証を設計するQAエンジニア・テストエンジニア",
+        "チームのテスト戦略と品質ガードレールを整備する開発リーダー・アーキテクト",
+        "CI/CDへAI品質検証を組み込むDevOps・SRE",
+        "組織レベルの品質保証体制を設計するCTO・VP of Engineering"
       ],
       "summary": {
-        "ja": "",
-        "en": "Designs test strategy for AI-assisted and AI-based development with risk-based coverage and fast feedback loops."
+        "ja": "QA担当、開発リーダー、DevOps／SRE、技術経営層が、AI生成コード固有のリスクと従来のテスト技法を組み合わせ、リスクベースのテスト戦略、CI/CD品質ゲート、メトリクス、組織的な継続改善を設計するための実践書です。",
+        "en": "A practical guide for QA, engineering, DevOps, SRE, and technology leaders designing risk-based testing, CI/CD quality gates, metrics, and continuous improvement for AI-generated code."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
@@ -2476,32 +2501,43 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 229,
       "ux": {
         "profile": "B",
         "modules": {
-          "quickStart": false,
-          "readingGuide": false,
+          "quickStart": true,
+          "readingGuide": true,
           "checklistPack": true,
-          "troubleshootingFlow": true,
+          "troubleshootingFlow": false,
           "conceptMap": false,
-          "figureIndex": true,
-          "legalNotice": false,
-          "glossary": false
+          "figureIndex": false,
+          "legalNotice": true,
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#229とsource修正itdojp/ai-testing-strategy-book#173 / #176 / #177、PR #175 / #178 / #179で、source main abf7d911dded5b26d6d0bdff112be16924ce3047のREADME、book-config、公開トップ、Quick Start、読み方、テスト戦略章、付録B/D、navigation、公開Pagesを照合し、対象読者、中級〜上級、Profile B、modulesを確定した。通読4〜6時間は週単位の標準計画ではないためestimatedWeeksはnull。関連書籍は任意参照であり必須前提・次読にはしない。",
+        "npm audit 16件は0へ解消し、Node floorを22.12へ整合した。残るinstall-script approval warningはitdojp/ai-testing-strategy-book#174で追跡する。専用troubleshooting flow / figure indexは未実装のためitdojp/it-engineer-knowledge-architecture#230で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/ai-testing-strategy-book/blob/abf7d911dded5b26d6d0bdff112be16924ce3047/README.md",
+        "https://github.com/itdojp/ai-testing-strategy-book/blob/abf7d911dded5b26d6d0bdff112be16924ce3047/book-config.json",
+        "https://github.com/itdojp/ai-testing-strategy-book/blob/abf7d911dded5b26d6d0bdff112be16924ce3047/docs/index.md",
+        "https://github.com/itdojp/ai-testing-strategy-book/blob/abf7d911dded5b26d6d0bdff112be16924ce3047/docs/introduction/quickstart.md",
+        "https://github.com/itdojp/ai-testing-strategy-book/blob/abf7d911dded5b26d6d0bdff112be16924ce3047/docs/appendices/appendix-b-checklists/index.md",
+        "https://github.com/itdojp/ai-testing-strategy-book/blob/abf7d911dded5b26d6d0bdff112be16924ce3047/docs/appendices/appendix-d-glossary/index.md",
+        "https://itdojp.github.io/ai-testing-strategy-book/",
+        "https://github.com/itdojp/ai-testing-strategy-book/issues/173",
+        "https://github.com/itdojp/ai-testing-strategy-book/issues/174",
+        "https://github.com/itdojp/ai-testing-strategy-book/issues/176",
+        "https://github.com/itdojp/ai-testing-strategy-book/issues/177",
+        "https://github.com/itdojp/ai-testing-strategy-book/pull/175",
+        "https://github.com/itdojp/ai-testing-strategy-book/pull/178",
+        "https://github.com/itdojp/ai-testing-strategy-book/pull/179",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/229"
       ]
     },
     {

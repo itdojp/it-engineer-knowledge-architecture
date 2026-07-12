@@ -192,6 +192,54 @@
       "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。章内図表を索引として扱わず、根拠のないtrueへの変更は行わない。",
       "evidenceIssue": 226,
       "trackingIssue": 227
+    },
+    {
+      "bookId": "ai-agent-collaboration-book",
+      "profile": "B",
+      "module": "troubleshootingFlow",
+      "reason": "Private管理原稿には対応資産があるが、無料試読Pagesには専用route・navigationがない。無料公開境界を越える実体を公開moduleとして扱わない。",
+      "evidenceIssue": 229,
+      "trackingIssue": 230
+    },
+    {
+      "bookId": "ai-agent-collaboration-book",
+      "profile": "B",
+      "module": "figureIndex",
+      "reason": "Private管理原稿には対応資産があるが、無料試読Pagesには専用route・navigationがない。無料公開境界を越える実体を公開moduleとして扱わない。",
+      "evidenceIssue": 229,
+      "trackingIssue": 230
+    },
+    {
+      "bookId": "ai-agent-engineering-book",
+      "profile": "B",
+      "module": "checklistPack",
+      "reason": "repo内チェックリストは存在するが、公開書籍の独立したチェックリスト集としての導線がないため、根拠のないtrueにしない。",
+      "evidenceIssue": 229,
+      "trackingIssue": 230
+    },
+    {
+      "bookId": "ai-agent-engineering-book",
+      "profile": "B",
+      "module": "troubleshootingFlow",
+      "reason": "公開書籍に専用トラブルシューティングフローがないため、一般的な運用・検証説明を代用せずfalseを維持する。",
+      "evidenceIssue": 229,
+      "trackingIssue": 230
+    },
+    {
+      "bookId": "ai-testing-strategy-book",
+      "profile": "B",
+      "module": "troubleshootingFlow",
+      "reason": "公開書籍に専用トラブルシューティングフローがないため、章内の問題対処説明を代用せずfalseを維持する。",
+      "evidenceIssue": 229,
+      "trackingIssue": 230
+    },
+    {
+      "bookId": "ai-testing-strategy-book",
+      "profile": "B",
+      "module": "figureIndex",
+      "reason": "公開書籍に専用図表索引がないため、個別図表を索引として扱わずfalseを維持する。",
+      "evidenceIssue": 229,
+      "trackingIssue": 230
     }
   ]
 }
