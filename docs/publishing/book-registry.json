@@ -127,7 +127,7 @@
         "legalNotice": true,
         "glossary": true
       },
-      "notes": "Profile C の暫定割当。付録Dは図版・レビュー前の最小確認項目・症状別再参照の入口として扱う。raw サンプルは本文より先に更新される場合があるため要確認。 / 独立英語書籍 composable-software-design-book と関連。単純翻訳・旧新版関係ではない。"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#222で、source main e1d0df204ecf49322b6d932ffbf5e23daa629a29のREADME、book-config、公開トップ、navigation、用語集、テンプレート、付録Dのdesk reference、参考文献を照合し、対象読者、中級〜上級、Profile C、modulesを確定。通読2〜4時間と演習1〜2日は週単位の標準計画ではないためestimatedWeeksはnull。composable-software-design-bookとはAI時代の合成的設計を扱う独立した関連英語書籍であり、翻訳・旧新版関係ではない。付録Dは図版、レビュー前の最小確認項目、症状別再参照の入口を提供する。package-lock / Gemfile.lockの欠落とJekyll/Faraday warningはitdojp/categorical-software-design-book#141で分離追跡する。"
     },
     "cloud-infra-book": {
       "repo": "itdojp/cloud-infra-book",
@@ -630,16 +630,16 @@
       "pages": "https://itdojp.github.io/theoretical-computer-science-prerequisites-book/",
       "profile": "C",
       "modules": {
-        "quickStart": true,
+        "quickStart": false,
         "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": false,
-        "conceptMap": true,
+        "conceptMap": false,
         "figureIndex": true,
-        "legalNotice": true,
+        "legalNotice": false,
         "glossary": true
       },
-      "notes": "理論計算機科学教科書の前提補強ブリッジ教材"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#222とsource修正itdojp/theoretical-computer-science-prerequisites-book#5 / #7、PR #6 / #8で、source main a6b193c0546630fa580998b04ad90ca067194a80のREADME、book-config、公開トップ、学習パス、前提診断、本体対応表、索引を照合し、対象読者、初級〜中級、Profile C、modulesを確定。前提教材から本体教科書への明示導線に基づきrecommendedAfterを設定した。本文が標準ルートをCoreとStandard中心の6〜8週間と明示しているためestimatedWeeksを6-8週間とし、最短2〜4週と拡張10〜12週は代替ルートとしてnotesに保持する。専用concept mapは未実装のためitdojp/it-engineer-knowledge-architecture#223で分離追跡し、逆引きconcept indexを代用してtrueにはしない。"
     },
     "theoretical-computer-science-textbook": {
       "repo": "itdojp/theoretical-computer-science-textbook",
@@ -655,7 +655,7 @@
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "暫定割当（要確認）"
+      "notes": "2026-07-12のmetadata・公開表示監査itdojp/it-engineer-knowledge-architecture#222で、source main 898c224bd4eb48268147f165a161506782ab2b10のREADME、book-config、公開トップ、目的、学習ガイド、前提知識、概念マップ、図表索引、用語集を照合し、対象読者、中級〜上級、Profile C、modulesを確定。前提補強教材をprerequisitesに維持し、同教材へ戻す循環的なrecommendedAfterは削除した。短時間の読書目安と学期・月単位の学習計画が併存するためestimatedWeeksはnullとし、期間driftはitdojp/theoretical-computer-science-textbook#394で追跡する。metadataは#393、本文正確性P0は#397 / #398 / #399 / #401 / #402、Jekyll/Faraday warningは#403で分離追跡する。P0本文修正とmerge後確認が未完了のためreviewStatusはreview-needed、lastReviewedAtはnullを維持し、本監査の範囲と判断はreviewIssue #222で追跡する。"
     },
     "wsl2-linux-essentials-book": {
       "repo": "itdojp/wsl2-linux-essentials-book",
