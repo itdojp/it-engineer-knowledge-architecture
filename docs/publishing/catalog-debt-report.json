@@ -10,12 +10,11 @@
   },
   "debt": {
     "emptySummaryJa": {
-      "count": 32,
+      "count": 29,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
-        "IT-infra-book",
         "IT-infra-troubleshooting-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-engineering-book",
@@ -31,11 +30,9 @@
         "github-guide-for-beginners-book",
         "github-workflow-book",
         "it-infra-security-guide-book",
-        "it-infra-software-essentials-book",
         "kubernetes-basics-book",
         "kubernetes-cluster-ops-book",
         "kubernetes-proxmox-to-cloud-book",
-        "linux-infra-textbook2",
         "negotiation-for-engineers-book",
         "pentest-learning-book",
         "podman-book",
@@ -106,12 +103,11 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 42,
+      "count": 39,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
-        "IT-infra-book",
         "IT-infra-troubleshooting-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-collaboration-book",
@@ -134,11 +130,9 @@
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
         "it-infra-security-guide-book",
-        "it-infra-software-essentials-book",
         "kubernetes-basics-book",
         "kubernetes-cluster-ops-book",
         "kubernetes-proxmox-to-cloud-book",
-        "linux-infra-textbook2",
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
         "pentest-learning-book",
@@ -153,12 +147,11 @@
       ]
     },
     "missingReviewIssue": {
-      "count": 41,
+      "count": 38,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
-        "IT-infra-book",
         "IT-infra-troubleshooting-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-collaboration-book",
@@ -180,11 +173,9 @@
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
         "it-infra-security-guide-book",
-        "it-infra-software-essentials-book",
         "kubernetes-basics-book",
         "kubernetes-cluster-ops-book",
         "kubernetes-proxmox-to-cloud-book",
-        "linux-infra-textbook2",
         "negotiation-for-engineers-book",
         "next-generation-infrastructure-guide",
         "pentest-learning-book",
@@ -199,7 +190,7 @@
       ]
     },
     "provisionalNotes": {
-      "count": 32,
+      "count": 29,
       "books": [
         {
           "id": "BioinformaticsGuide-book",
@@ -219,14 +210,6 @@
         },
         {
           "id": "IT-engineer-communication-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
-          "id": "IT-infra-book",
           "notes": [
             "UX profile/modules は移行元 book-registry の暫定割当を維持。",
             "日本語個別概要はREADME公開カタログ上で未記載。",
@@ -353,14 +336,6 @@
           ]
         },
         {
-          "id": "it-infra-software-essentials-book",
-          "notes": [
-            "UX profile/modules は移行元 book-registry の暫定割当を維持。",
-            "日本語個別概要はREADME公開カタログ上で未記載。",
-            "暫定割当（要確認）"
-          ]
-        },
-        {
           "id": "kubernetes-basics-book",
           "notes": [
             "日本語個別概要はREADME公開カタログ上で未記載。"
@@ -374,12 +349,6 @@
         },
         {
           "id": "kubernetes-proxmox-to-cloud-book",
-          "notes": [
-            "日本語個別概要はREADME公開カタログ上で未記載。"
-          ]
-        },
-        {
-          "id": "linux-infra-textbook2",
           "notes": [
             "日本語個別概要はREADME公開カタログ上で未記載。"
           ]
@@ -503,12 +472,11 @@
       ]
     },
     "uxEvidenceCandidates": {
-      "count": 29,
+      "count": 27,
       "bookIds": [
         "BioinformaticsGuide-book",
         "GitHub-AgentOps-book",
         "IT-engineer-communication-book",
-        "IT-infra-book",
         "IT-infra-troubleshooting-book",
         "LogicalThinking-AI-Era-Guide",
         "ai-agent-engineering-book",
@@ -525,7 +493,6 @@
         "github-guide-for-beginners-book",
         "github-workflow-book",
         "it-infra-security-guide-book",
-        "it-infra-software-essentials-book",
         "negotiation-for-engineers-book",
         "pentest-learning-book",
         "podman-book",
@@ -537,9 +504,21 @@
       ]
     },
     "missingRequiredUxModules": {
-      "count": 4,
-      "bookCount": 4,
+      "count": 8,
+      "bookCount": 7,
       "books": [
+        {
+          "id": "IT-infra-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "実ファイル監査で図版は存在するが専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 208,
+              "trackingIssue": 210
+            }
+          ]
+        },
         {
           "id": "engineering-documentation-book",
           "profile": "B",
@@ -577,6 +556,36 @@
           ]
         },
         {
+          "id": "it-infra-software-essentials-book",
+          "profile": "B",
+          "missingModules": [
+            {
+              "module": "figureIndex",
+              "reason": "実ファイル監査で図版は存在するが専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 208,
+              "trackingIssue": 210
+            },
+            {
+              "module": "troubleshootingFlow",
+              "reason": "実ファイル監査で専用のトラブルシューティングフローが未実装であることを確認済み。一般的なレビューゲートを代用せず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 208,
+              "trackingIssue": 210
+            }
+          ]
+        },
+        {
+          "id": "linux-infra-textbook2",
+          "profile": "A",
+          "missingModules": [
+            {
+              "module": "quickStart",
+              "reason": "実ファイル監査で公開読者向けのQuick Startが未実装であることを確認済み。リポジトリ作業者向けQUICK-START.mdは読者向けmoduleとして扱わず、根拠のないtrueへの変更は行わない。",
+              "evidenceIssue": 208,
+              "trackingIssue": 210
+            }
+          ]
+        },
+        {
           "id": "security-privacy-literacy-book",
           "profile": "B",
           "missingModules": [
@@ -597,8 +606,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 4,
-      "currentCount": 4,
+      "baselineCount": 8,
+      "currentCount": 8,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,

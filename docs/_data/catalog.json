@@ -594,52 +594,62 @@
         "core-infra-foundations"
       ],
       "levels": [
-        "junior",
+        "beginner",
         "intermediate"
       ],
       "roles": [
-        "infrastructure-engineer"
+        "infrastructure-engineer",
+        "software-engineer"
       ],
       "audiences": [
-        "新人〜中級者（経験0–2年）/ ITインフラの土台となる必修知識"
+        "Linux未経験のIT系学生",
+        "他業種からITインフラ職への転職を目指す人",
+        "インフラの知識を補強したいソフトウェアエンジニア"
       ],
       "summary": {
-        "ja": "",
-        "en": "Builds Linux infrastructure fundamentals for modern operations, including systems, networking, process management, and security basics."
+        "ja": "Linux未経験者やインフラ知識を補強したい開発者が、OS、ファイルシステム、プロセス、権限、TCP/IP、コンテナ、クラウド、監視、IaCを原理と演習から学び、現代的なLinux基盤の全体像を説明・操作できるようにする入門書です。",
+        "en": "Guides Linux beginners and software engineers through operating systems, filesystems, processes, permissions, networking, containers, cloud infrastructure, observability, and IaC, combining underlying principles with hands-on exercises."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "it-infra-software-essentials-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 208,
       "ux": {
-        "profile": "B",
+        "profile": "A",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
-          "checklistPack": true,
-          "troubleshootingFlow": true,
+          "readingGuide": true,
+          "checklistPack": false,
+          "troubleshootingFlow": false,
           "conceptMap": false,
-          "figureIndex": true,
-          "legalNotice": false,
-          "glossary": false
+          "figureIndex": false,
+          "legalNotice": true,
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "linux-infra-textbook を置換（旧版はアーカイブ）",
-        "日本語個別概要はREADME公開カタログ上で未記載。"
+        "linux-infra-textbookを置換する現行版。2026-07-12のmetadata監査#208で、source main e50b187543ae9203fa9797c3d829f4fda0df1a29のREADME、企画書、book-config、公開トップ、導入、用語集を照合し、対象読者、Profile A、modulesを確定。学習時間は時間単位のみのため週換算せず、公開読者向けQuick Startがない必須module debtは#210で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/linux-infra-textbook2/blob/e50b187543ae9203fa9797c3d829f4fda0df1a29/README.md",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/e50b187543ae9203fa9797c3d829f4fda0df1a29/BOOK-PROPOSAL.md",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/e50b187543ae9203fa9797c3d829f4fda0df1a29/book-config.json",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/e50b187543ae9203fa9797c3d829f4fda0df1a29/docs/index.md",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/e50b187543ae9203fa9797c3d829f4fda0df1a29/docs/introduction/index.md",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/e50b187543ae9203fa9797c3d829f4fda0df1a29/docs/glossary.md",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/e50b187543ae9203fa9797c3d829f4fda0df1a29/docs/_data/navigation.yml",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/208",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/209"
       ]
     },
     {
@@ -668,49 +678,61 @@
         "intermediate"
       ],
       "roles": [
-        "infrastructure-engineer"
+        "infrastructure-engineer",
+        "sre"
       ],
       "audiences": [
-        "新人〜中級者（経験0–2年）/ ITインフラの土台となる必修知識"
+        "自動化やクラウド連携に必要なソフトウェア基礎を効率的に学びたいインフラエンジニア",
+        "設定ファイル、スクリプト、API連携の基本を短期間で身につけたいインフラ担当者",
+        "開発者との連携を改善し、DevOpsを実践したいエンジニア"
       ],
       "summary": {
-        "ja": "",
-        "en": "Explains the software concepts infrastructure engineers need for packages, code reading, APIs, databases, and runtime behavior."
+        "ja": "インフラ運用・構築に携わるエンジニアが、YAML/JSON、シェルとPython、REST API、Git、正規表現を実例から学び、設定管理、定型作業の自動化、クラウドサービス連携を安全にレビュー可能な形で進めるための基礎書です。",
+        "en": "Teaches infrastructure practitioners the software foundations needed for configuration and automation, including YAML/JSON, shell and Python scripting, REST APIs, Git, and regular expressions, with review gates for safe operational use."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "IT-infra-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 208,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
-          "troubleshootingFlow": true,
+          "troubleshootingFlow": false,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査#208とitdojp/it-infra-software-essentials-book#126で、source main fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7のREADME、book-config、公開トップ、全5章を照合し、対象読者、Profile B、modulesを確定。READMEと公開トップの学習時間に差があるため週換算せず、専用トラブルシューティングフローと図表索引がない必須module debtは#210で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7/README.md",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7/book-config.json",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7/docs/index.md",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7/docs/_data/navigation.yml",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7/docs/chapters/chapter02/index.md",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7/docs/chapters/chapter03/index.md",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7/docs/chapters/chapter04/index.md",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7/docs/chapters/chapter05/index.md",
+        "https://github.com/itdojp/it-infra-software-essentials-book/issues/126",
+        "https://github.com/itdojp/it-infra-software-essentials-book/pull/127",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/208",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/209"
       ]
     },
     {
@@ -735,53 +757,66 @@
         "core-infra-foundations"
       ],
       "levels": [
-        "junior",
-        "intermediate"
+        "intermediate",
+        "advanced"
       ],
       "roles": [
-        "infrastructure-engineer"
+        "infrastructure-engineer",
+        "sre",
+        "backend-engineer",
+        "architect"
       ],
       "audiences": [
-        "新人〜中級者（経験0–2年）/ ITインフラの土台となる必修知識"
+        "オンプレミスまたはクラウドのインフラ設計・構築・運用に携わるエンジニア",
+        "インフラ層の理解を深めたいSRE、DevOps、バックエンドエンジニア",
+        "技術選定やアーキテクチャレビューを担うテックリード、アーキテクト"
       ],
       "summary": {
-        "ja": "",
-        "en": "Organizes the design principles behind protocols, networks, operating systems, and storage for infrastructure engineers."
+        "ja": "インフラ設計・構築・運用に携わるエンジニアやアーキテクトが、ネットワーク、OS、ストレージ、仮想化、自動化、セキュリティ、高可用性をベンダー非依存の原理で整理し、技術選択とアーキテクチャレビューを説明可能にするための設計実務書です。",
+        "en": "Organizes vendor-neutral principles for networks, operating systems, storage, virtualization, automation, security, and high availability so infrastructure engineers and architects can make and review defensible technology choices."
       },
       "prerequisites": [],
       "estimatedWeeks": null,
-      "recommendedAfter": [],
+      "recommendedAfter": [
+        "IT-infra-troubleshooting-book"
+      ],
       "languages": [
         "ja"
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": null,
-      "reviewIssue": null,
+      "lastReviewedAt": "2026-07-12",
+      "reviewIssue": 208,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
-          "readingGuide": false,
+          "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": true,
+          "figureIndex": false,
           "legalNotice": false,
-          "glossary": false
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-12",
       "notes": [
-        "暫定割当（要確認）",
-        "日本語個別概要はREADME公開カタログ上で未記載。",
-        "UX profile/modules は移行元 book-registry の暫定割当を維持。"
+        "2026-07-12のmetadata監査#208とitdojp/IT-infra-book#155で、source main e132c9faeb7348f9656563c593abd9ffbb79dba1のREADME、book-config、公開トップ、導入、用語集、トラブルシューティング付録を照合し、対象読者、Profile B、modulesを確定。学習時間は時間単位のみのため週換算せず、専用図表索引がない必須module debtは#210で追跡する。"
       ],
       "sourceRefs": [
-        "README.md",
-        "docs/en/index.md",
-        "docs/publishing/book-registry.json"
+        "https://github.com/itdojp/IT-infra-book/blob/e132c9faeb7348f9656563c593abd9ffbb79dba1/README.md",
+        "https://github.com/itdojp/IT-infra-book/blob/e132c9faeb7348f9656563c593abd9ffbb79dba1/book-config.json",
+        "https://github.com/itdojp/IT-infra-book/blob/e132c9faeb7348f9656563c593abd9ffbb79dba1/docs/index.md",
+        "https://github.com/itdojp/IT-infra-book/blob/e132c9faeb7348f9656563c593abd9ffbb79dba1/docs/introduction/index.md",
+        "https://github.com/itdojp/IT-infra-book/blob/e132c9faeb7348f9656563c593abd9ffbb79dba1/docs/_data/navigation.yml",
+        "https://github.com/itdojp/IT-infra-book/blob/e132c9faeb7348f9656563c593abd9ffbb79dba1/docs/appendices/appendix01/index.md",
+        "https://github.com/itdojp/IT-infra-book/blob/e132c9faeb7348f9656563c593abd9ffbb79dba1/docs/appendices/appendix02/index.md",
+        "https://github.com/itdojp/IT-infra-book/issues/155",
+        "https://github.com/itdojp/IT-infra-book/pull/156",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/208",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/209"
       ]
     },
     {

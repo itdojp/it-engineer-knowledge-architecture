@@ -2,6 +2,14 @@
   "schemaVersion": "1.0.0",
   "entries": [
     {
+      "bookId": "IT-infra-book",
+      "profile": "B",
+      "module": "figureIndex",
+      "reason": "実ファイル監査で図版は存在するが専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 208,
+      "trackingIssue": 210
+    },
+    {
       "bookId": "engineering-documentation-book",
       "profile": "B",
       "module": "figureIndex",
@@ -24,6 +32,30 @@
       "reason": "実ファイル監査で専用の用語導線が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
       "evidenceIssue": 193,
       "trackingIssue": 197
+    },
+    {
+      "bookId": "it-infra-software-essentials-book",
+      "profile": "B",
+      "module": "figureIndex",
+      "reason": "実ファイル監査で図版は存在するが専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 208,
+      "trackingIssue": 210
+    },
+    {
+      "bookId": "it-infra-software-essentials-book",
+      "profile": "B",
+      "module": "troubleshootingFlow",
+      "reason": "実ファイル監査で専用のトラブルシューティングフローが未実装であることを確認済み。一般的なレビューゲートを代用せず、根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 208,
+      "trackingIssue": 210
+    },
+    {
+      "bookId": "linux-infra-textbook2",
+      "profile": "A",
+      "module": "quickStart",
+      "reason": "実ファイル監査で公開読者向けのQuick Startが未実装であることを確認済み。リポジトリ作業者向けQUICK-START.mdは読者向けmoduleとして扱わず、根拠のないtrueへの変更は行わない。",
+      "evidenceIssue": 208,
+      "trackingIssue": 210
     },
     {
       "bookId": "security-privacy-literacy-book",
