@@ -296,6 +296,38 @@
       "reason": "公開Pagesに専用用語集とreader-facing導線がない。本文内の用語統一方針を用語集の実体として代用せずfalseを維持する。",
       "evidenceIssue": 235,
       "trackingIssue": 236
+    },
+    {
+      "bookId": "negotiation-for-engineers-book",
+      "profile": "B",
+      "module": "troubleshootingFlow",
+      "reason": "公開Pagesに専用トラブルシューティングフローとreader-facing navigationがない。章内のケース、感情デバッグ、失敗時の立て直し説明を専用moduleとして代用せずfalseを維持する。",
+      "evidenceIssue": 238,
+      "trackingIssue": 239
+    },
+    {
+      "bookId": "negotiation-for-engineers-book",
+      "profile": "B",
+      "module": "figureIndex",
+      "reason": "公開Pagesに専用図表索引とreader-facing navigationがない。個別図版、目次、テンプレート一覧を図表索引として代用せずfalseを維持する。",
+      "evidenceIssue": 238,
+      "trackingIssue": 239
+    },
+    {
+      "bookId": "IT-engineer-communication-book",
+      "profile": "B",
+      "module": "troubleshootingFlow",
+      "reason": "公開Pagesに専用トラブルシューティングフローとreader-facing navigationがない。章内の失敗例、デバッグ手順、ストレス対処を専用moduleとして代用せずfalseを維持する。",
+      "evidenceIssue": 238,
+      "trackingIssue": 239
+    },
+    {
+      "bookId": "IT-engineer-communication-book",
+      "profile": "B",
+      "module": "figureIndex",
+      "reason": "公開Pagesに専用図表索引とreader-facing navigationがない。トップの図から読む案内や章内図版を独立した図表索引として代用せずfalseを維持する。",
+      "evidenceIssue": 238,
+      "trackingIssue": 239
     }
   ]
 }
