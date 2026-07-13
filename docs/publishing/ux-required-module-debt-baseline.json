@@ -154,14 +154,6 @@
       "trackingIssue": 220
     },
     {
-      "bookId": "theoretical-computer-science-prerequisites-book",
-      "profile": "C",
-      "module": "conceptMap",
-      "reason": "実ファイルと公開Pages監査で専用の概念マップが未実装であることを確認済み。概念別逆引きは詰まり方から参照先を探す索引であり、概念・章間依存を俯瞰するmapとして代用せず、根拠のないtrueへの変更は行わない。",
-      "evidenceIssue": 222,
-      "trackingIssue": 223
-    },
-    {
       "bookId": "github-guide-for-beginners-book",
       "profile": "A",
       "module": "glossary",

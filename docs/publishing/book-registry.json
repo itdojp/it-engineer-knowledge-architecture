@@ -636,12 +636,12 @@
         "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": false,
-        "conceptMap": false,
+        "conceptMap": true,
         "figureIndex": true,
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#222とsource修正itdojp/theoretical-computer-science-prerequisites-book#5 / #7、PR #6 / #8で、source main a6b193c0546630fa580998b04ad90ca067194a80のREADME、book-config、公開トップ、学習パス、前提診断、本体対応表、索引を照合し、対象読者、初級〜中級、Profile C、modulesを確定。前提教材から本体教科書への明示導線に基づきrecommendedAfterを設定した。本文が標準ルートをCoreとStandard中心の6〜8週間と明示しているためestimatedWeeksを6-8週間とし、最短2〜4週と拡張10〜12週は代替ルートとしてnotesに保持する。専用concept mapは未実装のためitdojp/it-engineer-knowledge-architecture#223で分離追跡し、逆引きconcept indexを代用してtrueにはしない。"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#222で対象読者、初級〜中級、Profile C、学習方向、標準6〜8週間を確定。2026-07-13のUX debt #223とsource itdojp/theoretical-computer-science-prerequisites-book#9 / PR #10で、source main 332ae88bffebf54a0bd5237048fa17cd2665aa92へreader-facingな専用概念依存マップを実装し、公開トップ、学習ルート、ナビゲーションガイド、sidebar、site searchから到達可能であることをPages本番確認した。概念別逆引き、学習ルート、章間リンクマップ、本体教科書からの逆引き、本体教科書との対応表との責務を分離し、conceptMap=trueへ更新した。"
     },
     "theoretical-computer-science-textbook": {
       "repo": "itdojp/theoretical-computer-science-textbook",
