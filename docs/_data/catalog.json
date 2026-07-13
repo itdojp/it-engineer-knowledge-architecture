@@ -1595,8 +1595,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 219,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 220,
       "ux": {
         "profile": "B",
         "modules": {
@@ -1605,15 +1605,16 @@
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": false,
+          "figureIndex": true,
           "legalNotice": false,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#219とsource修正itdojp/podman-book#206 / PR #209で、source main 4440506ceb2299b810952f9275d5f450b67b463aのREADME、両config、公開トップ、学習パス、チェックリスト、トラブルシューティング、あとがきを照合し、対象読者、初級〜上級、Profile B、modulesを確定。itdojp/it-engineer-knowledge-architecture#216に従いkubernetes-basics-bookを次の学習先として維持する。stage別期間は全体週数ではなく、章見出し・本文・学習パスの構成ずれをitdojp/podman-book#207で追跡中のためestimatedWeeksはnull。専用図表索引はitdojp/it-engineer-knowledge-architecture#220、Ruby Sass EOL warningはitdojp/podman-book#208で分離追跡する。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#219とsource修正itdojp/podman-book#206 / PR #209で、source main 4440506ceb2299b810952f9275d5f450b67b463aのREADME、両config、公開トップ、学習パス、チェックリスト、トラブルシューティング、あとがきを照合し、対象読者、初級〜上級、Profile B、modulesを確定。itdojp/it-engineer-knowledge-architecture#216に従いkubernetes-basics-bookを次の学習先として維持する。stage別期間は全体週数ではなく、章見出し・本文・学習パスの構成ずれをitdojp/podman-book#207で追跡中のためestimatedWeeksはnull。専用図表索引はitdojp/it-engineer-knowledge-architecture#220、Ruby Sass EOL warningはitdojp/podman-book#208で分離追跡する。",
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#220、source Issue itdojp/podman-book#210、source PR itdojp/podman-book#211で公開本文から参照されるMermaid 2件、PNG 1件、SVG 3件のexact 6件を収録した専用図表索引、本文stable anchor、top/sidebar/prev-next導線、回帰gateを実装。source main 1afea7f86632ce81400b355239eddb3eafb2d7ac、Book QA、Pages、公開索引から本文anchorへの本番疎通を確認し、figureIndex=trueへ更新した。#189 / #207 / #208は別スコープを維持する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/podman-book/blob/4440506ceb2299b810952f9275d5f450b67b463a/README.md",
@@ -1631,7 +1632,16 @@
         "https://github.com/itdojp/podman-book/issues/208",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/216",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/219",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/220"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/220",
+        "https://github.com/itdojp/podman-book/blob/1afea7f86632ce81400b355239eddb3eafb2d7ac/book-config.json",
+        "https://github.com/itdojp/podman-book/blob/1afea7f86632ce81400b355239eddb3eafb2d7ac/docs/index.md",
+        "https://github.com/itdojp/podman-book/blob/1afea7f86632ce81400b355239eddb3eafb2d7ac/docs/_data/navigation.yml",
+        "https://github.com/itdojp/podman-book/blob/1afea7f86632ce81400b355239eddb3eafb2d7ac/docs/additional/figure-index.md",
+        "https://github.com/itdojp/podman-book/blob/1afea7f86632ce81400b355239eddb3eafb2d7ac/scripts/check-figure-index.js",
+        "https://github.com/itdojp/podman-book/issues/210",
+        "https://github.com/itdojp/podman-book/pull/211",
+        "https://itdojp.github.io/podman-book/additional/figure-index/",
+        "https://github.com/itdojp/podman-book/issues/210#issuecomment-4956249763"
       ]
     },
     {
@@ -1681,8 +1691,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 219,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 220,
       "ux": {
         "profile": "B",
         "modules": {
@@ -1691,15 +1701,16 @@
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": false,
+          "figureIndex": true,
           "legalNotice": false,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#219とsource修正itdojp/practical-auth-book#148 / #149、PR #151 / #153で、source main e6d5d825ad4b02327cf815de7276c8eb8da878d4のREADME、book-config、公開トップ、導入、環境構築、トラブルシューティング、用語集、navigation、公開link gateを照合し、対象読者、中級〜上級、Profile B、modulesを確定。所要時間4〜5.5時間は週単位の学習計画ではないためestimatedWeeksはnull。専用図表索引はitdojp/it-engineer-knowledge-architecture#220、既存toolchain warningはitdojp/practical-auth-book#150 / #152で分離追跡する。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#219とsource修正itdojp/practical-auth-book#148 / #149、PR #151 / #153で、source main e6d5d825ad4b02327cf815de7276c8eb8da878d4のREADME、book-config、公開トップ、導入、環境構築、トラブルシューティング、用語集、navigation、公開link gateを照合し、対象読者、中級〜上級、Profile B、modulesを確定。所要時間4〜5.5時間は週単位の学習計画ではないためestimatedWeeksはnull。専用図表索引はitdojp/it-engineer-knowledge-architecture#220、既存toolchain warningはitdojp/practical-auth-book#150 / #152で分離追跡する。",
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#220、source Issue itdojp/practical-auth-book#154、source PR itdojp/practical-auth-book#155で公開本文から参照されるSVG exact 7件を収録した専用図表索引、本文stable anchor、top/sidebar/prev-next導線、source/docs同期と再生成後の回帰gateを実装。source main 0507a55912111b2e109ea2115e2c4618881410a4、Book QA、Pages、公開索引から本文anchorへの本番疎通を確認し、figureIndex=trueへ更新した。未参照diagram asset 10件は別スコープを維持する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/practical-auth-book/blob/e6d5d825ad4b02327cf815de7276c8eb8da878d4/README.md",
@@ -1718,7 +1729,16 @@
         "https://github.com/itdojp/practical-auth-book/issues/150",
         "https://github.com/itdojp/practical-auth-book/issues/152",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/219",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/220"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/220",
+        "https://github.com/itdojp/practical-auth-book/blob/0507a55912111b2e109ea2115e2c4618881410a4/book-config.json",
+        "https://github.com/itdojp/practical-auth-book/blob/0507a55912111b2e109ea2115e2c4618881410a4/docs/index.md",
+        "https://github.com/itdojp/practical-auth-book/blob/0507a55912111b2e109ea2115e2c4618881410a4/docs/_data/navigation.yml",
+        "https://github.com/itdojp/practical-auth-book/blob/0507a55912111b2e109ea2115e2c4618881410a4/docs/appendices/figure-index/index.md",
+        "https://github.com/itdojp/practical-auth-book/blob/0507a55912111b2e109ea2115e2c4618881410a4/scripts/check-figure-index.js",
+        "https://github.com/itdojp/practical-auth-book/issues/154",
+        "https://github.com/itdojp/practical-auth-book/pull/155",
+        "https://itdojp.github.io/practical-auth-book/appendices/figure-index/",
+        "https://github.com/itdojp/practical-auth-book/issues/154#issuecomment-4956417998"
       ]
     },
     {
@@ -1768,8 +1788,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 219,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 220,
       "ux": {
         "profile": "C",
         "modules": {
@@ -1777,16 +1797,17 @@
           "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": true,
-          "conceptMap": false,
+          "conceptMap": true,
           "figureIndex": true,
           "legalNotice": false,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#219とsource修正itdojp/supabase-architecture-patterns-book#147 / PR #148で、source main 3708ef84552b891416694b5e83e53c8a7da26abbのREADME、book-config、公開トップ、導入、パターン選定、図版索引、チェックリスト、トラブルシューティング、用語集を照合し、対象読者、初級〜上級、Profile C、modulesを確定。導入には初心者12週・中級者8週・上級者4週の複数学習パスと2〜3ヶ月の範囲が併記され、単一整数を恣意的に代表値へ選べないためestimatedWeeksはnull。専用concept mapは未実装のためitdojp/it-engineer-knowledge-architecture#220で分離追跡し、実体と異なるtrueにはしない。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#219とsource修正itdojp/supabase-architecture-patterns-book#147 / PR #148で、source main 3708ef84552b891416694b5e83e53c8a7da26abbのREADME、book-config、公開トップ、導入、パターン選定、図版索引、チェックリスト、トラブルシューティング、用語集を照合し、対象読者、初級〜上級、Profile C、modulesを確定。導入には初心者12週・中級者8週・上級者4週の複数学習パスと2〜3ヶ月の範囲が併記され、単一整数を恣意的に代表値へ選べないためestimatedWeeksはnull。専用concept mapは未実装のためitdojp/it-engineer-knowledge-architecture#220で分離追跡し、実体と異なるtrueにはしない。",
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#220、source Issue itdojp/supabase-architecture-patterns-book#149、source PR itdojp/supabase-architecture-patterns-book#151で責務層、依存関係、横断関心事を俯瞰し、16件の章・専用ガイドへ接続するreader-facing概念マップを実装。図版索引、パターン選定ガイド、用語集との責務境界、top/sidebar導線、回帰gateを確認した。source main c69e65bf000475a8e6add14388f58bdce211fa7c、Book QA、Pages、公開16 routesの本番疎通を確認し、conceptMap=trueへ更新した。repo-wide link gateと既存リンク債務はsource Issue #150で別追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/supabase-architecture-patterns-book/blob/3708ef84552b891416694b5e83e53c8a7da26abb/README.md",
@@ -1803,7 +1824,17 @@
         "https://github.com/itdojp/supabase-architecture-patterns-book/issues/147",
         "https://github.com/itdojp/supabase-architecture-patterns-book/pull/148",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/219",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/220"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/220",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/c69e65bf000475a8e6add14388f58bdce211fa7c/book-config.json",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/c69e65bf000475a8e6add14388f58bdce211fa7c/docs/index.md",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/c69e65bf000475a8e6add14388f58bdce211fa7c/docs/_data/navigation.yml",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/c69e65bf000475a8e6add14388f58bdce211fa7c/docs/guides/concept-map/index.md",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/blob/c69e65bf000475a8e6add14388f58bdce211fa7c/scripts/check_metadata_consistency.py",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/issues/149",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/pull/151",
+        "https://itdojp.github.io/supabase-architecture-patterns-book/guides/concept-map/",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/issues/149#issuecomment-4956249906",
+        "https://github.com/itdojp/supabase-architecture-patterns-book/issues/150"
       ]
     },
     {
