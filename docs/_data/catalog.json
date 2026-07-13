@@ -2151,8 +2151,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 226,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 227,
       "ux": {
         "profile": "A",
         "modules": {
@@ -2163,13 +2163,14 @@
           "conceptMap": false,
           "figureIndex": false,
           "legalNotice": true,
-          "glossary": false
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#226とsource修正itdojp/github-guide-for-beginners-book#226 / PR #227で、source main 052ddbe2e279cf1e87f2e2c18351814233b93ffcのREADME、book-config、公開トップ、導入、学習リソース、公開Pagesを照合し、対象読者、初級〜中級、Profile A、modulesを確定。公開トップの通読6〜12時間・演習込み12〜24時間と、導入の基本操作約1週間・チーム開発追加1週間・高度な活用は必要に応じてという複数目安は、書籍全体を閉じた単一の標準週数ではないためestimatedWeeksはnullとした。学習ロードマップ図は章内図版で独立したconcept map moduleではなく、専用用語集も未実装のためfalse。Profile A必須の用語導線はitdojp/it-engineer-knowledge-architecture#227で追跡する。Ruby 3.4・Sass/minima warningはitdojp/github-guide-for-beginners-book#225へ分離した。付録の明示導線に基づきgithub-workflow-bookを次読とした。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#226とsource修正itdojp/github-guide-for-beginners-book#226 / PR #227で、source main 052ddbe2e279cf1e87f2e2c18351814233b93ffcのREADME、book-config、公開トップ、導入、学習リソース、公開Pagesを照合し、対象読者、初級〜中級、Profile A、modulesを確定。公開トップの通読6〜12時間・演習込み12〜24時間と、導入の基本操作約1週間・チーム開発追加1週間・高度な活用は必要に応じてという複数目安は、書籍全体を閉じた単一の標準週数ではないためestimatedWeeksはnullとした。学習ロードマップ図は章内図版で独立したconcept map moduleではなく、専用用語集も未実装のためfalse。Profile A必須の用語導線はitdojp/it-engineer-knowledge-architecture#227で追跡する。Ruby 3.4・Sass/minima warningはitdojp/github-guide-for-beginners-book#225へ分離した。付録の明示導線に基づきgithub-workflow-bookを次読とした。",
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#227、source Issue itdojp/github-guide-for-beginners-book#228、source PR itdojp/github-guide-for-beginners-book#229で、初学者向け15用語の定義と関連章を備える専用付録D用語集、top/navigation/prev導線、manuscript/docs mirror、CRLF-safe回帰gateを実装。source main 4ec9dd0eadab9b41dfe0d3691f26b76f74c1c63c、review completeness unresolved 0、Book QA、Pages、公開用語集の本番疎通を確認し、glossary=trueへ更新した。Ruby/Sass/minima warningはsource #225、GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/github-guide-for-beginners-book/blob/052ddbe2e279cf1e87f2e2c18351814233b93ffc/README.md",
@@ -2181,7 +2182,18 @@
         "https://github.com/itdojp/github-guide-for-beginners-book/issues/225",
         "https://github.com/itdojp/github-guide-for-beginners-book/issues/226",
         "https://github.com/itdojp/github-guide-for-beginners-book/pull/227",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/226"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/226",
+        "https://github.com/itdojp/github-guide-for-beginners-book/blob/4ec9dd0eadab9b41dfe0d3691f26b76f74c1c63c/book-config.json",
+        "https://github.com/itdojp/github-guide-for-beginners-book/blob/4ec9dd0eadab9b41dfe0d3691f26b76f74c1c63c/docs/index.md",
+        "https://github.com/itdojp/github-guide-for-beginners-book/blob/4ec9dd0eadab9b41dfe0d3691f26b76f74c1c63c/docs/_data/navigation.yml",
+        "https://github.com/itdojp/github-guide-for-beginners-book/blob/4ec9dd0eadab9b41dfe0d3691f26b76f74c1c63c/docs/appendices/appendix-glossary/index.md",
+        "https://github.com/itdojp/github-guide-for-beginners-book/blob/4ec9dd0eadab9b41dfe0d3691f26b76f74c1c63c/scripts/check-glossary-contract.js",
+        "https://github.com/itdojp/github-guide-for-beginners-book/issues/228",
+        "https://github.com/itdojp/github-guide-for-beginners-book/pull/229",
+        "https://itdojp.github.io/github-guide-for-beginners-book/appendices/appendix-glossary/",
+        "https://github.com/itdojp/github-guide-for-beginners-book/issues/228#issuecomment-4957112596",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/227",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/258"
       ]
     },
     {
@@ -2236,25 +2248,26 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 226,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 227,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
           "readingGuide": true,
-          "checklistPack": false,
+          "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": false,
+          "figureIndex": true,
           "legalNotice": true,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#226とsource修正itdojp/github-workflow-book#236 / #238、PR #237 / #239で、source main 2996cdac4eca5a8d611f71818741de4cdfd10511のREADME、book-config、公開トップ、第6章、用語集、トラブルシューティング、公開Pagesを照合し、対象読者、中級〜上級、Profile B、modulesを確定。公開トップがGitHub初心者ガイドを前提と明記するためprerequisitesへ設定し、第6章が運用設計の詳細を公開済みAgentOps本へ委譲するためrecommendedAfterへ設定した。通読2〜2.5時間は週単位の標準計画ではないためestimatedWeeksはnull。専用チェックリスト集と図表索引は未実装のためitdojp/it-engineer-knowledge-architecture#227で追跡する。npm allowScriptsとFaraday warningはitdojp/github-workflow-book#235へ分離した。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#226とsource修正itdojp/github-workflow-book#236 / #238、PR #237 / #239で、source main 2996cdac4eca5a8d611f71818741de4cdfd10511のREADME、book-config、公開トップ、第6章、用語集、トラブルシューティング、公開Pagesを照合し、対象読者、中級〜上級、Profile B、modulesを確定。公開トップがGitHub初心者ガイドを前提と明記するためprerequisitesへ設定し、第6章が運用設計の詳細を公開済みAgentOps本へ委譲するためrecommendedAfterへ設定した。通読2〜2.5時間は週単位の標準計画ではないためestimatedWeeksはnull。専用チェックリスト集と図表索引は未実装のためitdojp/it-engineer-knowledge-architecture#227で追跡する。npm allowScriptsとFaraday warningはitdojp/github-workflow-book#235へ分離した。",
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#227、source Issue itdojp/github-workflow-book#240、source PR itdojp/github-workflow-book#241で、7領域・21件以上の独立チェックリスト集と、第1/5/7/9/12章のアクセシブルな自己完結SVG exact 5件を案内する図表索引、stable anchors、top/navigation、docs/src・generator CSS・CI回帰gateを実装。source main 5948d898f05d955e59457efd1b82cb34433a1a07、review completeness unresolved 0、Book QA、Pages、2公開付録と5 deep linksの本番疎通を確認し、checklistPack=true、figureIndex=trueへ更新した。npm/Faraday warningはsource #235、GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/github-workflow-book/blob/2996cdac4eca5a8d611f71818741de4cdfd10511/README.md",
@@ -2269,7 +2282,20 @@
         "https://github.com/itdojp/github-workflow-book/issues/238",
         "https://github.com/itdojp/github-workflow-book/pull/237",
         "https://github.com/itdojp/github-workflow-book/pull/239",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/226"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/226",
+        "https://github.com/itdojp/github-workflow-book/blob/5948d898f05d955e59457efd1b82cb34433a1a07/book-config.json",
+        "https://github.com/itdojp/github-workflow-book/blob/5948d898f05d955e59457efd1b82cb34433a1a07/docs/index.md",
+        "https://github.com/itdojp/github-workflow-book/blob/5948d898f05d955e59457efd1b82cb34433a1a07/docs/_data/navigation.yml",
+        "https://github.com/itdojp/github-workflow-book/blob/5948d898f05d955e59457efd1b82cb34433a1a07/docs/appendices/checklist-pack/index.md",
+        "https://github.com/itdojp/github-workflow-book/blob/5948d898f05d955e59457efd1b82cb34433a1a07/docs/appendices/figure-index/index.md",
+        "https://github.com/itdojp/github-workflow-book/blob/5948d898f05d955e59457efd1b82cb34433a1a07/scripts/check-issue-240-ux.js",
+        "https://github.com/itdojp/github-workflow-book/issues/240",
+        "https://github.com/itdojp/github-workflow-book/pull/241",
+        "https://itdojp.github.io/github-workflow-book/appendices/checklist-pack/",
+        "https://itdojp.github.io/github-workflow-book/appendices/figure-index/",
+        "https://github.com/itdojp/github-workflow-book/issues/240#issuecomment-4957190038",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/227",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/258"
       ]
     },
     {
@@ -2321,8 +2347,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 226,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 227,
       "ux": {
         "profile": "B",
         "modules": {
@@ -2331,15 +2357,16 @@
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": false,
+          "figureIndex": true,
           "legalNotice": true,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#226、dependency修正itdojp/GitHub-AgentOps-book#54 / PR #56、UX修正itdojp/GitHub-AgentOps-book#57 / PR #58で、source main e55a4620dadf014a051c9e591f552e5f92a2153bのREADME、book-config、公開トップ、セキュリティ章、テンプレート、プレイブック、トラブルシューティング、公開Pagesを照合し、正式英語書名、対象読者、中級〜上級、Profile B、modulesを確定。通読2〜3時間・導入半日〜1日は週単位の標準計画ではないためestimatedWeeksはnull。GitHub基礎とCIは知識要件であり特定書籍の修了を必須としないためprerequisitesは空。関連書籍のworkflow本は補完資料であり循環的な次読にしない。専用図表索引は未実装のためitdojp/it-engineer-knowledge-architecture#227で追跡する。npm audit 10件は0へ解消し、残るFaraday・whatwg-encoding warningはitdojp/GitHub-AgentOps-book#55へ分離した。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#226、dependency修正itdojp/GitHub-AgentOps-book#54 / PR #56、UX修正itdojp/GitHub-AgentOps-book#57 / PR #58で、source main e55a4620dadf014a051c9e591f552e5f92a2153bのREADME、book-config、公開トップ、セキュリティ章、テンプレート、プレイブック、トラブルシューティング、公開Pagesを照合し、正式英語書名、対象読者、中級〜上級、Profile B、modulesを確定。通読2〜3時間・導入半日〜1日は週単位の標準計画ではないためestimatedWeeksはnull。GitHub基礎とCIは知識要件であり特定書籍の修了を必須としないためprerequisitesは空。関連書籍のworkflow本は補完資料であり循環的な次読にしない。専用図表索引は未実装のためitdojp/it-engineer-knowledge-architecture#227で追跡する。npm audit 10件は0へ解消し、残るFaraday・whatwg-encoding warningはitdojp/GitHub-AgentOps-book#55へ分離した。",
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#227、source Issue itdojp/GitHub-AgentOps-book#59、source PR itdojp/GitHub-AgentOps-book#60で、Human/Agent/CI責任境界、GitHub-native反復、MCP/tool/trust/secret境界、governance feedback loopの自己完結SVG exact 4件と専用図表索引、stable anchors、top/navigation、src/docs生成parity、mobile keyboard scroll、回帰gateを実装。source main 1733ccdb86b3e42a7d615b42195d8ba974684ac8、review completeness unresolved 0、Book QA/validate、Pages、公開索引・4 deep links/assetsの本番疎通を確認し、figureIndex=trueへ更新した。Faraday/whatwg warningはsource #55、GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/GitHub-AgentOps-book/blob/e55a4620dadf014a051c9e591f552e5f92a2153b/README.md",
@@ -2355,7 +2382,18 @@
         "https://github.com/itdojp/GitHub-AgentOps-book/issues/57",
         "https://github.com/itdojp/GitHub-AgentOps-book/pull/56",
         "https://github.com/itdojp/GitHub-AgentOps-book/pull/58",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/226"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/226",
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/1733ccdb86b3e42a7d615b42195d8ba974684ac8/book-config.json",
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/1733ccdb86b3e42a7d615b42195d8ba974684ac8/docs/index.md",
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/1733ccdb86b3e42a7d615b42195d8ba974684ac8/docs/_data/navigation.yml",
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/1733ccdb86b3e42a7d615b42195d8ba974684ac8/docs/appendices/figure-index/index.md",
+        "https://github.com/itdojp/GitHub-AgentOps-book/blob/1733ccdb86b3e42a7d615b42195d8ba974684ac8/scripts/check-figure-index.js",
+        "https://github.com/itdojp/GitHub-AgentOps-book/issues/59",
+        "https://github.com/itdojp/GitHub-AgentOps-book/pull/60",
+        "https://itdojp.github.io/GitHub-AgentOps-book/appendices/figure-index/",
+        "https://github.com/itdojp/GitHub-AgentOps-book/issues/59#issuecomment-4957224264",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/227",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/258"
       ]
     },
     {
