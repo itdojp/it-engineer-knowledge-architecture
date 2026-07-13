@@ -347,13 +347,13 @@
         "quickStart": true,
         "readingGuide": true,
         "checklistPack": true,
-        "troubleshootingFlow": false,
+        "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": false,
+        "figureIndex": true,
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#238で、source main f3b07c4eba988a627f834744e4c8e2a96bf879a1のREADME、root / 公開book-config、トップ、Quick Start、10章、チェックリスト集、テンプレート集、QAと公開Pagesを照合し、全レベル、対象読者、Profile Bを確定した。共同作業・日本語業務コミュニケーションの経験は特定書籍の前提ではなく、通読8〜12時間は週単位の標準計画ではないためprerequisitesは空、estimatedWeeksはnullとした。 / 公開トップの「シリーズとの接続」と各章の「次の一手」が、利害調整時はnegotiation-for-engineers-book、AI支援導入時はai-communication-bookへ進む導線を明示するためrecommendedAfterへ記録した。source #136 / PR #139でnpm audit 16件を0へ解消してroot QAをCI化し、#138 / PR #140でrootと公開UX metadataを同期した。専用troubleshooting flow / figure indexはなくProfile B必須module 2件をportal #239で追跡する。source残件は#137、#141〜#143。"
+      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#238で、source main f3b07c4eba988a627f834744e4c8e2a96bf879a1のREADME、root / 公開book-config、トップ、Quick Start、10章、チェックリスト集、テンプレート集、QAと公開Pagesを照合し、全レベル、対象読者、Profile Bを確定した。共同作業・日本語業務コミュニケーションの経験は特定書籍の前提ではなく、通読8〜12時間は週単位の標準計画ではないためprerequisitesは空、estimatedWeeksはnullとした。 / 2026-07-13のsource Issue #144 / PR #145で、安全・緊急度→状況整理→行動→停止・エスカレーション→記録を選ぶ専用book-wide troubleshooting flow、医療診断非代替と専門窓口の境界、公開inline SVG 20件のexact図版索引、stable fragment、src/docs同期・回帰検査を実装した。source final mainは433fcbe19a9299df07d3488a30cbb7d370176cdb、PR review completenessはunresolved 0、main QA・Pages、公開book-configと両routeを確認済み。troubleshootingFlow=true / figureIndex=trueへ更新し、Profile B必須module debtを解消した。source残件#137/#141〜#143は別スコープを維持する。"
     },
     "IT-infra-book": {
       "repo": "itdojp/IT-infra-book",
@@ -507,13 +507,13 @@
         "quickStart": false,
         "readingGuide": true,
         "checklistPack": true,
-        "troubleshootingFlow": false,
+        "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": false,
+        "figureIndex": true,
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#238で、source main be764e7d5a2911df7fb1cc84643baf1344f9363cのREADME、book-config、公開トップ、読み方ガイド、基礎語彙、6章、実践ツールキット、ケース集、用語集、QAと公開Pagesを照合し、全レベル、対象読者、Profile Bを確定した。特定書籍を必須前提とする記述はなく、通読1〜1.5時間は週単位の標準計画ではないため学習関係は空、estimatedWeeksはnullとした。 / itdojp/negotiation-for-engineers-book#111 / PR #112でUX flags、旧repository slug、latent HTML typoを修正した。専用troubleshooting flowと図表索引は公開実体がないためfalseとし、Profile B必須module 2件はportal #239で追跡する。固定SHAでnpm test、Jekyll build、full audit 0、Pages top / glossaryを確認し、whatwg-encoding deprecationはsource #113へ分離した。"
+      "notes": "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#238で、source main be764e7d5a2911df7fb1cc84643baf1344f9363cのREADME、book-config、公開トップ、読み方ガイド、基礎語彙、6章、実践ツールキット、ケース集、用語集、QAと公開Pagesを照合し、全レベル、対象読者、Profile Bを確定した。特定書籍を必須前提とする記述はなく、通読1〜1.5時間は週単位の標準計画ではないため学習関係は空、estimatedWeeksはnullとした。 / 2026-07-13のsource Issue #114 / PR #115で、症状→確認→行動→停止・エスカレーション→記録を選ぶ専用交渉troubleshooting flowと、公開Mermaid図4件のexact図版索引、reader-facing導線、flag/route/page/inventory/anchor回帰検査を実装した。source final mainは3f1264340c526b44f883c8032febc41e8da60fa6、PR review completenessはunresolved 0、main QA・internal links・Pagesと公開routeを確認済み。troubleshootingFlow=true / figureIndex=trueへ更新し、Profile B必須module debtを解消した。whatwg-encoding warningはsource #113で別追跡する。"
     },
     "pentest-learning-book": {
       "repo": "itdojp/pentest-learning-book",
