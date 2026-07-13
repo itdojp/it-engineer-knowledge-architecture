@@ -189,11 +189,11 @@
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": false,
+        "figureIndex": true,
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "2026-07-12のmetadata監査#193で、UX設定がbook-configにないことを確認し、実務参照を主目的とするProfile B、公開トップの読み方ガイド、Runbookテンプレート、チェックリスト、用語集の実体からmodulesを判定。独立した図表索引は未実装。PR #198のmerge後にmain validation、Deploy Pages、production smoke、Pages drift、公開49カードと当該概要を確認し、品質スプリント#193のレビュー証跡を確定。"
+      "notes": "2026-07-12のmetadata監査#193で、UX設定がbook-configにないことを確認し、実務参照を主目的とするProfile B、公開トップの読み方ガイド、Runbookテンプレート、チェックリスト、用語集の実体からmodulesを判定。独立した図表索引がない状態を確認し、必須module debtを#250へ追跡移管した。PR #198のmerge後にmain validation、Deploy Pages、production smoke、Pages drift、公開49カードと当該概要を確認し、品質スプリント#193のレビュー証跡を確定。 / 2026-07-14にitdojp/it-engineer-knowledge-architecture#250、source Issue itdojp/engineering-documentation-book#32、source PR itdojp/engineering-documentation-book#33で、公開Mermaid正本exact 5件に対応するaccessible/self-contained SVG preview、stable anchorsと相対deep linksを持つ専用/appendices/figure-index/、top/navigation/prev-nextとfail-closed/compatibility回帰gateを実装。source main 3df782481f883764ffc4f6eff0439ee0bcaded7e、review completeness unresolved 0、CI、Pages、5 entries/anchors/assetsと公開導線の本番疎通を確認し、figureIndex=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
     },
     "ethereum-learning-bootcamp": {
       "repo": "itdojp/ethereum-learning-bootcamp",
@@ -317,11 +317,11 @@
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": false,
+        "figureIndex": true,
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "2026-07-12のmetadata監査#205で、source main 42876458d1319e7323733468e7fc130a14a4afb7の公開トップ、章1〜8、チェックリスト、テンプレートを照合し、実務適用型のProfile Bとmodulesを確定。期間は根拠がなく、専用図表索引がないためfigureIndex=falseとし、必須module debtの実装は#250で追跡する。"
+      "notes": "2026-07-12のmetadata監査#205で、source main 42876458d1319e7323733468e7fc130a14a4afb7の公開トップ、章1〜8、チェックリスト、テンプレートを照合し、実務適用型のProfile Bとmodulesを確定。期間は根拠がなく、専用図表索引がない状態を確認してfigureIndex=falseとし、必須module debtを#250へ追跡移管した。 / 2026-07-14にitdojp/it-engineer-knowledge-architecture#250、source Issue itdojp/incident-response-basics-book#36、source PR itdojp/incident-response-basics-book#37で、初動、Severity/役割/タイムライン、連絡/エスカレーション、復旧/ポストモーテムを扱うaccessible/self-contained SVG exact 4件、文章代替、stable anchorsと章順deep linksを持つ専用/appendices/figure-index/、top/navigation/prev-nextとfail-closed/compatibility回帰gateを実装。source main 70d86403b604c3c5d374b6a4ef8f8288244d3ba1、review completeness unresolved 0、CI、Pages、4 entries/anchors/assetsと公開導線の本番疎通を確認し、figureIndex=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
     },
     "issue-driven-work-book": {
       "repo": "itdojp/issue-driven-work-book",
@@ -335,9 +335,9 @@
         "conceptMap": false,
         "figureIndex": false,
         "legalNotice": true,
-        "glossary": false
+        "glossary": true
       },
-      "notes": "2026-07-12のmetadata監査#193で、book-configのProfile Aとmodulesを、公開トップのクイックスタート・注意事項・読み方ガイド、トリアージ判断表、チェックリスト、LICENSEの実体と照合済み。PR #198のmerge後にmain validation、Deploy Pages、production smoke、Pages drift、公開49カードと当該概要を確認し、品質スプリント#193のレビュー証跡を確定。"
+      "notes": "2026-07-12のmetadata監査#193で、book-configのProfile Aとmodulesを、公開トップのクイックスタート・注意事項・読み方ガイド、トリアージ判断表、チェックリスト、LICENSEの実体と照合済み。PR #198のmerge後にmain validation、Deploy Pages、production smoke、Pages drift、公開49カードと当該概要を確認し、品質スプリント#193のレビュー証跡を確定。 / 2026-07-14にitdojp/it-engineer-knowledge-architecture#250、source Issue itdojp/issue-driven-work-book#34、source PR itdojp/issue-driven-work-book#35で、本文根拠とcanonical参照を持つexact 18用語の専用/appendices/glossary/、stable anchors/deep links、top/navigation/prev-nextとfail-closed回帰gateを実装。source main ff236e117f8570470c0b44b1e2a4954104629e6a、review completeness unresolved 0、CI、Pages、18 anchors/referencesと公開導線の本番疎通を確認し、glossary=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
     },
     "IT-engineer-communication-book": {
       "repo": "itdojp/IT-engineer-communication-book",
@@ -589,11 +589,11 @@
         "checklistPack": true,
         "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": false,
+        "figureIndex": true,
         "legalNotice": false,
         "glossary": true
       },
-      "notes": "2026-07-12のmetadata監査#205で、source main 4966d45234c336a71136bee7d79c8eb36140777fのbook-configと公開トップ、チェックリスト、テンプレートを照合し、Profile Bとmodulesを確定。時間目安は週換算せず、専用図表索引がないためfigureIndex=falseとし、必須module debtの実装は#250で追跡する。"
+      "notes": "2026-07-12のmetadata監査#205で、source main 4966d45234c336a71136bee7d79c8eb36140777fのbook-configと公開トップ、チェックリスト、テンプレートを照合し、Profile Bとmodulesを確定。時間目安は週換算せず、専用図表索引がない状態を確認してfigureIndex=falseとし、必須module debtを#250へ追跡移管した。 / 2026-07-14にitdojp/it-engineer-knowledge-architecture#250、source Issue itdojp/security-privacy-literacy-book#37、source PR itdojp/security-privacy-literacy-book#38で、本文根拠を持つ安全なaccessible/self-contained SVG exact 4件、文章代替、stable anchorsと相対deep linksを持つ専用/appendices/figure-index/、top/navigation/prev-next、外部SVG/CSS resourceと秘密情報様文字列を拒否するfail-closed/compatibility回帰gateを実装。source main aa84ee0bc8f97d51070450925e67ed465adc69b7、review completeness unresolved 0、Book QA、CI、Pages、4 entries/anchors/assetsと公開導線の本番疎通を確認し、figureIndex=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
     },
     "small-webapp-software-design-book": {
       "repo": "itdojp/small-webapp-software-design-book",

@@ -138,8 +138,8 @@
       "bookIds": []
     },
     "missingRequiredUxModules": {
-      "count": 10,
-      "bookCount": 7,
+      "count": 6,
+      "bookCount": 3,
       "books": [
         {
           "id": "ai-agent-collaboration-book",
@@ -194,54 +194,6 @@
               "trackingIssue": 230
             }
           ]
-        },
-        {
-          "id": "engineering-documentation-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 193,
-              "trackingIssue": 250
-            }
-          ]
-        },
-        {
-          "id": "incident-response-basics-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 205,
-              "trackingIssue": 250
-            }
-          ]
-        },
-        {
-          "id": "issue-driven-work-book",
-          "profile": "A",
-          "missingModules": [
-            {
-              "module": "glossary",
-              "reason": "実ファイル監査で専用の用語導線が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 193,
-              "trackingIssue": 250
-            }
-          ]
-        },
-        {
-          "id": "security-privacy-literacy-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 205,
-              "trackingIssue": 250
-            }
-          ]
         }
       ]
     },
@@ -252,8 +204,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 10,
-      "currentCount": 10,
+      "baselineCount": 6,
+      "currentCount": 6,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,

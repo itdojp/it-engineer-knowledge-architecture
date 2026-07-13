@@ -299,8 +299,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 193,
+      "lastReviewedAt": "2026-07-14",
+      "reviewIssue": 250,
       "ux": {
         "profile": "A",
         "modules": {
@@ -311,13 +311,14 @@
           "conceptMap": false,
           "figureIndex": false,
           "legalNotice": true,
-          "glossary": false
+          "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-14",
       "notes": [
-        "2026-07-12のmetadata監査#193で、book-configのProfile Aとmodulesを、公開トップのクイックスタート・注意事項・読み方ガイド、トリアージ判断表、チェックリスト、LICENSEの実体と照合済み。PR #198のmerge後にmain validation、Deploy Pages、production smoke、Pages drift、公開49カードと当該概要を確認し、品質スプリント#193のレビュー証跡を確定。"
+        "2026-07-12のmetadata監査#193で、book-configのProfile Aとmodulesを、公開トップのクイックスタート・注意事項・読み方ガイド、トリアージ判断表、チェックリスト、LICENSEの実体と照合済み。PR #198のmerge後にmain validation、Deploy Pages、production smoke、Pages drift、公開49カードと当該概要を確認し、品質スプリント#193のレビュー証跡を確定。",
+        "2026-07-14にitdojp/it-engineer-knowledge-architecture#250、source Issue itdojp/issue-driven-work-book#34、source PR itdojp/issue-driven-work-book#35で、本文根拠とcanonical参照を持つexact 18用語の専用/appendices/glossary/、stable anchors/deep links、top/navigation/prev-nextとfail-closed回帰gateを実装。source main ff236e117f8570470c0b44b1e2a4954104629e6a、review completeness unresolved 0、CI、Pages、18 anchors/referencesと公開導線の本番疎通を確認し、glossary=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/issue-driven-work-book/blob/main/README.md",
@@ -330,7 +331,19 @@
         "https://github.com/itdojp/issue-driven-work-book/blob/main/LICENSE.md",
         "docs/professional-foundations.md",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/193",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/198"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/198",
+        "https://github.com/itdojp/issue-driven-work-book/blob/ff236e117f8570470c0b44b1e2a4954104629e6a/book-config.json",
+        "https://github.com/itdojp/issue-driven-work-book/blob/ff236e117f8570470c0b44b1e2a4954104629e6a/docs/appendices/glossary/index.md",
+        "https://github.com/itdojp/issue-driven-work-book/blob/ff236e117f8570470c0b44b1e2a4954104629e6a/docs/_data/navigation.yml",
+        "https://github.com/itdojp/issue-driven-work-book/blob/ff236e117f8570470c0b44b1e2a4954104629e6a/scripts/check-reader-ux.js",
+        "https://github.com/itdojp/issue-driven-work-book/issues/34",
+        "https://github.com/itdojp/issue-driven-work-book/pull/35",
+        "https://itdojp.github.io/issue-driven-work-book/appendices/glossary/",
+        "https://github.com/itdojp/issue-driven-work-book/issues/34#issuecomment-4960265976",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/250",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/250#issuecomment-4960268214",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/258",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/262"
       ]
     },
     {
@@ -379,8 +392,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 193,
+      "lastReviewedAt": "2026-07-14",
+      "reviewIssue": 250,
       "ux": {
         "profile": "B",
         "modules": {
@@ -389,15 +402,16 @@
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": false,
+          "figureIndex": true,
           "legalNotice": false,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-14",
       "notes": [
-        "2026-07-12のmetadata監査#193で、UX設定がbook-configにないことを確認し、実務参照を主目的とするProfile B、公開トップの読み方ガイド、Runbookテンプレート、チェックリスト、用語集の実体からmodulesを判定。独立した図表索引は未実装。PR #198のmerge後にmain validation、Deploy Pages、production smoke、Pages drift、公開49カードと当該概要を確認し、品質スプリント#193のレビュー証跡を確定。"
+        "2026-07-12のmetadata監査#193で、UX設定がbook-configにないことを確認し、実務参照を主目的とするProfile B、公開トップの読み方ガイド、Runbookテンプレート、チェックリスト、用語集の実体からmodulesを判定。独立した図表索引がない状態を確認し、必須module debtを#250へ追跡移管した。PR #198のmerge後にmain validation、Deploy Pages、production smoke、Pages drift、公開49カードと当該概要を確認し、品質スプリント#193のレビュー証跡を確定。",
+        "2026-07-14にitdojp/it-engineer-knowledge-architecture#250、source Issue itdojp/engineering-documentation-book#32、source PR itdojp/engineering-documentation-book#33で、公開Mermaid正本exact 5件に対応するaccessible/self-contained SVG preview、stable anchorsと相対deep linksを持つ専用/appendices/figure-index/、top/navigation/prev-nextとfail-closed/compatibility回帰gateを実装。source main 3df782481f883764ffc4f6eff0439ee0bcaded7e、review completeness unresolved 0、CI、Pages、5 entries/anchors/assetsと公開導線の本番疎通を確認し、figureIndex=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/engineering-documentation-book/blob/main/README.md",
@@ -409,7 +423,20 @@
         "https://github.com/itdojp/engineering-documentation-book/blob/main/docs/appendices/glossary/index.md",
         "docs/professional-foundations.md",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/193",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/198"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/198",
+        "https://github.com/itdojp/engineering-documentation-book/blob/3df782481f883764ffc4f6eff0439ee0bcaded7e/book-config.json",
+        "https://github.com/itdojp/engineering-documentation-book/blob/3df782481f883764ffc4f6eff0439ee0bcaded7e/docs/appendices/figure-index/index.md",
+        "https://github.com/itdojp/engineering-documentation-book/blob/3df782481f883764ffc4f6eff0439ee0bcaded7e/docs/chapters/chapter-05/index.md",
+        "https://github.com/itdojp/engineering-documentation-book/blob/3df782481f883764ffc4f6eff0439ee0bcaded7e/docs/appendices/templates/architecture-diagram/index.md",
+        "https://github.com/itdojp/engineering-documentation-book/blob/3df782481f883764ffc4f6eff0439ee0bcaded7e/scripts/check-reader-ux.js",
+        "https://github.com/itdojp/engineering-documentation-book/issues/32",
+        "https://github.com/itdojp/engineering-documentation-book/pull/33",
+        "https://itdojp.github.io/engineering-documentation-book/appendices/figure-index/",
+        "https://github.com/itdojp/engineering-documentation-book/issues/32#issuecomment-4961041759",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/250",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/250#issuecomment-4961044702",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/258",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/262"
       ]
     },
     {
@@ -458,8 +485,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 205,
+      "lastReviewedAt": "2026-07-14",
+      "reviewIssue": 250,
       "ux": {
         "profile": "B",
         "modules": {
@@ -468,15 +495,16 @@
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": false,
+          "figureIndex": true,
           "legalNotice": false,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-14",
       "notes": [
-        "2026-07-12のmetadata監査#205で、source main 4966d45234c336a71136bee7d79c8eb36140777fのbook-configと公開トップ、チェックリスト、テンプレートを照合し、Profile Bとmodulesを確定。時間目安は週換算せず、専用図表索引がないためfigureIndex=falseとし、必須module debtの実装は#250で追跡する。"
+        "2026-07-12のmetadata監査#205で、source main 4966d45234c336a71136bee7d79c8eb36140777fのbook-configと公開トップ、チェックリスト、テンプレートを照合し、Profile Bとmodulesを確定。時間目安は週換算せず、専用図表索引がない状態を確認してfigureIndex=falseとし、必須module debtを#250へ追跡移管した。",
+        "2026-07-14にitdojp/it-engineer-knowledge-architecture#250、source Issue itdojp/security-privacy-literacy-book#37、source PR itdojp/security-privacy-literacy-book#38で、本文根拠を持つ安全なaccessible/self-contained SVG exact 4件、文章代替、stable anchorsと相対deep linksを持つ専用/appendices/figure-index/、top/navigation/prev-next、外部SVG/CSS resourceと秘密情報様文字列を拒否するfail-closed/compatibility回帰gateを実装。source main aa84ee0bc8f97d51070450925e67ed465adc69b7、review completeness unresolved 0、Book QA、CI、Pages、4 entries/anchors/assetsと公開導線の本番疎通を確認し、figureIndex=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/security-privacy-literacy-book/blob/4966d45234c336a71136bee7d79c8eb36140777f/README.md",
@@ -488,7 +516,20 @@
         "https://github.com/itdojp/security-privacy-literacy-book/blob/4966d45234c336a71136bee7d79c8eb36140777f/docs/appendices/templates/index.md",
         "docs/professional-foundations.md",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/205",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/206"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/206",
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/aa84ee0bc8f97d51070450925e67ed465adc69b7/book-config.json",
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/aa84ee0bc8f97d51070450925e67ed465adc69b7/docs/appendices/figure-index/index.md",
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/aa84ee0bc8f97d51070450925e67ed465adc69b7/docs/chapters/chapter-03/index.md",
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/aa84ee0bc8f97d51070450925e67ed465adc69b7/docs/assets/images/figures/ch03-secret-handling.svg",
+        "https://github.com/itdojp/security-privacy-literacy-book/blob/aa84ee0bc8f97d51070450925e67ed465adc69b7/scripts/check-reader-ux.js",
+        "https://github.com/itdojp/security-privacy-literacy-book/issues/37",
+        "https://github.com/itdojp/security-privacy-literacy-book/pull/38",
+        "https://itdojp.github.io/security-privacy-literacy-book/appendices/figure-index/",
+        "https://github.com/itdojp/security-privacy-literacy-book/issues/37#issuecomment-4961041802",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/250",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/250#issuecomment-4961044901",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/258",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/262"
       ]
     },
     {
@@ -539,8 +580,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 205,
+      "lastReviewedAt": "2026-07-14",
+      "reviewIssue": 250,
       "ux": {
         "profile": "B",
         "modules": {
@@ -549,15 +590,16 @@
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": false,
+          "figureIndex": true,
           "legalNotice": false,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-14",
       "notes": [
-        "2026-07-12のmetadata監査#205で、source main 42876458d1319e7323733468e7fc130a14a4afb7の公開トップ、章1〜8、チェックリスト、テンプレートを照合し、実務適用型のProfile Bとmodulesを確定。期間は根拠がなく、専用図表索引がないためfigureIndex=falseとし、必須module debtの実装は#250で追跡する。"
+        "2026-07-12のmetadata監査#205で、source main 42876458d1319e7323733468e7fc130a14a4afb7の公開トップ、章1〜8、チェックリスト、テンプレートを照合し、実務適用型のProfile Bとmodulesを確定。期間は根拠がなく、専用図表索引がない状態を確認してfigureIndex=falseとし、必須module debtを#250へ追跡移管した。",
+        "2026-07-14にitdojp/it-engineer-knowledge-architecture#250、source Issue itdojp/incident-response-basics-book#36、source PR itdojp/incident-response-basics-book#37で、初動、Severity/役割/タイムライン、連絡/エスカレーション、復旧/ポストモーテムを扱うaccessible/self-contained SVG exact 4件、文章代替、stable anchorsと章順deep linksを持つ専用/appendices/figure-index/、top/navigation/prev-nextとfail-closed/compatibility回帰gateを実装。source main 70d86403b604c3c5d374b6a4ef8f8288244d3ba1、review completeness unresolved 0、CI、Pages、4 entries/anchors/assetsと公開導線の本番疎通を確認し、figureIndex=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/incident-response-basics-book/blob/42876458d1319e7323733468e7fc130a14a4afb7/README.md",
@@ -569,7 +611,20 @@
         "https://github.com/itdojp/incident-response-basics-book/blob/42876458d1319e7323733468e7fc130a14a4afb7/docs/appendices/templates/index.md",
         "docs/professional-foundations.md",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/205",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/206"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/206",
+        "https://github.com/itdojp/incident-response-basics-book/blob/70d86403b604c3c5d374b6a4ef8f8288244d3ba1/book-config.json",
+        "https://github.com/itdojp/incident-response-basics-book/blob/70d86403b604c3c5d374b6a4ef8f8288244d3ba1/docs/appendices/figure-index/index.md",
+        "https://github.com/itdojp/incident-response-basics-book/blob/70d86403b604c3c5d374b6a4ef8f8288244d3ba1/docs/chapters/chapter-05/index.md",
+        "https://github.com/itdojp/incident-response-basics-book/blob/70d86403b604c3c5d374b6a4ef8f8288244d3ba1/docs/assets/images/figures/ch05-severity-roles-timeline.svg",
+        "https://github.com/itdojp/incident-response-basics-book/blob/70d86403b604c3c5d374b6a4ef8f8288244d3ba1/scripts/check-reader-ux.js",
+        "https://github.com/itdojp/incident-response-basics-book/issues/36",
+        "https://github.com/itdojp/incident-response-basics-book/pull/37",
+        "https://itdojp.github.io/incident-response-basics-book/appendices/figure-index/",
+        "https://github.com/itdojp/incident-response-basics-book/issues/36#issuecomment-4961041797",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/250",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/250#issuecomment-4961045138",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/258",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/262"
       ]
     },
     {
