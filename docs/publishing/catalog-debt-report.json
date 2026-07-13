@@ -138,64 +138,9 @@
       "bookIds": []
     },
     "missingRequiredUxModules": {
-      "count": 6,
-      "bookCount": 3,
-      "books": [
-        {
-          "id": "ai-agent-collaboration-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "Private管理原稿には対応資産があるが、無料試読Pagesには専用route・navigationがない。無料公開境界を越える実体を公開moduleとして扱わない。",
-              "evidenceIssue": 229,
-              "trackingIssue": 230
-            },
-            {
-              "module": "troubleshootingFlow",
-              "reason": "Private管理原稿には対応資産があるが、無料試読Pagesには専用route・navigationがない。無料公開境界を越える実体を公開moduleとして扱わない。",
-              "evidenceIssue": 229,
-              "trackingIssue": 230
-            }
-          ]
-        },
-        {
-          "id": "ai-agent-engineering-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "checklistPack",
-              "reason": "repo内チェックリストは存在するが、公開書籍の独立したチェックリスト集としての導線がないため、根拠のないtrueにしない。",
-              "evidenceIssue": 229,
-              "trackingIssue": 230
-            },
-            {
-              "module": "troubleshootingFlow",
-              "reason": "公開書籍に専用トラブルシューティングフローがないため、一般的な運用・検証説明を代用せずfalseを維持する。",
-              "evidenceIssue": 229,
-              "trackingIssue": 230
-            }
-          ]
-        },
-        {
-          "id": "ai-testing-strategy-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "公開書籍に専用図表索引がないため、個別図表を索引として扱わずfalseを維持する。",
-              "evidenceIssue": 229,
-              "trackingIssue": 230
-            },
-            {
-              "module": "troubleshootingFlow",
-              "reason": "公開書籍に専用トラブルシューティングフローがないため、章内の問題対処説明を代用せずfalseを維持する。",
-              "evidenceIssue": 229,
-              "trackingIssue": 230
-            }
-          ]
-        }
-      ]
+      "count": 0,
+      "bookCount": 0,
+      "books": []
     },
     "legacyIdentifierOccurrences": {
       "count": 0,
@@ -204,8 +149,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 6,
-      "currentCount": 6,
+      "baselineCount": 0,
+      "currentCount": 0,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
