@@ -140,12 +140,12 @@
         "readingGuide": true,
         "checklistPack": true,
         "troubleshootingFlow": false,
-        "conceptMap": false,
+        "conceptMap": true,
         "figureIndex": false,
         "legalNotice": true,
         "glossary": true
       },
-      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211、itdojp/cloud-infra-book#138、build修正itdojp/cloud-infra-book#139で、source main b282a4b7b2c623e8bd703fdb19d1473a44c03a06のREADME、book-config、公開トップ、導入、設計・運用チェックリスト、法的注意、用語集を照合し、対象読者、Profile C、modulesを確定。学習時間は週換算しない。itdojp/it-engineer-knowledge-architecture#216の5冊固定SHA監査で、cloud-container線形パスの次の学習先をコンテナ基礎のpodman-bookへ補正した。専用概念マップがない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211、itdojp/cloud-infra-book#138、build修正itdojp/cloud-infra-book#139で、source main b282a4b7b2c623e8bd703fdb19d1473a44c03a06のREADME、book-config、公開トップ、導入、設計・運用チェックリスト、法的注意、用語集を照合し、対象読者、Profile C、modulesを確定。学習時間は週換算しない。itdojp/it-engineer-knowledge-architecture#216の5冊固定SHA監査で、cloud-container線形パスの次の学習先をコンテナ基礎のpodman-bookへ補正した。専用概念マップがない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。 / 2026-07-13にitdojp/it-engineer-knowledge-architecture#212、dependency Issue itdojp/cloud-infra-book#140 / PR #143、UX Issue itdojp/cloud-infra-book#144 / PR #145で、dev dependencyのfull npm auditを0へ解消した上で、責任共有からidentity、network、compute、storage、運用、可用性/DR、cost、IaC/automationと全11章・付録を接続する専用/concept-map/、accessible SVGと文章代替、top/navigation/prev-next、baseurl追従とfail-closed回帰gateを実装。source main ccb4811a95535cb4bbc71c32cbfbc0405bd5cd22、review completeness unresolved 0、Book QA、Pages、概念マップ・全direct routes・SVGの本番疎通を確認し、conceptMap=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
     },
     "computational-physicalism-book": {
       "repo": "itdojp/computational-physicalism-book",
@@ -379,13 +379,13 @@
         "quickStart": false,
         "readingGuide": true,
         "checklistPack": true,
-        "troubleshootingFlow": false,
+        "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": false,
+        "figureIndex": true,
         "legalNotice": false,
         "glossary": false
       },
-      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/it-infra-security-guide-book#139で、source main 10c29d4aafba9b0c4b7378256f94d91e87ca4c54のREADME、book-config、公開トップ、導入、インシデント対応章、チェックリストを照合し、対象読者、Profile B、modulesを確定。週単位の根拠がないためestimatedWeeksは設定せず、次の学習先はポータル正本のsecurity学習パスに基づきpractical-auth-bookとした。専用トラブルシューティングフローと図表索引がない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/it-infra-security-guide-book#139で、source main 10c29d4aafba9b0c4b7378256f94d91e87ca4c54のREADME、book-config、公開トップ、導入、インシデント対応章、チェックリストを照合し、対象読者、Profile B、modulesを確定。週単位の根拠がないためestimatedWeeksは設定せず、次の学習先はポータル正本のsecurity学習パスに基づきpractical-auth-bookとした。専用トラブルシューティングフローと図表索引がない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。 / 2026-07-13にitdojp/it-engineer-knowledge-architecture#212、source Issue itdojp/it-infra-security-guide-book#141、source PR itdojp/it-infra-security-guide-book#142で、許可範囲・変更凍結・証跡保全を入口とする専用トラブルシューティングフローと、公開本文参照static SVG exact 11件の専用図表索引、source/public stable anchors/deep links、top/navigation/prev-next、未参照7 assetを除外するfail-closed回帰gateを実装。source main 6072da6544da957bb13472f033222a4bd5fd985b、review completeness unresolved 0、Book QA、Pages、2公開付録と11 deep links/assetsの本番疎通を確認し、troubleshootingFlow=true、figureIndex=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
     },
     "it-infra-software-essentials-book": {
       "repo": "itdojp/it-infra-software-essentials-book",
@@ -523,13 +523,13 @@
         "quickStart": true,
         "readingGuide": true,
         "checklistPack": true,
-        "troubleshootingFlow": false,
+        "troubleshootingFlow": true,
         "conceptMap": false,
-        "figureIndex": false,
+        "figureIndex": true,
         "legalNotice": true,
         "glossary": true
       },
-      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/pentest-learning-book#201で、source main 43118347749e22d6533d44cd83e1ab53bcfccc21のREADME、book-config、公開トップ、12週間カリキュラム、法的・倫理的注意、演習Quick Start、チェックリスト、用語集を照合し、対象読者、Profile B、modules、estimatedWeeks=12を確定。次の学習先はポータル正本のsecurity学習パスに基づきincident-response-basics-bookとした。専用トラブルシューティングフローと図表索引がない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。"
+      "notes": "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/pentest-learning-book#201で、source main 43118347749e22d6533d44cd83e1ab53bcfccc21のREADME、book-config、公開トップ、12週間カリキュラム、法的・倫理的注意、演習Quick Start、チェックリスト、用語集を照合し、対象読者、Profile B、modules、estimatedWeeks=12を確定。次の学習先はポータル正本のsecurity学習パスに基づきincident-response-basics-bookとした。専用トラブルシューティングフローと図表索引がない必須module debtはitdojp/it-engineer-knowledge-architecture#212で追跡する。 / 2026-07-13にitdojp/it-engineer-knowledge-architecture#212、source Issue itdojp/pentest-learning-book#203、source PR itdojp/pentest-learning-book#204で、書面許可・scope・停止条件・証跡保全を入口とする専用トラブルシューティングフローと、figures/*.mmd exact 35件 = include 35件 = stable anchor 35件 = index entry 35件の専用図表索引、manuscript/docs・Jekyll/mdBookに追従するrelative deep links、top/navigation/SUMMARYとfail-closed回帰gateを実装。source main a23bd1ed1e808064936dc32fb42e969af6763eef、review completeness unresolved 0、Book QA、mdBook/Jekyll Pages、2公開付録と35 deep linksの本番疎通を確認し、troubleshootingFlow=true、figureIndex=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
     },
     "podman-book": {
       "repo": "itdojp/podman-book",
