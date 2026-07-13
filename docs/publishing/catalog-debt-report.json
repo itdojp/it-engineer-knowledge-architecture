@@ -138,8 +138,8 @@
       "bookIds": []
     },
     "missingRequiredUxModules": {
-      "count": 26,
-      "bookCount": 19,
+      "count": 23,
+      "bookCount": 16,
       "books": [
         {
           "id": "GitHub-AgentOps-book",
@@ -364,30 +364,6 @@
           ]
         },
         {
-          "id": "podman-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。個別の図版やトラブルシューティング図を代用せず、根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 219,
-              "trackingIssue": 220
-            }
-          ]
-        },
-        {
-          "id": "practical-auth-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。章内図版を索引として扱わず、根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 219,
-              "trackingIssue": 220
-            }
-          ]
-        },
-        {
           "id": "security-privacy-literacy-book",
           "profile": "B",
           "missingModules": [
@@ -396,18 +372,6 @@
               "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
               "evidenceIssue": 205,
               "trackingIssue": 250
-            }
-          ]
-        },
-        {
-          "id": "supabase-architecture-patterns-book",
-          "profile": "C",
-          "missingModules": [
-            {
-              "module": "conceptMap",
-              "reason": "実ファイルと公開Pages監査で専用の概念マップが未実装であることを確認済み。パターン選定ガイドや個別図版を概念マップとして代用せず、根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 219,
-              "trackingIssue": 220
             }
           ]
         }
@@ -420,8 +384,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 26,
-      "currentCount": 26,
+      "baselineCount": 23,
+      "currentCount": 23,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,

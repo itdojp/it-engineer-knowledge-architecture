@@ -106,30 +106,6 @@
       "trackingIssue": 250
     },
     {
-      "bookId": "podman-book",
-      "profile": "B",
-      "module": "figureIndex",
-      "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。個別の図版やトラブルシューティング図を代用せず、根拠のないtrueへの変更は行わない。",
-      "evidenceIssue": 219,
-      "trackingIssue": 220
-    },
-    {
-      "bookId": "practical-auth-book",
-      "profile": "B",
-      "module": "figureIndex",
-      "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。章内図版を索引として扱わず、根拠のないtrueへの変更は行わない。",
-      "evidenceIssue": 219,
-      "trackingIssue": 220
-    },
-    {
-      "bookId": "supabase-architecture-patterns-book",
-      "profile": "C",
-      "module": "conceptMap",
-      "reason": "実ファイルと公開Pages監査で専用の概念マップが未実装であることを確認済み。パターン選定ガイドや個別図版を概念マップとして代用せず、根拠のないtrueへの変更は行わない。",
-      "evidenceIssue": 219,
-      "trackingIssue": 220
-    },
-    {
       "bookId": "github-guide-for-beginners-book",
       "profile": "A",
       "module": "glossary",
