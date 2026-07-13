@@ -234,30 +234,6 @@
       "trackingIssue": 230
     },
     {
-      "bookId": "small-webapp-software-design-book",
-      "profile": "C",
-      "module": "conceptMap",
-      "reason": "公開書籍に概念・章間関係を俯瞰する専用concept mapがないため、局所的な相互作用マップを代用せずfalseを維持する。",
-      "evidenceIssue": 232,
-      "trackingIssue": 233
-    },
-    {
-      "bookId": "BioinformaticsGuide-book",
-      "profile": "B",
-      "module": "checklistPack",
-      "reason": "公開章内に個別チェックリストはあるが、独立したチェックリスト集とreader-facing navigationがないためfalseを維持する。",
-      "evidenceIssue": 232,
-      "trackingIssue": 233
-    },
-    {
-      "bookId": "BioinformaticsGuide-book",
-      "profile": "B",
-      "module": "figureIndex",
-      "reason": "公開Pagesに専用図表索引とreader-facing navigationがないため、個別図表を索引として扱わずfalseを維持する。",
-      "evidenceIssue": 232,
-      "trackingIssue": 233
-    },
-    {
       "bookId": "LogicalThinking-AI-Era-Guide",
       "profile": "C",
       "module": "conceptMap",

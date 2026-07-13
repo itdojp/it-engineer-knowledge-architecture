@@ -138,27 +138,9 @@
       "bookIds": []
     },
     "missingRequiredUxModules": {
-      "count": 40,
-      "bookCount": 28,
+      "count": 37,
+      "bookCount": 26,
       "books": [
-        {
-          "id": "BioinformaticsGuide-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "checklistPack",
-              "reason": "公開章内に個別チェックリストはあるが、独立したチェックリスト集とreader-facing navigationがないためfalseを維持する。",
-              "evidenceIssue": 232,
-              "trackingIssue": 233
-            },
-            {
-              "module": "figureIndex",
-              "reason": "公開Pagesに専用図表索引とreader-facing navigationがないため、個別図表を索引として扱わずfalseを維持する。",
-              "evidenceIssue": 232,
-              "trackingIssue": 233
-            }
-          ]
-        },
         {
           "id": "GitHub-AgentOps-book",
           "profile": "B",
@@ -526,18 +508,6 @@
           ]
         },
         {
-          "id": "small-webapp-software-design-book",
-          "profile": "C",
-          "missingModules": [
-            {
-              "module": "conceptMap",
-              "reason": "公開書籍に概念・章間関係を俯瞰する専用concept mapがないため、局所的な相互作用マップを代用せずfalseを維持する。",
-              "evidenceIssue": 232,
-              "trackingIssue": 233
-            }
-          ]
-        },
-        {
           "id": "supabase-architecture-patterns-book",
           "profile": "C",
           "missingModules": [
@@ -558,8 +528,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 40,
-      "currentCount": 40,
+      "baselineCount": 37,
+      "currentCount": 37,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
