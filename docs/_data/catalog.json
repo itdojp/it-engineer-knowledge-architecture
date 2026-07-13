@@ -2680,8 +2680,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 232,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 233,
       "ux": {
         "profile": "C",
         "modules": {
@@ -2689,32 +2689,36 @@
           "readingGuide": true,
           "checklistPack": true,
           "troubleshootingFlow": false,
-          "conceptMap": false,
+          "conceptMap": true,
           "figureIndex": false,
           "legalNotice": false,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-13",
       "notes": [
         "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#232とsource修正itdojp/small-webapp-software-design-book#119 / PR #120で、source main bf1ec4c198c43fc19fcf8917d2fb8250eb407cceのREADME、book-config、公開トップ、使い方、要求から設計・テストへの各章、Appendix A/B/D/E、navigation、QAを照合し、対象読者、中級〜上級、Profile C、modulesを確定した。",
-        "独立チェックリスト集があるためchecklistPack=true。書籍全体を俯瞰する専用concept mapと図表索引はないためfalseとし、Profile C必須conceptMapをportal #233で追跡する。通読2〜2.5時間は週単位の標準計画ではないためestimatedWeeks=null。公開トップが本書の整理後にAIテスト戦略を広げる教材として案内するためrecommendedAfterへ設定した。Jekyll/Gem warningはsource #121で追跡する。"
+        "2026-07-13のsource Issue #122 / PR #123で、書籍全体の要求→要件→仕様→相互作用→S/D/V→境界→テスト→ADR・進化条件を俯瞰する専用concept map、等価表、目的別ルート、公開導線、双方向metadata回帰検査を実装した。source final mainは2ea4d6caffd4aa0143ae6ad601736eda0ef9e527、PR review completenessはunresolved 0、main CI・Book QA・Pagesと公開routeを確認済み。conceptMap=trueへ更新し、Profile C必須module debtを解消した。独立チェックリスト集と用語集は引き続きtrue、Profile Cで必須でないfigureIndexは実体がないためfalseを維持する。Jekyll/Gem warningはsource #121で別追跡する。"
       ],
       "sourceRefs": [
-        "https://github.com/itdojp/small-webapp-software-design-book/blob/bf1ec4c198c43fc19fcf8917d2fb8250eb407cce/README.md",
-        "https://github.com/itdojp/small-webapp-software-design-book/blob/bf1ec4c198c43fc19fcf8917d2fb8250eb407cce/book-config.json",
-        "https://github.com/itdojp/small-webapp-software-design-book/blob/bf1ec4c198c43fc19fcf8917d2fb8250eb407cce/docs/index.md",
-        "https://github.com/itdojp/small-webapp-software-design-book/blob/bf1ec4c198c43fc19fcf8917d2fb8250eb407cce/docs/chapters/00-about-this-book.md",
-        "https://github.com/itdojp/small-webapp-software-design-book/blob/bf1ec4c198c43fc19fcf8917d2fb8250eb407cce/docs/appendix/A-checklists.md",
-        "https://github.com/itdojp/small-webapp-software-design-book/blob/bf1ec4c198c43fc19fcf8917d2fb8250eb407cce/docs/appendix/E-glossary.md",
+        "https://github.com/itdojp/small-webapp-software-design-book/blob/2ea4d6caffd4aa0143ae6ad601736eda0ef9e527/README.md",
+        "https://github.com/itdojp/small-webapp-software-design-book/blob/2ea4d6caffd4aa0143ae6ad601736eda0ef9e527/book-config.json",
+        "https://github.com/itdojp/small-webapp-software-design-book/blob/2ea4d6caffd4aa0143ae6ad601736eda0ef9e527/docs/index.md",
+        "https://github.com/itdojp/small-webapp-software-design-book/blob/2ea4d6caffd4aa0143ae6ad601736eda0ef9e527/docs/chapters/00-about-this-book.md",
+        "https://github.com/itdojp/small-webapp-software-design-book/blob/2ea4d6caffd4aa0143ae6ad601736eda0ef9e527/docs/appendix/A-checklists.md",
+        "https://github.com/itdojp/small-webapp-software-design-book/blob/2ea4d6caffd4aa0143ae6ad601736eda0ef9e527/docs/appendix/E-glossary.md",
         "https://itdojp.github.io/small-webapp-software-design-book/",
         "https://itdojp.github.io/small-webapp-software-design-book/appendix/A-checklists/",
         "https://github.com/itdojp/small-webapp-software-design-book/issues/119",
         "https://github.com/itdojp/small-webapp-software-design-book/issues/121",
         "https://github.com/itdojp/small-webapp-software-design-book/pull/120",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/232",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/233"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/233",
+        "https://github.com/itdojp/small-webapp-software-design-book/blob/2ea4d6caffd4aa0143ae6ad601736eda0ef9e527/docs/appendix/F-concept-map.md",
+        "https://itdojp.github.io/small-webapp-software-design-book/appendix/F-concept-map/",
+        "https://github.com/itdojp/small-webapp-software-design-book/issues/122",
+        "https://github.com/itdojp/small-webapp-software-design-book/pull/123"
       ]
     },
     {
@@ -2765,26 +2769,26 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 232,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 233,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
           "readingGuide": true,
-          "checklistPack": false,
+          "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": false,
+          "figureIndex": true,
           "legalNotice": true,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-13",
       "notes": [
         "2026-07-12のmetadata・公開境界監査itdojp/it-engineer-knowledge-architecture#232で、認証済みfixed-SHAの管理設定・QAと、公開Pagesのトップ、第0章〜第14章、付録A〜K、navigation、ライセンス、旧第5章routeを照合し、private repository / full-public Pages、対象読者、中級〜上級、Profile B、modulesを確定した。公開catalogのsourceRefsは公開Pagesと公開portal Issueだけに限定する。",
-        "公開トップと第0章に読み方、16週間の段階的学習計画がありestimatedWeeks=16。独立トラブルシューティング、ライセンス、用語集は公開済み。章内チェックリストはあるが独立checklist packではなく、専用figure indexもないためfalseとしportal #233で追跡する。旧 /chapters/part2/chapter05/ は404、canonical /chapters/chapter-5/ は200を再確認した。"
+        "2026-07-13のprivate source Issue #516 / PR #517で、公開済みチェックリスト9件を集約する付録Lと、公開本文のfigure実体8件を列挙する付録Mを実装した。source final mainは6af790df83c771d4380f927c7abb489c40e6f160、PR review completenessはunresolved 0、main QA・build・container smoke・Pagesと公開routeを確認済み。checklistPack=true / figureIndex=trueへ更新し、Profile B必須module debtを解消した。公開catalogのsourceRefsはprivate repository URLを追加せず、公開Pagesとportal Issueに限定する。旧 /chapters/part2/chapter05/ は404、canonical /chapters/chapter-5/ は200を維持する。"
       ],
       "sourceRefs": [
         "https://itdojp.github.io/BioinformaticsGuide-book/",
@@ -2794,6 +2798,8 @@
         "https://itdojp.github.io/BioinformaticsGuide-book/appendices/appendix-k/",
         "https://itdojp.github.io/BioinformaticsGuide-book/license/",
         "https://itdojp.github.io/BioinformaticsGuide-book/references/2026-source-audit/",
+        "https://itdojp.github.io/BioinformaticsGuide-book/appendices/appendix-l/",
+        "https://itdojp.github.io/BioinformaticsGuide-book/appendices/appendix-m/",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/232",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/233"
       ]
