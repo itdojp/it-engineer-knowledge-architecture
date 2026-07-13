@@ -74,30 +74,6 @@
       "trackingIssue": 210
     },
     {
-      "bookId": "kubernetes-basics-book",
-      "profile": "B",
-      "module": "figureIndex",
-      "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-      "evidenceIssue": 214,
-      "trackingIssue": 215
-    },
-    {
-      "bookId": "kubernetes-cluster-ops-book",
-      "profile": "B",
-      "module": "figureIndex",
-      "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-      "evidenceIssue": 214,
-      "trackingIssue": 215
-    },
-    {
-      "bookId": "kubernetes-proxmox-to-cloud-book",
-      "profile": "B",
-      "module": "figureIndex",
-      "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-      "evidenceIssue": 214,
-      "trackingIssue": 215
-    },
-    {
       "bookId": "linux-infra-textbook2",
       "profile": "A",
       "module": "quickStart",

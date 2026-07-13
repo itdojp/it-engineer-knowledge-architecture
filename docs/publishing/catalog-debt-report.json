@@ -138,8 +138,8 @@
       "bookIds": []
     },
     "missingRequiredUxModules": {
-      "count": 29,
-      "bookCount": 22,
+      "count": 26,
+      "bookCount": 19,
       "books": [
         {
           "id": "GitHub-AgentOps-book",
@@ -334,42 +334,6 @@
           ]
         },
         {
-          "id": "kubernetes-basics-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 214,
-              "trackingIssue": 215
-            }
-          ]
-        },
-        {
-          "id": "kubernetes-cluster-ops-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 214,
-              "trackingIssue": 215
-            }
-          ]
-        },
-        {
-          "id": "kubernetes-proxmox-to-cloud-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 214,
-              "trackingIssue": 215
-            }
-          ]
-        },
-        {
           "id": "linux-infra-textbook2",
           "profile": "A",
           "missingModules": [
@@ -456,8 +420,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 29,
-      "currentCount": 29,
+      "baselineCount": 26,
+      "currentCount": 26,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
