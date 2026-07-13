@@ -138,8 +138,8 @@
       "bookIds": []
     },
     "missingRequiredUxModules": {
-      "count": 37,
-      "bookCount": 26,
+      "count": 33,
+      "bookCount": 24,
       "books": [
         {
           "id": "GitHub-AgentOps-book",
@@ -150,24 +150,6 @@
               "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。章内図表を索引として扱わず、根拠のないtrueへの変更は行わない。",
               "evidenceIssue": 226,
               "trackingIssue": 227
-            }
-          ]
-        },
-        {
-          "id": "IT-engineer-communication-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "公開Pagesに専用図表索引とreader-facing navigationがない。トップの図から読む案内や章内図版を独立した図表索引として代用せずfalseを維持する。",
-              "evidenceIssue": 238,
-              "trackingIssue": 239
-            },
-            {
-              "module": "troubleshootingFlow",
-              "reason": "公開Pagesに専用トラブルシューティングフローとreader-facing navigationがない。章内の失敗例、デバッグ手順、ストレス対処を専用moduleとして代用せずfalseを維持する。",
-              "evidenceIssue": 238,
-              "trackingIssue": 239
             }
           ]
         },
@@ -436,24 +418,6 @@
           ]
         },
         {
-          "id": "negotiation-for-engineers-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "公開Pagesに専用図表索引とreader-facing navigationがない。個別図版、目次、テンプレート一覧を図表索引として代用せずfalseを維持する。",
-              "evidenceIssue": 238,
-              "trackingIssue": 239
-            },
-            {
-              "module": "troubleshootingFlow",
-              "reason": "公開Pagesに専用トラブルシューティングフローとreader-facing navigationがない。章内のケース、感情デバッグ、失敗時の立て直し説明を専用moduleとして代用せずfalseを維持する。",
-              "evidenceIssue": 238,
-              "trackingIssue": 239
-            }
-          ]
-        },
-        {
           "id": "pentest-learning-book",
           "profile": "B",
           "missingModules": [
@@ -528,8 +492,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 37,
-      "currentCount": 37,
+      "baselineCount": 33,
+      "currentCount": 33,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
