@@ -2851,7 +2851,7 @@
       "relatedEditions": [],
       "reviewStatus": "reviewed",
       "lastReviewedAt": "2026-07-13",
-      "reviewIssue": 235,
+      "reviewIssue": 236,
       "ux": {
         "profile": "C",
         "modules": {
@@ -2859,17 +2859,18 @@
           "readingGuide": true,
           "checklistPack": false,
           "troubleshootingFlow": false,
-          "conceptMap": false,
-          "figureIndex": false,
+          "conceptMap": true,
+          "figureIndex": true,
           "legalNotice": false,
-          "glossary": false
+          "glossary": true
         }
       },
       "addedAt": null,
       "updatedAt": "2026-07-13",
       "notes": [
         "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#235で、source main 334c61a0f3f9ec02033c59f3ce1b77b7c1fb4b2fのREADME、book-config、公開正本docs、読み方、標準業務フロー、17章、ケーススタディ、付録A、QAと公開Pagesを照合し、全レベル、対象読者、Profile Cを確定した。特別な前提書籍と単一の標準学習週数は明示されていないためprerequisites/recommendedAfterは空、estimatedWeeksはnullとした。",
-        "itdojp/LogicalThinking-AI-Era-Guide#155 / PR #157で付録Aを概念マップ・用語集・図表索引相当とする誤案内とUX flagsを修正し、未実装のconceptMap / glossary / figureIndexをfalseとした。Profile C必須のconceptMap / glossaryはportal #236で追跡する。npm audit 15件はitdojp/LogicalThinking-AI-Era-Guide#156 / PR #158で0件へ解消し、deprecation warningはitdojp/LogicalThinking-AI-Era-Guide#159、docs/src境界はitdojp/LogicalThinking-AI-Era-Guide#160で追跡する。"
+        "source Issue itdojp/LogicalThinking-AI-Era-Guide#155 / source PR itdojp/LogicalThinking-AI-Era-Guide#157で付録Aを概念マップ・用語集・図表索引相当とする誤案内とUX flagsを修正し、未実装のconceptMap / glossary / figureIndexをfalseとした。Profile C必須のconceptMap / glossaryはitdojp/it-engineer-knowledge-architecture#236で追跡する。npm audit 15件はsource Issue itdojp/LogicalThinking-AI-Era-Guide#156 / source PR itdojp/LogicalThinking-AI-Era-Guide#158で0件へ解消し、deprecation warningはitdojp/LogicalThinking-AI-Era-Guide#159、docs/src境界はitdojp/LogicalThinking-AI-Era-Guide#160で追跡する。",
+        "source Issue itdojp/LogicalThinking-AI-Era-Guide#161 と source PR itdojp/LogicalThinking-AI-Era-Guide#162で、17章・4部・目的別ルートを結ぶ付録B概念マップ、付録C用語集、公開SVG exact 9件の付録D図版索引を実装した。source main 7c234cdda90c08b4d107d4d60fea20c1e68ac3bd の設定・公開実体・top/sidebar/prev-next導線を照合し、conceptMap / glossary / figureIndexをtrueとした。Copilot/Codex全3 thread対応、PR/main CI、Pages、本番smokeは成功し、Profile C必須debtはitdojp/it-engineer-knowledge-architecture#236で解消した。dependency warningはitdojp/LogicalThinking-AI-Era-Guide#159、docs/src境界はitdojp/LogicalThinking-AI-Era-Guide#160で引き続き追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/334c61a0f3f9ec02033c59f3ce1b77b7c1fb4b2f/README.md",
@@ -2885,7 +2886,18 @@
         "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/157",
         "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/issues/156",
         "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/158",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/235"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/235",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/7c234cdda90c08b4d107d4d60fea20c1e68ac3bd/book-config.json",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/7c234cdda90c08b4d107d4d60fea20c1e68ac3bd/docs/appendices/appendix-b/index.md",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/7c234cdda90c08b4d107d4d60fea20c1e68ac3bd/docs/appendices/appendix-c/index.md",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/7c234cdda90c08b4d107d4d60fea20c1e68ac3bd/docs/appendices/appendix-d/index.md",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/blob/7c234cdda90c08b4d107d4d60fea20c1e68ac3bd/scripts/check-reader-ux-contract.js",
+        "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/appendices/appendix-b/",
+        "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/appendices/appendix-c/",
+        "https://itdojp.github.io/LogicalThinking-AI-Era-Guide/appendices/appendix-d/",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/issues/161",
+        "https://github.com/itdojp/LogicalThinking-AI-Era-Guide/pull/162",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/236"
       ]
     },
     {
@@ -2939,7 +2951,7 @@
       "relatedEditions": [],
       "reviewStatus": "reviewed",
       "lastReviewedAt": "2026-07-13",
-      "reviewIssue": 235,
+      "reviewIssue": 236,
       "ux": {
         "profile": "C",
         "modules": {
@@ -2947,17 +2959,18 @@
           "readingGuide": true,
           "checklistPack": false,
           "troubleshootingFlow": false,
-          "conceptMap": false,
-          "figureIndex": false,
+          "conceptMap": true,
+          "figureIndex": true,
           "legalNotice": true,
-          "glossary": false
+          "glossary": true
         }
       },
       "addedAt": null,
       "updatedAt": "2026-07-13",
       "notes": [
         "2026-07-13のmetadata監査itdojp/it-engineer-knowledge-architecture#235で、source main 4162fc01ac667d2208220d555386ee2546677c9cのREADME、book-config、まえがき、AI協働SOP、6章、成果物テンプレート、ケーススタディ、推奨読書リスト、更新方針、専用ライセンスFAQ、QAと公開Pagesを照合し、中級〜上級、対象ロール、Profile Cを確定した。特定書籍を必須前提とする記述と単一の標準学習週数はないため学習関係は空、estimatedWeeksはnullとした。",
-        "itdojp/ai-era-engineers-mind-book#146 / PR #147で実体のないconceptMap / figureIndex / glossaryをfalseへ整合し、専用ライセンスFAQに基づくlegalNoticeはtrueとした。Profile C必須のconceptMap / glossaryはportal #236で追跡する。npm auditは0件、whatwg-encoding deprecationはitdojp/ai-era-engineers-mind-book#148、shared.lastSyncの用途・鮮度はitdojp/ai-era-engineers-mind-book#149で追跡する。"
+        "source Issue itdojp/ai-era-engineers-mind-book#146 / source PR itdojp/ai-era-engineers-mind-book#147で実体のないconceptMap / figureIndex / glossaryをfalseへ整合し、専用ライセンスFAQに基づくlegalNoticeはtrueとした。Profile C必須のconceptMap / glossaryはitdojp/it-engineer-knowledge-architecture#236で追跡する。npm auditは0件、whatwg-encoding deprecationはitdojp/ai-era-engineers-mind-book#148、shared.lastSyncの用途・鮮度はitdojp/ai-era-engineers-mind-book#149で追跡する。",
+        "source Issue itdojp/ai-era-engineers-mind-book#150 と source PR itdojp/ai-era-engineers-mind-book#151で、判断→要求→設計→delivery→合意→運用を結ぶ付録E概念マップ、stable anchor 28件の付録F用語集、公開SVG exact 3件の付録G図表索引を実装した。source main 30bbeeed1333cdde8f6763fa608aab8d8429c0de の設定・公開実体・top/sidebar/prev-next導線を照合し、conceptMap / glossary / figureIndexをtrueとした。Copilot/Codex全5 thread対応、PR/main CI、Pages、本番smokeは成功し、Profile C必須debtはitdojp/it-engineer-knowledge-architecture#236で解消した。dependency warningはitdojp/ai-era-engineers-mind-book#148、shared.lastSyncはitdojp/ai-era-engineers-mind-book#149で引き続き追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/ai-era-engineers-mind-book/blob/4162fc01ac667d2208220d555386ee2546677c9c/README.md",
@@ -2973,7 +2986,19 @@
         "https://itdojp.github.io/ai-era-engineers-mind-book/appendices/reading-list/",
         "https://github.com/itdojp/ai-era-engineers-mind-book/issues/146",
         "https://github.com/itdojp/ai-era-engineers-mind-book/pull/147",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/235"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/235",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/30bbeeed1333cdde8f6763fa608aab8d8429c0de/book-config.json",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/30bbeeed1333cdde8f6763fa608aab8d8429c0de/docs/appendices/concept-map/index.md",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/30bbeeed1333cdde8f6763fa608aab8d8429c0de/docs/appendices/glossary/index.md",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/30bbeeed1333cdde8f6763fa608aab8d8429c0de/docs/appendices/figure-index/index.md",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/30bbeeed1333cdde8f6763fa608aab8d8429c0de/scripts/check-ux-contract.js",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/blob/30bbeeed1333cdde8f6763fa608aab8d8429c0de/.github/workflows/book-qa.yml",
+        "https://itdojp.github.io/ai-era-engineers-mind-book/appendices/concept-map/",
+        "https://itdojp.github.io/ai-era-engineers-mind-book/appendices/glossary/",
+        "https://itdojp.github.io/ai-era-engineers-mind-book/appendices/figure-index/",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/issues/150",
+        "https://github.com/itdojp/ai-era-engineers-mind-book/pull/151",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/236"
       ]
     },
     {
