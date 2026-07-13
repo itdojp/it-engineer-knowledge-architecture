@@ -620,12 +620,12 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 208,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 210,
       "ux": {
         "profile": "A",
         "modules": {
-          "quickStart": false,
+          "quickStart": true,
           "readingGuide": true,
           "checklistPack": false,
           "troubleshootingFlow": false,
@@ -636,9 +636,10 @@
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "linux-infra-textbookを置換する現行版。2026-07-12のmetadata監査#208で、source main e50b187543ae9203fa9797c3d829f4fda0df1a29のREADME、企画書、book-config、公開トップ、導入、用語集を照合し、対象読者、Profile A、modulesを確定。学習時間は時間単位のみのため週換算せず、公開読者向けQuick Startがない必須module debtは#210で追跡する。"
+        "linux-infra-textbookを置換する現行版。2026-07-12のmetadata監査#208で、source main e50b187543ae9203fa9797c3d829f4fda0df1a29のREADME、企画書、book-config、公開トップ、導入、用語集を照合し、対象読者、Profile A、modulesを確定。学習時間は時間単位のみのため週換算せず、公開読者向けQuick Startがない必須module debtは#210へ追跡を引き継いだ。",
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#210、source Issue itdojp/linux-infra-textbook2#150、source PR itdojp/linux-infra-textbook2#151で、公開読者向け専用/quick-start/、20〜30分のdisposable環境向け安全な初回操作、期待結果・停止条件・cleanup・関連章、top/navigation/prev-nextと双方向回帰gateを実装。source main dfd5901713d1ff75c4aa1283395e7b2f1dda01f4、review completeness unresolved 0、Book QA、Pages、公開Quick Startの本番疎通を確認し、quickStart=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/linux-infra-textbook2/blob/e50b187543ae9203fa9797c3d829f4fda0df1a29/README.md",
@@ -649,7 +650,19 @@
         "https://github.com/itdojp/linux-infra-textbook2/blob/e50b187543ae9203fa9797c3d829f4fda0df1a29/docs/glossary.md",
         "https://github.com/itdojp/linux-infra-textbook2/blob/e50b187543ae9203fa9797c3d829f4fda0df1a29/docs/_data/navigation.yml",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/208",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/209"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/209",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/dfd5901713d1ff75c4aa1283395e7b2f1dda01f4/book-config.json",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/dfd5901713d1ff75c4aa1283395e7b2f1dda01f4/docs/index.md",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/dfd5901713d1ff75c4aa1283395e7b2f1dda01f4/docs/_data/navigation.yml",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/dfd5901713d1ff75c4aa1283395e7b2f1dda01f4/docs/quick-start/index.md",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/dfd5901713d1ff75c4aa1283395e7b2f1dda01f4/scripts/check-metadata-consistency.js",
+        "https://github.com/itdojp/linux-infra-textbook2/blob/dfd5901713d1ff75c4aa1283395e7b2f1dda01f4/scripts/check-metadata-consistency-regression.js",
+        "https://github.com/itdojp/linux-infra-textbook2/issues/150",
+        "https://github.com/itdojp/linux-infra-textbook2/pull/151",
+        "https://itdojp.github.io/linux-infra-textbook2/quick-start/",
+        "https://github.com/itdojp/linux-infra-textbook2/issues/150#issuecomment-4957975038",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/210",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/258"
       ]
     },
     {
@@ -700,25 +713,26 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 208,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 210,
       "ux": {
         "profile": "B",
         "modules": {
           "quickStart": false,
           "readingGuide": true,
           "checklistPack": true,
-          "troubleshootingFlow": false,
+          "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": false,
+          "figureIndex": true,
           "legalNotice": false,
           "glossary": false
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "2026-07-12のmetadata監査#208とitdojp/it-infra-software-essentials-book#126で、source main fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7のREADME、book-config、公開トップ、全5章を照合し、対象読者、Profile B、modulesを確定。READMEと公開トップの学習時間に差があるため週換算せず、専用トラブルシューティングフローと図表索引がない必須module debtは#210で追跡する。"
+        "2026-07-12のmetadata監査#208とitdojp/it-infra-software-essentials-book#126で、source main fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7のREADME、book-config、公開トップ、全5章を照合し、対象読者、Profile B、modulesを確定。READMEと公開トップの学習時間に差があるため週換算せず、専用トラブルシューティングフローと図表索引がない必須module debtは#210へ追跡を引き継いだ。",
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#210、source Issue itdojp/it-infra-software-essentials-book#128、source PR itdojp/it-infra-software-essentials-book#129で、安全優先の専用トラブルシューティングフローと、公開本文参照static SVG exact 6件の専用図表索引、stable anchors/deep links、top/navigation/prev-next、source/docs・asset境界の双方向回帰gateを実装。source main 84c95179d01982dc66ee7f0b6445b73b67d0ba02、review completeness unresolved 0、Book QA、Pages、2公開付録と6 deep links/assetsの本番疎通を確認し、troubleshootingFlow=true、figureIndex=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/it-infra-software-essentials-book/blob/fb371a68b4f82422efdd4b0e3507a6fb9c0d06d7/README.md",
@@ -732,7 +746,20 @@
         "https://github.com/itdojp/it-infra-software-essentials-book/issues/126",
         "https://github.com/itdojp/it-infra-software-essentials-book/pull/127",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/208",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/209"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/209",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/84c95179d01982dc66ee7f0b6445b73b67d0ba02/book-config.json",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/84c95179d01982dc66ee7f0b6445b73b67d0ba02/docs/index.md",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/84c95179d01982dc66ee7f0b6445b73b67d0ba02/docs/_data/navigation.yml",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/84c95179d01982dc66ee7f0b6445b73b67d0ba02/docs/appendices/troubleshooting/index.md",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/84c95179d01982dc66ee7f0b6445b73b67d0ba02/docs/appendices/figure-index/index.md",
+        "https://github.com/itdojp/it-infra-software-essentials-book/blob/84c95179d01982dc66ee7f0b6445b73b67d0ba02/scripts/check-metadata-consistency.js",
+        "https://github.com/itdojp/it-infra-software-essentials-book/issues/128",
+        "https://github.com/itdojp/it-infra-software-essentials-book/pull/129",
+        "https://itdojp.github.io/it-infra-software-essentials-book/appendices/troubleshooting/",
+        "https://itdojp.github.io/it-infra-software-essentials-book/appendices/figure-index/",
+        "https://github.com/itdojp/it-infra-software-essentials-book/issues/128#issuecomment-4957921221",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/210",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/258"
       ]
     },
     {
@@ -785,8 +812,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 208,
+      "lastReviewedAt": "2026-07-13",
+      "reviewIssue": 210,
       "ux": {
         "profile": "B",
         "modules": {
@@ -795,15 +822,16 @@
           "checklistPack": true,
           "troubleshootingFlow": true,
           "conceptMap": false,
-          "figureIndex": false,
+          "figureIndex": true,
           "legalNotice": false,
           "glossary": true
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-13",
       "notes": [
-        "2026-07-12のmetadata監査#208とitdojp/IT-infra-book#155で、source main e132c9faeb7348f9656563c593abd9ffbb79dba1のREADME、book-config、公開トップ、導入、用語集、トラブルシューティング付録を照合し、対象読者、Profile B、modulesを確定。学習時間は時間単位のみのため週換算せず、専用図表索引がない必須module debtは#210で追跡する。"
+        "2026-07-12のmetadata監査#208とitdojp/IT-infra-book#155で、source main e132c9faeb7348f9656563c593abd9ffbb79dba1のREADME、book-config、公開トップ、導入、用語集、トラブルシューティング付録を照合し、対象読者、Profile B、modulesを確定。学習時間は時間単位のみのため週換算せず、専用図表索引がない必須module debtは#210へ追跡を引き継いだ。",
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#210、dependency Issue itdojp/IT-infra-book#158 / PR #159、UX Issue itdojp/IT-infra-book#157 / PR #160で、dev toolingのfull npm auditを0へ解消した上で、source Mermaid 15件と公開static SVG 15件のone-to-one、第11章の残存Mermaid 2件のaccessible SVG化、stable anchors/deep links、専用図表索引、top/navigation/prev-next、single/double-quoted raw HTMLを含むfail-closed回帰gateを実装。source main 5be81595ddaf296e99f2fbf7303ca0bd1e873307、review completeness unresolved 0、Book QA、Pages、公開索引と15 deep links/assetsの本番疎通を確認し、figureIndex=trueへ更新した。GitHub Actions Node.js 20廃止annotationはitdojp/it-engineer-knowledge-architecture#258で別追跡する。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/IT-infra-book/blob/e132c9faeb7348f9656563c593abd9ffbb79dba1/README.md",
@@ -816,7 +844,21 @@
         "https://github.com/itdojp/IT-infra-book/issues/155",
         "https://github.com/itdojp/IT-infra-book/pull/156",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/208",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/209"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/pull/209",
+        "https://github.com/itdojp/IT-infra-book/blob/5be81595ddaf296e99f2fbf7303ca0bd1e873307/book-config.json",
+        "https://github.com/itdojp/IT-infra-book/blob/5be81595ddaf296e99f2fbf7303ca0bd1e873307/docs/index.md",
+        "https://github.com/itdojp/IT-infra-book/blob/5be81595ddaf296e99f2fbf7303ca0bd1e873307/docs/_data/navigation.yml",
+        "https://github.com/itdojp/IT-infra-book/blob/5be81595ddaf296e99f2fbf7303ca0bd1e873307/docs/appendices/figure-index/index.md",
+        "https://github.com/itdojp/IT-infra-book/blob/5be81595ddaf296e99f2fbf7303ca0bd1e873307/figure-index.json",
+        "https://github.com/itdojp/IT-infra-book/blob/5be81595ddaf296e99f2fbf7303ca0bd1e873307/scripts/check-figure-index.js",
+        "https://github.com/itdojp/IT-infra-book/issues/158",
+        "https://github.com/itdojp/IT-infra-book/pull/159",
+        "https://github.com/itdojp/IT-infra-book/issues/157",
+        "https://github.com/itdojp/IT-infra-book/pull/160",
+        "https://itdojp.github.io/IT-infra-book/appendices/figure-index/",
+        "https://github.com/itdojp/IT-infra-book/issues/157#issuecomment-4958515202",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/210",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/258"
       ]
     },
     {

@@ -138,21 +138,9 @@
       "bookIds": []
     },
     "missingRequiredUxModules": {
-      "count": 19,
-      "bookCount": 13,
+      "count": 15,
+      "bookCount": 10,
       "books": [
-        {
-          "id": "IT-infra-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "実ファイル監査で図版は存在するが専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 208,
-              "trackingIssue": 210
-            }
-          ]
-        },
         {
           "id": "ai-agent-collaboration-book",
           "profile": "B",
@@ -274,36 +262,6 @@
           ]
         },
         {
-          "id": "it-infra-software-essentials-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "実ファイル監査で図版は存在するが専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 208,
-              "trackingIssue": 210
-            },
-            {
-              "module": "troubleshootingFlow",
-              "reason": "実ファイル監査で専用のトラブルシューティングフローが未実装であることを確認済み。一般的なレビューゲートを代用せず、根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 208,
-              "trackingIssue": 210
-            }
-          ]
-        },
-        {
-          "id": "linux-infra-textbook2",
-          "profile": "A",
-          "missingModules": [
-            {
-              "module": "quickStart",
-              "reason": "実ファイル監査で公開読者向けのQuick Startが未実装であることを確認済み。リポジトリ作業者向けQUICK-START.mdは読者向けmoduleとして扱わず、根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 208,
-              "trackingIssue": 210
-            }
-          ]
-        },
-        {
           "id": "pentest-learning-book",
           "profile": "B",
           "missingModules": [
@@ -342,8 +300,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 19,
-      "currentCount": 19,
+      "baselineCount": 15,
+      "currentCount": 15,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
