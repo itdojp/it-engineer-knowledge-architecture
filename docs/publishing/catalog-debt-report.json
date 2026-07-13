@@ -138,8 +138,8 @@
       "bookIds": []
     },
     "missingRequiredUxModules": {
-      "count": 33,
-      "bookCount": 24,
+      "count": 29,
+      "bookCount": 22,
       "books": [
         {
           "id": "GitHub-AgentOps-book",
@@ -162,24 +162,6 @@
               "reason": "実ファイル監査で図版は存在するが専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
               "evidenceIssue": 208,
               "trackingIssue": 210
-            }
-          ]
-        },
-        {
-          "id": "LogicalThinking-AI-Era-Guide",
-          "profile": "C",
-          "missingModules": [
-            {
-              "module": "conceptMap",
-              "reason": "公開Pagesに概念・章間関係を俯瞰する専用concept mapとreader-facing導線がない。実務テンプレート集や章構成を代用せずfalseを維持する。",
-              "evidenceIssue": 235,
-              "trackingIssue": 236
-            },
-            {
-              "module": "glossary",
-              "reason": "公開Pagesに専用用語集とreader-facing導線がない。導入部の個別用語説明や実務テンプレート集を用語集として代用せずfalseを維持する。",
-              "evidenceIssue": 235,
-              "trackingIssue": 236
             }
           ]
         },
@@ -216,24 +198,6 @@
               "reason": "公開書籍に専用トラブルシューティングフローがないため、一般的な運用・検証説明を代用せずfalseを維持する。",
               "evidenceIssue": 229,
               "trackingIssue": 230
-            }
-          ]
-        },
-        {
-          "id": "ai-era-engineers-mind-book",
-          "profile": "C",
-          "missingModules": [
-            {
-              "module": "conceptMap",
-              "reason": "公開Pagesに専用concept mapとreader-facing導線がない。章構成表、ステークホルダーマップ、個別SVGを横断概念マップとして代用せずfalseを維持する。",
-              "evidenceIssue": 235,
-              "trackingIssue": 236
-            },
-            {
-              "module": "glossary",
-              "reason": "公開Pagesに専用用語集とreader-facing導線がない。本文内の用語統一方針を用語集の実体として代用せずfalseを維持する。",
-              "evidenceIssue": 235,
-              "trackingIssue": 236
             }
           ]
         },
@@ -492,8 +456,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 33,
-      "currentCount": 33,
+      "baselineCount": 29,
+      "currentCount": 29,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
