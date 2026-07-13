@@ -138,21 +138,9 @@
       "bookIds": []
     },
     "missingRequiredUxModules": {
-      "count": 23,
-      "bookCount": 16,
+      "count": 19,
+      "bookCount": 13,
       "books": [
-        {
-          "id": "GitHub-AgentOps-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "figureIndex",
-              "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。章内図表を索引として扱わず、根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 226,
-              "trackingIssue": 227
-            }
-          ]
-        },
         {
           "id": "IT-infra-book",
           "profile": "B",
@@ -240,36 +228,6 @@
               "reason": "実ファイル監査で専用の図表索引が未実装であることを確認済み。根拠のないtrueへの変更は行わない。",
               "evidenceIssue": 193,
               "trackingIssue": 250
-            }
-          ]
-        },
-        {
-          "id": "github-guide-for-beginners-book",
-          "profile": "A",
-          "missingModules": [
-            {
-              "module": "glossary",
-              "reason": "実ファイルと公開Pages監査で専用の用語導線が未実装であることを確認済み。章内の用語説明を独立した用語集として扱わず、根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 226,
-              "trackingIssue": 227
-            }
-          ]
-        },
-        {
-          "id": "github-workflow-book",
-          "profile": "B",
-          "missingModules": [
-            {
-              "module": "checklistPack",
-              "reason": "実ファイルと公開Pages監査で独立したチェックリスト集が未実装であることを確認済み。章内の確認項目を専用moduleとして扱わず、根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 226,
-              "trackingIssue": 227
-            },
-            {
-              "module": "figureIndex",
-              "reason": "実ファイルと公開Pages監査で専用の図表索引が未実装であることを確認済み。個別図版を索引として扱わず、根拠のないtrueへの変更は行わない。",
-              "evidenceIssue": 226,
-              "trackingIssue": 227
             }
           ]
         },
@@ -384,8 +342,8 @@
   },
   "gates": {
     "requiredUxModuleDebt": {
-      "baselineCount": 23,
-      "currentCount": 23,
+      "baselineCount": 19,
+      "currentCount": 19,
       "unapprovedCount": 0,
       "unapproved": [],
       "staleBaselineCount": 0,
