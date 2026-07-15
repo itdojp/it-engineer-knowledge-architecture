@@ -2028,8 +2028,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-13",
-      "reviewIssue": 223,
+      "lastReviewedAt": "2026-07-16",
+      "reviewIssue": 272,
       "ux": {
         "profile": "C",
         "modules": {
@@ -2046,7 +2046,8 @@
       "addedAt": null,
       "updatedAt": "2026-07-13",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#222で対象読者、初級〜中級、Profile C、学習方向、標準6〜8週間を確定。2026-07-13のUX debt #223とsource itdojp/theoretical-computer-science-prerequisites-book#9 / PR #10で、source main 332ae88bffebf54a0bd5237048fa17cd2665aa92へreader-facingな専用概念依存マップを実装し、公開トップ、学習ルート、ナビゲーションガイド、sidebar、site searchから到達可能であることをPages本番確認した。概念別逆引き、学習ルート、章間リンクマップ、本体教科書からの逆引き、本体教科書との対応表との責務を分離し、conceptMap=trueへ更新した。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#222で対象読者、初級〜中級、Profile C、学習方向、標準6〜8週間を確定。2026-07-13のUX debt #223とsource itdojp/theoretical-computer-science-prerequisites-book#9 / PR #10で、source main 332ae88bffebf54a0bd5237048fa17cd2665aa92へreader-facingな専用概念依存マップを実装し、公開トップ、学習ルート、ナビゲーションガイド、sidebar、site searchから到達可能であることをPages本番確認した。概念別逆引き、学習ルート、章間リンクマップ、本体教科書からの逆引き、本体教科書との対応表との責務を分離し、conceptMap=trueへ更新した。",
+        "2026-07-16のcomputer-science-theory品質スプリント（itdojp/it-engineer-knowledge-architecture#272）で、既存Issue/PR、main CI、Book QA、リンク、Pages公開HTTPを確認。修正不要または別管理の既知事項を整理し、本文変更は行わなかった。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/332ae88bffebf54a0bd5237048fa17cd2665aa92/README.md",
@@ -2070,7 +2071,8 @@
         "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/332ae88bffebf54a0bd5237048fa17cd2665aa92/docs/navigation/navigation-guide.md",
         "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/332ae88bffebf54a0bd5237048fa17cd2665aa92/docs/navigation/main-textbook-reverse-index.md",
         "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/332ae88bffebf54a0bd5237048fa17cd2665aa92/docs/assets/search-data.json",
-        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/332ae88bffebf54a0bd5237048fa17cd2665aa92/tests/test_project_layout.py"
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/blob/332ae88bffebf54a0bd5237048fa17cd2665aa92/tests/test_project_layout.py",
+        "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/commit/332ae88"
       ]
     },
     {
@@ -2121,7 +2123,7 @@
       "relatedEditions": [],
       "reviewStatus": "review-needed",
       "lastReviewedAt": null,
-      "reviewIssue": 222,
+      "reviewIssue": 272,
       "ux": {
         "profile": "C",
         "modules": {
@@ -2138,7 +2140,8 @@
       "addedAt": null,
       "updatedAt": "2026-07-12",
       "notes": [
-        "2026-07-12のmetadata・公開表示監査itdojp/it-engineer-knowledge-architecture#222で、source main 898c224bd4eb48268147f165a161506782ab2b10のREADME、book-config、公開トップ、目的、学習ガイド、前提知識、概念マップ、図表索引、用語集を照合し、対象読者、中級〜上級、Profile C、modulesを確定。前提補強教材をprerequisitesに維持し、同教材へ戻す循環的なrecommendedAfterは削除した。短時間の読書目安と学期・月単位の学習計画が併存するためestimatedWeeksはnullとし、期間driftはitdojp/theoretical-computer-science-textbook#394で追跡する。現行concept mapは公開moduleとして確認し、章依存・通し例・戻り先を強化する内容改善はitdojp/theoretical-computer-science-textbook#395で追跡する。metadataはitdojp/theoretical-computer-science-textbook#393、本文正確性P0はitdojp/theoretical-computer-science-textbook#397 / itdojp/theoretical-computer-science-textbook#398 / itdojp/theoretical-computer-science-textbook#399 / itdojp/theoretical-computer-science-textbook#401 / itdojp/theoretical-computer-science-textbook#402、Jekyll/Faraday warningはitdojp/theoretical-computer-science-textbook#403で分離追跡する。P0本文修正とmerge後確認が未完了のためreviewStatusはreview-needed、lastReviewedAtはnullを維持し、本監査の範囲と判断はreviewIssue itdojp/it-engineer-knowledge-architecture#222で追跡する。"
+        "2026-07-12のmetadata・公開表示監査itdojp/it-engineer-knowledge-architecture#222で、source main 898c224bd4eb48268147f165a161506782ab2b10のREADME、book-config、公開トップ、目的、学習ガイド、前提知識、概念マップ、図表索引、用語集を照合し、対象読者、中級〜上級、Profile C、modulesを確定。前提補強教材をprerequisitesに維持し、同教材へ戻す循環的なrecommendedAfterは削除した。短時間の読書目安と学期・月単位の学習計画が併存するためestimatedWeeksはnullとし、期間driftはitdojp/theoretical-computer-science-textbook#394で追跡する。現行concept mapは公開moduleとして確認し、章依存・通し例・戻り先を強化する内容改善はitdojp/theoretical-computer-science-textbook#395で追跡する。metadataはitdojp/theoretical-computer-science-textbook#393、本文正確性P0はitdojp/theoretical-computer-science-textbook#397 / itdojp/theoretical-computer-science-textbook#398 / itdojp/theoretical-computer-science-textbook#399 / itdojp/theoretical-computer-science-textbook#401 / itdojp/theoretical-computer-science-textbook#402、Jekyll/Faraday warningはitdojp/theoretical-computer-science-textbook#403で分離追跡する。P0本文修正とmerge後確認が未完了のためreviewStatusはreview-needed、lastReviewedAtはnullを維持し、本監査の範囲と判断はreviewIssue itdojp/it-engineer-knowledge-architecture#222で追跡する。",
+        "2026-07-16のcomputer-science-theory品質スプリント（itdojp/it-engineer-knowledge-architecture#272）で、既存Issue/PR、main CI、Book QA、リンク、Pages公開HTTPを確認。P0本文Issue（#397/#398/#399/#401/#402）が未完了のため、reviewStatusはreview-needed、lastReviewedAtはnullを維持し、P0完了後に再レビューする。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/README.md",
@@ -2160,7 +2163,8 @@
         "https://github.com/itdojp/theoretical-computer-science-textbook/issues/401",
         "https://github.com/itdojp/theoretical-computer-science-textbook/issues/402",
         "https://github.com/itdojp/theoretical-computer-science-textbook/issues/403",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/222"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/222",
+        "https://github.com/itdojp/theoretical-computer-science-textbook/commit/4dccfc0"
       ]
     },
     {
@@ -2211,8 +2215,8 @@
         "composable-software-design-book"
       ],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-12",
-      "reviewIssue": 222,
+      "lastReviewedAt": "2026-07-16",
+      "reviewIssue": 272,
       "ux": {
         "profile": "C",
         "modules": {
@@ -2229,7 +2233,8 @@
       "addedAt": null,
       "updatedAt": "2026-07-12",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#222で、source main e1d0df204ecf49322b6d932ffbf5e23daa629a29のREADME、book-config、公開トップ、navigation、用語集、テンプレート、付録Dのdesk reference、参考文献を照合し、対象読者、中級〜上級、Profile C、modulesを確定。通読2〜4時間と演習1〜2日は週単位の標準計画ではないためestimatedWeeksはnull。composable-software-design-bookとはAI時代の合成的設計を扱う独立した関連英語書籍であり、翻訳・旧新版関係ではない。付録Dは図版、レビュー前の最小確認項目、症状別再参照の入口を提供する。package-lock / Gemfile.lockの欠落とJekyll/Faraday warningはitdojp/categorical-software-design-book#141で分離追跡する。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#222で、source main e1d0df204ecf49322b6d932ffbf5e23daa629a29のREADME、book-config、公開トップ、navigation、用語集、テンプレート、付録Dのdesk reference、参考文献を照合し、対象読者、中級〜上級、Profile C、modulesを確定。通読2〜4時間と演習1〜2日は週単位の標準計画ではないためestimatedWeeksはnull。composable-software-design-bookとはAI時代の合成的設計を扱う独立した関連英語書籍であり、翻訳・旧新版関係ではない。付録Dは図版、レビュー前の最小確認項目、症状別再参照の入口を提供する。package-lock / Gemfile.lockの欠落とJekyll/Faraday warningはitdojp/categorical-software-design-book#141で分離追跡する。",
+        "2026-07-16のcomputer-science-theory品質スプリント（itdojp/it-engineer-knowledge-architecture#272）で、既存Issue/PR、main CI、Book QA、リンク、Pages公開HTTPを確認。修正不要または別管理の既知事項を整理し、本文変更は行わなかった。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/categorical-software-design-book/blob/e1d0df204ecf49322b6d932ffbf5e23daa629a29/README.md",
@@ -2241,7 +2246,8 @@
         "https://github.com/itdojp/categorical-software-design-book/blob/e1d0df204ecf49322b6d932ffbf5e23daa629a29/appendices/desk-reference/index.md",
         "https://github.com/itdojp/categorical-software-design-book/blob/e1d0df204ecf49322b6d932ffbf5e23daa629a29/appendices/references/index.md",
         "https://github.com/itdojp/categorical-software-design-book/issues/141",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/222"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/222",
+        "https://github.com/itdojp/categorical-software-design-book/commit/62cee68"
       ]
     },
     {
