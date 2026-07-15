@@ -62,7 +62,7 @@
       ]
     },
     "missingLastReviewedAt": {
-      "count": 7,
+      "count": 8,
       "bookIds": [
         "compliance-infrastructure-guide",
         "disaster-recovery-bcp-guide",
@@ -70,7 +70,8 @@
         "infrastructure-monitoring-automation-guide",
         "infrastructure-performance-capacity-planning",
         "next-generation-infrastructure-guide",
-        "practical-security-infrastructure-guide"
+        "practical-security-infrastructure-guide",
+        "theoretical-computer-science-textbook"
       ]
     },
     "missingReviewIssue": {

@@ -2121,8 +2121,8 @@
         "ja"
       ],
       "relatedEditions": [],
-      "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-16",
+      "reviewStatus": "review-needed",
+      "lastReviewedAt": null,
       "reviewIssue": 272,
       "ux": {
         "profile": "C",
@@ -2141,7 +2141,7 @@
       "updatedAt": "2026-07-12",
       "notes": [
         "2026-07-12のmetadata・公開表示監査itdojp/it-engineer-knowledge-architecture#222で、source main 898c224bd4eb48268147f165a161506782ab2b10のREADME、book-config、公開トップ、目的、学習ガイド、前提知識、概念マップ、図表索引、用語集を照合し、対象読者、中級〜上級、Profile C、modulesを確定。前提補強教材をprerequisitesに維持し、同教材へ戻す循環的なrecommendedAfterは削除した。短時間の読書目安と学期・月単位の学習計画が併存するためestimatedWeeksはnullとし、期間driftはitdojp/theoretical-computer-science-textbook#394で追跡する。現行concept mapは公開moduleとして確認し、章依存・通し例・戻り先を強化する内容改善はitdojp/theoretical-computer-science-textbook#395で追跡する。metadataはitdojp/theoretical-computer-science-textbook#393、本文正確性P0はitdojp/theoretical-computer-science-textbook#397 / itdojp/theoretical-computer-science-textbook#398 / itdojp/theoretical-computer-science-textbook#399 / itdojp/theoretical-computer-science-textbook#401 / itdojp/theoretical-computer-science-textbook#402、Jekyll/Faraday warningはitdojp/theoretical-computer-science-textbook#403で分離追跡する。P0本文修正とmerge後確認が未完了のためreviewStatusはreview-needed、lastReviewedAtはnullを維持し、本監査の範囲と判断はreviewIssue itdojp/it-engineer-knowledge-architecture#222で追跡する。",
-        "2026-07-16のcomputer-science-theory品質スプリント（itdojp/it-engineer-knowledge-architecture#272）で、既存Issue/PR、main CI、Book QA、リンク、Pages公開HTTPを確認。修正不要または別管理の既知事項を整理し、本文変更は行わなかった。"
+        "2026-07-16のcomputer-science-theory品質スプリント（itdojp/it-engineer-knowledge-architecture#272）で、既存Issue/PR、main CI、Book QA、リンク、Pages公開HTTPを確認。P0本文Issue（#397/#398/#399/#401/#402）が未完了のため、reviewStatusはreview-needed、lastReviewedAtはnullを維持し、P0完了後に再レビューする。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/theoretical-computer-science-textbook/blob/898c224bd4eb48268147f165a161506782ab2b10/README.md",
