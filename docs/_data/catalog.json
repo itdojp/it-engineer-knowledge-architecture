@@ -1414,7 +1414,7 @@
       "relatedEditions": [],
       "reviewStatus": "review-needed",
       "lastReviewedAt": null,
-      "reviewIssue": 275,
+      "reviewIssue": 276,
       "ux": {
         "profile": "B",
         "modules": {
@@ -1448,7 +1448,8 @@
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/275",
-        "https://github.com/itdojp/proxmox_book/issues/2"
+        "https://github.com/itdojp/proxmox_book/issues/2",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/276"
       ]
     },
     {
