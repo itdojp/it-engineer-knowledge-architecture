@@ -22,7 +22,7 @@ import {
   summarizeOpenIssues,
   writeSanitizedCache
 } from '../scripts/portfolio-health-client.mjs';
-import { executePortfolioHealthAlertPlan, runPortfolioHealth } from '../scripts/portfolio-health-cli.mjs';
+import { executePortfolioHealthAlertPlan, parseArgs, runPortfolioHealth } from '../scripts/portfolio-health-cli.mjs';
 
 const fixtureDir = path.join(process.cwd(), 'tests', 'fixtures', 'portfolio-health');
 const catalog = JSON.parse(await readFile(path.join(fixtureDir, 'catalog.json'), 'utf8'));
@@ -32,6 +32,34 @@ const now = new Date('2026-07-23T00:00:00Z');
 function report() {
   return buildPortfolioHealthReport(catalog, observations, { now, reviewMaxAgeDays: 180 });
 }
+
+test('CLI keeps cross-repository read and portal alert credentials separate', () => {
+  const config = parseArgs([], {
+    PORTFOLIO_HEALTH_READ_TOKEN: 'read-token',
+    PORTFOLIO_HEALTH_ALERT_TOKEN: 'alert-token',
+    GITHUB_TOKEN: 'repository-token'
+  });
+  assert.equal(config.token, 'read-token');
+  assert.equal(config.alertToken, 'alert-token');
+  const fallback = parseArgs([], { GITHUB_TOKEN: 'repository-token' });
+  assert.equal(fallback.token, '');
+  assert.equal(fallback.alertToken, 'repository-token');
+});
+
+test('CLI fails closed when a required credential is unavailable', async () => {
+  await assert.rejects(
+    runPortfolioHealth(parseArgs([], {})),
+    /PORTFOLIO_HEALTH_READ_TOKEN is required/
+  );
+  const alertConfig = parseArgs(['--manage-alerts'], {
+    PORTFOLIO_HEALTH_READ_TOKEN: 'read-token',
+    GITHUB_REPOSITORY: 'org/portal'
+  });
+  await assert.rejects(
+    runPortfolioHealth(alertConfig, { api: { request: async () => null } }),
+    /PORTFOLIO_HEALTH_ALERT_TOKEN is required/
+  );
+});
 
 test('uses every and only status=published catalog record as the live input set', () => {
   assert.deepEqual(selectPublishedBooks(catalog).map((book) => book.id), [

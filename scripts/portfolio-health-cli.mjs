@@ -38,7 +38,8 @@ function parseArgs(argv, env = process.env) {
   return {
     catalogPath: values.catalog || env.PORTFOLIO_HEALTH_CATALOG || 'docs/_data/catalog.json',
     apiUrl: values['api-url'] || env.GITHUB_API_URL || 'https://api.github.com',
-    token: values.token || env.GITHUB_TOKEN || '',
+    token: values.token || env.PORTFOLIO_HEALTH_READ_TOKEN || '',
+    alertToken: values['alert-token'] || env.PORTFOLIO_HEALTH_ALERT_TOKEN || env.GITHUB_TOKEN || '',
     portalRepository: values['portal-repository'] || env.GITHUB_REPOSITORY || '',
     manageAlerts: values.manageAlerts === true,
     maxAttempts: Number.parseInt(values['max-attempts'] || env.PORTFOLIO_HEALTH_MAX_ATTEMPTS || '4', 10),
@@ -58,7 +59,6 @@ function assertConfig(config) {
   if (config.manageAlerts && !/^[^/]+\/[^/]+$/.test(config.portalRepository)) {
     throw new Error('portal-repository must be in owner/name format when --manage-alerts is used');
   }
-  if (config.manageAlerts && !config.token) throw new Error('GITHUB_TOKEN is required when --manage-alerts is used');
 }
 
 async function mapWithConcurrency(values, limit, task) {
@@ -142,6 +142,12 @@ export async function executePortfolioHealthAlertPlan(api, repository, report, p
 export async function runPortfolioHealth(inputConfig, dependencies = {}) {
   const config = { ...inputConfig };
   assertConfig(config);
+  if (!dependencies.api && !config.token) {
+    throw new Error('PORTFOLIO_HEALTH_READ_TOKEN is required for cross-repository collection');
+  }
+  if (config.manageAlerts && !dependencies.alertApi && !config.alertToken) {
+    throw new Error('PORTFOLIO_HEALTH_ALERT_TOKEN is required when --manage-alerts is used');
+  }
   const catalog = dependencies.catalog || JSON.parse(await readFile(resolve(config.catalogPath), 'utf8'));
   const api = dependencies.api || createGitHubClient({
     apiUrl: config.apiUrl, token: config.token, maxAttempts: config.maxAttempts, retryDelayMs: config.retryDelayMs,
@@ -186,8 +192,12 @@ export async function runPortfolioHealth(inputConfig, dependencies = {}) {
   ]);
   let alert = { action: 'disabled', issueNumber: null };
   if (config.manageAlerts) {
-    const openAlerts = await findOpenHealthAlerts(api, config.portalRepository);
-    alert = await executePortfolioHealthAlertPlan(api, config.portalRepository, report, planPortfolioHealthAlert(report, openAlerts));
+    const alertApi = dependencies.alertApi || createGitHubClient({
+      apiUrl: config.apiUrl, token: config.alertToken, maxAttempts: config.maxAttempts,
+      retryDelayMs: config.retryDelayMs, fetchImpl: dependencies.fetchImpl
+    });
+    const openAlerts = await findOpenHealthAlerts(alertApi, config.portalRepository);
+    alert = await executePortfolioHealthAlertPlan(alertApi, config.portalRepository, report, planPortfolioHealthAlert(report, openAlerts));
   }
   return { report, markdown, alert };
 }

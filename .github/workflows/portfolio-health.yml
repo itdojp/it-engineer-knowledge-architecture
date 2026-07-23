@@ -22,7 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      GITHUB_TOKEN: ${{ github.token }}
       PORTFOLIO_HEALTH_REPORT_JSON: tmp/portfolio-health/report.json
       PORTFOLIO_HEALTH_REPORT_HTML: tmp/portfolio-health/index.html
       PORTFOLIO_HEALTH_REPORT_MARKDOWN: tmp/portfolio-health/summary.md
@@ -33,6 +32,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Mint read-only portfolio token
+        id: portfolio-token
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2
+        with:
+          app-id: ${{ vars.PORTFOLIO_HEALTH_APP_ID }}
+          private-key: ${{ secrets.PORTFOLIO_HEALTH_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          permission-actions: read
+          permission-contents: read
+          permission-deployments: read
+          permission-issues: read
+          permission-pages: read
+          permission-pull-requests: read
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -55,6 +68,9 @@ jobs:
             portfolio-health-v2-
 
       - name: Collect health and manage status-change alert
+        env:
+          PORTFOLIO_HEALTH_READ_TOKEN: ${{ steps.portfolio-token.outputs.token }}
+          PORTFOLIO_HEALTH_ALERT_TOKEN: ${{ github.token }}
         run: node scripts/portfolio-health-cli.mjs --manage-alerts
 
       - name: Add health summary to job summary

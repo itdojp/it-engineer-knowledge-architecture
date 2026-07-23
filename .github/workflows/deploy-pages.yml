@@ -26,6 +26,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Mint read-only portfolio token
+        id: portfolio-token
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2
+        with:
+          app-id: ${{ vars.PORTFOLIO_HEALTH_APP_ID }}
+          private-key: ${{ secrets.PORTFOLIO_HEALTH_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          permission-actions: read
+          permission-contents: read
+          permission-deployments: read
+          permission-issues: read
+          permission-pages: read
+          permission-pull-requests: read
+
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
@@ -62,7 +76,7 @@ jobs:
 
       - name: Generate portfolio health snapshot
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          PORTFOLIO_HEALTH_READ_TOKEN: ${{ steps.portfolio-token.outputs.token }}
           PORTFOLIO_HEALTH_CONCURRENCY: '3'
           # Keep Pages deployment bounded; the scheduled workflow owns multi-attempt retries.
           PORTFOLIO_HEALTH_MAX_ATTEMPTS: '1'
