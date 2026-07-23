@@ -109,6 +109,18 @@ test('standalone HTML escapes catalog-controlled content', () => {
   assert.match(html, /<footer role="contentinfo">/);
 });
 
+test('standalone HTML distinguishes private redaction from unavailable public data', () => {
+  const unavailable = structuredClone(report());
+  const publicBook = unavailable.books.find((book) => book.id === 'normal-book');
+  publicBook.defaultBranch = null;
+  publicBook.defaultBranchSha = null;
+  const html = renderPortfolioHealthHtml(unavailable);
+  assert.match(html, /<td>取得不能<br><small>取得不能<\/small><\/td>/);
+  assert.match(html, /<td>redacted<br><small>redacted<\/small><\/td>/);
+  assert.match(html, /<title>Portfolio Health<\/title>/);
+  assert.match(html, /<h1>Portfolio Health<\/h1>/);
+});
+
 test('alert planner deduplicates unchanged state and only writes on change or recovery', () => {
   const unhealthy = report();
   const fingerprint = alertFingerprint(unhealthy);

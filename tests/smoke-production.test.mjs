@@ -45,7 +45,7 @@ async function startSite(options = {}) {
       'books/': page('書籍一覧', '<article data-book-card></article>'.repeat(options.cardCount ?? BOOK_COUNT)),
       'paths/': page('学習パス', '<article class="path-card"></article>'.repeat(options.pathCount ?? PATH_COUNT)),
       'en/': page('English Catalog', '<tr data-en-book></tr>'.repeat(options.enBookCount ?? BOOK_COUNT)),
-      'portfolio-health/': page('Portfolio health'),
+      'portfolio-health/': page('Portfolio Health'),
       '404.html': page('ページが見つかりません')
     };
     if (relative === 'portfolio-health.json') {

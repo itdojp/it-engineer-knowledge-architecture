@@ -39,7 +39,7 @@ gh workflow run deploy-pages.yml --repo itdojp/it-engineer-knowledge-architectur
 2. artifactを `github-pages` environmentへデプロイする。
 3. deploymentが返した `page_url` に対して本番スモークを実行する。
 
-本番スモークは `/`、`/books/`、`/paths/`、`/en/`、`/portfolio-health/`、`/portfolio-health.json`、`/404.html`、`/build-info.json` のHTTP状態、主要見出し、共通ナビゲーション、`main#main-content`、書籍49件、公開中42件、学習パス7件、base path内リンク、private書籍の動的情報redaction、旧トップページmarkerの不在、期待SHAを検証する。キャッシュ回避query、timeout、指数backoff付きretryを用いる。結果はjob summaryとartifactに残り、不一致ならWorkflowを失敗させる。
+本番スモークは `/`、`/books/`、`/paths/`、`/en/`、`/portfolio-health/`、`/portfolio-health.json`、`/404.html`、`/build-info.json` のHTTP状態、主要見出し、共通ナビゲーション、`main#main-content`、canonical catalogから導出した全書籍・`status=published`書籍・学習パスの件数、base path内リンク、private書籍の動的情報redaction、旧トップページmarkerの不在、期待SHAを検証する。キャッシュ回避query、timeout、指数backoff付きretryを用いる。結果はjob summaryとartifactに残り、不一致ならWorkflowを失敗させる。
 
 手動で公開SHAを確認する。
 

@@ -21,7 +21,7 @@ const HTML_TARGETS = [
   { path: 'books/', label: '/books/', h1: '書籍一覧', cardCount: CANONICAL_BOOK_COUNT },
   { path: 'paths/', label: '/paths/', h1: '学習パス', pathCount: CANONICAL_PATH_COUNT },
   { path: 'en/', label: '/en/', h1: 'English Catalog', enBookCount: CANONICAL_BOOK_COUNT },
-  { path: 'portfolio-health/', label: '/portfolio-health/', h1: 'Portfolio health', fullLandmarks: true },
+  { path: 'portfolio-health/', label: '/portfolio-health/', h1: 'Portfolio Health', fullLandmarks: true },
   { path: '404.html', label: '/404.html', h1: 'ページが見つかりません' }
 ];
 
