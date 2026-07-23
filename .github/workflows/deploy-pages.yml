@@ -57,8 +57,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           PORTFOLIO_HEALTH_CONCURRENCY: '3'
-          PORTFOLIO_HEALTH_MAX_ATTEMPTS: '4'
-          PORTFOLIO_HEALTH_RETRY_DELAY_MS: '1000'
+          # Keep Pages deployment bounded; the scheduled workflow owns multi-attempt retries.
+          PORTFOLIO_HEALTH_MAX_ATTEMPTS: '1'
+          PORTFOLIO_HEALTH_RETRY_DELAY_MS: '250'
         run: |
           node scripts/portfolio-health-cli.mjs \
             --snapshot-dir _site \
