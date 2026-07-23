@@ -39,12 +39,19 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Select sanitized health cache window
+        id: health-cache-key
+        run: echo "day=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+
       - name: Restore sanitized health cache
         uses: actions/cache@v5
         with:
           path: tmp/portfolio-health/cache
-          key: portfolio-health-v2-${{ github.run_id }}
+          # One immutable entry per branch and UTC day bounds cache churn while
+          # retaining a recent fallback across independent workflow runs.
+          key: portfolio-health-v2-${{ github.ref_name }}-${{ steps.health-cache-key.outputs.day }}
           restore-keys: |
+            portfolio-health-v2-${{ github.ref_name }}-
             portfolio-health-v2-
 
       - name: Collect health and manage status-change alert

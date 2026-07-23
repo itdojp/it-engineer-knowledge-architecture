@@ -13,6 +13,7 @@ const OTHER_SHA = 'abcdef1234567890abcdef1234567890abcdef12';
 const basePath = '/it-engineer-knowledge-architecture/';
 const BOOK_COUNT = catalog.books.length;
 const PUBLISHED_BOOKS = catalog.books.filter((book) => book.status === 'published');
+const HAS_PUBLISHED_PRIVATE_BOOK = PUBLISHED_BOOKS.some((book) => book.repoVisibility === 'private');
 const PATH_COUNT = catalog.learningPaths.length;
 
 function page(title, content = '') {
@@ -176,7 +177,9 @@ test('production smoke detects a Portfolio Health catalog mismatch', async () =>
   });
 });
 
-test('production smoke detects a private Portfolio Health detail leak', async () => {
+test('production smoke detects a private Portfolio Health detail leak', {
+  skip: !HAS_PUBLISHED_PRIVATE_BOOK && 'canonical catalog has no published private book'
+}, async () => {
   await withSite({ privateLeak: true }, async (site, output) => {
     const report = await runProductionSmoke(config(site, output));
     assert.equal(report.ok, false);
