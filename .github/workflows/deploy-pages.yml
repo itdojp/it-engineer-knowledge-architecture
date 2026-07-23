@@ -7,6 +7,9 @@ on:
 
 permissions:
   contents: read
+  actions: read
+  deployments: read
+  issues: read
   pages: write
   id-token: write
 
@@ -23,6 +26,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Mint read-only portfolio token
+        id: portfolio-token
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2
+        with:
+          app-id: ${{ vars.PORTFOLIO_HEALTH_APP_ID }}
+          private-key: ${{ secrets.PORTFOLIO_HEALTH_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          permission-actions: read
+          permission-contents: read
+          permission-deployments: read
+          permission-issues: read
+          permission-pages: read
+          permission-pull-requests: read
+
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
@@ -36,6 +53,41 @@ jobs:
 
       - name: Build site
         run: jekyll build --source docs --destination _site --baseurl /it-engineer-knowledge-architecture
+
+      - name: Setup Node.js for build metadata
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Select sanitized health cache window
+        id: health-cache-key
+        run: echo "day=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+
+      - name: Restore sanitized health cache
+        uses: actions/cache@v5
+        with:
+          path: tmp/portfolio-health/cache
+          # One immutable entry per branch and UTC day bounds cache churn while
+          # retaining a recent fallback across independent workflow runs.
+          key: portfolio-health-v2-${{ github.ref_name }}-${{ steps.health-cache-key.outputs.day }}
+          restore-keys: |
+            portfolio-health-v2-${{ github.ref_name }}-
+            portfolio-health-v2-
+
+      - name: Generate portfolio health snapshot
+        env:
+          PORTFOLIO_HEALTH_READ_TOKEN: ${{ steps.portfolio-token.outputs.token }}
+          PORTFOLIO_HEALTH_CONCURRENCY: '3'
+          # Keep Pages deployment bounded; the scheduled workflow owns multi-attempt retries.
+          PORTFOLIO_HEALTH_MAX_ATTEMPTS: '1'
+          PORTFOLIO_HEALTH_RETRY_DELAY_MS: '250'
+        run: |
+          node scripts/portfolio-health-cli.mjs \
+            --snapshot-dir _site \
+            --report-json tmp/portfolio-health/report.json \
+            --report-html tmp/portfolio-health/index.html \
+            --report-markdown tmp/portfolio-health/summary.md \
+            --cache-dir tmp/portfolio-health/cache
 
       - name: Add deployment build information
         run: node scripts/write-build-info.mjs _site/build-info.json

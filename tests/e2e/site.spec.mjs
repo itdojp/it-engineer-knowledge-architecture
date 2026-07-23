@@ -10,6 +10,7 @@ const pages = [
   { path: '/books/', title: '書籍一覧' },
   { path: '/paths/', title: '学習パス' },
   { path: '/en/', title: 'English Catalog' },
+  { path: '/portfolio-health/', title: 'Portfolio Health' },
   { path: '/404.html', title: 'ページが見つかりません' }
 ];
 

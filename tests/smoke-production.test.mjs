@@ -12,10 +12,12 @@ const SHA = '1234567890abcdef1234567890abcdef12345678';
 const OTHER_SHA = 'abcdef1234567890abcdef1234567890abcdef12';
 const basePath = '/it-engineer-knowledge-architecture/';
 const BOOK_COUNT = catalog.books.length;
+const PUBLISHED_BOOKS = catalog.books.filter((book) => book.status === 'published');
+const HAS_PUBLISHED_PRIVATE_BOOK = PUBLISHED_BOOKS.some((book) => book.repoVisibility === 'private');
 const PATH_COUNT = catalog.learningPaths.length;
 
 function page(title, content = '') {
-  return `<!doctype html><html><body><nav aria-label="主要ナビゲーション"></nav><main id="main-content"><h1>${title}</h1>${content}</main></body></html>`;
+  return `<!doctype html><html><body><a class="skip-link" href="#main-content">skip</a><header role="banner"><nav aria-label="主要ナビゲーション"></nav></header><main id="main-content" tabindex="-1"><h1>${title}</h1>${content}</main><footer role="contentinfo"></footer></body></html>`;
 }
 
 async function startSite(options = {}) {
@@ -39,13 +41,49 @@ async function startSite(options = {}) {
     const routes = {
       '': page(
         'ITエンジニア知識アーキテクチャ',
-        `<a href="${basePath}books/">books</a><a href="${basePath}paths/">paths</a><a href="${basePath}en/">en</a>${options.oldMarker || ''}`
+        `<a href="${basePath}books/">books</a><a href="${basePath}paths/">paths</a><a href="${basePath}portfolio-health/">health</a><a href="${basePath}en/">en</a>${options.oldMarker || ''}`
       ),
       'books/': page('書籍一覧', '<article data-book-card></article>'.repeat(options.cardCount ?? BOOK_COUNT)),
       'paths/': page('学習パス', '<article class="path-card"></article>'.repeat(options.pathCount ?? PATH_COUNT)),
       'en/': page('English Catalog', '<tr data-en-book></tr>'.repeat(options.enBookCount ?? BOOK_COUNT)),
+      'portfolio-health/': page('Portfolio Health'),
       '404.html': page('ページが見つかりません')
     };
+    if (relative === 'portfolio-health.json') {
+      const books = PUBLISHED_BOOKS.map((book) => ({
+        id: book.id,
+        repository: book.repo,
+        repoVisibility: book.repoVisibility,
+        publicationScope: book.publicationScope,
+        redacted: book.repoVisibility === 'private',
+        defaultBranch: book.repoVisibility === 'private' ? null : 'main',
+        defaultBranchSha: book.repoVisibility === 'private' ? null : 'a'.repeat(40),
+        openIssues: book.repoVisibility === 'private' ? null : 0,
+        openPullRequests: book.repoVisibility === 'private' ? null : 0,
+        latestBookQa: null,
+        latestVisualCheck: null,
+        latestPagesDeployment: null,
+        pages: null,
+        publicHttp: null,
+        partialObservation: book.repoVisibility === 'private' ? null : options.allPublicPartial === true
+      }));
+      if (options.portfolioRecordDelta) books.splice(options.portfolioRecordDelta);
+      if (options.privateLeak) {
+        const privateBook = books.find((book) => book.repoVisibility === 'private');
+        privateBook.defaultBranchSha = 'b'.repeat(40);
+      }
+      response.writeHead(200, { 'Content-Type': 'application/json' });
+      response.end(JSON.stringify({
+        schemaVersion: '1.0.0',
+        source: { catalogStatus: 'published', recordCount: books.length },
+        summary: {
+          states: {}, debt: {}, scheduledMaintenance: {},
+          partialObservations: books.filter((book) => book.partialObservation === true).length
+        },
+        books
+      }));
+      return;
+    }
     if (relative === 'build-info.json') {
       response.writeHead(200, { 'Content-Type': 'application/json' });
       response.end(JSON.stringify({
@@ -124,9 +162,38 @@ test('production smoke passes all required pages and writes reports', async () =
     const report = await runProductionSmoke(config(site, output));
     assert.equal(report.ok, true);
     assert.equal(report.actualSha, SHA);
-    assert.equal(report.endpoints.length, 6);
+    assert.equal(report.endpoints.length, 8);
     assert.equal(JSON.parse(await readFile(join(output, 'report.json'), 'utf8')).ok, true);
     assert.match(await readFile(join(output, 'report.md'), 'utf8'), /Result: \*\*PASS\*\*/);
+  });
+});
+
+test('production smoke detects a Portfolio Health catalog mismatch', async () => {
+  await withSite({ portfolioRecordDelta: -1 }, async (site, output) => {
+    const report = await runProductionSmoke(config(site, output));
+    assert.equal(report.ok, false);
+    const health = report.endpoints.find((endpoint) => endpoint.label === '/portfolio-health.json');
+    assert.match(health.errors.join('\n'), /recordCount|portfolio books|exactly match/);
+  });
+});
+
+test('production smoke detects a private Portfolio Health detail leak', {
+  skip: !HAS_PUBLISHED_PRIVATE_BOOK && 'canonical catalog has no published private book'
+}, async () => {
+  await withSite({ privateLeak: true }, async (site, output) => {
+    const report = await runProductionSmoke(config(site, output));
+    assert.equal(report.ok, false);
+    const health = report.endpoints.find((endpoint) => endpoint.label === '/portfolio-health.json');
+    assert.match(health.errors.join('\n'), /private book .* exposes defaultBranchSha/);
+  });
+});
+
+test('production smoke detects a systemic partial observation snapshot', async () => {
+  await withSite({ allPublicPartial: true }, async (site, output) => {
+    const report = await runProductionSmoke(config(site, output));
+    assert.equal(report.ok, false);
+    const health = report.endpoints.find((endpoint) => endpoint.label === '/portfolio-health.json');
+    assert.match(health.errors.join('\n'), /all public book observations are partial/);
   });
 });
 

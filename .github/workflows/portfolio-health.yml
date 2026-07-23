@@ -1,0 +1,95 @@
+name: Portfolio health
+
+on:
+  schedule:
+    - cron: '17 2 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  actions: read
+  deployments: read
+  pages: read
+  issues: write
+
+concurrency:
+  group: portfolio-health
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    name: Collect portfolio health
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PORTFOLIO_HEALTH_REPORT_JSON: tmp/portfolio-health/report.json
+      PORTFOLIO_HEALTH_REPORT_HTML: tmp/portfolio-health/index.html
+      PORTFOLIO_HEALTH_REPORT_MARKDOWN: tmp/portfolio-health/summary.md
+      PORTFOLIO_HEALTH_CACHE_DIR: tmp/portfolio-health/cache
+      PORTFOLIO_HEALTH_CONCURRENCY: '3'
+      PORTFOLIO_HEALTH_MAX_ATTEMPTS: '4'
+      PORTFOLIO_HEALTH_RETRY_DELAY_MS: '1000'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Mint read-only portfolio token
+        id: portfolio-token
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2
+        with:
+          app-id: ${{ vars.PORTFOLIO_HEALTH_APP_ID }}
+          private-key: ${{ secrets.PORTFOLIO_HEALTH_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          permission-actions: read
+          permission-contents: read
+          permission-deployments: read
+          permission-issues: read
+          permission-pages: read
+          permission-pull-requests: read
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Select sanitized health cache window
+        id: health-cache-key
+        run: echo "day=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+
+      - name: Restore sanitized health cache
+        uses: actions/cache@v5
+        with:
+          path: tmp/portfolio-health/cache
+          # One immutable entry per branch and UTC day bounds cache churn while
+          # retaining a recent fallback across independent workflow runs.
+          key: portfolio-health-v2-${{ github.ref_name }}-${{ steps.health-cache-key.outputs.day }}
+          restore-keys: |
+            portfolio-health-v2-${{ github.ref_name }}-
+            portfolio-health-v2-
+
+      - name: Collect health and manage status-change alert
+        env:
+          PORTFOLIO_HEALTH_READ_TOKEN: ${{ steps.portfolio-token.outputs.token }}
+          PORTFOLIO_HEALTH_ALERT_TOKEN: ${{ github.token }}
+        run: node scripts/portfolio-health-cli.mjs --manage-alerts
+
+      - name: Add health summary to job summary
+        if: always()
+        run: |
+          if [[ -f "$PORTFOLIO_HEALTH_REPORT_MARKDOWN" ]]; then
+            cat "$PORTFOLIO_HEALTH_REPORT_MARKDOWN" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Portfolio health did not create a summary.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload health artifact
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: portfolio-health-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            tmp/portfolio-health/report.json
+            tmp/portfolio-health/index.html
+            tmp/portfolio-health/summary.md
+          if-no-files-found: error
+          retention-days: 14
