@@ -378,7 +378,7 @@
             <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>ホーム</a>
             <a href="{{ '/books/' | relative_url }}"{% if page.url == '/books/' %} aria-current="page"{% endif %}>書籍一覧</a>
             <a href="{{ '/paths/' | relative_url }}"{% if page.url == '/paths/' %} aria-current="page"{% endif %}>学習パス</a>
-            <a href="{{ '/portfolio-health/' | relative_url }}">Portfolio Health</a>
+            <a href="{{ '/portfolio-health/' | relative_url }}"{% if page.url == '/portfolio-health/' %} aria-current="page"{% endif %}>Portfolio Health</a>
             <a href="{{ '/publishing/' | relative_url }}"{% if page.url contains '/publishing/' %} aria-current="page"{% endif %}>出版ガイド</a>
             <a href="{{ '/en/' | relative_url }}"{% if page.url == '/en/' %} aria-current="page"{% endif %}>English</a>
         </nav>

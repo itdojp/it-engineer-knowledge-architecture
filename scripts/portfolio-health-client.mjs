@@ -92,17 +92,6 @@ async function maybe(area, task, partialAreas) {
   }
 }
 
-async function countDependabotAlerts(api, repo) {
-  let count = 0;
-  for (let page = 1; page <= 100; page += 1) {
-    const alerts = await api.request(`/repos/${repo}/dependabot/alerts?state=open&per_page=100&page=${page}`);
-    count += alerts.length;
-    if (alerts.length < 100) return count;
-  }
-  // A deliberately bounded request prevents one malformed endpoint from monopolising a workflow run.
-  throw new GitHubRequestError(0, `/repos/${repo}/dependabot/alerts`);
-}
-
 const DEBT_PATTERNS = {
   security: /security|vulnerab|dependabot|audit|cve|脆弱|セキュリティ/i,
   freshness: /fresh|stale|outdated|source|citation|review|鮮度|更新|出典|レビュー/i,
@@ -175,12 +164,11 @@ export async function collectPublicBookObservation(book, { api, fetchImpl = glob
   const repository = await maybe('repository', () => api.request(`/repos/${repo}`), partial);
   const defaultBranch = repository?.default_branch || null;
   const commit = defaultBranch ? await maybe('default-branch', () => api.request(`/repos/${repo}/commits/${encodeURIComponent(defaultBranch)}`), partial) : null;
-  const [openWork, runs, deployments, pages, securityAlerts, publicHttp] = await Promise.all([
+  const [openWork, runs, deployments, pages, publicHttp] = await Promise.all([
     maybe('open-work', () => collectOpenIssues(api, repo), partial),
     maybe('actions', () => api.request(`/repos/${repo}/actions/runs?branch=${encodeURIComponent(defaultBranch || '')}&per_page=100`), partial),
     maybe('deployments', () => api.request(`/repos/${repo}/deployments?environment=github-pages&per_page=1`), partial),
     maybe('pages', () => api.request(`/repos/${repo}/pages`), partial),
-    maybe('security', () => countDependabotAlerts(api, repo), partial),
     maybe('public-http', () => requestPublicHttp(book.pagesUrl, { fetchImpl }), partial)
   ]);
   let latestPagesDeployment = null;
@@ -190,7 +178,6 @@ export async function collectPublicBookObservation(book, { api, fetchImpl = glob
     latestPagesDeployment = { sha: deployment.sha || null, status: statuses?.[0]?.state || null, createdAt: deployment.created_at || null };
   }
   const workflowRuns = runs?.workflow_runs || [];
-  const securityError = partial.find((entry) => entry.area === 'security');
   return {
     access: 'authorized',
     defaultBranch,
@@ -204,9 +191,11 @@ export async function collectPublicBookObservation(book, { api, fetchImpl = glob
     latestPagesDeployment,
     pages: pages ? { buildType: pages.build_type || null, status: pages.status || null } : null,
     publicHttp,
-    securityAlertCount: Number.isInteger(securityAlerts) ? securityAlerts : null,
-    securityScheduled: Boolean(securityError),
-    partialAreas: partial.filter((entry) => entry.area !== 'security').map((entry) => entry.area)
+    // A repository-scoped GITHUB_TOKEN cannot inspect Dependabot alerts across
+    // the portfolio. Security debt is derived from tracked Issues and Book QA;
+    // direct alert review remains an explicit scheduled repository task.
+    securityScheduled: true,
+    partialAreas: partial.map((entry) => entry.area)
   };
 }
 
@@ -247,7 +236,6 @@ function sanitizedObservation(observation) {
     latestPagesDeployment: observation.latestPagesDeployment || null,
     pages: observation.pages || null,
     publicHttp: observation.publicHttp || null,
-    securityAlertCount: Number.isInteger(observation.securityAlertCount) ? observation.securityAlertCount : null,
     securityScheduled: observation.securityScheduled === true
   };
 }
@@ -284,7 +272,7 @@ export function mergeCachedObservation(current, cached) {
   for (const field of [
     'defaultBranch', 'defaultBranchSha', 'openIssues', 'openPullRequests', 'issueDebt',
     'scheduledMaintenanceAlerts', 'latestBookQa', 'latestVisualCheck', 'latestPagesDeployment',
-    'pages', 'publicHttp', 'securityAlertCount'
+    'pages', 'publicHttp'
   ]) {
     if ((merged[field] === null || merged[field] === undefined) && cached[field] !== null && cached[field] !== undefined) {
       merged[field] = cached[field];

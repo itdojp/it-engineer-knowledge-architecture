@@ -16,7 +16,7 @@ const PUBLISHED_BOOKS = catalog.books.filter((book) => book.status === 'publishe
 const PATH_COUNT = catalog.learningPaths.length;
 
 function page(title, content = '') {
-  return `<!doctype html><html><body><nav aria-label="主要ナビゲーション"></nav><main id="main-content"><h1>${title}</h1>${content}</main></body></html>`;
+  return `<!doctype html><html><body><a class="skip-link" href="#main-content">skip</a><header role="banner"><nav aria-label="主要ナビゲーション"></nav></header><main id="main-content" tabindex="-1"><h1>${title}</h1>${content}</main><footer role="contentinfo"></footer></body></html>`;
 }
 
 async function startSite(options = {}) {

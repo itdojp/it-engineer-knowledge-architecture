@@ -10,7 +10,6 @@ permissions:
   actions: read
   deployments: read
   pages: read
-  security-events: read
   issues: write
 
 concurrency:

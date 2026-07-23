@@ -21,7 +21,7 @@ const HTML_TARGETS = [
   { path: 'books/', label: '/books/', h1: '書籍一覧', cardCount: CANONICAL_BOOK_COUNT },
   { path: 'paths/', label: '/paths/', h1: '学習パス', pathCount: CANONICAL_PATH_COUNT },
   { path: 'en/', label: '/en/', h1: 'English Catalog', enBookCount: CANONICAL_BOOK_COUNT },
-  { path: 'portfolio-health/', label: '/portfolio-health/', h1: 'Portfolio health' },
+  { path: 'portfolio-health/', label: '/portfolio-health/', h1: 'Portfolio health', fullLandmarks: true },
   { path: '404.html', label: '/404.html', h1: 'ページが見つかりません' }
 ];
 
@@ -86,6 +86,10 @@ function markerSummary(html) {
     h1: extractH1(html),
     hasNavigation: /<nav\b[^>]*aria-label=["']主要ナビゲーション["']/i.test(html),
     hasMain: /<main\b[^>]*id=["']main-content["']/i.test(html),
+    hasSkipLink: /<a\b[^>]*class=["'][^"']*\bskip-link\b[^"']*["'][^>]*href=["']#main-content["']/i.test(html),
+    hasHeader: /<header\b[^>]*role=["']banner["']/i.test(html),
+    hasFooter: /<footer\b[^>]*role=["']contentinfo["']/i.test(html),
+    mainTabbable: /<main\b[^>]*id=["']main-content["'][^>]*tabindex=["']-1["']/i.test(html),
     oldMarkers: OLD_HOME_MARKERS.filter((marker) => html.includes(marker))
   };
 }
@@ -127,6 +131,12 @@ async function checkHtmlTarget(fetchImpl, config, target, attempt, now) {
     }
     if (!result.markers.hasNavigation) result.errors.push('common navigation was not found');
     if (!result.markers.hasMain) result.errors.push('main#main-content was not found');
+    if (target.fullLandmarks) {
+      if (!result.markers.hasSkipLink) result.errors.push('skip link to main content was not found');
+      if (!result.markers.hasHeader) result.errors.push('header banner was not found');
+      if (!result.markers.hasFooter) result.errors.push('contentinfo footer was not found');
+      if (!result.markers.mainTabbable) result.errors.push('main#main-content is not programmatically focusable');
+    }
     if (target.label === '/' && result.markers.oldMarkers.length > 0) {
       result.errors.push(`old home marker remains: ${result.markers.oldMarkers.join(', ')}`);
     }

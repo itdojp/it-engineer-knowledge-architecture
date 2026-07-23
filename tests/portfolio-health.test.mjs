@@ -103,6 +103,10 @@ test('standalone HTML escapes catalog-controlled content', () => {
   assert.match(html, /A &amp; B/);
   assert.doesNotMatch(html, /<img src=x/);
   assert.equal(escapeHtml(`'\"&<>`), '&#39;&quot;&amp;&lt;&gt;');
+  assert.match(html, /class="skip-link" href="#main-content"/);
+  assert.match(html, /<header role="banner">/);
+  assert.match(html, /<main id="main-content" tabindex="-1">/);
+  assert.match(html, /<footer role="contentinfo">/);
 });
 
 test('alert planner deduplicates unchanged state and only writes on change or recovery', () => {
@@ -275,7 +279,6 @@ test('sanitized cache restores only missing aggregates and preserves current par
   assert.equal(merged.defaultBranchSha, 'e'.repeat(40));
   assert.equal(merged.openIssues, 7);
   assert.equal(merged.openPullRequests, 9);
-  assert.equal(merged.securityAlertCount, 0);
   assert.equal(merged.securityScheduled, true);
   assert.equal(merged.cacheFallback, true);
 });
@@ -305,7 +308,6 @@ test('CLI writes only requested tmp reports and Pages build-artifact snapshots',
       if (requestPath.includes('/deployments?')) return [{ id: 1, sha: 'd'.repeat(40), created_at: '2026-07-22T00:00:00Z' }];
       if (requestPath.includes('/deployments/1/statuses')) return [{ state: 'success' }];
       if (requestPath.endsWith('/pages')) return { build_type: 'workflow', status: 'built' };
-      if (requestPath.includes('/dependabot/alerts?')) return [];
       throw new Error(`unexpected path ${requestPath}`);
     }
   };
@@ -331,7 +333,9 @@ test('CLI writes only requested tmp reports and Pages build-artifact snapshots',
       fetchImpl: async () => new Response('', { status: 200 }), now: () => now
     });
     assert.equal(result.report.source.recordCount, 2);
-    assert.equal(result.report.books.find((book) => book.id === normal.id).state, 'healthy');
+    const normalReport = result.report.books.find((book) => book.id === normal.id);
+    assert.equal(normalReport.state, 'scheduled');
+    assert.equal(normalReport.latestBookQa.conclusion, 'success');
     assert.match(actionsRequestPath, /[?&]branch=main(?:&|$)/);
     assert.equal(JSON.parse(await readFile(reportJson, 'utf8')).books.length, 2);
     assert.match(await readFile(reportHtml, 'utf8'), /<!doctype html>/i);
