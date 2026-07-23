@@ -117,8 +117,11 @@ test('standalone HTML distinguishes private redaction from unavailable public da
   const html = renderPortfolioHealthHtml(unavailable);
   assert.match(html, /<td>取得不能<br><small>取得不能<\/small><\/td>/);
   assert.match(html, /<td>redacted<br><small>redacted<\/small><\/td>/);
+  assert.match(html, /<td>redacted \/ redacted<\/td><td>redacted<\/td><td>redacted<\/td><td>redacted<\/td>/);
   assert.match(html, /<title>Portfolio Health<\/title>/);
   assert.match(html, /<h1>Portfolio Health<\/h1>/);
+  const markdown = renderPortfolioHealthMarkdown(unavailable);
+  assert.match(markdown, /\| private-book \| org\/private-book \| private \/ free-preview \| scheduled \| redacted \| redacted \| redacted \|/);
 });
 
 test('alert planner deduplicates unchanged state and only writes on change or recovery', () => {

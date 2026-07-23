@@ -268,6 +268,10 @@ function markdownCell(value) {
   return String(value ?? '取得不能').replaceAll('|', '\\|').replaceAll('\n', ' ');
 }
 
+function observationValue(book, value) {
+  return book.redacted ? 'redacted' : (value ?? '取得不能');
+}
+
 export function renderPortfolioHealthMarkdown(report) {
   const { states, debt, scheduledMaintenance, scheduledAlerts, partialObservations } = report.summary;
   const lines = [
@@ -285,7 +289,7 @@ export function renderPortfolioHealthMarkdown(report) {
     '| --- | --- | --- | --- | ---: | ---: | --- | --- |'
   ];
   for (const book of report.books) {
-    lines.push(`| ${markdownCell(book.id)} | ${markdownCell(book.repository)} | ${markdownCell(book.repoVisibility)} / ${markdownCell(book.publicationScope)} | ${book.state} | ${markdownCell(book.openIssues)} | ${markdownCell(book.openPullRequests)} | ${markdownCell(book.publicHttp?.status)} | ${markdownCell(book.nextAction)} |`);
+    lines.push(`| ${markdownCell(book.id)} | ${markdownCell(book.repository)} | ${markdownCell(book.repoVisibility)} / ${markdownCell(book.publicationScope)} | ${book.state} | ${markdownCell(observationValue(book, book.openIssues))} | ${markdownCell(observationValue(book, book.openPullRequests))} | ${markdownCell(observationValue(book, book.publicHttp?.status))} | ${markdownCell(book.nextAction)} |`);
   }
   return `${lines.join('\n')}\n`;
 }
@@ -298,10 +302,10 @@ export function escapeHtml(value) {
 
 export function renderPortfolioHealthHtml(report) {
   const runText = (run) => run ? `${run.conclusion || run.status || '取得不能'} / ${run.createdAt || '日時不明'}` : '取得不能';
-  const protectedValue = (book, value) => book.redacted ? 'redacted' : (value ?? '取得不能');
+  const pagesText = (book) => book.redacted ? 'redacted' : `${book.pages?.buildType || '取得不能'} / ${book.pages?.status || '取得不能'} / ${book.latestPagesDeployment?.status || '取得不能'}`;
   const debtText = (book) => Object.entries(book.maintenance)
     .map(([key, value]) => `${key}:${value.count ?? '?'}${value.scheduled ? '(scheduled)' : ''}`).join(' / ');
-  const rows = report.books.map((book) => `<tr><td>${escapeHtml(book.id)}<br><small>${escapeHtml(book.repository)}</small></td><td>${escapeHtml(book.repoVisibility)} / ${escapeHtml(book.publicationScope)}</td><td>${escapeHtml(book.state)}</td><td>${escapeHtml(protectedValue(book, book.defaultBranch))}<br><small>${escapeHtml(protectedValue(book, book.defaultBranchSha?.slice(0, 12)))}</small></td><td>${escapeHtml(book.openIssues ?? '取得不能')} / ${escapeHtml(book.openPullRequests ?? '取得不能')}</td><td>${escapeHtml(runText(book.latestBookQa))}</td><td>${escapeHtml(`${book.pages?.buildType || '取得不能'} / ${book.pages?.status || '取得不能'} / ${book.latestPagesDeployment?.status || '取得不能'}`)}</td><td>${escapeHtml(book.publicHttp?.status ?? '取得不能')}</td><td>${escapeHtml(book.lastReviewedAt ?? '未記録')}</td><td>${escapeHtml(debtText(book))}<br><small>scheduled alerts: ${escapeHtml(book.scheduledMaintenanceAlerts ?? '取得不能')}</small></td><td>${escapeHtml(book.nextAction)}</td></tr>`).join('');
+  const rows = report.books.map((book) => `<tr><td>${escapeHtml(book.id)}<br><small>${escapeHtml(book.repository)}</small></td><td>${escapeHtml(book.repoVisibility)} / ${escapeHtml(book.publicationScope)}</td><td>${escapeHtml(book.state)}</td><td>${escapeHtml(observationValue(book, book.defaultBranch))}<br><small>${escapeHtml(observationValue(book, book.defaultBranchSha?.slice(0, 12)))}</small></td><td>${escapeHtml(observationValue(book, book.openIssues))} / ${escapeHtml(observationValue(book, book.openPullRequests))}</td><td>${escapeHtml(observationValue(book, book.latestBookQa ? runText(book.latestBookQa) : null))}</td><td>${escapeHtml(pagesText(book))}</td><td>${escapeHtml(observationValue(book, book.publicHttp?.status))}</td><td>${escapeHtml(book.lastReviewedAt ?? '未記録')}</td><td>${escapeHtml(debtText(book))}<br><small>scheduled alerts: ${escapeHtml(book.scheduledMaintenanceAlerts ?? '取得不能')}</small></td><td>${escapeHtml(book.nextAction)}</td></tr>`).join('');
   const { states, debt, scheduledMaintenance, scheduledAlerts, partialObservations } = report.summary;
   return `<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Portfolio Health</title><style>body{font-family:system-ui,sans-serif;margin:2rem;line-height:1.5}.skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;background:#fff;padding:.5rem;z-index:10}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:1500px;font-size:.85rem}th,td{border:1px solid #bbb;padding:.45rem;text-align:left;vertical-align:top}th{background:#f3f4f6}small{color:#555}</style></head><body><a class="skip-link" href="#main-content">本文へスキップ</a><header role="banner"><div>ITエンジニア知識アーキテクチャ</div><nav aria-label="主要ナビゲーション"><a href="../">ホーム</a></nav></header><main id="main-content" tabindex="-1"><h1>Portfolio Health</h1><p>生成日時: ${escapeHtml(report.generatedAt)}</p><p>対象: catalog の <code>status=published</code> ${report.source.recordCount}冊（完全一致）</p><ul><li>状態: healthy ${states.healthy} / attention ${states.attention} / blocked ${states.blocked} / scheduled ${states.scheduled}</li><li>負債: security ${debt.security} / freshness ${debt.freshness} / QA ${debt.qa} / visual ${debt.visual} / build ${debt.build}</li><li>定期確認待ち: security ${scheduledMaintenance.security} / freshness ${scheduledMaintenance.freshness} / QA ${scheduledMaintenance.qa} / visual ${scheduledMaintenance.visual} / build ${scheduledMaintenance.build}</li><li>scheduled maintenance alert: ${scheduledAlerts}</li><li>partial observation: ${partialObservations}</li></ul><div class="table-wrap"><table><thead><tr><th>Book / repository</th><th>Visibility / scope</th><th>State</th><th>Branch / SHA</th><th>Issues / PRs</th><th>Book QA</th><th>Pages type / status / deployment</th><th>HTTP</th><th>Last reviewed</th><th>Debt / scheduled</th><th>Next action</th></tr></thead><tbody>${rows}</tbody></table></div></main><footer role="contentinfo"><p>Portfolio HealthはPages build時点の観測結果です。</p></footer></body></html>
