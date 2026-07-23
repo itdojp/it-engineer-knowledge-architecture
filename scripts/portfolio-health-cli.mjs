@@ -55,6 +55,7 @@ function parseArgs(argv, env = process.env) {
 
 function assertConfig(config) {
   if (!Number.isInteger(config.maxAttempts) || config.maxAttempts < 1) throw new Error('max-attempts must be a positive integer');
+  if (!Number.isInteger(config.retryDelayMs) || config.retryDelayMs < 0) throw new Error('retry-delay-ms must be a non-negative integer');
   if (!Number.isInteger(config.concurrency) || config.concurrency < 1 || config.concurrency > 5) throw new Error('concurrency must be between 1 and 5');
   if (config.manageAlerts && !/^[^/]+\/[^/]+$/.test(config.portalRepository)) {
     throw new Error('portal-repository must be in owner/name format when --manage-alerts is used');

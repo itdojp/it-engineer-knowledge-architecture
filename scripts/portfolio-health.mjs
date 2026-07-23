@@ -64,7 +64,9 @@ export function selectPublishedBooks(catalog) {
 export function buildBookHealth(book, observation = {}, options = {}) {
   const now = options.now instanceof Date ? options.now : new Date();
   const reviewMaxAgeDays = options.reviewMaxAgeDays ?? 180;
-  const privateRedacted = book.repoVisibility === 'private' && observation.access !== 'authorized';
+  // Every generated report is public. Private repository observations must
+  // never cross this boundary, even if a caller accidentally supplies them.
+  const privateRedacted = book.repoVisibility === 'private';
   const reviewAgeDays = dateAgeDays(book.lastReviewedAt, now);
 
   const base = {

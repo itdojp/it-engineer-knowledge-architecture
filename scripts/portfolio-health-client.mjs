@@ -79,15 +79,11 @@ function matchingRun(runs, expression, defaultBranch) {
     (!defaultBranch || run.head_branch === defaultBranch)) || null;
 }
 
-function safeErrorArea(area, error) {
-  return { area, code: error instanceof GitHubRequestError ? `http-${error.status}` : 'request-failed' };
-}
-
 async function maybe(area, task, partialAreas) {
   try {
     return await task();
-  } catch (error) {
-    partialAreas.push(safeErrorArea(area, error));
+  } catch {
+    partialAreas.push(area);
     return null;
   }
 }
@@ -195,7 +191,7 @@ export async function collectPublicBookObservation(book, { api, fetchImpl = glob
     // the portfolio. Security debt is derived from tracked Issues and Book QA;
     // direct alert review remains an explicit scheduled repository task.
     securityScheduled: true,
-    partialAreas: partial.map((entry) => entry.area)
+    partialAreas: partial
   };
 }
 

@@ -59,6 +59,12 @@ test('CLI fails closed when a required credential is unavailable', async () => {
     runPortfolioHealth(alertConfig, { api: { request: async () => null } }),
     /PORTFOLIO_HEALTH_ALERT_TOKEN is required/
   );
+  const invalidDelay = parseArgs([], { PORTFOLIO_HEALTH_READ_TOKEN: 'read-token' });
+  invalidDelay.retryDelayMs = Number.NaN;
+  await assert.rejects(
+    runPortfolioHealth(invalidDelay, { api: { request: async () => null } }),
+    /retry-delay-ms must be a non-negative integer/
+  );
 });
 
 test('uses every and only status=published catalog record as the live input set', () => {
@@ -80,6 +86,23 @@ test('normal, blocked, partial, and private-redacted states have explicit reason
   assert.equal(byId['partial-book'].state, 'attention');
   assert.equal(byId['private-book'].state, 'scheduled');
   assert.equal(byId['private-book'].redacted, true);
+});
+
+test('private books remain redacted even when an authorized observation is supplied', () => {
+  const privateBook = catalog.books.find((book) => book.id === 'private-book');
+  const result = buildPortfolioHealthReport({ books: [privateBook] }, {
+    'private-book': {
+      access: 'authorized',
+      defaultBranch: 'private-main',
+      defaultBranchSha: 'PRIVATE-AUTHORIZED-SHA',
+      openIssues: 9,
+      publicHttp: { status: 200, ok: true }
+    }
+  }, { now });
+  const output = serializePortfolioHealthReport(result);
+  assert.equal(result.books[0].redacted, true);
+  assert.equal(result.books[0].defaultBranchSha, null);
+  assert.doesNotMatch(output, /private-main|PRIVATE-AUTHORIZED-SHA/);
 });
 
 test('a nullable Pages API status does not override a successful deployment and public HTTP result', () => {
