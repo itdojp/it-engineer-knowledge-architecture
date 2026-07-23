@@ -35,11 +35,11 @@ gh workflow run deploy-pages.yml --repo itdojp/it-engineer-knowledge-architectur
 
 `main` の更新は変更パスを問わずDeploy Pagesを起動する。定期drift確認がdefault branchの最新SHAを期待値とするため、公開内容に影響しない変更も同じSHAのartifactとして再デプロイし、default branchと公開SHAの一貫性を維持する。処理は次の3 jobで構成する。
 
-1. Jekyllをbuildし、`_site/build-info.json` を追加してPages artifactを作る。
+1. Jekyllをbuildし、catalogの `status=published` と完全一致する `_site/portfolio-health.json`、`_site/portfolio-health/index.html`、`_site/build-info.json` を追加してPages artifactを作る。
 2. artifactを `github-pages` environmentへデプロイする。
 3. deploymentが返した `page_url` に対して本番スモークを実行する。
 
-本番スモークは `/`、`/books/`、`/paths/`、`/en/`、`/404.html`、`/build-info.json` のHTTP状態、主要見出し、共通ナビゲーション、`main#main-content`、書籍49件、学習パス7件、base path内リンク、旧トップページmarkerの不在、期待SHAを検証する。キャッシュ回避query、timeout、指数backoff付きretryを用いる。結果はjob summaryとartifactに残り、不一致ならWorkflowを失敗させる。
+本番スモークは `/`、`/books/`、`/paths/`、`/en/`、`/portfolio-health/`、`/portfolio-health.json`、`/404.html`、`/build-info.json` のHTTP状態、主要見出し、共通ナビゲーション、`main#main-content`、書籍49件、公開中42件、学習パス7件、base path内リンク、private書籍の動的情報redaction、旧トップページmarkerの不在、期待SHAを検証する。キャッシュ回避query、timeout、指数backoff付きretryを用いる。結果はjob summaryとartifactに残り、不一致ならWorkflowを失敗させる。
 
 手動で公開SHAを確認する。
 

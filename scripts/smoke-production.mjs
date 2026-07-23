@@ -7,6 +7,8 @@ const DEFAULT_BASE_URL = 'https://itdojp.github.io/it-engineer-knowledge-archite
 const DEFAULT_EXPECTED_SHA = '';
 const canonicalCatalog = JSON.parse(readFileSync(new URL('../docs/_data/catalog.json', import.meta.url), 'utf8'));
 const CANONICAL_BOOK_COUNT = canonicalCatalog.books.length;
+const CANONICAL_PUBLISHED_BOOKS = canonicalCatalog.books.filter((book) => book.status === 'published');
+const CANONICAL_PUBLISHED_IDS = CANONICAL_PUBLISHED_BOOKS.map((book) => book.id).sort();
 const CANONICAL_PATH_COUNT = canonicalCatalog.learningPaths.length;
 const OLD_HOME_MARKERS = [
   'Building Your Tech Career, One Book at a Time',
@@ -19,10 +21,16 @@ const HTML_TARGETS = [
   { path: 'books/', label: '/books/', h1: '書籍一覧', cardCount: CANONICAL_BOOK_COUNT },
   { path: 'paths/', label: '/paths/', h1: '学習パス', pathCount: CANONICAL_PATH_COUNT },
   { path: 'en/', label: '/en/', h1: 'English Catalog', enBookCount: CANONICAL_BOOK_COUNT },
+  { path: 'portfolio-health/', label: '/portfolio-health/', h1: 'Portfolio health' },
   { path: '404.html', label: '/404.html', h1: 'ページが見つかりません' }
 ];
 
-const REQUIRED_ROOT_LINKS = ['books/', 'paths/', 'en/'];
+const REQUIRED_ROOT_LINKS = ['books/', 'paths/', 'portfolio-health/', 'en/'];
+const PRIVATE_ALLOWED_NON_NULL_FIELDS = new Set([
+  // Catalog-published identifiers plus generic derived state; no private API value.
+  'id', 'repository', 'repoVisibility', 'publicationScope', 'lastReviewedAt',
+  'state', 'reasons', 'nextAction', 'redacted', 'maintenance'
+]);
 
 function parseInteger(value, fallback, minimum = 1) {
   const parsed = Number.parseInt(value ?? '', 10);
@@ -183,6 +191,70 @@ async function checkBuildInfo(fetchImpl, config, attempt, now) {
   return result;
 }
 
+async function checkPortfolioHealth(fetchImpl, config, attempt, now) {
+  const url = cacheBustedUrl(config.baseUrl, 'portfolio-health.json', attempt, now);
+  const result = { label: '/portfolio-health.json', url: url.toString(), status: null, errors: [], markers: {}, report: null };
+  try {
+    const response = await fetchWithTimeout(fetchImpl, url, config.timeoutMs);
+    result.status = response.status;
+    const body = await response.text();
+    if (response.status !== 200) result.errors.push(`HTTP status ${response.status}, expected 200`);
+    try {
+      result.report = JSON.parse(body);
+    } catch {
+      result.errors.push('response is not valid JSON');
+      return result;
+    }
+    const health = result.report;
+    const books = Array.isArray(health?.books) ? health.books : [];
+    const ids = books.map((book) => book?.id).filter((id) => typeof id === 'string').sort();
+    result.markers = {
+      schemaVersion: health?.schemaVersion || null,
+      catalogStatus: health?.source?.catalogStatus || null,
+      recordCount: health?.source?.recordCount ?? null,
+      bookCount: books.length,
+      privateCount: books.filter((book) => book?.repoVisibility === 'private').length,
+      partialObservations: health?.summary?.partialObservations ?? null
+    };
+    if (health?.schemaVersion !== '1.0.0') result.errors.push(`schemaVersion ${JSON.stringify(health?.schemaVersion)}, expected "1.0.0"`);
+    if (health?.source?.catalogStatus !== 'published') result.errors.push('source.catalogStatus must be published');
+    if (health?.source?.recordCount !== CANONICAL_PUBLISHED_BOOKS.length) {
+      result.errors.push(`source recordCount ${health?.source?.recordCount}, expected ${CANONICAL_PUBLISHED_BOOKS.length}`);
+    }
+    if (books.length !== CANONICAL_PUBLISHED_BOOKS.length) {
+      result.errors.push(`portfolio books ${books.length}, expected ${CANONICAL_PUBLISHED_BOOKS.length}`);
+    }
+    if (!health?.summary?.states || !health?.summary?.debt || !health?.summary?.scheduledMaintenance) {
+      result.errors.push('summary contract is incomplete');
+    }
+    const publicBooks = books.filter((book) => book?.repoVisibility === 'public');
+    const partialPublicBooks = publicBooks.filter((book) => book?.partialObservation === true);
+    if (health?.summary?.partialObservations !== partialPublicBooks.length) {
+      result.errors.push('summary.partialObservations does not match book records');
+    }
+    if (publicBooks.length > 0 && partialPublicBooks.length === publicBooks.length) {
+      result.errors.push('all public book observations are partial; check Pages workflow API permissions');
+    }
+    if (JSON.stringify(ids) !== JSON.stringify(CANONICAL_PUBLISHED_IDS)) {
+      result.errors.push('portfolio book ids do not exactly match catalog status=published');
+    }
+    for (const book of books.filter((entry) => entry?.repoVisibility === 'private')) {
+      if (book.redacted !== true) result.errors.push(`private book ${book.id} is not redacted`);
+      for (const field of ['defaultBranch', 'defaultBranchSha', 'openIssues', 'openPullRequests', 'latestBookQa', 'latestVisualCheck', 'latestPagesDeployment', 'pages', 'publicHttp']) {
+        if (book[field] !== null) result.errors.push(`private book ${book.id} exposes ${field}`);
+      }
+      for (const [field, value] of Object.entries(book)) {
+        if (value !== null && !PRIVATE_ALLOWED_NON_NULL_FIELDS.has(field)) {
+          result.errors.push(`private book ${book.id} exposes unexpected field ${field}`);
+        }
+      }
+    }
+  } catch (error) {
+    result.errors.push(error instanceof Error ? `${error.name}: ${error.message}` : String(error));
+  }
+  return result;
+}
+
 function toMarkdown(report) {
   const lines = [
     '# Production smoke report',
@@ -236,6 +308,7 @@ export async function runProductionSmoke(inputConfig, dependencies = {}) {
     for (const target of HTML_TARGETS) {
       endpoints.push(await checkHtmlTarget(fetchImpl, config, target, attempt, now));
     }
+    endpoints.push(await checkPortfolioHealth(fetchImpl, config, attempt, now));
     endpoints.push(await checkBuildInfo(fetchImpl, config, attempt, now));
     const ok = endpoints.every((endpoint) => endpoint.errors.length === 0);
     report = {

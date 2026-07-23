@@ -1,0 +1,9 @@
+{
+  "books": [
+    {"id":"normal-book","displayOrder":1,"status":"published","repo":"org/normal-book","repoVisibility":"public","publicationScope":"full-public","pagesUrl":"https://example.test/normal","lastReviewedAt":"2026-07-20"},
+    {"id":"blocked-book","displayOrder":2,"status":"published","repo":"org/blocked-book","repoVisibility":"public","publicationScope":"full-public","pagesUrl":"https://example.test/blocked","lastReviewedAt":"2026-01-01"},
+    {"id":"partial-book","displayOrder":3,"status":"published","repo":"org/partial-book","repoVisibility":"public","publicationScope":"free-preview","pagesUrl":"https://example.test/partial","lastReviewedAt":"2026-07-20"},
+    {"id":"private-book","displayOrder":4,"status":"published","repo":"org/private-book","repoVisibility":"private","publicationScope":"free-preview","pagesUrl":"https://example.test/private","lastReviewedAt":"2026-07-20"},
+    {"id":"planned-book","displayOrder":5,"status":"planned","repo":"org/planned-book","repoVisibility":"public","publicationScope":"full-public","pagesUrl":"https://example.test/planned","lastReviewedAt":"2026-07-20"}
+  ]
+}
