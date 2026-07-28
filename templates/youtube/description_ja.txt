@@ -18,7 +18,7 @@
 📦 GitHubリポジトリ:
 {repo}
 
-📋 プレイリスト「ITエンジニア知識アーキテクチャ」:
-https://www.youtube.com/playlist?list=PL552rhBTgVr0GBLTMnOgebOJmBwn_dN-v
+📋 再生リスト「ITエンジニア知識アーキテクチャ 書籍紹介」:
+https://www.youtube.com/playlist?list=PLQuhjQZcPe6E
 
 #ITエンジニア #ITDO #{category_tag} #技術書 #{id_tag}
