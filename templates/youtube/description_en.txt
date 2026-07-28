@@ -19,7 +19,7 @@ Dive into the full book for detailed architectures and practical examples!
 📦 GitHub Repository:
 {repo}
 
-📋 Playlist "IT Engineer Knowledge Architecture (English)":
-https://www.youtube.com/playlist?list=PL552rhBTgVr0CnIkGC62K15beBptI_ms3
+📋 Playlist "IT Engineer Knowledge Architecture — Book Introductions":
+https://www.youtube.com/playlist?list=PLaVg8djhgCA0
 
 #ITEngineer #ITDO #{category_tag} #TechBook #{id_tag}
