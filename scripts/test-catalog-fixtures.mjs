@@ -10,7 +10,12 @@ import {
 } from './catalog-utils.mjs';
 
 const cases = [
-  { file: 'tests/fixtures/catalog-valid.json', valid: true, script: 'scripts/validate-catalog.mjs' },
+  {
+    file: 'tests/fixtures/catalog-valid.json',
+    valid: true,
+    script: 'scripts/validate-catalog.mjs',
+    mustNotContain: 'YouTube data aligned'
+  },
   {
     file: 'tests/fixtures/catalog-invalid-duplicate-id.json',
     valid: false,
@@ -48,7 +53,8 @@ for (const testCase of cases) {
   const output = [result.stdout || '', result.stderr || ''].join('\n');
   const statusPassed = testCase.valid ? result.status === 0 : result.status !== 0;
   const outputPassed = !testCase.mustContain || output.includes(testCase.mustContain);
-  const passed = statusPassed && outputPassed;
+  const excludedOutputPassed = !testCase.mustNotContain || !output.includes(testCase.mustNotContain);
+  const passed = statusPassed && outputPassed && excludedOutputPassed;
   if (!passed) {
     failed++;
     console.error(`❌ fixture expectation failed: ${testCase.file}`);
