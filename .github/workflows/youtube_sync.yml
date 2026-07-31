@@ -1,16 +1,31 @@
 name: Sync YouTube Descriptions
 
 on:
+  pull_request:
+    paths:
+      - 'books/youtube/books.yaml'
+      - 'docs/_data/catalog.json'
+      - 'docs/_data/youtube.json'
+      - 'templates/youtube/description_*.txt'
+      - 'scripts/generate_descriptions.py'
+      - 'scripts/update_youtube_videos.py'
+      - 'tests/test_youtube_sync.py'
   push:
     branches:
       - main
     paths:
       - 'books/youtube/books.yaml'
+      - 'docs/_data/catalog.json'
+      - 'docs/_data/youtube.json'
       - 'templates/youtube/description_*.txt'
       - 'scripts/generate_descriptions.py'
       - 'scripts/update_youtube_videos.py'
+      - 'tests/test_youtube_sync.py'
   # GitHubの画面から手動実行もできるようにする
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   sync_youtube:
@@ -24,12 +39,17 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
-        run: |
-          pip install pyyaml google-api-python-client google-auth-httplib2 google-auth-oauthlib
+      - name: Install description-generation dependencies
+        run: pip install pyyaml
 
       - name: 1. Generate description texts
         run: python scripts/generate_descriptions.py
+
+      - name: Validate canonical video inventory
+        run: python scripts/update_youtube_videos.py --validate-only
+
+      - name: Test YouTube sync contract
+        run: python -m unittest tests/test_youtube_sync.py
 
       - name: Check whether YouTube credentials are available
         id: youtube_credentials
@@ -46,7 +66,9 @@ jobs:
         if: ${{ steps.youtube_credentials.outputs.available == 'true' }}
         env:
           YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
-        run: python scripts/update_youtube_videos.py
+        run: |
+          pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
+          python scripts/update_youtube_videos.py
 
       - name: Skip YouTube API update when credentials are unavailable
         if: ${{ steps.youtube_credentials.outputs.available != 'true' }}
