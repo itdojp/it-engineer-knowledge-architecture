@@ -52,6 +52,7 @@ jobs:
         run: python -m unittest tests/test_youtube_sync.py
 
       - name: Check whether YouTube credentials are available
+        if: ${{ github.event_name != 'pull_request' }}
         id: youtube_credentials
         env:
           YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
@@ -63,7 +64,7 @@ jobs:
           fi
 
       - name: 2. Update YouTube Videos via API
-        if: ${{ steps.youtube_credentials.outputs.available == 'true' }}
+        if: ${{ github.event_name != 'pull_request' && steps.youtube_credentials.outputs.available == 'true' }}
         env:
           YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
         run: |
@@ -71,5 +72,9 @@ jobs:
           python scripts/update_youtube_videos.py
 
       - name: Skip YouTube API update when credentials are unavailable
-        if: ${{ steps.youtube_credentials.outputs.available != 'true' }}
+        if: ${{ github.event_name != 'pull_request' && steps.youtube_credentials.outputs.available != 'true' }}
         run: echo "::notice::YOUTUBE_TOKEN_JSON is not configured; generated descriptions were validated without updating YouTube."
+
+      - name: Keep pull request runs validation-only
+        if: ${{ github.event_name == 'pull_request' }}
+        run: echo "::notice::Pull request runs never update external YouTube videos."

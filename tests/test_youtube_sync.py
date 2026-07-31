@@ -7,6 +7,8 @@ from contextlib import redirect_stdout
 from pathlib import Path
 from unittest.mock import patch
 
+import yaml
+
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -70,6 +72,19 @@ class YouTubeSyncContractTest(unittest.TestCase):
         text = (ROOT / 'books/youtube/books.yaml').read_text(encoding='utf-8')
         self.assertNotIn('youtube_id_ja:', text)
         self.assertNotIn('youtube_id_en:', text)
+
+    def test_pull_request_workflow_is_validation_only(self):
+        workflow = yaml.load(
+            (ROOT / '.github/workflows/youtube_sync.yml').read_text(encoding='utf-8'),
+            Loader=yaml.BaseLoader,
+        )
+        steps = workflow['jobs']['sync_youtube']['steps']
+        steps_by_name = {step['name']: step for step in steps}
+        for step_name in (
+            'Check whether YouTube credentials are available',
+            '2. Update YouTube Videos via API',
+        ):
+            self.assertIn("github.event_name != 'pull_request'", steps_by_name[step_name]['if'])
 
 
 if __name__ == '__main__':
