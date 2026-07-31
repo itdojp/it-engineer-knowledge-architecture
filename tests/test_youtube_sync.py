@@ -34,7 +34,19 @@ class YouTubeSyncContractTest(unittest.TestCase):
         books = generate_descriptions.load_books()
         self.assertEqual([book['id'] for book in books], [book['book_id'] for book in self.youtube['books']])
         self.assertEqual(len(books), 42)
+        catalog = json.loads((ROOT / 'docs/_data/catalog.json').read_text(encoding='utf-8'))
+        catalog_by_id = {book['id']: book for book in catalog['books']}
         for book in books:
+            catalog_book = catalog_by_id[book['id']]
+            self.assertEqual(
+                book['category_en'],
+                generate_descriptions.CATEGORY_EN[catalog_book['category']],
+            )
+            self.assertEqual(
+                book['level_en'],
+                ' / '.join(generate_descriptions.LEVEL_EN[level] for level in catalog_book['levels']),
+            )
+            self.assertNotIn(book['hook_en'], generate_descriptions.REJECTED_HOOKS)
             if book['id'] in {'ai-agent-collaboration-book', 'BioinformaticsGuide-book'}:
                 self.assertEqual(book['repo'], '')
 
@@ -72,6 +84,7 @@ class YouTubeSyncContractTest(unittest.TestCase):
         text = (ROOT / 'books/youtube/books.yaml').read_text(encoding='utf-8')
         self.assertNotIn('youtube_id_ja:', text)
         self.assertNotIn('youtube_id_en:', text)
+        self.assertNotIn('Are you struggling with ...?', text)
 
     def test_pull_request_workflow_is_validation_only(self):
         workflow = yaml.load(

@@ -1,6 +1,5 @@
 import yaml
 import os
-import re
 import json
 
 BOOKS_YAML = 'books/youtube/books.yaml'
@@ -15,6 +14,7 @@ OUTPUT_PROMPT_DIR = 'output/youtube_prompts'
 
 DEFAULT_HOOK_JA = '本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。'
 DEFAULT_HOOK_EN = 'Explore the book overview, intended readers, and practical learning outcomes.'
+REJECTED_HOOKS = {'Are you struggling with ...?'}
 
 CATEGORY_JA = {
     'beginner-track': '未経験者向け',
@@ -68,40 +68,6 @@ def sanitize_tag(text):
     text = text.replace('（', '').replace('）', '').replace('・', '')
     return ''.join([c for c in text if c.isalnum()])
 
-def mapping_en(text):
-    if not text: return ""
-    # カッコ書き（注釈）を削除してマッピングキーを正規化する
-    key = re.sub(r'（.*?）|\(.*?\)', '', text).strip()
-    
-    mapping = {
-        "技術基盤": "Professional Foundations",
-        "基礎リテラシー": "Professional Foundations",
-        "セキュリティ": "Security",
-        "応用技術": "Applied Technologies",
-        "特定技術・応用領域": "Applied Technologies",
-        "コンピューターサイエンス理論": "Computer Science Theory",
-        "開発運用プロセス": "Development & Operation",
-        "開発・運用プロセス": "Development & Operation",
-        "特定領域ドメイン知識": "Domain Specific Knowledge",
-        "特定領域・ドメイン知識": "Domain Specific Knowledge",
-        "ソフトスキル思考法": "Soft Skills & Mindset",
-        "ソフトスキル・思考法": "Soft Skills & Mindset",
-        "教養哲学": "Liberal Arts & Philosophy",
-        "教養・哲学": "Liberal Arts & Philosophy",
-        "Web3・ブロックチェーン": "Web3 & Blockchain",
-        
-        "全レベル": "All Levels",
-        "未経験者": "Beginner",
-        "初学者": "Beginner",
-        "IT未経験者・初学者": "Beginner",
-        "新人〜中級者": "Junior - Mid",
-        "中級〜上級者": "Mid - Senior",
-        "中級者以上": "Mid - Senior",
-        "専門分野従事者": "Domain Experts"
-    }
-    # マッピング先があればそれを返し、なければ元のテキスト（正規化済またはそのまま）を英語として返す
-    return mapping.get(key, key) or text
-
 def load_books():
     with open(BOOKS_YAML, 'r', encoding='utf-8') as f:
         overrides = yaml.safe_load(f) or []
@@ -117,6 +83,8 @@ def load_books():
             raise ValueError('books/youtube/books.yaml contains a record without id')
         if book_id in override_by_id:
             raise ValueError(f'books/youtube/books.yaml contains duplicate id: {book_id}')
+        if override.get('hook_ja') in REJECTED_HOOKS or override.get('hook_en') in REJECTED_HOOKS:
+            raise ValueError(f'books/youtube/books.yaml contains an unfinished hook placeholder: {book_id}')
         override_by_id[book_id] = override
 
     published = sorted(
@@ -140,10 +108,10 @@ def load_books():
         expected_repo = f"https://github.com/{catalog_book['repo']}" if catalog_book.get('repoVisibility') == 'public' else ''
 
         category_ja = override.get('category') or CATEGORY_JA.get(catalog_book.get('category'), catalog_book.get('category', ''))
-        category_en = mapping_en(category_ja) if override.get('category') else CATEGORY_EN.get(catalog_book.get('category'), catalog_book.get('category', ''))
+        category_en = override.get('category_en') or CATEGORY_EN.get(catalog_book.get('category'), catalog_book.get('category', ''))
         levels = catalog_book.get('levels', [])
         level_ja = override.get('level') or '・'.join(LEVEL_JA.get(level, level) for level in levels)
-        level_en = mapping_en(level_ja) if override.get('level') else ' / '.join(LEVEL_EN.get(level, level) for level in levels)
+        level_en = override.get('level_en') or ' / '.join(LEVEL_EN.get(level, level) for level in levels)
         books.append({
             'id': book_id,
             'title_ja': catalog_book['title']['ja'],
@@ -203,11 +171,11 @@ def generate(output_dir=OUTPUT_DIR, output_prompt_dir=OUTPUT_PROMPT_DIR):
         data_en = {
             "{hook_en}": book.get('hook_en', ''),
             "{title_en}": book.get('title_en') or book.get('id') or book.get('title_ja', ''),
-            "{level_en}": book.get('level_en') or mapping_en(level_ja),
-            "{category_en}": book.get('category_en') or mapping_en(cat_ja),
+            "{level_en}": book.get('level_en', ''),
+            "{category_en}": book.get('category_en', ''),
             "{url}": book.get('url', ''),
             "{repo}": book.get('repo', ''),
-            "#{category_tag}": "#" + sanitize_tag(mapping_en(cat_ja)) if category_tag else "",
+            "#{category_tag}": "#" + sanitize_tag(book.get('category_en', '')) if category_tag else "",
             "#{id_tag}": "#" + id_tag
         }
 

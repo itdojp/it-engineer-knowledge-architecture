@@ -5,194 +5,155 @@
   category: 未経験者向け
   level: IT未経験者・初学者
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: wsl2-linux-essentials-book
   category: 未経験者向け
   level: Linux基礎を学習済みの初学者
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: evidence-based-engineering-book
   category: 基礎リテラシー（Professional Foundations）
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: issue-driven-work-book
   category: 基礎リテラシー（Professional Foundations）
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: engineering-documentation-book
   category: 基礎リテラシー（Professional Foundations）
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: security-privacy-literacy-book
   category: 基礎リテラシー（Professional Foundations）
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: incident-response-basics-book
   category: 基礎リテラシー（Professional Foundations）
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: linux-infra-textbook2
   category: 技術基盤（基礎）
   level: 新人〜中級者（経験0–2年）
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: it-infra-software-essentials-book
   category: 技術基盤（基礎）
   level: 新人〜中級者（経験0–2年）
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: IT-infra-book
   category: 技術基盤（基礎）
   level: 新人〜中級者（経験0–2年）
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: IT-infra-troubleshooting-book
   category: 技術基盤（発展）
   level: 中級〜上級者（経験2年以上）
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: cloud-infra-book
   category: 技術基盤（発展）
   level: 中級〜上級者（経験2年以上）
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: it-infra-security-guide-book
   category: セキュリティ
   level: 中級者以上
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: pentest-learning-book
   category: セキュリティ
   level: 中級者以上
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: proxmox_book
   category: 応用技術
   level: 中級者以上
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: kubernetes-basics-book
   category: 応用技術
   level: 中級者以上
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: kubernetes-cluster-ops-book
   category: 応用技術
   level: 中級者以上
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: kubernetes-proxmox-to-cloud-book
   category: 応用技術
   level: 中級者以上
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: podman-book
   category: 応用技術
   level: 中級者以上
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: practical-auth-book
   category: 応用技術
   level: 中級者以上
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: supabase-architecture-patterns-book
   category: 応用技術
   level: 中級者以上
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: theoretical-computer-science-textbook
   category: コンピューターサイエンス理論
   level: 中級者以上
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: categorical-software-design-book
   category: コンピューターサイエンス理論
   level: 中級者以上
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: github-guide-for-beginners-book
   category: 開発・運用プロセス
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: github-workflow-book
   category: 開発・運用プロセス
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: GitHub-AgentOps-book
   category: 開発・運用プロセス
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: ai-agent-engineering-book
   category: 開発・運用プロセス
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: ai-testing-strategy-book
   category: 開発・運用プロセス
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: formal-methods-book
   category: 開発・運用プロセス
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: small-webapp-software-design-book
   category: 開発・運用プロセス
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: BioinformaticsGuide-book
   category: 特定領域・ドメイン知識
   level: 専門分野従事者
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: LogicalThinking-AI-Era-Guide
   category: ソフトスキル・思考法
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: ai-era-engineers-mind-book
   category: ソフトスキル・思考法
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: ai-communication-book
   category: ソフトスキル・思考法
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: negotiation-for-engineers-book
   category: ソフトスキル・思考法
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: IT-engineer-communication-book
   category: ソフトスキル・思考法
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: cs-visionaries-book
   category: 教養・哲学
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: computational-physicalism-book
   category: 教養・哲学
   level: 全レベル
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
 - id: ethereum-learning-bootcamp
   category: Web3・ブロックチェーン
   level: Web3
   hook_ja: 本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。
-  hook_en: Are you struggling with ...?
