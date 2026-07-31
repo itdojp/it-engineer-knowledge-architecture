@@ -126,6 +126,7 @@ def load_books():
         book_id = catalog_book['id']
         override = override_by_id.get(book_id, {})
         expected_url = catalog_book['pagesUrl']
+        expected_url_en = catalog_book.get('englishPagesUrl') or expected_url
         expected_repo = f"https://github.com/{catalog_book['repo']}" if catalog_book.get('repoVisibility') == 'public' else ''
 
         category_ja = override.get('category') or CATEGORY_JA.get(catalog_book.get('category'), catalog_book.get('category', ''))
@@ -142,6 +143,7 @@ def load_books():
             'level': level_ja,
             'level_en': level_en,
             'url': expected_url,
+            'url_en': expected_url_en,
             'repo': expected_repo,
             'hook_ja': override.get('hook_ja') or DEFAULT_HOOK_JA,
             'hook_en': override.get('hook_en') or DEFAULT_HOOK_EN,
@@ -196,7 +198,7 @@ def generate(output_dir=OUTPUT_DIR, output_prompt_dir=OUTPUT_PROMPT_DIR):
             "{title_en}": book.get('title_en') or book.get('id') or book.get('title_ja', ''),
             "{level_en}": book.get('level_en', ''),
             "{category_en}": book.get('category_en', ''),
-            "{url}": book.get('url', ''),
+            "{url}": book.get('url_en', ''),
             "{repo}": book.get('repo', ''),
             "#{category_tag}": "#" + sanitize_tag(book.get('category_en', '')) if category_tag else "",
             "#{id_tag}": "#" + id_tag

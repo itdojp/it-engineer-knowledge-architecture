@@ -24,6 +24,9 @@ class YouTubeSyncContractTest(unittest.TestCase):
         cls.temp_dir = tempfile.TemporaryDirectory()
         cls.description_dir = Path(cls.temp_dir.name) / 'descriptions'
         cls.prompt_dir = Path(cls.temp_dir.name) / 'prompts'
+        cls.description_books_by_id = {
+            book['id']: book for book in generate_descriptions.load_books()
+        }
         generate_descriptions.generate(cls.description_dir, cls.prompt_dir)
 
     @classmethod
@@ -46,6 +49,10 @@ class YouTubeSyncContractTest(unittest.TestCase):
                 book['level_en'],
                 ' / '.join(generate_descriptions.LEVEL_EN[level] for level in catalog_book['levels']),
             )
+            self.assertEqual(
+                book['url_en'],
+                catalog_book.get('englishPagesUrl') or catalog_book['pagesUrl'],
+            )
             self.assertNotIn(book['hook_en'], generate_descriptions.REJECTED_HOOKS)
             if book['id'] in {'ai-agent-collaboration-book', 'BioinformaticsGuide-book'}:
                 self.assertEqual(book['repo'], '')
@@ -59,6 +66,9 @@ class YouTubeSyncContractTest(unittest.TestCase):
                 self.assertNotRegex(text, r'\{(?:title|hook|url|repo|category|level)')
                 self.assertNotRegex(text, r'#\{(?:category_tag|id_tag)\}')
                 self.assertIn(self.youtube['meta']['playlists'][language]['url'], text)
+                description_book = self.description_books_by_id[book['book_id']]
+                url_field = 'url_en' if language == 'en' else 'url'
+                self.assertIn(f"{description_book[url_field]}\n", text)
                 if book['book_id'] in {'ai-agent-collaboration-book', 'BioinformaticsGuide-book'}:
                     self.assertNotIn('GitHub Repository:', text)
                     self.assertNotIn('GitHubリポジトリ:', text)
