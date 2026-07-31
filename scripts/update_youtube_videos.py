@@ -8,10 +8,11 @@ from pathlib import Path
 
 SCOPES = ['https://www.googleapis.com/auth/youtube.force-ssl']
 YOUTUBE_DATA = Path('docs/_data/youtube.json')
+CATALOG_DATA = Path('docs/_data/catalog.json')
 DESCRIPTION_DIR = Path('output/youtube_descriptions')
 
 
-def load_video_inventory(path=YOUTUBE_DATA):
+def load_video_inventory(path=YOUTUBE_DATA, catalog_path=CATALOG_DATA):
     data = json.loads(Path(path).read_text(encoding='utf-8'))
     books = data.get('books')
     if not isinstance(books, list):
@@ -36,7 +37,23 @@ def load_video_inventory(path=YOUTUBE_DATA):
             if video_id in seen_videos:
                 raise ValueError(f'duplicate YouTube video id: {video_id}')
             seen_videos.add(video_id)
-    return books
+
+    catalog = json.loads(Path(catalog_path).read_text(encoding='utf-8'))
+    published = sorted(
+        (book for book in catalog.get('books', []) if book.get('status') == 'published'),
+        key=lambda book: book['displayOrder'],
+    )
+    if [book['book_id'] for book in books] != [book['id'] for book in published]:
+        raise ValueError('YouTube inventory must match published catalog books in displayOrder')
+
+    inventory = []
+    for video_book, catalog_book in zip(books, published):
+        inventory.append({
+            **video_book,
+            'title_ja': catalog_book['title']['ja'],
+            'title_en': catalog_book['title']['en'],
+        })
+    return inventory
 
 
 def validate_descriptions(books, description_dir=DESCRIPTION_DIR):

@@ -59,26 +59,36 @@ class YouTubeSyncContractTest(unittest.TestCase):
                 self.assertNotRegex(text, r'\{(?:title|hook|url|repo|category|level)')
                 self.assertNotRegex(text, r'#\{(?:category_tag|id_tag)\}')
 
-    def test_update_path_uses_only_canonical_video_ids(self):
+    def test_update_path_uses_canonical_video_ids_and_catalog_titles(self):
         books = update_youtube_videos.load_video_inventory()
         observed = []
 
-        def record_update(_youtube, video_id, _title, _description, category_id=None):
-            observed.append(video_id)
+        def record_update(_youtube, video_id, title, _description, category_id=None):
+            observed.append((video_id, title))
             return True
 
         with patch.object(update_youtube_videos, 'update_video', side_effect=record_update):
             with redirect_stdout(io.StringIO()):
                 failures = update_youtube_videos.update_all(object(), books, self.description_dir)
 
-        expected = [
-            video_id
-            for book in self.youtube['books']
-            for video_id in (book['video_ja_id'], book['video_en_id'])
-        ]
+        catalog = json.loads((ROOT / 'docs/_data/catalog.json').read_text(encoding='utf-8'))
+        catalog_by_id = {book['id']: book for book in catalog['books']}
+        expected = []
+        for book in self.youtube['books']:
+            catalog_book = catalog_by_id[book['book_id']]
+            expected.extend((
+                (
+                    book['video_ja_id'],
+                    f"「{catalog_book['title']['ja']}」紹介動画 【ITエンジニア知識アーキテクチャ】"[:100],
+                ),
+                (
+                    book['video_en_id'],
+                    f"'{catalog_book['title']['en'] or book['book_id']}' Overview [IT Engineer Knowledge Architecture]"[:100],
+                ),
+            ))
         self.assertEqual(failures, [])
         self.assertEqual(observed, expected)
-        self.assertEqual(len(set(observed)), 84)
+        self.assertEqual(len({video_id for video_id, _title in observed}), 84)
 
     def test_legacy_override_file_does_not_define_video_ids(self):
         text = (ROOT / 'books/youtube/books.yaml').read_text(encoding='utf-8')
