@@ -105,6 +105,14 @@ test('YouTube data rejects duplicate videos, duplicate positions, and URL mismat
   assert.match(errors, /video_ja_url must match video_ja_id/);
 });
 
+test('YouTube data rejects a duplicated localized playlist', () => {
+  const catalog = loadCatalog(DEFAULT_CATALOG_PATH);
+  const youtube = structuredClone(loadYoutubeData(DEFAULT_YOUTUBE_PATH));
+  youtube.meta.playlists.en = structuredClone(youtube.meta.playlists.ja);
+  const errors = validateYoutubeData(catalog, youtube).join('\n');
+  assert.match(errors, /meta\.playlists IDs contains duplicate value/);
+});
+
 test('YouTube data rejects catalog metadata drift', () => {
   const catalog = loadCatalog(DEFAULT_CATALOG_PATH);
   const youtube = structuredClone(loadYoutubeData(DEFAULT_YOUTUBE_PATH));

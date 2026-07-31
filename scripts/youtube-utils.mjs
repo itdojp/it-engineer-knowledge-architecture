@@ -145,10 +145,13 @@ export function validateYoutubeData(catalog, youtube) {
   }
 
   const expectedPlaylistItems = videoBooks.length + 1;
+  const playlistIds = [];
   for (const language of ['ja', 'en']) {
     validatePlaylist(errors, meta.playlists?.[language], `meta.playlists.${language}`, expectedPlaylistItems);
+    if (meta.playlists?.[language]?.id) playlistIds.push(meta.playlists[language].id);
     validateVideo(errors, meta.seriesOverview?.[language], `meta.seriesOverview.${language}`);
   }
+  addDuplicateErrors(errors, playlistIds, 'meta.playlists IDs');
 
   const mappedBookIds = videoBooks.map((book) => book?.book_id).filter(Boolean);
   addDuplicateErrors(errors, mappedBookIds, 'books.book_id');
