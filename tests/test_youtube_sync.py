@@ -123,6 +123,15 @@ class YouTubeSyncContractTest(unittest.TestCase):
         self.assertNotIn('youtube_id_en:', text)
         self.assertNotIn('Are you struggling with ...?', text)
 
+    def test_inventory_rejects_invalid_video_id_characters_before_api_use(self):
+        youtube = json.loads(json.dumps(self.youtube))
+        youtube['books'][0]['video_ja_id'] = 'bad id!!!!!'
+        youtube['books'][0]['video_ja_url'] = 'https://youtu.be/bad id!!!!!'
+        path = Path(self.temp_dir.name) / 'invalid-youtube.json'
+        path.write_text(json.dumps(youtube), encoding='utf-8')
+        with self.assertRaisesRegex(ValueError, 'valid 11-character YouTube video ID'):
+            update_youtube_videos.load_video_inventory(path)
+
     def test_pull_request_workflow_is_validation_only(self):
         workflow = yaml.load(
             (ROOT / '.github/workflows/youtube_sync.yml').read_text(encoding='utf-8'),

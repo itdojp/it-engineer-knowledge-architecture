@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 
 
@@ -33,8 +34,8 @@ def load_video_inventory(path=YOUTUBE_DATA, catalog_path=CATALOG_DATA):
         for language in ('ja', 'en'):
             video_id = book.get(f'video_{language}_id')
             video_url = book.get(f'video_{language}_url')
-            if not isinstance(video_id, str) or len(video_id) != 11:
-                raise ValueError(f'{book_id}: video_{language}_id must be 11 characters')
+            if not isinstance(video_id, str) or not re.fullmatch(r'[A-Za-z0-9_-]{11}', video_id):
+                raise ValueError(f'{book_id}: video_{language}_id must be a valid 11-character YouTube video ID')
             if video_url != f'https://youtu.be/{video_id}':
                 raise ValueError(f'{book_id}: video_{language}_url does not match video id')
             if video_id in seen_videos:
