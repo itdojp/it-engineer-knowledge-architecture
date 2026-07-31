@@ -10,6 +10,9 @@ SCOPES = ['https://www.googleapis.com/auth/youtube.force-ssl']
 YOUTUBE_DATA = Path('docs/_data/youtube.json')
 CATALOG_DATA = Path('docs/_data/catalog.json')
 DESCRIPTION_DIR = Path('output/youtube_descriptions')
+MAX_VIDEO_TITLE_LENGTH = 100
+TITLE_SUFFIX_JA = '」紹介動画 【ITエンジニア知識アーキテクチャ】'
+TITLE_SUFFIX_EN = "' Overview [IT Engineer Knowledge Architecture]"
 
 
 def load_video_inventory(path=YOUTUBE_DATA, catalog_path=CATALOG_DATA):
@@ -65,6 +68,26 @@ def validate_descriptions(books, description_dir=DESCRIPTION_DIR):
                 missing.append(str(path))
     if missing:
         raise ValueError(f'missing generated descriptions: {missing}')
+
+
+def compose_video_title(book, language):
+    if language == 'ja':
+        prefix = '「'
+        suffix = TITLE_SUFFIX_JA
+        raw_title = book['title_ja']
+    elif language == 'en':
+        prefix = "'"
+        suffix = TITLE_SUFFIX_EN
+        raw_title = book['title_en'] or book['book_id']
+    else:
+        raise ValueError(f'unsupported language: {language}')
+
+    available = MAX_VIDEO_TITLE_LENGTH - len(prefix) - len(suffix)
+    if available < 1:
+        raise ValueError('fixed YouTube title text exceeds the title length limit')
+    if len(raw_title) > available:
+        raw_title = f'{raw_title[:available - 1].rstrip()}…'
+    return f'{prefix}{raw_title}{suffix}'
 
 
 def get_authenticated_service():
@@ -129,15 +152,15 @@ def update_all(youtube, books, description_dir=DESCRIPTION_DIR):
     for book in books:
         book_id = book['book_id']
         titles = {
-            'ja': f"「{book['title_ja']}」紹介動画 【ITエンジニア知識アーキテクチャ】",
-            'en': f"'{book['title_en'] or book_id}' Overview [IT Engineer Knowledge Architecture]",
+            'ja': compose_video_title(book, 'ja'),
+            'en': compose_video_title(book, 'en'),
         }
         for language in ('ja', 'en'):
             description_path = Path(description_dir) / f'{book_id}_{language}.txt'
             description = description_path.read_text(encoding='utf-8')
             video_id = book[f'video_{language}_id']
             print(f'Updating [{language.upper()}]: {titles[language]}')
-            if not update_video(youtube, video_id, titles[language][:100], description):
+            if not update_video(youtube, video_id, titles[language], description):
                 failures.append(f'{book_id}:{language}')
     return failures
 

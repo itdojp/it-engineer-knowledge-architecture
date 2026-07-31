@@ -76,19 +76,31 @@ class YouTubeSyncContractTest(unittest.TestCase):
         expected = []
         for book in self.youtube['books']:
             catalog_book = catalog_by_id[book['book_id']]
+            canonical_book = {
+                **book,
+                'title_ja': catalog_book['title']['ja'],
+                'title_en': catalog_book['title']['en'],
+            }
             expected.extend((
                 (
                     book['video_ja_id'],
-                    f"「{catalog_book['title']['ja']}」紹介動画 【ITエンジニア知識アーキテクチャ】"[:100],
+                    update_youtube_videos.compose_video_title(canonical_book, 'ja'),
                 ),
                 (
                     book['video_en_id'],
-                    f"'{catalog_book['title']['en'] or book['book_id']}' Overview [IT Engineer Knowledge Architecture]"[:100],
+                    update_youtube_videos.compose_video_title(canonical_book, 'en'),
                 ),
             ))
         self.assertEqual(failures, [])
         self.assertEqual(observed, expected)
         self.assertEqual(len({video_id for video_id, _title in observed}), 84)
+        for _video_id, title in observed:
+            self.assertLessEqual(len(title), update_youtube_videos.MAX_VIDEO_TITLE_LENGTH)
+
+        long_title_book = next(book for book in books if book['book_id'] == 'theoretical-computer-science-prerequisites-book')
+        long_title = update_youtube_videos.compose_video_title(long_title_book, 'en')
+        self.assertTrue(long_title.endswith(update_youtube_videos.TITLE_SUFFIX_EN))
+        self.assertIn('…', long_title)
 
     def test_legacy_override_file_does_not_define_video_ids(self):
         text = (ROOT / 'books/youtube/books.yaml').read_text(encoding='utf-8')
