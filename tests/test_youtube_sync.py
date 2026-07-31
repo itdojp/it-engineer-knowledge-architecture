@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 import yaml
 
@@ -131,6 +131,57 @@ class YouTubeSyncContractTest(unittest.TestCase):
         path.write_text(json.dumps(youtube), encoding='utf-8')
         with self.assertRaisesRegex(ValueError, 'valid 11-character YouTube video ID'):
             update_youtube_videos.load_video_inventory(path)
+
+    def test_api_preflight_resolves_all_videos_on_the_owned_channel(self):
+        books = update_youtube_videos.load_video_inventory()
+        channel_id = self.youtube['meta']['channel']['id']
+        video_ids = [
+            book[f'video_{language}_id']
+            for book in books
+            for language in ('ja', 'en')
+        ]
+        youtube = MagicMock()
+        youtube.channels.return_value.list.return_value.execute.return_value = {
+            'items': [{'id': channel_id}],
+        }
+
+        requested_batches = []
+
+        def list_videos(*, part, id):
+            self.assertEqual(part, 'snippet')
+            batch = id.split(',')
+            requested_batches.append(batch)
+            request = MagicMock()
+            request.execute.return_value = {
+                'items': [
+                    {'id': video_id, 'snippet': {'channelId': channel_id}}
+                    for video_id in batch
+                ],
+            }
+            return request
+
+        youtube.videos.return_value.list.side_effect = list_videos
+        with redirect_stdout(io.StringIO()):
+            update_youtube_videos.preflight_video_updates(youtube, books, channel_id)
+        self.assertEqual([len(batch) for batch in requested_batches], [50, 34])
+        self.assertEqual([video_id for batch in requested_batches for video_id in batch], video_ids)
+
+        missing_id = video_ids[-1]
+
+        def list_with_missing(*, part, id):
+            request = MagicMock()
+            request.execute.return_value = {
+                'items': [
+                    {'id': video_id, 'snippet': {'channelId': channel_id}}
+                    for video_id in id.split(',')
+                    if video_id != missing_id
+                ],
+            }
+            return request
+
+        youtube.videos.return_value.list.side_effect = list_with_missing
+        with self.assertRaisesRegex(RuntimeError, missing_id):
+            update_youtube_videos.preflight_video_updates(youtube, books, channel_id)
 
     def test_pull_request_workflow_is_validation_only(self):
         workflow = yaml.load(

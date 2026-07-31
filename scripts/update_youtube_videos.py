@@ -14,6 +14,7 @@ DESCRIPTION_DIR = Path('output/youtube_descriptions')
 MAX_VIDEO_TITLE_LENGTH = 100
 TITLE_SUFFIX_JA = '」紹介動画 【ITエンジニア知識アーキテクチャ】'
 TITLE_SUFFIX_EN = "' Overview [IT Engineer Knowledge Architecture]"
+VIDEO_LOOKUP_BATCH_SIZE = 50
 
 
 def load_video_inventory(path=YOUTUBE_DATA, catalog_path=CATALOG_DATA):
@@ -69,6 +70,44 @@ def validate_descriptions(books, description_dir=DESCRIPTION_DIR):
                 missing.append(str(path))
     if missing:
         raise ValueError(f'missing generated descriptions: {missing}')
+
+
+def load_expected_channel_id(path=YOUTUBE_DATA):
+    data = json.loads(Path(path).read_text(encoding='utf-8'))
+    channel_id = data.get('meta', {}).get('channel', {}).get('id')
+    if not isinstance(channel_id, str) or not re.fullmatch(r'UC[A-Za-z0-9_-]{22}', channel_id):
+        raise ValueError('docs/_data/youtube.json must define a valid canonical channel ID')
+    return channel_id
+
+
+def preflight_video_updates(youtube, books, expected_channel_id):
+    owned_channels = youtube.channels().list(part='id', mine=True).execute().get('items', [])
+    owned_channel_ids = {channel.get('id') for channel in owned_channels}
+    if expected_channel_id not in owned_channel_ids:
+        raise RuntimeError('authenticated account does not own the canonical YouTube channel')
+
+    video_ids = [
+        book[f'video_{language}_id']
+        for book in books
+        for language in ('ja', 'en')
+    ]
+    found = {}
+    for offset in range(0, len(video_ids), VIDEO_LOOKUP_BATCH_SIZE):
+        batch = video_ids[offset:offset + VIDEO_LOOKUP_BATCH_SIZE]
+        response = youtube.videos().list(part='snippet', id=','.join(batch)).execute()
+        for item in response.get('items', []):
+            found[item.get('id')] = item.get('snippet', {}).get('channelId')
+
+    missing = [video_id for video_id in video_ids if video_id not in found]
+    wrong_channel = [
+        video_id for video_id in video_ids
+        if video_id in found and found[video_id] != expected_channel_id
+    ]
+    if missing or wrong_channel:
+        raise RuntimeError(
+            f'YouTube preflight failed; missing videos={missing}, wrong-channel videos={wrong_channel}'
+        )
+    print(f'✅ YouTube API preflight passed ({len(video_ids)} videos owned by {expected_channel_id})')
 
 
 def compose_video_title(book, language):
@@ -182,6 +221,7 @@ def main():
 
     print('Authenticating with the YouTube Data API...')
     youtube = get_authenticated_service()
+    preflight_video_updates(youtube, books, load_expected_channel_id())
     failures = update_all(youtube, books)
     if failures:
         raise RuntimeError(f'YouTube updates failed: {failures}')
