@@ -65,10 +65,14 @@ class YouTubeSyncContractTest(unittest.TestCase):
 
     def test_playlist_url_substitution_replaces_stale_template_value(self):
         template = 'Playlist:\nhttps://www.youtube.com/playlist?list=STALE_VALUE\n'
-        canonical_url = self.youtube['meta']['playlists']['en']['url']
-        generated = generate_descriptions.apply_canonical_playlist_url(template, canonical_url)
-        self.assertIn(canonical_url, generated)
+        playlist = self.youtube['meta']['playlists']['en']
+        generated = generate_descriptions.apply_canonical_playlist_url(template, playlist)
+        self.assertIn(playlist['url'], generated)
         self.assertNotIn('STALE_VALUE', generated)
+
+        mismatched = {**playlist, 'url': 'https://www.youtube.com/playlist?list=MISMATCHED_ID'}
+        with self.assertRaisesRegex(ValueError, 'does not match its ID'):
+            generate_descriptions.apply_canonical_playlist_url(template, mismatched)
 
     def test_update_path_uses_canonical_video_ids_and_catalog_titles(self):
         books = update_youtube_videos.load_video_inventory()

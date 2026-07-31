@@ -72,12 +72,17 @@ def sanitize_tag(text):
     text = text.replace('（', '').replace('）', '').replace('・', '')
     return ''.join([c for c in text if c.isalnum()])
 
-def apply_canonical_playlist_url(template, playlist_url):
-    if not isinstance(playlist_url, str) or not playlist_url.startswith('https://www.youtube.com/playlist?list='):
-        raise ValueError(f'invalid canonical playlist URL: {playlist_url!r}')
+def apply_canonical_playlist_url(template, playlist):
+    playlist_id = playlist.get('id')
+    playlist_url = playlist.get('url')
+    if not isinstance(playlist_id, str) or not re.fullmatch(r'[A-Za-z0-9_-]{13,80}', playlist_id):
+        raise ValueError(f'invalid canonical playlist ID: {playlist_id!r}')
+    expected_url = f'https://www.youtube.com/playlist?list={playlist_id}'
+    if playlist_url != expected_url:
+        raise ValueError(f'canonical playlist URL does not match its ID: {playlist_url!r}')
     if len(PLAYLIST_URL_PATTERN.findall(template)) != 1:
         raise ValueError('YouTube description template must contain exactly one playlist URL')
-    return PLAYLIST_URL_PATTERN.sub(playlist_url, template, count=1)
+    return PLAYLIST_URL_PATTERN.sub(expected_url, template, count=1)
 
 def omit_repository_section(template, section):
     if section not in template:
@@ -149,10 +154,10 @@ def generate(output_dir=OUTPUT_DIR, output_prompt_dir=OUTPUT_PROMPT_DIR):
         youtube = json.load(f)
         
     with open(TEMPLATE_JA, 'r', encoding='utf-8') as f:
-        tmpl_ja = apply_canonical_playlist_url(f.read(), youtube['meta']['playlists']['ja']['url'])
+        tmpl_ja = apply_canonical_playlist_url(f.read(), youtube['meta']['playlists']['ja'])
         
     with open(TEMPLATE_EN, 'r', encoding='utf-8') as f:
-        tmpl_en = apply_canonical_playlist_url(f.read(), youtube['meta']['playlists']['en']['url'])
+        tmpl_en = apply_canonical_playlist_url(f.read(), youtube['meta']['playlists']['en'])
         
     with open(PROMPT_JA, 'r', encoding='utf-8') as f:
         prompt_tmpl_ja = f.read()
