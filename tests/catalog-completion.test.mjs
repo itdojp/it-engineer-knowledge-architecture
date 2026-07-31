@@ -8,6 +8,11 @@ import {
   DEFAULT_CATALOG_PATH,
   loadCatalog
 } from '../scripts/catalog-utils.mjs';
+import {
+  DEFAULT_YOUTUBE_PATH,
+  loadYoutubeData,
+  validateYoutubeData
+} from '../scripts/youtube-utils.mjs';
 
 function book(overrides = {}) {
   return {
@@ -66,4 +71,46 @@ test('schema errors short-circuit completion checks without throwing', () => {
   const malformedBooks = structuredClone(loadCatalog(DEFAULT_CATALOG_PATH));
   malformedBooks.books = {};
   assert.match(checkCatalogCompletion(malformedBooks).join('\n'), /books must be an array/);
+});
+
+test('YouTube data covers every published book and intentionally accepts 13-character playlist IDs', () => {
+  const youtube = loadYoutubeData(DEFAULT_YOUTUBE_PATH);
+  assert.equal(youtube.meta.playlists.ja.id.length, 13);
+  assert.equal(youtube.meta.playlists.en.id.length, 13);
+  assert.deepEqual(validateYoutubeData(loadCatalog(DEFAULT_CATALOG_PATH), youtube), []);
+});
+
+test('YouTube data rejects missing published coverage and stale planned-book exclusions', () => {
+  const catalog = loadCatalog(DEFAULT_CATALOG_PATH);
+  const youtube = structuredClone(loadYoutubeData(DEFAULT_YOUTUBE_PATH));
+  youtube.books.pop();
+  youtube.meta.booksWithVideo -= 1;
+  youtube.meta.playlists.ja.itemCount -= 1;
+  youtube.meta.playlists.en.itemCount -= 1;
+  youtube.meta.booksWithoutVideo[0].title_ja = 'stale title';
+  const errors = validateYoutubeData(catalog, youtube).join('\n');
+  assert.match(errors, /cover every published catalog book exactly once/);
+  assert.match(errors, /booksWithoutVideo must match planned catalog books/);
+});
+
+test('YouTube data rejects duplicate videos, duplicate positions, and URL mismatches', () => {
+  const catalog = loadCatalog(DEFAULT_CATALOG_PATH);
+  const youtube = structuredClone(loadYoutubeData(DEFAULT_YOUTUBE_PATH));
+  youtube.books[1].playlist_position = youtube.books[0].playlist_position;
+  youtube.books[1].video_ja_id = youtube.books[0].video_ja_id;
+  youtube.books[1].video_ja_url = 'https://youtu.be/not-the-video';
+  const errors = validateYoutubeData(catalog, youtube).join('\n');
+  assert.match(errors, /playlist_position contains duplicate value/);
+  assert.match(errors, /YouTube video IDs contains duplicate value/);
+  assert.match(errors, /video_ja_url must match video_ja_id/);
+});
+
+test('YouTube data rejects catalog metadata drift', () => {
+  const catalog = loadCatalog(DEFAULT_CATALOG_PATH);
+  const youtube = structuredClone(loadYoutubeData(DEFAULT_YOUTUBE_PATH));
+  youtube.books[0].title_ja = 'outdated title';
+  youtube.books[0].pages_url = 'https://example.com/';
+  const errors = validateYoutubeData(catalog, youtube).join('\n');
+  assert.match(errors, /title_ja must match catalog value/);
+  assert.match(errors, /pages_url must match catalog value/);
 });

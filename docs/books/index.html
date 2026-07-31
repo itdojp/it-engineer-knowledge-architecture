@@ -5,6 +5,7 @@ description: IT Engineer Knowledge Architecture の全書籍カタログ。公�
 permalink: /books/
 ---
 {% assign catalog = site.data.catalog %}
+{% assign youtube = site.data.youtube %}
 {% assign books = catalog.books | sort: 'displayOrder' %}
 {% assign categories = books | map: 'category' | uniq | sort %}
 {% assign main_count = 0 %}
@@ -23,6 +24,7 @@ permalink: /books/
 <nav aria-label="このページ内の移動" class="notice-box">
   <a href="#catalog-cards">カタログカードへ移動</a> |
   <a href="{{ '/paths/' | relative_url }}">学習パスを見る</a> |
+  <a href="{{ youtube.meta.playlists.ja.url | escape }}">書籍紹介の再生リストを見る</a> |
   <a href="{{ '/' | relative_url }}">ホームへ戻る</a>
 </nav>
 
@@ -91,6 +93,7 @@ permalink: /books/
 
 <section id="catalog-cards" class="book-grid" aria-label="書籍カタログカード">
 {% for book in books %}
+  {% assign video = youtube.books | where: 'book_id', book.id | first %}
   {% assign summary = book.summary.ja %}
   {% if summary == '' %}{% assign summary = book.summary.en %}{% endif %}
   {% assign tags_text = book.tags | join: ' ' %}
@@ -123,6 +126,10 @@ permalink: /books/
     {% endif %}
     <div class="card-actions">
       {% if book.pagesUrl %}<a href="{{ book.pagesUrl }}">読む</a>{% endif %}
+      {% if video %}
+        <a class="secondary" data-book-video data-video-language="ja" href="{{ video.video_ja_url | escape }}" aria-label="{{ book.title.ja | escape }}の紹介動画（日本語）">紹介動画（日本語）</a>
+        <a class="secondary" data-book-video data-video-language="en" href="{{ video.video_en_url | escape }}" aria-label="{{ book.title.ja | escape }}の紹介動画（英語）">紹介動画（英語）</a>
+      {% endif %}
       {% if book.repo and book.repoVisibility == 'public' %}<a class="secondary" href="https://github.com/{{ book.repo }}">リポジトリ</a>{% endif %}
     </div>
     {% if book.status == 'planned' %}

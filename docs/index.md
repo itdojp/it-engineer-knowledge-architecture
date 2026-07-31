@@ -5,6 +5,9 @@ description: 実務で活かせるITエンジニア学習ロードマップ – 
 permalink: /
 ---
 {% assign catalog = site.data.catalog %}
+{% assign youtube = site.data.youtube %}
+{% assign ja_overview_minutes = youtube.meta.seriesOverview.ja.durationSec | divided_by: 60 %}
+{% assign ja_overview_seconds = youtube.meta.seriesOverview.ja.durationSec | modulo: 60 %}
 {% assign books = catalog.books | sort: 'displayOrder' %}
 {% assign main_count = 0 %}
 {% assign planned_count = 0 %}
@@ -24,6 +27,16 @@ permalink: /
   <div class="summary-metric"><strong>{{ planned_count }}</strong>計画書籍</div>
   <div class="summary-metric"><strong>{{ related_count }}</strong>関連する独立英語書籍</div>
   <div class="summary-metric"><strong>{{ catalog.learningPaths | size }}</strong>学習パス</div>
+</section>
+
+<section class="notice-box" aria-labelledby="series-video-heading">
+  <h2 id="series-video-heading">動画でシリーズを知る</h2>
+  <p>シリーズ全体の紹介動画、書籍紹介の再生リスト、ITDO公式YouTubeチャンネルを公開しています。</p>
+  <div class="card-actions">
+    <a data-series-video data-video-language="ja" href="{{ youtube.meta.seriesOverview.ja.url | escape }}">シリーズ紹介動画を見る（日本語・{{ ja_overview_minutes }}分{{ ja_overview_seconds }}秒）</a>
+    <a class="secondary" data-youtube-playlist data-video-language="ja" href="{{ youtube.meta.playlists.ja.url | escape }}">書籍紹介の再生リストを見る（{{ youtube.meta.playlists.ja.itemCount }}本）</a>
+    <a class="secondary" data-youtube-channel href="{{ youtube.meta.channel.url | escape }}">ITDO公式YouTubeチャンネル</a>
+  </div>
 </section>
 
 <section class="path-grid" aria-label="主要入口">

@@ -23,6 +23,20 @@ Primary entry points:
 **IT Engineer Knowledge Architecture** is the public catalog for ITDO's technical book lineup.
 The Japanese top page remains the primary landing page for Japanese readers, while this `/en/` page provides an English-language catalog view of the full lineup.
 
+{% assign youtube = site.data.youtube %}
+{% assign en_overview_minutes = youtube.meta.seriesOverview.en.durationSec | divided_by: 60 %}
+{% assign en_overview_seconds = youtube.meta.seriesOverview.en.durationSec | modulo: 60 %}
+
+<section class="notice-box" aria-labelledby="series-video-heading-en">
+  <h2 id="series-video-heading-en">Watch the series overview</h2>
+  <p>Start with the English series overview, continue through the book-introduction playlist, or visit the official ITDO YouTube channel.</p>
+  <div class="card-actions">
+    <a data-series-video data-video-language="en" href="{{ youtube.meta.seriesOverview.en.url | escape }}">Watch the English series overview ({{ en_overview_minutes }} min {{ en_overview_seconds }} sec)</a>
+    <a class="secondary" data-youtube-playlist data-video-language="en" href="{{ youtube.meta.playlists.en.url | escape }}">Open the book-introduction playlist ({{ youtube.meta.playlists.en.itemCount }} videos)</a>
+    <a class="secondary" data-youtube-channel href="{{ youtube.meta.channel.url | escape }}">Visit the official ITDO YouTube channel</a>
+  </div>
+</section>
+
 {% assign catalog_books = site.data.catalog.books | sort: "displayOrder" %}
 {% assign main_books = catalog_books | where: "countingGroup", "main-lineup" %}
 {% assign independent_books = catalog_books | where: "countingGroup", "related-independent" %}
@@ -78,6 +92,7 @@ The table below is rendered directly from `docs/_data/catalog.json`. Titles foll
   </thead>
   <tbody>
   {% for book in catalog_books %}
+    {% assign video = youtube.books | where: 'book_id', book.id | first %}
     {% assign display_title = book.officialEnglishTitle %}
     {% if display_title == nil or display_title == '' %}{% assign display_title = book.title.en %}{% endif %}
     {% capture availability %}{% if book.status == 'planned' %}Planned{% elsif book.countingGroup == 'related-independent' %}Independent EN book{% elsif book.languages contains 'en' %}EN available{% else %}JA only{% endif %}{% if book.publicationScope == 'free-preview' %}; free preview{% endif %}{% endcapture %}
@@ -97,6 +112,10 @@ The table below is rendered directly from `docs/_data/catalog.json`. Titles foll
         {% if book.repo and book.repoVisibility == 'public' %}{% if book.pagesUrl or book.englishPagesUrl %} / {% endif %}<a href="https://github.com/{{ book.repo | escape }}">Repository</a>{% elsif book.repoVisibility == 'private' %}{% if book.pagesUrl or book.englishPagesUrl %} / {% endif %}<span>Repository private</span>{% endif %}
         {% for related_id in book.relatedEditions %}{% assign related_book = catalog_books | where: 'id', related_id | first %}{% if related_book and related_book.pagesUrl %} / <a href="{{ related_book.pagesUrl | escape }}">Related: {{ related_book.officialEnglishTitle | default: related_book.title.en | escape }}</a>{% endif %}{% endfor %}
         {% if book.status == 'planned' or book.repoVisibility == 'not-created' %}<span>Not yet available</span>{% endif %}
+        {% if video %}<br>
+          <a data-book-video data-video-language="en" href="{{ video.video_en_url | escape }}" aria-label="English introduction video for {{ display_title | escape }}">Introduction video (EN)</a> /
+          <a data-book-video data-video-language="ja" href="{{ video.video_ja_url | escape }}" aria-label="Japanese introduction video for {{ display_title | escape }}">Introduction video (JA)</a>
+        {% endif %}
       </td>
     </tr>
   {% endfor %}
