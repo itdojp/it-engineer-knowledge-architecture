@@ -1,6 +1,7 @@
 import yaml
 import os
 import json
+import re
 
 BOOKS_YAML = 'books/youtube/books.yaml'
 CATALOG_JSON = 'docs/_data/catalog.json'
@@ -15,6 +16,9 @@ OUTPUT_PROMPT_DIR = 'output/youtube_prompts'
 DEFAULT_HOOK_JA = '本動画は、実務で必要とされる知識を体系的に深めたいエンジニアの方々に向けた解説です。'
 DEFAULT_HOOK_EN = 'Explore the book overview, intended readers, and practical learning outcomes.'
 REJECTED_HOOKS = {'Are you struggling with ...?'}
+PLAYLIST_URL_PATTERN = re.compile(r'https://www\.youtube\.com/playlist\?list=[A-Za-z0-9_-]+')
+REPOSITORY_SECTION_JA = '📦 GitHubリポジトリ:\n{repo}\n\n'
+REPOSITORY_SECTION_EN = '📦 GitHub Repository:\n{repo}\n\n'
 
 CATEGORY_JA = {
     'beginner-track': '未経験者向け',
@@ -67,6 +71,18 @@ LEVEL_EN = {
 def sanitize_tag(text):
     text = text.replace('（', '').replace('）', '').replace('・', '')
     return ''.join([c for c in text if c.isalnum()])
+
+def apply_canonical_playlist_url(template, playlist_url):
+    if not isinstance(playlist_url, str) or not playlist_url.startswith('https://www.youtube.com/playlist?list='):
+        raise ValueError(f'invalid canonical playlist URL: {playlist_url!r}')
+    if len(PLAYLIST_URL_PATTERN.findall(template)) != 1:
+        raise ValueError('YouTube description template must contain exactly one playlist URL')
+    return PLAYLIST_URL_PATTERN.sub(playlist_url, template, count=1)
+
+def omit_repository_section(template, section):
+    if section not in template:
+        raise ValueError('YouTube description template is missing the expected repository section')
+    return template.replace(section, '', 1)
 
 def load_books():
     with open(BOOKS_YAML, 'r', encoding='utf-8') as f:
@@ -129,12 +145,14 @@ def load_books():
 
 def generate(output_dir=OUTPUT_DIR, output_prompt_dir=OUTPUT_PROMPT_DIR):
     books = load_books()
+    with open(YOUTUBE_JSON, 'r', encoding='utf-8') as f:
+        youtube = json.load(f)
         
     with open(TEMPLATE_JA, 'r', encoding='utf-8') as f:
-        tmpl_ja = f.read()
+        tmpl_ja = apply_canonical_playlist_url(f.read(), youtube['meta']['playlists']['ja']['url'])
         
     with open(TEMPLATE_EN, 'r', encoding='utf-8') as f:
-        tmpl_en = f.read()
+        tmpl_en = apply_canonical_playlist_url(f.read(), youtube['meta']['playlists']['en']['url'])
         
     with open(PROMPT_JA, 'r', encoding='utf-8') as f:
         prompt_tmpl_ja = f.read()
@@ -180,7 +198,7 @@ def generate(output_dir=OUTPUT_DIR, output_prompt_dir=OUTPUT_PROMPT_DIR):
         }
 
         # Generate JA
-        text_ja = tmpl_ja
+        text_ja = tmpl_ja if book.get('repo') else omit_repository_section(tmpl_ja, REPOSITORY_SECTION_JA)
         for k, v in data_ja.items():
             text_ja = text_ja.replace(k, str(v))
             
@@ -188,7 +206,7 @@ def generate(output_dir=OUTPUT_DIR, output_prompt_dir=OUTPUT_PROMPT_DIR):
             f.write(text_ja)
 
         # Generate EN
-        text_en = tmpl_en
+        text_en = tmpl_en if book.get('repo') else omit_repository_section(tmpl_en, REPOSITORY_SECTION_EN)
         for k, v in data_en.items():
             text_en = text_en.replace(k, str(v))
             

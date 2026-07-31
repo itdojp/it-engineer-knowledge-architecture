@@ -58,6 +58,17 @@ class YouTubeSyncContractTest(unittest.TestCase):
                 text = (self.description_dir / f"{book['book_id']}_{language}.txt").read_text(encoding='utf-8')
                 self.assertNotRegex(text, r'\{(?:title|hook|url|repo|category|level)')
                 self.assertNotRegex(text, r'#\{(?:category_tag|id_tag)\}')
+                self.assertIn(self.youtube['meta']['playlists'][language]['url'], text)
+                if book['book_id'] in {'ai-agent-collaboration-book', 'BioinformaticsGuide-book'}:
+                    self.assertNotIn('GitHub Repository:', text)
+                    self.assertNotIn('GitHubリポジトリ:', text)
+
+    def test_playlist_url_substitution_replaces_stale_template_value(self):
+        template = 'Playlist:\nhttps://www.youtube.com/playlist?list=STALE_VALUE\n'
+        canonical_url = self.youtube['meta']['playlists']['en']['url']
+        generated = generate_descriptions.apply_canonical_playlist_url(template, canonical_url)
+        self.assertIn(canonical_url, generated)
+        self.assertNotIn('STALE_VALUE', generated)
 
     def test_update_path_uses_canonical_video_ids_and_catalog_titles(self):
         books = update_youtube_videos.load_video_inventory()
