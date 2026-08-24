@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-07-22",
+  "updatedAt": "2026-08-24",
   "sourcePolicy": {
     "canonical": "docs/_data/catalog.json",
     "derivedFiles": [
@@ -1414,7 +1414,7 @@
       "relatedEditions": [],
       "reviewStatus": "review-needed",
       "lastReviewedAt": null,
-      "reviewIssue": 276,
+      "reviewIssue": 284,
       "ux": {
         "profile": "B",
         "modules": {
@@ -1429,10 +1429,11 @@
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-22",
+      "updatedAt": "2026-08-24",
       "notes": [
         "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/proxmox_book#131で、source main bc8cf4bfb6a638b7da771162a43c1de25afce820のREADME、book-config、公開トップ、導入、環境準備、運用章、図表導線を照合し、対象読者、Profile B、modulesを確定。一般的なライセンス表記は専用legal notice moduleとして扱わず、所要時間は週換算しないためestimatedWeeksはnullを維持した。根拠のある前提・次読書籍はない。",
-        "2026-07-22のContent Remediation最終監査（itdojp/it-engineer-knowledge-architecture#275）では、source Issue 119件中118件がCompleted。proxmox_book#2だけは真正なProxmox VE 9.1実機画像15点が未取得で、lab accessを再開条件として#276 Phase 6へ継続したため、review-needed / lastReviewedAt=nullを維持する。"
+        "2026-07-22のContent Remediation最終監査（itdojp/it-engineer-knowledge-architecture#275）では、source Issue 119件中118件がCompleted。proxmox_book#2だけは真正なProxmox VE 9.1実機画像15点が未取得で、lab accessを再開条件として#276 Phase 6へ継続したため、review-needed / lastReviewedAt=nullを維持する。",
+        "2026-08-24のQuality Sprint（itdojp/it-engineer-knowledge-architecture#284）で、source main 41004602ee3416769fd78d8cba1b0ec95cef38c4から外部リンク、repository固有QA、固定formatter content QA、Pages API、公開13 route、320〜1366px表示を再監査した。source Issue itdojp/proxmox_book#135 / PR #136でbare license URLを意味のあるリンクへ変更し、merge 33597a6bcb8e9fe34c3f8b8862ae35a4e99c8c5b、main QA / Pages / HTTP 200を確認した。一方、itdojp/proxmox_book#2の真正なProxmox VE 9.1 lab画像は未完了のため、review-needed / lastReviewedAt=nullを維持する。共有Headerはitdojp/book-formatter#115、formatter依存監査は#114へ分離した。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/proxmox_book/blob/bc8cf4bfb6a638b7da771162a43c1de25afce820/README.md",
@@ -1449,7 +1450,13 @@
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/214#issuecomment-4950006573",
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/275",
         "https://github.com/itdojp/proxmox_book/issues/2",
-        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/276"
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/276",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/284",
+        "https://github.com/itdojp/proxmox_book/issues/135",
+        "https://github.com/itdojp/proxmox_book/pull/136",
+        "https://github.com/itdojp/proxmox_book/blob/33597a6bcb8e9fe34c3f8b8862ae35a4e99c8c5b/docs/index.md",
+        "https://github.com/itdojp/book-formatter/issues/114",
+        "https://github.com/itdojp/book-formatter/issues/115"
       ]
     },
     {
@@ -1501,8 +1508,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-22",
-      "reviewIssue": 275,
+      "lastReviewedAt": "2026-08-24",
+      "reviewIssue": 284,
       "ux": {
         "profile": "B",
         "modules": {
@@ -1517,10 +1524,11 @@
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-22",
+      "updatedAt": "2026-08-24",
       "notes": [
         "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-basics-book#34で、source main 8e02d0298fc9a9bb960b0bb1acec5d5fea259522のREADME、両config、公開トップ、導入、チェックリスト、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。itdojp/it-engineer-knowledge-architecture#216で、コンテナ基礎を先に学ぶcanonical pathはpodman-bookから本書へ進む順へ補正した。一方、本文・あとがきのPodman本は基礎を後から補う任意参照として有効なため、recommendedAfterはkubernetes-cluster-ops-bookとpodman-bookを維持する。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。",
-        "2026-07-13にitdojp/it-engineer-knowledge-architecture#215、source Issue itdojp/kubernetes-basics-book#36、source PR itdojp/kubernetes-basics-book#37で公開本文から参照されるPNG exact 12件を収録した付録Eの専用図表索引、本文stable anchor、top/sidebar/prev-next導線、回帰gateを実装。source main 3e427f86a08efaf8168c2faed9ce74384cbecb7a、Book QA、Pages、公開索引から本文anchorへの本番疎通を確認し、figureIndex=trueへ更新した。既存のスクリーンショット取得Issueは別スコープを維持する。"
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#215、source Issue itdojp/kubernetes-basics-book#36、source PR itdojp/kubernetes-basics-book#37で公開本文から参照されるPNG exact 12件を収録した付録Eの専用図表索引、本文stable anchor、top/sidebar/prev-next導線、回帰gateを実装。source main 3e427f86a08efaf8168c2faed9ce74384cbecb7a、Book QA、Pages、公開索引から本文anchorへの本番疎通を確認し、figureIndex=trueへ更新した。既存のスクリーンショット取得Issueは別スコープを維持する。",
+        "2026-08-24のQuality Sprint（itdojp/it-engineer-knowledge-architecture#284）で、source main 5c81a465fe3f5a2d3117acbea531ce3a71e72e4cから外部リンク、repository固有QA、root audit 0件、固定formatter content QA、Pages API、公開19 route、技術時点情報、320〜1366px表示を再監査した。source Issue itdojp/kubernetes-basics-book#43 / PR #44でresource列挙と委譲先リンクを狭幅で改行可能にし、merge 937154c54b8628ebaf9bbe3f86b7ae92e1acac54、main QA / Pages / HTTP 200を確認した。共有Headerはitdojp/book-formatter#115、formatter依存監査は#114へ分離した。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/kubernetes-basics-book/blob/8e02d0298fc9a9bb960b0bb1acec5d5fea259522/README.md",
@@ -1552,7 +1560,13 @@
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/275",
         "https://github.com/itdojp/kubernetes-basics-book/issues/40",
         "https://github.com/itdojp/kubernetes-basics-book/pull/41",
-        "https://github.com/itdojp/kubernetes-basics-book/commit/7c40d8afebd45619f81f763657ac682238c06a33"
+        "https://github.com/itdojp/kubernetes-basics-book/commit/7c40d8afebd45619f81f763657ac682238c06a33",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/284",
+        "https://github.com/itdojp/kubernetes-basics-book/issues/43",
+        "https://github.com/itdojp/kubernetes-basics-book/pull/44",
+        "https://github.com/itdojp/kubernetes-basics-book/blob/937154c54b8628ebaf9bbe3f86b7ae92e1acac54/docs/index.md",
+        "https://github.com/itdojp/book-formatter/issues/114",
+        "https://github.com/itdojp/book-formatter/issues/115"
       ]
     },
     {
@@ -1606,8 +1620,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-22",
-      "reviewIssue": 275,
+      "lastReviewedAt": "2026-08-24",
+      "reviewIssue": 284,
       "ux": {
         "profile": "B",
         "modules": {
@@ -1622,10 +1636,11 @@
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-22",
+      "updatedAt": "2026-08-24",
       "notes": [
         "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-cluster-ops-book#34で、source main b1cda610e6c006589093b5cce1b5d7a6f63b6474のREADME、両config、公開トップ、導入、チェックリスト、Runbook、トラブルシュート導線を照合し、対象読者、Profile B、modulesを確定。本文で案内されたkubernetes-basics-bookを前提とする。itdojp/it-engineer-knowledge-architecture#216では、kubernetes-proxmox-to-cloud-bookを必須前提ではない線形パス上の発展先として維持した。週数根拠がないためestimatedWeeksはnull。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。",
-        "2026-07-13にitdojp/it-engineer-knowledge-architecture#215、source Issue itdojp/kubernetes-cluster-ops-book#36、source PR itdojp/kubernetes-cluster-ops-book#37で公開本文から参照されるPNG exact 2件を収録した付録Dの専用図表索引、本文stable anchor、top/sidebar/prev/next導線、回帰gateを実装。source main d9a9a0abf67a95cc5ace2df1932755c4dd38f928、Book QA、Pages、公開索引から本文anchorへの本番疎通を確認し、figureIndex=trueへ更新した。既存のスクリーンショット取得Issueは別スコープを維持する。"
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#215、source Issue itdojp/kubernetes-cluster-ops-book#36、source PR itdojp/kubernetes-cluster-ops-book#37で公開本文から参照されるPNG exact 2件を収録した付録Dの専用図表索引、本文stable anchor、top/sidebar/prev/next導線、回帰gateを実装。source main d9a9a0abf67a95cc5ace2df1932755c4dd38f928、Book QA、Pages、公開索引から本文anchorへの本番疎通を確認し、figureIndex=trueへ更新した。既存のスクリーンショット取得Issueは別スコープを維持する。",
+        "2026-08-24のQuality Sprint（itdojp/it-engineer-knowledge-architecture#284）で、source main 15f25cf1876a15e6ffae7e2444b239576e42eda4から外部リンク、repository固有QA、root audit 0件、固定formatter content QA、Pages API、公開20 route、技術時点情報、320〜1366px表示を再監査した。本文・リンク・metadataに修正必須事項はなく、content PRは不要と判定した。共有Headerの狭幅overflowはconsumer固有修正を行わずitdojp/book-formatter#115へ証跡を集約し、formatter依存監査は#114へ分離した。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/b1cda610e6c006589093b5cce1b5d7a6f63b6474/README.md",
@@ -1657,7 +1672,11 @@
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/275",
         "https://github.com/itdojp/kubernetes-cluster-ops-book/issues/40",
         "https://github.com/itdojp/kubernetes-cluster-ops-book/pull/41",
-        "https://github.com/itdojp/kubernetes-cluster-ops-book/commit/7e85d9e0f1d0ad01e7e3313702610a1eb56dbf38"
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/commit/7e85d9e0f1d0ad01e7e3313702610a1eb56dbf38",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/284",
+        "https://github.com/itdojp/kubernetes-cluster-ops-book/blob/15f25cf1876a15e6ffae7e2444b239576e42eda4/docs/index.md",
+        "https://github.com/itdojp/book-formatter/issues/114",
+        "https://github.com/itdojp/book-formatter/issues/115"
       ]
     },
     {
@@ -1707,8 +1726,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-22",
-      "reviewIssue": 275,
+      "lastReviewedAt": "2026-08-24",
+      "reviewIssue": 284,
       "ux": {
         "profile": "B",
         "modules": {
@@ -1723,10 +1742,11 @@
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-22",
+      "updatedAt": "2026-08-24",
       "notes": [
         "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#214とitdojp/kubernetes-proxmox-to-cloud-book#39で、source main d445b408e506551923bb3c1aa38d383ba9961e24のREADME、book-config、公開トップ、Quick Start、読み方、ライセンスFAQ、チェックリスト、トラブルシュート、用語集を照合し、対象読者、Profile B、modulesを確定。1〜3週間の範囲表記はcatalogの単一整数へ任意転記せずestimatedWeeksはnull。必須前提は追加しない。itdojp/it-engineer-knowledge-architecture#216でcloud-container線形パスの発展的な終点へ補正し、根拠のある次読書籍がないためrecommendedAfterは空を維持する。専用図表索引の実装はitdojp/it-engineer-knowledge-architecture#215で追跡する。",
-        "2026-07-13にitdojp/it-engineer-knowledge-architecture#215、source Issue itdojp/kubernetes-proxmox-to-cloud-book#41、source PR itdojp/kubernetes-proxmox-to-cloud-book#43で既存Mermaid概念図 exact 5件をaccessibility情報付き静的SVGへ変換し、専用図表索引、本文stable anchor、top/sidebar/prev/next導線、回帰gateを実装。source main acf583079eaf0257bf87c64a811c56155a5ab2c8、Book QA、Pages、公開索引から本文anchorへの本番疎通を確認し、figureIndex=trueへ更新した。既存のスクリーンショット取得Issueは別スコープを維持する。"
+        "2026-07-13にitdojp/it-engineer-knowledge-architecture#215、source Issue itdojp/kubernetes-proxmox-to-cloud-book#41、source PR itdojp/kubernetes-proxmox-to-cloud-book#43で既存Mermaid概念図 exact 5件をaccessibility情報付き静的SVGへ変換し、専用図表索引、本文stable anchor、top/sidebar/prev/next導線、回帰gateを実装。source main acf583079eaf0257bf87c64a811c56155a5ab2c8、Book QA、Pages、公開索引から本文anchorへの本番疎通を確認し、figureIndex=trueへ更新した。既存のスクリーンショット取得Issueは別スコープを維持する。",
+        "2026-08-24のQuality Sprint（itdojp/it-engineer-knowledge-architecture#284）で、source main d6b780154e7ed15fc8b394104286895281fc0ae8から外部リンク、repository固有QA、root audit 0件、固定formatter content QA、Pages API、公開25 route、Proxmox VE / Kubernetes / Envoy Gatewayの技術時点情報、320〜1366px表示を再監査した。source Issue #52 / PR #53で出版ガイド404を修正しmerge 67b81c9331132275a1d9ebf720483790867aafcd、Issue #54 / PR #55で環境差分列挙を狭幅対応しmerge 4e127f19e67a79882e8b9ba421300d5a756f9690、main QA / Pages / HTTP 200を確認した。legacy Pagesのmanaged Node warningとGemfile compatibility annotationはitdojp/it-engineer-knowledge-architecture#271へ分離し、共有Headerはitdojp/book-formatter#115、formatter依存監査は#114へ分離した。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/d445b408e506551923bb3c1aa38d383ba9961e24/README.md",
@@ -1760,7 +1780,16 @@
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/275",
         "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/issues/47",
         "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/pull/49",
-        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/commit/9d8a629ba2ddc818f64d2bc4a54c8666c021f7ab"
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/commit/9d8a629ba2ddc818f64d2bc4a54c8666c021f7ab",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/284",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/issues/52",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/pull/53",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/issues/54",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/pull/55",
+        "https://github.com/itdojp/kubernetes-proxmox-to-cloud-book/blob/4e127f19e67a79882e8b9ba421300d5a756f9690/docs/index.md",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/271",
+        "https://github.com/itdojp/book-formatter/issues/114",
+        "https://github.com/itdojp/book-formatter/issues/115"
       ]
     },
     {
