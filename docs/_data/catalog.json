@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-07-22",
+  "updatedAt": "2026-08-24",
   "sourcePolicy": {
     "canonical": "docs/_data/catalog.json",
     "derivedFiles": [
@@ -1414,7 +1414,7 @@
       "relatedEditions": [],
       "reviewStatus": "review-needed",
       "lastReviewedAt": null,
-      "reviewIssue": 276,
+      "reviewIssue": 284,
       "ux": {
         "profile": "B",
         "modules": {
