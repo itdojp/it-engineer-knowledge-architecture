@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-08-24",
+  "updatedAt": "2026-08-30",
   "sourcePolicy": {
     "canonical": "docs/_data/catalog.json",
     "derivedFiles": [
@@ -967,8 +967,8 @@
       "id": "IT-infra-troubleshooting-book",
       "displayOrder": 11,
       "title": {
-        "ja": "ITインフラトラブルシューティング実践ガイド",
-        "en": "ITインフラトラブルシューティング実践ガイド"
+        "ja": "ITインフラトラブルシューティング大全",
+        "en": "ITインフラトラブルシューティング大全"
       },
       "officialEnglishTitle": null,
       "status": "published",
@@ -1011,8 +1011,8 @@
       ],
       "relatedEditions": [],
       "reviewStatus": "reviewed",
-      "lastReviewedAt": "2026-07-22",
-      "reviewIssue": 275,
+      "lastReviewedAt": "2026-08-30",
+      "reviewIssue": 287,
       "ux": {
         "profile": "B",
         "modules": {
@@ -1027,9 +1027,10 @@
         }
       },
       "addedAt": null,
-      "updatedAt": "2026-07-22",
+      "updatedAt": "2026-08-30",
       "notes": [
-        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/IT-infra-troubleshooting-book#139で、source main d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723dのREADME、book-config、公開トップ、学習ガイド、前提知識、チェックリスト、症状別フロー、図表導線、用語集を照合し、対象読者、Profile B、modulesを確定。読了・演習時間は週換算せず、次の学習先はポータル正本のcore-infrastructure学習パスに基づきcloud-infra-bookとした。"
+        "2026-07-12のmetadata監査itdojp/it-engineer-knowledge-architecture#211とitdojp/IT-infra-troubleshooting-book#139で、source main d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723dのREADME、book-config、公開トップ、学習ガイド、前提知識、チェックリスト、症状別フロー、図表導線、用語集を照合し、対象読者、Profile B、modulesを確定。読了・演習時間は週換算せず、次の学習先はポータル正本のcore-infrastructure学習パスに基づきcloud-infra-bookとした。",
+        "2026-08-30のPages監査#271とcatalog書名同期#287で、source main 3f69b23974415aca060f83489177d0c74be89d86のREADME、docs/_config.yml、公開rootのtitle/h1が「ITインフラトラブルシューティング大全」で一致することを確認し、catalog書名を正本へ同期。"
       ],
       "sourceRefs": [
         "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/d31cf9b85b6254e19d9ed7ad6fdb250e4ee6723d/README.md",
@@ -1048,7 +1049,11 @@
         "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/275",
         "https://github.com/itdojp/IT-infra-troubleshooting-book/issues/149",
         "https://github.com/itdojp/IT-infra-troubleshooting-book/pull/154",
-        "https://github.com/itdojp/IT-infra-troubleshooting-book/commit/340ded1b7df0a613ba7fdcc5c906b6acd186145a"
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/commit/340ded1b7df0a613ba7fdcc5c906b6acd186145a",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/3f69b23974415aca060f83489177d0c74be89d86/README.md",
+        "https://github.com/itdojp/IT-infra-troubleshooting-book/blob/3f69b23974415aca060f83489177d0c74be89d86/docs/_config.yml",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/271",
+        "https://github.com/itdojp/it-engineer-knowledge-architecture/issues/287"
       ]
     },
     {
