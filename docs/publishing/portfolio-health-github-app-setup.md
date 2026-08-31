@@ -158,7 +158,7 @@ mkdir -p .codex-local/tmp
 WORK_DIR=$(mktemp -d -p .codex-local/tmp portfolio-health-app-setup.XXXXXX)
 CATALOG="$WORK_DIR/catalog.json"
 EXPECTED="$WORK_DIR/expected-repositories.txt"
-trap 'rm -r -- "$WORK_DIR"' EXIT
+trap 'rm -rf -- "${WORK_DIR:?WORK_DIR must be set}"' EXIT
 
 gh api \
   "repos/$REPO/contents/docs/_data/catalog.json?ref=main" \
